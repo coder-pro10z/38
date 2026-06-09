@@ -341,6 +341,75 @@
 
         hr { border: 0; border-top: 1px solid var(--border); margin: 8px 0; }
 
+        /* V3 New Components */
+        .tag-category { background: rgba(125, 211, 252, 0.1); color: #7DD3FC; padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(125, 211, 252, 0.3); font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        
+        .arch-diagram {
+            font-family: "JetBrains Mono", monospace;
+            background: var(--code-bg);
+            border-radius: 6px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 12px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .dynamic-card {
+            border-left: 4px solid var(--status-info);
+            padding: 12px;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.05) 0%, var(--surface-1) 100%);
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+        .dynamic-card.type-compare { border-left-color: var(--status-warning); background: linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, var(--surface-1) 100%); }
+        .dynamic-card.type-pro-tip { border-left-color: var(--status-success); background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, var(--surface-1) 100%); }
+        .dynamic-card.type-code-snippet { border-left-color: #C4B5FD; background: linear-gradient(135deg, rgba(196, 181, 253, 0.05) 0%, var(--surface-1) 100%); }
+
+        .collapsible-trigger {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .collapsible-trigger:hover { opacity: 0.8; }
+        .collapsible-content {
+            display: none;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border);
+        }
+        .collapsible-content.expanded { display: block; }
+
+        .rapid-fire-item {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+        .rapid-fire-q {
+            padding: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            transition: background 0.2s;
+        }
+        .rapid-fire-q:hover { background: var(--surface-3); }
+        .rapid-fire-a {
+            display: none;
+            padding: 12px;
+            background: var(--surface-1);
+            border-top: 1px solid var(--border);
+            color: #FCA5A5;
+            font-style: italic;
+        }
+        .rapid-fire-a.expanded { display: block; }
+
         /* Index Modal Styles */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -386,7 +455,7 @@
             <button class="mode-btn active" data-mode="learn">Learn</button>
             <button class="mode-btn" data-mode="practice">Practice</button>
             <button class="mode-btn" data-mode="review">Review</button>
-            
+            <button class="mode-btn" data-mode="rapid_fire">Rapid Fire</button>
         </div>
         <button class="nav-btn" id="btn-next">❯</button>
     </div>
@@ -462,6 +531,14 @@ async function loadScenarios() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         scenarios = await response.json();
+        
+        // Auto-seed ratings for slides marked as Mastered
+        scenarios.forEach((s, idx) => {
+            if (s.confidence_rating === "Mastered" && !ratings[idx]) {
+                ratings[idx] = 'done';
+            }
+        });
+        
         // Initialize first render after data is loaded
         renderScenario();
     } catch (error) {
@@ -619,9 +696,9 @@ function renderScenario() {
     document.getElementById('counter').innerHTML = `Question ${activeIndices.indexOf(currentIndex) + 1} of ${activeIndices.length} <span>▼</span>`;
     document.getElementById('q-title').innerText = s.title;
     document.getElementById('q-chips').innerHTML = `
-        <span class="badge">[${s.type}]</span> 
+        ${s.schema === 'v3' ? `<span class="tag-category">${s.type}</span>` : `<span class="badge">[${s.type}]</span>`}
         <span class="chip">[${s.difficulty}]</span>
-        ${s.chips.map(c => `<span class="chip">[${c}]</span>`).join('')}
+        ${s.chips ? s.chips.map(c => `<span class="chip">[${c}]</span>`).join('') : ''}
     `;
 
     if (currentMode === 'review') {
@@ -640,7 +717,212 @@ function renderScenario() {
     let alwaysVisibleHtml = '';
     
     // ======== RENDER ENGINE SWITCH ======== //
-    if (s.isNewSchema) {
+    if (s.schema === 'v3') {
+        const d = s; // since data is flat for v3
+        
+        // 1. Definition & Scenario
+        solutionHtml += `
+        <div class="card">
+            <h2 class="card-title">📖 Definition & Scenario</h2>
+            <p class="body-text"><strong style="color:var(--text-primary)">Definition:</strong> ${format(d.definition)}</p>
+            <hr>
+            <p class="body-text"><strong style="color:var(--text-primary)">Real World:</strong> ${format(d.real_world_scenario)}</p>
+        </div>`;
+
+        // 2. Architecture Flow
+        if (d.architecture_flow) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">🏗 Architecture Flow</h2>
+                <div class="arch-path-vertical">
+                    ${d.architecture_flow.steps.map(step => format(step)).join('<br><span style="color:var(--text-muted)">↓</span><br>')}
+                </div>
+                ${d.architecture_flow.diagram ? `<div class="arch-diagram">${format(d.architecture_flow.diagram)}</div>` : ''}
+            </div>`;
+        }
+
+        // 3. Core Concepts
+        if (d.core_concepts && d.core_concepts.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">📚 Core Concepts</h2>
+                <div class="investigation-list">
+                    ${d.core_concepts.map(c => `
+                        <div class="data-row" style="margin-bottom: 8px;">
+                            <h3 class="data-key" style="color: var(--status-info)">${format(c.name)}</h3>
+                            <div class="data-val">
+                                <div class="body-text"><strong style="color:var(--text-primary)">Def:</strong> ${format(c.definition)}</div>
+                                <div class="body-text"><strong style="color:var(--text-primary)">Use:</strong> ${format(c.usage)}</div>
+                            </div>
+                        </div>
+                    `).join('<hr style="margin:2px 0;">')}
+                </div>
+            </div>`;
+        }
+
+        // 4. Error & Symptoms
+        if (d.error_symptoms) {
+            solutionHtml += `
+            <div class="card card-error">
+                <h2 class="card-title">❌ Error & Symptoms</h2>
+                <div class="matrix" style="grid-template-columns: 1fr 1fr; text-align:left;">
+                    <div class="data-row"><h3 class="data-key">State</h3><div class="data-val text-error">${format(d.error_symptoms.state)}</div></div>
+                    <div class="data-row"><h3 class="data-key">Severity</h3><div class="data-val">${format(d.error_symptoms.severity)}</div></div>
+                    <div class="data-row"><h3 class="data-key">Component</h3><div class="data-val">${format(d.error_symptoms.affected_component)}</div></div>
+                    <div class="data-row" style="grid-column: 1/-1"><h3 class="data-key">Impact</h3><div class="data-val">${format(d.error_symptoms.impact)}</div></div>
+                </div>
+            </div>`;
+        }
+
+        // 5. Investigation
+        if (d.investigation && d.investigation.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">🔍 Investigation</h2>
+                <div class="investigation-list">
+                    ${d.investigation.map(i => `
+                        <div class="data-row" style="border-left: 2px solid var(--border); padding-left: 8px;">
+                            <div style="margin-bottom: 4px;"><code>${format(i.command)}</code></div>
+                            <div class="body-text"><strong style="color:var(--text-primary)">Step:</strong> ${format(i.step)}</div>
+                            <div class="body-text"><strong style="color:var(--text-primary)">Purpose:</strong> ${format(i.purpose)}</div>
+                            <div class="body-text text-info"><strong>Expected:</strong> ${format(i.expected_finding)}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
+
+        // 6. RCA
+        if (d.rca) {
+            solutionHtml += `
+            <div class="card card-rca">
+                <h2 class="card-title">🎯 RCA</h2>
+                <div class="rca-flow">
+                    <div class="rca-step"><h3 style="display:inline">Problem:</h3> <span class="body-text">${format(d.rca.problem)}</span></div>
+                    <div class="rca-arrow">↓</div>
+                    <div class="rca-step"><h3 style="display:inline">Trigger:</h3> <span class="body-text">${format(d.rca.trigger)}</span></div>
+                    <div class="rca-arrow">↓</div>
+                    <div class="rca-step"><h3 style="display:inline">Root Cause:</h3> <span class="body-text">${format(d.rca.root_cause)}</span></div>
+                    <div class="rca-arrow">↓</div>
+                    <div class="rca-step"><h3 style="display:inline">Impact:</h3> <span class="body-text">${format(d.rca.impact)}</span></div>
+                </div>
+            </div>`;
+        }
+
+        // 7. Resolution & Prevention
+        if (d.resolution_prevention) {
+            solutionHtml += `
+            <div class="card card-resolution">
+                <h2 class="card-title">✅ Resolution & Prevention</h2>
+                <div class="data-row"><h3 class="data-key">Immediate</h3><div class="data-val"><code>${d.resolution_prevention.immediate_fix.join('</code> <br> <code>')}</code></div></div>
+                <div class="data-row"><h3 class="data-key">Permanent</h3><div class="data-val">${d.resolution_prevention.permanent_fix.map(f => format(f)).join('<br>')}</div></div>
+                <hr>
+                <ul class="no-bullet">
+                    <li class="body-text"><strong class="text-success">Best Practice:</strong> ${format(d.resolution_prevention.best_practice)}</li>
+                    <li class="body-text"><strong class="text-error">Anti-Pattern:</strong> ${format(d.resolution_prevention.anti_pattern)}</li>
+                    <li class="body-text"><strong class="text-info">Controls:</strong> ${d.resolution_prevention.preventive_control.map(c => format(c)).join(' | ')}</li>
+                </ul>
+            </div>`;
+        }
+
+        // 8. Interview Answer
+        if (d.interview_answer) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">💬 Interview Answer</h2>
+                <ul>${d.interview_answer.response.map(r => `<li class="body-text">"${format(r)}"</li>`).join('')}</ul>
+                <div class="body-text" style="margin-top: 8px; padding-left: 16px;"><strong style="color:var(--status-info)">Why?</strong> ${format(d.interview_answer.why)}</div>
+            </div>`;
+        }
+
+        // 9. Kill Shot
+        if (d.interview_kill_shot) {
+            solutionHtml += `
+            <div class="card card-kill-shot" style="grid-column: 1/-1;">
+                <h2 class="card-title" style="color: #FCA5A5;">🔥 Interview Kill Shot</h2>
+                <p class="body-text" style="font-weight: 600; font-size: 14px; text-align: center; font-style: italic;">"${format(d.interview_kill_shot)}"</p>
+            </div>`;
+        }
+
+        // 10. Dynamic Cards
+        if (d.dynamic_cards && d.dynamic_cards.length > 0) {
+            d.dynamic_cards.forEach((card, idx) => {
+                let cardClass = 'dynamic-card';
+                let icon = '💡';
+                if (card.card_type === 'Compare') { cardClass += ' type-compare'; icon = '⚖️'; }
+                else if (card.card_type === 'Pro-Tip') { cardClass += ' type-pro-tip'; icon = '⭐'; }
+                else if (card.card_type === 'Code Snippet') { cardClass += ' type-code-snippet'; icon = '💻'; }
+
+                const isCollapsible = card.visibility_trigger === 'On-Click';
+                
+                let contentHtml = '';
+                if (card.card_type === 'Code Snippet') {
+                    contentHtml = `<div class="arch-diagram">${format(card.content)}</div>`;
+                } else {
+                    contentHtml = `<div class="body-text">${format(card.content)}</div>`;
+                }
+
+                if (isCollapsible) {
+                    solutionHtml += `
+                    <div class="${cardClass}" style="grid-column: 1/-1;">
+                        <div class="collapsible-trigger" onclick="this.nextElementSibling.classList.toggle('expanded')">
+                            <h2 class="card-title" style="margin:0;">${icon} ${card.card_title} <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(Click to expand)</span></h2>
+                            <span>▼</span>
+                        </div>
+                        <div class="collapsible-content">${contentHtml}</div>
+                    </div>`;
+                } else {
+                    solutionHtml += `
+                    <div class="${cardClass}" style="grid-column: 1/-1;">
+                        <h2 class="card-title">${icon} ${card.card_title}</h2>
+                        ${contentHtml}
+                    </div>`;
+                }
+            });
+        }
+
+        // 11. Rapid Fire Q&A (Always visible, mapped to alwaysVisibleHtml)
+        if (d.rapid_fire_qa && d.rapid_fire_qa.length > 0) {
+            alwaysVisibleHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title text-warning">⚡ Rapid Fire Q&A</h2>
+                ${d.rapid_fire_qa.map(qa => `
+                    <div class="rapid-fire-item">
+                        <div class="rapid-fire-q" onclick="this.nextElementSibling.classList.toggle('expanded')">
+                            <span style="color:var(--status-info)">Q:</span> 
+                            <span>${format(qa.question)}</span>
+                        </div>
+                        <div class="rapid-fire-a">
+                            <strong style="color:var(--text-primary)">Kill Shot:</strong> "${format(qa.kill_shot_answer)}"
+                        </div>
+                    </div>
+                `).join('')}
+            </div>`;
+        }
+
+        // 12. Quick Recall (Always visible)
+        if (d.quick_recall) {
+            alwaysVisibleHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">🧠 Quick Recall</h2>
+                <div class="matrix" style="grid-template-columns: repeat(3, 1fr); text-align: left;">
+                    <div>
+                        <div class="matrix-hdr">Commands</div>
+                        <ul class="no-bullet" style="padding-top:4px;">${d.quick_recall.commands ? d.quick_recall.commands.map(c => `<li style="margin-bottom:4px;"><code>${format(c)}</code></li>`).join('') : ''}</ul>
+                    </div>
+                    <div>
+                        <div class="matrix-hdr">Concepts</div>
+                        <ul class="no-bullet" style="padding-top:4px;">${d.quick_recall.concepts ? d.quick_recall.concepts.map(c => `<li class="meta" style="color:var(--text-primary)">${format(c)}</li>`).join('') : ''}</ul>
+                    </div>
+                    <div>
+                        <div class="matrix-hdr">Keywords</div>
+                        <ul class="no-bullet" style="padding-top:4px;">${d.quick_recall.keywords ? d.quick_recall.keywords.map(c => `<li class="meta text-info">#${format(c)}</li>`).join('') : ''}</ul>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+    } else if (s.isNewSchema) {
         
         // --- NEW SCHEMA TEMPLATE ---
         // 1. Definition & Scenario
@@ -879,18 +1161,44 @@ function renderScenario() {
     // Assembly of Final DOM
     let html = '';
 
-    if (currentMode === 'practice') {
-        html += `<button class="reveal-btn" id="btn-reveal">
-            ${solutionRevealed ? 'Hide Solution' : 'Reveal Solution'}
-        </button>`;
-        if (solutionRevealed) {
-            html += solutionHtml;
+    if (currentMode === 'rapid_fire') {
+        if (s.schema === 'v3' && s.rapid_fire_qa && s.rapid_fire_qa.length > 0) {
+            html += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title text-warning">⚡ Rapid Fire Q&A</h2>
+                ${s.rapid_fire_qa.map(qa => `
+                    <div class="rapid-fire-item">
+                        <div class="rapid-fire-q" onclick="this.nextElementSibling.classList.toggle('expanded')">
+                            <span style="color:var(--status-info)">Q:</span> 
+                            <span>${format(qa.question)}</span>
+                        </div>
+                        <div class="rapid-fire-a">
+                            <strong style="color:var(--text-primary)">Kill Shot:</strong> "${format(qa.kill_shot_answer)}"
+                        </div>
+                    </div>
+                `).join('')}
+            </div>`;
+        } else {
+            html += `
+            <div class="card" style="grid-column: 1/-1; text-align: center; padding: 40px;">
+                <h2 class="card-title text-warning" style="justify-content: center;">No Rapid Fire Q&A</h2>
+                <p class="body-text">This scenario does not have rapid fire questions available.</p>
+            </div>`;
         }
     } else {
-        html += solutionHtml;
-    }
+        if (currentMode === 'practice') {
+            html += `<button class="reveal-btn" id="btn-reveal">
+                ${solutionRevealed ? 'Hide Solution' : 'Reveal Solution'}
+            </button>`;
+            if (solutionRevealed) {
+                html += solutionHtml;
+            }
+        } else {
+            html += solutionHtml;
+        }
 
-    html += alwaysVisibleHtml;
+        html += alwaysVisibleHtml;
+    }
 
     // Confidence Rating
     const currentRating = ratings[currentIndex] || '';

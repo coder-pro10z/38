@@ -1,0 +1,3308 @@
+[
+  {
+    "title": "AKS Deployment Failing After Release",
+    "type": "Troubleshooting",
+    "difficulty": "Intermediate",
+    "chips": [
+      "AKS",
+      "kubectl",
+      "ACR",
+      "Helm",
+      "CI/CD"
+    ],
+    "data": {
+      "errorState": "CrashLoopBackOff / ErrImagePull",
+      "impact": "Rollout stalled. Zero ready replicas.",
+      "investigation": [
+        {
+          "k": "kubectl get pods",
+          "v": "Identify failing pod state"
+        },
+        {
+          "k": "describe pod",
+          "v": "Check events for scheduling/image pull issues"
+        },
+        {
+          "k": "kubectl logs",
+          "v": "Check app layer exceptions/crashes"
+        },
+        {
+          "k": "ACR Auth",
+          "v": "Verify image pull secrets exist"
+        }
+      ],
+      "rca": [
+        "Pods fail to initialize",
+        "Helm upgrade triggered new image tag",
+        "Image pull issue (Auth/Missing) or App Crash",
+        "Release pipeline blocked"
+      ],
+      "resolutionImmediate": "kubectl rollout undo deployment/<name>",
+      "resolutionPerm": "Fix ACR RBAC / Correct image tag / Fix App Bug",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Strict Liveness/Readiness probes"
+        },
+        {
+          "type": "error",
+          "text": "Anti-Pattern: Deploying 'latest' tags"
+        }
+      ],
+      "answer": [
+        "I'd halt the pipeline and check pod status via kubectl get pods.",
+        "Based on status, use describe pod for k8s events or kubectl logs for app crashes.",
+        "Execute kubectl rollout undo to immediately restore service.",
+        "Debug the root cause offline."
+      ],
+      "recall": [
+        "Pending vs CrashLoopBackOff",
+        "describe = events/infra",
+        "logs = app layer",
+        "Rollback first, debug second"
+      ]
+    }
+  },
+  {
+    "title": "Terraform Apply Fails in Production",
+    "type": "Troubleshooting",
+    "difficulty": "Advanced",
+    "chips": [
+      "Terraform",
+      "State",
+      "CI/CD",
+      "IaC"
+    ],
+    "data": {
+      "errorState": "Error acquiring the state lock / Plan mismatch",
+      "impact": "Infrastructure updates blocked.",
+      "investigation": [
+        {
+          "k": "Pipeline Logs",
+          "v": "Check exact TF error output"
+        },
+        {
+          "k": "State Lock",
+          "v": "Check DynamoDB/Blob storage for stale locks"
+        },
+        {
+          "k": "Drift Check",
+          "v": "Run plan review to identify manual cloud changes"
+        }
+      ],
+      "rca": [
+        "Apply command fails immediately",
+        "Concurrent pipeline runs OR manual portal edits",
+        "State lock table blocked or Drift detected",
+        "IaC out of sync with cloud"
+      ],
+      "resolutionImmediate": "force-unlock (if confirmed stale) OR Rollback pipeline",
+      "resolutionPerm": "Import manual changes to state, resolve drift",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Plan review gating in Prod"
+        },
+        {
+          "type": "warning",
+          "text": "Risk: Manual 'ClickOps' in Production"
+        }
+      ],
+      "answer": [
+        "First, I review pipeline logs to check if it's a state lock or a drift error.",
+        "If state lock, verify no other pipelines are running, then safely break the lock.",
+        "If drift, review the plan to see what was manually changed.",
+        "Either revert manual change, or import it into state."
+      ],
+      "recall": [
+        "Never force-unlock blindly",
+        "Drift = Manual changes",
+        "IaC is single source of truth"
+      ]
+    }
+  },
+  {
+    "title": "Application Unavailable After Deployment",
+    "type": "Incident",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Deployment",
+      "Traffic",
+      "LoadBalancer",
+      "Outage"
+    ],
+    "data": {
+      "impact": "100% Downtime. 502 Bad Gateway or Timeout.",
+      "timeline": [
+        {
+          "t": "T+0",
+          "ev": "Deployment pipeline succeeds"
+        },
+        {
+          "t": "T+2",
+          "ev": "Health probes fail, pods cycle"
+        },
+        {
+          "t": "T+5",
+          "ev": "Alerts fire for traffic drop"
+        }
+      ],
+      "detection": "Synthetic monitoring & Load Balancer health probes failed.",
+      "rca": [
+        "App goes offline",
+        "New code deployment",
+        "Bad routing config, missed DB migration, or startup crash",
+        "Total user impact"
+      ],
+      "resolutionImmediate": "Rollback or Traffic Switching to previous version",
+      "resolutionPerm": "Implement Blue/Green or Canary deployment strategy",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Lesson: Always decouple deployments from releases"
+        },
+        {
+          "type": "success",
+          "text": "Prevention: Automated health checks before traffic switch"
+        }
+      ],
+      "answer": [
+        "My priority is MTTR. I immediately trigger a traffic switch back to the stable environment.",
+        "Once mitigated, verify why deployment strategy (e.g., Canary) didn't catch it.",
+        "Review logs to find if it was config, DB schema, or code issue.",
+        "Implement stricter health-probe gates."
+      ],
+      "recall": [
+        "MTTR is the primary priority",
+        "Blue/Green prevents immediate outage",
+        "Rollback immediately, debug later"
+      ]
+    }
+  },
+  {
+    "title": "Cloud Bill Increased by 50%",
+    "type": "Decision",
+    "difficulty": "Advanced",
+    "chips": [
+      "FinOps",
+      "Cost",
+      "Architecture",
+      "Governance"
+    ],
+    "data": {
+      "reqs": "Identify anomalous spend and optimize Compute, Storage, Logs, Networking.",
+      "architecture": "Cost Visibility → Tagging → Right-sizing → Reserved Instances",
+      "tradeoffs": [
+        {
+          "h1": "Focus",
+          "h2": "Compute",
+          "h3": "Storage"
+        },
+        {
+          "d1": "Action",
+          "d2": "Auto-scale/Spot",
+          "d3": "Tiering"
+        },
+        {
+          "d1": "Risk",
+          "d2": "Performance",
+          "d3": "Retrieval Time"
+        },
+        {
+          "d1": "Impact",
+          "d2": "High $$$",
+          "d3": "Med $$"
+        }
+      ],
+      "cost": [
+        {
+          "k": "Compute",
+          "v": "Check unattached disks, over-provisioned VMs"
+        },
+        {
+          "k": "Storage",
+          "v": "Move old backups to Cold/Archive tiers"
+        },
+        {
+          "k": "Logs",
+          "v": "Reduce retention period"
+        },
+        {
+          "k": "Network",
+          "v": "Check cross-AZ or Egress traffic"
+        }
+      ],
+      "answer": [
+        "I'd use Cost Management tools to group costs by service and tags.",
+        "Focus on the big four: Compute, Storage, Logs, and Networking.",
+        "Immediately clean up orphaned resources like unattached disks.",
+        "Long-term, enforce strict tagging policies and buy Reserved Instances."
+      ],
+      "recall": [
+        "Compute is usually #1",
+        "Tagging is mandatory",
+        "Egress data costs money",
+        "Log ingestion scales fast"
+      ]
+    }
+  },
+  {
+    "title": "App Service Cannot Access SQL",
+    "type": "Troubleshooting",
+    "difficulty": "Intermediate",
+    "chips": [
+      "AppService",
+      "SQL",
+      "Networking",
+      "DNS",
+      "NSG"
+    ],
+    "data": {
+      "errorState": "Connection Timeout / Name Resolution Failure",
+      "impact": "App is running but DB operations fail.",
+      "investigation": [
+        {
+          "k": "tcpping",
+          "v": "Run from App Service Kudu console"
+        },
+        {
+          "k": "VNet Int.",
+          "v": "Check if App is routed into VNet"
+        },
+        {
+          "k": "DNS",
+          "v": "Verify Private DNS Zone links"
+        },
+        {
+          "k": "NSG",
+          "v": "Check flow logs for port 1433"
+        }
+      ],
+      "rca": [
+        "SQL connection times out",
+        "Networking or Infrastructure change",
+        "Missing VNet route, bad DNS, or NSG blocking 1433",
+        "App broken"
+      ],
+      "resolutionImmediate": "Fix DNS link or open NSG port 1433",
+      "resolutionPerm": "Ensure Private Endpoint lifecycle is automated via IaC",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Use Private Endpoints"
+        },
+        {
+          "type": "error",
+          "text": "Anti-Pattern: Opening SQL firewall to 'Allow All Azure Services'"
+        }
+      ],
+      "answer": [
+        "I'd use Kudu console to run 'tcpping' to the SQL IP and 'nameresolver' for hostname.",
+        "If IP fails, I check VNet routing and NSGs blocking 1433.",
+        "If hostname fails, verify the Private DNS Zone is linked to the VNet.",
+        "Resolve the missing link, then automate it in Terraform."
+      ],
+      "recall": [
+        "Kudu is your best friend",
+        "IP = Routing/NSG",
+        "Hostname = DNS",
+        "Port 1433 = SQL"
+      ]
+    }
+  },
+  {
+    "title": "AKS Pods Not Scaling",
+    "type": "Troubleshooting",
+    "difficulty": "Advanced",
+    "chips": [
+      "AKS",
+      "HPA",
+      "Metrics",
+      "Autoscaler"
+    ],
+    "data": {
+      "errorState": "HPA shows <unknown> or Pods Pending",
+      "impact": "High latency under load, app crashing (OOM).",
+      "investigation": [
+        {
+          "k": "get hpa",
+          "v": "Check target utilization metrics"
+        },
+        {
+          "k": "Metrics Server",
+          "v": "Verify metrics-server pod is running"
+        },
+        {
+          "k": "Requests",
+          "v": "Check deployment yaml for cpu/mem"
+        },
+        {
+          "k": "Autoscaler",
+          "v": "Check node count and max limits"
+        }
+      ],
+      "rca": [
+        "Traffic spikes, pods don't scale",
+        "Load increases",
+        "No Resource Requests defined OR Node Pool hit limit",
+        "App throttled"
+      ],
+      "resolutionImmediate": "Manually scale deployment / update Node pool max",
+      "resolutionPerm": "Define explicit CPU/Mem requests so HPA can calculate",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Always define Requests & Limits"
+        },
+        {
+          "type": "error",
+          "text": "Anti-Pattern: Using HPA without Cluster Autoscaler"
+        }
+      ],
+      "answer": [
+        "First check `kubectl get hpa`. If <unknown>, Metrics Server is down or Resource Requests are missing.",
+        "HPA cannot calculate percentage utilization without a baseline request.",
+        "If pods are 'Pending', Cluster Autoscaler hit max limit.",
+        "Add requests to YAML and increase node limit."
+      ],
+      "recall": [
+        "No Requests = No HPA",
+        "Pending Pods = Out of Nodes (CA issue)",
+        "HPA scales pods, CA scales nodes"
+      ]
+    }
+  },
+  {
+    "title": "Pipeline Takes 40 Minutes",
+    "type": "Architecture",
+    "difficulty": "Intermediate",
+    "chips": [
+      "CI/CD",
+      "Optimization",
+      "DevEx",
+      "Builds"
+    ],
+    "data": {
+      "reqs": "Reduce build & deploy time to < 10 mins for developer feedback loop.",
+      "architecture": "Code → Parallel Tests & Build → Container Cache → Deploy",
+      "tradeoffs": [
+        {
+          "h1": "Strategy",
+          "h2": "Impact",
+          "h3": "Cost"
+        },
+        {
+          "d1": "Parallel Jobs",
+          "d2": "Massive speed",
+          "d3": "High Compute"
+        },
+        {
+          "d1": "Caching",
+          "d2": "Skip downloads",
+          "d3": "Storage overhead"
+        },
+        {
+          "d1": "Incremental",
+          "d2": "Build only diffs",
+          "d3": "Complex setup"
+        }
+      ],
+      "cost": [
+        {
+          "k": "Caching",
+          "v": "Use Docker layer caching & npm/maven caching"
+        },
+        {
+          "k": "Parallel",
+          "v": "Split unit, integration, and linting tests"
+        },
+        {
+          "k": "Incremental",
+          "v": "Only build monorepo packages that changed"
+        }
+      ],
+      "answer": [
+        "A 40-minute pipeline destroys developer productivity. I would analyze the bottleneck stages.",
+        "First, implement dependency caching and Docker layer caching.",
+        "Refactor pipeline to run tests, linting, and scans as parallel jobs.",
+        "If it's a monorepo, implement incremental builds."
+      ],
+      "recall": [
+        "Parallelize independent tasks",
+        "Cache dependencies",
+        "Fast feedback = Happy Devs"
+      ]
+    }
+  },
+  {
+    "title": "Production Outage at 2 AM",
+    "type": "Incident",
+    "difficulty": "Advanced",
+    "chips": [
+      "Incident",
+      "OnCall",
+      "RCA",
+      "Communication"
+    ],
+    "data": {
+      "impact": "Complete system failure. P1/Sev1 declared.",
+      "timeline": [
+        {
+          "t": "02:00",
+          "ev": "Synthetics fail, PagerDuty alerts on-call"
+        },
+        {
+          "t": "02:05",
+          "ev": "Acknowledge alert, open bridge"
+        },
+        {
+          "t": "02:15",
+          "ev": "Mitigation applied (Rollback/Failover)"
+        }
+      ],
+      "detection": "Proactive detection via synthetic monitoring.",
+      "rca": [
+        "2AM Alert",
+        "Batch job run, cert expiry, or DB maintenance",
+        "Unexpected lock or expired secret",
+        "Outage"
+      ],
+      "resolutionImmediate": "Mitigate issue (Failover to secondary region or restart)",
+      "resolutionPerm": "Conduct Blameless RCA, implement automated fixes",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Lesson: Mitigate first, investigate root cause later"
+        },
+        {
+          "type": "success",
+          "text": "Prevention: Automate certificate renewals"
+        }
+      ],
+      "answer": [
+        "My first goal is detection and triage: what is broken and who is impacted?",
+        "I prioritize mitigation over finding the root cause—failing over or rolling back immediately.",
+        "Communication is key. Update status page every 30 mins.",
+        "Post-incident, lead a blameless RCA to find true root cause."
+      ],
+      "recall": [
+        "Mitigate > Investigate",
+        "Constantly update stakeholders",
+        "Run blameless RCAs post-incident"
+      ]
+    }
+  },
+  {
+    "title": "Deployment Failed During Release Window",
+    "type": "Troubleshooting",
+    "difficulty": "Advanced",
+    "chips": [
+      "Release Mgmt",
+      "Rollback",
+      "Ownership",
+      "CI/CD"
+    ],
+    "data": {
+      "errorState": "Pipeline failed at 9 PM mid-deployment",
+      "impact": "Release window missed, potential downtime/inconsistency.",
+      "investigation": [
+        {
+          "k": "Pipeline Logs",
+          "v": "Identify exact stage of failure (Build, Deploy, DB)"
+        },
+        {
+          "k": "DB Status",
+          "v": "Check if migrations are locked or partially applied"
+        },
+        {
+          "k": "App Health",
+          "v": "Check if old version is still serving traffic"
+        }
+      ],
+      "rca": [
+        "Release initiated",
+        "Bad artifact, missing config, or failed DB migration",
+        "Deployment halts",
+        "System left in mixed state"
+      ],
+      "resolutionImmediate": "Trigger automated rollback to last known good state",
+      "resolutionPerm": "Improve pre-flight checks and schema backwards compatibility",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Automated rollback triggers on failure"
+        },
+        {
+          "type": "warning",
+          "text": "Risk: Manual intervention during active release window"
+        }
+      ],
+      "answer": [
+        "I would immediately check the pipeline logs to pinpoint the failure—was it code, config, or database?",
+        "If it impacted active users, I'd trigger the rollback strategy to restore the previous state.",
+        "Communicate the failed release to stakeholders and abort the window.",
+        "Investigate the RCA the next day without the pressure of the maintenance window."
+      ],
+      "recall": [
+        "Restore service first",
+        "Never debug live in a release window",
+        "DB backward compatibility is key"
+      ]
+    }
+  },
+  {
+    "title": "Jenkins Pipeline Suddenly Failing",
+    "type": "Troubleshooting",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Jenkins",
+      "Agent",
+      "Plugins",
+      "SCM",
+      "Workspace"
+    ],
+    "data": {
+      "errorState": "Build Failed (Worked Yesterday)",
+      "impact": "Developers blocked from merging/deploying code.",
+      "investigation": [
+        {
+          "k": "Git Diff",
+          "v": "Did code/dependencies change?"
+        },
+        {
+          "k": "Agent Health",
+          "v": "Check node disk space and memory"
+        },
+        {
+          "k": "Credentials",
+          "v": "Check if Service Principals/Tokens expired"
+        },
+        {
+          "k": "Plugins",
+          "v": "Check for overnight auto-updates"
+        }
+      ],
+      "rca": [
+        "Pipeline runs normally",
+        "Silent environmental change overnight",
+        "Out of disk space, expired secret, or transient network issue",
+        "Build breaks"
+      ],
+      "resolutionImmediate": "Clear workspace, restart agent, or update expired secret",
+      "resolutionPerm": "Monitor agent disks, automate secret rotation, pin dependencies",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Wipe workspace before every build"
+        },
+        {
+          "type": "error",
+          "text": "Anti-Pattern: Auto-updating Jenkins plugins"
+        }
+      ],
+      "answer": [
+        "Since it worked yesterday, I look for environmental changes first.",
+        "I check if a secret expired, if the Jenkins Agent ran out of disk space, or if an upstream registry is down.",
+        "I'd also check if a developer introduced a new unpinned dependency.",
+        "I would clear the workspace and re-run. If it persists, isolate the exact failing step in the logs."
+      ],
+      "recall": [
+        "Worked Yesterday = Environment/Secret Issue",
+        "Check disk space on agents",
+        "Always pin dependencies"
+      ]
+    }
+  },
+  {
+    "title": "Terraform Destroyed Resources",
+    "type": "Incident",
+    "difficulty": "Advanced",
+    "chips": [
+      "Terraform",
+      "State",
+      "Drift",
+      "Recovery"
+    ],
+    "data": {
+      "impact": "Production resources deleted. Major Outage.",
+      "timeline": [
+        {
+          "t": "T+0",
+          "ev": "Dev merges PR removing/renaming TF block"
+        },
+        {
+          "t": "T+5",
+          "ev": "Pipeline runs 'terraform apply'"
+        },
+        {
+          "t": "T+10",
+          "ev": "Resources terminated, alerts fire"
+        }
+      ],
+      "detection": "Users report outage, monitoring shows missing endpoints.",
+      "rca": [
+        "PR merged with renamed module/resource",
+        "Terraform sees old resource as 'to be destroyed' and new as 'to be created'",
+        "Apply runs without human plan review",
+        "Prod is deleted"
+      ],
+      "resolutionImmediate": "Restore state from DB backups, re-run apply to recreate compute",
+      "resolutionPerm": "Enforce Plan reviews, use prevent_destroy lifecycle hooks",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Prevention: Add lifecycle { prevent_destroy = true } to Databases"
+        },
+        {
+          "type": "success",
+          "text": "Prevention: Separate state files for App vs Data"
+        }
+      ],
+      "answer": [
+        "This is a severe incident. Immediate mitigation is recreating the compute resources via Terraform and restoring Databases from backups.",
+        "The root cause is usually a developer renaming a module, causing Terraform to destroy the old and create the new.",
+        "To prevent this, I would enforce mandatory Plan reviews in the pipeline for production.",
+        "I'd also add 'prevent_destroy = true' lifecycle hooks to all stateful resources."
+      ],
+      "recall": [
+        "Always require Plan Reviews",
+        "Use prevent_destroy on stateful resources",
+        "Rename resources using `moved` blocks"
+      ]
+    }
+  },
+  {
+    "title": "Works Locally But Fails In Docker",
+    "type": "Troubleshooting",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Docker",
+      "EnvVars",
+      "Ports",
+      "Volumes",
+      "DNS"
+    ],
+    "data": {
+      "errorState": "Container Exited (1) or Connection Refused",
+      "impact": "Deployment fails or app is unreachable inside cluster.",
+      "investigation": [
+        {
+          "k": "docker logs",
+          "v": "Check for missing dependencies or crash loops"
+        },
+        {
+          "k": "docker inspect",
+          "v": "Verify passed Environment Variables"
+        },
+        {
+          "k": "Port Binding",
+          "v": "Check if app binds to localhost instead of 0.0.0.0"
+        }
+      ],
+      "rca": [
+        "App runs locally on host",
+        "Packaged into isolated container",
+        "Missing host-level dependency, hardcoded 'localhost', or missing ENV",
+        "Container fails"
+      ],
+      "resolutionImmediate": "Update code to bind to 0.0.0.0, pass correct ENVs",
+      "resolutionPerm": "Use docker-compose for local dev to match target environment",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: 12-Factor App methodology (Config in ENV)"
+        },
+        {
+          "type": "error",
+          "text": "Anti-Pattern: Hardcoding 'localhost' for DB connections"
+        }
+      ],
+      "answer": [
+        "The most common reason is networking. Apps binding to 'localhost' inside a container cannot be reached from the outside; they must bind to '0.0.0.0'.",
+        "Next, I'd check for missing Environment Variables or differences in the OS architecture.",
+        "I'd use 'docker logs' to see the exact crash, and 'docker exec' to check the filesystem.",
+        "Prevention is forcing developers to test locally using docker-compose."
+      ],
+      "recall": [
+        "Bind to 0.0.0.0, not localhost",
+        "Check injected ENV variables",
+        "Validate OS/Architecture differences"
+      ]
+    }
+  },
+  {
+    "title": "Passed QA But Failed Production",
+    "type": "Troubleshooting",
+    "difficulty": "Advanced",
+    "chips": [
+      "Environment Parity",
+      "Secrets",
+      "Scale",
+      "Networking"
+    ],
+    "data": {
+      "errorState": "Feature works in QA but throws 500s or timeouts in Prod",
+      "impact": "Release rollback required, loss of trust.",
+      "investigation": [
+        {
+          "k": "Config Diff",
+          "v": "Compare QA and Prod config maps / ENVs"
+        },
+        {
+          "k": "Data Volume",
+          "v": "Check if Prod DB lacks indexes needed for large tables"
+        },
+        {
+          "k": "Network/NSG",
+          "v": "Check if Prod firewall blocks an external API"
+        }
+      ],
+      "rca": [
+        "Code passes functional tests in QA",
+        "Deployed to Prod",
+        "Prod-specific issue (Scale, Missing Secret, Strict Firewall)",
+        "Feature fails"
+      ],
+      "resolutionImmediate": "Rollback deployment",
+      "resolutionPerm": "Use IaC to ensure strict environment parity. Implement Staging environment.",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Staging should be an exact replica of Prod (anonymized data)"
+        },
+        {
+          "type": "warning",
+          "text": "Risk: Using different SKU tiers in QA vs Prod"
+        }
+      ],
+      "answer": [
+        "This happens due to a lack of Environment Parity. I look at three things: Config, Data, and Network.",
+        "Config: Prod might be missing a newly added secret or ENV var.",
+        "Data: The QA database might be tiny, so a missing index wasn't caught until it hit Prod scale.",
+        "Network: Prod firewalls (NSGs) are stricter and might block external API calls.",
+        "I'd rollback, fix the parity gap, and enforce IaC to keep environments synced."
+      ],
+      "recall": [
+        "Config, Data, Network",
+        "Staging must mirror Prod",
+        "IaC solves environment drift"
+      ]
+    }
+  },
+  {
+    "title": "Grafana Alert Triggered At Midnight",
+    "type": "Incident",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Monitoring",
+      "Incident Response",
+      "Scaling",
+      "RCA"
+    ],
+    "data": {
+      "impact": "System degraded. High latency for end users.",
+      "timeline": [
+        {
+          "t": "00:00",
+          "ev": "CPU spikes to 95%"
+        },
+        {
+          "t": "00:02",
+          "ev": "Prometheus/Grafana triggers PagerDuty alert"
+        },
+        {
+          "t": "00:05",
+          "ev": "On-call acknowledges and checks dashboards"
+        }
+      ],
+      "detection": "Automated metric threshold alert (CPU > 90% for 5m).",
+      "rca": [
+        "Normal traffic",
+        "Unexpected batch job, crawler bot, or unoptimized DB query runs",
+        "Compute resources exhaust",
+        "System slows down/crashes"
+      ],
+      "resolutionImmediate": "Manually scale up/out, block bad IPs, or restart pods",
+      "resolutionPerm": "Implement Auto-scaling (HPA/Cluster Autoscaler), optimize queries",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Alerts should be actionable, not just informational"
+        },
+        {
+          "type": "success",
+          "text": "Prevention: Set up auto-scaling rules before manual alerts"
+        }
+      ],
+      "answer": [
+        "First, I acknowledge the alert and open the Grafana dashboard to confirm the CPU spike isn't a false positive.",
+        "I check logs to see what's driving the CPU—is it a traffic spike, a rogue bot, or a heavy scheduled batch job?",
+        "To mitigate, I'd manually scale out the replicas (if auto-scaling failed) or temporarily block rogue IPs.",
+        "Post-incident, I'd review why auto-scaling didn't handle the load automatically."
+      ],
+      "recall": [
+        "Acknowledge alert first",
+        "Check logs for bot/batch traffic",
+        "Scale out to mitigate immediate pressure"
+      ]
+    }
+  },
+  {
+    "title": "GitHub Actions Not Triggering",
+    "type": "Troubleshooting",
+    "difficulty": "Intermediate",
+    "chips": [
+      "GitHub Actions",
+      "Webhooks",
+      "Runners",
+      "YAML"
+    ],
+    "data": {
+      "errorState": "Code pushed to branch, no workflow appears in Actions tab",
+      "impact": "CI/CD blocked. Code cannot be tested/deployed.",
+      "investigation": [
+        {
+          "k": "YAML Syntax",
+          "v": "Check for parsing errors in the workflow file"
+        },
+        {
+          "k": "Triggers",
+          "v": "Check 'on: push: branches' and 'paths' filters"
+        },
+        {
+          "k": "Runner Status",
+          "v": "Check if self-hosted runners are offline"
+        },
+        {
+          "k": "Permissions",
+          "v": "Check GitHub token permissions"
+        }
+      ],
+      "rca": [
+        "Developer pushes code",
+        "Webhook sent internally",
+        "YAML syntax is invalid OR branch/path filters exclude the commit",
+        "Workflow silently skips"
+      ],
+      "resolutionImmediate": "Fix YAML syntax, adjust branch triggers",
+      "resolutionPerm": "Use local linting tools (like 'act'), monitor runner health",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Keep workflow trigger logic simple"
+        },
+        {
+          "type": "error",
+          "text": "Anti-Pattern: Silently failing workflows without notifications"
+        }
+      ],
+      "answer": [
+        "If a workflow doesn't trigger at all, it's usually a YAML syntax error or a trigger configuration issue.",
+        "I would check the `on: push` block to ensure the branch name matches and that `paths-ignore` isn't filtering out the commit.",
+        "If using self-hosted runners, I'd verify the runner service is online and listening.",
+        "I'd validate the YAML using a linter and push a test commit to verify the fix."
+      ],
+      "recall": [
+        "YAML syntax errors kill workflows silently",
+        "Check branch/path filters",
+        "Verify self-hosted runner connectivity"
+      ]
+    }
+  },
+  {
+    "title": "App Cannot Access Azure SQL (Auth)",
+    "type": "Troubleshooting",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Azure SQL",
+      "Managed Identity",
+      "Firewall",
+      "Connection String"
+    ],
+    "data": {
+      "errorState": "Login Failed for User / Access Denied",
+      "impact": "App starts but fails at database connection phase.",
+      "investigation": [
+        {
+          "k": "Connection String",
+          "v": "Verify format (e.g., Authentication=Active Directory Default)"
+        },
+        {
+          "k": "Identity",
+          "v": "Check if System/User Assigned Managed Identity is enabled"
+        },
+        {
+          "k": "SQL Users",
+          "v": "Check if Identity was added as a user in the SQL DB"
+        },
+        {
+          "k": "Firewall",
+          "v": "Check 'Allow Azure Services' or VNet rules"
+        }
+      ],
+      "rca": [
+        "App attempts DB connection",
+        "Presents Managed Identity token",
+        "Token rejected by SQL server (missing user mapping or firewall block)",
+        "Crash"
+      ],
+      "resolutionImmediate": "Run CREATE USER [IdentityName] FROM EXTERNAL PROVIDER",
+      "resolutionPerm": "Automate SQL user creation via IaC/Deployment scripts",
+      "practices": [
+        {
+          "type": "success",
+          "text": "Best Practice: Always use Managed Identities over passwords"
+        },
+        {
+          "type": "warning",
+          "text": "Risk: Forgetting to map Identity inside the database"
+        }
+      ],
+      "answer": [
+        "If the network is fine but access is denied, it's an authentication issue.",
+        "I'd verify the App Service has a Managed Identity enabled and the connection string is configured to use it.",
+        "A very common miss is that the Identity exists in Azure AD, but hasn't been added as a user *inside* the SQL database.",
+        "I would connect via SSMS, run the 'CREATE USER' script for the identity, and grant it db_datareader/datawriter."
+      ],
+      "recall": [
+        "Network vs Auth issue",
+        "Identities must be added as a user inside the SQL DB",
+        "Grant db_datareader / db_datawriter"
+      ]
+    }
+  },
+  {
+    "title": "Release Rollback Strategy",
+    "type": "Decision",
+    "difficulty": "Advanced",
+    "chips": [
+      "Blue-Green",
+      "Canary",
+      "Rollback",
+      "DB Migrations"
+    ],
+    "data": {
+      "reqs": "Define a strategy to safely rollback failed deployments with zero/minimal downtime.",
+      "architecture": "Detect Failure → Stop Traffic Routing → Revert to N-1 → Investigate",
+      "tradeoffs": [
+        {
+          "h1": "Strategy",
+          "h2": "Pros",
+          "h3": "Cons"
+        },
+        {
+          "d1": "Blue/Green",
+          "d2": "Instant rollback",
+          "d3": "Double infra cost"
+        },
+        {
+          "d1": "Canary",
+          "d2": "Limits blast radius",
+          "d3": "Complex routing"
+        },
+        {
+          "d1": "In-Place",
+          "d2": "Cheap/Simple",
+          "d3": "Downtime during revert"
+        }
+      ],
+      "cost": [
+        {
+          "k": "App Service",
+          "v": "Use Deployment Slots for instant swaps"
+        },
+        {
+          "k": "Kubernetes",
+          "v": "Use 'kubectl rollout undo' for fast pod reversion"
+        },
+        {
+          "k": "Databases",
+          "v": "Never rollback DB schemas; write forward-fix migrations"
+        }
+      ],
+      "answer": [
+        "A robust rollback strategy relies on Blue/Green deployments. If the new version fails, we simply swap the load balancer traffic back to the old environment instantly.",
+        "For Kubernetes, I'd use `kubectl rollout undo`.",
+        "The hardest part is the database. I strictly advocate for backward-compatible schema changes.",
+        "If code rolls back, the old code must still understand the new database schema. We fix DB issues by rolling forward, not backward."
+      ],
+      "recall": [
+        "Blue/Green = Instant routing swap",
+        "Roll forward for Databases",
+        "Backward-compatible schemas are mandatory"
+      ]
+    }
+  },
+  {
+    "title": "Developer Needs Production Access",
+    "type": "Decision",
+    "difficulty": "Intermediate",
+    "chips": [
+      "RBAC",
+      "PIM",
+      "Security",
+      "Least Privilege"
+    ],
+    "data": {
+      "reqs": "A developer requests prod access to troubleshoot a live issue. Balance security vs speed.",
+      "architecture": "Request → Approval (JIT) → Time-bound Access → Revoke & Audit",
+      "tradeoffs": [
+        {
+          "h1": "Method",
+          "h2": "Security",
+          "h3": "Speed"
+        },
+        {
+          "d1": "Standing Admin",
+          "d2": "Low ❌",
+          "d3": "High ✅"
+        },
+        {
+          "d1": "PIM / JIT",
+          "d2": "High ✅",
+          "d3": "Medium ⚠"
+        },
+        {
+          "d1": "Read-Only",
+          "d2": "Medium ⚠",
+          "d3": "High ✅"
+        }
+      ],
+      "cost": [
+        {
+          "k": "RBAC",
+          "v": "Grant 'Reader' role globally, restrict 'Contributor'"
+        },
+        {
+          "k": "PIM",
+          "v": "Use Privileged Identity Management for Just-In-Time access"
+        },
+        {
+          "k": "Auditing",
+          "v": "Ensure all actions during access window are logged to Log Analytics"
+        }
+      ],
+      "answer": [
+        "I never grant standing 'Contributor' access to production. I follow the principle of least privilege.",
+        "For troubleshooting, I would provide them standard 'Reader' access to view logs and metrics.",
+        "If they need to execute commands or restart services, I'd use Azure PIM (Privileged Identity Management).",
+        "They request Just-In-Time (JIT) access for 2 hours, it gets approved, and every action they take is strictly audited."
+      ],
+      "recall": [
+        "No standing Prod access",
+        "Use JIT / PIM for temporary elevation",
+        "Audit everything",
+        "Read-only for standard debugging"
+      ]
+    }
+  },
+  {
+    "title": "Azure App Service",
+    "type": "Azure PaaS",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Azure",
+      "App Service",
+      "PaaS",
+      "Deployment Slots",
+      "VNet Integration"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Fully managed Azure PaaS service for hosting web apps, APIs, and background services.",
+      "real_world_scenario": "Deploying a production API with zero downtime while securely accessing Azure SQL.",
+      "architecture_flow": [
+        "Git Push",
+        "GitHub Actions",
+        "Build & Test",
+        "Staging Slot",
+        "Health Check",
+        "Slot Swap",
+        "Production Slot",
+        "Azure SQL"
+      ],
+      "core_concepts": [
+        {
+          "name": "App Service Plan",
+          "definition": "Underlying compute resources.",
+          "usage": "Controls pricing, CPU, memory, scaling."
+        },
+        {
+          "name": "Deployment Slots",
+          "definition": "Separate deployment environments.",
+          "usage": "Blue/Green deployment and rollback."
+        },
+        {
+          "name": "VNet Integration",
+          "definition": "Outbound VNet connectivity.",
+          "usage": "Access databases and private services."
+        },
+        {
+          "name": "Custom Domains",
+          "definition": "DNS mapping for applications.",
+          "usage": "Expose business-friendly URLs."
+        },
+        {
+          "name": "Autoscaling",
+          "definition": "Automatic scale adjustments.",
+          "usage": "Handle traffic spikes."
+        }
+      ],
+      "error_symptoms": {
+        "state": "502 Bad Gateway",
+        "impact": "Application unavailable",
+        "severity": "High",
+        "affected_component": "App Service"
+      },
+      "investigation": [
+        {
+          "step": "Review Logs",
+          "command": "Log Stream",
+          "purpose": "Check startup failures",
+          "expected_finding": "Application exception"
+        }
+      ],
+      "rca": {
+        "problem": "Application unavailable after deployment",
+        "trigger": "Slot swap",
+        "root_cause": "Missing application settings",
+        "impact": "Production outage"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Swap back to previous slot"
+        ],
+        "permanent_fix": [
+          "Validate slot settings",
+          "Add missing configuration"
+        ],
+        "best_practice": "Warm staging slots before swap.",
+        "anti_pattern": "Deploying directly to production.",
+        "preventive_control": [
+          "Smoke Tests",
+          "Release Gates",
+          "Health Checks"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Rollback immediately",
+          "Review logs",
+          "Validate slot configuration"
+        ],
+        "why": "Restore service first, investigate second."
+      },
+      "interview_kill_shot": "Warm up staging slots before swapping traffic to eliminate cold starts.",
+      "quick_recall": {
+        "commands": [
+          "Log Stream",
+          "Diagnose and Solve Problems"
+        ],
+        "concepts": [
+          "Deployment Slots",
+          "VNet Integration",
+          "Autoscaling"
+        ],
+        "keywords": [
+          "Blue-Green",
+          "PaaS",
+          "Slot Swap"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Azure Kubernetes Service (AKS)",
+    "type": "Containers",
+    "difficulty": "Advanced",
+    "chips": [
+      "AKS",
+      "Kubernetes",
+      "Azure CNI",
+      "Node Pools",
+      "Ingress"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Managed Kubernetes service where Azure operates the control plane.",
+      "real_world_scenario": "Running highly available microservices with automatic scaling.",
+      "architecture_flow": [
+        "Git Push",
+        "GitHub Actions",
+        "Docker Build",
+        "ACR",
+        "AKS",
+        "Pods",
+        "Service",
+        "Ingress"
+      ],
+      "core_concepts": [
+        {
+          "name": "Control Plane",
+          "definition": "Cluster management layer.",
+          "usage": "Scheduling and orchestration."
+        },
+        {
+          "name": "Node Pools",
+          "definition": "Groups of worker nodes.",
+          "usage": "Workload separation and scaling."
+        },
+        {
+          "name": "Kubelet",
+          "definition": "Node agent.",
+          "usage": "Runs and monitors containers."
+        },
+        {
+          "name": "Azure CNI",
+          "definition": "Native VNet networking.",
+          "usage": "Pod IP assignment from VNet."
+        },
+        {
+          "name": "Ingress Controller",
+          "definition": "Traffic routing component.",
+          "usage": "HTTP/HTTPS access."
+        }
+      ],
+      "error_symptoms": {
+        "state": "CrashLoopBackOff",
+        "impact": "Application unavailable",
+        "severity": "High",
+        "affected_component": "Pods"
+      },
+      "investigation": [
+        {
+          "step": "Check Pod Status",
+          "command": "kubectl get pods",
+          "purpose": "Identify failing pods",
+          "expected_finding": "CrashLoopBackOff"
+        },
+        {
+          "step": "Check Events",
+          "command": "kubectl describe pod",
+          "purpose": "Find deployment issues",
+          "expected_finding": "Probe failures"
+        }
+      ],
+      "rca": {
+        "problem": "Pods restarting continuously",
+        "trigger": "New deployment",
+        "root_cause": "Failed readiness probe",
+        "impact": "Application unavailable"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Rollback deployment"
+        ],
+        "permanent_fix": [
+          "Correct probe configuration",
+          "Fix application startup"
+        ],
+        "best_practice": "Use readiness and liveness probes.",
+        "anti_pattern": "Deploying without health checks.",
+        "preventive_control": [
+          "Helm validation",
+          "Canary deployments"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Check pod state",
+          "Describe pod",
+          "Review logs",
+          "Rollback if needed"
+        ],
+        "why": "Minimize customer impact before debugging."
+      },
+      "interview_kill_shot": "Azure manages the control plane; customers manage only worker nodes.",
+      "quick_recall": {
+        "commands": [
+          "kubectl get pods",
+          "kubectl describe pod",
+          "kubectl logs --previous"
+        ],
+        "concepts": [
+          "CrashLoopBackOff",
+          "Readiness Probe",
+          "Node Pool"
+        ],
+        "keywords": [
+          "Azure CNI",
+          "Ingress",
+          "AKS"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Terraform",
+    "type": "Infrastructure as Code",
+    "difficulty": "Advanced",
+    "chips": [
+      "Terraform",
+      "IaC",
+      "State",
+      "Modules",
+      "Providers"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Declarative Infrastructure as Code tool that manages desired state.",
+      "real_world_scenario": "Provisioning Dev, QA, and Prod environments consistently.",
+      "architecture_flow": [
+        "Git Push",
+        "Pipeline",
+        "Terraform Init",
+        "Terraform Plan",
+        "Approval",
+        "Terraform Apply"
+      ],
+      "core_concepts": [
+        {
+          "name": "Providers",
+          "definition": "Cloud integrations.",
+          "usage": "Azure resource management."
+        },
+        {
+          "name": "Resources",
+          "definition": "Infrastructure objects.",
+          "usage": "Create and manage cloud assets."
+        },
+        {
+          "name": "Variables",
+          "definition": "Reusable inputs.",
+          "usage": "Environment customization."
+        },
+        {
+          "name": "State File",
+          "definition": "Infrastructure tracking.",
+          "usage": "Detect changes."
+        },
+        {
+          "name": "Modules",
+          "definition": "Reusable Terraform code.",
+          "usage": "Standardized deployments."
+        }
+      ],
+      "error_symptoms": {
+        "state": "State Lock Error",
+        "impact": "Deployment blocked",
+        "severity": "Medium",
+        "affected_component": "Terraform Pipeline"
+      },
+      "investigation": [
+        {
+          "step": "Check Lock",
+          "command": "terraform force-unlock",
+          "purpose": "Verify state ownership",
+          "expected_finding": "Existing lock"
+        }
+      ],
+      "rca": {
+        "problem": "Terraform apply fails",
+        "trigger": "Concurrent deployment",
+        "root_cause": "State file locked",
+        "impact": "Infrastructure changes blocked"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Unlock state if safe"
+        ],
+        "permanent_fix": [
+          "Use remote backend",
+          "Enable state locking"
+        ],
+        "best_practice": "Store state in Azure Blob Storage.",
+        "anti_pattern": "Local state files.",
+        "preventive_control": [
+          "Pipeline serialization",
+          "State locking"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Verify lock owner",
+          "Release lock safely",
+          "Investigate concurrent execution"
+        ],
+        "why": "Prevent state corruption."
+      },
+      "interview_kill_shot": "Terraform calculates the delta between desired and actual state.",
+      "quick_recall": {
+        "commands": [
+          "terraform init",
+          "terraform plan",
+          "terraform apply"
+        ],
+        "concepts": [
+          "State",
+          "Modules",
+          "Providers"
+        ],
+        "keywords": [
+          "Declarative",
+          "Idempotent",
+          "Remote Backend"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Jenkins",
+    "type": "CI/CD",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Jenkins",
+      "Pipeline",
+      "Agent",
+      "Controller",
+      "CI/CD"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Open-source automation server used for building, testing, and deploying applications.",
+      "real_world_scenario": "Automating a legacy application build and deployment process.",
+      "architecture_flow": [
+        "Git Commit",
+        "SCM Webhook",
+        "Jenkins Controller",
+        "Agent Node",
+        "Build",
+        "Test",
+        "Deploy"
+      ],
+      "core_concepts": [
+        {
+          "name": "Controller",
+          "definition": "Central Jenkins management server.",
+          "usage": "Schedules jobs and manages agents."
+        },
+        {
+          "name": "Agent",
+          "definition": "Worker node that executes jobs.",
+          "usage": "Runs builds and deployments."
+        },
+        {
+          "name": "Jenkinsfile",
+          "definition": "Pipeline-as-Code definition.",
+          "usage": "Stores CI/CD logic in source control."
+        },
+        {
+          "name": "Declarative Pipeline",
+          "definition": "Structured pipeline syntax.",
+          "usage": "Standardized and maintainable workflows."
+        },
+        {
+          "name": "Shared Libraries",
+          "definition": "Reusable pipeline code.",
+          "usage": "Standardize enterprise CI/CD patterns."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Build Queue Backlog",
+        "impact": "Slow deployments",
+        "severity": "Medium",
+        "affected_component": "Jenkins Controller"
+      },
+      "investigation": [
+        {
+          "step": "Review Build Queue",
+          "command": "Manage Jenkins -> Build Queue",
+          "purpose": "Identify bottlenecks",
+          "expected_finding": "Controller overloaded"
+        }
+      ],
+      "rca": {
+        "problem": "Builds taking excessive time",
+        "trigger": "High workload",
+        "root_cause": "Jobs running on controller instead of agents",
+        "impact": "Deployment delays"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Move builds to agents"
+        ],
+        "permanent_fix": [
+          "Scale agent pool",
+          "Implement distributed builds"
+        ],
+        "best_practice": "Keep controller lightweight.",
+        "anti_pattern": "Running production workloads on controller.",
+        "preventive_control": [
+          "Auto-scaling agents",
+          "Pipeline governance"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Review queue",
+          "Check agent utilization",
+          "Offload workloads"
+        ],
+        "why": "Controllers should orchestrate, not execute."
+      },
+      "interview_kill_shot": "Distribute workloads across agents to prevent the controller from becoming a bottleneck.",
+      "quick_recall": {
+        "commands": [
+          "Build Queue",
+          "Node Status"
+        ],
+        "concepts": [
+          "Controller",
+          "Agent",
+          "Pipeline"
+        ],
+        "keywords": [
+          "CI/CD",
+          "Jenkinsfile",
+          "Shared Library"
+        ]
+      }
+    }
+  },
+  {
+    "title": "GitHub Actions",
+    "type": "CI/CD",
+    "difficulty": "Intermediate",
+    "chips": [
+      "GitHub Actions",
+      "Workflow",
+      "Runner",
+      "Secrets",
+      "OIDC"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "GitHub-native CI/CD platform that automates workflows based on repository events.",
+      "real_world_scenario": "Running tests and deployments automatically on every pull request.",
+      "architecture_flow": [
+        "Pull Request",
+        "Workflow Trigger",
+        "GitHub Runner",
+        "Lint",
+        "Test",
+        "Deploy"
+      ],
+      "core_concepts": [
+        {
+          "name": "Workflow",
+          "definition": "Automation process defined in YAML.",
+          "usage": "Build, test, deploy."
+        },
+        {
+          "name": "Runner",
+          "definition": "Execution environment.",
+          "usage": "Runs workflow jobs."
+        },
+        {
+          "name": "Secrets",
+          "definition": "Secure credential storage.",
+          "usage": "Authentication and deployments."
+        },
+        {
+          "name": "Actions",
+          "definition": "Reusable workflow components.",
+          "usage": "Simplify automation."
+        },
+        {
+          "name": "Event Trigger",
+          "definition": "Workflow execution condition.",
+          "usage": "Push, PR, schedule, release."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Deployment Authentication Failure",
+        "impact": "Pipeline fails",
+        "severity": "High",
+        "affected_component": "GitHub Runner"
+      },
+      "investigation": [
+        {
+          "step": "Review Workflow Logs",
+          "command": "GitHub Actions Logs",
+          "purpose": "Find authentication failures",
+          "expected_finding": "Invalid credentials"
+        }
+      ],
+      "rca": {
+        "problem": "Deployment cannot access Azure",
+        "trigger": "Workflow execution",
+        "root_cause": "Expired secret or missing RBAC",
+        "impact": "Deployment blocked"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Rotate credentials"
+        ],
+        "permanent_fix": [
+          "Implement OIDC Federation"
+        ],
+        "best_practice": "Use short-lived federated authentication.",
+        "anti_pattern": "Long-lived service principal secrets.",
+        "preventive_control": [
+          "OIDC",
+          "Secret rotation policies"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Validate workflow logs",
+          "Verify permissions",
+          "Move to OIDC"
+        ],
+        "why": "Reduce credential management overhead."
+      },
+      "interview_kill_shot": "Treat .github/workflows as infrastructure and prefer OIDC over static secrets.",
+      "quick_recall": {
+        "commands": [
+          "Workflow Logs"
+        ],
+        "concepts": [
+          "Runner",
+          "Workflow",
+          "OIDC"
+        ],
+        "keywords": [
+          "GitHub Actions",
+          "Secrets",
+          "Matrix Build"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Docker",
+    "type": "Containers",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Docker",
+      "Containers",
+      "Images",
+      "Dockerfile",
+      "Volumes"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Platform for packaging applications into portable containers.",
+      "real_world_scenario": "Ensuring applications run consistently across environments.",
+      "architecture_flow": [
+        "Code",
+        "Docker Build",
+        "Image",
+        "Registry",
+        "Container Runtime"
+      ],
+      "core_concepts": [
+        {
+          "name": "Images",
+          "definition": "Immutable application package.",
+          "usage": "Deploy applications."
+        },
+        {
+          "name": "Containers",
+          "definition": "Running image instance.",
+          "usage": "Execute workloads."
+        },
+        {
+          "name": "Dockerfile",
+          "definition": "Build instructions.",
+          "usage": "Create images."
+        },
+        {
+          "name": "Layers",
+          "definition": "Image build cache units.",
+          "usage": "Optimize builds."
+        },
+        {
+          "name": "Volumes",
+          "definition": "Persistent storage.",
+          "usage": "Store data."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Container Exits Immediately",
+        "impact": "Application unavailable",
+        "severity": "High",
+        "affected_component": "Container"
+      },
+      "investigation": [
+        {
+          "step": "Inspect Logs",
+          "command": "docker logs <container>",
+          "purpose": "Find startup failure",
+          "expected_finding": "Application crash"
+        }
+      ],
+      "rca": {
+        "problem": "Container fails after start",
+        "trigger": "Container launch",
+        "root_cause": "Incorrect ENTRYPOINT",
+        "impact": "Application unavailable"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Correct startup command"
+        ],
+        "permanent_fix": [
+          "Validate image before release"
+        ],
+        "best_practice": "Use multi-stage builds.",
+        "anti_pattern": "Shipping build tools to production.",
+        "preventive_control": [
+          "Image scanning",
+          "CI validation"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Check logs",
+          "Verify ENTRYPOINT",
+          "Test image locally"
+        ],
+        "why": "Container startup failures are usually configuration-related."
+      },
+      "interview_kill_shot": "Multi-stage builds reduce image size and attack surface.",
+      "quick_recall": {
+        "commands": [
+          "docker logs",
+          "docker inspect"
+        ],
+        "concepts": [
+          "Image",
+          "Container",
+          "Volume"
+        ],
+        "keywords": [
+          "Dockerfile",
+          "Layers",
+          "Multi-stage"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Release Management",
+    "type": "Deployment",
+    "difficulty": "Advanced",
+    "chips": [
+      "Release",
+      "Artifact",
+      "Versioning",
+      "Rollback",
+      "Approval"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Process of promoting software safely through environments.",
+      "real_world_scenario": "Moving a validated build from staging to production.",
+      "architecture_flow": [
+        "Build",
+        "Artifact",
+        "QA",
+        "Approval Gate",
+        "Production"
+      ],
+      "core_concepts": [
+        {
+          "name": "Artifacts",
+          "definition": "Immutable build outputs.",
+          "usage": "Promote releases."
+        },
+        {
+          "name": "SemVer",
+          "definition": "Versioning standard.",
+          "usage": "Track releases."
+        },
+        {
+          "name": "Rollback",
+          "definition": "Revert deployment.",
+          "usage": "Restore service."
+        },
+        {
+          "name": "Approval Gates",
+          "definition": "Manual checks.",
+          "usage": "Risk mitigation."
+        },
+        {
+          "name": "Promotion",
+          "definition": "Artifact movement.",
+          "usage": "Environment progression."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Different behavior across environments",
+        "impact": "Failed production release",
+        "severity": "High",
+        "affected_component": "Release Pipeline"
+      },
+      "investigation": [
+        {
+          "step": "Compare Artifacts",
+          "command": "Artifact Repository Review",
+          "purpose": "Check consistency",
+          "expected_finding": "Artifact mismatch"
+        }
+      ],
+      "rca": {
+        "problem": "Production differs from QA",
+        "trigger": "Promotion",
+        "root_cause": "Artifact rebuilt",
+        "impact": "Unexpected failures"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Rollback release"
+        ],
+        "permanent_fix": [
+          "Promote same artifact"
+        ],
+        "best_practice": "Build once, deploy many.",
+        "anti_pattern": "Rebuilding for each environment.",
+        "preventive_control": [
+          "Artifact immutability"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Rollback",
+          "Verify artifact",
+          "Promote validated build"
+        ],
+        "why": "Consistency reduces deployment risk."
+      },
+      "interview_kill_shot": "Never rebuild for production; promote the exact tested artifact.",
+      "quick_recall": {
+        "commands": [
+          "Artifact Validation"
+        ],
+        "concepts": [
+          "Rollback",
+          "Promotion"
+        ],
+        "keywords": [
+          "SemVer",
+          "Approval Gate"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Monitoring",
+    "type": "Operations",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Monitoring",
+      "Metrics",
+      "Alerts",
+      "Dashboards",
+      "SLO"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Tracking system health and performance using metrics and alerts.",
+      "real_world_scenario": "Detecting CPU spikes before users are impacted.",
+      "architecture_flow": [
+        "Application",
+        "Metrics",
+        "Dashboard",
+        "Alert",
+        "Operations Team"
+      ],
+      "core_concepts": [
+        {
+          "name": "Metrics",
+          "definition": "Numerical measurements.",
+          "usage": "Track health."
+        },
+        {
+          "name": "Alerts",
+          "definition": "Notifications.",
+          "usage": "Incident detection."
+        },
+        {
+          "name": "Dashboards",
+          "definition": "Visual monitoring.",
+          "usage": "Operational visibility."
+        },
+        {
+          "name": "Thresholds",
+          "definition": "Alert limits.",
+          "usage": "Trigger notifications."
+        },
+        {
+          "name": "SLOs",
+          "definition": "Service objectives.",
+          "usage": "Measure reliability."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Alert Fatigue",
+        "impact": "Critical alerts ignored",
+        "severity": "Medium",
+        "affected_component": "Monitoring Platform"
+      },
+      "investigation": [
+        {
+          "step": "Review Alert History",
+          "command": "Monitoring Dashboard",
+          "purpose": "Identify noisy alerts",
+          "expected_finding": "Excessive false positives"
+        }
+      ],
+      "rca": {
+        "problem": "Engineers ignore alerts",
+        "trigger": "Frequent notifications",
+        "root_cause": "Poor threshold design",
+        "impact": "Missed incidents"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Disable noisy alerts"
+        ],
+        "permanent_fix": [
+          "Align alerts to SLOs"
+        ],
+        "best_practice": "Alert on user impact.",
+        "anti_pattern": "Alerting on CPU alone.",
+        "preventive_control": [
+          "SLO-based alerting"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Review alert quality",
+          "Reduce noise",
+          "Focus on user impact"
+        ],
+        "why": "Actionable alerts improve reliability."
+      },
+      "interview_kill_shot": "Alert when CPU spikes affect latency, not when CPU spikes alone.",
+      "quick_recall": {
+        "commands": [
+          "Dashboard Review"
+        ],
+        "concepts": [
+          "Metrics",
+          "Alerts",
+          "SLO"
+        ],
+        "keywords": [
+          "Alert Fatigue",
+          "Observability"
+        ]
+      }
+    }
+  },
+  {
+    "title": "RBAC / IAM",
+    "type": "Security",
+    "difficulty": "Advanced",
+    "chips": [
+      "RBAC",
+      "IAM",
+      "Managed Identity",
+      "Roles",
+      "Least Privilege"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Controls access to Azure resources through role assignments.",
+      "real_world_scenario": "Granting CI/CD pipelines least-privilege deployment access.",
+      "architecture_flow": [
+        "Pipeline Identity",
+        "RBAC",
+        "Resource Group",
+        "Azure Resource"
+      ],
+      "core_concepts": [
+        {
+          "name": "Roles",
+          "definition": "Permission bundles.",
+          "usage": "Access control."
+        },
+        {
+          "name": "Scopes",
+          "definition": "Assignment boundaries.",
+          "usage": "Limit permissions."
+        },
+        {
+          "name": "Assignments",
+          "definition": "Role bindings.",
+          "usage": "Grant access."
+        },
+        {
+          "name": "Least Privilege",
+          "definition": "Minimum permissions.",
+          "usage": "Reduce risk."
+        },
+        {
+          "name": "Managed Identity",
+          "definition": "Azure-managed identity.",
+          "usage": "Secretless authentication."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Authorization Failed",
+        "impact": "Deployment blocked",
+        "severity": "High",
+        "affected_component": "Pipeline"
+      },
+      "investigation": [
+        {
+          "step": "Check Role Assignments",
+          "command": "az role assignment list",
+          "purpose": "Verify permissions",
+          "expected_finding": "Missing role"
+        }
+      ],
+      "rca": {
+        "problem": "Pipeline lacks permissions",
+        "trigger": "Deployment attempt",
+        "root_cause": "Missing role assignment",
+        "impact": "Release failure"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Assign required role"
+        ],
+        "permanent_fix": [
+          "Implement least privilege model"
+        ],
+        "best_practice": "Use Managed Identities.",
+        "anti_pattern": "Hardcoded credentials.",
+        "preventive_control": [
+          "RBAC reviews"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Verify scope",
+          "Review assignments",
+          "Use managed identity"
+        ],
+        "why": "Reduce security and operational overhead."
+      },
+      "interview_kill_shot": "Managed Identities eliminate secret management for Azure resources.",
+      "quick_recall": {
+        "commands": [
+          "az role assignment list"
+        ],
+        "concepts": [
+          "RBAC",
+          "Scope",
+          "Managed Identity"
+        ],
+        "keywords": [
+          "Least Privilege",
+          "Authorization"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Troubleshooting",
+    "type": "Operations",
+    "difficulty": "Advanced",
+    "chips": [
+      "Troubleshooting",
+      "Logs",
+      "Tracing",
+      "RCA",
+      "Networking"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Systematic process of identifying and resolving production issues.",
+      "real_world_scenario": "Investigating a 502 Bad Gateway error after deployment.",
+      "architecture_flow": [
+        "Client",
+        "DNS",
+        "Load Balancer",
+        "Application",
+        "Database"
+      ],
+      "core_concepts": [
+        {
+          "name": "Logs",
+          "definition": "Application records.",
+          "usage": "Error diagnosis."
+        },
+        {
+          "name": "Metrics",
+          "definition": "Performance indicators.",
+          "usage": "Health analysis."
+        },
+        {
+          "name": "Tracing",
+          "definition": "Request tracking.",
+          "usage": "Find bottlenecks."
+        },
+        {
+          "name": "Network Analysis",
+          "definition": "Connectivity review.",
+          "usage": "Traffic troubleshooting."
+        },
+        {
+          "name": "RCA",
+          "definition": "Root Cause Analysis.",
+          "usage": "Prevent recurrence."
+        }
+      ],
+      "error_symptoms": {
+        "state": "502 Bad Gateway",
+        "impact": "User requests fail",
+        "severity": "Critical",
+        "affected_component": "Application Path"
+      },
+      "investigation": [
+        {
+          "step": "Trace Request Path",
+          "command": "DNS -> LB -> App -> DB",
+          "purpose": "Find failure point",
+          "expected_finding": "Broken dependency"
+        }
+      ],
+      "rca": {
+        "problem": "Application unavailable",
+        "trigger": "User requests",
+        "root_cause": "Backend connectivity failure",
+        "impact": "Production outage"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Restore connectivity"
+        ],
+        "permanent_fix": [
+          "Improve monitoring"
+        ],
+        "best_practice": "Troubleshoot layer-by-layer.",
+        "anti_pattern": "Jumping directly to conclusions.",
+        "preventive_control": [
+          "Runbooks",
+          "Observability"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Start at client",
+          "Move downstream",
+          "Validate each layer"
+        ],
+        "why": "Eliminates assumptions and reduces MTTR."
+      },
+      "interview_kill_shot": "Start from the client and work backward through the request path.",
+      "quick_recall": {
+        "commands": [
+          "nslookup",
+          "curl",
+          "traceroute"
+        ],
+        "concepts": [
+          "Logs",
+          "Metrics",
+          "Tracing"
+        ],
+        "keywords": [
+          "RCA",
+          "MTTR",
+          "Observability"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Git & Branching Strategy",
+    "type": "Source Control",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Git",
+      "Trunk-Based",
+      "Feature Branch",
+      "Release Branch",
+      "Hotfix"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Strategies for managing source code changes and releases efficiently.",
+      "real_world_scenario": "Deploying a midnight hotfix for a critical production issue.",
+      "architecture_flow": [
+        "Developer",
+        "Feature Branch",
+        "Pull Request",
+        "Main Branch",
+        "CI/CD Pipeline",
+        "Production"
+      ],
+      "core_concepts": [
+        {
+          "name": "Trunk-Based Development",
+          "definition": "Frequent commits to the main branch.",
+          "usage": "Enables continuous delivery."
+        },
+        {
+          "name": "Feature Branch",
+          "definition": "Short-lived development branch.",
+          "usage": "Develop isolated changes."
+        },
+        {
+          "name": "Release Branch",
+          "definition": "Branch used for release preparation.",
+          "usage": "Stabilize releases."
+        },
+        {
+          "name": "Hotfix",
+          "definition": "Urgent production fix.",
+          "usage": "Restore production quickly."
+        },
+        {
+          "name": "Pull Request",
+          "definition": "Code review mechanism.",
+          "usage": "Quality control."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Merge Conflict",
+        "impact": "Delayed deployment",
+        "severity": "Medium",
+        "affected_component": "Source Repository"
+      },
+      "investigation": [
+        {
+          "step": "Review Branch History",
+          "command": "git log --graph --oneline",
+          "purpose": "Identify conflicting changes",
+          "expected_finding": "Divergent commits"
+        }
+      ],
+      "rca": {
+        "problem": "Code cannot be merged",
+        "trigger": "Pull Request",
+        "root_cause": "Long-lived branches",
+        "impact": "Release delay"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Resolve conflicts manually"
+        ],
+        "permanent_fix": [
+          "Adopt trunk-based development"
+        ],
+        "best_practice": "Merge frequently.",
+        "anti_pattern": "Long-running feature branches.",
+        "preventive_control": [
+          "Branch policies",
+          "Frequent integration"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Create hotfix from main",
+          "Deploy",
+          "Back-merge changes"
+        ],
+        "why": "Ensures all branches remain synchronized."
+      },
+      "interview_kill_shot": "Trunk-Based Development minimizes merge complexity and accelerates CI/CD.",
+      "quick_recall": {
+        "commands": [
+          "git log",
+          "git merge",
+          "git rebase"
+        ],
+        "concepts": [
+          "Feature Branch",
+          "Hotfix",
+          "Pull Request"
+        ],
+        "keywords": [
+          "GitFlow",
+          "Trunk-Based"
+        ]
+      }
+    }
+  },
+  {
+    "title": "CI/CD Design Patterns",
+    "type": "Deployment Strategy",
+    "difficulty": "Advanced",
+    "chips": [
+      "Blue-Green",
+      "Canary",
+      "Rolling",
+      "Feature Flags",
+      "Progressive Delivery"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Patterns used to safely release software changes.",
+      "real_world_scenario": "Rolling out a feature to one million users with minimal risk.",
+      "architecture_flow": [
+        "Build",
+        "Deploy",
+        "Canary Users",
+        "Monitor",
+        "Full Rollout"
+      ],
+      "core_concepts": [
+        {
+          "name": "Blue-Green",
+          "definition": "Two identical environments.",
+          "usage": "Instant rollback."
+        },
+        {
+          "name": "Canary",
+          "definition": "Partial traffic rollout.",
+          "usage": "Risk reduction."
+        },
+        {
+          "name": "Rolling Deployment",
+          "definition": "Gradual instance replacement.",
+          "usage": "Zero downtime."
+        },
+        {
+          "name": "Feature Flags",
+          "definition": "Runtime feature control.",
+          "usage": "Separate deployment from release."
+        },
+        {
+          "name": "Progressive Delivery",
+          "definition": "Incremental release strategy.",
+          "usage": "Controlled rollout."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Production Outage",
+        "impact": "All users affected",
+        "severity": "Critical",
+        "affected_component": "Application"
+      },
+      "investigation": [
+        {
+          "step": "Review Deployment History",
+          "command": "Deployment Dashboard",
+          "purpose": "Identify release impact",
+          "expected_finding": "Recent deployment correlation"
+        }
+      ],
+      "rca": {
+        "problem": "Deployment caused outage",
+        "trigger": "Full production release",
+        "root_cause": "No staged rollout",
+        "impact": "Global user impact"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Rollback deployment"
+        ],
+        "permanent_fix": [
+          "Implement canary releases"
+        ],
+        "best_practice": "Use feature flags.",
+        "anti_pattern": "Big-bang deployments.",
+        "preventive_control": [
+          "Canary",
+          "Blue-Green",
+          "Monitoring"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Deploy globally",
+          "Release gradually using flags"
+        ],
+        "why": "Reduces risk while maintaining delivery speed."
+      },
+      "interview_kill_shot": "Separate deployment from release using feature flags.",
+      "quick_recall": {
+        "commands": [
+          "Deployment Dashboard"
+        ],
+        "concepts": [
+          "Canary",
+          "Blue-Green",
+          "Feature Flags"
+        ],
+        "keywords": [
+          "Progressive Delivery"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Kubernetes Deep Dive",
+    "type": "Containers",
+    "difficulty": "Advanced",
+    "chips": [
+      "Pods",
+      "Deployments",
+      "Services",
+      "Ingress",
+      "StatefulSets"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Core Kubernetes primitives used to run and manage workloads.",
+      "real_world_scenario": "Investigating a pod that restarts every hour.",
+      "architecture_flow": [
+        "Ingress",
+        "Service",
+        "Deployment",
+        "Pods",
+        "Persistent Volume"
+      ],
+      "core_concepts": [
+        {
+          "name": "Pods",
+          "definition": "Smallest deployable Kubernetes unit.",
+          "usage": "Run containers."
+        },
+        {
+          "name": "Deployments",
+          "definition": "Manage stateless workloads.",
+          "usage": "Rolling updates."
+        },
+        {
+          "name": "Services",
+          "definition": "Stable network endpoint.",
+          "usage": "Expose workloads."
+        },
+        {
+          "name": "Ingress",
+          "definition": "HTTP/HTTPS traffic routing.",
+          "usage": "External access."
+        },
+        {
+          "name": "StatefulSets",
+          "definition": "Manage stateful applications.",
+          "usage": "Databases and persistent workloads."
+        }
+      ],
+      "error_symptoms": {
+        "state": "CrashLoopBackOff",
+        "impact": "Application instability",
+        "severity": "High",
+        "affected_component": "Pod"
+      },
+      "investigation": [
+        {
+          "step": "Review Pod Events",
+          "command": "kubectl describe pod <pod>",
+          "purpose": "Check scheduling and events",
+          "expected_finding": "Container restart reason"
+        },
+        {
+          "step": "Review Logs",
+          "command": "kubectl logs <pod> --previous",
+          "purpose": "Inspect previous container logs",
+          "expected_finding": "Application exception"
+        }
+      ],
+      "rca": {
+        "problem": "Pod restarts repeatedly",
+        "trigger": "Deployment update",
+        "root_cause": "OOMKilled",
+        "impact": "Application downtime"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Increase memory limits"
+        ],
+        "permanent_fix": [
+          "Optimize application memory usage"
+        ],
+        "best_practice": "Define requests and limits.",
+        "anti_pattern": "Unlimited resource consumption.",
+        "preventive_control": [
+          "Resource quotas",
+          "Monitoring"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Describe pod",
+          "Review logs",
+          "Check resource limits"
+        ],
+        "why": "Most CrashLoopBackOff issues are visible in events and logs."
+      },
+      "interview_kill_shot": "StatefulSets provide stable identities for stateful workloads; Deployments are for stateless apps.",
+      "quick_recall": {
+        "commands": [
+          "kubectl describe",
+          "kubectl logs"
+        ],
+        "concepts": [
+          "Pods",
+          "StatefulSets",
+          "Ingress"
+        ],
+        "keywords": [
+          "CrashLoopBackOff",
+          "OOMKilled"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Security & DevSecOps",
+    "type": "Security",
+    "difficulty": "Advanced",
+    "chips": [
+      "SAST",
+      "DAST",
+      "Dependency Scan",
+      "Container Scan",
+      "Secrets"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Integrating security controls throughout the software delivery lifecycle.",
+      "real_world_scenario": "Implementing a secure pipeline from code commit to deployment.",
+      "architecture_flow": [
+        "Code",
+        "SAST",
+        "Dependency Scan",
+        "Build",
+        "Container Scan",
+        "Deploy",
+        "DAST"
+      ],
+      "core_concepts": [
+        {
+          "name": "SAST",
+          "definition": "Static code analysis.",
+          "usage": "Detect vulnerabilities early."
+        },
+        {
+          "name": "DAST",
+          "definition": "Runtime security testing.",
+          "usage": "Validate deployed applications."
+        },
+        {
+          "name": "Dependency Scanning",
+          "definition": "Library vulnerability analysis.",
+          "usage": "Prevent insecure packages."
+        },
+        {
+          "name": "Container Scanning",
+          "definition": "Image security validation.",
+          "usage": "Detect vulnerable images."
+        },
+        {
+          "name": "Secrets Management",
+          "definition": "Secure credential handling.",
+          "usage": "Protect sensitive information."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Critical Vulnerability Found",
+        "impact": "Release blocked",
+        "severity": "Critical",
+        "affected_component": "Application"
+      },
+      "investigation": [
+        {
+          "step": "Review Scan Results",
+          "command": "Security Dashboard",
+          "purpose": "Identify vulnerable components",
+          "expected_finding": "High severity CVE"
+        }
+      ],
+      "rca": {
+        "problem": "Vulnerability discovered",
+        "trigger": "Security scan",
+        "root_cause": "Outdated dependency",
+        "impact": "Security risk"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Update dependency"
+        ],
+        "permanent_fix": [
+          "Automate dependency scanning"
+        ],
+        "best_practice": "Shift security left.",
+        "anti_pattern": "Scanning only after deployment.",
+        "preventive_control": [
+          "PR checks",
+          "Automated scans"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Block release",
+          "Patch vulnerability",
+          "Re-scan"
+        ],
+        "why": "Security issues are cheaper to fix earlier."
+      },
+      "interview_kill_shot": "Finding vulnerabilities during PR reviews is exponentially cheaper than finding them in production.",
+      "quick_recall": {
+        "commands": [
+          "Security Dashboard"
+        ],
+        "concepts": [
+          "SAST",
+          "DAST",
+          "Container Scan"
+        ],
+        "keywords": [
+          "Shift Left",
+          "DevSecOps"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Azure Key Vault",
+    "type": "Security",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Key Vault",
+      "Secrets",
+      "Keys",
+      "Certificates",
+      "RBAC"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Azure service for securely storing secrets, keys, and certificates.",
+      "real_world_scenario": "Providing database credentials securely to AKS and App Service.",
+      "architecture_flow": [
+        "Application",
+        "Managed Identity",
+        "Key Vault",
+        "Secret Retrieval"
+      ],
+      "core_concepts": [
+        {
+          "name": "Secrets",
+          "definition": "Sensitive values.",
+          "usage": "Store passwords and connection strings."
+        },
+        {
+          "name": "Keys",
+          "definition": "Cryptographic keys.",
+          "usage": "Encryption operations."
+        },
+        {
+          "name": "Certificates",
+          "definition": "TLS/SSL certificates.",
+          "usage": "Secure communications."
+        },
+        {
+          "name": "RBAC",
+          "definition": "Access control.",
+          "usage": "Secure Key Vault access."
+        },
+        {
+          "name": "Secret Rotation",
+          "definition": "Credential lifecycle management.",
+          "usage": "Reduce security risk."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Secret Access Denied",
+        "impact": "Application startup failure",
+        "severity": "High",
+        "affected_component": "Key Vault"
+      },
+      "investigation": [
+        {
+          "step": "Review Access Rights",
+          "command": "Key Vault RBAC",
+          "purpose": "Validate permissions",
+          "expected_finding": "Missing role assignment"
+        }
+      ],
+      "rca": {
+        "problem": "Application cannot retrieve secret",
+        "trigger": "Application startup",
+        "root_cause": "Missing RBAC permission",
+        "impact": "Application unavailable"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Assign Key Vault role"
+        ],
+        "permanent_fix": [
+          "Implement managed identities"
+        ],
+        "best_practice": "Use Key Vault references.",
+        "anti_pattern": "Hardcoded secrets.",
+        "preventive_control": [
+          "Secret rotation",
+          "RBAC reviews"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Verify identity",
+          "Review permissions",
+          "Validate secret access"
+        ],
+        "why": "Most Key Vault issues are permission-related."
+      },
+      "interview_kill_shot": "Use Managed Identities and Key Vault references instead of storing secrets in application settings.",
+      "quick_recall": {
+        "commands": [
+          "az keyvault secret show"
+        ],
+        "concepts": [
+          "Secrets",
+          "RBAC",
+          "Rotation"
+        ],
+        "keywords": [
+          "Managed Identity",
+          "Key Vault"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Observability",
+    "type": "Operations",
+    "difficulty": "Advanced",
+    "chips": [
+      "Metrics",
+      "Logs",
+      "Traces",
+      "OpenTelemetry",
+      "Application Insights"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "The ability to understand system behavior by analyzing metrics, logs, and distributed traces.",
+      "real_world_scenario": "Investigating sudden latency increases across multiple microservices.",
+      "architecture_flow": [
+        "User Request",
+        "Service A",
+        "Service B",
+        "Database",
+        "Telemetry",
+        "Dashboard"
+      ],
+      "core_concepts": [
+        {
+          "name": "Metrics",
+          "definition": "Numerical measurements of system behavior.",
+          "usage": "Performance monitoring."
+        },
+        {
+          "name": "Logs",
+          "definition": "Timestamped event records.",
+          "usage": "Troubleshooting."
+        },
+        {
+          "name": "Traces",
+          "definition": "Request journey across services.",
+          "usage": "Latency analysis."
+        },
+        {
+          "name": "OpenTelemetry",
+          "definition": "Observability framework.",
+          "usage": "Collect telemetry."
+        },
+        {
+          "name": "Application Insights",
+          "definition": "Azure monitoring platform.",
+          "usage": "Application observability."
+        }
+      ],
+      "error_symptoms": {
+        "state": "High Latency",
+        "impact": "Slow user experience",
+        "severity": "High",
+        "affected_component": "Distributed Application"
+      },
+      "investigation": [
+        {
+          "step": "Trace Request",
+          "command": "Application Insights Transaction Search",
+          "purpose": "Locate latency bottleneck",
+          "expected_finding": "Slow downstream dependency"
+        }
+      ],
+      "rca": {
+        "problem": "User requests are slow",
+        "trigger": "Increased traffic",
+        "root_cause": "Slow database query",
+        "impact": "Poor user experience"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Optimize query"
+        ],
+        "permanent_fix": [
+          "Implement distributed tracing"
+        ],
+        "best_practice": "Collect metrics, logs, and traces.",
+        "anti_pattern": "Monitoring metrics alone.",
+        "preventive_control": [
+          "OpenTelemetry",
+          "SLO monitoring"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Follow request trace",
+          "Identify bottleneck",
+          "Optimize dependency"
+        ],
+        "why": "Observability explains why systems fail."
+      },
+      "interview_kill_shot": "Monitoring tells you something is broken; observability tells you why.",
+      "quick_recall": {
+        "commands": [
+          "Application Insights",
+          "Transaction Search"
+        ],
+        "concepts": [
+          "Metrics",
+          "Logs",
+          "Traces"
+        ],
+        "keywords": [
+          "OpenTelemetry",
+          "Distributed Tracing"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Incident Management",
+    "type": "Operations",
+    "difficulty": "Advanced",
+    "chips": [
+      "Severity",
+      "Escalation",
+      "War Room",
+      "RCA",
+      "Postmortem"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Structured process for responding to and learning from production incidents.",
+      "real_world_scenario": "Coordinating response during a major production outage.",
+      "architecture_flow": [
+        "Alert",
+        "Incident",
+        "War Room",
+        "Mitigation",
+        "RCA",
+        "Postmortem"
+      ],
+      "core_concepts": [
+        {
+          "name": "Severity Levels",
+          "definition": "Incident priority classification.",
+          "usage": "Determine urgency."
+        },
+        {
+          "name": "Escalation Matrix",
+          "definition": "Response hierarchy.",
+          "usage": "Notify stakeholders."
+        },
+        {
+          "name": "War Room",
+          "definition": "Central coordination group.",
+          "usage": "Incident management."
+        },
+        {
+          "name": "RCA",
+          "definition": "Root Cause Analysis.",
+          "usage": "Identify underlying issue."
+        },
+        {
+          "name": "Postmortem",
+          "definition": "Incident review process.",
+          "usage": "Continuous improvement."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Prolonged Outage",
+        "impact": "Revenue loss",
+        "severity": "Critical",
+        "affected_component": "Production Platform"
+      },
+      "investigation": [
+        {
+          "step": "Review Timeline",
+          "command": "Incident Timeline Review",
+          "purpose": "Reconstruct incident",
+          "expected_finding": "Missed escalation"
+        }
+      ],
+      "rca": {
+        "problem": "Slow incident response",
+        "trigger": "Major outage",
+        "root_cause": "No defined escalation process",
+        "impact": "Extended downtime"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Establish incident commander"
+        ],
+        "permanent_fix": [
+          "Create escalation matrix"
+        ],
+        "best_practice": "Run blameless postmortems.",
+        "anti_pattern": "Blaming individuals.",
+        "preventive_control": [
+          "Runbooks",
+          "Incident drills"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Mitigate first",
+          "Communicate clearly",
+          "Conduct RCA"
+        ],
+        "why": "Restore service before assigning actions."
+      },
+      "interview_kill_shot": "Blameless postmortems focus on process failures, not people failures.",
+      "quick_recall": {
+        "commands": [
+          "Incident Timeline"
+        ],
+        "concepts": [
+          "War Room",
+          "Escalation",
+          "RCA"
+        ],
+        "keywords": [
+          "SEV1",
+          "Postmortem"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Disaster Recovery & Backup",
+    "type": "Business Continuity",
+    "difficulty": "Advanced",
+    "chips": [
+      "RTO",
+      "RPO",
+      "Failover",
+      "Geo-Replication",
+      "Backup"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Strategies for recovering applications and data after major failures.",
+      "real_world_scenario": "Recovering from a complete Azure region outage.",
+      "architecture_flow": [
+        "Primary Region",
+        "Replication",
+        "Secondary Region",
+        "Failover",
+        "Recovery"
+      ],
+      "core_concepts": [
+        {
+          "name": "RTO",
+          "definition": "Recovery Time Objective.",
+          "usage": "Maximum acceptable downtime."
+        },
+        {
+          "name": "RPO",
+          "definition": "Recovery Point Objective.",
+          "usage": "Maximum acceptable data loss."
+        },
+        {
+          "name": "Geo-Replication",
+          "definition": "Cross-region replication.",
+          "usage": "Disaster protection."
+        },
+        {
+          "name": "Failover",
+          "definition": "Switch to secondary system.",
+          "usage": "Restore service."
+        },
+        {
+          "name": "Backup",
+          "definition": "Data protection mechanism.",
+          "usage": "Recovery operations."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Regional Outage",
+        "impact": "Application unavailable",
+        "severity": "Critical",
+        "affected_component": "Primary Region"
+      },
+      "investigation": [
+        {
+          "step": "Review DR Status",
+          "command": "Failover Dashboard",
+          "purpose": "Verify secondary readiness",
+          "expected_finding": "Replication healthy"
+        }
+      ],
+      "rca": {
+        "problem": "Service unavailable",
+        "trigger": "Region failure",
+        "root_cause": "No tested failover process",
+        "impact": "Extended outage"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Initiate failover"
+        ],
+        "permanent_fix": [
+          "Regular DR testing"
+        ],
+        "best_practice": "Align architecture to RTO/RPO.",
+        "anti_pattern": "Untested disaster recovery plans.",
+        "preventive_control": [
+          "Geo-redundancy",
+          "DR exercises"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Assess impact",
+          "Fail over",
+          "Validate recovery"
+        ],
+        "why": "Business continuity depends on tested recovery plans."
+      },
+      "interview_kill_shot": "HA protects against server failures; DR protects against regional failures.",
+      "quick_recall": {
+        "commands": [
+          "Failover Dashboard"
+        ],
+        "concepts": [
+          "RTO",
+          "RPO",
+          "Failover"
+        ],
+        "keywords": [
+          "Geo-Replication",
+          "Backup"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Cost Optimization (FinOps)",
+    "type": "Cloud Governance",
+    "difficulty": "Intermediate",
+    "chips": [
+      "Rightsizing",
+      "Reserved Instances",
+      "Spot",
+      "Autoscaling",
+      "Lifecycle"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Practice of optimizing cloud spend while maintaining performance and reliability.",
+      "real_world_scenario": "Investigating a cloud bill that doubled unexpectedly.",
+      "architecture_flow": [
+        "Resources",
+        "Usage Analysis",
+        "Cost Review",
+        "Optimization",
+        "Savings"
+      ],
+      "core_concepts": [
+        {
+          "name": "Rightsizing",
+          "definition": "Match resources to workload.",
+          "usage": "Reduce waste."
+        },
+        {
+          "name": "Reserved Instances",
+          "definition": "Long-term discounted capacity.",
+          "usage": "Predictable workloads."
+        },
+        {
+          "name": "Spot Instances",
+          "definition": "Discounted interruptible capacity.",
+          "usage": "Non-critical workloads."
+        },
+        {
+          "name": "Autoscaling",
+          "definition": "Dynamic resource scaling.",
+          "usage": "Cost efficiency."
+        },
+        {
+          "name": "Lifecycle Policies",
+          "definition": "Automated data tiering.",
+          "usage": "Storage cost reduction."
+        }
+      ],
+      "error_symptoms": {
+        "state": "Unexpected Cost Increase",
+        "impact": "Budget exceeded",
+        "severity": "Medium",
+        "affected_component": "Cloud Spend"
+      },
+      "investigation": [
+        {
+          "step": "Review Cost Analysis",
+          "command": "Azure Cost Management",
+          "purpose": "Identify cost drivers",
+          "expected_finding": "Unused resources"
+        }
+      ],
+      "rca": {
+        "problem": "Monthly bill doubled",
+        "trigger": "Infrastructure growth",
+        "root_cause": "Orphaned resources and overprovisioning",
+        "impact": "Budget overrun"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Remove unused resources"
+        ],
+        "permanent_fix": [
+          "Implement FinOps governance"
+        ],
+        "best_practice": "Schedule non-production shutdowns.",
+        "anti_pattern": "Always-on development environments.",
+        "preventive_control": [
+          "Budget alerts",
+          "Cost reviews"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Identify cost spikes",
+          "Remove waste",
+          "Rightsize resources"
+        ],
+        "why": "Unused resources are often the fastest cost savings."
+      },
+      "interview_kill_shot": "Start with orphaned resources before optimizing active workloads.",
+      "quick_recall": {
+        "commands": [
+          "Azure Cost Management"
+        ],
+        "concepts": [
+          "Rightsizing",
+          "Reserved Instances",
+          "Spot"
+        ],
+        "keywords": [
+          "FinOps",
+          "Optimization"
+        ]
+      }
+    }
+  },
+  {
+    "title": "System Design for DevOps Engineers",
+    "type": "Architecture",
+    "difficulty": "Advanced",
+    "chips": [
+      "Availability",
+      "Scalability",
+      "Security",
+      "Operations",
+      "Cost"
+    ],
+    "isNewSchema": true,
+    "data": {
+      "definition": "Designing platforms that balance reliability, scalability, security, and operational efficiency.",
+      "real_world_scenario": "Building a multi-environment container platform from scratch.",
+      "architecture_flow": [
+        "Users",
+        "Front Door",
+        "Application Gateway",
+        "AKS",
+        "Database",
+        "Monitoring"
+      ],
+      "core_concepts": [
+        {
+          "name": "Availability",
+          "definition": "System uptime and resilience.",
+          "usage": "Reduce downtime."
+        },
+        {
+          "name": "Scalability",
+          "definition": "Ability to handle growth.",
+          "usage": "Support demand."
+        },
+        {
+          "name": "Security",
+          "definition": "Protect systems and data.",
+          "usage": "Risk reduction."
+        },
+        {
+          "name": "Cost",
+          "definition": "Financial efficiency.",
+          "usage": "Sustainable operations."
+        },
+        {
+          "name": "Operations",
+          "definition": "Day-2 management.",
+          "usage": "Maintain reliability."
+        }
+      ],
+      "error_symptoms": {
+        "state": "System Failure Under Load",
+        "impact": "Service degradation",
+        "severity": "Critical",
+        "affected_component": "Platform"
+      },
+      "investigation": [
+        {
+          "step": "Review Architecture",
+          "command": "Architecture Diagram Review",
+          "purpose": "Identify bottlenecks",
+          "expected_finding": "Single point of failure"
+        }
+      ],
+      "rca": {
+        "problem": "System cannot scale",
+        "trigger": "Traffic spike",
+        "root_cause": "Single point of failure",
+        "impact": "User impact"
+      },
+      "resolution_prevention": {
+        "immediate_fix": [
+          "Scale infrastructure"
+        ],
+        "permanent_fix": [
+          "Redesign for redundancy"
+        ],
+        "best_practice": "Design for Day-2 operations.",
+        "anti_pattern": "Ignoring observability and automation.",
+        "preventive_control": [
+          "IaC",
+          "Monitoring",
+          "Chaos Testing"
+        ]
+      },
+      "interview_answer": {
+        "response": [
+          "Eliminate SPOFs",
+          "Automate operations",
+          "Build observability first"
+        ],
+        "why": "Maintainability is as important as deployment."
+      },
+      "interview_kill_shot": "A system is only as good as its Day-2 operations strategy.",
+      "quick_recall": {
+        "commands": [
+          "Architecture Review"
+        ],
+        "concepts": [
+          "Availability",
+          "Scalability",
+          "Operations"
+        ],
+        "keywords": [
+          "SPOF",
+          "Observability",
+          "Automation"
+        ]
+      }
+    }
+  }
+]

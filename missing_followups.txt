@@ -1,0 +1,80 @@
+AKS Deployment Failing After Release
+Terraform Apply Fails in Production
+Application Unavailable After Deployment
+Cloud Bill Increased by 50%
+App Service Cannot Access SQL
+AKS Pods Not Scaling
+Pipeline Takes 40 Minutes
+Production Outage at 2 AM
+Deployment Failed During Release Window
+Jenkins Pipeline Suddenly Failing
+Terraform Destroyed Resources
+Works Locally But Fails In Docker
+Passed QA But Failed Production
+Grafana Alert Triggered At Midnight
+GitHub Actions Not Triggering
+App Cannot Access Azure SQL (Auth)
+Release Rollback Strategy
+Developer Needs Production Access
+Azure App Service
+Azure Kubernetes Service (AKS)
+Terraform
+Jenkins
+GitHub Actions
+Docker
+Release Management
+Monitoring
+RBAC / IAM
+Troubleshooting
+Git & Branching Strategy
+CI/CD Design Patterns
+Kubernetes Deep Dive
+Security & DevSecOps
+Azure Key Vault
+Observability
+Incident Management
+Disaster Recovery & Backup
+Cost Optimization (FinOps)
+System Design for DevOps Engineers
+Azure Virtual Networks: Core & Peering
+Routing & Secure Endpoint Solutions
+High Availability & Traffic Management
+Enterprise IaC Module Architectures
+Configuration Management & Orchestration
+Environment Architecture & Artifact Lifecycle
+Containerization & Microservices Infrastructure
+Continuous Delivery Design & Federation
+Observability & Live Production Triage
+Kubernetes Fundamentals
+Cluster Architecture
+Pods
+Labels, Selectors & Annotations
+ReplicaSet
+Deployments
+Services
+Ingress
+ConfigMap
+Secrets
+Storage (Volumes, PV, PVC, StorageClass)
+StatefulSet
+DaemonSet
+Jobs
+CronJobs
+Namespaces
+Resource Management
+Health Checks (Liveness, Readiness, Startup Probes)
+Scheduling
+Networking
+RBAC & Security
+Security Features
+Autoscaling
+Helm
+Operators & CRDs
+Troubleshooting Kubernetes
+Backup & Disaster Recovery
+Upgrades & Maintenance
+Common kubectl Commands
+YAML & Kubernetes Manifests
+CI/CD Integration
+Cloud Kubernetes (EKS/GKE/AKS)
+Scenario-Based Kubernetes Interview Questions

@@ -410,6 +410,72 @@
         }
         .rapid-fire-a.expanded { display: block; }
 
+        /* K8s Specific Components */
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 8px;
+            align-items: center;
+            padding: 8px;
+            background: var(--surface-2);
+            border-radius: 6px;
+            margin-bottom: 6px;
+        }
+        .compare-vs { color: var(--status-warning); font-weight: 700; font-size: 12px; text-align: center; }
+        .compare-label { font-weight: 600; color: var(--text-primary); font-size: 13px; }
+
+        .code-block-card {
+            background: var(--code-bg);
+            border: 1px solid #313244;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .code-block-header {
+            padding: 6px 10px;
+            background: rgba(49, 50, 68, 0.6);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            border-bottom: 1px solid #313244;
+        }
+        .code-block-body {
+            padding: 10px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            color: #a6accd;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        .obs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        @media (min-width: 600px) { .obs-grid { grid-template-columns: repeat(4, 1fr); } }
+        .obs-section { background: var(--surface-2); padding: 8px; border-radius: 6px; }
+        .obs-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+
+        .trade-off-card {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 6px;
+        }
+        .trade-off-title { font-weight: 700; color: var(--status-info); font-size: 14px; margin-bottom: 6px; }
+        .trade-off-row { display: flex; gap: 6px; flex-wrap: wrap; }
+        .trade-off-pro { background: rgba(52, 211, 153, 0.1); color: var(--status-success); padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .trade-off-con { background: rgba(248, 113, 113, 0.1); color: var(--status-error); padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+
+        .pill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+        .pill-item { background: var(--surface-3); border: 1px solid var(--border); padding: 4px 10px; border-radius: 20px; font-size: 12px; color: var(--text-secondary); }
+        .pill-item.warn { border-color: rgba(251, 191, 36, 0.3); color: var(--status-warning); background: rgba(251, 191, 36, 0.06); }
+        .pill-item.info { border-color: rgba(96, 165, 250, 0.3); color: var(--status-info); background: rgba(96, 165, 250, 0.06); }
+        .pill-item.link { border-color: rgba(196, 181, 253, 0.3); color: #C4B5FD; background: rgba(196, 181, 253, 0.06); }
+
         /* Index Modal Styles */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -456,6 +522,7 @@
             <button class="mode-btn" data-mode="practice">Practice</button>
             <button class="mode-btn" data-mode="review">Review</button>
             <button class="mode-btn" data-mode="rapid_fire">Rapid Fire</button>
+            <button class="mode-btn" data-mode="follow_up">Follow Up</button>
         </div>
         <button class="nav-btn" id="btn-next">❯</button>
     </div>
@@ -534,7 +601,7 @@ async function loadScenarios() {
         
         // Auto-seed ratings for slides marked as Mastered
         scenarios.forEach((s, idx) => {
-            if (s.confidence_rating === "Mastered" && !ratings[idx]) {
+            if ((s.confidence_rating === "Mastered") && !ratings[idx]) {
                 ratings[idx] = 'done';
             }
         });
@@ -717,7 +784,7 @@ function renderScenario() {
     let alwaysVisibleHtml = '';
     
     // ======== RENDER ENGINE SWITCH ======== //
-    if (s.schema === 'v3') {
+    if (s.schema === 'v3' || s.schema === 'k8s') {
         const d = s; // since data is flat for v3
         
         // 1. Definition & Scenario
@@ -725,6 +792,7 @@ function renderScenario() {
         <div class="card">
             <h2 class="card-title">📖 Definition & Scenario</h2>
             <p class="body-text"><strong style="color:var(--text-primary)">Definition:</strong> ${format(d.definition)}</p>
+            ${d.why_it_matters ? `<hr><p class="body-text"><strong style="color:var(--status-info)">Why It Matters:</strong> ${format(d.why_it_matters)}</p>` : ''}
             <hr>
             <p class="body-text"><strong style="color:var(--text-primary)">Real World:</strong> ${format(d.real_world_scenario)}</p>
         </div>`;
@@ -841,6 +909,113 @@ function renderScenario() {
             <div class="card card-kill-shot" style="grid-column: 1/-1;">
                 <h2 class="card-title" style="color: #FCA5A5;">🔥 Interview Kill Shot</h2>
                 <p class="body-text" style="font-weight: 600; font-size: 14px; text-align: center; font-style: italic;">"${format(d.interview_kill_shot)}"</p>
+            </div>`;
+        }
+
+        // K8s: Comparisons
+        if (d.comparisons && d.comparisons.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">⚖️ Comparisons</h2>
+                ${d.comparisons.map(c => `
+                    <div class="compare-row">
+                        <div class="compare-label" style="text-align:right;">${format(c.topic_a)}</div>
+                        <div class="compare-vs">VS</div>
+                        <div class="compare-label">${format(c.topic_b)}</div>
+                    </div>
+                    <p class="body-text" style="text-align:center; margin-bottom:8px;">${format(c.summary)}</p>
+                `).join('')}
+            </div>`;
+        }
+
+        // K8s: Code Examples
+        if (d.code_examples && d.code_examples.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">💻 Code Examples</h2>
+                ${d.code_examples.map(ex => `
+                    <div class="code-block-card">
+                        <div class="code-block-header">${format(ex.title)} · ${ex.language || 'text'}</div>
+                        <div class="code-block-body">${format(ex.snippet)}</div>
+                    </div>
+                `).join('')}
+            </div>`;
+        }
+
+        // K8s: Observability
+        if (d.observability) {
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">📡 Observability</h2>
+                <div class="obs-grid">
+                    ${d.observability.logs ? `<div class="obs-section"><div class="obs-section-title">📋 Logs</div><ul class="no-bullet">${d.observability.logs.map(l => `<li class="body-text">${format(l)}</li>`).join('')}</ul></div>` : ''}
+                    ${d.observability.metrics ? `<div class="obs-section"><div class="obs-section-title">📊 Metrics</div><ul class="no-bullet">${d.observability.metrics.map(m => `<li class="body-text">${format(m)}</li>`).join('')}</ul></div>` : ''}
+                    ${d.observability.traces ? `<div class="obs-section"><div class="obs-section-title">🔗 Traces</div><ul class="no-bullet">${d.observability.traces.map(t => `<li class="body-text">${format(t)}</li>`).join('')}</ul></div>` : ''}
+                    ${d.observability.alerts ? `<div class="obs-section"><div class="obs-section-title">🔔 Alerts</div><ul class="no-bullet">${d.observability.alerts.map(a => `<li class="body-text">${format(a)}</li>`).join('')}</ul></div>` : ''}
+                </div>
+            </div>`;
+        }
+
+        // K8s: Trade-offs
+        if (d.trade_offs && d.trade_offs.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">⚖ Trade-offs</h2>
+                ${d.trade_offs.map(t => `
+                    <div class="trade-off-card">
+                        <div class="trade-off-title">${format(t.choice)}</div>
+                        <div class="trade-off-row" style="margin-bottom:4px;">✅ ${(t.advantages || []).map(a => `<span class="trade-off-pro">${format(a)}</span>`).join('')}</div>
+                        <div class="trade-off-row">⚠️ ${(t.disadvantages || []).map(d => `<span class="trade-off-con">${format(d)}</span>`).join('')}</div>
+                    </div>
+                `).join('')}
+            </div>`;
+        }
+
+        // K8s: Performance & Security Considerations
+        if ((d.performance_considerations && d.performance_considerations.length > 0) || (d.security_considerations && d.security_considerations.length > 0)) {
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">🛡 Considerations</h2>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    ${d.performance_considerations ? `<div><h3 class="data-key" style="color:var(--status-warning); margin-bottom:6px;">⚡ Performance</h3><ul>${d.performance_considerations.map(p => `<li class="body-text">${format(p)}</li>`).join('')}</ul></div>` : ''}
+                    ${d.security_considerations ? `<div><h3 class="data-key" style="color:var(--status-error); margin-bottom:6px;">🔒 Security</h3><ul>${d.security_considerations.map(s => `<li class="body-text">${format(s)}</li>`).join('')}</ul></div>` : ''}
+                </div>
+            </div>`;
+        }
+
+        // K8s: Common Interview Questions
+        if (d.common_interview_questions && d.common_interview_questions.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">🎤 Common Interview Questions</h2>
+                <div class="pill-list">${d.common_interview_questions.map(q => `<span class="pill-item info">${format(q)}</span>`).join('')}</div>
+            </div>`;
+        }
+
+        // K8s: Common Pitfalls
+        if (d.common_pitfalls && d.common_pitfalls.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">⚠️ Common Pitfalls</h2>
+                <div class="pill-list">${d.common_pitfalls.map(p => `<span class="pill-item warn">${format(p)}</span>`).join('')}</div>
+            </div>`;
+        }
+
+        // K8s: Follow-up Questions
+        if (d.follow_up_questions && d.follow_up_questions.length > 0) {
+            alwaysVisibleHtml += `
+            <div class="card">
+                <h2 class="card-title">🔗 Follow-up Questions</h2>
+                <div class="pill-list">${d.follow_up_questions.map(q => `<span class="pill-item">${format(q)}</span>`).join('')}</div>
+            </div>`;
+        }
+
+        // K8s: Related Topics
+        if (d.related_topics && d.related_topics.length > 0) {
+            alwaysVisibleHtml += `
+            <div class="card">
+                <h2 class="card-title">🧩 Related Topics</h2>
+                <div class="pill-list">${d.related_topics.map(t => `<span class="pill-item link">${format(t)}</span>`).join('')}</div>
             </div>`;
         }
 
@@ -1162,7 +1337,7 @@ function renderScenario() {
     let html = '';
 
     if (currentMode === 'rapid_fire') {
-        if (s.schema === 'v3' && s.rapid_fire_qa && s.rapid_fire_qa.length > 0) {
+        if (s.rapid_fire_qa && s.rapid_fire_qa.length > 0) {
             html += `
             <div class="card" style="grid-column: 1/-1;">
                 <h2 class="card-title text-warning">⚡ Rapid Fire Q&A</h2>
@@ -1183,6 +1358,22 @@ function renderScenario() {
             <div class="card" style="grid-column: 1/-1; text-align: center; padding: 40px;">
                 <h2 class="card-title text-warning" style="justify-content: center;">No Rapid Fire Q&A</h2>
                 <p class="body-text">This scenario does not have rapid fire questions available.</p>
+            </div>`;
+        }
+    } else if (currentMode === 'follow_up') {
+        if (s.follow_up_questions && s.follow_up_questions.length > 0) {
+            html += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title" style="color:#C4B5FD;">🔗 Follow-Up Questions</h2>
+                <ul style="margin-top: 12px; padding-left: 20px;">
+                    ${s.follow_up_questions.map(q => `<li class="body-text" style="margin-bottom:8px;">${format(q)}</li>`).join('')}
+                </ul>
+            </div>`;
+        } else {
+            html += `
+            <div class="card" style="grid-column: 1/-1; text-align: center; padding: 40px;">
+                <h2 class="card-title text-warning" style="justify-content: center;">No Follow-Up Questions</h2>
+                <p class="body-text">This scenario does not have follow-up questions yet.</p>
             </div>`;
         }
     } else {

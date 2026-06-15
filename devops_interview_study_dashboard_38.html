@@ -21,7 +21,7 @@
             
             --text-primary: #F8FAFC;
             --text-secondary: #CBD5E1;
-            --text-muted: #94A3B8;
+            --text-muted: #A1A1AA;
             
             --status-error: #F87171;
             --status-warning: #FBBF24;
@@ -44,7 +44,7 @@
         /* TYPOGRAPHY SYSTEM */
         h1 {
             font-family: "SF Pro Display", "Inter", "Segoe UI", sans-serif;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.15;
@@ -57,7 +57,7 @@
 
         h2, .card-title {
             font-family: "SF Pro Display", "Inter", "Segoe UI", sans-serif;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 650;
             letter-spacing: -0.01em;
             line-height: 1.25;
@@ -78,18 +78,18 @@
 
         .body-text, .data-val, ul, .rca-step, .timeline-item, .arrow-map, .arch-path, p {
             font-family: "Inter", "Segoe UI", sans-serif;
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 450;
-            line-height: 1.45;
+            line-height: 1.6;
             max-width: 80ch; /* Maximum Line Length */
             color: var(--text-secondary);
         }
 
         .meta, .chip, .badge, .nav-text, .rca-arrow, .matrix-data {
             font-family: "Inter", "Segoe UI", sans-serif;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 400;
-            line-height: 1.35;
+            line-height: 1.45;
             color: var(--text-muted);
         }
 
@@ -251,15 +251,22 @@
             grid-template-columns: 1fr; 
             gap: 8px; 
             padding-bottom: 20px;
+            transition: all 0.3s ease;
         }
         
-        @media (min-width: 600px) { .dashboard { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 600px) { .dashboard:not(.layout-1col) { grid-template-columns: repeat(2, 1fr); } }
+
+        .dashboard.layout-1col {
+            grid-template-columns: 1fr;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
         /* Alternating Surfaces */
-        .card { padding: 8px; background-color: var(--surface-1); border-radius: 6px; }
+        .card { padding: 12px; background-color: var(--surface-1); border-radius: 6px; }
         .card:nth-child(even) { background-color: var(--surface-2); }
-        @media (min-width: 600px) { .card { padding: 10px; } } 
-        @media (min-width: 1024px) { .card { padding: 12px; } } 
+        @media (min-width: 600px) { .card { padding: 16px; } } 
+        @media (min-width: 1024px) { .card { padding: 20px; } } 
 
         /* Reveal Button */
         .reveal-btn {
@@ -516,7 +523,10 @@
 <body>
 
     <div class="nav-bar">
-        <button class="nav-btn" id="btn-prev">❮</button>
+        <div style="display:flex; gap: 4px; align-items: center;">
+            <button class="nav-btn" id="btn-prev">❮</button>
+            <button class="nav-btn" id="btn-layout" onclick="toggleLayout()" style="background:var(--surface-1); border:1px solid var(--border); padding:6px 10px; font-size:12px; font-weight:700;">📖 1 Col</button>
+        </div>
         <div class="mode-selector">
             <button class="mode-btn active" data-mode="learn">Learn</button>
             <button class="mode-btn" data-mode="practice">Practice</button>
@@ -555,6 +565,20 @@ let currentMode = 'learn'; // 'learn', 'practice', 'review'
 let solutionRevealed = false;
 let currentIndex = 0;
 let ratings = {}; // Maps index to 'done', 'review', 'revisit'
+let isOneColumn = true; // Default to 1 Column for better reading
+
+function toggleLayout() {
+    isOneColumn = !isOneColumn;
+    const db = document.getElementById('dashboard');
+    const btn = document.getElementById('btn-layout');
+    if (isOneColumn) {
+        db.classList.add('layout-1col');
+        btn.innerHTML = '📖 1 Col';
+    } else {
+        db.classList.remove('layout-1col');
+        btn.innerHTML = '📚 2 Col';
+    }
+}
 
 // Format helper to highlight specific syntax dynamically
 function format(text) {
@@ -606,6 +630,9 @@ async function loadScenarios() {
             }
         });
         
+        // Initialize layout preference
+        if (isOneColumn) document.getElementById('dashboard').classList.add('layout-1col');
+
         // Initialize first render after data is loaded
         renderScenario();
     } catch (error) {
@@ -762,10 +789,42 @@ function renderScenario() {
     
     document.getElementById('counter').innerHTML = `Question ${activeIndices.indexOf(currentIndex) + 1} of ${activeIndices.length} <span>▼</span>`;
     document.getElementById('q-title').innerText = s.title;
+    const highlightMainTags = (tag) => {
+        const t = tag.toLowerCase();
+        let bg = 'var(--surface-3)', col = 'var(--text-muted)', border = 'transparent';
+        
+        if (t.includes('kubernetes') || t.includes('container') || t.includes('docker')) {
+            bg = 'rgba(56, 189, 248, 0.1)'; col = '#38BDF8'; border = 'rgba(56, 189, 248, 0.3)';
+        } else if (t.includes('troubleshooting') || t.includes('incident') || t.includes('error') || t.includes('debugging')) {
+            bg = 'rgba(248, 113, 113, 0.1)'; col = '#F87171'; border = 'rgba(248, 113, 113, 0.3)';
+        } else if (t.includes('security') || t.includes('backup') || t.includes('continuity')) {
+            bg = 'rgba(251, 146, 60, 0.1)'; col = '#FB923C'; border = 'rgba(251, 146, 60, 0.3)';
+        } else if (t.includes('architecture') || t.includes('decision') || t.includes('design')) {
+            bg = 'rgba(192, 132, 252, 0.1)'; col = '#C084FC'; border = 'rgba(192, 132, 252, 0.3)';
+        } else if (t.includes('ci/cd') || t.includes('deployment') || t.includes('operations') || t.includes('infrastructure as code') || t.includes('terraform')) {
+            bg = 'rgba(52, 211, 153, 0.1)'; col = '#34D399'; border = 'rgba(52, 211, 153, 0.3)';
+        } else if (t.includes('routing') || t.includes('endpoint') || t.includes('load balancing') || t.includes('networking')) {
+            bg = 'rgba(45, 212, 191, 0.1)'; col = '#2DD4BF'; border = 'rgba(45, 212, 191, 0.3)';
+        } else if (t.includes('configuration') || t.includes('ansible') || t.includes('environments') || t.includes('source control')) {
+            bg = 'rgba(99, 102, 241, 0.1)'; col = '#818CF8'; border = 'rgba(99, 102, 241, 0.3)';
+        } else if (t.includes('automation') || t.includes('python')) {
+            bg = 'rgba(251, 191, 36, 0.1)'; col = '#FBBF24'; border = 'rgba(251, 191, 36, 0.3)';
+        } else if (t.includes('linux')) {
+            bg = 'rgba(148, 163, 184, 0.1)'; col = '#CBD5E1'; border = 'rgba(148, 163, 184, 0.3)';
+        } else if (t.includes('azure') || t.includes('paas') || t.includes('cloud')) {
+            bg = 'rgba(129, 140, 248, 0.1)'; col = '#818CF8'; border = 'rgba(129, 140, 248, 0.3)';
+        }
+        
+        if (border !== 'transparent') {
+            return `<span class="chip" style="background:${bg}; color:${col}; border: 1px solid ${border}; font-weight: 600;">[${tag}]</span>`;
+        }
+        return `<span class="chip">[${tag}]</span>`;
+    };
+
     document.getElementById('q-chips').innerHTML = `
-        ${s.schema === 'v3' ? `<span class="tag-category">${s.type}</span>` : `<span class="badge">[${s.type}]</span>`}
+        ${s.schema === 'v3' || s.schema === 'k8s' ? highlightMainTags(s.type) : highlightMainTags(s.type)}
         <span class="chip">[${s.difficulty}]</span>
-        ${s.chips ? s.chips.map(c => `<span class="chip">[${c}]</span>`).join('') : ''}
+        ${s.chips ? s.chips.map(c => highlightMainTags(c)).join('') : ''}
     `;
 
     if (currentMode === 'review') {
@@ -797,6 +856,25 @@ function renderScenario() {
             <p class="body-text"><strong style="color:var(--text-primary)">Real World:</strong> ${format(d.real_world_scenario)}</p>
         </div>`;
 
+        // 8. Interview Answer (Moved for Readability UX)
+        if (d.interview_answer) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">💬 Interview Answer</h2>
+                <ul>${d.interview_answer.response.map(r => `<li class="body-text">"${format(r)}"</li>`).join('')}</ul>
+                <div class="body-text" style="margin-top: 8px; padding-left: 16px;"><strong style="color:var(--status-info)">Why?</strong> ${format(d.interview_answer.why)}</div>
+            </div>`;
+        }
+
+        // 9. Kill Shot (Moved for Readability UX)
+        if (d.interview_kill_shot) {
+            solutionHtml += `
+            <div class="card card-kill-shot" style="grid-column: 1/-1;">
+                <h2 class="card-title" style="color: #FCA5A5;">🔥 Interview Kill Shot</h2>
+                <p class="body-text" style="font-weight: 600; font-size: 15px; text-align: center; font-style: italic;">"${format(d.interview_kill_shot)}"</p>
+            </div>`;
+        }
+
         // 2. Architecture Flow
         if (d.architecture_flow) {
             solutionHtml += `
@@ -827,6 +905,9 @@ function renderScenario() {
                 </div>
             </div>`;
         }
+
+        // 4. Troubleshooting Wrapper
+        solutionHtml += `<div style="grid-column: 1/-1; display: flex; flex-direction: column; gap: 8px;">`;
 
         // 4. Error & Symptoms
         if (d.error_symptoms) {
@@ -892,25 +973,11 @@ function renderScenario() {
                 </ul>
             </div>`;
         }
+        
+        // Close Troubleshooting Wrapper
+        solutionHtml += `</div>`;
 
-        // 8. Interview Answer
-        if (d.interview_answer) {
-            solutionHtml += `
-            <div class="card">
-                <h2 class="card-title">💬 Interview Answer</h2>
-                <ul>${d.interview_answer.response.map(r => `<li class="body-text">"${format(r)}"</li>`).join('')}</ul>
-                <div class="body-text" style="margin-top: 8px; padding-left: 16px;"><strong style="color:var(--status-info)">Why?</strong> ${format(d.interview_answer.why)}</div>
-            </div>`;
-        }
-
-        // 9. Kill Shot
-        if (d.interview_kill_shot) {
-            solutionHtml += `
-            <div class="card card-kill-shot" style="grid-column: 1/-1;">
-                <h2 class="card-title" style="color: #FCA5A5;">🔥 Interview Kill Shot</h2>
-                <p class="body-text" style="font-weight: 600; font-size: 14px; text-align: center; font-style: italic;">"${format(d.interview_kill_shot)}"</p>
-            </div>`;
-        }
+        // 8 & 9 Moved up for better UX
 
         // K8s: Comparisons
         if (d.comparisons && d.comparisons.length > 0) {
@@ -1229,7 +1296,26 @@ function renderScenario() {
 
     } else {
         // --- OLD SCHEMA TEMPLATES ---
+        if (s.core_concepts && s.core_concepts.length > 0) {
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">📚 Core Concepts</h2>
+                <div class="investigation-list">
+                    ${s.core_concepts.map(c => `
+                        <div class="data-row" style="margin-bottom: 8px;">
+                            <h3 class="data-key" style="color: var(--status-info)">${format(c.name)}</h3>
+                            <div class="data-val">
+                                <div class="body-text"><strong style="color:var(--text-primary)">Def:</strong> ${format(c.definition)}</div>
+                                <div class="body-text"><strong style="color:var(--text-primary)">Use:</strong> ${format(c.usage)}</div>
+                            </div>
+                        </div>
+                    `).join('<hr style="margin:2px 0;">')}
+                </div>
+            </div>`;
+        }
+
         if (s.type === 'Troubleshooting') {
+            solutionHtml += `<div style="grid-column: 1/-1; display: flex; flex-direction: column; gap: 8px;">`;
             solutionHtml += `
             <div class="card card-error">
                 <h2 class="card-title">❌ Error & 🔍 Symptoms</h2>
@@ -1263,7 +1349,9 @@ function renderScenario() {
                     ${d.practices.map(p => `<li class="body-text"><span class="text-${p.type}">${format(p.text)}</span></li>`).join('')}
                 </ul>
             </div>`;
+            solutionHtml += `</div>`;
         } else if (s.type === 'Incident') {
+            solutionHtml += `<div style="grid-column: 1/-1; display: flex; flex-direction: column; gap: 8px;">`;
             solutionHtml += `
             <div class="card card-error">
                 <h2 class="card-title">🚨 Impact & 📡 Detection</h2>
@@ -1295,6 +1383,7 @@ function renderScenario() {
                     ${d.practices.map(p => `<li class="body-text"><span class="text-${p.type}">${format(p.text)}</span></li>`).join('')}
                 </ul>
             </div>`;
+            solutionHtml += `</div>`;
         } else if (s.type === 'Decision' || s.type === 'Architecture') {
             const icon = s.type === 'Decision' ? '🎯 Decision' : '📋 Requirements';
             solutionHtml += `

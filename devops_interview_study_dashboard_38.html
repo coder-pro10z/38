@@ -583,6 +583,18 @@ let currentMode = 'learn'; // 'learn', 'practice', 'review'
 let solutionRevealed = false;
 let currentIndex = 0;
 let ratings = {}; // Maps index to 'done', 'review', 'revisit'
+try {
+    const saved = localStorage.getItem('k8s_dashboard_ratings');
+    if (saved) ratings = JSON.parse(saved);
+} catch (e) {
+    console.error('Failed to load ratings:', e);
+}
+try {
+    const saved = localStorage.getItem('k8s_dashboard_ratings');
+    if (saved) ratings = JSON.parse(saved);
+} catch (e) {
+    console.error('Failed to load ratings:', e);
+}
 let isOneColumn = true; // Default to 1 Column for better reading
 
 function toggleLayout() {
@@ -641,12 +653,7 @@ async function loadScenarios() {
         }
         scenarios = await response.json();
         
-        // Auto-seed ratings for slides marked as Mastered
-        scenarios.forEach((s, idx) => {
-            if ((s.confidence_rating === "Mastered") && !ratings[idx]) {
-                ratings[idx] = 'done';
-            }
-        });
+        // Auto-seeding disabled to allow default unrated state
         
         // Initialize layout preference
         if (isOneColumn) document.getElementById('dashboard').classList.add('layout-1col');
@@ -752,6 +759,11 @@ function toggleReveal() {
 
 function setConfidence(rating) {
     ratings[currentIndex] = rating;
+    try {
+        localStorage.setItem('k8s_dashboard_ratings', JSON.stringify(ratings));
+    } catch (e) {
+        console.error('Failed to save ratings:', e);
+    }
     renderScenario();
 }
 

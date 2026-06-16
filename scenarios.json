@@ -6819,6 +6819,117 @@
     ]
   },
   {
+    "title": "12-Factor App Principle",
+    "type": "Architecture Methodology",
+    "difficulty": "Advanced",
+    "chips": [
+      "Cloud-Native",
+      "Twelve-Factor",
+      "Microservices",
+      "CI/CD",
+      "Scalability"
+    ],
+    "schema": "architecture",
+    "topic_number": 1,
+    "topic": "The Twelve-Factor App",
+    "category": "Software Architecture",
+    "tags": [
+      "SaaS",
+      "Stateless",
+      "DevOps",
+      "Immutability"
+    ],
+    "definition": "A set of twelve best practices for building software-as-a-service applications that are robust, scalable, and portable across modern cloud platforms.",
+    "why_it_matters": "It provides a standardized blueprint for building applications that are perfectly suited for deployment on platforms like Kubernetes, ensuring high availability and developer productivity.",
+    "real_world_scenario": "A financial services company migrates its monolithic trading platform to Kubernetes, adopting environment-based configuration and stateless processing to handle 10x traffic spikes automatically.",
+    "architecture_flow": {
+      "steps": [
+        "1. Codebase: Single Git repo per app, many deploys.",
+        "2. Dependencies: Explicitly declare and isolate app-specific libraries.",
+        "3. Config: Inject environment-specific settings via ENV variables.",
+        "4. Backing Services: Treat databases/queues as attached resources via URL.",
+        "5. Build/Release/Run: Separate code assembly, configuration merge, and execution.",
+        "6. Processes: Execute as share-nothing, stateless units.",
+        "7. Port Binding: Self-contained service exports via specific ports.",
+        "8. Concurrency: Scale horizontally by increasing process count.",
+        "9. Disposability: Ensure fast startup and graceful shutdown for robustness.",
+        "10. Dev/Prod Parity: Keep all environments synchronized for consistency.",
+        "11. Logs: Stream all output to stdout as event streams.",
+        "12. Admin Processes: Run management tasks as one-off processes in parity."
+      ],
+      "diagram": "Codebase → Dependencies → Config → Backing Services → Build/Release/Run → Processes → Port Binding → Concurrency → Disposability → Dev/Prod Parity → Logs → Admin Processes"
+    },
+    "core_concepts": [
+      {
+        "name": "Codebase",
+        "definition": "One codebase tracked in revision control, many deploys.",
+        "usage": "Git repository management."
+      },
+      {
+        "name": "Dependencies",
+        "definition": "Explicitly declare and isolate dependencies.",
+        "usage": "requirements.txt, package.json, or Go modules."
+      },
+      {
+        "name": "Config",
+        "definition": "Store configuration in the environment.",
+        "usage": "Kubernetes Secrets and ConfigMaps."
+      },
+      {
+        "name": "Backing Services",
+        "definition": "Treat services as attached resources.",
+        "usage": "Dynamic database connection strings."
+      },
+      {
+        "name": "Build, Release, Run",
+        "definition": "Strictly separate these three execution stages.",
+        "usage": "Immutable container images and release tags."
+      },
+      {
+        "name": "Processes",
+        "definition": "Execute the app as stateless processes.",
+        "usage": "Scale-out without sticky sessions."
+      },
+      {
+        "name": "Port Binding",
+        "definition": "Export services via specific port binding.",
+        "usage": "Self-contained web servers like Gunicorn or Express."
+      },
+      {
+        "name": "Concurrency",
+        "definition": "Scale out via the process model.",
+        "usage": "Horizontal Pod Autoscaling (HPA)."
+      },
+      {
+        "name": "Disposability",
+        "definition": "Maximize robustness with fast startup/shutdown.",
+        "usage": "SIGTERM handling for clean exits."
+      },
+      {
+        "name": "Dev/Prod Parity",
+        "definition": "Keep environments as similar as possible.",
+        "usage": "Infrastructure as Code (IaC)."
+      },
+      {
+        "name": "Logs",
+        "definition": "Treat logs as event streams.",
+        "usage": "Standard Output (STDOUT) to ELK/Datadog."
+      },
+      {
+        "name": "Admin Processes",
+        "definition": "Run admin tasks as one-off processes.",
+        "usage": "Database migrations via K8s Jobs."
+      }
+    ],
+    "interview_answer": {
+      "response": [
+        "The 12-Factor App is a methodology specifically designed for SaaS apps. It emphasizes absolute portability, declarative automation, and scalability through statelessness and horizontal scaling."
+      ],
+      "why": "Interviewers look for candidates who understand the 'Why' behind cloud-native tools."
+    },
+    "interview_kill_shot": "If an app is 12-factor compliant, it is essentially infrastructure-agnostic, meaning it can move between AWS, GCP, or On-prem without code changes."
+  },
+  {
     "title": "Kubernetes Fundamentals",
     "type": "Container Orchestration",
     "difficulty": "Beginner",

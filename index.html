@@ -852,7 +852,7 @@ function renderScenario() {
     };
 
     document.getElementById('q-chips').innerHTML = `
-        ${s.schema === 'v3' || s.schema === 'k8s' ? highlightMainTags(s.type) : highlightMainTags(s.type)}
+        ${s.schema === 'v3' || s.schema === 'k8s' || s.schema === 'architecture' ? highlightMainTags(s.type) : highlightMainTags(s.type)}
         <span class="chip">[${s.difficulty}]</span>
         ${s.chips ? s.chips.map(c => highlightMainTags(c)).join('') : ''}
     `;
@@ -873,7 +873,7 @@ function renderScenario() {
     let alwaysVisibleHtml = '';
     
     // ======== RENDER ENGINE SWITCH ======== //
-    if (s.schema === 'v3' || s.schema === 'k8s') {
+    if (s.schema === 'v3' || s.schema === 'k8s' || s.schema === 'architecture') {
         const d = s; // since data is flat for v3
         
         // 1. Definition & Scenario

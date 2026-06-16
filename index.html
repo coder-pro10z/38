@@ -977,17 +977,18 @@ function renderScenario() {
         }
 
         // 7. Resolution & Prevention
+                // 7. Resolution & Prevention
         if (d.resolution_prevention) {
             solutionHtml += `
             <div class="card card-resolution">
                 <h2 class="card-title">✅ Resolution & Prevention</h2>
-                <div class="data-row"><h3 class="data-key">Immediate</h3><div class="data-val"><code>${d.resolution_prevention.immediate_fix.join('</code> <br> <code>')}</code></div></div>
-                <div class="data-row"><h3 class="data-key">Permanent</h3><div class="data-val">${d.resolution_prevention.permanent_fix.map(f => format(f)).join('<br>')}</div></div>
+                ${d.resolution_prevention.immediate_fix ? `<div class="data-row"><h3 class="data-key">Immediate</h3><div class="data-val"><code>${(d.resolution_prevention.immediate_fix || []).join('</code> <br> <code>')}</code></div></div>` : ''}
+                ${d.resolution_prevention.permanent_fix ? `<div class="data-row"><h3 class="data-key">Permanent</h3><div class="data-val">${(d.resolution_prevention.permanent_fix || []).map(f => format(f)).join('<br>')}</div></div>` : ''}
                 <hr>
                 <ul class="no-bullet">
-                    <li class="body-text"><strong class="text-success">Best Practice:</strong> ${format(d.resolution_prevention.best_practice)}</li>
-                    <li class="body-text"><strong class="text-error">Anti-Pattern:</strong> ${format(d.resolution_prevention.anti_pattern)}</li>
-                    <li class="body-text"><strong class="text-info">Controls:</strong> ${d.resolution_prevention.preventive_control.map(c => format(c)).join(' | ')}</li>
+                    ${d.resolution_prevention.best_practice ? `<li class="body-text"><strong class="text-success">Best Practice:</strong> ${format(d.resolution_prevention.best_practice)}</li>` : ''}
+                    ${d.resolution_prevention.anti_pattern ? `<li class="body-text"><strong class="text-error">Anti-Pattern:</strong> ${format(d.resolution_prevention.anti_pattern)}</li>` : ''}
+                    ${d.resolution_prevention.preventive_control ? `<li class="body-text"><strong class="text-info">Controls:</strong> ${(d.resolution_prevention.preventive_control || []).map(c => format(c)).join(' | ')}</li>` : ''}
                 </ul>
             </div>`;
         }
@@ -1195,124 +1196,141 @@ function renderScenario() {
         </div>`;
 
         // 2. Architecture Flow
-        solutionHtml += `
-        <div class="card">
-            <h2 class="card-title">🏗 Architecture Flow</h2>
-            <div class="arch-path-vertical">
-                ${d.architecture_flow.map(step => format(step)).join('<br><span style="color:var(--text-muted)">↓</span><br>')}
-            </div>
-        </div>`;
+        if (d.architecture_flow) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">🏗 Architecture Flow</h2>
+                <div class="arch-path-vertical">
+                    ${Array.isArray(d.architecture_flow) ? d.architecture_flow.map(step => format(step)).join('<br><span style="color:var(--text-muted)">↓</span><br>') : (d.architecture_flow.steps ? d.architecture_flow.steps.map(step => format(step)).join('<br><span style="color:var(--text-muted)">↓</span><br>') : '')}
+                </div>
+            </div>`;
+        }
 
         // 3. Core Concepts
-        solutionHtml += `
-        <div class="card">
-            <h2 class="card-title">📚 Core Concepts</h2>
-            <div class="investigation-list">
-                ${d.core_concepts.map(c => `
-                    <div class="data-row" style="margin-bottom: 8px;">
-                        <h3 class="data-key" style="color: var(--status-info)">${format(c.name)}</h3>
-                        <div class="data-val">
-                            <div class="body-text"><strong style="color:var(--text-primary)">Def:</strong> ${format(c.definition)}</div>
-                            <div class="body-text"><strong style="color:var(--text-primary)">Use:</strong> ${format(c.usage)}</div>
+        if (d.core_concepts && d.core_concepts.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">📚 Core Concepts</h2>
+                <div class="investigation-list">
+                    ${d.core_concepts.map(c => `
+                        <div class="data-row" style="margin-bottom: 8px;">
+                            <h3 class="data-key" style="color: var(--status-info)">${format(c.name)}</h3>
+                            <div class="data-val">
+                                <div class="body-text"><strong style="color:var(--text-primary)">Def:</strong> ${format(c.definition)}</div>
+                                <div class="body-text"><strong style="color:var(--text-primary)">Use:</strong> ${format(c.usage)}</div>
+                            </div>
                         </div>
-                    </div>
-                `).join('<hr style="margin:2px 0;">')}
-            </div>
-        </div>`;
+                    `).join('<hr style="margin:2px 0;">')}
+                </div>
+            </div>`;
+        }
 
         // 4. Error & Symptoms
-        solutionHtml += `
-        <div class="card card-error">
-            <h2 class="card-title">❌ Error & Symptoms</h2>
-            <div class="matrix" style="grid-template-columns: 1fr 1fr; text-align:left;">
-                <div class="data-row"><h3 class="data-key">State</h3><div class="data-val text-error">${format(d.error_symptoms.state)}</div></div>
-                <div class="data-row"><h3 class="data-key">Severity</h3><div class="data-val">${format(d.error_symptoms.severity)}</div></div>
-                <div class="data-row"><h3 class="data-key">Component</h3><div class="data-val">${format(d.error_symptoms.affected_component)}</div></div>
-                <div class="data-row" style="grid-column: 1/-1"><h3 class="data-key">Impact</h3><div class="data-val">${format(d.error_symptoms.impact)}</div></div>
-            </div>
-        </div>`;
+        if (d.error_symptoms) {
+            solutionHtml += `
+            <div class="card card-error">
+                <h2 class="card-title">❌ Error & Symptoms</h2>
+                <div class="matrix" style="grid-template-columns: 1fr 1fr; text-align:left;">
+                    <div class="data-row"><h3 class="data-key">State</h3><div class="data-val text-error">${format(d.error_symptoms.state || '')}</div></div>
+                    <div class="data-row"><h3 class="data-key">Severity</h3><div class="data-val">${format(d.error_symptoms.severity || '')}</div></div>
+                    <div class="data-row"><h3 class="data-key">Component</h3><div class="data-val">${format(d.error_symptoms.affected_component || '')}</div></div>
+                    <div class="data-row" style="grid-column: 1/-1"><h3 class="data-key">Impact</h3><div class="data-val">${format(d.error_symptoms.impact || '')}</div></div>
+                </div>
+            </div>`;
+        }
 
         // 5. Investigation
-        solutionHtml += `
-        <div class="card">
-            <h2 class="card-title">🔍 Investigation</h2>
-            <div class="investigation-list">
-                ${d.investigation.map(i => `
-                    <div class="data-row" style="border-left: 2px solid var(--border); padding-left: 8px;">
-                        <div style="margin-bottom: 4px;"><code>${format(i.command)}</code></div>
-                        <div class="body-text"><strong style="color:var(--text-primary)">Step:</strong> ${format(i.step)}</div>
-                        <div class="body-text"><strong style="color:var(--text-primary)">Purpose:</strong> ${format(i.purpose)}</div>
-                        <div class="body-text text-info"><strong>Expected:</strong> ${format(i.expected_finding)}</div>
-                    </div>
-                `).join('')}
-            </div>
-        </div>`;
+        if (d.investigation && d.investigation.length > 0) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">🔍 Investigation</h2>
+                <div class="investigation-list">
+                    ${d.investigation.map(i => `
+                        <div class="data-row" style="border-left: 2px solid var(--border); padding-left: 8px;">
+                            <div style="margin-bottom: 4px;"><code>${format(i.command)}</code></div>
+                            <div class="body-text"><strong style="color:var(--text-primary)">Step:</strong> ${format(i.step)}</div>
+                            <div class="body-text"><strong style="color:var(--text-primary)">Purpose:</strong> ${format(i.purpose)}</div>
+                            <div class="body-text text-info"><strong>Expected:</strong> ${format(i.expected_finding)}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+        }
 
         // 6. RCA
-        solutionHtml += `
-        <div class="card card-rca">
-            <h2 class="card-title">🎯 RCA</h2>
-            <div class="rca-flow">
-                <div class="rca-step"><h3 style="display:inline">Problem:</h3> <span class="body-text">${format(d.rca.problem)}</span></div>
-                <div class="rca-arrow">↓</div>
-                <div class="rca-step"><h3 style="display:inline">Trigger:</h3> <span class="body-text">${format(d.rca.trigger)}</span></div>
-                <div class="rca-arrow">↓</div>
-                <div class="rca-step"><h3 style="display:inline">Root Cause:</h3> <span class="body-text">${format(d.rca.root_cause)}</span></div>
-                <div class="rca-arrow">↓</div>
-                <div class="rca-step"><h3 style="display:inline">Impact:</h3> <span class="body-text">${format(d.rca.impact)}</span></div>
-            </div>
-        </div>`;
+        if (d.rca) {
+            solutionHtml += `
+            <div class="card card-rca">
+                <h2 class="card-title">🎯 RCA</h2>
+                <div class="rca-flow">
+                    <div class="rca-step"><h3 style="display:inline">Problem:</h3> <span class="body-text">${format(d.rca.problem)}</span></div>
+                    <div class="rca-arrow">↓</div>
+                    <div class="rca-step"><h3 style="display:inline">Trigger:</h3> <span class="body-text">${format(d.rca.trigger)}</span></div>
+                    <div class="rca-arrow">↓</div>
+                    <div class="rca-step"><h3 style="display:inline">Root Cause:</h3> <span class="body-text">${format(d.rca.root_cause)}</span></div>
+                    <div class="rca-arrow">↓</div>
+                    <div class="rca-step"><h3 style="display:inline">Impact:</h3> <span class="body-text">${format(d.rca.impact)}</span></div>
+                </div>
+            </div>`;
+        }
 
         // 7. Resolution & Prevention
-        solutionHtml += `
-        <div class="card card-resolution">
-            <h2 class="card-title">✅ Resolution & Prevention</h2>
-            <div class="data-row"><h3 class="data-key">Immediate</h3><div class="data-val"><code>${d.resolution_prevention.immediate_fix.join('</code> <br> <code>')}</code></div></div>
-            <div class="data-row"><h3 class="data-key">Permanent</h3><div class="data-val">${d.resolution_prevention.permanent_fix.map(f => format(f)).join('<br>')}</div></div>
-            <hr>
-            <ul class="no-bullet">
-                <li class="body-text"><strong class="text-success">Best Practice:</strong> ${format(d.resolution_prevention.best_practice)}</li>
-                <li class="body-text"><strong class="text-error">Anti-Pattern:</strong> ${format(d.resolution_prevention.anti_pattern)}</li>
-                <li class="body-text"><strong class="text-info">Controls:</strong> ${d.resolution_prevention.preventive_control.map(c => format(c)).join(' | ')}</li>
-            </ul>
-        </div>`;
+        if (d.resolution_prevention) {
+            solutionHtml += `
+            <div class="card card-resolution">
+                <h2 class="card-title">✅ Resolution & Prevention</h2>
+                ${d.resolution_prevention.immediate_fix ? `<div class="data-row"><h3 class="data-key">Immediate</h3><div class="data-val"><code>${(d.resolution_prevention.immediate_fix || []).join('</code> <br> <code>')}</code></div></div>` : ''}
+                ${d.resolution_prevention.permanent_fix ? `<div class="data-row"><h3 class="data-key">Permanent</h3><div class="data-val">${(d.resolution_prevention.permanent_fix || []).map(f => format(f)).join('<br>')}</div></div>` : ''}
+                <hr>
+                <ul class="no-bullet">
+                    ${d.resolution_prevention.best_practice ? `<li class="body-text"><strong class="text-success">Best Practice:</strong> ${format(d.resolution_prevention.best_practice)}</li>` : ''}
+                    ${d.resolution_prevention.anti_pattern ? `<li class="body-text"><strong class="text-error">Anti-Pattern:</strong> ${format(d.resolution_prevention.anti_pattern)}</li>` : ''}
+                    ${d.resolution_prevention.preventive_control ? `<li class="body-text"><strong class="text-info">Controls:</strong> ${(d.resolution_prevention.preventive_control || []).map(c => format(c)).join(' | ')}</li>` : ''}
+                </ul>
+            </div>`;
+        }
 
         // 8. Interview Answer
-        solutionHtml += `
-        <div class="card">
-            <h2 class="card-title">💬 Interview Answer</h2>
-            <ul>${d.interview_answer.response.map(r => `<li class="body-text">"${format(r)}"</li>`).join('')}</ul>
-            <div class="body-text" style="margin-top: 8px; padding-left: 16px;"><strong style="color:var(--status-info)">Why?</strong> ${format(d.interview_answer.why)}</div>
-        </div>`;
+        if (d.interview_answer) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">💬 Interview Answer</h2>
+                <ul>${(d.interview_answer.response || []).map(r => `<li class="body-text">"${format(r)}"</li>`).join('')}</ul>
+                <div class="body-text" style="margin-top: 8px; padding-left: 16px;"><strong style="color:var(--status-info)">Why?</strong> ${format(d.interview_answer.why || '')}</div>
+            </div> glassmorphic`;
+        }
 
         // 9. Kill Shot
-        solutionHtml += `
-        <div class="card card-kill-shot" style="grid-column: 1/-1;">
-            <h2 class="card-title" style="color: #FCA5A5;">🔥 Interview Kill Shot</h2>
-            <p class="body-text" style="font-weight: 600; font-size: 14px; text-align: center; font-style: italic;">"${format(d.interview_kill_shot)}"</p>
-        </div>`;
+        if (d.interview_kill_shot) {
+            solutionHtml += `
+            <div class="card card-kill-shot" style="grid-column: 1/-1;">
+                <h2 class="card-title" style="color: #FCA5A5;">🔥 Interview Kill Shot</h2>
+                <p class="body-text" style="font-weight: 600; font-size: 14px; text-align: center; font-style: italic;">"${format(d.interview_kill_shot)}"</p>
+            </div>`;
+        }
 
         // 10. Quick Recall (Always visible)
-        alwaysVisibleHtml += `
-        <div class="card" style="grid-column: 1/-1;">
-            <h2 class="card-title">🧠 Quick Recall</h2>
-            <div class="matrix" style="grid-template-columns: repeat(3, 1fr); text-align: left;">
-                <div>
-                    <div class="matrix-hdr">Commands</div>
-                    <ul class="no-bullet" style="padding-top:4px;">${d.quick_recall.commands.map(c => `<li style="margin-bottom:4px;"><code>${format(c)}</code></li>`).join('')}</ul>
+        if (d.quick_recall) {
+            alwaysVisibleHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">🧠 Quick Recall</h2>
+                <div class="matrix" style="grid-template-columns: repeat(3, 1fr); text-align: left;">
+                    <div>
+                        <div class="matrix-hdr">Commands</div>
+                        <ul class="no-bullet" style="padding-top:4px;">${(d.quick_recall.commands || []).map(c => `<li style="margin-bottom:4px;"><code>${format(c)}</code></li>`).join('')}</ul>
+                    </div>
+                    <div>
+                        <div class="matrix-hdr">Concepts</div>
+                        <ul class="no-bullet" style="padding-top:4px;">${(d.quick_recall.concepts || []).map(c => `<li class="meta" style="color:var(--text-primary)">${format(c)}</li>`).join('')}</ul>
+                    </div>
+                    <div>
+                        <div class="matrix-hdr">Keywords</div>
+                        <ul class="no-bullet" style="padding-top:4px;">${(d.quick_recall.keywords || []).map(c => `<li class="meta text-info">#${format(c)}</li>`).join('')}</ul>
+                    </div>
                 </div>
-                <div>
-                    <div class="matrix-hdr">Concepts</div>
-                    <ul class="no-bullet" style="padding-top:4px;">${d.quick_recall.concepts.map(c => `<li class="meta" style="color:var(--text-primary)">${format(c)}</li>`).join('')}</ul>
-                </div>
-                <div>
-                    <div class="matrix-hdr">Keywords</div>
-                    <ul class="no-bullet" style="padding-top:4px;">${d.quick_recall.keywords.map(c => `<li class="meta text-info">#${format(c)}</li>`).join('')}</ul>
-                </div>
-            </div>
-        </div>`;
-
-    } else {
+            </div>`;
+        }
+        } else {
         // --- OLD SCHEMA TEMPLATES ---
         if (s.core_concepts && s.core_concepts.length > 0) {
             solutionHtml += `

@@ -6993,18 +6993,9 @@
     },
     "interview_kill_shot": "Kubernetes is not a container runtime; it orchestrates containers using a control loop model.",
     "common_interview_questions": [
-      {
-        "question": "Why Kubernetes?",
-        "answer": "It automates container deployment, scaling, load balancing, service discovery, and self-healing of application workloads."
-      },
-      {
-        "question": "Difference between Docker and Kubernetes?",
-        "answer": "Docker is a containerization platform to build and run individual containers. Kubernetes is an orchestration engine to manage clusters of containers."
-      },
-      {
-        "question": "Explain Kubernetes architecture.",
-        "answer": "It consists of Control Plane nodes (API Server, etcd, Scheduler, Controller Manager) and Worker nodes (kubelet, kube-proxy, container runtime)."
-      }
+      "Why Kubernetes?",
+      "Difference between Docker and Kubernetes?",
+      "Explain Kubernetes architecture."
     ],
     "rapid_fire_qa": [
       {
@@ -7233,18 +7224,9 @@
     },
     "interview_kill_shot": "API Server is the only component that directly communicates with etcd.",
     "common_interview_questions": [
-      {
-        "question": "Explain Kubernetes architecture",
-        "answer": "It consists of Control Plane nodes (API Server, etcd, Scheduler, Controller Manager) and Worker nodes (kubelet, kube-proxy, container runtime)."
-      },
-      {
-        "question": "What happens after kubectl apply?",
-        "answer": "Client validates YAML -> Sent to API Server -> Authenticated & Authorized -> Written to etcd -> Scheduler binds Pod to Node -> Kubelet pulls image and runs containers."
-      },
-      {
-        "question": "Role of kubelet?",
-        "answer": "An agent running on each worker node that ensures containers are running in a Pod according to the PodSpecs provided by the API Server."
-      }
+      "Explain Kubernetes architecture",
+      "What happens after kubectl apply?",
+      "Role of kubelet?"
     ],
     "rapid_fire_qa": [
       {
@@ -7482,18 +7464,9 @@
     },
     "interview_kill_shot": "Kubernetes does not deploy containers directly; it deploys Pods.",
     "common_interview_questions": [
-      {
-        "question": "What is a Pod?",
-        "answer": "The smallest deployable unit in Kubernetes, representing a single instance of a running process in a cluster, sharing network and storage."
-      },
-      {
-        "question": "Can Pod have multiple containers?",
-        "answer": "Yes, tightly coupled helper containers (sidecars/init containers) can run inside the same Pod, sharing the same network namespace and volumes."
-      },
-      {
-        "question": "Difference between init and sidecar?",
-        "answer": "Init containers run and complete sequentially before app containers start. Sidecars run continuously alongside the main container to assist it."
-      }
+      "What is a Pod?",
+      "Can Pod have multiple containers?",
+      "Difference between init and sidecar?"
     ],
     "rapid_fire_qa": [
       {
@@ -7722,18 +7695,9 @@
     },
     "interview_kill_shot": "A Service does not target Pods by name; it targets Pods through selectors.",
     "common_interview_questions": [
-      {
-        "question": "Difference between labels and annotations?",
-        "answer": "Labels are key-value pairs used to identify and select subsets of resources. Annotations attach non-identifying metadata (like logs, build info) to resources."
-      },
-      {
-        "question": "How does Service find Pods?",
-        "answer": "Services use label selectors to dynamically find and route traffic to Pods that possess matching labels."
-      },
-      {
-        "question": "What is matchExpressions?",
-        "answer": "A label selector syntax allowing advanced filtering using operators like In, NotIn, Exists, and DoesNotExist (unlike simple key=value matching)."
-      }
+      "Difference between labels and annotations?",
+      "How does Service find Pods?",
+      "What is matchExpressions?"
     ],
     "rapid_fire_qa": [
       {
@@ -7952,18 +7916,9 @@
     },
     "interview_kill_shot": "ReplicaSet answers: 'How many Pods should exist?' Deployment answers: 'How should versions change safely?'",
     "common_interview_questions": [
-      {
-        "question": "Difference between Pod and ReplicaSet?",
-        "answer": "A Pod is the smallest deployable compute unit in Kubernetes. A ReplicaSet is a controller that ensures a specified number of identical Pod replicas are running at all times."
-      },
-      {
-        "question": "ReplicaSet vs Deployment?",
-        "answer": "A ReplicaSet maintains a stable set of Pods. A Deployment manages ReplicaSets, providing declarative updates, rolling rollbacks, and versioning capabilities."
-      },
-      {
-        "question": "How does self healing work?",
-        "answer": "Controllers (like Deployments/ReplicaSets) constantly monitor the cluster state. If a Pod crashes or a node fails, the controller automatically spins up a new Pod to match the desired state."
-      }
+      "Difference between Pod and ReplicaSet?",
+      "ReplicaSet vs Deployment?",
+      "How does self healing work?"
     ],
     "rapid_fire_qa": [
       {
@@ -8213,22 +8168,10 @@
     },
     "interview_kill_shot": "Deployment creates ReplicaSets; ReplicaSets create Pods.",
     "common_interview_questions": [
-      {
-        "question": "Deployment vs ReplicaSet?",
-        "answer": "Deployments are a higher-level abstraction that manage ReplicaSets. You should almost always use Deployments instead of managing ReplicaSets directly to benefit from rolling updates."
-      },
-      {
-        "question": "How rollback works?",
-        "answer": "Deployments maintain a history of underlying ReplicaSets (revisions). Rolling back simply scales up a previous ReplicaSet and scales down the current one."
-      },
-      {
-        "question": "Explain rolling update strategy.",
-        "answer": "It incrementally replaces old Pods with new ones, ensuring a minimum number of Pods remain available (maxUnavailable) and limiting how many extra Pods can be created during the process (maxSurge)."
-      },
-      {
-        "question": "How achieve zero downtime?",
-        "answer": "By using a Deployment with a RollingUpdate strategy, combined with proper Readiness Probes so traffic is only routed to newly created Pods once they are fully initialized."
-      }
+      "Deployment vs ReplicaSet?",
+      "How rollback works?",
+      "Explain rolling update strategy.",
+      "How achieve zero downtime?"
     ],
     "rapid_fire_qa": [
       {
@@ -8493,22 +8436,10 @@
     },
     "interview_kill_shot": "Service does not route to containers directly; it routes to Pod endpoints.",
     "common_interview_questions": [
-      {
-        "question": "ClusterIP vs NodePort?",
-        "answer": "ClusterIP exposes the Service on a cluster-internal IP (only accessible from within the cluster). NodePort exposes the Service on each Node's IP at a static port (accessible externally)."
-      },
-      {
-        "question": "How does Service find Pods?",
-        "answer": "Services use label selectors to dynamically find and route traffic to Pods that possess matching labels."
-      },
-      {
-        "question": "What is Headless Service?",
-        "answer": "A Service with 'clusterIP: None'. It does not load balance; instead, DNS directly returns the IP addresses of the backing Pods. Often used for StatefulSets."
-      },
-      {
-        "question": "Explain Service discovery.",
-        "answer": "Kubernetes uses CoreDNS to automatically create DNS records for Services. Pods can resolve other Services using these DNS names (e.g., service-name.namespace.svc.cluster.local)."
-      }
+      "ClusterIP vs NodePort?",
+      "How does Service find Pods?",
+      "What is Headless Service?",
+      "Explain Service discovery."
     ],
     "rapid_fire_qa": [
       {
@@ -8744,18 +8675,9 @@
     },
     "interview_kill_shot": "Ingress is not a Service replacement; it sits in front of Services.",
     "common_interview_questions": [
-      {
-        "question": "Ingress vs LoadBalancer?",
-        "answer": "A LoadBalancer provisions a dedicated L4 cloud load balancer per Service. Ingress is a single L7 entry point that uses routing rules to distribute HTTP/HTTPS traffic to multiple underlying Services."
-      },
-      {
-        "question": "What is Ingress Controller?",
-        "answer": "A specialized daemon (like Nginx or Traefik) that watches Ingress objects and physically implements the defined routing rules and TLS termination."
-      },
-      {
-        "question": "How TLS works?",
-        "answer": "TLS certificates and keys are stored in Kubernetes Secrets. The Ingress resource references this Secret, allowing the Ingress Controller to terminate HTTPS traffic before forwarding it as HTTP to the Pods."
-      }
+      "Ingress vs LoadBalancer?",
+      "What is Ingress Controller?",
+      "How TLS works?"
     ],
     "rapid_fire_qa": [
       {
@@ -8956,14 +8878,8 @@
     },
     "interview_kill_shot": "ConfigMaps are for configuration, not secrets.",
     "common_interview_questions": [
-      {
-        "question": "ConfigMap vs Secret?",
-        "answer": "Both store key-value configuration. ConfigMaps store plaintext data. Secrets store sensitive data (like passwords) and are base64-encoded."
-      },
-      {
-        "question": "How to update configuration?",
-        "answer": "Modify the ConfigMap/Secret. If mounted as a volume, the file updates automatically after a slight delay. If consumed as environment variables, the Pod must be restarted to pick up the change."
-      }
+      "ConfigMap vs Secret?",
+      "How to update configuration?"
     ],
     "rapid_fire_qa": [
       {
@@ -9190,18 +9106,9 @@
     },
     "interview_kill_shot": "Base64 encoding is not encryption; protect Secrets using encryption at rest.",
     "common_interview_questions": [
-      {
-        "question": "ConfigMap vs Secret?",
-        "answer": "Both store key-value configuration. ConfigMaps store plaintext data. Secrets store sensitive data (like passwords) and are base64-encoded."
-      },
-      {
-        "question": "How are Secrets stored?",
-        "answer": "They are stored in etcd. By default, they are only base64-encoded, but administrators should enable EncryptionConfiguration to encrypt them at rest within etcd."
-      },
-      {
-        "question": "How to rotate Secrets?",
-        "answer": "Update the Secret object in Kubernetes. The application must either be designed to dynamically reload configuration from mounted files, or the consuming Pods must be restarted."
-      }
+      "ConfigMap vs Secret?",
+      "How are Secrets stored?",
+      "How to rotate Secrets?"
     ],
     "rapid_fire_qa": [
       {
@@ -9409,18 +9316,9 @@
     },
     "interview_kill_shot": "Pods consume PVCs, not PVs directly.",
     "common_interview_questions": [
-      {
-        "question": "PV vs PVC?",
-        "answer": "A PV (PersistentVolume) is the actual storage resource provisioned in the cluster. A PVC (PersistentVolumeClaim) is a user's request to consume a specific size and access mode of that storage."
-      },
-      {
-        "question": "What happens when Pod restarts?",
-        "answer": "If the Pod uses ephemeral storage (emptyDir), data is lost. If it uses persistent storage attached via a PVC, the data remains intact and reattaches to the new Pod."
-      },
-      {
-        "question": "Explain StorageClass.",
-        "answer": "It allows administrators to define different 'tiers' or 'classes' of storage (e.g., standard HDD vs premium SSD) and enables dynamic provisioning of PVs when a user creates a PVC."
-      }
+      "PV vs PVC?",
+      "What happens when Pod restarts?",
+      "Explain StorageClass."
     ],
     "rapid_fire_qa": [
       {
@@ -9741,14 +9639,8 @@
     },
     "interview_kill_shot": "DaemonSet scales with nodes, not user traffic.",
     "common_interview_questions": [
-      {
-        "question": "Deployment vs DaemonSet?",
-        "answer": "Deployments scale Pods based on metrics or desired counts across any available node. DaemonSets ensure exactly one copy of a Pod runs on every single node (or matching nodes) in the cluster."
-      },
-      {
-        "question": "Use cases of DaemonSet?",
-        "answer": "Deploying cluster-wide logging agents (Fluentd), node monitoring agents (Prometheus Node Exporter), or networking plugins (kube-proxy, CNI)."
-      }
+      "Deployment vs DaemonSet?",
+      "Use cases of DaemonSet?"
     ],
     "rapid_fire_qa": [
       {
@@ -9925,14 +9817,8 @@
     },
     "interview_kill_shot": "Deployment keeps Pods alive; Job expects Pods to finish.",
     "common_interview_questions": [
-      {
-        "question": "Job vs Deployment?",
-        "answer": "Deployments run continuous applications (like web servers). Jobs run a finite task (like a database migration or batch script) to completion and then terminate."
-      },
-      {
-        "question": "Explain parallel Jobs.",
-        "answer": "Jobs can execute multiple Pods simultaneously by configuring the 'parallelism' (concurrent Pods) and 'completions' (total successful Pods needed) fields in the Job specification."
-      }
+      "Job vs Deployment?",
+      "Explain parallel Jobs."
     ],
     "quick_recall": {
       "commands": [
@@ -10082,14 +9968,8 @@
     },
     "interview_kill_shot": "CronJob schedules Jobs; it does not directly run containers.",
     "common_interview_questions": [
-      {
-        "question": "Job vs CronJob?",
-        "answer": "A Job runs a task to completion once. A CronJob manages the execution of Jobs based on a time schedule (using standard cron format)."
-      },
-      {
-        "question": "Explain concurrency policy.",
-        "answer": "Defines how a CronJob handles concurrent executions: 'Allow' lets multiple Jobs run at once, 'Forbid' skips the new run if the old one is active, and 'Replace' cancels the active run to start the new one."
-      }
+      "Job vs CronJob?",
+      "Explain concurrency policy."
     ],
     "quick_recall": {
       "commands": [
@@ -10300,18 +10180,9 @@
     },
     "interview_kill_shot": "Namespaces isolate Kubernetes resources, not physical infrastructure.",
     "common_interview_questions": [
-      {
-        "question": "Why use namespaces?",
-        "answer": "To logically isolate resources, enable multi-tenancy, manage RBAC boundaries, and apply distinct resource quotas per team or project."
-      },
-      {
-        "question": "Namespace vs cluster?",
-        "answer": "The cluster is the entire physical/virtual Kubernetes environment. A namespace is a virtual, logical partition within that physical cluster."
-      },
-      {
-        "question": "How enforce limits?",
-        "answer": "Use ResourceQuotas to limit total consumption across a namespace, and LimitRanges to define default requests/limits for individual Pods within that namespace."
-      }
+      "Why use namespaces?",
+      "Namespace vs cluster?",
+      "How enforce limits?"
     ],
     "rapid_fire_qa": [
       {
@@ -10506,18 +10377,9 @@
     },
     "interview_kill_shot": "Without requests and limits, Kubernetes cannot make intelligent scheduling decisions.",
     "common_interview_questions": [
-      {
-        "question": "Request vs limit?",
-        "answer": "A Request is the guaranteed minimum amount of CPU/Memory a container gets. A Limit is the absolute maximum amount of CPU/Memory the container is allowed to consume."
-      },
-      {
-        "question": "What is OOMKilled?",
-        "answer": "Out Of Memory Killed. The container tried to consume more RAM than its defined memory limit, causing the Linux kernel to terminate the process to protect the system."
-      },
-      {
-        "question": "Explain QoS classes.",
-        "answer": "Quality of Service classes determine Pod eviction priority. 'Guaranteed' (requests equal limits), 'Burstable' (requests less than limits), and 'BestEffort' (no requests/limits set)."
-      }
+      "Request vs limit?",
+      "What is OOMKilled?",
+      "Explain QoS classes."
     ],
     "quick_recall": {
       "commands": [
@@ -10674,14 +10536,8 @@
     },
     "interview_kill_shot": "A failed readiness probe does not restart the container.",
     "common_interview_questions": [
-      {
-        "question": "Difference between probes?",
-        "answer": "Liveness probes check if the app is alive (restarts if failed). Readiness probes check if the app can serve traffic (stops routing if failed). Startup probes block others during boot."
-      },
-      {
-        "question": "Why use startup probe?",
-        "answer": "To protect legacy or slow-starting applications from being repeatedly killed by the liveness probe before they have a chance to fully initialize."
-      }
+      "Difference between probes?",
+      "Why use startup probe?"
     ],
     "quick_recall": {
       "commands": [
@@ -10870,18 +10726,9 @@
     },
     "interview_kill_shot": "Scheduler decides placement; kubelet only executes the assigned Pod.",
     "common_interview_questions": [
-      {
-        "question": "How does scheduler work?",
-        "answer": "The kube-scheduler watches for Pods with no assigned Node. It filters out unsuitable nodes (Predicates), scores the remaining nodes (Priorities), and binds the Pod to the highest-scoring Node."
-      },
-      {
-        "question": "Affinity vs taints?",
-        "answer": "Node Affinity is a property of Pods that attracts them to specific nodes. Taints are a property of Nodes that repel Pods unless the Pod has a matching Toleration."
-      },
-      {
-        "question": "Why Pod is Pending?",
-        "answer": "Usually due to a lack of cluster resources (CPU/Memory), untolerated node taints, failing node selectors/affinity, or waiting for a PVC to be dynamically provisioned."
-      }
+      "How does scheduler work?",
+      "Affinity vs taints?",
+      "Why Pod is Pending?"
     ],
     "quick_recall": {
       "commands": [
@@ -11043,18 +10890,9 @@
     },
     "interview_kill_shot": "Pods communicate directly by IP, but Services provide stable discovery.",
     "common_interview_questions": [
-      {
-        "question": "How does Pod networking work?",
-        "answer": "Every Pod gets a unique, routable IP address within the cluster. Pods can communicate with other Pods on any node directly without NAT."
-      },
-      {
-        "question": "Role of CoreDNS?",
-        "answer": "Resolves internal Kubernetes DNS queries, allowing Pods to locate other Services using simple domain names (e.g., my-service.my-namespace.svc)."
-      },
-      {
-        "question": "What is CNI?",
-        "answer": "Container Network Interface. A specification and set of libraries that allow networking providers (Flannel, Calico, Cilium) to configure network interfaces for Pods."
-      }
+      "How does Pod networking work?",
+      "Role of CoreDNS?",
+      "What is CNI?"
     ],
     "quick_recall": {
       "commands": [
@@ -11638,18 +11476,9 @@
     },
     "interview_kill_shot": "Helm manages releases, not just YAML templating.",
     "common_interview_questions": [
-      {
-        "question": "What is Helm?",
-        "answer": "The package manager for Kubernetes. It uses 'Charts' (YAML templates) to package, version, and deploy complex Kubernetes applications easily."
-      },
-      {
-        "question": "Chart vs Release?",
-        "answer": "A Chart is a reusable template package containing Kubernetes manifests. A Release is a specific running instance of a Chart deployed in a cluster."
-      },
-      {
-        "question": "How rollback works?",
-        "answer": "Deployments maintain a history of underlying ReplicaSets (revisions). Rolling back simply scales up a previous ReplicaSet and scales down the current one."
-      }
+      "What is Helm?",
+      "Chart vs Release?",
+      "How rollback works?"
     ],
     "quick_recall": {
       "commands": [
@@ -11928,18 +11757,9 @@
     ],
     "interview_kill_shot": "Always check events before guessing.",
     "common_interview_questions": [
-      {
-        "question": "Pod stuck Pending?",
-        "answer": "Use 'kubectl describe pod <name>' and check the 'Events' section to see why the scheduler cannot find a suitable node (e.g., Insufficient cpu)."
-      },
-      {
-        "question": "CrashLoopBackOff fix?",
-        "answer": "The container keeps starting and crashing. Fix by checking application logs via 'kubectl logs <pod>' or examining container exit codes in 'kubectl describe pod <pod>'."
-      },
-      {
-        "question": "ImagePullBackOff?",
-        "answer": "Kubernetes cannot pull the container image. Check for typos in the image name/tag, missing imagePullSecrets for private registries, or node network connectivity issues."
-      }
+      "Pod stuck Pending?",
+      "CrashLoopBackOff fix?",
+      "ImagePullBackOff?"
     ],
     "quick_recall": {
       "commands": [
@@ -12246,14 +12066,8 @@
     },
     "interview_kill_shot": "Drain respects workload movement; delete simply removes workloads.",
     "common_interview_questions": [
-      {
-        "question": "Difference between cordon and drain?",
-        "answer": "Cordoning marks a Node as unschedulable (no new Pods are placed there). Draining cordons the Node AND gracefully evicts all existing Pods running on it."
-      },
-      {
-        "question": "How upgrade Kubernetes safely?",
-        "answer": "Perform a rolling upgrade: Drain a node to move workloads, upgrade its components (kubeadm, kubelet), uncordon the node, and repeat for all nodes. Always upgrade the control plane before worker nodes."
-      }
+      "Difference between cordon and drain?",
+      "How upgrade Kubernetes safely?"
     ],
     "quick_recall": {
       "commands": [
@@ -13031,34 +12845,13 @@
     },
     "interview_kill_shot": "Never start by restarting Pods. First identify why Kubernetes is failing.",
     "common_interview_questions": [
-      {
-        "question": "Pod stuck in Pending. How will you debug?",
-        "answer": "Run 'kubectl describe pod <name>' and check the 'Events' section. Look for resource shortages, node selector mismatch, or unbound PVCs."
-      },
-      {
-        "question": "Why CrashLoopBackOff happens?",
-        "answer": "Application errors (uncaught exceptions), missing config/environment variables, failed database connections, or failing health probes."
-      },
-      {
-        "question": "Service is not reachable. What do you check?",
-        "answer": "Verify Service selectors match Pod labels. Check if Pods are running. Validate endpoints via 'kubectl get endpoints'. Test connectivity on the cluster IP and port."
-      },
-      {
-        "question": "How do you perform zero downtime deployment?",
-        "answer": "Use a RollingUpdate strategy in Deployments, set readiness probes, and configure lifecycle preStop hooks to drain connections gracefully."
-      },
-      {
-        "question": "Deployment failed. How rollback?",
-        "answer": "Run 'kubectl rollout undo deployment/<name>' to revert to the previous revision. Use 'kubectl rollout history' to see revisions."
-      },
-      {
-        "question": "PVC is not binding. Why?",
-        "answer": "No matching PV meets the size or access mode criteria, the requested StorageClass doesn't exist, or the cluster is out of physical storage."
-      },
-      {
-        "question": "Node is NotReady. What steps?",
-        "answer": "Check node resource utilization (CPU/Memory/Disk). Verify 'kubelet' service status on the node. Check cluster network connectivity and node operating system logs."
-      }
+      "Pod stuck in Pending. How will you debug?",
+      "Why CrashLoopBackOff happens?",
+      "Service is not reachable. What do you check?",
+      "How do you perform zero downtime deployment?",
+      "Deployment failed. How rollback?",
+      "PVC is not binding. Why?",
+      "Node is NotReady. What steps?"
     ],
     "rapid_fire_qa": [
       {
@@ -13250,18 +13043,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Explain Linux architecture",
-        "answer": "Consists of the Hardware layer, the Kernel (interacts with hardware), the Shell (user interface to the kernel), and Applications running on top."
-      },
-      {
-        "question": "Explain Linux boot process",
-        "answer": "BIOS/UEFI initializes hardware -> Bootloader (GRUB) loads the kernel -> Kernel initializes system components -> Systemd/Init starts background services and targets."
-      },
-      {
-        "question": "Kernel vs OS difference",
-        "answer": "The Kernel is the core component managing hardware, memory, and CPU. The OS includes the kernel, shell, system libraries, and pre-installed tools."
-      }
+      "Explain Linux architecture",
+      "Explain Linux boot process",
+      "Kernel vs OS difference"
     ],
     "rapid_fire_qa": [
       {
@@ -13415,14 +13199,8 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Explain Linux directory structure",
-        "answer": "Root (/) contains /bin (binaries), /etc (config), /var (logs/temp), /home (users), /proc (process info), and /usr (user programs)."
-      },
-      {
-        "question": "Where are logs stored?",
-        "answer": "Typically in the /var/log directory (e.g., syslog, auth.log, dmesg, nginx/error.log)."
-      }
+      "Explain Linux directory structure",
+      "Where are logs stored?"
     ],
     "rapid_fire_qa": [
       {
@@ -13582,18 +13360,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Difference between grep and find?",
-        "answer": "grep searches for specific text content *inside* files. find searches for *files or directories* within the filesystem based on metadata (name, size, permissions)."
-      },
-      {
-        "question": "How do you search logs?",
-        "answer": "Commonly using 'grep \"error\" /var/log/syslog', or using 'journalctl -u service_name' for systemd-managed services."
-      },
-      {
-        "question": "How do you copy files?",
-        "answer": "Use 'cp' for local copies, 'scp' for secure remote copies over SSH, and 'rsync' for efficient file synchronization."
-      }
+      "Difference between grep and find?",
+      "How do you search logs?",
+      "How do you copy files?"
     ],
     "rapid_fire_qa": [
       {
@@ -13749,14 +13518,8 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Difference between grep and awk?",
-        "answer": "grep is best for filtering matching lines of text. awk is a comprehensive text-processing programming language, ideal for extracting columns and manipulating data formats."
-      },
-      {
-        "question": "Explain sed usage",
-        "answer": "A stream editor used to filter and transform text. Commonly used for in-place text replacement: 'sed -i \"s/old/new/g\" file.txt'."
-      }
+      "Difference between grep and awk?",
+      "Explain sed usage"
     ],
     "rapid_fire_qa": [
       {
@@ -13921,18 +13684,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Explain 755 permission",
-        "answer": "Owner has Read/Write/Execute (7). Group has Read/Execute (5). Others have Read/Execute (5). Common for directories and executable scripts."
-      },
-      {
-        "question": "chmod vs chown?",
-        "answer": "chmod changes file permissions (read/write/execute). chown changes the ownership of a file (user and group)."
-      },
-      {
-        "question": "Why avoid 777?",
-        "answer": "It grants read, write, and execute permissions to absolutely everyone on the system, creating a massive security vulnerability."
-      }
+      "Explain 755 permission",
+      "chmod vs chown?",
+      "Why avoid 777?"
     ],
     "rapid_fire_qa": [
       {
@@ -14091,18 +13845,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Create Linux user",
-        "answer": "Use the 'useradd' or 'adduser' command (e.g., 'sudo adduser username') to create a new user profile and directory."
-      },
-      {
-        "question": "How sudo works?",
-        "answer": "Allows permitted users to execute commands with superuser privileges based on rules defined in the /etc/sudoers file."
-      },
-      {
-        "question": "Root vs normal user?",
-        "answer": "Root (UID 0) has absolute superuser access to read/write/modify all files and settings. Normal users have restricted access to their home folder and non-system files."
-      }
+      "Create Linux user",
+      "How sudo works?",
+      "Root vs normal user?"
     ],
     "rapid_fire_qa": [
       {
@@ -14258,18 +14003,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Process vs thread?",
-        "answer": "A process is an independent executing program with its own isolated memory. A thread is a lightweight execution unit within a process; multiple threads share the same process memory."
-      },
-      {
-        "question": "How find process?",
-        "answer": "Use tools like 'ps aux | grep process_name', 'top', 'htop', or 'pgrep process_name'."
-      },
-      {
-        "question": "SIGTERM vs SIGKILL?",
-        "answer": "SIGTERM (15) politely asks a process to terminate, allowing it to save state and exit gracefully. SIGKILL (9) forcefully terminates the process immediately via the kernel."
-      }
+      "Process vs thread?",
+      "How find process?",
+      "SIGTERM vs SIGKILL?"
     ],
     "rapid_fire_qa": [
       {
@@ -14438,18 +14174,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "How to start service?",
-        "answer": "Use systemd commands: 'sudo systemctl start <service-name>'."
-      },
-      {
-        "question": "systemctl vs service?",
-        "answer": "'systemctl' is the modern control interface for systemd init system. 'service' is a legacy command wrapper for SysVinit scripts."
-      },
-      {
-        "question": "Enable service at boot?",
-        "answer": "Run 'sudo systemctl enable <service-name>' to configure the service to start automatically during system startup."
-      }
+      "How to start service?",
+      "systemctl vs service?",
+      "Enable service at boot?"
     ],
     "rapid_fire_qa": [
       {
@@ -14609,18 +14336,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "CPU is 100%, what steps?",
-        "answer": "Identify the culprit using 'top'/'htop'. Check application logs. Use 'strace' to view system calls. Ensure it's not actually high I/O wait due to excessive disk swapping."
-      },
-      {
-        "question": "Load average meaning?",
-        "answer": "Represents the average number of processes in a runnable or uninterruptible state over the last 1, 5, and 15 minutes. A load of 1.0 on a single-core system means 100% utilization."
-      },
-      {
-        "question": "top vs htop?",
-        "answer": "'top' is a basic built-in command-line system monitor. 'htop' is an interactive, color-coded, user-friendly improvement displaying CPU cores and memory bar charts."
-      }
+      "CPU is 100%, what steps?",
+      "Load average meaning?",
+      "top vs htop?"
     ],
     "rapid_fire_qa": [
       {
@@ -14773,18 +14491,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "What is OOM killer?",
-        "answer": "A Linux kernel mechanism that sacrifices (kills) processes when the system completely runs out of physical RAM and Swap space to prevent a full system crash."
-      },
-      {
-        "question": "RAM vs swap?",
-        "answer": "RAM is ultra-fast physical memory. Swap is a designated area on the slower hard drive used as virtual memory when physical RAM is exhausted."
-      },
-      {
-        "question": "Memory troubleshooting steps?",
-        "answer": "Run 'free -m' for RAM usage. Check 'top'/'htop' for process usage. Check '/var/log/messages' or 'dmesg' for Out-of-Memory (OOM) killer occurrences."
-      }
+      "What is OOM killer?",
+      "RAM vs swap?",
+      "Memory troubleshooting steps?"
     ],
     "rapid_fire_qa": [
       {
@@ -14951,18 +14660,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Disk full troubleshooting?",
-        "answer": "Run 'df -h' to see which partition is full. Run 'du -sh /*' to locate large directories. Use 'lsof | grep deleted' to find processes holding onto deleted files and consuming space."
-      },
-      {
-        "question": "df vs du?",
-        "answer": "df shows total disk space usage at the filesystem/partition level. du shows the estimated space used by specific files and directory trees."
-      },
-      {
-        "question": "Explain LVM",
-        "answer": "Logical Volume Manager. Allows grouping physical disks into a storage pool to dynamically resize, extend, or snapshot partitions without re-partitioning disks."
-      }
+      "Disk full troubleshooting?",
+      "df vs du?",
+      "Explain LVM"
     ],
     "rapid_fire_qa": [
       {
@@ -15121,18 +14821,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Partition vs filesystem?",
-        "answer": "A partition is a physical or logical division of a hard drive. A filesystem is the database-like structure (ext4, XFS) applied to a partition to organize files."
-      },
-      {
-        "question": "Explain mount",
-        "answer": "Attaches a physical storage partition, disk image, or network share to a specific directory in the Linux directory tree (e.g., 'mount /dev/sdb1 /mnt')."
-      },
-      {
-        "question": "What is fstab?",
-        "answer": "/etc/fstab is a configuration file containing static information about filesystems to automatically mount storage devices during system boot."
-      }
+      "Partition vs filesystem?",
+      "Explain mount",
+      "What is fstab?"
     ],
     "rapid_fire_qa": [
       {
@@ -15288,18 +14979,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "TCP vs UDP?",
-        "answer": "TCP is connection-oriented, ensuring reliable and ordered data delivery (HTTP, SSH). UDP is connectionless, prioritizing speed over reliability without guaranteed delivery (DNS, Video Streaming)."
-      },
-      {
-        "question": "What is IP?",
-        "answer": "Internet Protocol address. A unique numerical label assigned to each device participating in a computer network to enable routing."
-      },
-      {
-        "question": "What is port?",
-        "answer": "A logical construct serving as a communication endpoint (0-65535) associated with a specific process or network service (e.g., 80 for HTTP)."
-      }
+      "TCP vs UDP?",
+      "What is IP?",
+      "What is port?"
     ],
     "quick_recall": {
       "commands": [
@@ -15470,18 +15152,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "How DNS works?",
-        "answer": "Translates human-readable domain names (example.com) to machine-readable IP addresses (192.0.2.1) via a hierarchical query system of root, TLD, and authoritative name servers."
-      },
-      {
-        "question": "Explain routing",
-        "answer": "The process of selecting paths in a network to forward packets from a source host to a destination host across intermediate routers."
-      },
-      {
-        "question": "What is NAT?",
-        "answer": "Network Address Translation. Rewrites source or destination IP addresses of network packets as they pass through a router to map private IP spaces to public IPs."
-      }
+      "How DNS works?",
+      "Explain routing",
+      "What is NAT?"
     ],
     "rapid_fire_qa": [
       {
@@ -15646,18 +15319,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "How find process using port?",
-        "answer": "Use 'netstat -tulpn | grep <port>', 'ss -tulpn | grep <port>', or 'lsof -i :<port>'."
-      },
-      {
-        "question": "curl vs ping?",
-        "answer": "curl operates at the application layer (L7) to fetch data from URLs via HTTP/HTTPS. ping operates at the network layer (L3) using ICMP to test basic host reachability."
-      },
-      {
-        "question": "How check DNS?",
-        "answer": "Use tools like 'nslookup domain.com' or 'dig domain.com' to query DNS servers and verify IP resolution."
-      }
+      "How find process using port?",
+      "curl vs ping?",
+      "How check DNS?"
     ],
     "rapid_fire_qa": [
       {
@@ -15806,14 +15470,8 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Open port in Linux?",
-        "answer": "Use firewall commands (e.g., 'sudo ufw allow 80' or 'sudo firewall-cmd --add-port=80/tcp --permanent') and ensure a service is listening on that port."
-      },
-      {
-        "question": "iptables vs firewalld?",
-        "answer": "iptables is the legacy CLI tool for creating netfilter firewall rules. firewalld is a modern, dynamic frontend manager that uses zones and services, often backed by nftables."
-      }
+      "Open port in Linux?",
+      "iptables vs firewalld?"
     ],
     "quick_recall": {
       "commands": [
@@ -15981,18 +15639,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "How SSH works?",
-        "answer": "It uses public-key cryptography to securely exchange a symmetric session key, then uses that symmetric key to encrypt all subsequent communication over port 22."
-      },
-      {
-        "question": "SSH troubleshooting steps?",
-        "answer": "Verify basic network connectivity (ping). Ensure sshd is running on the target. Check target logs in /var/log/auth.log. Verify firewall rules allow port 22. Use 'ssh -v' for verbose client logs."
-      },
-      {
-        "question": "Password vs key authentication?",
-        "answer": "Password auth relies on a secret string, making it vulnerable to brute-force attacks. Key auth uses a cryptographic key pair (public/private), which is exponentially more secure and allows passwordless automation."
-      }
+      "How SSH works?",
+      "SSH troubleshooting steps?",
+      "Password vs key authentication?"
     ],
     "rapid_fire_qa": [
       {
@@ -16154,18 +15803,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "apt vs yum?",
-        "answer": "'apt' is the package manager for Debian/Ubuntu systems using .deb packages. 'yum' is the package manager for RHEL/CentOS systems using .rpm packages."
-      },
-      {
-        "question": "How install package?",
-        "answer": "Run package commands like 'sudo apt-get install <name>' on Ubuntu, or 'sudo yum install <name>' on CentOS."
-      },
-      {
-        "question": "How check installed packages?",
-        "answer": "Run 'dpkg -l' on Debian/Ubuntu systems, or 'rpm -qa' on RHEL/CentOS systems."
-      }
+      "apt vs yum?",
+      "How install package?",
+      "How check installed packages?"
     ],
     "rapid_fire_qa": [
       {
@@ -16315,18 +15955,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Where Linux logs stored?",
-        "answer": "In the '/var/log/' directory, managed by syslog, rsyslog, or systemd-journald."
-      },
-      {
-        "question": "journalctl usage?",
-        "answer": "Queries systemd journal logs. E.g., 'journalctl -u service_name' for service logs, or 'journalctl -f' for live-tailing log output."
-      },
-      {
-        "question": "How troubleshoot crash?",
-        "answer": "Examine '/var/log/syslog' or '/var/log/messages'. Run 'journalctl -xe'. Inspect application-specific log files. Check resource utilization before the crash."
-      }
+      "Where Linux logs stored?",
+      "journalctl usage?",
+      "How troubleshoot crash?"
     ],
     "quick_recall": {
       "commands": [
@@ -16494,18 +16125,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "What is kernel panic?",
-        "answer": "An unrecoverable system error detected by the Linux kernel, causing the operating system to halt execution immediately to prevent data corruption."
-      },
-      {
-        "question": "How troubleshoot reboot?",
-        "answer": "Analyze '/var/log/wtmp' via 'last reboot'. Check 'dmesg' or '/var/log/kern.log'. Review hardware console events or monitoring system alerts."
-      },
-      {
-        "question": "dmesg usage?",
-        "answer": "Prints the message buffer of the kernel, crucial for debugging hardware drivers, network issues, disk mounts, and OOM killer events."
-      }
+      "What is kernel panic?",
+      "How troubleshoot reboot?",
+      "dmesg usage?"
     ],
     "rapid_fire_qa": [
       {
@@ -16655,18 +16277,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Write monitoring script",
-        "answer": "Write a bash or python script that regularly checks CPU/Memory thresholds (using 'free' or 'top') and sends alerts if thresholds are exceeded."
-      },
-      {
-        "question": "Explain shell variables",
-        "answer": "Placeholders that store text or numeric values within a shell session, created via 'NAME=val' and referenced using '$NAME'."
-      },
-      {
-        "question": "Difference bash and shell?",
-        "answer": "A shell is the general command-line interpreter specification. Bash (Bourne Again Shell) is a specific, popular implementation of a shell."
-      }
+      "Write monitoring script",
+      "Explain shell variables",
+      "Difference bash and shell?"
     ],
     "rapid_fire_qa": [
       {
@@ -16811,14 +16424,8 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Cron format?",
-        "answer": "Five fields representing timing: Minute Hour Day-of-Month Month Day-of-Week (e.g., '* * * * *' runs every minute)."
-      },
-      {
-        "question": "Schedule job every day?",
-        "answer": "Use the cron format '0 0 * * *' (runs daily at midnight) or place a script in the '/etc/cron.daily' directory."
-      }
+      "Cron format?",
+      "Schedule job every day?"
     ],
     "quick_recall": {
       "commands": [
@@ -17053,18 +16660,9 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Server down troubleshooting?",
-        "answer": "Verify ping connectivity -> Check SSH accessibility -> Verify physical/cloud hypervisor power status -> Check resource graphs -> Analyze system/kernel logs."
-      },
-      {
-        "question": "Application slow steps?",
-        "answer": "Check CPU/Memory/Disk I/O using 'top' and 'iostat'. Verify network latency. Check application logs for database query delays or memory leaks."
-      },
-      {
-        "question": "Deployment failed?",
-        "answer": "Check deployment logs. Inspect current environment state. Revert to the last stable release using rollback. Conduct post-mortem analysis."
-      }
+      "Server down troubleshooting?",
+      "Application slow steps?",
+      "Deployment failed?"
     ],
     "quick_recall": {
       "commands": [
@@ -17222,18 +16820,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Why Python in DevOps?",
-        "answer": "It is highly readable, has an extensive standard library, features powerful third-party modules (Boto3, Requests, Kubernetes client), and easily bridges the gap between sysadmin scripts and complex API integrations."
-      },
-      {
-        "question": "Python vs Shell scripting?",
-        "answer": "Shell is superior for simple file operations and stringing CLI tools together. Python excels at complex logic, data manipulation (JSON/YAML), error handling, and interacting with REST APIs."
-      },
-      {
-        "question": "Explain Python data types?",
-        "answer": "Includes basic types like Integers, Floats, Strings, Booleans, and collections like Lists, Tuples, Sets, and Dictionaries."
-      }
+      "Why Python in DevOps?",
+      "Python vs Shell scripting?",
+      "Explain Python data types?"
     ],
     "rapid_fire_qa": [
       {
@@ -17388,18 +16977,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "List vs tuple?",
-        "answer": "A List is mutable (can be modified after creation) and uses square brackets []. A Tuple is immutable (cannot be modified) and uses parentheses ()."
-      },
-      {
-        "question": "Set vs dictionary?",
-        "answer": "A Set is an unordered collection of unique elements. A Dictionary is an unordered collection of key-value pairs."
-      },
-      {
-        "question": "When use dictionary?",
-        "answer": "When you need fast key-value lookups (O(1) average time complexity), such as mapping configurations, database records, or caching data."
-      }
+      "List vs tuple?",
+      "Set vs dictionary?",
+      "When use dictionary?"
     ],
     "rapid_fire_qa": [
       {
@@ -17519,14 +17099,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Explain mutable objects",
-        "answer": "Objects whose internal state or data can be changed after they are created. Examples include lists, dictionaries, and sets."
-      },
-      {
-        "question": "Why strings immutable?",
-        "answer": "For memory efficiency (Python can intern/cache strings), safety when used as dictionary keys (their hash must not change), and inherent thread safety."
-      }
+      "Explain mutable objects",
+      "Why strings immutable?"
     ],
     "rapid_fire_qa": [
       {
@@ -17677,18 +17251,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Explain LEGB rule",
-        "answer": "It is Python's scope resolution order: Local (inside function) -> Enclosing (nested functions) -> Global (module level) -> Built-in (Python keywords)."
-      },
-      {
-        "question": "Local vs global variable?",
-        "answer": "A local variable is defined within a function and accessible only there. A global variable is defined at the top level of a script and is accessible throughout the entire file."
-      },
-      {
-        "question": "What is variable shadowing?",
-        "answer": "When a local variable shares the same name as a global variable, the local scope 'shadows' or hides the global variable within that function."
-      }
+      "Explain LEGB rule",
+      "Local vs global variable?",
+      "What is variable shadowing?"
     ],
     "rapid_fire_qa": [
       {
@@ -17805,18 +17370,9 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Why use functions?",
-        "answer": "To promote code reusability, modularity, readability, and testability by grouping related blocks of code together."
-      },
-      {
-        "question": "Explain lambda",
-        "answer": "A small, anonymous, single-expression function defined with the 'lambda' keyword, useful for short-lived callbacks or sorting logic."
-      },
-      {
-        "question": "Parameter vs argument?",
-        "answer": "A parameter is the variable declared in the function definition. An argument is the actual value passed to the function when it is called."
-      }
+      "Why use functions?",
+      "Explain lambda",
+      "Parameter vs argument?"
     ],
     "rapid_fire_qa": [
       {
@@ -17932,14 +17488,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Difference between args and kwargs?",
-        "answer": "*args allows passing a variable number of positional arguments as a tuple. **kwargs allows passing a variable number of named keyword arguments as a dictionary."
-      },
-      {
-        "question": "When use kwargs?",
-        "answer": "When writing wrappers around APIs, configuration functions, or decorators where you want to pass an arbitrary, flexible set of parameters without explicitly defining them all."
-      }
+      "Difference between args and kwargs?",
+      "When use kwargs?"
     ],
     "rapid_fire_qa": [
       {
@@ -18054,14 +17604,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Module vs package?",
-        "answer": "A module is a single Python file (.py). A package is a directory containing multiple modules and an '__init__.py' file."
-      },
-      {
-        "question": "How import works?",
-        "answer": "Python searches directories in 'sys.path' for matching module names, executes the module file, and binds it to the current namespace."
-      }
+      "Module vs package?",
+      "How import works?"
     ],
     "quick_recall": {
       "concepts": [
@@ -18216,14 +17760,8 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "Why use virtual environment?",
-        "answer": "To isolate project dependencies, preventing version conflicts between different Python projects sharing the same global system library."
-      },
-      {
-        "question": "venv vs global installation?",
-        "answer": "venv creates a local isolated folder for dependencies. Global installation places libraries in the system-wide Python folder, risking library conflicts."
-      }
+      "Why use virtual environment?",
+      "venv vs global installation?"
     ],
     "rapid_fire_qa": [
       {
@@ -18381,18 +17919,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "pip vs apt?",
-        "answer": "'pip' is the Python package installer specifically for libraries on PyPI. 'apt' is the system package manager for OS-level software on Debian/Ubuntu."
-      },
-      {
-        "question": "What is requirements.txt?",
-        "answer": "A plain text file listing all Python package dependencies and their exact versions, allowing easy recreation of environments via 'pip install -r requirements.txt'."
-      },
-      {
-        "question": "How manage versions?",
-        "answer": "Pin dependency versions in requirements.txt or use package managers like Poetry or Pipenv to track lock files."
-      }
+      "pip vs apt?",
+      "What is requirements.txt?",
+      "How manage versions?"
     ],
     "rapid_fire_qa": [
       {
@@ -18510,14 +18039,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How read file?",
-        "answer": "Using a context manager: 'with open(\"filename.txt\", \"r\") as file: data = file.read()'"
-      },
-      {
-        "question": "Why use with open?",
-        "answer": "It is a context manager that automatically handles closing the file resource once the block ends, even if an exception is raised during reading/writing."
-      }
+      "How read file?",
+      "Why use with open?"
     ],
     "quick_recall": {
       "concepts": [
@@ -18626,14 +18149,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "os vs shutil?",
-        "answer": "The 'os' module handles standard system operations like path joining and removing single files. 'shutil' provides higher-level operations like copying files and deleting entire directory trees."
-      },
-      {
-        "question": "How automate file operations?",
-        "answer": "Use Python's built-in 'os', 'shutil', and 'pathlib' modules to create, copy, move, delete, and traverse files and directories."
-      }
+      "os vs shutil?",
+      "How automate file operations?"
     ],
     "quick_recall": {
       "concepts": [
@@ -18743,14 +18260,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How execute shell command in Python?",
-        "answer": "Use the 'subprocess' module (e.g., 'subprocess.run([\"ls\", \"-l\"])'), which is secure and allows capturing stdout/stderr."
-      },
-      {
-        "question": "os.system vs subprocess?",
-        "answer": "os.system simply runs a command in a subshell and returns an exit code. subprocess is much more powerful, allowing you to capture stdout/stderr, pipe inputs, and securely pass arguments."
-      }
+      "How execute shell command in Python?",
+      "os.system vs subprocess?"
     ],
     "rapid_fire_qa": [
       {
@@ -18904,18 +18415,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "try vs except vs finally?",
-        "answer": "'try' runs code that might fail. 'except' catches and handles specified errors. 'finally' executes cleanup code regardless of success or failure."
-      },
-      {
-        "question": "How handle API failure?",
-        "answer": "Wrap API requests in try-except blocks, check status codes, catch HTTP exceptions, and implement retries with backoff for transient network issues."
-      },
-      {
-        "question": "raise vs exception?",
-        "answer": "'raise' is a keyword used to trigger/throw an exception manually. An 'Exception' is the class or object representing the error itself."
-      }
+      "try vs except vs finally?",
+      "How handle API failure?",
+      "raise vs exception?"
     ],
     "rapid_fire_qa": [
       {
@@ -19034,18 +18536,9 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Why use logging?",
-        "answer": "Provides structured, configurable, and persistent diagnostic information (levels, timestamps, files) instead of volatile stdout print messages."
-      },
-      {
-        "question": "Logging levels?",
-        "answer": "DEBUG (diagnostics), INFO (general status), WARNING (potential issues), ERROR (failures), and CRITICAL (severe system-halting issues)."
-      },
-      {
-        "question": "print vs logging?",
-        "answer": "'print' writes only to standard output. 'logging' is configurable, supports levels, timestamps, formatting, and writes to multiple outputs like files or syslog."
-      }
+      "Why use logging?",
+      "Logging levels?",
+      "print vs logging?"
     ],
     "rapid_fire_qa": [
       {
@@ -19162,14 +18655,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How debug Python script?",
-        "answer": "Use pdb (Python Debugger), insert breakpoints via 'breakpoint()', run with IDE debuggers, or add detailed log messages."
-      },
-      {
-        "question": "What is traceback?",
-        "answer": "A detailed printout of the call stack showing exactly where an exception occurred, listing files, functions, and line numbers."
-      }
+      "How debug Python script?",
+      "What is traceback?"
     ],
     "quick_recall": {
       "concepts": [
@@ -19277,14 +18764,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How parse logs?",
-        "answer": "Read files line-by-line, and apply regular expressions (via the 're' module) or string operations to extract key-value data fields."
-      },
-      {
-        "question": "Explain regex?",
-        "answer": "Regular Expressions. A syntax for defining search patterns to match, search, or replace specific character sequences within text."
-      }
+      "How parse logs?",
+      "Explain regex?"
     ],
     "quick_recall": {
       "concepts": [
@@ -19394,14 +18875,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "JSON parse in Python?",
-        "answer": "Use the built-in 'json' module, calling 'json.loads()' for parsing strings, or 'json.load()' for reading from files."
-      },
-      {
-        "question": "loads vs dumps?",
-        "answer": "'json.loads' parses a JSON string into a Python object. 'json.dumps' serializes a Python object into a JSON string."
-      }
+      "JSON parse in Python?",
+      "loads vs dumps?"
     ],
     "quick_recall": {
       "concepts": [
@@ -19509,14 +18984,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Where YAML used?",
-        "answer": "Widely used for DevOps configuration files, CI/CD pipelines (GitHub Actions, GitLab CI), Kubernetes manifests, and Ansible playbooks due to its readability."
-      },
-      {
-        "question": "YAML vs JSON?",
-        "answer": "YAML is a human-friendly superset of JSON emphasizing indentation over braces and brackets. JSON is a strict, machine-friendly format requiring quotes."
-      }
+      "Where YAML used?",
+      "YAML vs JSON?"
     ],
     "quick_recall": {
       "concepts": [
@@ -19666,14 +19135,8 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "How handle secrets in Python?",
-        "answer": "Store secrets in environment variables and fetch them via 'os.environ.get', keeping them out of source control systems."
-      },
-      {
-        "question": "os.getenv vs os.environ?",
-        "answer": "'os.getenv(key)' returns None if the key is missing. 'os.environ[key]' raises a KeyError if the key is missing."
-      }
+      "How handle secrets in Python?",
+      "os.getenv vs os.environ?"
     ],
     "rapid_fire_qa": [
       {
@@ -19828,18 +19291,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "How call REST API?",
-        "answer": "Use the 'requests' library. For example: 'response = requests.get(\"https://api.example.com/data\")'."
-      },
-      {
-        "question": "Explain HTTP methods?",
-        "answer": "GET retrieves data, POST submits data to create a new resource, PUT/PATCH updates an existing resource, and DELETE removes a resource."
-      },
-      {
-        "question": "How handle API errors?",
-        "answer": "Check the response.status_code, use response.raise_for_status() to automatically throw an exception for 4xx/5xx codes, and wrap API calls in try-except blocks catching requests.exceptions.RequestException."
-      }
+      "How call REST API?",
+      "Explain HTTP methods?",
+      "How handle API errors?"
     ],
     "rapid_fire_qa": [
       {
@@ -19951,14 +19405,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How execute remote command using Python?",
-        "answer": "The most common way is using the third-party 'paramiko' library to establish an SSH connection, or by invoking the system's ssh command via the 'subprocess' module."
-      },
-      {
-        "question": "Paramiko usage?",
-        "answer": "Import paramiko, initialize an SSHClient, set missing host key policies, connect using IP and credentials/keys, and use exec_command() to run scripts and read the resulting stdout/stderr."
-      }
+      "How execute remote command using Python?",
+      "Paramiko usage?"
     ],
     "quick_recall": {
       "concepts": [
@@ -20065,14 +19513,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Python role in CI/CD?",
-        "answer": "Used for writing deployment automation scripts, trigger API integrations, parse test reports, run compliance scans, and configure cloud environments."
-      },
-      {
-        "question": "How automate deployment?",
-        "answer": "Use Python automation tools (like Fabric, Ansible) or write scripts leveraging cloud SDKs (boto3) and Kubernetes client modules."
-      }
+      "Python role in CI/CD?",
+      "How automate deployment?"
     ],
     "quick_recall": {
       "concepts": [
@@ -20179,14 +19621,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How automate cloud using Python?",
-        "answer": "Use the cloud provider's official SDK (e.g., 'boto3' for AWS, 'azure-mgmt' for Azure, or 'google-cloud' for GCP)."
-      },
-      {
-        "question": "What is SDK?",
-        "answer": "Software Development Kit. A collection of development tools, libraries, and APIs provided by software vendors to facilitate application creation."
-      }
+      "How automate cloud using Python?",
+      "What is SDK?"
     ],
     "quick_recall": {
       "concepts": [
@@ -20299,14 +19735,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How automate Kubernetes using Python?",
-        "answer": "Use the official 'kubernetes' pip package. It acts as a programmatic client to the Kubernetes API server, allowing you to query, create, and manage resources directly from Python code."
-      },
-      {
-        "question": "Python client usage?",
-        "answer": "Import the kubernetes config and client. Load kubeconfig using 'config.load_kube_config()'. Initialize an API instance like 'client.CoreV1Api()', and call methods like 'list_namespaced_pod(\"default\")'."
-      }
+      "How automate Kubernetes using Python?",
+      "Python client usage?"
     ],
     "quick_recall": {
       "concepts": [
@@ -20459,18 +19889,9 @@
       ]
     },
     "common_interview_questions": [
-      {
-        "question": "How monitor server using Python?",
-        "answer": "Query system metrics via the 'psutil' module or parse Linux '/proc' virtual files, printing or exporting them to a metrics collector."
-      },
-      {
-        "question": "How get CPU usage?",
-        "answer": "Import 'psutil' and call 'psutil.cpu_percent(interval=1)' to query CPU utilization over a specific time window."
-      },
-      {
-        "question": "psutil usage?",
-        "answer": "A cross-platform library used for retrieving system utilization data (CPU, memory, disks, network) and running process information in Python."
-      }
+      "How monitor server using Python?",
+      "How get CPU usage?",
+      "psutil usage?"
     ],
     "rapid_fire_qa": [
       {
@@ -20587,14 +20008,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "pytest vs unittest?",
-        "answer": "unittest is a verbose, built-in, class-based framework. pytest is a concise, powerful third-party framework that uses simple assert statements and highly reusable fixtures."
-      },
-      {
-        "question": "Why testing in DevOps?",
-        "answer": "Infrastructure as Code and automation scripts can destroy production environments if flawed. Testing ensures logic, API calls, and configurations behave safely and predictably before deployment."
-      }
+      "pytest vs unittest?",
+      "Why testing in DevOps?"
     ],
     "rapid_fire_qa": [
       {
@@ -20701,14 +20116,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Thread vs process?",
-        "answer": "Threads run within the same memory space but are bound by Python's Global Interpreter Lock (GIL), limiting CPU parallelization. Processes use separate memory spaces and achieve true parallelism."
-      },
-      {
-        "question": "When use multiprocessing?",
-        "answer": "When dealing with heavy CPU-bound tasks (like data processing or encryption) to bypass the GIL and utilize multiple CPU cores effectively."
-      }
+      "Thread vs process?",
+      "When use multiprocessing?"
     ],
     "quick_recall": {
       "concepts": [
@@ -20809,14 +20218,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "Generator vs list?",
-        "answer": "A list computes and stores all items in memory at once. A generator calculates and yields items one at a time on the fly, saving massive amounts of memory for large data sequences."
-      },
-      {
-        "question": "Why use yield?",
-        "answer": "The 'yield' keyword suspends function execution, returns a value to the caller, and retains the function's state so it can resume exactly where it left off on the next iteration."
-      }
+      "Generator vs list?",
+      "Why use yield?"
     ],
     "rapid_fire_qa": [
       {
@@ -20917,14 +20320,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "What is decorator?",
-        "answer": "A design pattern in Python where a function takes another function as an argument to extend or modify its behavior without permanently altering the original function's code (e.g., @retry)."
-      },
-      {
-        "question": "Where used?",
-        "answer": "Applied across shell scripting, system monitoring tools, automation scripts, and custom testing frameworks in DevOps."
-      }
+      "What is decorator?",
+      "Where used?"
     ],
     "quick_recall": {
       "concepts": [
@@ -21033,14 +20430,8 @@
       }
     ],
     "common_interview_questions": [
-      {
-        "question": "How make Python script production ready?",
-        "answer": "Implement proper logging instead of print(), add robust try/except error handling, use argparse for CLI inputs, validate environment variables, include a requirements.txt, and write unit tests."
-      },
-      {
-        "question": "How handle failures?",
-        "answer": "Wrap critical operations in try/except/finally blocks. Implement retry mechanisms with exponential backoff for network/API calls. Ensure sensible fallback states and log exact tracebacks for debugging."
-      }
+      "How make Python script production ready?",
+      "How handle failures?"
     ],
     "quick_recall": {
       "concepts": [

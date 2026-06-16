@@ -1074,7 +1074,22 @@ function renderScenario() {
             solutionHtml += `
             <div class="card">
                 <h2 class="card-title">🎤 Common Interview Questions</h2>
-                <div class="pill-list">${d.common_interview_questions.map(q => `<span class="pill-item info">${format(q)}</span>`).join('')}</div>
+                <div class="faq-list" style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+                    ${d.common_interview_questions.map((q, qidx) => {
+                        const qText = typeof q === 'string' ? q : q.question;
+                        const qAns = typeof q === 'string' ? 'Answer details are being compiled.' : q.answer;
+                        return `
+                        <div class="faq-item" style="border: 1px solid var(--border); border-radius: 6px; padding: 10px; background: var(--surface-1);">
+                            <div class="faq-question" style="font-weight: 600; color: var(--status-info); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px;" onclick="const ans = this.nextElementSibling; const show = ans.style.display !== 'block'; ans.style.display = show ? 'block' : 'none'; this.querySelector('.faq-icon').innerText = show ? '▼' : '▶';">
+                                <span>${format(qText)}</span>
+                                <span class="faq-icon" style="font-size: 10px; color: var(--text-muted);">▶</span>
+                            </div>
+                            <div class="faq-answer" style="display: none; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); color: var(--text-muted); font-size: 13px; line-height: 1.5;">
+                                <strong style="color: var(--text-primary)">Answer:</strong> ${format(qAns)}
+                            </div>
+                        </div>`;
+                    }).join('')}
+                </div>
             </div>`;
         }
 

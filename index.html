@@ -536,6 +536,431 @@
         .text-success { color: var(--status-success) !important; }
         .text-warning { color: var(--status-warning) !important; }
         .text-info { color: var(--status-info) !important; }
+
+        /* Slide Search Styles */
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+            min-width: 200px;
+        }
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            color: var(--text-muted);
+            font-size: 14px;
+            pointer-events: none;
+        }
+        #search-input {
+            width: 100%;
+            padding: 6px 30px 6px 30px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        #search-input:focus {
+            border-color: var(--status-info);
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+            background: var(--surface-3);
+        }
+        #search-clear-btn {
+            position: absolute;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: none;
+            font-size: 12px;
+            padding: 4px;
+            line-height: 1;
+        }
+        #search-clear-btn:hover {
+            color: var(--text-primary);
+        }
+        #search-results-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            max-height: 320px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            padding: 6px;
+        }
+        .search-result-item {
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border: 1px solid transparent;
+            text-align: left;
+        }
+        .search-result-item:hover, .search-result-item.focus-item {
+            background: var(--surface-3);
+            border-color: var(--status-info);
+        }
+        .search-result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .search-result-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-primary);
+        }
+        .search-result-reason {
+            font-size: 10px;
+            padding: 1px 6px;
+            background: rgba(96, 165, 250, 0.15);
+            color: #60A5FA;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .search-result-snippet {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .search-result-snippet mark {
+            background: rgba(245, 158, 11, 0.3);
+            color: #f59e0b;
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        /* DYNAMIC GLOSSARY & LINK STYLES */
+        .glossary-link {
+            color: #C4B5FD;
+            border-bottom: 1px dashed rgba(196, 181, 253, 0.6);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 550;
+            padding: 0 2px;
+        }
+        .glossary-link:hover {
+            color: #E9D5FF;
+            background: rgba(196, 181, 253, 0.15);
+            border-bottom: 1px solid #C4B5FD;
+            border-radius: 4px;
+            box-shadow: 0 0 8px rgba(196, 181, 253, 0.2);
+        }
+
+        /* PILLS & BUTTON TAGS */
+        .pill-list-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .pill-item-clickable {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+        }
+        .pill-item-clickable:hover {
+            background: var(--surface-3);
+            border-color: var(--status-info);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+        .pill-item-clickable.concept-link {
+            border-left: 3px solid #A78BFA;
+        }
+        .pill-item-clickable.jump-link {
+            border-left: 3px solid #60A5FA;
+        }
+
+        /* GLOSSARY EXPLORER GRID LAYOUT */
+        .glossary-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 16px;
+            height: calc(100vh - 220px);
+            min-height: 500px;
+            margin-top: 8px;
+        }
+        @media (max-width: 768px) {
+            .glossary-layout {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+        }
+        .glossary-sidebar {
+            background: var(--surface-1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .glossary-search-box {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface-2);
+        }
+        .glossary-search-box input {
+            width: 100%;
+            padding: 8px 12px;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        .glossary-search-box input:focus {
+            border-color: var(--status-info);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.15);
+        }
+        .glossary-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            gap: 6px;
+        }
+        .glossary-item {
+            padding: 10px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            border: 1px solid transparent;
+        }
+        .glossary-item:hover {
+            background: var(--surface-2);
+        }
+        .glossary-item.active {
+            background: var(--surface-3);
+            border-color: rgba(96, 165, 250, 0.3);
+            box-shadow: inset 3px 0 0 var(--status-info);
+        }
+        .glossary-item-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .glossary-item-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        .glossary-main {
+            overflow-y: auto;
+            padding-right: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* GLOSSARY DRAWER STYLE */
+        .glossary-drawer {
+            position: fixed;
+            top: 0;
+            right: -460px;
+            width: 440px;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+        }
+        .glossary-drawer.active {
+            right: 0;
+        }
+        @media (max-width: 480px) {
+            .glossary-drawer {
+                width: 100%;
+                right: -100%;
+            }
+        }
+        .glossary-drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+        .glossary-drawer-close {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glossary-drawer-close:hover {
+            color: var(--text-primary);
+            background: var(--surface-3);
+            border-color: var(--status-error);
+        }
+        .glossary-drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-right: 6px;
+        }
+
+        /* FLASHCARD STYLE */
+        .flashcard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        .flashcard-wrapper {
+            perspective: 1200px;
+            width: 100%;
+            height: 380px;
+            cursor: pointer;
+        }
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+        }
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+        .flashcard-front {
+            background: linear-gradient(135deg, var(--surface-1) 0%, var(--surface-2) 100%);
+            color: var(--text-primary);
+        }
+        .flashcard-back {
+            background: linear-gradient(135deg, var(--surface-2) 0%, rgba(27, 36, 53, 0.8) 100%);
+            color: var(--text-primary);
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .flashcard-front-title {
+            font-size: 34px;
+            font-weight: 750;
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(90deg, #F8FAFC, #C4B5FD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .flashcard-hint {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .flashcard-controls {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            justify-content: center;
+        }
+        .glossary-filter-btn {
+            background: var(--surface-3);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .glossary-filter-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--border);
+            background: var(--surface-2);
+        }
+        .glossary-filter-btn.active {
+            background: var(--status-info) !important;
+            color: white !important;
+            border-color: var(--status-info) !important;
+        }
     </style>
 </head>
 <body>
@@ -549,14 +974,24 @@
             <button class="mode-btn active" data-mode="learn">Learn</button>
             <button class="mode-btn" data-mode="practice">Practice</button>
             <button class="mode-btn" data-mode="review">Review</button>
-            <!-- <button class="mode-btn" data-mode="rapid_fire">Rapid Fire</button> -->
-            <!-- <button class="mode-btn" data-mode="follow_up">Follow Up</button> -->
+            <button class="mode-btn" data-mode="glossary">Glossary</button>
+            <button class="mode-btn" data-mode="flashcards">Flashcards</button>
         </div>
         <button class="nav-btn" id="btn-next">❯</button>
     </div>
 
     <div class="header">
-        <div class="meta" id="counter" style="cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; background: var(--surface-2); border-radius: 4px; width: fit-content; border: 1px solid var(--border); transition: border-color 0.2s;" title="Open Index" onmouseover="this.style.borderColor='var(--status-info)'" onmouseout="this.style.borderColor='var(--border)'">Question 1 of X <span>▼</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 4px;">
+            <div class="meta" id="counter" style="cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; background: var(--surface-2); border-radius: 4px; width: fit-content; border: 1px solid var(--border); transition: border-color 0.2s;" title="Open Index" onmouseover="this.style.borderColor='var(--status-info)'" onmouseout="this.style.borderColor='var(--border)'">Question 1 of X <span>▼</span></div>
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Search questions, keywords, concepts..." autocomplete="off">
+                    <button id="search-clear-btn" title="Clear search">✕</button>
+                </div>
+                <div id="search-results-dropdown"></div>
+            </div>
+        </div>
         <h1 id="q-title">Loading...</h1>
         <div class="chips" id="q-chips"></div>
     </div>
@@ -574,6 +1009,17 @@
             <div class="index-list" id="index-list">
                 <!-- Populated via JS -->
             </div>
+        </div>
+    </div>
+
+    <!-- Glossary Quick View Drawer -->
+    <div id="glossary-drawer" class="glossary-drawer">
+        <div class="glossary-drawer-header">
+            <h2 id="drawer-keyword" style="margin: 0; font-size: 20px;">Concept Name</h2>
+            <button class="glossary-drawer-close" id="btn-close-drawer">✕</button>
+        </div>
+        <div class="glossary-drawer-body" id="glossary-drawer-body">
+            <!-- Populated via JS -->
         </div>
     </div>
 
@@ -596,6 +1042,55 @@ try {
     console.error('Failed to load ratings:', e);
 }
 let isOneColumn = true; // Default to 1 Column for better reading
+
+// DYNAMIC GLOSSARY & FLASHCARD STATE
+let glossary = [];
+let keywordLinks = {};
+let keywordsRegex = null;
+let activeGlossaryId = null;
+let activeGlossaryCategory = 'All';
+let flashcardsList = [];
+let currentFlashcardIndex = 0;
+let flashcardFlipped = false;
+let flashcardsProgress = {};
+
+try {
+    const saved = localStorage.getItem('devops_flashcards_progress');
+    if (saved) flashcardsProgress = JSON.parse(saved);
+} catch (e) {
+    console.error('Failed to load flashcard progress:', e);
+}
+
+function prepareKeywordsRegex() {
+    if (keywordsRegex) return;
+    if (!glossary || glossary.length === 0) return;
+    
+    const terms = [];
+    const termToId = {};
+    
+    glossary.forEach(g => {
+        terms.push(g.keyword);
+        termToId[g.keyword.toLowerCase()] = g.keywordId;
+        
+        if (g.aliases) {
+            g.aliases.forEach(a => {
+                terms.push(a);
+                termToId[a.toLowerCase()] = g.keywordId;
+            });
+        }
+    });
+    
+    // Sort longer terms first to prevent partial/sub-term overrides
+    terms.sort((a, b) => b.length - a.length);
+    
+    // Escape regex characters
+    const escapedTerms = terms.map(t => t.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'));
+    
+    keywordsRegex = {
+        regex: new RegExp(`\\b(${escapedTerms.join('|')})\\b`, 'gi'),
+        termToId: termToId
+    };
+}
 
 function toggleLayout() {
     isOneColumn = !isOneColumn;
@@ -635,6 +1130,17 @@ function format(text) {
                 if (lower === 'run') icon = '▶️';
                 return `<span class="action-badge action-${lower}">${icon} ${match}</span>`;
             });
+
+            // Dynamic Glossary Keyword Highlighting!
+            if (keywordsRegex) {
+                s = s.replace(keywordsRegex.regex, (match) => {
+                    const id = keywordsRegex.termToId[match.toLowerCase()];
+                    if (id) {
+                        return `<span class="glossary-link" data-keyword-id="${id}">${match}</span>`;
+                    }
+                    return match;
+                });
+            }
             
             parts[i] = s;
         }
@@ -642,26 +1148,562 @@ function format(text) {
     return parts.join('');
 }
 
+// GLOSSARY & FLASHCARDS CORE FUNCTIONS
+function jumpToSource(ref) {
+    let titleToSearch = '';
+    if (typeof ref === 'string') {
+        const parts = ref.split(': ');
+        if (parts.length > 1) {
+            titleToSearch = parts.slice(1).join(': ');
+        } else {
+            titleToSearch = ref;
+        }
+    } else if (ref.scenarioTitle) {
+        titleToSearch = ref.scenarioTitle;
+    } else if (ref.slideTopic) {
+        titleToSearch = ref.slideTopic;
+    }
+    
+    if (titleToSearch) {
+        const cleanTitle = titleToSearch.toLowerCase().trim();
+        const foundIndex = scenarios.findIndex(s => s.title.toLowerCase().trim() === cleanTitle);
+        if (foundIndex !== -1) {
+            currentIndex = foundIndex;
+            solutionRevealed = false;
+            
+            // Close drawers and modals
+            const drawer = document.getElementById('glossary-drawer');
+            if (drawer) drawer.classList.remove('active');
+            const modal = document.getElementById('index-modal');
+            if (modal) modal.classList.remove('active');
+            
+            setMode('learn');
+            return true;
+        }
+    }
+    
+    if (typeof ref === 'string') {
+        const scMatch = ref.match(/^SC-(\d+):/);
+        if (scMatch) {
+            const idx = parseInt(scMatch[1], 10);
+            if (idx >= 0 && idx < scenarios.length) {
+                currentIndex = idx;
+                solutionRevealed = false;
+                
+                const drawer = document.getElementById('glossary-drawer');
+                if (drawer) drawer.classList.remove('active');
+                
+                setMode('learn');
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function showGlossaryDrawer(id) {
+    const term = glossary.find(g => g.keywordId === id);
+    if (!term) return;
+    
+    document.getElementById('drawer-keyword').innerText = term.keyword;
+    
+    const def = term.definition;
+    const relatedLinks = def.relatedKeywords && def.relatedKeywords.length > 0 
+        ? def.relatedKeywords.map(rkId => {
+            const rk = glossary.find(g => g.keywordId === rkId);
+            return rk ? `<span class="pill-item-clickable concept-link" onclick="showGlossaryDrawer('${rkId}')">${rk.keyword}</span>` : '';
+          }).join('') 
+        : '';
+        
+    const mentions = keywordLinks[id] || [];
+    const mentionsLinks = mentions.length > 0 
+        ? mentions.map(m => `<span class="pill-item-clickable jump-link" onclick="jumpToSource('${m}')">${m}</span>`).join('') 
+        : '<span class="body-text" style="color:var(--text-muted)">None</span>';
+
+    const importanceStars = '★'.repeat(Math.round(term.importance / 2)) + '☆'.repeat(5 - Math.round(term.importance / 2));
+    const frequencyStars = '★'.repeat(Math.round(term.frequency / 2)) + '☆'.repeat(5 - Math.round(term.frequency / 2));
+
+    const html = `
+        <div style="display:flex; gap: 6px; flex-wrap:wrap; margin-bottom: 4px;">
+            <span class="chip" style="background: rgba(99, 102, 241, 0.15); color: #818CF8; border: 1px solid rgba(99, 102, 241, 0.3); font-weight:600;">${term.category}</span>
+            <span class="chip" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8; border: 1px solid rgba(56, 189, 248, 0.3); font-weight:600;">${term.interviewDomain}</span>
+            <span class="chip">${term.difficulty}</span>
+            <span class="chip">${term.seniority}</span>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; background: var(--surface-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border);">
+            <div>
+                <div class="meta" style="font-size: 11px;">Importance</div>
+                <div style="color: var(--status-warning); font-size: 14px; font-weight: bold;">${importanceStars}</div>
+            </div>
+            <div>
+                <div class="meta" style="font-size: 11px;">Frequency</div>
+                <div style="color: var(--status-info); font-size: 14px; font-weight: bold;">${frequencyStars}</div>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 0; background: var(--surface-2); padding: 12px; border-left: 3px solid var(--status-info);">
+            <h3 style="font-size: 14px; margin-bottom: 4px;">📖 Definition</h3>
+            <p class="body-text" style="font-size: 13.5px; line-height: 1.5; color: var(--text-primary);">${format(def.shortDefinition)}</p>
+        </div>
+
+        ${def.detailedExplanation ? `
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 4px; color: var(--text-primary)">🔍 Explanation</h3>
+            <p class="body-text" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">${format(def.detailedExplanation)}</p>
+        </div>` : ''}
+
+        ${def.whyItExists ? `
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 4px; color: var(--text-primary)">❓ Why It Matters</h3>
+            <p class="body-text" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">${format(def.whyItExists)}</p>
+        </div>` : ''}
+
+        ${def.howItWorks ? `
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 4px; color: var(--text-primary)">⚙️ How It Works</h3>
+            <p class="body-text" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">${format(def.howItWorks)}</p>
+        </div>` : ''}
+
+        ${def.realWorldUsage ? `
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 4px; color: var(--text-primary)">🛠️ Real-world Scenario</h3>
+            <p class="body-text" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">${format(def.realWorldUsage)}</p>
+        </div>` : ''}
+
+        ${def.interviewExpectation ? `
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 4px; color: var(--status-success)">🎤 Interview Expectation</h3>
+            <p class="body-text" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">${format(def.interviewExpectation)}</p>
+        </div>` : ''}
+
+        ${def.commonMistakes && def.commonMistakes.length > 0 ? `
+        <div style="background: rgba(248, 113, 113, 0.05); padding: 10px; border-radius: 6px; border: 1px solid rgba(248, 113, 113, 0.15);">
+            <h3 style="font-size: 14px; margin-bottom: 6px; color: var(--status-error)">⚠️ Common Pitfalls</h3>
+            <ul style="padding-left: 16px; margin: 0; display:flex; flex-direction:column; gap:4px;">
+                ${def.commonMistakes.map(m => `<li class="body-text" style="font-size: 12.5px; color: var(--text-secondary);">${format(m)}</li>`).join('')}
+            </ul>
+        </div>` : ''}
+
+        ${def.followUpQuestions && def.followUpQuestions.length > 0 ? `
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 4px; color: var(--text-primary)">🔗 Follow-up Questions</h3>
+            <ul style="padding-left: 16px; margin: 0; display:flex; flex-direction:column; gap:2px;">
+                ${def.followUpQuestions.map(fq => `<li class="body-text" style="font-size: 12.5px; color: var(--text-muted);">${format(fq)}</li>`).join('')}
+            </ul>
+        </div>` : ''}
+
+        ${relatedLinks ? `
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 6px;">🧩 Related Concepts</h3>
+            <div class="pill-list-row">${relatedLinks}</div>
+        </div>` : ''}
+
+        <div>
+            <h3 style="font-size: 14px; margin-bottom: 6px;">📄 Mentioned in Slides</h3>
+            <div class="pill-list-row">${mentionsLinks}</div>
+        </div>
+    `;
+    
+    document.getElementById('glossary-drawer-body').innerHTML = html;
+    document.getElementById('glossary-drawer').classList.add('active');
+}
+
+function getGlossaryTermDetailsHtml(term) {
+    const def = term.definition;
+    const relatedLinks = def.relatedKeywords && def.relatedKeywords.length > 0 
+        ? def.relatedKeywords.map(rkId => {
+            const rk = glossary.find(g => g.keywordId === rkId);
+            return rk ? `<span class="pill-item-clickable concept-link" onclick="showGlossaryTerm('${rkId}')">${rk.keyword}</span>` : '';
+          }).join('') 
+        : '';
+        
+    const mentions = keywordLinks[term.keywordId] || [];
+    const mentionsLinks = mentions.length > 0 
+        ? mentions.map(m => `<span class="pill-item-clickable jump-link" onclick="jumpToSource('${m}')">${m}</span>`).join('') 
+        : '<span class="body-text" style="color:var(--text-muted)">None</span>';
+
+    const importanceStars = '★'.repeat(Math.round(term.importance / 2)) + '☆'.repeat(5 - Math.round(term.importance / 2));
+    const frequencyStars = '★'.repeat(Math.round(term.frequency / 2)) + '☆'.repeat(5 - Math.round(term.frequency / 2));
+
+    return `
+        <div style="background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; flex-wrap: wrap;">
+                <div>
+                    <h1 style="font-size: 26px; margin: 0; line-height:1.2; letter-spacing: -0.01em;">${term.keyword}</h1>
+                    <div style="display:flex; gap: 6px; flex-wrap:wrap; margin-top: 8px;">
+                        <span class="chip" style="background: rgba(99, 102, 241, 0.15); color: #818CF8; border: 1px solid rgba(99, 102, 241, 0.3); font-weight:600;">${term.category}</span>
+                        <span class="chip" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8; border: 1px solid rgba(56, 189, 248, 0.3); font-weight:600;">${term.interviewDomain}</span>
+                        <span class="chip">${term.difficulty}</span>
+                        <span class="chip">${term.seniority}</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; background: var(--surface-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); min-width: 220px;">
+                    <div>
+                        <div class="meta" style="font-size: 11px;">Importance</div>
+                        <div style="color: var(--status-warning); font-size: 13px; font-weight: bold;">${importanceStars}</div>
+                    </div>
+                    <div>
+                        <div class="meta" style="font-size: 11px;">Frequency</div>
+                        <div style="color: var(--status-info); font-size: 13px; font-weight: bold;">${frequencyStars}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="margin: 0; background: var(--surface-2); padding: 16px; border-left: 4px solid var(--status-info);">
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 6px;">📖 Definition</h2>
+                <p class="body-text" style="font-size: 14px; line-height: 1.6; color: var(--text-primary);">${format(def.shortDefinition)}</p>
+            </div>
+
+            ${def.detailedExplanation ? `
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 6px;">🔍 Detailed Explanation</h2>
+                <p class="body-text" style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;">${format(def.detailedExplanation)}</p>
+            </div>` : ''}
+
+            ${def.whyItExists ? `
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 6px;">❓ Why It Exists</h2>
+                <p class="body-text" style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;">${format(def.whyItExists)}</p>
+            </div>` : ''}
+
+            ${def.howItWorks ? `
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 6px;">⚙️ How It Works</h2>
+                <p class="body-text" style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;">${format(def.howItWorks)}</p>
+            </div>` : ''}
+
+            ${def.realWorldUsage ? `
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 6px;">🛠️ Real-world Usage</h2>
+                <p class="body-text" style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;">${format(def.realWorldUsage)}</p>
+            </div>` : ''}
+
+            ${def.interviewExpectation ? `
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 6px; color: var(--status-success)">🎤 Interview Expectation</h2>
+                <p class="body-text" style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;">${format(def.interviewExpectation)}</p>
+            </div>` : ''}
+
+            ${def.commonMistakes && def.commonMistakes.length > 0 ? `
+            <div style="background: rgba(248, 113, 113, 0.04); padding: 14px; border-radius: 8px; border: 1px solid rgba(248, 113, 113, 0.15);">
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 8px; color: var(--status-error)">⚠️ Common Pitfalls & Mistakes</h2>
+                <ul style="padding-left: 20px; margin: 0; display:flex; flex-direction:column; gap:6px;">
+                    ${def.commonMistakes.map(m => `<li class="body-text" style="font-size: 13px; color: var(--text-secondary);">${format(m)}</li>`).join('')}
+                </ul>
+            </div>` : ''}
+
+            ${def.followUpQuestions && def.followUpQuestions.length > 0 ? `
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 6px;">📋 Follow-up Questions</h2>
+                <ul style="padding-left: 20px; margin: 0; display:flex; flex-direction:column; gap:4px;">
+                    ${def.followUpQuestions.map(fq => `<li class="body-text" style="font-size: 13px; color: var(--text-muted);">${format(fq)}</li>`).join('')}
+                </ul>
+            </div>` : ''}
+
+            ${relatedLinks ? `
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 8px;">🧩 Related Concepts</h2>
+                <div class="pill-list-row">${relatedLinks}</div>
+            </div>` : ''}
+
+            <div>
+                <h2 class="card-title" style="font-size: 15px; margin-bottom: 8px;">📄 Mentioned in Slides</h2>
+                <div class="pill-list-row">${mentionsLinks}</div>
+            </div>
+        </div>
+    `;
+}
+
+function renderGlossaryView() {
+    const dashboard = document.getElementById('dashboard');
+    
+    document.getElementById('q-title').innerText = "DevOps Glossary Explorer";
+    document.getElementById('q-chips').innerHTML = `
+        <button class="nav-btn" onclick="setMode('learn')" style="background:var(--surface-3); border:1px solid var(--border); font-size:12px; margin-right:8px; padding: 4px 10px;">← Back to slides</button>
+        <span class="meta" style="margin-left: 8px; margin-right:4px;">Filter by Category:</span>
+        <button class="glossary-filter-btn ${activeGlossaryCategory === 'All' ? 'active' : ''}" onclick="filterGlossaryByCategory('All')">All</button>
+        ${getGlossaryCategories().map(cat => `
+            <button class="glossary-filter-btn ${activeGlossaryCategory === cat ? 'active' : ''}" onclick="filterGlossaryByCategory('${cat}')">${cat}</button>
+        `).join('')}
+    `;
+    
+    document.getElementById('counter').innerText = `Glossary Explorer`;
+
+    // Filter keywords
+    let filtered = glossary;
+    if (activeGlossaryCategory !== 'All') {
+        filtered = glossary.filter(g => g.category === activeGlossaryCategory);
+    }
+    
+    // Check if we have an active ID, else select first
+    if (filtered.length > 0) {
+        if (!activeGlossaryId || !filtered.some(g => g.keywordId === activeGlossaryId)) {
+            activeGlossaryId = filtered[0].keywordId;
+        }
+    } else {
+        activeGlossaryId = null;
+    }
+    
+    // Build the grid layout
+    dashboard.innerHTML = `
+        <div class="glossary-layout" style="grid-column: 1/-1;">
+            <div class="glossary-sidebar">
+                <div class="glossary-search-box">
+                    <input type="text" id="glossary-search-input" placeholder="Filter current list..." oninput="filterGlossarySidebarList()">
+                </div>
+                <div class="glossary-list" id="glossary-sidebar-list">
+                    ${filtered.map(g => `
+                        <div class="glossary-item ${g.keywordId === activeGlossaryId ? 'active' : ''}" data-id="${g.keywordId}" onclick="showGlossaryTerm('${g.keywordId}')">
+                            <span class="glossary-item-title">${g.keyword}</span>
+                            <span class="glossary-item-meta">${g.category}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="glossary-main" id="glossary-details-pane">
+                ${activeGlossaryId ? getGlossaryTermDetailsHtml(glossary.find(g => g.keywordId === activeGlossaryId)) : '<div class="body-text" style="padding:20px; text-align:center;">No term selected</div>'}
+            </div>
+        </div>
+    `;
+    
+    const layoutBtn = document.getElementById('btn-layout');
+    if (layoutBtn) layoutBtn.style.display = 'none';
+}
+
+function getGlossaryCategories() {
+    const categories = new Set();
+    glossary.forEach(g => {
+        if (g.category) categories.add(g.category);
+    });
+    return Array.from(categories).sort();
+}
+
+function filterGlossaryByCategory(category) {
+    activeGlossaryCategory = category;
+    renderGlossaryView();
+}
+
+function filterGlossarySidebarList() {
+    const query = document.getElementById('glossary-search-input').value.toLowerCase().trim();
+    const items = document.querySelectorAll('.glossary-item');
+    items.forEach(item => {
+        const title = item.querySelector('.glossary-item-title').innerText.toLowerCase();
+        const meta = item.querySelector('.glossary-item-meta').innerText.toLowerCase();
+        if (title.includes(query) || meta.includes(query)) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+function showGlossaryTerm(id) {
+    activeGlossaryId = id;
+    
+    if (currentMode !== 'glossary') {
+        setMode('glossary');
+        return;
+    }
+    
+    const term = glossary.find(g => g.keywordId === id);
+    if (!term) return;
+    
+    document.querySelectorAll('.glossary-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.id === id);
+    });
+    
+    const pane = document.getElementById('glossary-details-pane');
+    if (pane) {
+        pane.innerHTML = getGlossaryTermDetailsHtml(term);
+        pane.scrollTop = 0;
+    }
+    
+    const activeItem = document.querySelector(`.glossary-item[data-id="${id}"]`);
+    if (activeItem) {
+        activeItem.scrollIntoView({ block: 'nearest' });
+    }
+}
+
+function initializeFlashcards() {
+    if (!glossary || glossary.length === 0) return;
+    flashcardsList = [...glossary];
+    currentFlashcardIndex = 0;
+    flashcardFlipped = false;
+}
+
+function renderFlashcardsView() {
+    const dashboard = document.getElementById('dashboard');
+    if (flashcardsList.length === 0) {
+        initializeFlashcards();
+    }
+    
+    document.getElementById('q-title').innerText = "DevOps Flashcard Practice";
+    document.getElementById('q-chips').innerHTML = `
+        <button class="nav-btn" onclick="setMode('learn')" style="background:var(--surface-3); border:1px solid var(--border); font-size:12px; margin-right:8px; padding:4px 10px;">← Back to slides</button>
+        <button class="nav-btn" onclick="shuffleFlashcards()" style="background:var(--surface-1); border:1px solid var(--border); font-size:12px; font-weight:700; padding:4px 10px;">🔀 Shuffle List</button>
+    `;
+    
+    const term = flashcardsList[currentFlashcardIndex];
+    if (!term) {
+        dashboard.innerHTML = `<div class="body-text" style="padding:20px; text-align:center;">No flashcards available</div>`;
+        document.getElementById('counter').innerText = `Flashcard 0 of 0`;
+        return;
+    }
+    
+    document.getElementById('counter').innerText = `Flashcard ${currentFlashcardIndex + 1} of ${flashcardsList.length}`;
+    
+    const progressRating = flashcardsProgress[term.keywordId] || 'unrated';
+    let ratingBadge = '';
+    if (progressRating === 'easy') ratingBadge = '<span class="chip" style="background:rgba(52,211,153,0.15); color:#34D399; border:1px solid rgba(52,211,153,0.3); font-weight:600;">Easy</span>';
+    if (progressRating === 'medium') ratingBadge = '<span class="chip" style="background:rgba(251,191,36,0.15); color:#FBBF24; border:1px solid rgba(251,191,36,0.3); font-weight:600;">Medium</span>';
+    if (progressRating === 'hard') ratingBadge = '<span class="chip" style="background:rgba(248,113,113,0.15); color:#F87171; border:1px solid rgba(248,113,113,0.3); font-weight:600;">Hard</span>';
+
+    dashboard.innerHTML = `
+        <div class="flashcard-container" style="grid-column: 1/-1;">
+            <div class="flashcard-wrapper" onclick="toggleFlashcardFlip()">
+                <div class="flashcard ${flashcardFlipped ? 'flipped' : ''}" id="flashcard-body">
+                    <!-- Front of card -->
+                    <div class="flashcard-front">
+                        <div style="font-size:12px; color:var(--status-info); text-transform:uppercase; font-weight:700; margin-bottom:8px;">${term.category}</div>
+                        <div class="flashcard-front-title">${term.keyword}</div>
+                        ${term.aliases && term.aliases.length > 0 ? `<div style="font-size:13px; color:var(--text-muted); margin-top: 4px;">Aliases: ${term.aliases.join(', ')}</div>` : ''}
+                        <div style="margin-top:16px;">${ratingBadge}</div>
+                        <div class="flashcard-hint">Click card to reveal definition</div>
+                    </div>
+                    <!-- Back of card -->
+                    <div class="flashcard-back">
+                        <div style="display:flex; justify-content:space-between; width:100%; border-bottom:1px solid var(--border); padding-bottom:8px; margin-bottom:12px; flex-shrink:0;">
+                            <span style="font-size:11px; color:var(--status-info); font-weight:700; text-transform:uppercase;">${term.category}</span>
+                            <span style="font-size:11px; color:var(--text-muted); font-weight:600;">${term.interviewDomain}</span>
+                        </div>
+                        <h2 style="font-size:20px; margin-bottom:12px; font-weight:700;">${term.keyword}</h2>
+                        
+                        <div style="margin-bottom:12px; width:100%;">
+                            <strong style="color:var(--text-primary); font-size:13px;">Definition:</strong>
+                            <p class="body-text" style="font-size:13px; line-height:1.5; color:var(--text-secondary); margin-top:2px;">${format(term.definition.shortDefinition)}</p>
+                        </div>
+                        
+                        ${term.definition.whyItExists ? `
+                        <div style="margin-bottom:12px; width:100%;">
+                            <strong style="color:var(--text-primary); font-size:13px;">Why It Matters:</strong>
+                            <p class="body-text" style="font-size:13px; line-height:1.5; color:var(--text-secondary); margin-top:2px;">${format(term.definition.whyItExists)}</p>
+                        </div>` : ''}
+                        
+                        ${term.definition.howItWorks ? `
+                        <div style="margin-bottom:12px; width:100%;">
+                            <strong style="color:var(--text-primary); font-size:13px;">How It Works:</strong>
+                            <p class="body-text" style="font-size:13px; line-height:1.5; color:var(--text-secondary); margin-top:2px;">${format(term.definition.howItWorks)}</p>
+                        </div>` : ''}
+                        
+                        <div class="flashcard-hint" style="margin-top:auto; align-self:center; padding-top:12px; flex-shrink:0;">Click to show front</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display:flex; flex-direction:column; gap:12px; width:100%; align-items:center;">
+                <div class="flashcard-controls">
+                    <button class="nav-btn" onclick="navigateFlashcard(-1)" style="padding:6px 16px;">❮ Prev</button>
+                    <button class="nav-btn" onclick="toggleFlashcardFlip()" style="background:var(--surface-3); border:1px solid var(--border); padding:6px 16px;">🔄 Flip</button>
+                    <button class="nav-btn" onclick="navigateFlashcard(1)" style="padding:6px 16px;">Next ❯</button>
+                </div>
+                
+                <div style="display:flex; gap:8px; margin-top:8px;">
+                    <button class="nav-btn" onclick="rateFlashcard('hard')" style="background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.3); color:#F87171; font-size:12px; padding:6px 12px;">Hard (Revisit)</button>
+                    <button class="nav-btn" onclick="rateFlashcard('medium')" style="background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.3); color:#FBBF24; font-size:12px; padding:6px 12px;">Medium</button>
+                    <button class="nav-btn" onclick="rateFlashcard('easy')" style="background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.3); color:#34D399; font-size:12px; padding:6px 12px;">Easy (Mastered)</button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function toggleFlashcardFlip() {
+    flashcardFlipped = !flashcardFlipped;
+    const fcBody = document.getElementById('flashcard-body');
+    if (fcBody) {
+        fcBody.classList.toggle('flipped', flashcardFlipped);
+    }
+}
+
+function navigateFlashcard(dir) {
+    if (flashcardsList.length === 0) return;
+    currentFlashcardIndex += dir;
+    if (currentFlashcardIndex < 0) currentFlashcardIndex = flashcardsList.length - 1;
+    if (currentFlashcardIndex >= flashcardsList.length) currentFlashcardIndex = 0;
+    flashcardFlipped = false;
+    renderFlashcardsView();
+}
+
+function shuffleFlashcards() {
+    if (flashcardsList.length === 0) return;
+    for (let i = flashcardsList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [flashcardsList[i], flashcardsList[j]] = [flashcardsList[j], flashcardsList[i]];
+    }
+    currentFlashcardIndex = 0;
+    flashcardFlipped = false;
+    renderFlashcardsView();
+}
+
+function rateFlashcard(rating) {
+    const term = flashcardsList[currentFlashcardIndex];
+    if (!term) return;
+    
+    flashcardsProgress[term.keywordId] = rating;
+    try {
+        localStorage.setItem('devops_flashcards_progress', JSON.stringify(flashcardsProgress));
+    } catch (e) {
+        console.error('Failed to save flashcard progress:', e);
+    }
+    
+    // Quick flip animation indicator, then next card
+    setTimeout(() => {
+        navigateFlashcard(1);
+    }, 200);
+}
+
 // Load scenarios from external JSON file
 let scenarios = [];
 
 async function loadScenarios() {
     try {
-        const response = await fetch('scenarios.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        scenarios = await response.json();
+        const [scenariosRes, glossaryRes, linksRes] = await Promise.all([
+            fetch('scenarios.json'),
+            fetch('glossary.json'),
+            fetch('keyword-links.json')
+        ]);
         
-        // Auto-seeding disabled to allow default unrated state
+        if (!scenariosRes.ok) throw new Error(`Scenarios error: ${scenariosRes.status}`);
+        scenarios = await scenariosRes.json();
+        
+        if (glossaryRes.ok) {
+            glossary = await glossaryRes.json();
+        } else {
+            console.warn("Could not load glossary.json, glossary features will be disabled.");
+        }
+        
+        if (linksRes.ok) {
+            const linksData = await linksRes.json();
+            keywordLinks = {};
+            linksData.forEach(item => {
+                keywordLinks[item.keywordId] = item.mentionedIn;
+            });
+        }
+        
+        // Prepare keyword mapping for on-the-fly highlighting
+        prepareKeywordsRegex();
         
         // Initialize layout preference
-        if (isOneColumn) document.getElementById('dashboard').classList.add('layout-1col');
+        if (isOneColumn) {
+            const db = document.getElementById('dashboard');
+            if (db) db.classList.add('layout-1col');
+        }
 
         // Initialize first render after data is loaded
         renderScenario();
     } catch (error) {
-        console.error('Failed to load scenarios:', error);
+        console.error('Failed to load dashboard data:', error);
         document.getElementById('dashboard').innerHTML = `
             <div class="card" style="grid-column: 1/-1; padding: 20px; border-left: 4px solid var(--status-error);">
                 <h2 class="card-title text-error" style="font-size: 20px; margin-bottom: 12px;">⚠️ Error Loading Scenarios</h2>
@@ -740,6 +1782,15 @@ function setMode(mode) {
     currentMode = mode;
     solutionRevealed = false;
     
+    const isStandardMode = ['learn', 'practice', 'review'].includes(mode);
+    const layoutBtn = document.getElementById('btn-layout');
+    const prevBtn = document.getElementById('btn-prev');
+    const nextBtn = document.getElementById('btn-next');
+    
+    if (layoutBtn) layoutBtn.style.display = isStandardMode ? 'inline-block' : 'none';
+    if (prevBtn) prevBtn.style.display = isStandardMode ? 'inline-block' : 'none';
+    if (nextBtn) nextBtn.style.display = isStandardMode ? 'inline-block' : 'none';
+    
     document.querySelectorAll('.mode-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.mode === mode);
     });
@@ -790,6 +1841,15 @@ function renderScenario() {
     const summaryContainer = document.getElementById('review-summary-container');
     
     summaryContainer.innerHTML = '';
+
+    if (currentMode === 'glossary') {
+        renderGlossaryView();
+        return;
+    }
+    if (currentMode === 'flashcards') {
+        renderFlashcardsView();
+        return;
+    }
 
     if (currentMode === 'review' && activeIndices[0] === -1) {
         document.getElementById('counter').innerHTML = `Review Complete <span>▼</span>`;
@@ -1588,11 +2648,372 @@ document.addEventListener('click', function(e) {
         document.getElementById('index-modal').classList.remove('active');
         renderScenario();
     }
+
+    // Glossary Link Click
+    const glossaryLink = e.target.closest('.glossary-link');
+    if (glossaryLink) {
+        showGlossaryDrawer(glossaryLink.dataset.keywordId);
+    }
+
+    // Glossary Drawer Close Controls
+    if (e.target.closest('#btn-close-drawer')) {
+        document.getElementById('glossary-drawer').classList.remove('active');
+    }
+    
+    // Click outside drawer to close it (except when clicking a glossary link or search result)
+    if (!e.target.closest('#glossary-drawer') && !e.target.closest('.glossary-link') && !e.target.closest('.search-result-item') && !e.target.closest('.pill-item-clickable')) {
+        const drawer = document.getElementById('glossary-drawer');
+        if (drawer) drawer.classList.remove('active');
+    }
 });
 
 document.addEventListener('keydown', function(event) {
     if (event.key === "ArrowLeft") nav(-1);
     if (event.key === "ArrowRight") nav(1);
+});
+
+// Search Functionality
+let currentSearchFocus = -1;
+
+function performSearch(query) {
+    const dropdown = document.getElementById('search-results-dropdown');
+    const clearBtn = document.getElementById('search-clear-btn');
+    
+    if (!query || query.trim() === '') {
+        dropdown.style.display = 'none';
+        dropdown.innerHTML = '';
+        clearBtn.style.display = 'none';
+        currentSearchFocus = -1;
+        return;
+    }
+    
+    clearBtn.style.display = 'block';
+    const cleanQuery = query.toLowerCase().trim();
+    const results = [];
+    
+    // 1. Search Slides
+    scenarios.forEach((s, idx) => {
+        let score = 0;
+        let matchReason = '';
+        let matchedText = '';
+        
+        // Title match
+        if (s.title.toLowerCase() === cleanQuery) {
+            score += 150;
+            matchReason = 'Exact Title';
+            matchedText = s.title;
+        } else if (s.title.toLowerCase().includes(cleanQuery)) {
+            score += 80;
+            matchReason = 'Title Match';
+            matchedText = s.title;
+        }
+        
+        // Chip/Tag match
+        if (s.chips) {
+            const matchedChip = s.chips.find(c => c.toLowerCase() === cleanQuery);
+            if (matchedChip) {
+                score += 100;
+                matchReason = `Tag: ${matchedChip}`;
+                matchedText = `Slide Tags: ${s.chips.join(', ')}`;
+            } else {
+                const partialChip = s.chips.find(c => c.toLowerCase().includes(cleanQuery));
+                if (partialChip) {
+                    score += 40;
+                    matchReason = `Tag: ${partialChip}`;
+                    matchedText = `Slide Tags: ${s.chips.join(', ')}`;
+                }
+            }
+        }
+        
+        // Common interview questions match
+        if (s.common_interview_questions) {
+            const matchedQ = s.common_interview_questions.find(q => 
+                q.question.toLowerCase().includes(cleanQuery) || 
+                (q.answer && q.answer.toLowerCase().includes(cleanQuery))
+            );
+            if (matchedQ) {
+                score += 50;
+                matchReason = 'Interview Q&A';
+                matchedText = `Q: ${matchedQ.question} - A: ${matchedQ.answer}`;
+            }
+        }
+        
+        // Core concepts match
+        if (s.core_concepts) {
+            const matchedConcept = s.core_concepts.find(c => 
+                c.name.toLowerCase().includes(cleanQuery) || 
+                (c.definition && c.definition.toLowerCase().includes(cleanQuery))
+            );
+            if (matchedConcept) {
+                score += 40;
+                matchReason = 'Core Concept';
+                matchedText = `${matchedConcept.name}: ${matchedConcept.definition}`;
+            }
+        }
+        
+        // Text matches
+        const d = s.data || s;
+        if (d.definition && d.definition.toLowerCase().includes(cleanQuery)) {
+            score += 30;
+            if (!matchReason) { matchReason = 'Definition'; matchedText = d.definition; }
+        }
+        if (d.real_world_scenario && d.real_world_scenario.toLowerCase().includes(cleanQuery)) {
+            score += 25;
+            if (!matchReason) { matchReason = 'Real World'; matchedText = d.real_world_scenario; }
+        }
+        
+        if (score > 0) {
+            results.push({
+                type: 'slide',
+                index: idx,
+                title: s.title,
+                score: score,
+                reason: matchReason,
+                snippet: matchedText || s.title
+            });
+        }
+    });
+    
+    // 2. Search Glossary
+    if (glossary && glossary.length > 0) {
+        glossary.forEach((g) => {
+            let score = 0;
+            let matchReason = '';
+            let matchedText = '';
+            
+            // Keyword match
+            if (g.keyword.toLowerCase() === cleanQuery) {
+                score += 160; // Slightly higher priority
+                matchReason = 'Concept';
+                matchedText = g.definition.shortDefinition;
+            } else if (g.keyword.toLowerCase().includes(cleanQuery)) {
+                score += 90;
+                matchReason = 'Concept Match';
+                matchedText = g.definition.shortDefinition;
+            }
+            
+            // Aliases match
+            if (g.aliases && g.aliases.length > 0) {
+                const matchedAlias = g.aliases.find(a => a.toLowerCase() === cleanQuery);
+                if (matchedAlias) {
+                    score += 140;
+                    matchReason = `Alias: ${matchedAlias}`;
+                    matchedText = g.definition.shortDefinition;
+                } else {
+                    const partialAlias = g.aliases.find(a => a.toLowerCase().includes(cleanQuery));
+                    if (partialAlias) {
+                        score += 70;
+                        matchReason = `Alias: ${partialAlias}`;
+                        matchedText = g.definition.shortDefinition;
+                    }
+                }
+            }
+            
+            // Category/Domain match
+            if (g.category && g.category.toLowerCase() === cleanQuery) {
+                score += 55;
+                matchReason = `Category: ${g.category}`;
+                matchedText = g.definition.shortDefinition;
+            }
+            
+            // Definition match
+            const def = g.definition;
+            if (def) {
+                if (def.shortDefinition && def.shortDefinition.toLowerCase().includes(cleanQuery)) {
+                    score += 35;
+                    if (!matchReason) { matchReason = 'Definition'; matchedText = def.shortDefinition; }
+                }
+                if (def.detailedExplanation && def.detailedExplanation.toLowerCase().includes(cleanQuery)) {
+                    score += 25;
+                    if (!matchReason) { matchReason = 'Explanation'; matchedText = def.detailedExplanation; }
+                }
+            }
+            
+            if (score > 0) {
+                results.push({
+                    type: 'glossary',
+                    id: g.keywordId,
+                    keyword: g.keyword,
+                    score: score,
+                    reason: matchReason,
+                    snippet: matchedText || g.definition.shortDefinition
+                });
+            }
+        });
+    }
+    
+    results.sort((a, b) => b.score - a.score);
+    
+    if (results.length === 0) {
+        dropdown.innerHTML = '<div style="padding: 10px; color: var(--text-muted); text-align: center; font-size: 13px;">No matching items found</div>';
+        dropdown.style.display = 'flex';
+        return;
+    }
+    
+    const topResults = results.slice(0, 8);
+    let html = '';
+    topResults.forEach((res, rIdx) => {
+        let snippetText = res.snippet;
+        if (snippetText.length > 80) {
+            snippetText = snippetText.substring(0, 80) + '...';
+        }
+        
+        const escapedQuery = cleanQuery.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        const regex = new RegExp(`(${escapedQuery})`, 'gi');
+        const highlightedSnippet = snippetText.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 0 2px; border-radius: 2px; font-weight: 600;">$1</mark>');
+        
+        if (res.type === 'slide') {
+            const highlightedTitle = res.title.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 0 2px; border-radius: 2px; font-weight: 600;">$1</mark>');
+            html += `
+            <div class="search-result-item" data-type="slide" data-index="${res.index}">
+                <div class="search-result-header">
+                    <span class="search-result-title">📄 Slide: ${highlightedTitle}</span>
+                    <span class="search-result-reason" style="background: rgba(96, 165, 250, 0.12); color: #60A5FA; border: 1px solid rgba(96, 165, 250, 0.25);">${res.reason}</span>
+                </div>
+                <div class="search-result-snippet">
+                    ${highlightedSnippet}
+                </div>
+            </div>`;
+        } else {
+            const highlightedKeyword = res.keyword.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 0 2px; border-radius: 2px; font-weight: 600;">$1</mark>');
+            html += `
+            <div class="search-result-item" data-type="glossary" data-id="${res.id}">
+                <div class="search-result-header">
+                    <span class="search-result-title">💡 Concept: ${highlightedKeyword}</span>
+                    <span class="search-result-reason" style="background: rgba(167, 139, 250, 0.12); color: #A78BFA; border: 1px solid rgba(167, 139, 250, 0.25);">${res.reason}</span>
+                </div>
+                <div class="search-result-snippet">
+                    ${highlightedSnippet}
+                </div>
+            </div>`;
+        }
+    });
+    
+    dropdown.innerHTML = html;
+    dropdown.style.display = 'flex';
+}
+
+function selectSearchResult(element) {
+    if (typeof element === 'number') {
+        // Fallback support for old code calling index directly
+        currentIndex = element;
+        solutionRevealed = false;
+        if (currentMode === 'glossary' || currentMode === 'flashcards') {
+            setMode('learn');
+        }
+        renderScenario();
+    } else {
+        const type = element.dataset.type;
+        if (type === 'slide') {
+            const index = parseInt(element.dataset.index, 10);
+            currentIndex = index;
+            solutionRevealed = false;
+            if (currentMode === 'glossary' || currentMode === 'flashcards') {
+                setMode('learn');
+            }
+            renderScenario();
+        } else if (type === 'glossary') {
+            const id = element.dataset.id;
+            setMode('glossary');
+            showGlossaryTerm(id);
+        }
+    }
+    
+    // Reset search
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = '';
+    searchInput.blur();
+    
+    const dropdown = document.getElementById('search-results-dropdown');
+    dropdown.style.display = 'none';
+    dropdown.innerHTML = '';
+    
+    document.getElementById('search-clear-btn').style.display = 'none';
+    currentSearchFocus = -1;
+}
+
+// Add event listeners for search input
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search-input');
+    const dropdown = document.getElementById('search-results-dropdown');
+    const clearBtn = document.getElementById('search-clear-btn');
+    
+    if (!searchInput) return;
+    
+    searchInput.addEventListener('input', (e) => {
+        performSearch(e.target.value);
+    });
+    
+    searchInput.addEventListener('keydown', (e) => {
+        const items = dropdown.querySelectorAll('.search-result-item');
+        if (dropdown.style.display === 'flex' && items.length > 0) {
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                currentSearchFocus++;
+                if (currentSearchFocus >= items.length) currentSearchFocus = 0;
+                setActiveSearchItem(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                currentSearchFocus--;
+                if (currentSearchFocus < 0) currentSearchFocus = items.length - 1;
+                setActiveSearchItem(items);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (currentSearchFocus > -1 && items[currentSearchFocus]) {
+                    items[currentSearchFocus].click();
+                } else if (items[0]) {
+                    items[0].click();
+                }
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                searchInput.value = '';
+                dropdown.style.display = 'none';
+                clearBtn.style.display = 'none';
+                searchInput.blur();
+                currentSearchFocus = -1;
+            }
+        } else if (e.key === 'Escape') {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            searchInput.blur();
+        }
+    });
+    
+    function setActiveSearchItem(items) {
+        items.forEach((item, index) => {
+            if (index === currentSearchFocus) {
+                item.classList.add('focus-item');
+                item.scrollIntoView({ block: 'nearest' });
+            } else {
+                item.classList.remove('focus-item');
+            }
+        });
+    }
+    
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        dropdown.style.display = 'none';
+        dropdown.innerHTML = '';
+        clearBtn.style.display = 'none';
+        searchInput.focus();
+        currentSearchFocus = -1;
+    });
+    
+    // Click result selection
+    dropdown.addEventListener('click', (e) => {
+        const resultItem = e.target.closest('.search-result-item');
+        if (resultItem) {
+            selectSearchResult(resultItem);
+        }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-container')) {
+            dropdown.style.display = 'none';
+            currentSearchFocus = -1;
+        }
+    });
 });
 
 // Initialize first render

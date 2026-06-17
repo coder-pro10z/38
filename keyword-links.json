@@ -1,0 +1,5948 @@
+[
+  {
+    "keywordId": "KW-000001",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000002",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000003",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000004",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000005",
+    "mentionedIn": [
+      "SL-5: File Permissions & Security",
+      "SC-85: File Permissions & Security"
+    ]
+  },
+  {
+    "keywordId": "KW-000006",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-38: Azure Virtual Networks: Core & Peering"
+    ]
+  },
+  {
+    "keywordId": "KW-000007",
+    "mentionedIn": [
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000008",
+    "mentionedIn": [
+      "SC-94: Advanced Networking"
+    ]
+  },
+  {
+    "keywordId": "KW-000009",
+    "mentionedIn": [
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000010",
+    "mentionedIn": [
+      "SC-0: AKS Deployment Failing After Release"
+    ]
+  },
+  {
+    "keywordId": "KW-000011",
+    "mentionedIn": [
+      "SC-5: AKS Pods Not Scaling"
+    ]
+  },
+  {
+    "keywordId": "KW-000012",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations",
+      "SC-51: Labels, Selectors & Annotations"
+    ]
+  },
+  {
+    "keywordId": "KW-000013",
+    "mentionedIn": [
+      "SL-5: Configuration Management & Orchestration",
+      "SC-42: Configuration Management & Orchestration"
+    ]
+  },
+  {
+    "keywordId": "KW-000014",
+    "mentionedIn": [
+      "SC-124: API Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000015",
+    "mentionedIn": [
+      "SL-2: Cluster Architecture",
+      "SL-30: Common kubectl Commands",
+      "SC-49: Cluster Architecture",
+      "SC-76: Common kubectl Commands",
+      "Q-How automate Kubernetes using ..."
+    ]
+  },
+  {
+    "keywordId": "KW-000016",
+    "mentionedIn": [
+      "SL-31: YAML & Kubernetes Manifests",
+      "SC-77: YAML & Kubernetes Manifests"
+    ]
+  },
+  {
+    "keywordId": "KW-000017",
+    "mentionedIn": [
+      "SC-15: App Cannot Access Azure SQL (Auth)"
+    ]
+  },
+  {
+    "keywordId": "KW-000018",
+    "mentionedIn": [
+      "SC-4: App Service Cannot Access SQL",
+      "SC-18: Azure App Service"
+    ]
+  },
+  {
+    "keywordId": "KW-000019",
+    "mentionedIn": [
+      "SC-4: App Service Cannot Access SQL"
+    ]
+  },
+  {
+    "keywordId": "KW-000020",
+    "mentionedIn": [
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000021",
+    "mentionedIn": [
+      "SC-2: Application Unavailable After Deployment"
+    ]
+  },
+  {
+    "keywordId": "KW-000022",
+    "mentionedIn": [
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-78: CI/CD Integration",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000023",
+    "mentionedIn": [
+      "SL-18: Package Management",
+      "SL-33: Package Management (pip)",
+      "SC-98: Package Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000024",
+    "mentionedIn": [
+      "SC-110: Arguments and kwargs"
+    ]
+  },
+  {
+    "keywordId": "KW-000025",
+    "mentionedIn": [
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-24: Release Management",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-78: CI/CD Integration",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000026",
+    "mentionedIn": [
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-43: Environment Architecture & Artifact Lifecycle"
+    ]
+  },
+  {
+    "keywordId": "KW-000027",
+    "mentionedIn": [
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-78: CI/CD Integration",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000028",
+    "mentionedIn": [
+      "SL-10: Secrets",
+      "SL-21: RBAC & Security",
+      "SL-17: SSH Administration",
+      "SL-44: API Automation using Python",
+      "SL-53: Decorators",
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-57: Secrets",
+      "SC-97: SSH Administration",
+      "SC-133: Decorators",
+      "Q-Password vs key authentication...",
+      "MD-Line 26"
+    ]
+  },
+  {
+    "keywordId": "KW-000029",
+    "mentionedIn": [
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-43: Environment Architecture & Artifact Lifecycle"
+    ]
+  },
+  {
+    "keywordId": "KW-000030",
+    "mentionedIn": [
+      "SL-28: Python Scope (LEGB Rule)",
+      "SL-46: CI/CD Automation with Python",
+      "SL-54: Production Python Design",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-134: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000031",
+    "mentionedIn": [
+      "SC-70: Autoscaling"
+    ]
+  },
+  {
+    "keywordId": "KW-000032",
+    "mentionedIn": [
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000033",
+    "mentionedIn": [
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000034",
+    "mentionedIn": [
+      "SL-4: Text Processing Commands",
+      "SC-84: Text Processing Commands",
+      "Q-Difference between grep and aw...",
+      "MD-Line 21"
+    ]
+  },
+  {
+    "keywordId": "KW-000035",
+    "mentionedIn": [
+      "SL-47: Cloud Automation using Python",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000036",
+    "mentionedIn": [
+      "SC-18: Azure App Service"
+    ]
+  },
+  {
+    "keywordId": "KW-000037",
+    "mentionedIn": [
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation"
+    ]
+  },
+  {
+    "keywordId": "KW-000038",
+    "mentionedIn": [
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000039",
+    "mentionedIn": [
+      "SC-32: Azure Key Vault"
+    ]
+  },
+  {
+    "keywordId": "KW-000040",
+    "mentionedIn": [
+      "SC-19: Azure Kubernetes Service (AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000041",
+    "mentionedIn": [
+      "SL-9: Observability & Live Production Triage",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-33: Observability",
+      "SC-46: Observability & Live Production Triage",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000042",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SL-8: Ingress",
+      "SL-10: Secrets",
+      "SL-20: Networking",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-57: Secrets",
+      "SC-67: Networking",
+      "SC-80: Scenario-Based Kubernetes Interview Questions"
+    ]
+  },
+  {
+    "keywordId": "KW-000043",
+    "mentionedIn": [
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000044",
+    "mentionedIn": [
+      "SL-14: Jobs"
+    ]
+  },
+  {
+    "keywordId": "KW-000045",
+    "mentionedIn": [
+      "SL-15: CronJobs",
+      "SL-28: Backup & Disaster Recovery",
+      "SL-22: Cron & Scheduling",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-62: CronJobs",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-102: Cron & Scheduling"
+    ]
+  },
+  {
+    "keywordId": "KW-000046",
+    "mentionedIn": [
+      "SC-74: Backup & Disaster Recovery"
+    ]
+  },
+  {
+    "keywordId": "KW-000047",
+    "mentionedIn": [
+      "SC-7: Production Outage at 2 AM",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000048",
+    "mentionedIn": [
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-78: CI/CD Integration",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000049",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000050",
+    "mentionedIn": [
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-43: Environment Architecture & Artifact Lifecycle"
+    ]
+  },
+  {
+    "keywordId": "KW-000051",
+    "mentionedIn": [
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000052",
+    "mentionedIn": [
+      "SL-28: Python Scope (LEGB Rule)",
+      "SC-108: Python Scope (LEGB Rule)"
+    ]
+  },
+  {
+    "keywordId": "KW-000053",
+    "mentionedIn": [
+      "SL-10: Memory Management",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-90: Memory Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000054",
+    "mentionedIn": [
+      "SL-6: Deployments",
+      "SC-53: Deployments"
+    ]
+  },
+  {
+    "keywordId": "KW-000055",
+    "mentionedIn": [
+      "SL-22: Security Features",
+      "SC-69: Security Features",
+      "Q-ReplicaSet vs Deployment?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000056",
+    "mentionedIn": [
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000057",
+    "mentionedIn": [
+      "SL-24: Helm"
+    ]
+  },
+  {
+    "keywordId": "KW-000058",
+    "mentionedIn": [
+      "SL-5: File Permissions & Security",
+      "SC-85: File Permissions & Security",
+      "Q-chmod vs chown?...",
+      "MD-Line 22"
+    ]
+  },
+  {
+    "keywordId": "KW-000059",
+    "mentionedIn": [
+      "SL-5: File Permissions & Security",
+      "SC-85: File Permissions & Security",
+      "Q-chmod vs chown?...",
+      "MD-Line 22"
+    ]
+  },
+  {
+    "keywordId": "KW-000060",
+    "mentionedIn": [
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000061",
+    "mentionedIn": [
+      "SC-29: CI/CD Design Patterns"
+    ]
+  },
+  {
+    "keywordId": "KW-000062",
+    "mentionedIn": [
+      "SC-78: CI/CD Integration"
+    ]
+  },
+  {
+    "keywordId": "KW-000063",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-38: Azure Virtual Networks: Core & Peering"
+    ]
+  },
+  {
+    "keywordId": "KW-000064",
+    "mentionedIn": [
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-41: Enterprise IaC Module Architectures"
+    ]
+  },
+  {
+    "keywordId": "KW-000065",
+    "mentionedIn": [
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000066",
+    "mentionedIn": [
+      "SC-3: Cloud Bill Increased by 50%"
+    ]
+  },
+  {
+    "keywordId": "KW-000067",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-39: Routing & Secure Endpoint Solutions"
+    ]
+  },
+  {
+    "keywordId": "KW-000068",
+    "mentionedIn": [
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000069",
+    "mentionedIn": [
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000070",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-2: Cluster Architecture",
+      "SL-7: Services",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-12: StatefulSet",
+      "SL-13: DaemonSet",
+      "SL-16: Namespaces",
+      "SL-17: Resource Management",
+      "SL-21: RBAC & Security",
+      "SL-23: Autoscaling",
+      "SL-28: Backup & Disaster Recovery",
+      "SL-30: Common kubectl Commands",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-48: Kubernetes Python Client",
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-49: Cluster Architecture",
+      "SC-54: Services",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-68: RBAC & Security",
+      "SC-70: Autoscaling",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-128: Kubernetes Python Client",
+      "Q-How does self healing work?...",
+      "Q-ClusterIP vs NodePort?...",
+      "Q-Explain Service discovery....",
+      "Q-Deployment vs DaemonSet?...",
+      "Q-Use cases of DaemonSet?...",
+      "Q-PV vs PVC?...",
+      "Q-Namespace vs cluster?...",
+      "Q-Why Pod is Pending?...",
+      "MD-Line 12"
+    ]
+  },
+  {
+    "keywordId": "KW-000071",
+    "mentionedIn": [
+      "SL-23: Autoscaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-70: Autoscaling",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000072",
+    "mentionedIn": [
+      "SL-21: RBAC & Security"
+    ]
+  },
+  {
+    "keywordId": "KW-000073",
+    "mentionedIn": [
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-44: Containerization & Microservices Infrastructure"
+    ]
+  },
+  {
+    "keywordId": "KW-000074",
+    "mentionedIn": [
+      "SL-20: Networking"
+    ]
+  },
+  {
+    "keywordId": "KW-000075",
+    "mentionedIn": [
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000076",
+    "mentionedIn": [
+      "SC-76: Common kubectl Commands"
+    ]
+  },
+  {
+    "keywordId": "KW-000077",
+    "mentionedIn": [
+      "SL-14: Jobs",
+      "Q-Explain parallel Jobs...."
+    ]
+  },
+  {
+    "keywordId": "KW-000078",
+    "mentionedIn": [
+      "SL-15: CronJobs",
+      "SL-51: Threading and Multiprocessing",
+      "SC-47: 12-Factor App Principle",
+      "SC-131: Threading and Multiprocessing",
+      "Q-Explain concurrency policy....",
+      "MD-Line 8"
+    ]
+  },
+  {
+    "keywordId": "KW-000079",
+    "mentionedIn": [
+      "SL-15: CronJobs",
+      "Q-Explain concurrency policy....",
+      "MD-Line 8"
+    ]
+  },
+  {
+    "keywordId": "KW-000080",
+    "mentionedIn": [
+      "SL-5: Configuration Management & Orchestration",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-47: 12-Factor App Principle",
+      "Q-Python client usage?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000081",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-10: Secrets",
+      "SC-56: ConfigMap",
+      "Q-ConfigMap vs Secret?...",
+      "Q-How to update configuration?...",
+      "MD-Line 9",
+      "MD-Line 10"
+    ]
+  },
+  {
+    "keywordId": "KW-000082",
+    "mentionedIn": [
+      "SC-56: ConfigMap"
+    ]
+  },
+  {
+    "keywordId": "KW-000083",
+    "mentionedIn": [
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-128: Kubernetes Python Client"
+    ]
+  },
+  {
+    "keywordId": "KW-000084",
+    "mentionedIn": [
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage"
+    ]
+  },
+  {
+    "keywordId": "KW-000085",
+    "mentionedIn": [
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-43: Environment Architecture & Artifact Lifecycle"
+    ]
+  },
+  {
+    "keywordId": "KW-000086",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-3: Pods",
+      "SL-9: ConfigMap",
+      "SL-10: Secrets",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-17: Resource Management",
+      "SL-22: Security Features",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-30: Common kubectl Commands",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-31: Security & DevSecOps",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-47: 12-Factor App Principle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-50: Pods",
+      "SC-56: ConfigMap",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-69: Security Features",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "Q-Request vs limit?...",
+      "Q-What is OOMKilled?...",
+      "Q-Difference between probes (Liv...",
+      "Q-CrashLoopBackOff fix?...",
+      "Q-ImagePullBackOff?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000087",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000088",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000089",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-2: Cluster Architecture",
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-49: Cluster Architecture",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "Q-How upgrade Kubernetes safely?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000090",
+    "mentionedIn": [
+      "SL-2: Cluster Architecture",
+      "SC-49: Cluster Architecture"
+    ]
+  },
+  {
+    "keywordId": "KW-000091",
+    "mentionedIn": [
+      "SL-29: Upgrades & Maintenance",
+      "SC-75: Upgrades & Maintenance",
+      "Q-Difference between cordon and ...",
+      "MD-Line 18"
+    ]
+  },
+  {
+    "keywordId": "KW-000092",
+    "mentionedIn": [
+      "SL-20: Networking",
+      "Q-Explain Service discovery...."
+    ]
+  },
+  {
+    "keywordId": "KW-000093",
+    "mentionedIn": [
+      "SC-36: Cost Optimization (FinOps)"
+    ]
+  },
+  {
+    "keywordId": "KW-000094",
+    "mentionedIn": [
+      "SL-17: Resource Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000095",
+    "mentionedIn": [
+      "SC-89: CPU Monitoring"
+    ]
+  },
+  {
+    "keywordId": "KW-000096",
+    "mentionedIn": [
+      "SL-17: Resource Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000097",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000098",
+    "mentionedIn": [
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "Q-CrashLoopBackOff fix?...",
+      "MD-Line 17"
+    ]
+  },
+  {
+    "keywordId": "KW-000099",
+    "mentionedIn": [
+      "SL-25: Operators & CRDs",
+      "SC-72: Operators & CRDs"
+    ]
+  },
+  {
+    "keywordId": "KW-000100",
+    "mentionedIn": [
+      "SL-15: CronJobs",
+      "SL-22: Cron & Scheduling",
+      "SC-62: CronJobs",
+      "SC-102: Cron & Scheduling",
+      "Q-Job vs CronJob?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000101",
+    "mentionedIn": [
+      "SC-102: Cron & Scheduling"
+    ]
+  },
+  {
+    "keywordId": "KW-000102",
+    "mentionedIn": [
+      "SC-62: CronJobs"
+    ]
+  },
+  {
+    "keywordId": "KW-000103",
+    "mentionedIn": [
+      "SL-15: Networking Commands",
+      "SC-95: Networking Commands",
+      "Q-curl vs ping?...",
+      "MD-Line 25"
+    ]
+  },
+  {
+    "keywordId": "KW-000104",
+    "mentionedIn": [
+      "SL-8: Service Management",
+      "SL-17: SSH Administration",
+      "SC-88: Service Management",
+      "Q-What is Ingress Controller?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000105",
+    "mentionedIn": [
+      "SL-13: DaemonSet",
+      "SC-60: DaemonSet",
+      "Q-Deployment vs DaemonSet?...",
+      "Q-Use cases of DaemonSet?...",
+      "MD-Line 1",
+      "MD-Line 6"
+    ]
+  },
+  {
+    "keywordId": "KW-000106",
+    "mentionedIn": [
+      "SC-60: DaemonSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000107",
+    "mentionedIn": [
+      "SL-25: Python Fundamentals",
+      "SC-105: Python Fundamentals"
+    ]
+  },
+  {
+    "keywordId": "KW-000108",
+    "mentionedIn": [
+      "SL-39: Python Debugging"
+    ]
+  },
+  {
+    "keywordId": "KW-000109",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals"
+    ]
+  },
+  {
+    "keywordId": "KW-000110",
+    "mentionedIn": [
+      "SC-133: Decorators"
+    ]
+  },
+  {
+    "keywordId": "KW-000111",
+    "mentionedIn": [
+      "SL-8: Service Management",
+      "SL-18: Package Management",
+      "SL-32: Virtual Environment",
+      "SL-33: Package Management (pip)",
+      "SL-9: Observability & Live Production Triage",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-7: Production Outage at 2 AM",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-20: Terraform",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-27: Troubleshooting",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-31: Security & DevSecOps",
+      "SC-32: Azure Key Vault",
+      "SC-33: Observability",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-46: Observability & Live Production Triage",
+      "SC-47: 12-Factor App Principle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-78: CI/CD Integration",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-104: Production Troubleshooting",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-126: CI/CD Automation with Python",
+      "SC-127: Cloud Automation using Python",
+      "SC-128: Kubernetes Python Client",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000112",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-3: Pods",
+      "SL-5: ReplicaSet",
+      "SL-6: Deployments",
+      "SL-12: StatefulSet",
+      "SL-13: DaemonSet",
+      "SL-14: Jobs",
+      "SL-24: Helm",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SL-32: CI/CD Integration",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-3: Linux Basic Commands",
+      "SL-5: File Permissions & Security",
+      "SL-18: Package Management",
+      "SL-24: Production Troubleshooting",
+      "SL-26: Python Collections",
+      "SL-28: Python Scope (LEGB Rule)",
+      "SL-30: Arguments and kwargs",
+      "SL-34: File Handling",
+      "SL-35: OS Automation",
+      "SL-36: Linux Command Execution using Python",
+      "SL-37: Exception Handling",
+      "SL-39: Python Debugging",
+      "SL-42: YAML Handling",
+      "SL-43: Environment Variables in Python",
+      "SL-44: API Automation using Python",
+      "SL-46: CI/CD Automation with Python",
+      "SL-50: Testing Automation using pytest",
+      "SL-53: Decorators",
+      "SL-54: Production Python Design",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-18: Azure App Service",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-24: Release Management",
+      "SC-29: CI/CD Design Patterns",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-47: 12-Factor App Principle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-50: Pods",
+      "SC-53: Deployments",
+      "SC-59: StatefulSet",
+      "SC-61: Jobs",
+      "SC-71: Helm",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-78: CI/CD Integration",
+      "SC-83: Linux Basic Commands",
+      "SC-85: File Permissions & Security",
+      "SC-98: Package Management",
+      "SC-106: Python Collections",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-110: Arguments and kwargs",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-119: Python Debugging",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-126: CI/CD Automation with Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design",
+      "Q-ReplicaSet vs Deployment?...",
+      "Q-Deployment vs ReplicaSet?...",
+      "Q-How achieve zero downtime?...",
+      "Q-Deployment vs DaemonSet?...",
+      "Q-Job vs Deployment?...",
+      "Q-Why testing in DevOps?...",
+      "MD-Line 2",
+      "MD-Line 3",
+      "MD-Line 6",
+      "MD-Line 7"
+    ]
+  },
+  {
+    "keywordId": "KW-000113",
+    "mentionedIn": [
+      "SC-8: Deployment Failed During Release Window"
+    ]
+  },
+  {
+    "keywordId": "KW-000114",
+    "mentionedIn": [
+      "SC-29: CI/CD Design Patterns"
+    ]
+  },
+  {
+    "keywordId": "KW-000115",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-6: Deployments",
+      "SL-9: ConfigMap",
+      "SL-24: Helm",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-2: Linux File System",
+      "SL-25: Python Fundamentals",
+      "SL-48: Kubernetes Python Client",
+      "SL-54: Production Python Design",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-7: Production Outage at 2 AM",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-27: Troubleshooting",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-53: Deployments",
+      "SC-69: Security Features",
+      "SC-71: Helm",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-104: Production Troubleshooting",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-126: CI/CD Automation with Python",
+      "SC-127: Cloud Automation using Python",
+      "SC-128: Kubernetes Python Client",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design",
+      "Q-How does self healing work?...",
+      "Q-Deployment vs ReplicaSet?...",
+      "Q-How rollback works?...",
+      "Q-Deployment vs DaemonSet?...",
+      "Q-Job vs Deployment?...",
+      "MD-Line 1",
+      "MD-Line 3"
+    ]
+  },
+  {
+    "keywordId": "KW-000116",
+    "mentionedIn": [
+      "SL-30: Common kubectl Commands",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-7: Production Outage at 2 AM",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-21: Jenkins",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-31: Security & DevSecOps",
+      "SC-33: Observability",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-40: High Availability & Traffic Management",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-46: Observability & Live Production Triage",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-49: Cluster Architecture",
+      "SC-50: Pods",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-53: Deployments",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-66: Scheduling",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-78: CI/CD Integration",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-104: Production Troubleshooting",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-126: CI/CD Automation with Python",
+      "SC-127: Cloud Automation using Python",
+      "SC-128: Kubernetes Python Client",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design",
+      "Q-Pod stuck Pending?...",
+      "Q-CrashLoopBackOff fix?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000117",
+    "mentionedIn": [
+      "SL-5: ReplicaSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000118",
+    "mentionedIn": [
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000119",
+    "mentionedIn": [
+      "SC-17: Developer Needs Production Access"
+    ]
+  },
+  {
+    "keywordId": "KW-000120",
+    "mentionedIn": [
+      "SL-11: Disk Management",
+      "SC-91: Disk Management",
+      "Q-Disk full troubleshooting?...",
+      "Q-df vs du?...",
+      "MD-Line 24"
+    ]
+  },
+  {
+    "keywordId": "KW-000121",
+    "mentionedIn": [
+      "SL-25: Python Fundamentals",
+      "SL-26: Python Collections",
+      "SL-43: Environment Variables in Python",
+      "SC-106: Python Collections",
+      "Q-Set vs dictionary?...",
+      "Q-Why strings immutable?...",
+      "Q-Difference between args and kw...",
+      "MD-Line 28"
+    ]
+  },
+  {
+    "keywordId": "KW-000122",
+    "mentionedIn": [
+      "SL-15: Networking Commands",
+      "SC-95: Networking Commands",
+      "Q-How check DNS?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000123",
+    "mentionedIn": [
+      "SC-35: Disaster Recovery & Backup"
+    ]
+  },
+  {
+    "keywordId": "KW-000124",
+    "mentionedIn": [
+      "SC-91: Disk Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000125",
+    "mentionedIn": [
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000126",
+    "mentionedIn": [
+      "SL-20: Kernel Troubleshooting",
+      "SC-100: Kernel Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000127",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SL-20: Networking",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-14: Advanced Networking",
+      "SL-15: Networking Commands",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-54: Services",
+      "SC-67: Networking",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "Q-What is Headless Service?...",
+      "Q-Explain Service discovery....",
+      "Q-TCP vs UDP?...",
+      "Q-How check DNS?...",
+      "MD-Line 25"
+    ]
+  },
+  {
+    "keywordId": "KW-000128",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-10: Secrets",
+      "SL-36: Linux Command Execution using Python",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-23: Docker",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-78: CI/CD Integration",
+      "SC-116: Linux Command Execution using Python",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000129",
+    "mentionedIn": [
+      "SC-23: Docker"
+    ]
+  },
+  {
+    "keywordId": "KW-000130",
+    "mentionedIn": [
+      "SL-10: Secrets"
+    ]
+  },
+  {
+    "keywordId": "KW-000131",
+    "mentionedIn": [
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-23: Docker",
+      "SC-44: Containerization & Microservices Infrastructure"
+    ]
+  },
+  {
+    "keywordId": "KW-000132",
+    "mentionedIn": [
+      "SL-29: Upgrades & Maintenance",
+      "SC-75: Upgrades & Maintenance",
+      "Q-Difference between cordon and ...",
+      "Q-How upgrade Kubernetes safely?...",
+      "MD-Line 18"
+    ]
+  },
+  {
+    "keywordId": "KW-000133",
+    "mentionedIn": [
+      "SL-11: Disk Management",
+      "SC-91: Disk Management",
+      "Q-Disk full troubleshooting?...",
+      "Q-df vs du?...",
+      "MD-Line 24"
+    ]
+  },
+  {
+    "keywordId": "KW-000134",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000135",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000136",
+    "mentionedIn": [
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000137",
+    "mentionedIn": [
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000138",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-15: Networking Commands",
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-18: Azure App Service",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-54: Services",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions"
+    ]
+  },
+  {
+    "keywordId": "KW-000139",
+    "mentionedIn": [
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-44: Containerization & Microservices Infrastructure"
+    ]
+  },
+  {
+    "keywordId": "KW-000140",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-43: Environment Variables in Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000141",
+    "mentionedIn": [
+      "SC-103: Environment Variables",
+      "SC-123: Environment Variables in Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000142",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SC-50: Pods"
+    ]
+  },
+  {
+    "keywordId": "KW-000143",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000144",
+    "mentionedIn": [
+      "SL-2: Cluster Architecture",
+      "SL-28: Backup & Disaster Recovery",
+      "SC-49: Cluster Architecture",
+      "SC-74: Backup & Disaster Recovery",
+      "Q-How are Secrets stored?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000145",
+    "mentionedIn": [
+      "SL-28: Backup & Disaster Recovery",
+      "SC-74: Backup & Disaster Recovery"
+    ]
+  },
+  {
+    "keywordId": "KW-000146",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000147",
+    "mentionedIn": [
+      "SL-37: Exception Handling",
+      "SC-117: Exception Handling",
+      "Q-How handle API errors?...",
+      "Q-How make Python script product...",
+      "Q-How handle failures?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000148",
+    "mentionedIn": [
+      "SC-117: Exception Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000149",
+    "mentionedIn": [
+      "SL-30: Common kubectl Commands"
+    ]
+  },
+  {
+    "keywordId": "KW-000150",
+    "mentionedIn": [
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform"
+    ]
+  },
+  {
+    "keywordId": "KW-000151",
+    "mentionedIn": [
+      "SC-7: Production Outage at 2 AM",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000152",
+    "mentionedIn": [
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000153",
+    "mentionedIn": [
+      "SC-114: File Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000154",
+    "mentionedIn": [
+      "SC-85: File Permissions & Security"
+    ]
+  },
+  {
+    "keywordId": "KW-000155",
+    "mentionedIn": [
+      "SL-2: Linux File System",
+      "SL-12: Storage & Filesystem",
+      "SC-82: Linux File System",
+      "SC-92: Storage & Filesystem"
+    ]
+  },
+  {
+    "keywordId": "KW-000156",
+    "mentionedIn": [
+      "SL-37: Exception Handling",
+      "SC-117: Exception Handling",
+      "Q-How handle failures?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000157",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-7: Services",
+      "SL-3: Linux Basic Commands",
+      "SL-4: Text Processing Commands",
+      "SL-7: Process Management",
+      "SL-15: Networking Commands",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-83: Linux Basic Commands",
+      "Q-How does Service find Pods?...",
+      "Q-Pod stuck Pending?...",
+      "Q-Difference between grep and fi...",
+      "Q-How find process?...",
+      "Q-Disk full troubleshooting?...",
+      "Q-How find process using port?...",
+      "MD-Line 4",
+      "MD-Line 21",
+      "MD-Line 23",
+      "MD-Line 25"
+    ]
+  },
+  {
+    "keywordId": "KW-000158",
+    "mentionedIn": [
+      "SC-96: Firewall & Security"
+    ]
+  },
+  {
+    "keywordId": "KW-000159",
+    "mentionedIn": [
+      "SL-16: Firewall & Security",
+      "SC-96: Firewall & Security",
+      "Q-iptables vs firewalld?...",
+      "MD-Line 26"
+    ]
+  },
+  {
+    "keywordId": "KW-000160",
+    "mentionedIn": [
+      "SL-50: Testing Automation using pytest"
+    ]
+  },
+  {
+    "keywordId": "KW-000161",
+    "mentionedIn": [
+      "SL-21: Shell Scripting",
+      "SL-28: Python Scope (LEGB Rule)",
+      "SL-29: Python Functions",
+      "SL-30: Arguments and kwargs",
+      "SL-31: Modules & Packages",
+      "SL-35: OS Automation",
+      "SL-50: Testing Automation using pytest",
+      "SL-53: Decorators",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-115: OS Automation",
+      "SC-133: Decorators",
+      "Q-Explain LEGB rule...",
+      "Q-When use kwargs?...",
+      "MD-Line 27",
+      "MD-Line 29"
+    ]
+  },
+  {
+    "keywordId": "KW-000162",
+    "mentionedIn": [
+      "SC-132: Generators and Iterators"
+    ]
+  },
+  {
+    "keywordId": "KW-000163",
+    "mentionedIn": [
+      "SL-30: Common kubectl Commands",
+      "SL-44: API Automation using Python",
+      "SL-49: Monitoring Scripts using Python",
+      "Q-How call REST API?...",
+      "Q-Explain HTTP methods?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000164",
+    "mentionedIn": [
+      "SC-28: Git & Branching Strategy"
+    ]
+  },
+  {
+    "keywordId": "KW-000165",
+    "mentionedIn": [
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-22: GitHub Actions"
+    ]
+  },
+  {
+    "keywordId": "KW-000166",
+    "mentionedIn": [
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-22: GitHub Actions"
+    ]
+  },
+  {
+    "keywordId": "KW-000167",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000168",
+    "mentionedIn": [
+      "SL-32: CI/CD Integration",
+      "SC-78: CI/CD Integration"
+    ]
+  },
+  {
+    "keywordId": "KW-000169",
+    "mentionedIn": [
+      "SL-28: Python Scope (LEGB Rule)"
+    ]
+  },
+  {
+    "keywordId": "KW-000170",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-38: Azure Virtual Networks: Core & Peering"
+    ]
+  },
+  {
+    "keywordId": "KW-000171",
+    "mentionedIn": [
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform"
+    ]
+  },
+  {
+    "keywordId": "KW-000172",
+    "mentionedIn": [
+      "SC-7: Production Outage at 2 AM",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-27: Troubleshooting",
+      "SC-80: Scenario-Based Kubernetes Interview Questions"
+    ]
+  },
+  {
+    "keywordId": "KW-000173",
+    "mentionedIn": [
+      "SC-13: Grafana Alert Triggered At Midnight"
+    ]
+  },
+  {
+    "keywordId": "KW-000174",
+    "mentionedIn": [
+      "SL-3: Linux Basic Commands",
+      "SL-4: Text Processing Commands",
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "Q-Difference between grep and fi...",
+      "Q-How do you search logs?...",
+      "Q-Difference between grep and aw...",
+      "Q-How find process?...",
+      "Q-Disk full troubleshooting?...",
+      "Q-How find process using port?...",
+      "MD-Line 21"
+    ]
+  },
+  {
+    "keywordId": "KW-000175",
+    "mentionedIn": [
+      "SL-16: Namespaces",
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SL-5: File Permissions & Security",
+      "SL-6: User & Group Management",
+      "SL-5: Configuration Management & Orchestration",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-127: Cloud Automation using Python",
+      "Q-Explain LVM...."
+    ]
+  },
+  {
+    "keywordId": "KW-000176",
+    "mentionedIn": [
+      "SL-38: Python Logging"
+    ]
+  },
+  {
+    "keywordId": "KW-000177",
+    "mentionedIn": [
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform",
+      "SC-41: Enterprise IaC Module Architectures"
+    ]
+  },
+  {
+    "keywordId": "KW-000178",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SC-54: Services",
+      "Q-What is Headless Service?...",
+      "MD-Line 4"
+    ]
+  },
+  {
+    "keywordId": "KW-000179",
+    "mentionedIn": [
+      "SL-49: Monitoring Scripts using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000180",
+    "mentionedIn": [
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)"
+    ]
+  },
+  {
+    "keywordId": "KW-000181",
+    "mentionedIn": [
+      "SC-71: Helm"
+    ]
+  },
+  {
+    "keywordId": "KW-000182",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000183",
+    "mentionedIn": [
+      "SL-15: CronJobs"
+    ]
+  },
+  {
+    "keywordId": "KW-000184",
+    "mentionedIn": [
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-7: Production Outage at 2 AM",
+      "SC-27: Troubleshooting",
+      "SC-28: Git & Branching Strategy"
+    ]
+  },
+  {
+    "keywordId": "KW-000185",
+    "mentionedIn": [
+      "SL-23: Autoscaling",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-47: 12-Factor App Principle",
+      "SC-70: Autoscaling"
+    ]
+  },
+  {
+    "keywordId": "KW-000186",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "SL-15: Networking Commands",
+      "SL-44: API Automation using Python",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-55: Ingress",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-128: Kubernetes Python Client",
+      "Q-Ingress vs LoadBalancer?...",
+      "Q-How TLS works?...",
+      "Q-TCP vs UDP?...",
+      "Q-curl vs ping?...",
+      "Q-Explain HTTP methods?...",
+      "MD-Line 31"
+    ]
+  },
+  {
+    "keywordId": "KW-000187",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "SL-10: Secrets",
+      "SC-55: Ingress",
+      "Q-Ingress vs LoadBalancer?...",
+      "Q-How TLS works?...",
+      "Q-curl vs ping?...",
+      "Q-How call REST API?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000188",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-38: Azure Virtual Networks: Core & Peering"
+    ]
+  },
+  {
+    "keywordId": "KW-000189",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000190",
+    "mentionedIn": [
+      "SC-26: RBAC / IAM"
+    ]
+  },
+  {
+    "keywordId": "KW-000191",
+    "mentionedIn": [
+      "SL-5: Configuration Management & Orchestration",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-12: Passed QA But Failed Production",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-31: Security & DevSecOps",
+      "SC-33: Observability",
+      "SC-34: Incident Management",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-104: Production Troubleshooting",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-127: Cloud Automation using Python",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000192",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-32: CI/CD Integration",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-56: ConfigMap",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-78: CI/CD Integration",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-128: Kubernetes Python Client",
+      "Q-ImagePullBackOff?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000193",
+    "mentionedIn": [
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "Q-ImagePullBackOff?...",
+      "MD-Line 17"
+    ]
+  },
+  {
+    "keywordId": "KW-000194",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-22: Security Features",
+      "SL-26: Python Collections",
+      "SL-27: Mutable vs Immutable Objects",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-47: 12-Factor App Principle",
+      "SC-78: CI/CD Integration",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-126: CI/CD Automation with Python",
+      "Q-List vs tuple?...",
+      "Q-Why strings immutable?...",
+      "MD-Line 28"
+    ]
+  },
+  {
+    "keywordId": "KW-000195",
+    "mentionedIn": [
+      "SL-9: ConfigMap"
+    ]
+  },
+  {
+    "keywordId": "KW-000196",
+    "mentionedIn": [
+      "SL-9: Observability & Live Production Triage",
+      "SC-34: Incident Management",
+      "SC-46: Observability & Live Production Triage"
+    ]
+  },
+  {
+    "keywordId": "KW-000197",
+    "mentionedIn": [
+      "SC-34: Incident Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000198",
+    "mentionedIn": [
+      "SC-7: Production Outage at 2 AM",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000199",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000200",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000201",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-55: Ingress",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-128: Kubernetes Python Client",
+      "Q-Ingress vs LoadBalancer?...",
+      "Q-What is Ingress Controller?...",
+      "Q-How TLS works?...",
+      "MD-Line 1",
+      "MD-Line 5"
+    ]
+  },
+  {
+    "keywordId": "KW-000202",
+    "mentionedIn": [
+      "SC-55: Ingress"
+    ]
+  },
+  {
+    "keywordId": "KW-000203",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "Q-How TLS works?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000204",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SC-50: Pods"
+    ]
+  },
+  {
+    "keywordId": "KW-000205",
+    "mentionedIn": [
+      "SL-5: Configuration Management & Orchestration",
+      "SC-42: Configuration Management & Orchestration"
+    ]
+  },
+  {
+    "keywordId": "KW-000206",
+    "mentionedIn": [
+      "SL-16: Firewall & Security",
+      "SC-96: Firewall & Security",
+      "Q-iptables vs firewalld?...",
+      "MD-Line 26"
+    ]
+  },
+  {
+    "keywordId": "KW-000207",
+    "mentionedIn": [
+      "SL-16: Namespaces",
+      "SL-32: Virtual Environment",
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage",
+      "SC-63: Namespaces",
+      "SC-112: Virtual Environment"
+    ]
+  },
+  {
+    "keywordId": "KW-000208",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000209",
+    "mentionedIn": [
+      "SL-33: Package Management (pip)",
+      "SL-46: CI/CD Automation with Python",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-21: Jenkins",
+      "SC-113: Package Management (pip)",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000210",
+    "mentionedIn": [
+      "SC-21: Jenkins"
+    ]
+  },
+  {
+    "keywordId": "KW-000211",
+    "mentionedIn": [
+      "SC-9: Jenkins Pipeline Suddenly Failing"
+    ]
+  },
+  {
+    "keywordId": "KW-000212",
+    "mentionedIn": [
+      "SC-61: Jobs"
+    ]
+  },
+  {
+    "keywordId": "KW-000213",
+    "mentionedIn": [
+      "SL-19: Logs & Monitoring",
+      "SC-99: Logs & Monitoring",
+      "Q-How do you search logs?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000214",
+    "mentionedIn": [
+      "SC-121: JSON Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000215",
+    "mentionedIn": [
+      "SL-41: JSON Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000216",
+    "mentionedIn": [
+      "SL-41: JSON Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000217",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000218",
+    "mentionedIn": [
+      "SL-1: Linux Architecture & Boot Process",
+      "SL-7: Process Management",
+      "SL-10: Memory Management",
+      "SL-20: Kernel Troubleshooting",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-87: Process Management",
+      "SC-100: Kernel Troubleshooting",
+      "Q-What is OOMKilled?...",
+      "Q-Explain Linux architecture...",
+      "Q-Explain Linux boot process...",
+      "Q-Kernel vs OS difference....",
+      "Q-SIGTERM vs SIGKILL?...",
+      "Q-What is OOM killer?...",
+      "MD-Line 20"
+    ]
+  },
+  {
+    "keywordId": "KW-000219",
+    "mentionedIn": [
+      "SL-20: Kernel Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000220",
+    "mentionedIn": [
+      "SL-20: Kernel Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000221",
+    "mentionedIn": [
+      "SC-100: Kernel Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000222",
+    "mentionedIn": [
+      "SC-32: Azure Key Vault"
+    ]
+  },
+  {
+    "keywordId": "KW-000223",
+    "mentionedIn": [
+      "SL-31: YAML & Kubernetes Manifests"
+    ]
+  },
+  {
+    "keywordId": "KW-000224",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SL-20: Networking",
+      "SC-67: Networking",
+      "Q-Use cases of DaemonSet?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000225",
+    "mentionedIn": [
+      "SL-2: Cluster Architecture",
+      "SC-49: Cluster Architecture",
+      "Q-How upgrade Kubernetes safely?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000226",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-2: Cluster Architecture",
+      "SL-3: Pods",
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-6: Deployments",
+      "SL-7: Services",
+      "SL-8: Ingress",
+      "SL-10: Secrets",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-13: DaemonSet",
+      "SL-15: CronJobs",
+      "SL-16: Namespaces",
+      "SL-17: Resource Management",
+      "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SL-19: Scheduling",
+      "SL-20: Networking",
+      "SL-21: RBAC & Security",
+      "SL-22: Security Features",
+      "SL-24: Helm",
+      "SL-25: Operators & CRDs",
+      "SL-26: Observability",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-28: Backup & Disaster Recovery",
+      "SL-29: Upgrades & Maintenance",
+      "SL-30: Common kubectl Commands",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SL-32: CI/CD Integration",
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-33: Package Management (pip)",
+      "SL-42: YAML Handling",
+      "SL-48: Kubernetes Python Client",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-47: 12-Factor App Principle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-49: Cluster Architecture",
+      "SC-50: Pods",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-53: Deployments",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-66: Scheduling",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-78: CI/CD Integration",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-113: Package Management (pip)",
+      "SC-122: YAML Handling",
+      "SC-128: Kubernetes Python Client",
+      "Q-Difference between Pod and Rep...",
+      "Q-Explain Service discovery....",
+      "Q-How TLS works?...",
+      "Q-How to rotate Secrets?...",
+      "Q-Namespace vs cluster?...",
+      "Q-ImagePullBackOff?...",
+      "Q-How upgrade Kubernetes safely?...",
+      "Q-Why Python in DevOps?...",
+      "Q-How automate Kubernetes using ...",
+      "Q-Python client usage?...",
+      "MD-Line 1",
+      "MD-Line 18",
+      "MD-Line 27",
+      "MD-Line 32"
+    ]
+  },
+  {
+    "keywordId": "KW-000227",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "SL-25: Operators & CRDs",
+      "SL-30: Common kubectl Commands",
+      "SL-48: Kubernetes Python Client",
+      "SC-55: Ingress",
+      "SC-76: Common kubectl Commands",
+      "Q-How automate Kubernetes using ..."
+    ]
+  },
+  {
+    "keywordId": "KW-000228",
+    "mentionedIn": [
+      "SC-30: Kubernetes Deep Dive"
+    ]
+  },
+  {
+    "keywordId": "KW-000229",
+    "mentionedIn": [
+      "SC-48: Kubernetes Fundamentals"
+    ]
+  },
+  {
+    "keywordId": "KW-000230",
+    "mentionedIn": [
+      "SC-128: Kubernetes Python Client"
+    ]
+  },
+  {
+    "keywordId": "KW-000231",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SC-51: Labels, Selectors & Annotations",
+      "Q-How does Service find Pods?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000232",
+    "mentionedIn": [
+      "SC-51: Labels, Selectors & Annotations"
+    ]
+  },
+  {
+    "keywordId": "KW-000233",
+    "mentionedIn": [
+      "SL-29: Python Functions",
+      "Q-Explain lambda....",
+      "MD-Line 29"
+    ]
+  },
+  {
+    "keywordId": "KW-000234",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-50: Pods",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000235",
+    "mentionedIn": [
+      "SL-22: Security Features",
+      "SL-1: Linux Architecture & Boot Process",
+      "SL-2: Linux File System",
+      "SL-3: Linux Basic Commands",
+      "SL-4: Text Processing Commands",
+      "SL-5: File Permissions & Security",
+      "SL-6: User & Group Management",
+      "SL-7: Process Management",
+      "SL-8: Service Management",
+      "SL-10: Memory Management",
+      "SL-11: Disk Management",
+      "SL-12: Storage & Filesystem",
+      "SL-13: Linux Networking Basics",
+      "SL-14: Advanced Networking",
+      "SL-15: Networking Commands",
+      "SL-16: Firewall & Security",
+      "SL-17: SSH Administration",
+      "SL-18: Package Management",
+      "SL-19: Logs & Monitoring",
+      "SL-20: Kernel Troubleshooting",
+      "SL-21: Shell Scripting",
+      "SL-22: Cron & Scheduling",
+      "SL-36: Linux Command Execution using Python",
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage",
+      "SC-69: Security Features",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-116: Linux Command Execution using Python",
+      "Q-What is OOMKilled?...",
+      "Q-Explain Linux architecture...",
+      "Q-Explain Linux boot process...",
+      "Q-What is OOM killer?...",
+      "MD-Line 19",
+      "MD-Line 20"
+    ]
+  },
+  {
+    "keywordId": "KW-000236",
+    "mentionedIn": [
+      "SC-81: Linux Architecture & Boot Process"
+    ]
+  },
+  {
+    "keywordId": "KW-000237",
+    "mentionedIn": [
+      "SC-83: Linux Basic Commands"
+    ]
+  },
+  {
+    "keywordId": "KW-000238",
+    "mentionedIn": [
+      "SC-116: Linux Command Execution using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000239",
+    "mentionedIn": [
+      "SC-82: Linux File System"
+    ]
+  },
+  {
+    "keywordId": "KW-000240",
+    "mentionedIn": [
+      "SC-93: Linux Networking Basics"
+    ]
+  },
+  {
+    "keywordId": "KW-000241",
+    "mentionedIn": [
+      "SL-25: Python Fundamentals",
+      "SL-26: Python Collections",
+      "SL-52: Generators and Iterators",
+      "SC-106: Python Collections",
+      "Q-List vs tuple?...",
+      "Q-Generator vs list?...",
+      "MD-Line 28",
+      "MD-Line 33"
+    ]
+  },
+  {
+    "keywordId": "KW-000242",
+    "mentionedIn": [
+      "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
+      "Q-Why use startup probe?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000243",
+    "mentionedIn": [
+      "SL-9: CPU Monitoring",
+      "SC-89: CPU Monitoring",
+      "Q-Load average meaning?...",
+      "MD-Line 24"
+    ]
+  },
+  {
+    "keywordId": "KW-000244",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management",
+      "SC-54: Services",
+      "Q-Ingress vs LoadBalancer?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000245",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SL-8: Ingress",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-54: Services",
+      "Q-Ingress vs LoadBalancer?...",
+      "MD-Line 5"
+    ]
+  },
+  {
+    "keywordId": "KW-000246",
+    "mentionedIn": [
+      "SL-28: Python Scope (LEGB Rule)",
+      "Q-What is variable shadowing?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000247",
+    "mentionedIn": [
+      "SL-38: Python Logging"
+    ]
+  },
+  {
+    "keywordId": "KW-000248",
+    "mentionedIn": [
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage"
+    ]
+  },
+  {
+    "keywordId": "KW-000249",
+    "mentionedIn": [
+      "SL-16: Namespaces"
+    ]
+  },
+  {
+    "keywordId": "KW-000250",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SL-13: DaemonSet",
+      "SL-26: Observability",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-30: Common kubectl Commands",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-2: Linux File System",
+      "SL-3: Linux Basic Commands",
+      "SL-4: Text Processing Commands",
+      "SL-19: Logs & Monitoring",
+      "SL-20: Kernel Troubleshooting",
+      "SL-24: Production Troubleshooting",
+      "SL-34: File Handling",
+      "SL-38: Python Logging",
+      "SL-40: Regex & Log Parsing",
+      "SL-53: Decorators",
+      "SL-9: Observability & Live Production Triage",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-22: GitHub Actions",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-27: Troubleshooting",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-31: Security & DevSecOps",
+      "SC-33: Observability",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-46: Observability & Live Production Triage",
+      "SC-47: 12-Factor App Principle",
+      "SC-50: Pods",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-104: Production Troubleshooting",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design",
+      "Q-CrashLoopBackOff fix?...",
+      "Q-How do you search logs?...",
+      "Q-CPU is 100%, what steps?...",
+      "Q-SSH troubleshooting steps?...",
+      "MD-Line 21"
+    ]
+  },
+  {
+    "keywordId": "KW-000251",
+    "mentionedIn": [
+      "SC-99: Logs & Monitoring"
+    ]
+  },
+  {
+    "keywordId": "KW-000252",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000253",
+    "mentionedIn": [
+      "SL-21: Shell Scripting",
+      "SC-101: Shell Scripting"
+    ]
+  },
+  {
+    "keywordId": "KW-000254",
+    "mentionedIn": [
+      "SL-3: Linux Basic Commands"
+    ]
+  },
+  {
+    "keywordId": "KW-000255",
+    "mentionedIn": [
+      "SL-11: Disk Management",
+      "SC-91: Disk Management",
+      "Q-Explain LVM....",
+      "MD-Line 24"
+    ]
+  },
+  {
+    "keywordId": "KW-000256",
+    "mentionedIn": [
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000257",
+    "mentionedIn": [
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000258",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations"
+    ]
+  },
+  {
+    "keywordId": "KW-000259",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations"
+    ]
+  },
+  {
+    "keywordId": "KW-000260",
+    "mentionedIn": [
+      "SL-17: Resource Management",
+      "Q-What is OOMKilled?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000261",
+    "mentionedIn": [
+      "SC-90: Memory Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000262",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-24: Helm",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform",
+      "SC-51: Labels, Selectors & Annotations",
+      "Q-Difference between grep and fi..."
+    ]
+  },
+  {
+    "keywordId": "KW-000263",
+    "mentionedIn": [
+      "SL-26: Observability",
+      "SL-49: Monitoring Scripts using Python",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SL-9: Observability & Live Production Triage",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-31: Security & DevSecOps",
+      "SC-33: Observability",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-46: Observability & Live Production Triage",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design",
+      "Q-Deployment vs DaemonSet?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000264",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-7: Services",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-31: Security & DevSecOps",
+      "SC-33: Observability",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-47: 12-Factor App Principle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-128: Kubernetes Python Client",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000265",
+    "mentionedIn": [
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation"
+    ]
+  },
+  {
+    "keywordId": "KW-000266",
+    "mentionedIn": [
+      "SL-20: Kernel Troubleshooting",
+      "SL-31: Modules & Packages",
+      "SL-32: Virtual Environment",
+      "SL-35: OS Automation",
+      "SL-36: Linux Command Execution using Python",
+      "SL-4: Enterprise IaC Module Architectures",
+      "SL-5: Configuration Management & Orchestration",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-111: Modules & Packages",
+      "SC-116: Linux Command Execution using Python",
+      "Q-Explain LEGB rule...",
+      "Q-os vs shutil?...",
+      "Q-How execute remote command usi..."
+    ]
+  },
+  {
+    "keywordId": "KW-000267",
+    "mentionedIn": [
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-41: Enterprise IaC Module Architectures"
+    ]
+  },
+  {
+    "keywordId": "KW-000268",
+    "mentionedIn": [
+      "SL-20: Kernel Troubleshooting",
+      "SL-31: Modules & Packages",
+      "SL-4: Enterprise IaC Module Architectures",
+      "SL-5: Configuration Management & Orchestration",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-47: 12-Factor App Principle",
+      "SC-100: Kernel Troubleshooting",
+      "SC-111: Modules & Packages",
+      "Q-Why Python in DevOps?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000269",
+    "mentionedIn": [
+      "SC-111: Modules & Packages"
+    ]
+  },
+  {
+    "keywordId": "KW-000270",
+    "mentionedIn": [
+      "SC-25: Monitoring",
+      "SC-89: CPU Monitoring"
+    ]
+  },
+  {
+    "keywordId": "KW-000271",
+    "mentionedIn": [
+      "SC-129: Monitoring Scripts using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000272",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-12: Storage & Filesystem",
+      "SC-92: Storage & Filesystem"
+    ]
+  },
+  {
+    "keywordId": "KW-000273",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000274",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SC-50: Pods"
+    ]
+  },
+  {
+    "keywordId": "KW-000275",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000276",
+    "mentionedIn": [
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-44: Containerization & Microservices Infrastructure"
+    ]
+  },
+  {
+    "keywordId": "KW-000277",
+    "mentionedIn": [
+      "SL-26: Python Collections",
+      "SL-27: Mutable vs Immutable Objects",
+      "SC-107: Mutable vs Immutable Objects",
+      "Q-List vs tuple?...",
+      "Q-Explain mutable objects...",
+      "MD-Line 28"
+    ]
+  },
+  {
+    "keywordId": "KW-000278",
+    "mentionedIn": [
+      "SC-107: Mutable vs Immutable Objects"
+    ]
+  },
+  {
+    "keywordId": "KW-000279",
+    "mentionedIn": [
+      "SL-16: Namespaces",
+      "SL-21: RBAC & Security",
+      "SC-63: Namespaces",
+      "Q-Explain Service discovery....",
+      "Q-Namespace vs cluster?...",
+      "Q-How enforce limits?...",
+      "MD-Line 12"
+    ]
+  },
+  {
+    "keywordId": "KW-000280",
+    "mentionedIn": [
+      "SC-63: Namespaces"
+    ]
+  },
+  {
+    "keywordId": "KW-000281",
+    "mentionedIn": [
+      "SL-14: Advanced Networking",
+      "SC-94: Advanced Networking"
+    ]
+  },
+  {
+    "keywordId": "KW-000282",
+    "mentionedIn": [
+      "SC-67: Networking",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking"
+    ]
+  },
+  {
+    "keywordId": "KW-000283",
+    "mentionedIn": [
+      "SC-95: Networking Commands"
+    ]
+  },
+  {
+    "keywordId": "KW-000284",
+    "mentionedIn": [
+      "SL-20: Networking",
+      "SC-67: Networking"
+    ]
+  },
+  {
+    "keywordId": "KW-000285",
+    "mentionedIn": [
+      "SL-19: Scheduling",
+      "SC-66: Scheduling",
+      "Q-Affinity vs taints?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000286",
+    "mentionedIn": [
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000287",
+    "mentionedIn": [
+      "SL-13: DaemonSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000288",
+    "mentionedIn": [
+      "SL-19: Scheduling",
+      "SC-66: Scheduling"
+    ]
+  },
+  {
+    "keywordId": "KW-000289",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-39: Routing & Secure Endpoint Solutions"
+    ]
+  },
+  {
+    "keywordId": "KW-000290",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000291",
+    "mentionedIn": [
+      "SL-26: Observability",
+      "SL-9: Observability & Live Production Triage",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-31: Security & DevSecOps",
+      "SC-33: Observability",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-46: Observability & Live Production Triage",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000292",
+    "mentionedIn": [
+      "SC-33: Observability"
+    ]
+  },
+  {
+    "keywordId": "KW-000293",
+    "mentionedIn": [
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-22: GitHub Actions",
+      "SC-45: Continuous Delivery Design & Federation"
+    ]
+  },
+  {
+    "keywordId": "KW-000294",
+    "mentionedIn": [
+      "SL-13: DaemonSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000295",
+    "mentionedIn": [
+      "SL-10: Memory Management",
+      "SC-90: Memory Management",
+      "Q-What is OOM killer?...",
+      "MD-Line 24"
+    ]
+  },
+  {
+    "keywordId": "KW-000296",
+    "mentionedIn": [
+      "SL-10: Secrets"
+    ]
+  },
+  {
+    "keywordId": "KW-000297",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000298",
+    "mentionedIn": [
+      "SC-33: Observability"
+    ]
+  },
+  {
+    "keywordId": "KW-000299",
+    "mentionedIn": [
+      "SL-25: Operators & CRDs",
+      "SC-72: Operators & CRDs"
+    ]
+  },
+  {
+    "keywordId": "KW-000300",
+    "mentionedIn": [
+      "SC-72: Operators & CRDs"
+    ]
+  },
+  {
+    "keywordId": "KW-000301",
+    "mentionedIn": [
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-44: Containerization & Microservices Infrastructure"
+    ]
+  },
+  {
+    "keywordId": "KW-000302",
+    "mentionedIn": [
+      "SL-12: StatefulSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000303",
+    "mentionedIn": [
+      "SC-115: OS Automation"
+    ]
+  },
+  {
+    "keywordId": "KW-000304",
+    "mentionedIn": [
+      "SL-35: OS Automation"
+    ]
+  },
+  {
+    "keywordId": "KW-000305",
+    "mentionedIn": [
+      "SL-43: Environment Variables in Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000306",
+    "mentionedIn": [
+      "SL-43: Environment Variables in Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000307",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-18: Azure App Service",
+      "SC-39: Routing & Secure Endpoint Solutions"
+    ]
+  },
+  {
+    "keywordId": "KW-000308",
+    "mentionedIn": [
+      "SL-24: Helm",
+      "SL-18: Package Management",
+      "SL-31: Modules & Packages",
+      "SL-32: Virtual Environment",
+      "SL-33: Package Management (pip)",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-47: 12-Factor App Principle",
+      "SC-71: Helm",
+      "SC-98: Package Management",
+      "SC-111: Modules & Packages",
+      "SC-113: Package Management (pip)",
+      "Q-How automate Kubernetes using ..."
+    ]
+  },
+  {
+    "keywordId": "KW-000309",
+    "mentionedIn": [
+      "SC-98: Package Management",
+      "SC-113: Package Management (pip)"
+    ]
+  },
+  {
+    "keywordId": "KW-000310",
+    "mentionedIn": [
+      "SL-14: Jobs",
+      "Q-Explain parallel Jobs....",
+      "Q-Thread vs process?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000311",
+    "mentionedIn": [
+      "SL-29: Python Functions",
+      "SL-30: Arguments and kwargs",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-110: Arguments and kwargs",
+      "Q-When use kwargs?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000312",
+    "mentionedIn": [
+      "SL-11: Disk Management",
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-91: Disk Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000313",
+    "mentionedIn": [
+      "SC-12: Passed QA But Failed Production"
+    ]
+  },
+  {
+    "keywordId": "KW-000314",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "SL-14: Advanced Networking",
+      "SL-23: Environment Variables",
+      "SL-35: OS Automation",
+      "SL-39: Python Debugging",
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SL-5: Configuration Management & Orchestration",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-103: Environment Variables",
+      "Q-os vs shutil?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000315",
+    "mentionedIn": [
+      "SL-8: Ingress"
+    ]
+  },
+  {
+    "keywordId": "KW-000316",
+    "mentionedIn": [
+      "SL-35: OS Automation",
+      "SC-115: OS Automation"
+    ]
+  },
+  {
+    "keywordId": "KW-000317",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SL-4: Text Processing Commands",
+      "SL-40: Regex & Log Parsing",
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SL-9: Observability & Live Production Triage",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-22: GitHub Actions",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-31: Security & DevSecOps",
+      "SC-32: Azure Key Vault",
+      "SC-33: Observability",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-40: High Availability & Traffic Management",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-46: Observability & Live Production Triage",
+      "SC-49: Cluster Architecture",
+      "SC-50: Pods",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-53: Deployments",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-66: Scheduling",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-78: CI/CD Integration",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-104: Production Troubleshooting",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-126: CI/CD Automation with Python",
+      "SC-127: Cloud Automation using Python",
+      "SC-128: Kubernetes Python Client",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design",
+      "Q-What is decorator?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000318",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000319",
+    "mentionedIn": [
+      "SL-19: Scheduling",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "Q-Why Pod is Pending?...",
+      "Q-Pod stuck Pending?...",
+      "MD-Line 15",
+      "MD-Line 17"
+    ]
+  },
+  {
+    "keywordId": "KW-000320",
+    "mentionedIn": [
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-80: Scenario-Based Kubernetes Interview Questions"
+    ]
+  },
+  {
+    "keywordId": "KW-000321",
+    "mentionedIn": [
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "Q-PV vs PVC?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000322",
+    "mentionedIn": [
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "Q-PV vs PVC?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000323",
+    "mentionedIn": [
+      "SL-7: Process Management",
+      "SC-87: Process Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000324",
+    "mentionedIn": [
+      "SL-33: Package Management (pip)"
+    ]
+  },
+  {
+    "keywordId": "KW-000325",
+    "mentionedIn": [
+      "SL-32: CI/CD Integration",
+      "SL-33: Package Management (pip)",
+      "SL-39: Python Debugging",
+      "SL-46: CI/CD Automation with Python",
+      "SL-50: Testing Automation using pytest",
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-7: Production Outage at 2 AM",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-20: Terraform",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-27: Troubleshooting",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-78: CI/CD Integration",
+      "SC-113: Package Management (pip)",
+      "SC-119: Python Debugging",
+      "SC-126: CI/CD Automation with Python",
+      "SC-130: Testing Automation using pytest",
+      "Q-Explain sed usage...."
+    ]
+  },
+  {
+    "keywordId": "KW-000326",
+    "mentionedIn": [
+      "SC-6: Pipeline Takes 40 Minutes"
+    ]
+  },
+  {
+    "keywordId": "KW-000327",
+    "mentionedIn": [
+      "SL-5: Configuration Management & Orchestration",
+      "SC-42: Configuration Management & Orchestration"
+    ]
+  },
+  {
+    "keywordId": "KW-000328",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-5: ReplicaSet",
+      "SL-7: Services",
+      "SL-9: ConfigMap",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-12: StatefulSet",
+      "SL-13: DaemonSet",
+      "SL-19: Scheduling",
+      "SL-20: Networking",
+      "SL-22: Security Features",
+      "SL-23: Autoscaling",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-30: Common kubectl Commands",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-48: Kubernetes Python Client",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-47: 12-Factor App Principle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-50: Pods",
+      "SC-52: ReplicaSet",
+      "SC-54: Services",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-66: Scheduling",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-128: Kubernetes Python Client",
+      "Q-Difference between Pod and Rep...",
+      "Q-How does self healing work?...",
+      "Q-Deployment vs DaemonSet?...",
+      "Q-How to update configuration?...",
+      "Q-What happens when Pod restarts...",
+      "Q-Explain QoS classes....",
+      "Q-How does scheduler work?...",
+      "Q-Affinity vs taints?...",
+      "Q-Why Pod is Pending?...",
+      "Q-Pod stuck Pending?...",
+      "Q-CrashLoopBackOff fix?...",
+      "MD-Line 2",
+      "MD-Line 11",
+      "MD-Line 15",
+      "MD-Line 17"
+    ]
+  },
+  {
+    "keywordId": "KW-000329",
+    "mentionedIn": [
+      "SL-19: Scheduling",
+      "SC-66: Scheduling"
+    ]
+  },
+  {
+    "keywordId": "KW-000330",
+    "mentionedIn": [
+      "SL-2: Cluster Architecture",
+      "SL-3: Pods",
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-5: ReplicaSet",
+      "SL-6: Deployments",
+      "SL-7: Services",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-12: StatefulSet",
+      "SL-13: DaemonSet",
+      "SL-14: Jobs",
+      "SL-17: Resource Management",
+      "SL-19: Scheduling",
+      "SL-20: Networking",
+      "SL-21: RBAC & Security",
+      "SL-23: Autoscaling",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-29: Upgrades & Maintenance",
+      "SL-32: CI/CD Integration",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-48: Kubernetes Python Client",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-49: Cluster Architecture",
+      "SC-50: Pods",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-53: Deployments",
+      "SC-54: Services",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-61: Jobs",
+      "SC-64: Resource Management",
+      "SC-66: Scheduling",
+      "SC-67: Networking",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-128: Kubernetes Python Client",
+      "Q-ReplicaSet vs Deployment?...",
+      "Q-Explain rolling update strateg...",
+      "Q-How achieve zero downtime?...",
+      "Q-How does Service find Pods?...",
+      "Q-What is Headless Service?...",
+      "Q-Explain Service discovery....",
+      "Q-How TLS works?...",
+      "Q-Deployment vs DaemonSet?...",
+      "Q-Explain parallel Jobs....",
+      "Q-How to rotate Secrets?...",
+      "Q-How enforce limits?...",
+      "Q-How does scheduler work?...",
+      "Q-Affinity vs taints?...",
+      "Q-Difference between cordon and ...",
+      "MD-Line 4"
+    ]
+  },
+  {
+    "keywordId": "KW-000331",
+    "mentionedIn": [
+      "SC-47: 12-Factor App Principle"
+    ]
+  },
+  {
+    "keywordId": "KW-000332",
+    "mentionedIn": [
+      "SC-34: Incident Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000333",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-39: Routing & Secure Endpoint Solutions"
+    ]
+  },
+  {
+    "keywordId": "KW-000334",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-39: Routing & Secure Endpoint Solutions"
+    ]
+  },
+  {
+    "keywordId": "KW-000335",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-25: Operators & CRDs",
+      "SL-1: Linux Architecture & Boot Process",
+      "SL-7: Process Management",
+      "SL-8: Service Management",
+      "SL-9: CPU Monitoring",
+      "SL-10: Memory Management",
+      "SL-15: Networking Commands",
+      "SL-21: Shell Scripting",
+      "SL-24: Production Troubleshooting",
+      "SL-26: Python Collections",
+      "SL-34: File Handling",
+      "SL-39: Python Debugging",
+      "SL-41: JSON Handling",
+      "SL-49: Monitoring Scripts using Python",
+      "SL-51: Threading and Multiprocessing",
+      "SL-9: Observability & Live Production Triage",
+      "SC-7: Production Outage at 2 AM",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-46: Observability & Live Production Triage",
+      "SC-47: 12-Factor App Principle",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-87: Process Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting",
+      "SC-106: Python Collections",
+      "SC-114: File Handling",
+      "SC-119: Python Debugging",
+      "SC-121: JSON Handling",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-131: Threading and Multiprocessing",
+      "Q-Explain rolling update strateg...",
+      "Q-What is OOMKilled?...",
+      "Q-Explain Linux boot process...",
+      "Q-Process vs thread?...",
+      "Q-How find process?...",
+      "Q-SIGTERM vs SIGKILL?...",
+      "Q-How find process using port?...",
+      "Q-Thread vs process?...",
+      "MD-Line 20",
+      "MD-Line 23",
+      "MD-Line 25",
+      "MD-Line 33"
+    ]
+  },
+  {
+    "keywordId": "KW-000336",
+    "mentionedIn": [
+      "SC-87: Process Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000337",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SL-28: Backup & Disaster Recovery",
+      "SL-1: Linux Architecture & Boot Process",
+      "SL-3: Linux Basic Commands",
+      "SL-7: Process Management",
+      "SL-9: CPU Monitoring",
+      "SL-10: Memory Management",
+      "SL-26: Python Collections",
+      "SL-52: Generators and Iterators",
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage",
+      "SC-47: 12-Factor App Principle",
+      "SC-50: Pods",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-83: Linux Basic Commands",
+      "SC-90: Memory Management",
+      "SC-106: Python Collections",
+      "SC-132: Generators and Iterators",
+      "Q-Load average meaning?...",
+      "Q-What is OOM killer?...",
+      "Q-Disk full troubleshooting?...",
+      "Q-Thread vs process?...",
+      "MD-Line 19",
+      "MD-Line 23"
+    ]
+  },
+  {
+    "keywordId": "KW-000338",
+    "mentionedIn": [
+      "SC-7: Production Outage at 2 AM"
+    ]
+  },
+  {
+    "keywordId": "KW-000339",
+    "mentionedIn": [
+      "SC-134: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000340",
+    "mentionedIn": [
+      "SC-104: Production Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000341",
+    "mentionedIn": [
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "Q-Use cases of DaemonSet?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000342",
+    "mentionedIn": [
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000343",
+    "mentionedIn": [
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000344",
+    "mentionedIn": [
+      "SL-49: Monitoring Scripts using Python",
+      "SC-129: Monitoring Scripts using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000345",
+    "mentionedIn": [
+      "SL-28: Backup & Disaster Recovery"
+    ]
+  },
+  {
+    "keywordId": "KW-000346",
+    "mentionedIn": [
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-80: Scenario-Based Kubernetes Interview Questions"
+    ]
+  },
+  {
+    "keywordId": "KW-000347",
+    "mentionedIn": [
+      "SC-106: Python Collections"
+    ]
+  },
+  {
+    "keywordId": "KW-000348",
+    "mentionedIn": [
+      "SC-119: Python Debugging"
+    ]
+  },
+  {
+    "keywordId": "KW-000349",
+    "mentionedIn": [
+      "SC-109: Python Functions"
+    ]
+  },
+  {
+    "keywordId": "KW-000350",
+    "mentionedIn": [
+      "SC-105: Python Fundamentals"
+    ]
+  },
+  {
+    "keywordId": "KW-000351",
+    "mentionedIn": [
+      "SC-118: Python Logging"
+    ]
+  },
+  {
+    "keywordId": "KW-000352",
+    "mentionedIn": [
+      "SC-108: Python Scope (LEGB Rule)"
+    ]
+  },
+  {
+    "keywordId": "KW-000353",
+    "mentionedIn": [
+      "SL-42: YAML Handling",
+      "SC-122: YAML Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000354",
+    "mentionedIn": [
+      "SL-17: Resource Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000355",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000356",
+    "mentionedIn": [
+      "SL-21: RBAC & Security",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-17: Developer Needs Production Access",
+      "SC-18: Azure App Service",
+      "SC-26: RBAC / IAM",
+      "SC-32: Azure Key Vault",
+      "SC-68: RBAC & Security",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-127: Cloud Automation using Python",
+      "Q-Why use namespaces?...",
+      "MD-Line 9"
+    ]
+  },
+  {
+    "keywordId": "KW-000357",
+    "mentionedIn": [
+      "SC-26: RBAC / IAM"
+    ]
+  },
+  {
+    "keywordId": "KW-000358",
+    "mentionedIn": [
+      "SC-68: RBAC & Security"
+    ]
+  },
+  {
+    "keywordId": "KW-000359",
+    "mentionedIn": [
+      "SL-18: Health Checks (Liveness, Readiness, Startup Probes)"
+    ]
+  },
+  {
+    "keywordId": "KW-000360",
+    "mentionedIn": [
+      "SL-22: Security Features"
+    ]
+  },
+  {
+    "keywordId": "KW-000361",
+    "mentionedIn": [
+      "SL-25: Operators & CRDs"
+    ]
+  },
+  {
+    "keywordId": "KW-000362",
+    "mentionedIn": [
+      "SL-6: Deployments",
+      "SC-53: Deployments"
+    ]
+  },
+  {
+    "keywordId": "KW-000363",
+    "mentionedIn": [
+      "SC-120: Regex & Log Parsing"
+    ]
+  },
+  {
+    "keywordId": "KW-000364",
+    "mentionedIn": [
+      "SL-6: Deployments",
+      "SL-24: Helm",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-16: Release Rollback Strategy",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-24: Release Management",
+      "SC-28: Git & Branching Strategy",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-47: 12-Factor App Principle",
+      "SC-53: Deployments",
+      "SC-71: Helm",
+      "SC-78: CI/CD Integration",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000365",
+    "mentionedIn": [
+      "SC-24: Release Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000366",
+    "mentionedIn": [
+      "SC-16: Release Rollback Strategy"
+    ]
+  },
+  {
+    "keywordId": "KW-000367",
+    "mentionedIn": [
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-41: Enterprise IaC Module Architectures"
+    ]
+  },
+  {
+    "keywordId": "KW-000368",
+    "mentionedIn": [
+      "SL-5: ReplicaSet",
+      "SL-6: Deployments",
+      "SC-52: ReplicaSet",
+      "Q-Difference between Pod and Rep...",
+      "Q-ReplicaSet vs Deployment?...",
+      "Q-Deployment vs ReplicaSet?...",
+      "Q-How rollback works?...",
+      "MD-Line 2",
+      "MD-Line 3"
+    ]
+  },
+  {
+    "keywordId": "KW-000369",
+    "mentionedIn": [
+      "SC-52: ReplicaSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000370",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-38: Azure Virtual Networks: Core & Peering"
+    ]
+  },
+  {
+    "keywordId": "KW-000371",
+    "mentionedIn": [
+      "SL-24: Helm",
+      "SL-4: Enterprise IaC Module Architectures",
+      "SL-9: Observability & Live Production Triage",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-6: Pipeline Takes 40 Minutes",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-9: Jenkins Pipeline Suddenly Failing",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-21: Jenkins",
+      "SC-22: GitHub Actions",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-46: Observability & Live Production Triage",
+      "SC-47: 12-Factor App Principle",
+      "SC-78: CI/CD Integration",
+      "SC-126: CI/CD Automation with Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000372",
+    "mentionedIn": [
+      "SL-44: API Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000373",
+    "mentionedIn": [
+      "SL-33: Package Management (pip)",
+      "SC-47: 12-Factor App Principle",
+      "Q-How make Python script product..."
+    ]
+  },
+  {
+    "keywordId": "KW-000374",
+    "mentionedIn": [
+      "SL-6: Deployments",
+      "SL-8: Ingress",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-15: CronJobs",
+      "SL-16: Namespaces",
+      "SL-17: Resource Management",
+      "SL-23: Autoscaling",
+      "SL-25: Operators & CRDs",
+      "SL-27: Troubleshooting Kubernetes",
+      "SL-30: Common kubectl Commands",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SL-41: JSON Handling",
+      "SL-3: High Availability & Traffic Management",
+      "SL-9: Observability & Live Production Triage",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-40: High Availability & Traffic Management",
+      "SC-46: Observability & Live Production Triage",
+      "SC-53: Deployments",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-121: JSON Handling",
+      "SC-127: Cloud Automation using Python",
+      "Q-How TLS works?...",
+      "Q-PV vs PVC?...",
+      "Q-Why use namespaces?...",
+      "Q-Why use with open?...",
+      "Q-Explain HTTP methods?...",
+      "MD-Line 9",
+      "MD-Line 13"
+    ]
+  },
+  {
+    "keywordId": "KW-000375",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000376",
+    "mentionedIn": [
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000377",
+    "mentionedIn": [
+      "SC-64: Resource Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000378",
+    "mentionedIn": [
+      "SL-16: Namespaces",
+      "SC-63: Namespaces"
+    ]
+  },
+  {
+    "keywordId": "KW-000379",
+    "mentionedIn": [
+      "SL-16: Namespaces"
+    ]
+  },
+  {
+    "keywordId": "KW-000380",
+    "mentionedIn": [
+      "SL-28: Backup & Disaster Recovery",
+      "SC-7: Production Outage at 2 AM",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000381",
+    "mentionedIn": [
+      "SL-54: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000382",
+    "mentionedIn": [
+      "SL-29: Python Functions"
+    ]
+  },
+  {
+    "keywordId": "KW-000383",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000384",
+    "mentionedIn": [
+      "SL-6: Deployments",
+      "SC-53: Deployments"
+    ]
+  },
+  {
+    "keywordId": "KW-000385",
+    "mentionedIn": [
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-43: Environment Architecture & Artifact Lifecycle"
+    ]
+  },
+  {
+    "keywordId": "KW-000386",
+    "mentionedIn": [
+      "SL-2: Cluster Architecture",
+      "SL-20: Networking",
+      "SL-21: RBAC & Security",
+      "SL-46: CI/CD Automation with Python",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-68: RBAC & Security",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000387",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000388",
+    "mentionedIn": [
+      "SL-21: RBAC & Security"
+    ]
+  },
+  {
+    "keywordId": "KW-000389",
+    "mentionedIn": [
+      "SL-21: RBAC & Security",
+      "SL-5: Configuration Management & Orchestration",
+      "SC-26: RBAC / IAM",
+      "SC-42: Configuration Management & Orchestration"
+    ]
+  },
+  {
+    "keywordId": "KW-000390",
+    "mentionedIn": [
+      "SL-5: ReplicaSet",
+      "SL-6: Deployments",
+      "SL-24: Helm",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-54: Production Python Design",
+      "SC-7: Production Outage at 2 AM",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-16: Release Rollback Strategy",
+      "SC-24: Release Management",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-53: Deployments",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting",
+      "SC-134: Production Python Design",
+      "Q-How rollback works?...",
+      "MD-Line 3"
+    ]
+  },
+  {
+    "keywordId": "KW-000391",
+    "mentionedIn": [
+      "SL-32: CI/CD Integration"
+    ]
+  },
+  {
+    "keywordId": "KW-000392",
+    "mentionedIn": [
+      "SL-6: Deployments",
+      "SC-53: Deployments",
+      "Q-Explain rolling update strateg...",
+      "MD-Line 3"
+    ]
+  },
+  {
+    "keywordId": "KW-000393",
+    "mentionedIn": [
+      "SL-24: Production Troubleshooting",
+      "SL-9: Observability & Live Production Triage",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-7: Production Outage at 2 AM",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-46: Observability & Live Production Triage",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000394",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000395",
+    "mentionedIn": [
+      "SL-7: Services",
+      "SL-8: Ingress",
+      "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SL-14: Advanced Networking",
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SL-3: High Availability & Traffic Management",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-32: Azure Key Vault",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-40: High Availability & Traffic Management",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-94: Advanced Networking",
+      "SC-127: Cloud Automation using Python",
+      "SC-128: Kubernetes Python Client",
+      "Q-Ingress vs LoadBalancer?...",
+      "Q-What is Ingress Controller?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000396",
+    "mentionedIn": [
+      "SL-22: Security Features"
+    ]
+  },
+  {
+    "keywordId": "KW-000397",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000398",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000399",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000400",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-5: ReplicaSet",
+      "SL-6: Deployments",
+      "SL-12: StatefulSet",
+      "SL-23: Autoscaling",
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-52: ReplicaSet",
+      "SC-53: Deployments",
+      "SC-70: Autoscaling"
+    ]
+  },
+  {
+    "keywordId": "KW-000401",
+    "mentionedIn": [
+      "SL-15: CronJobs",
+      "SL-22: Cron & Scheduling",
+      "Q-Job vs CronJob?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000402",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-2: Cluster Architecture",
+      "SL-19: Scheduling",
+      "SL-22: Cron & Scheduling",
+      "SC-49: Cluster Architecture",
+      "SC-66: Scheduling",
+      "SC-102: Cron & Scheduling",
+      "Q-How does scheduler work?...",
+      "Q-Pod stuck Pending?...",
+      "MD-Line 15"
+    ]
+  },
+  {
+    "keywordId": "KW-000403",
+    "mentionedIn": [
+      "SL-47: Cloud Automation using Python",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000404",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-10: Secrets",
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-57: Secrets",
+      "Q-How TLS works?...",
+      "Q-ConfigMap vs Secret?...",
+      "Q-How to update configuration?...",
+      "Q-How to rotate Secrets?...",
+      "Q-Password vs key authentication...",
+      "MD-Line 10"
+    ]
+  },
+  {
+    "keywordId": "KW-000405",
+    "mentionedIn": [
+      "SC-57: Secrets"
+    ]
+  },
+  {
+    "keywordId": "KW-000406",
+    "mentionedIn": [
+      "SC-31: Security & DevSecOps"
+    ]
+  },
+  {
+    "keywordId": "KW-000407",
+    "mentionedIn": [
+      "SC-69: Security Features"
+    ]
+  },
+  {
+    "keywordId": "KW-000408",
+    "mentionedIn": [
+      "SL-4: Text Processing Commands",
+      "SC-84: Text Processing Commands",
+      "Q-Explain sed usage....",
+      "MD-Line 21"
+    ]
+  },
+  {
+    "keywordId": "KW-000409",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-5: ReplicaSet",
+      "SC-52: ReplicaSet",
+      "Q-How does self healing work?...",
+      "MD-Line 2"
+    ]
+  },
+  {
+    "keywordId": "KW-000410",
+    "mentionedIn": [
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation"
+    ]
+  },
+  {
+    "keywordId": "KW-000411",
+    "mentionedIn": [
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-7: Services",
+      "SL-8: Ingress",
+      "SL-17: Resource Management",
+      "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SL-20: Networking",
+      "SL-29: Upgrades & Maintenance",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-1: Linux Architecture & Boot Process",
+      "SL-2: Linux File System",
+      "SL-8: Service Management",
+      "SL-13: Linux Networking Basics",
+      "SL-14: Advanced Networking",
+      "SL-15: Networking Commands",
+      "SL-19: Logs & Monitoring",
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SL-3: High Availability & Traffic Management",
+      "SL-5: Configuration Management & Orchestration",
+      "SL-7: Containerization & Microservices Infrastructure",
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-7: Production Outage at 2 AM",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-27: Troubleshooting",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-40: High Availability & Traffic Management",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-47: 12-Factor App Principle",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-64: Resource Management",
+      "SC-67: Networking",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-88: Service Management",
+      "SC-93: Linux Networking Basics",
+      "SC-95: Networking Commands",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting",
+      "Q-ClusterIP vs NodePort?...",
+      "Q-How does Service find Pods?...",
+      "Q-What is Headless Service?...",
+      "Q-Explain Service discovery....",
+      "Q-Ingress vs LoadBalancer?...",
+      "Q-Explain QoS classes....",
+      "Q-Difference between probes (Liv...",
+      "MD-Line 4"
+    ]
+  },
+  {
+    "keywordId": "KW-000412",
+    "mentionedIn": [
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation"
+    ]
+  },
+  {
+    "keywordId": "KW-000413",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-18: Azure App Service",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
+    ]
+  },
+  {
+    "keywordId": "KW-000414",
+    "mentionedIn": [
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-80: Scenario-Based Kubernetes Interview Questions"
+    ]
+  },
+  {
+    "keywordId": "KW-000415",
+    "mentionedIn": [
+      "SC-88: Service Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000416",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000417",
+    "mentionedIn": [
+      "SL-21: RBAC & Security",
+      "SC-68: RBAC & Security"
+    ]
+  },
+  {
+    "keywordId": "KW-000418",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-4: Labels, Selectors & Annotations",
+      "SL-7: Services",
+      "SL-8: Ingress",
+      "SL-13: DaemonSet",
+      "SL-20: Networking",
+      "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SL-1: Linux Architecture & Boot Process",
+      "SL-8: Service Management",
+      "SL-19: Logs & Monitoring",
+      "SL-21: Shell Scripting",
+      "SL-24: Production Troubleshooting",
+      "SL-44: API Automation using Python",
+      "SL-47: Cloud Automation using Python",
+      "SL-48: Kubernetes Python Client",
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SL-9: Observability & Live Production Triage",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-32: Azure Key Vault",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-46: Observability & Live Production Triage",
+      "SC-47: 12-Factor App Principle",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-54: Services",
+      "SC-55: Ingress",
+      "SC-60: DaemonSet",
+      "SC-67: Networking",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-88: Service Management",
+      "SC-101: Shell Scripting",
+      "SC-104: Production Troubleshooting",
+      "SC-124: API Automation using Python",
+      "SC-127: Cloud Automation using Python",
+      "SC-128: Kubernetes Python Client",
+      "Q-How does Service find Pods?...",
+      "Q-Explain Service discovery....",
+      "Q-Ingress vs LoadBalancer?...",
+      "Q-Explain Linux boot process...",
+      "Q-How do you search logs?...",
+      "Q-iptables vs firewalld?...",
+      "MD-Line 1",
+      "MD-Line 4",
+      "MD-Line 19"
+    ]
+  },
+  {
+    "keywordId": "KW-000419",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000420",
+    "mentionedIn": [
+      "SC-101: Shell Scripting"
+    ]
+  },
+  {
+    "keywordId": "KW-000421",
+    "mentionedIn": [
+      "SL-35: OS Automation",
+      "SC-115: OS Automation",
+      "Q-os vs shutil?...",
+      "MD-Line 30"
+    ]
+  },
+  {
+    "keywordId": "KW-000422",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SC-50: Pods"
+    ]
+  },
+  {
+    "keywordId": "KW-000423",
+    "mentionedIn": [
+      "SL-7: Process Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000424",
+    "mentionedIn": [
+      "SL-7: Process Management",
+      "SC-87: Process Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000425",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SC-50: Pods"
+    ]
+  },
+  {
+    "keywordId": "KW-000426",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000427",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000428",
+    "mentionedIn": [
+      "SC-25: Monitoring"
+    ]
+  },
+  {
+    "keywordId": "KW-000429",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000430",
+    "mentionedIn": [
+      "SL-31: YAML & Kubernetes Manifests",
+      "SC-77: YAML & Kubernetes Manifests"
+    ]
+  },
+  {
+    "keywordId": "KW-000431",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-39: Routing & Secure Endpoint Solutions",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000432",
+    "mentionedIn": [
+      "SL-15: Networking Commands",
+      "SC-95: Networking Commands",
+      "Q-How find process using port?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000433",
+    "mentionedIn": [
+      "SC-97: SSH Administration"
+    ]
+  },
+  {
+    "keywordId": "KW-000434",
+    "mentionedIn": [
+      "SC-125: SSH Automation using Paramiko"
+    ]
+  },
+  {
+    "keywordId": "KW-000435",
+    "mentionedIn": [
+      "SL-45: SSH Automation using Paramiko"
+    ]
+  },
+  {
+    "keywordId": "KW-000436",
+    "mentionedIn": [
+      "SL-17: SSH Administration"
+    ]
+  },
+  {
+    "keywordId": "KW-000437",
+    "mentionedIn": [
+      "SL-17: SSH Administration"
+    ]
+  },
+  {
+    "keywordId": "KW-000438",
+    "mentionedIn": [
+      "SL-17: SSH Administration",
+      "Q-SSH troubleshooting steps?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000439",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000440",
+    "mentionedIn": [
+      "SL-12: StatefulSet",
+      "SC-59: StatefulSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000441",
+    "mentionedIn": [
+      "SL-12: StatefulSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000442",
+    "mentionedIn": [
+      "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "Q-Why use startup probe?...",
+      "MD-Line 14"
+    ]
+  },
+  {
+    "keywordId": "KW-000443",
+    "mentionedIn": [
+      "SL-1: Kubernetes Fundamentals",
+      "SL-2: Cluster Architecture",
+      "SL-25: Operators & CRDs",
+      "SL-28: Backup & Disaster Recovery",
+      "SL-31: YAML & Kubernetes Manifests",
+      "SL-54: Production Python Design",
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-2: Application Unavailable After Deployment",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-7: Production Outage at 2 AM",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-11: Works Locally But Fails In Docker",
+      "SC-12: Passed QA But Failed Production",
+      "SC-13: Grafana Alert Triggered At Midnight",
+      "SC-14: GitHub Actions Not Triggering",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-18: Azure App Service",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-20: Terraform",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-27: Troubleshooting",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-31: Security & DevSecOps",
+      "SC-33: Observability",
+      "SC-34: Incident Management",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-49: Cluster Architecture",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-69: Security Features",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-104: Production Troubleshooting",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design",
+      "Q-How does self healing work?...",
+      "Q-SIGTERM vs SIGKILL?...",
+      "Q-Load average meaning?...",
+      "Q-Explain mutable objects...",
+      "Q-Why use yield?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000444",
+    "mentionedIn": [
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-41: Enterprise IaC Module Architectures"
+    ]
+  },
+  {
+    "keywordId": "KW-000445",
+    "mentionedIn": [
+      "SL-12: StatefulSet",
+      "SC-59: StatefulSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000446",
+    "mentionedIn": [
+      "SC-59: StatefulSet"
+    ]
+  },
+  {
+    "keywordId": "KW-000447",
+    "mentionedIn": [
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)"
+    ]
+  },
+  {
+    "keywordId": "KW-000448",
+    "mentionedIn": [
+      "SC-92: Storage & Filesystem"
+    ]
+  },
+  {
+    "keywordId": "KW-000449",
+    "mentionedIn": [
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "Q-Explain StorageClass....",
+      "MD-Line 11"
+    ]
+  },
+  {
+    "keywordId": "KW-000450",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-38: Azure Virtual Networks: Core & Peering"
+    ]
+  },
+  {
+    "keywordId": "KW-000451",
+    "mentionedIn": [
+      "SL-36: Linux Command Execution using Python",
+      "SC-116: Linux Command Execution using Python",
+      "Q-os.system vs subprocess?...",
+      "Q-How execute remote command usi...",
+      "MD-Line 30"
+    ]
+  },
+  {
+    "keywordId": "KW-000452",
+    "mentionedIn": [
+      "SL-6: User & Group Management",
+      "SC-86: User & Group Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000453",
+    "mentionedIn": [
+      "SL-10: Memory Management",
+      "SC-90: Memory Management",
+      "Q-What is OOM killer?...",
+      "Q-RAM vs swap?...",
+      "MD-Line 24"
+    ]
+  },
+  {
+    "keywordId": "KW-000454",
+    "mentionedIn": [
+      "SL-19: Logs & Monitoring",
+      "SC-99: Logs & Monitoring",
+      "Q-How do you search logs?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000455",
+    "mentionedIn": [
+      "SC-37: System Design for DevOps Engineers"
+    ]
+  },
+  {
+    "keywordId": "KW-000456",
+    "mentionedIn": [
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage"
+    ]
+  },
+  {
+    "keywordId": "KW-000457",
+    "mentionedIn": [
+      "SL-2: Routing & Secure Endpoint Solutions",
+      "SC-39: Routing & Secure Endpoint Solutions"
+    ]
+  },
+  {
+    "keywordId": "KW-000458",
+    "mentionedIn": [
+      "SL-1: Linux Architecture & Boot Process",
+      "SL-8: Service Management",
+      "SL-19: Logs & Monitoring",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-88: Service Management",
+      "Q-Explain Linux boot process...",
+      "Q-How do you search logs?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000459",
+    "mentionedIn": [
+      "SL-2: Cluster Architecture",
+      "SL-19: Scheduling",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SC-49: Cluster Architecture",
+      "SC-66: Scheduling",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "Q-Affinity vs taints?...",
+      "Q-Why Pod is Pending?...",
+      "MD-Line 15"
+    ]
+  },
+  {
+    "keywordId": "KW-000460",
+    "mentionedIn": [
+      "SL-3: Pods",
+      "SL-14: Jobs",
+      "SL-15: CronJobs",
+      "SL-21: Shell Scripting",
+      "SL-22: Cron & Scheduling",
+      "SL-25: Python Fundamentals",
+      "SL-29: Python Functions",
+      "SL-46: CI/CD Automation with Python",
+      "SL-51: Threading and Multiprocessing",
+      "SL-5: Configuration Management & Orchestration",
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-47: 12-Factor App Principle",
+      "SC-50: Pods",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-105: Python Fundamentals",
+      "SC-109: Python Functions",
+      "SC-131: Threading and Multiprocessing",
+      "Q-When use multiprocessing?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000461",
+    "mentionedIn": [
+      "SL-13: Linux Networking Basics",
+      "SC-93: Linux Networking Basics",
+      "Q-TCP vs UDP?...",
+      "MD-Line 25"
+    ]
+  },
+  {
+    "keywordId": "KW-000462",
+    "mentionedIn": [
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage"
+    ]
+  },
+  {
+    "keywordId": "KW-000463",
+    "mentionedIn": [
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-1: Terraform Apply Fails in Production",
+      "SC-10: Terraform Destroyed Resources",
+      "SC-20: Terraform",
+      "SC-41: Enterprise IaC Module Architectures"
+    ]
+  },
+  {
+    "keywordId": "KW-000464",
+    "mentionedIn": [
+      "SC-1: Terraform Apply Fails in Production"
+    ]
+  },
+  {
+    "keywordId": "KW-000465",
+    "mentionedIn": [
+      "SC-20: Terraform"
+    ]
+  },
+  {
+    "keywordId": "KW-000466",
+    "mentionedIn": [
+      "SC-10: Terraform Destroyed Resources"
+    ]
+  },
+  {
+    "keywordId": "KW-000467",
+    "mentionedIn": [
+      "SC-130: Testing Automation using pytest"
+    ]
+  },
+  {
+    "keywordId": "KW-000468",
+    "mentionedIn": [
+      "SC-84: Text Processing Commands"
+    ]
+  },
+  {
+    "keywordId": "KW-000469",
+    "mentionedIn": [
+      "SL-7: Process Management",
+      "SL-51: Threading and Multiprocessing",
+      "SC-131: Threading and Multiprocessing",
+      "Q-Process vs thread?...",
+      "Q-Why strings immutable?...",
+      "Q-Thread vs process?...",
+      "MD-Line 23",
+      "MD-Line 33"
+    ]
+  },
+  {
+    "keywordId": "KW-000470",
+    "mentionedIn": [
+      "SC-131: Threading and Multiprocessing"
+    ]
+  },
+  {
+    "keywordId": "KW-000471",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "SL-10: Secrets",
+      "SC-55: Ingress",
+      "SC-57: Secrets",
+      "Q-What is Ingress Controller?...",
+      "Q-How TLS works?...",
+      "MD-Line 5"
+    ]
+  },
+  {
+    "keywordId": "KW-000472",
+    "mentionedIn": [
+      "SL-10: Secrets"
+    ]
+  },
+  {
+    "keywordId": "KW-000473",
+    "mentionedIn": [
+      "SL-8: Ingress",
+      "SC-55: Ingress",
+      "Q-What is Ingress Controller?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000474",
+    "mentionedIn": [
+      "SL-13: DaemonSet",
+      "SL-19: Scheduling",
+      "SC-66: Scheduling"
+    ]
+  },
+  {
+    "keywordId": "KW-000475",
+    "mentionedIn": [
+      "SL-4: Text Processing Commands",
+      "SL-9: CPU Monitoring",
+      "SL-9: Observability & Live Production Triage",
+      "SC-46: Observability & Live Production Triage",
+      "SC-89: CPU Monitoring",
+      "Q-Explain Linux architecture...",
+      "Q-How find process?...",
+      "Q-CPU is 100%, what steps?...",
+      "Q-Local vs global variable?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000476",
+    "mentionedIn": [
+      "SL-39: Python Debugging",
+      "SC-119: Python Debugging"
+    ]
+  },
+  {
+    "keywordId": "KW-000477",
+    "mentionedIn": [
+      "SL-26: Observability",
+      "SC-27: Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000478",
+    "mentionedIn": [
+      "SC-27: Troubleshooting",
+      "SC-100: Kernel Troubleshooting",
+      "SC-104: Production Troubleshooting"
+    ]
+  },
+  {
+    "keywordId": "KW-000479",
+    "mentionedIn": [
+      "SC-73: Troubleshooting Kubernetes"
+    ]
+  },
+  {
+    "keywordId": "KW-000480",
+    "mentionedIn": [
+      "SL-37: Exception Handling",
+      "SC-117: Exception Handling",
+      "Q-How handle API errors?...",
+      "Q-How make Python script product...",
+      "Q-How handle failures?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000481",
+    "mentionedIn": [
+      "SL-26: Python Collections",
+      "SC-106: Python Collections",
+      "Q-List vs tuple?...",
+      "Q-Difference between args and kw...",
+      "MD-Line 28"
+    ]
+  },
+  {
+    "keywordId": "KW-000482",
+    "mentionedIn": [
+      "SL-13: Linux Networking Basics",
+      "SC-93: Linux Networking Basics",
+      "Q-TCP vs UDP?...",
+      "MD-Line 25"
+    ]
+  },
+  {
+    "keywordId": "KW-000483",
+    "mentionedIn": [
+      "SL-29: Upgrades & Maintenance",
+      "Q-How upgrade Kubernetes safely?..."
+    ]
+  },
+  {
+    "keywordId": "KW-000484",
+    "mentionedIn": [
+      "SL-50: Testing Automation using pytest"
+    ]
+  },
+  {
+    "keywordId": "KW-000485",
+    "mentionedIn": [
+      "SC-75: Upgrades & Maintenance"
+    ]
+  },
+  {
+    "keywordId": "KW-000486",
+    "mentionedIn": [
+      "SC-86: User & Group Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000487",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000488",
+    "mentionedIn": [
+      "SL-24: Helm",
+      "SL-21: Shell Scripting",
+      "SL-23: Environment Variables",
+      "SL-25: Python Fundamentals",
+      "SL-26: Python Collections",
+      "SL-29: Python Functions",
+      "SL-30: Arguments and kwargs",
+      "SL-43: Environment Variables in Python",
+      "SL-52: Generators and Iterators",
+      "SL-5: Configuration Management & Orchestration",
+      "SC-42: Configuration Management & Orchestration",
+      "SC-71: Helm",
+      "SC-103: Environment Variables",
+      "SC-106: Python Collections",
+      "SC-123: Environment Variables in Python",
+      "SC-132: Generators and Iterators"
+    ]
+  },
+  {
+    "keywordId": "KW-000489",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-2: Linux File System",
+      "SL-23: Environment Variables",
+      "SL-25: Python Fundamentals",
+      "SL-28: Python Scope (LEGB Rule)",
+      "SL-30: Arguments and kwargs",
+      "SL-43: Environment Variables in Python",
+      "SL-4: Enterprise IaC Module Architectures",
+      "SL-6: Environment Architecture & Artifact Lifecycle",
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-43: Environment Architecture & Artifact Lifecycle",
+      "SC-103: Environment Variables",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-110: Arguments and kwargs",
+      "Q-Local vs global variable?...",
+      "Q-What is variable shadowing?...",
+      "Q-Difference between args and kw...",
+      "MD-Line 29"
+    ]
+  },
+  {
+    "keywordId": "KW-000490",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-21: Shell Scripting",
+      "SL-23: Environment Variables",
+      "SL-25: Python Fundamentals",
+      "SL-28: Python Scope (LEGB Rule)",
+      "SL-39: Python Debugging",
+      "SL-43: Environment Variables in Python",
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-5: AKS Pods Not Scaling",
+      "SC-19: Azure Kubernetes Service (AKS)",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-56: ConfigMap",
+      "SC-69: Security Features",
+      "SC-73: Troubleshooting Kubernetes",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
+      "SC-101: Shell Scripting",
+      "SC-103: Environment Variables",
+      "SC-105: Python Fundamentals",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-123: Environment Variables in Python",
+      "SC-128: Kubernetes Python Client",
+      "Q-How to update configuration?...",
+      "Q-How make Python script product..."
+    ]
+  },
+  {
+    "keywordId": "KW-000491",
+    "mentionedIn": [
+      "SL-32: Virtual Environment",
+      "SC-112: Virtual Environment"
+    ]
+  },
+  {
+    "keywordId": "KW-000492",
+    "mentionedIn": [
+      "SL-29: Upgrades & Maintenance",
+      "SC-75: Upgrades & Maintenance"
+    ]
+  },
+  {
+    "keywordId": "KW-000493",
+    "mentionedIn": [
+      "SC-112: Virtual Environment"
+    ]
+  },
+  {
+    "keywordId": "KW-000494",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000495",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-127: Cloud Automation using Python"
+    ]
+  },
+  {
+    "keywordId": "KW-000496",
+    "mentionedIn": [
+      "SL-1: Azure Virtual Networks: Core & Peering",
+      "SC-38: Azure Virtual Networks: Core & Peering"
+    ]
+  },
+  {
+    "keywordId": "KW-000497",
+    "mentionedIn": [
+      "SL-9: ConfigMap",
+      "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
+      "SL-12: StatefulSet",
+      "SL-34: Scenario-Based Kubernetes Interview Questions",
+      "SL-11: Disk Management",
+      "SL-12: Storage & Filesystem",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-92: Storage & Filesystem",
+      "Q-How to update configuration?...",
+      "Q-Explain LVM...."
+    ]
+  },
+  {
+    "keywordId": "KW-000498",
+    "mentionedIn": [
+      "SL-9: ConfigMap"
+    ]
+  },
+  {
+    "keywordId": "KW-000499",
+    "mentionedIn": [
+      "SL-23: Autoscaling",
+      "SC-70: Autoscaling"
+    ]
+  },
+  {
+    "keywordId": "KW-000500",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000501",
+    "mentionedIn": [
+      "SC-34: Incident Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000502",
+    "mentionedIn": [
+      "SL-34: File Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000503",
+    "mentionedIn": [
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation"
+    ]
+  },
+  {
+    "keywordId": "KW-000504",
+    "mentionedIn": [
+      "SC-11: Works Locally But Fails In Docker"
+    ]
+  },
+  {
+    "keywordId": "KW-000505",
+    "mentionedIn": [
+      "SC-9: Jenkins Pipeline Suddenly Failing"
+    ]
+  },
+  {
+    "keywordId": "KW-000506",
+    "mentionedIn": [
+      "SL-53: Decorators",
+      "SC-133: Decorators"
+    ]
+  },
+  {
+    "keywordId": "KW-000507",
+    "mentionedIn": [
+      "SL-4: Enterprise IaC Module Architectures",
+      "SC-41: Enterprise IaC Module Architectures"
+    ]
+  },
+  {
+    "keywordId": "KW-000508",
+    "mentionedIn": [
+      "SC-77: YAML & Kubernetes Manifests"
+    ]
+  },
+  {
+    "keywordId": "KW-000509",
+    "mentionedIn": [
+      "SC-122: YAML Handling"
+    ]
+  },
+  {
+    "keywordId": "KW-000510",
+    "mentionedIn": [
+      "SL-8: Continuous Delivery Design & Federation",
+      "SC-45: Continuous Delivery Design & Federation"
+    ]
+  },
+  {
+    "keywordId": "KW-000511",
+    "mentionedIn": [
+      "SL-52: Generators and Iterators",
+      "SC-132: Generators and Iterators",
+      "Q-Why use yield?...",
+      "MD-Line 33"
+    ]
+  },
+  {
+    "keywordId": "KW-000512",
+    "mentionedIn": [
+      "SL-18: Package Management"
+    ]
+  },
+  {
+    "keywordId": "KW-000513",
+    "mentionedIn": [
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-20: Terraform",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-31: Security & DevSecOps",
+      "SC-32: Azure Key Vault",
+      "SC-33: Observability",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-78: CI/CD Integration",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-126: CI/CD Automation with Python",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design"
+    ]
+  }
+]

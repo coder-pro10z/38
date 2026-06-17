@@ -961,6 +961,64 @@
             color: white !important;
             border-color: var(--status-info) !important;
         }
+
+        /* INTERVIEWS DROPDOWN STYLES */
+        .interviews-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        .interviews-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+            z-index: 1000;
+            min-width: 220px;
+            padding: 8px 0;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .interviews-dropdown-menu.active {
+            display: flex;
+        }
+        .dropdown-submenu-header {
+            padding: 6px 16px;
+            font-size: 10.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 750;
+            letter-spacing: 0.06em;
+            border-bottom: 1px dashed var(--border);
+            margin-bottom: 4px;
+            padding-bottom: 4px;
+        }
+        .dropdown-item {
+            padding: 8px 16px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .dropdown-item:hover {
+            background: var(--surface-3);
+            color: var(--status-info);
+        }
+        .dropdown-item.active-item {
+            color: var(--status-success);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -976,6 +1034,19 @@
             <button class="mode-btn" data-mode="review">Review</button>
             <button class="mode-btn" data-mode="glossary">Glossary</button>
             <button class="mode-btn" data-mode="flashcards">Flashcards</button>
+            
+            <div class="interviews-dropdown-container">
+                <button class="mode-btn" id="btn-interviews-tab" style="display: flex; align-items: center; gap: 4px;">🎤 Interviews <span>▼</span></button>
+                <div class="interviews-dropdown-menu" id="interviews-menu">
+                    <div class="dropdown-submenu-header">Hexaview</div>
+                    <div class="dropdown-item" id="opt-hexaview-r1" onclick="selectDataset('hexaview_r1')">Round 1 (16 Q&A) <span></span></div>
+                    <div class="dropdown-item" id="opt-hexaview-r2" onclick="selectDataset('hexaview_r2')">Round 2 (18 Q&A) <span></span></div>
+                    <div class="dropdown-submenu-header" style="margin-top: 6px;">Noventiq</div>
+                    <div class="dropdown-item" id="opt-noventiq-r1" onclick="selectDataset('noventiq_r1')">Round 1 (8 Q&A) <span></span></div>
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 4px 0;">
+                    <div class="dropdown-item active-item" id="opt-default-dataset" onclick="selectDataset('default')">Default Scenarios <span>✓</span></div>
+                </div>
+            </div>
         </div>
         <button class="nav-btn" id="btn-next">❯</button>
     </div>
@@ -1149,7 +1220,7 @@ function format(text) {
 }
 
 // GLOSSARY & FLASHCARDS CORE FUNCTIONS
-function jumpToSource(ref) {
+async function jumpToSource(ref) {
     let titleToSearch = '';
     if (typeof ref === 'string') {
         const parts = ref.split(': ');
@@ -1180,6 +1251,80 @@ function jumpToSource(ref) {
             setMode('learn');
             return true;
         }
+        
+        // Check defaultScenarios
+        let altIndex = defaultScenarios.findIndex(s => s.title.toLowerCase().trim() === cleanTitle);
+        if (altIndex !== -1) {
+            await selectDataset('default');
+            currentIndex = altIndex;
+            solutionRevealed = false;
+            const drawer = document.getElementById('glossary-drawer');
+            if (drawer) drawer.classList.remove('active');
+            const modal = document.getElementById('index-modal');
+            if (modal) modal.classList.remove('active');
+            setMode('learn');
+            return true;
+        }
+        
+        // Check hexaviewR1Scenarios
+        if (hexaviewR1Scenarios.length === 0) {
+            try {
+                const res = await fetch('hexaview_r1.json');
+                if (res.ok) hexaviewR1Scenarios = await res.json();
+            } catch(e) { console.error('Failed to pre-fetch hexaview R1:', e); }
+        }
+        altIndex = hexaviewR1Scenarios.findIndex(s => s.title.toLowerCase().trim() === cleanTitle);
+        if (altIndex !== -1) {
+            await selectDataset('hexaview_r1');
+            currentIndex = altIndex;
+            solutionRevealed = false;
+            const drawer = document.getElementById('glossary-drawer');
+            if (drawer) drawer.classList.remove('active');
+            const modal = document.getElementById('index-modal');
+            if (modal) modal.classList.remove('active');
+            setMode('learn');
+            return true;
+        }
+        
+        // Check hexaviewR2Scenarios
+        if (hexaviewR2Scenarios.length === 0) {
+            try {
+                const res = await fetch('hexaview_r2.json');
+                if (res.ok) hexaviewR2Scenarios = await res.json();
+            } catch(e) { console.error('Failed to pre-fetch hexaview R2:', e); }
+        }
+        altIndex = hexaviewR2Scenarios.findIndex(s => s.title.toLowerCase().trim() === cleanTitle);
+        if (altIndex !== -1) {
+            await selectDataset('hexaview_r2');
+            currentIndex = altIndex;
+            solutionRevealed = false;
+            const drawer = document.getElementById('glossary-drawer');
+            if (drawer) drawer.classList.remove('active');
+            const modal = document.getElementById('index-modal');
+            if (modal) modal.classList.remove('active');
+            setMode('learn');
+            return true;
+        }
+        
+        // Check noventiqR1Scenarios
+        if (noventiqR1Scenarios.length === 0) {
+            try {
+                const res = await fetch('noventiq_r1.json');
+                if (res.ok) noventiqR1Scenarios = await res.json();
+            } catch(e) { console.error('Failed to pre-fetch noventiq R1:', e); }
+        }
+        altIndex = noventiqR1Scenarios.findIndex(s => s.title.toLowerCase().trim() === cleanTitle);
+        if (altIndex !== -1) {
+            await selectDataset('noventiq_r1');
+            currentIndex = altIndex;
+            solutionRevealed = false;
+            const drawer = document.getElementById('glossary-drawer');
+            if (drawer) drawer.classList.remove('active');
+            const modal = document.getElementById('index-modal');
+            if (modal) modal.classList.remove('active');
+            setMode('learn');
+            return true;
+        }
     }
     
     if (typeof ref === 'string') {
@@ -1192,6 +1337,8 @@ function jumpToSource(ref) {
                 
                 const drawer = document.getElementById('glossary-drawer');
                 if (drawer) drawer.classList.remove('active');
+                const modal = document.getElementById('index-modal');
+                if (modal) modal.classList.remove('active');
                 
                 setMode('learn');
                 return true;
@@ -1665,6 +1812,107 @@ function rateFlashcard(rating) {
 
 // Load scenarios from external JSON file
 let scenarios = [];
+let defaultScenarios = [];
+let hexaviewR1Scenarios = [];
+let hexaviewR2Scenarios = [];
+let noventiqR1Scenarios = [];
+let currentDataset = 'default'; // 'default', 'hexaview_r1', 'hexaview_r2', or 'noventiq_r1'
+
+async function selectDataset(type) {
+    if (type === currentDataset) return;
+    
+    currentDataset = type;
+    solutionRevealed = false;
+    currentIndex = 0;
+    
+    const optHexR1 = document.getElementById('opt-hexaview-r1');
+    const optHexR2 = document.getElementById('opt-hexaview-r2');
+    const optNovR1 = document.getElementById('opt-noventiq-r1');
+    const optDef = document.getElementById('opt-default-dataset');
+    
+    if (optHexR1 && optHexR2 && optNovR1 && optDef) {
+        optHexR1.classList.remove('active-item');
+        optHexR1.querySelector('span').innerText = '';
+        optHexR2.classList.remove('active-item');
+        optHexR2.querySelector('span').innerText = '';
+        optNovR1.classList.remove('active-item');
+        optNovR1.querySelector('span').innerText = '';
+        optDef.classList.remove('active-item');
+        optDef.querySelector('span').innerText = '';
+        
+        if (type === 'hexaview_r1') {
+            optHexR1.classList.add('active-item');
+            optHexR1.querySelector('span').innerText = '✓';
+        } else if (type === 'hexaview_r2') {
+            optHexR2.classList.add('active-item');
+            optHexR2.querySelector('span').innerText = '✓';
+        } else if (type === 'noventiq_r1') {
+            optNovR1.classList.add('active-item');
+            optNovR1.querySelector('span').innerText = '✓';
+        } else {
+            optDef.classList.add('active-item');
+            optDef.querySelector('span').innerText = '✓';
+        }
+    }
+    
+    document.getElementById('interviews-menu').classList.remove('active');
+
+    try {
+        if (type === 'hexaview_r1') {
+            if (hexaviewR1Scenarios.length === 0) {
+                const res = await fetch('hexaview_r1.json');
+                if (!res.ok) throw new Error("Could not load Hexaview R1 dataset");
+                hexaviewR1Scenarios = await res.json();
+            }
+            scenarios = hexaviewR1Scenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('hexaview_r1_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load hexaview R1 ratings:', e); }
+        } else if (type === 'hexaview_r2') {
+            if (hexaviewR2Scenarios.length === 0) {
+                const res = await fetch('hexaview_r2.json');
+                if (!res.ok) throw new Error("Could not load Hexaview R2 dataset");
+                hexaviewR2Scenarios = await res.json();
+            }
+            scenarios = hexaviewR2Scenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('hexaview_r2_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load hexaview R2 ratings:', e); }
+        } else if (type === 'noventiq_r1') {
+            if (noventiqR1Scenarios.length === 0) {
+                const res = await fetch('noventiq_r1.json');
+                if (!res.ok) throw new Error("Could not load Noventiq R1 dataset");
+                noventiqR1Scenarios = await res.json();
+            }
+            scenarios = noventiqR1Scenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('noventiq_r1_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load noventiq R1 ratings:', e); }
+        } else {
+            scenarios = defaultScenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('k8s_dashboard_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load default ratings:', e); }
+        }
+        
+        setMode('learn');
+    } catch(err) {
+        console.error(err);
+        alert("Failed to load dataset: " + err.message);
+    }
+}
 
 async function loadScenarios() {
     try {
@@ -1676,6 +1924,7 @@ async function loadScenarios() {
         
         if (!scenariosRes.ok) throw new Error(`Scenarios error: ${scenariosRes.status}`);
         scenarios = await scenariosRes.json();
+        defaultScenarios = scenarios;
         
         if (glossaryRes.ok) {
             glossary = await glossaryRes.json();
@@ -1811,7 +2060,13 @@ function toggleReveal() {
 function setConfidence(rating) {
     ratings[currentIndex] = rating;
     try {
-        localStorage.setItem('k8s_dashboard_ratings', JSON.stringify(ratings));
+        let storageKey = 'k8s_dashboard_ratings';
+        if (currentDataset === 'hexaview_r1') {
+            storageKey = 'hexaview_r1_ratings';
+        } else if (currentDataset === 'hexaview_r2') {
+            storageKey = 'hexaview_r2_ratings';
+        }
+        localStorage.setItem(storageKey, JSON.stringify(ratings));
     } catch (e) {
         console.error('Failed to save ratings:', e);
     }
@@ -2625,8 +2880,19 @@ document.addEventListener('click', function(e) {
     if (e.target.closest('#btn-prev')) nav(-1);
     if (e.target.closest('#btn-next')) nav(1);
     
+    // Toggle Interviews dropdown
+    if (e.target.closest('#btn-interviews-tab')) {
+        const menu = document.getElementById('interviews-menu');
+        if (menu) menu.classList.toggle('active');
+    }
+    // Close Interviews dropdown when clicking outside
+    if (!e.target.closest('.interviews-dropdown-container')) {
+        const menu = document.getElementById('interviews-menu');
+        if (menu) menu.classList.remove('active');
+    }
+    
     const modeBtn = e.target.closest('.mode-btn');
-    if (modeBtn) setMode(modeBtn.dataset.mode);
+    if (modeBtn && modeBtn.dataset.mode) setMode(modeBtn.dataset.mode);
 
     if (e.target.closest('#btn-reveal')) toggleReveal();
 
@@ -2757,9 +3023,40 @@ function performSearch(query) {
             score += 30;
             if (!matchReason) { matchReason = 'Definition'; matchedText = d.definition; }
         }
+        if (d.why_it_matters && d.why_it_matters.toLowerCase().includes(cleanQuery)) {
+            score += 20;
+            if (!matchReason) { matchReason = 'Why It Matters'; matchedText = d.why_it_matters; }
+        }
         if (d.real_world_scenario && d.real_world_scenario.toLowerCase().includes(cleanQuery)) {
             score += 25;
             if (!matchReason) { matchReason = 'Real World'; matchedText = d.real_world_scenario; }
+        }
+        if (d.interview_answer) {
+            if (d.interview_answer.response) {
+                const matchedResp = d.interview_answer.response.find(r => r.toLowerCase().includes(cleanQuery));
+                if (matchedResp) {
+                    score += 35;
+                    if (!matchReason) { matchReason = 'Interview Answer'; matchedText = matchedResp; }
+                }
+            }
+            if (d.interview_answer.why && d.interview_answer.why.toLowerCase().includes(cleanQuery)) {
+                score += 20;
+                if (!matchReason) { matchReason = 'Interview Answer Why'; matchedText = d.interview_answer.why; }
+            }
+        }
+        if (d.interview_kill_shot && d.interview_kill_shot.toLowerCase().includes(cleanQuery)) {
+            score += 40;
+            if (!matchReason) { matchReason = 'Interview Kill Shot'; matchedText = d.interview_kill_shot; }
+        }
+        if (d.code_examples) {
+            const matchedCode = d.code_examples.find(c => 
+                (c.title && c.title.toLowerCase().includes(cleanQuery)) || 
+                (c.snippet && c.snippet.toLowerCase().includes(cleanQuery))
+            );
+            if (matchedCode) {
+                score += 35;
+                if (!matchReason) { matchReason = 'Code Example'; matchedText = `${matchedCode.title}: ${matchedCode.snippet}`; }
+            }
         }
         
         if (score > 0) {

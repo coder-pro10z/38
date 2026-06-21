@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-06-21T16:03:14.005Z",
+  "generatedAt": "2026-06-21T16:54:13.513Z",
   "totalKeywords": 513,
   "keywords": [
     {
@@ -7796,6 +7796,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 17,
           "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
         }
       ]
     },
@@ -12248,6 +12253,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 106,
           "scenarioTitle": "Python Collections"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -16764,6 +16774,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 4,
           "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
         },
         {
           "file": "infra_azure.json",
@@ -21691,6 +21706,11 @@
         },
         {
           "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
           "scenarioIndex": 23,
           "scenarioTitle": "Secure Remote Access & Private Link"
         },
@@ -25681,6 +25701,11 @@
         },
         {
           "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
           "scenarioIndex": 20,
           "scenarioTitle": "Azure Landing Zones & Subscriptions"
         },
@@ -26645,6 +26670,16 @@
           "file": "noventiq_r1.json",
           "scenarioIndex": 3,
           "scenarioTitle": "VNet Peering & Subnetting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
         }
       ]
     },

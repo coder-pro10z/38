@@ -3437,6 +3437,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize first render
 loadScenarios();
 
+// Listen for navigation requests from embedded FAQ iframe (Slide 29)
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.action === 'navigate' && typeof event.data.slide === 'number') {
+        currentIndex = event.data.slide - 1;
+        solutionRevealed = false;
+        renderScenario();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
+
 // Auto-hide Navbar on Scroll Down
 let lastScrollTop = 0;
 window.addEventListener('scroll', function() {

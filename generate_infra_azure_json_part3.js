@@ -1,6 +1,6 @@
 // generate_infra_azure_json_part3.js
 // Run: node generate_infra_azure_json_part3.js
-// Output: Appends slides 21-28 to infra_azure.json
+// Output: Appends slides 21-29 to infra_azure.json
 
 const fs = require('fs');
 const path = require('path');
@@ -33,7 +33,9 @@ if (baseSlides.length > 20) {
   baseSlides = baseSlides.slice(0, 20);
 }
 
-const slides21to28 = [
+// Note: The array below contains slides 21-29 (8 original + 1 new FAQ slide)
+
+const slides21to29 = [
   // ═══════════════════════════════════════════════════════════════════
   // SLIDE 21 — Azure Landing Zones & Subscriptions
   // ═══════════════════════════════════════════════════════════════════
@@ -58,7 +60,12 @@ Landing Zones Management Group: Houses application workloads. Segregates interna
 Sandbox Management Group: Completely isolated subscriptions for testing. No connectivity to corp networks.
 
 2. Subscription Segregation
-Always isolate Production workloads in dedicated subscriptions distinct from Development/UAT. This enforces strict security boundaries, prevents dev testing from consuming production API limits or compute quotas, and simplifies FinOps billing allocations.`,
+Always isolate Production workloads in dedicated subscriptions distinct from Development/UAT. This enforces strict security boundaries, prevents dev testing from consuming production API limits or compute quotas, and simplifies FinOps billing allocations.
+
+3. VNet Peering: Regional vs. Global
+- Regional Peering: Connects virtual networks within the same Azure region. Traffic stays within the regional physical switches, providing the lowest possible latency and maximum throughput.
+- Global Peering: Connects virtual networks across different Azure regions. Traffic traverses the Microsoft global backbone WAN instead of routing via the public internet. Useful for multi-region architectures and global failover topologies.
+Both peering types allow VM communication using internal private IPs without gateways, encryption overhead, or public internet transit.`,
     content_implementation: `Placing all resources under a single subscription is a critical anti-pattern — enforce subscription-level isolation early to prevent quota exhaustion and security overlaps.
 
 Key Deployment Considerations:
@@ -78,6 +85,13 @@ Shared Services Isolation: Separate networking (Connectivity VNet) and logging (
       ],
       diagram: "Tenant Root -> Platform & Landing Zones MGs -> Connectivity/Workload Subs -> Hub/Spoke Peering"
     },
+    comparisons: [
+      {
+        topic_a: "Terraform",
+        topic_b: "Bicep / ARM Templates",
+        summary: "Terraform is a cloud-agnostic Infrastructure as Code tool that manages state files to track resource configurations, enabling multi-cloud automation. Bicep and ARM templates are Azure-native, declarative tools that do not manage state files (Azure itself holds state), offer zero-day support for new Azure services, and require no configuration for state locking."
+      }
+    ],
     key_commands: [
       {
         command: `resource "azurerm_management_group" "root" {
@@ -234,6 +248,13 @@ Automatic OS Upgrades: Enable automatic OS upgrades on VMSS. Azure applies updat
 Ephemeral OS Disks: Use Ephemeral OS Disks for stateless workloads (like VMSS scale nodes or AKS agents). They are written directly to local host temp storage, avoiding network latency to storage accounts and reducing costs.
 
 Zone Redundancy: Configure VMSS to distribute instances evenly across 3 Availability Zones. Link it to a Zone-Redundant Load Balancer.`,
+    comparisons: [
+      {
+        topic_a: "Availability Set",
+        topic_b: "Availability Zone",
+        summary: "Availability Sets protect applications from hardware failures within a single datacenter by distributing VMs across logical Update Domains (UD) and Fault Domains (FD) (SLA: 99.95%). Availability Zones protect applications from entire datacenter failures by distributing VMs across physically separate, independent datacenter facilities within the same region (SLA: 99.99%)."
+      }
+    ],
     key_commands: [
       {
         command: `resource "azurerm_orchestrated_virtual_machine_scale_set" "web" {
@@ -1098,10 +1119,505 @@ function renderTable() {
   }
 ];
 
-// Combine base slides and new slides
-const updatedSlides = [...baseSlides, ...slides21to28];
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 29 — Interview FAQ Master Reference
+// ═══════════════════════════════════════════════════════════════════
+const slide29 = {
+  title: "Interview FAQ Master Reference",
+  type: "JD-Aligned — 85 Questions Across All Domains",
+  difficulty: "Mixed",
+  chips: ["Landing Zones", "Networking", "Security", "Identity", "DR/Backup", "FinOps", "IaC", "Monitoring"],
+  schema: "architecture",
+  definition: "A consolidated reference of all 85 interview questions mapped across 10 Azure infrastructure domains. Each question links to its primary reference slide and includes an expandable detailed answer for rapid pre-interview review.",
+  why_it_matters: "Senior Azure Infrastructure roles demand breadth across networking, security, governance, DR, and cost optimization. This master reference provides a structured, tappable study guide covering every question from the JD analysis.",
+  real_world_scenario: "Use this slide as a final review checklist before your interview. Tap any question to navigate to its detailed reference slide, or expand the answer inline for a quick recap.",
+  content_theory: `This slide consolidates all 85 prioritized interview questions grouped into 10 domains:
+
+1. Landing Zones & Governance (9 questions)
+2. Advanced Networking (18 questions)
+3. Compute HA & Scaling (5 questions)
+4. Secure Remote Access (3 questions)
+5. Identity & Governance (6 questions)
+6. Security & Threat Protection (8 questions)
+7. Operations & Monitoring (6 questions)
+8. Backup & Recovery (7 questions)
+9. Cost Optimization / FinOps (6 questions)
+10. Automation & IaC (5 questions)
+11. Expert Design Questions (5 questions)
+12. Governance & Enterprise Scale (4 questions)
+
+Each question is tagged with its primary reference slide number for cross-navigation.`,
+  key_takeaways: [
+    "85 questions from the JD analysis, all ✅ covered in slides 1–28",
+    "Click any 📘 badge to jump to the primary reference slide",
+    "Expand ▼ chevron to read the answer inline",
+    "Filter by domain using the top tabs",
+    "Priority: 🔴 High, 🟡 Medium, 🟢 General"
+  ],
+  pitfalls: [
+    "Don't memorize — understand the why behind each answer",
+    "Always relate answers to real-world scenarios from your experience",
+    "Link answers across topics (e.g., Policy + RBAC + PIM together = Zero Trust)"
+  ],
+  interview_questions: [
+    { q: "What is an Azure Landing Zone?", a: "A multi-subscription environment aligned with CAF providing networking, identity, security, and governance foundations.", slide: 21 },
+    { q: "How do you design an Azure subscription strategy?", a: "Enforce subscription-level segregation. Prod in a 'Prod' subscription under separate Management Groups from Dev/UAT to isolate costs and policies.", slide: 21 },
+    { q: "Explain Management Groups, Subscriptions, Resource Groups hierarchy.", a: "Tenant Root → Management Groups → Subscriptions → Resource Groups → Resources. Inherited permissions flow downwards.", slide: 19 },
+    { q: "What is Azure Policy vs RBAC?", a: "Azure Policy controls resource configuration compliance. RBAC controls what actions a user can perform. Policy = guardrails, RBAC = gates.", slide: 20 },
+    { q: "How do you prevent resources in unauthorized regions?", a: "Assign 'Allowed locations' Azure Policy at Management Group scope with Deny effect.", slide: 20 },
+    { q: "How do you enforce tagging across subscriptions?", a: "Deploy 'Require a tag and its value' Policy or 'Inherit tag from resource group' with Modify effect.", slide: 20 },
+    { q: "Design an Azure environment for Prod, UAT, and Dev.", a: "Separate Management Group branches for Prod/Non-Prod. Distinct subscriptions per env. Hub subscription for shared security.", slide: 21 },
+    { q: "How do you design a secure landing zone for a new enterprise customer?", a: "Follow CAF: Platform MGs (Connectivity, Identity, Management) + Landing Zone MGs + Policy Initiatives + Hub-Spoke + Azure Firewall.", slide: 21 },
+    { q: "How do you standardize governance across 100+ subscriptions?", a: "Policy Initiatives at MG level + subscription vending machine IaC templates for default VNets, tags, logging.", slide: 20 }
+  ],
+  interactive_html: `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Interview FAQ Master Reference</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0}
+.faq-wrap{height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.faq-header{background:linear-gradient(135deg,#1e3a5f 0%,#0f3460 100%);padding:10px 14px;border-bottom:1px solid #1e4a8a;flex-shrink:0}
+.faq-header h2{margin:0;font-size:14px;color:#60a5fa;font-weight:700;letter-spacing:.5px}
+.faq-stats{display:flex;gap:8px;margin-top:5px;flex-wrap:wrap}
+.faq-stat{background:rgba(255,255,255,.07);border:1px solid #1e4a8a;border-radius:20px;padding:2px 8px;font-size:10px;color:#94a3b8}
+.faq-stat span{color:#60a5fa;font-weight:700}
+.domain-tabs{display:flex;gap:4px;padding:6px 12px;overflow-x:auto;flex-shrink:0;background:#0d1b2e;border-bottom:1px solid #1a2f4f;scrollbar-width:none}
+.domain-tabs::-webkit-scrollbar{display:none}
+.tab-btn{white-space:nowrap;background:rgba(255,255,255,.05);border:1px solid #1e4a8a;border-radius:16px;padding:3px 10px;font-size:10px;color:#94a3b8;cursor:pointer;transition:all .2s;flex-shrink:0}
+.tab-btn:hover,.tab-btn.active{background:#0078d4;border-color:#0078d4;color:#fff;font-weight:600}
+.search-bar{padding:6px 12px;background:#0d1b2e;border-bottom:1px solid #1a2f4f;flex-shrink:0}
+.search-bar input{width:100%;background:#1e3a5f;border:1px solid #1e4a8a;border-radius:20px;padding:5px 12px;color:#e2e8f0;font-size:12px;outline:none}
+.search-bar input::placeholder{color:#4a6a8a}
+.search-bar input:focus{border-color:#0078d4}
+.faq-list{flex:1;overflow-y:auto;padding:6px 12px;display:flex;flex-direction:column;gap:5px}
+.faq-list::-webkit-scrollbar{width:3px}
+.faq-list::-webkit-scrollbar-thumb{background:#1e4a8a;border-radius:2px}
+.domain-group{margin-bottom:4px}
+.domain-label{font-size:10px;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:1px;padding:3px 0 3px 4px;border-left:2px solid #0078d4;margin-bottom:3px}
+.faq-item{background:#16213e;border:1px solid #1e3a5f;border-radius:7px;overflow:hidden;transition:border-color .2s}
+.faq-item:hover{border-color:#0078d4}
+.faq-q{display:flex;align-items:center;gap:7px;padding:7px 9px;cursor:pointer;user-select:none}
+.priority-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.p-high{background:#ef4444}.p-med{background:#f59e0b}.p-low{background:#22c55e}
+.q-text{flex:1;font-size:11px;color:#cbd5e1;line-height:1.4;font-weight:500}
+.faq-item.open .q-text{color:#60a5fa}
+.slide-badge{background:#0f3460;border:1px solid #0078d4;border-radius:10px;padding:2px 7px;font-size:9px;color:#60a5fa;cursor:pointer;flex-shrink:0;transition:all .2s;white-space:nowrap}
+.slide-badge:hover{background:#0078d4;color:#fff}
+.chevron{color:#4a6a8a;font-size:10px;transition:transform .2s;flex-shrink:0}
+.faq-item.open .chevron{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 9px 8px 22px;font-size:11px;color:#94a3b8;line-height:1.6;border-top:1px solid #1e3a5f}
+.faq-item.open .faq-a{display:block}
+.no-results{text-align:center;padding:30px;color:#4a6a8a;font-size:12px}
+.footer-hint{padding:4px 12px;text-align:center;font-size:9px;color:#2d4a6a;flex-shrink:0;border-top:1px solid #1a2f4f}
+</style></head><body>
+<div class="faq-wrap">
+  <div class="faq-header">
+    <h2>&#x1F4CB; Interview FAQ Master Reference &mdash; 85 Questions</h2>
+    <div class="faq-stats">
+      <div class="faq-stat"><span id="visCount">85</span> questions</div>
+      <div class="faq-stat"><span>10</span> domains</div>
+      <div class="faq-stat"><span>28</span> ref slides</div>
+      <div class="faq-stat"><span>100%</span> covered</div>
+    </div>
+  </div>
+  <div class="domain-tabs" id="domainTabs"></div>
+  <div class="search-bar"><input id="searchInput" placeholder="Search questions, keywords, answers..." oninput="filterFAQs()"></div>
+  <div class="faq-list" id="faqList"></div>
+  <div class="footer-hint">&#x1F4A1; Click question to expand answer &bull; Tap slide badge to navigate to reference slide</div>
+</div>
+<script>
+var FAQ_DATA = [
+  {d:'Landing Zones',p:'high',q:'What is an Azure Landing Zone and why is it important?',a:'A multi-subscription environment aligned with Microsoft CAF. Provides structured networking, identity, security, and governance foundations to enable enterprises to scale securely.',s:21},
+  {d:'Landing Zones',p:'high',q:'How do you design an Azure subscription strategy for Prod and Non-Prod?',a:'Enforce subscription-level segregation. Place Prod workloads in a dedicated Prod subscription and Dev/UAT in Non-Prod under separate Management Groups to isolate costs and enforce distinct security policies.',s:21},
+  {d:'Landing Zones',p:'high',q:'Explain Management Groups, Subscriptions, Resource Groups, and Resources hierarchy.',a:'Tenant Root Group -> Management Groups (logical grouping for policies/access) -> Subscriptions (billing and scaling boundary) -> Resource Groups (lifecycle boundary) -> Resources. Inherited permissions flow downwards.',s:19},
+  {d:'Landing Zones',p:'high',q:'What is Azure Policy and how is it different from RBAC?',a:'Azure Policy evaluates resource configuration properties to ensure compliance (guardrails). RBAC regulates authorization based on user actions and scopes (gates). Policy = configuration enforcement; RBAC = identity authorization.',s:20},
+  {d:'Landing Zones',p:'med',q:'How do you prevent users from creating resources in unauthorized regions?',a:'Assign the built-in Azure Policy Allowed locations definition at the Management Group scope with Deny effect to block deployments elsewhere.',s:20},
+  {d:'Landing Zones',p:'med',q:'How would you enforce tagging across subscriptions?',a:'Use Azure Policy. Deploy Require a tag and its value policies to block deployments missing tags, or Inherit a tag from the resource group policy with Modify effect to auto-populate.',s:20},
+  {d:'Landing Zones',p:'high',q:'Design an Azure environment for Production, UAT, and Dev.',',a:'Establish MG hierarchy with separate branches for Prod and Non-Prod. Deploy distinct subscriptions for Dev, UAT, and Prod. Link spoke VNets back to a central Hub subscription for shared security inspection.',s:21},
+  {d:'Landing Zones',p:'high',q:'How would you design a secure landing zone for a new enterprise customer?',a:'Follow CAF. Provision Platform MGs (Connectivity, Identity, Management) and Landing Zone MGs. Apply security benchmarks via Azure Policy Initiatives, deploy Hub-Spoke topology with Azure Firewall.',s:21},
+  {d:'Landing Zones',p:'med',q:'How do you standardize governance across multiple subscriptions?',a:'Group individual policies into Initiatives (e.g. ASB). Assign these Initiatives at the Management Group scope so they propagate automatically to all child subscriptions.',s:20},
+  {d:'Networking',p:'high',q:'What are the benefits of Hub-and-Spoke architecture?',a:'Centralizes common services (VPN/ExpressRoute gateways, Azure Firewall, Log Analytics) in a Hub VNet while separating workloads into isolated Spoke VNets. Reduces redundant costs, simplifies governance, provides centralized security inspection.',s:7},
+  {d:'Networking',p:'high',q:'What components typically reside in the Hub VNet?',a:'The Hub VNet typically hosts: Azure Firewall, Virtual Network Gateways (VPN/ExpressRoute), Azure Bastion, private DNS resolvers, and shared domain controllers (Active Directory).',s:7},
+  {d:'Networking',p:'high',q:'How do Spoke VNets communicate securely with each other?',a:'Spoke VNets peer to the Hub VNet, not directly to each other. Inter-spoke traffic is routed through UDRs with next-hop pointing to the centralized Azure Firewall in the Hub VNet.',s:8},
+  {d:'Networking',p:'med',q:'What are the advantages and disadvantages of VNet Peering?',a:'Advantages: Low-latency, high-bandwidth over Microsoft backbone, easy config. Disadvantages: No overlapping IP spaces, peering counts against limits, non-transitive by default.',s:21},
+  {d:'Networking',p:'high',q:'Explain the difference between NSG, Azure Firewall, and UDR.',a:'NSGs are basic L4 packet filters at subnet/NIC level. Azure Firewall is a centralized stateful L4/L7 firewall-as-a-service with FQDN filtering. UDRs are custom routing tables applied to subnets to override default routing paths.',s:7},
+  {d:'Networking',p:'med',q:'How does Azure Firewall process traffic?',a:'Azure Firewall evaluates in order: 1) DNAT rules (highest priority), 2) Network rules (IP/port filtering), 3) Application rules (FQDN/HTTP headers). First match wins.',s:7},
+  {d:'Networking',p:'high',q:'What is the difference between Site-to-Site VPN and Point-to-Site VPN?',a:'S2S connects an entire branch/on-premises network to Azure via IPsec/IKE tunnel (requires on-prem VPN device). P2S connects individual remote clients directly to Azure using SSTP/IKEv2/OpenVPN (no on-prem hardware needed).',s:2},
+  {d:'Networking',p:'high',q:'When would you choose ExpressRoute instead of VPN?',a:'Choose ExpressRoute for high dedicated bandwidth (up to 100 Gbps), ultra-low predictable latency, higher security compliance (bypasses public internet), and 99.95% SLA guarantees.',s:9},
+  {d:'Networking',p:'high',q:'How does Azure Load Balancer work?',a:'Azure Load Balancer operates at Layer 4 (TCP/UDP), distributing inbound traffic based on a 5-tuple hash to backend pool instances verified by health probes.',s:3},
+  {d:'Networking',p:'high',q:'Difference between Azure Load Balancer and Application Gateway.',a:'Azure LB is a Layer 4 TCP/UDP load balancer (cannot read HTTP headers). Application Gateway is a Layer 7 HTTP/HTTPS load balancer supporting URL path-based routing, SSL/TLS termination, and WAF integration.',s:4},
+  {d:'Networking',p:'med',q:'How do you troubleshoot connectivity between Azure and On-Premises?',a:'Use Network Watcher Connection Monitor. Check VNet Gateway status and active BGP routes. Run effective route table commands. Review NSG Flow Logs and check for overlapping CIDR blocks.',s:11},
+  {d:'Networking',p:'med',q:'Explain Azure Route Tables and route precedence.',a:'Azure routes by longest prefix match. Precedence: 1) User Defined Routes (highest), 2) BGP routes from VPN/ExpressRoute gateway, 3) System routes (lowest).',s:8},
+  {d:'Networking',p:'med',q:'How does BGP work with ExpressRoute?',a:'BGP dynamically exchanges routing information between on-premises and Azure VNets via eBGP peerings over private or Microsoft VIFs across the ExpressRoute circuit, enabling automatic failover.',s:9},
+  {d:'Networking',p:'med',q:'What are forced tunneling and custom routing?',a:'Forced tunneling redirects all internet-bound traffic (0.0.0.0/0) from spoke subnets to a central NVA/Firewall or on-premises gateway using UDRs.',s:8},
+  {d:'Networking',p:'med',q:'Explain Azure Firewall Premium features.',a:'Premium features: 1) TLS Inspection (decrypts outbound traffic), 2) IDPS (Intrusion Detection and Prevention signature matching), 3) URL Filtering, 4) Web Categories.',s:7},
+  {d:'Networking',p:'low',q:'Difference between Global VNet Peering and Regional Peering.',a:'Regional Peering connects VNets in the same region over local switches with negligible latency. Global Peering connects VNets across different regions over the Microsoft backbone. Both use private IPs.',s:21},
+  {d:'Networking',p:'med',q:'Users cannot access an application hosted in Azure. How would you troubleshoot?',a:'Check App Gateway/Load Balancer backend pool health probes. Verify NSGs and Azure Firewall rules. Run Network Watcher IP Flow Verify to trace packet blocks.',s:11},
+  {d:'Networking',p:'med',q:'VPN tunnel is up but traffic is not flowing. What checks would you perform?',a:'Check BGP route advertisements on both sides. Verify UDRs on Spoke subnets force routing through the Gateway. Ensure no overlapping subnet IP ranges. Check local network gateway prefixes.',s:11},
+  {d:'Networking',p:'med',q:'Two VNets cannot communicate. How would you troubleshoot?',a:'Verify VNet Peering status is Connected. Ensure Allow forwarded traffic and Use remote gateways settings are enabled. Check NSGs allow peer VNet range traffic.',s:11},
+  {d:'Compute & Scaling',p:'high',q:'Difference between Availability Set and Availability Zone.',a:'Availability Sets distribute VMs across racks inside a single datacenter (SLA 99.95%). Availability Zones distribute VMs across physically separate datacenters within a region (SLA 99.99%).',s:22},
+  {d:'Compute & Scaling',p:'high',q:'What is a VM Scale Set and when should it be used?',a:'VMSS deploys and manages a group of identical, auto-scaling VMs. Use for stateless, highly scalable workloads (web servers, microservices, AKS worker pools) with fluctuating traffic.',s:22},
+  {d:'Compute & Scaling',p:'high',q:'How would you migrate 200 on-premises servers to Azure?',a:'Use Azure Migrate. Deploy the collector appliance on-premises to discover workloads, assess VM compatibility and sizing, estimate costs, and execute replication batches into target subscriptions.',s:21},
+  {d:'Compute & Scaling',p:'med',q:'A VM CPU usage is consistently above 90%. What actions would you take?',a:'Check VMSS autoscale rules to ensure instances scale out. Optimize application memory leaks, check for run-away processes via SSH/RDP, or vertically scale (upsize) the VM instance type.',s:22},
+  {d:'Compute & Scaling',p:'high',q:'Design a highly available web application architecture in Azure.',a:'Fronted by Azure Front Door routing to regional Application Gateways. Compute runs on VMSS across Availability Zones. Storage uses ZRS storage accounts, database uses Azure SQL with Active Geo-Replication.',s:22},
+  {d:'Secure Access',p:'high',q:'What is Private Endpoint and how does it differ from Service Endpoint?',a:'Private Endpoint allocates a private IP from your VNet directly to the PaaS resource, routing traffic privately via DNS and disabling public internet access. Service Endpoint keeps the public IP active but extends your VNet identity to the PaaS over the Microsoft backbone.',s:24},
+  {d:'Secure Access',p:'high',q:'What is Azure Bastion and what problem does it solve?',a:'Azure Bastion is a managed PaaS providing secure, browser-based RDP/SSH access to VMs over TLS (port 443). Eliminates the need to expose VMs to the internet or manage vulnerable jump boxes.',s:24},
+  {d:'Secure Access',p:'med',q:'Explain Azure Private DNS Zones.',a:'Azure Private DNS Zones resolve hostnames within a VNet (or linked VNets) without exposing DNS queries to the public internet. Essential for Private Endpoint name resolution to map public PaaS URLs to private IPs.',s:10},
+  {d:'Identity',p:'high',q:'Explain Azure RBAC.',a:'Azure RBAC manages who has access to Azure resources, what they can do, and what scopes they have. Assign a security principal (User, Group, SP, Managed Identity) to a Role Definition at a target Scope.',s:25},
+  {d:'Identity',p:'high',q:'Difference between Owner, Contributor, and Reader roles.',a:'Owner: full access including permission delegation. Contributor: full resource management, cannot delegate access. Reader: view only, cannot create/modify/delete.',s:25},
+  {d:'Identity',p:'high',q:'What are Managed Identities?',a:'Managed Identities provide an automatically managed identity in Microsoft Entra ID for Azure resources (VMs, App Services) to authenticate to other services (databases, Key Vaults) without storing credentials in code.',s:25},
+  {d:'Identity',p:'high',q:'Difference between Managed Identity and Service Principal.',a:'Managed Identities are tied to Azure resource lifecycles with no credential management required. Service Principals are application registrations in Entra ID relying on user-managed client secrets or certificates.',s:25},
+  {d:'Identity',p:'high',q:'How do you implement least-privilege access?',a:'Assign roles at the narrowest scope (Resource Group over Subscription). Use custom roles with specific action lists over broad built-in roles. Implement Entra PIM for JIT access.',s:25},
+  {d:'Identity',p:'med',q:'Explain Conditional Access Policies and MFA.',a:'Conditional Access is Entra IDs policy engine evaluating signals (user location, device compliance, risk level) to enforce access decisions (Block, Allow, or require MFA).',s:25},
+  {d:'Identity',p:'high',q:'Developers require temporary elevated permissions. What is the best approach?',a:'Configure Entra ID PIM (Privileged Identity Management). Assign developers eligible roles requiring MFA, justification, and approval gates to activate JIT access for a fixed duration.',s:25},
+  {d:'Security',p:'high',q:'What is Microsoft Defender for Cloud?',a:'Microsoft Defender for Cloud is a unified security management system providing Cloud Security Posture Management (CSPM) to evaluate compliance scores, and Cloud Workload Protection (CWPP) to detect threats across workloads.',s:26},
+  {d:'Security',p:'high',q:'How do you secure Azure Key Vault?',a:'1) Enable Soft Delete and Purge Protection, 2) Use Azure RBAC authorization model instead of legacy access policies, 3) Restrict network access via private endpoints/firewalls, 4) Rotate vault keys regularly.',s:26},
+  {d:'Security',p:'med',q:'Explain encryption at rest and encryption in transit.',a:'Encryption at rest encrypts stored data via Azure Storage Service Encryption or SQL TDE using Platform-Managed or Customer-Managed Keys. Encryption in transit secures data moving over networks using TLS/SSL.',s:26},
+  {d:'Security',p:'high',q:'How would you handle a client security audit?',a:'Generate compliance reports from Defender for Cloud demonstrating alignment with standards (ISO 27001). Provide audit trails from Activity Logs, present Key Vault RBAC configurations, and demonstrate policy compliance statistics.',s:26},
+  {d:'Security',p:'high',q:'A storage account is publicly accessible. How would you secure it?',a:'Set Storage Firewall to Enabled from selected networks. Create a Private Endpoint mapping the storage account to a backend subnet, and disable Allow storage account public access globally.',s:23},
+  {d:'Security',p:'high',q:'How would you implement Zero Trust in Azure?',a:'Enforce Zero Trust: 1) Verify explicitly (Conditional Access, MFA), 2) Use least privilege (RBAC, PIM), 3) Assume breach (micro-segmentation with NSGs, private links, threat logging).',s:26},
+  {d:'Security',p:'med',q:'How would you manage secrets for applications?',a:'Store secrets in Azure Key Vault. Enable Managed Identities on compute resources and grant them permission to retrieve secrets dynamically at runtime without hardcoding keys.',s:26},
+  {d:'Security',p:'high',q:'How would you secure an enterprise Azure environment from day one?',a:'Enforce MFA and PIM. Configure MG hierarchies with Azure Policy Initiatives. Deploy Hub-and-Spoke with Azure Firewall. Disable VM public IPs, route administration via Bastion, resolve PaaS via Private Endpoints.',s:26},
+  {d:'Monitoring',p:'high',q:'What is Azure Monitor?',a:'Azure Monitor is a comprehensive solution for collecting, analyzing, and acting on telemetry from cloud and on-premises environments. It handles metrics (numeric performance data) and logs (structured resource records).',s:12},
+  {d:'Monitoring',p:'high',q:'Difference between Azure Monitor and Log Analytics.',a:'Azure Monitor is the overarching service for monitoring and alerts. Log Analytics is the primary workspace within Azure Monitor used to query, store, and analyze log data using KQL (Kusto Query Language).',s:12},
+  {d:'Monitoring',p:'med',q:'How do you create alert rules?',a:'Define the alert condition (metric threshold or log query), set evaluation frequency, and link the alert to an Action Group containing notification receivers or automation runbooks.',s:12},
+  {d:'Monitoring',p:'med',q:'How do you investigate performance issues in Azure?',a:'View Azure Monitor metrics (CPU, Memory, Disk, Network). Review Log Analytics workspaces using KQL to identify error events, query database executions, and run Application Insights tracing.',s:11},
+  {d:'Monitoring',p:'med',q:'Application logs are missing. How would you troubleshoot?',a:'Check the resources Diagnostic Settings to ensure log sending is enabled and points to the correct Log Analytics Workspace. Verify VM log agents (AMA) are running successfully.',s:12},
+  {d:'Monitoring',p:'med',q:'How would you integrate Azure logs with a SIEM?',a:'Configure Diagnostic Settings on resources to export logs to an Azure Event Hub, which is connected to your external SIEM (Splunk, QRadar) to pull and parse logs.',s:12},
+  {d:'Monitoring',p:'high',q:'An application is experiencing high latency. How would you investigate?',a:'Run Network Watcher Connection Monitor to measure network latency. Investigate VM CPU/RAM bottlenecks. Query Log Analytics/App Insights to isolate database query bottlenecks or API dependencies.',s:11},
+  {d:'DR & Backup',p:'high',q:'What is Azure Backup?',a:'Azure Backup is a fully managed service that protects files, folders, VM system states, and SQL/SAP databases by backing them up to a Recovery Services Vault with customizable retention schedules.',s:13},
+  {d:'DR & Backup',p:'high',q:'What is Azure Site Recovery?',a:'Azure Site Recovery (ASR) is a disaster recovery orchestration service providing continuous replication of VMs from source to target regions, supporting automated failover and failback testing.',s:14},
+  {d:'DR & Backup',p:'high',q:'Explain RPO and RTO.',a:'Recovery Point Objective (RPO) is the maximum tolerable data loss window (time). Recovery Time Objective (RTO) is the maximum tolerable application downtime window before business impact.',s:18},
+  {d:'DR & Backup',p:'high',q:'How would you design a multi-region DR solution?',a:'Architect active-passive or active-active sites in paired regions. Replicate VMs using ASR, enable SQL Geo-Replication/Failover Groups, utilize GRS storage accounts, and route regional traffic via Azure Front Door.',s:15},
+  {d:'DR & Backup',p:'high',q:'How do failover and failback work?',a:'Failover routes traffic to a secondary DR site when the primary site experiences an outage. Failback returns production traffic from the secondary site back to the primary site after it is restored.',s:16},
+  {d:'DR & Backup',p:'high',q:'A region-wide outage occurs. What steps would you take?',a:'Verify Azure Status health dashboard. Trigger failover via Azure Front Door/Traffic Manager to route traffic to the secondary region. Initiate ASR failover recovery plans to spin up replicas.',s:15},
+  {d:'DR & Backup',p:'med',q:'How do you validate DR readiness?',a:'Perform regular Test Failovers in Azure Site Recovery. This provisions VM replicas in an isolated sandbox VNet without interrupting production replication, enabling validation tests.',s:17},
+  {d:'DR & Backup',p:'med',q:'How frequently should failover testing be performed?',a:'Perform DR testing at least semi-annually or annually as mandated by enterprise compliance policies, alongside automated dry-run testing validations.',s:17},
+  {d:'DR & Backup',p:'high',q:'Design a DR strategy with less than 30-minute RPO.',a:'Configure ASR replicating VMs to a paired region (RPO approx 5 min). Enable Azure SQL Auto-Failover Groups (RPO less than 5 sec) and utilize Geo-Redundant Storage (GRS).',s:18},
+  {d:'FinOps',p:'high',q:'How do you identify cost optimization opportunities?',a:'Utilize Azure Advisor recommendations, configure anomaly alerts in Azure Cost Management, and run KQL queries in Azure Resource Graph to scan for orphaned disks, idle resources, and unused public IPs.',s:28},
+  {d:'FinOps',p:'high',q:'What are Reserved Instances?',a:'Reserved Instances offer up to 72% cost savings by committing to a 1-year or 3-year term for specific VM SKUs in specific regions. Best for highly predictable, always-on workloads.',s:28},
+  {d:'FinOps',p:'med',q:'What are Azure Savings Plans?',a:'Azure Savings Plans for Compute offer savings of up to 65% by committing to an hourly spend ($/hr) for 1 or 3 years. Applies automatically to compute services globally (VMs, Container Instances, App Services).',s:28},
+  {d:'FinOps',p:'med',q:'How do you reduce Azure storage costs?',a:'Apply storage lifecycle policies to transition objects to Cool/Archive tiers. Clean up orphaned managed disks. Use ZRS/LRS instead of GRS where appropriate. Optimize VM disk types.',s:23},
+  {d:'FinOps',p:'med',q:'What tagging strategy do you recommend?',a:'Implement tags for: Environment (Prod, Dev, UAT), CostCenter, Owner, ProjectName, and Compliance/Data Classification. Enforce tag existence using Azure Policy (Audit first, then Deny or Modify).',s:28},
+  {d:'FinOps',p:'low',q:'How would you create a monthly FinOps report?',a:'Configure Azure Cost Management scheduled exports to output usage CSVs to a secure storage account daily. Connect Power BI to parse, structure, and visualize spending patterns, reservations coverage, and tag compliance.',s:28},
+  {d:'IaC & Automation',p:'high',q:'How do you automate Azure deployments?',a:'Deploy using declarative Infrastructure as Code (Terraform/Bicep) running inside CI/CD pipelines (GitHub Actions/Azure Pipelines). Pipelines authenticate via OIDC with Azure Service Principals.',s:21},
+  {d:'IaC & Automation',p:'high',q:'Difference between ARM Templates, Bicep, and Terraform.',a:'ARM Templates are JSON-based native declarations. Bicep is a cleaner DSL that transpiles to ARM. Terraform is cloud-agnostic declarative tool using HCL, managing state files to track deployed resources.',s:21},
+  {d:'IaC & Automation',p:'med',q:'Which IaC tool do you prefer and why?',a:'Terraform: state management, planning stage (terraform plan), modular structures, vast provider ecosystem, and cloud-agnostic applicability enabling multi-cloud automation.',s:21},
+  {d:'IaC & Automation',p:'med',q:'Explain CI/CD integration with Azure infrastructure.',a:'Integrates IaC linting, security scans (Checkov/tfsec), planning dry-runs, and execution in GitHub Actions/Azure DevOps. Code merges trigger automated deploys via OIDC using scoped Service Principals.',s:21},
+  {d:'IaC & Automation',p:'med',q:'How do you manage IaC in enterprise environments?',a:'Use remote backend state storage (Azure Storage) with lease blob state locking. Maintain modular code structures. Apply branch protections, pull request reviews, and validation gates in CI/CD.',s:21},
+  {d:'Governance',p:'med',q:'Explain Azure CAF (Cloud Adoption Framework).',a:'CAF is Microsofts documentation, guidance, and tools blueprint containing strategies, ready-states, and governance guidelines to plan, implement, and manage cloud migrations.',s:21},
+  {d:'Governance',p:'high',q:'What is Enterprise Scale Landing Zone Architecture?',a:'A policy-driven landing zone environment aligned with CAF. Uses subscription democratization to divide workloads into Management Groups (Platform: Connectivity, Identity, Management vs. Workloads: Corp, Online) with inherited guardrails.',s:21},
+  {d:'Governance',p:'high',q:'How do Management Groups help large enterprises?',a:'Management Groups are logical containers managing policy, compliance, and access controls across multiple subscriptions. Guardrails and RBAC scopes applied at parent MGs inherit down the subscription tree.',s:19},
+  {d:'Governance',p:'high',q:'How do you design governance for 100+ subscriptions?',a:'Implement robust Management Group structure. Apply Azure Policy Initiatives (Azure Security Benchmark) at MG level. Automate subscription provisioning using vending machine IaC templates configuring default VNets, tags, and logging.',s:20},
+  {d:'Governance',p:'high',q:'Explain Azure Blueprints (legacy) and current alternatives.',a:'Azure Blueprints packaged templates, policies, and role assignments. Modern alternatives use Landing Zone Vending Machine frameworks deploying via Bicep/Terraform integrated with Azure Policy.',s:20},
+  {d:'Expert Design',p:'high',q:'Design a secure hybrid-cloud environment.',a:'Connect on-prem via ExpressRoute (with VPN backup). Follow Hub-and-Spoke topology. Hub contains Azure Firewall; Spoke subnets have UDRs forcing 0.0.0.0/0 to the Firewall. PaaS resources expose only Private Endpoints.',s:24},
+  {d:'Expert Design',p:'high',q:'How would you architect a multi-region Azure deployment?',a:'Deploy active-active compute in two Azure regions connected via global VNet peering. Front the architecture with Azure Front Door. Use geo-replicated databases and regional firewalls routed via global configurations.',s:15}
+];
+var DOMAINS = ['All'];
+FAQ_DATA.forEach(function(f){ if(DOMAINS.indexOf(f.d) < 0) DOMAINS.push(f.d); });
+var currentDomain = 'All';
+var searchTerm = '';
+function buildTabs(){
+  var tabs = document.getElementById('domainTabs');
+  tabs.innerHTML = DOMAINS.map(function(d){
+    var cls = d==='All'?'active':'';
+    var lbl = d==='All'?'All (85)':d;
+    return '<button class="tab-btn '+cls+'" onclick="selectDomain(\''+d+'\')">'+lbl+'</button>';
+  }).join('');
+}
+function selectDomain(d){
+  currentDomain = d;
+  var btns = document.querySelectorAll('.tab-btn');
+  for(var i=0;i<btns.length;i++){
+    var lbl = DOMAINS[i]==='All'?'All (85)':DOMAINS[i];
+    btns[i].classList.toggle('active', btns[i].textContent.trim()===lbl && DOMAINS[i]===d);
+  }
+  renderList();
+}
+function filterFAQs(){
+  searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  renderList();
+}
+function navigateToSlide(n){
+  try{ window.parent.currentIndex=n-1; if(typeof window.parent.renderScenario==='function') window.parent.renderScenario(); }
+  catch(e){ window.parent.postMessage({action:'navigate',slide:n},'*'); }
+}
+function toggleItem(el){
+  el.closest('.faq-item').classList.toggle('open');
+}
+function renderList(){
+  var list = document.getElementById('faqList');
+  var filtered = FAQ_DATA.filter(function(f){
+    var dm = currentDomain==='All'||f.d===currentDomain;
+    var sm = !searchTerm||f.q.toLowerCase().indexOf(searchTerm)>=0||f.a.toLowerCase().indexOf(searchTerm)>=0;
+    return dm&&sm;
+  });
+  document.getElementById('visCount').textContent = filtered.length;
+  if(!filtered.length){ list.innerHTML="<div class='no-results'>No questions match your search</div>"; return; }
+  var grouped={};
+  filtered.forEach(function(f){ if(!grouped[f.d]) grouped[f.d]=[]; grouped[f.d].push(f); });
+  var html='';
+  Object.keys(grouped).forEach(function(domain){
+    var items=grouped[domain];
+    html+="<div class='domain-group'><div class='domain-label'>"+domain+" ("+items.length+")</div>";
+    items.forEach(function(f){
+      var dc=f.p==='high'?'p-high':f.p==='med'?'p-med':'p-low';
+      html+="<div class='faq-item'><div class='faq-q' onclick='toggleItem(this)'><div class='priority-dot "+dc+"'></div><div class='q-text'>"+f.q+"</div><button class='slide-badge' onclick='event.stopPropagation();navigateToSlide("+f.s+")'>&#x1F4D8; Slide "+f.s+"</button><div class='chevron'>&#x25BC;</div></div><div class='faq-a'>"+f.a+"</div></div>";
+    });
+    html+="</div>";
+  });
+  list.innerHTML = html;
+}
+buildTabs();
+renderList();
+</script></body></html>`
+
+};\n\n// Combine: slides 21-28 + slide 29\nconst updatedSlides = [...baseSlides, ...slides21to29, slide29];\n\nfs.writeFileSync(azureJsonPath, JSON.stringify(updatedSlides, null, 2), 'utf8');\n\nconsole.log(\`✅ Successfully appended slides 21-29. Total slides: \${updatedSlides.length}\`);\nconsole.log(\`   Slide 29: "Interview FAQ Master Reference" — 85 questions across 10 domains\`);\nconsole.log(\`   Updated file size: \${(fs.statSync(azureJsonPath).size / 1024).toFixed(1)} KB\`);\n
+.faq-header h2{margin:0;font-size:15px;color:#60a5fa;font-weight:700;letter-spacing:.5px}
+.faq-stats{display:flex;gap:12px;margin-top:6px;flex-wrap:wrap}
+.faq-stat{background:rgba(255,255,255,.07);border:1px solid #1e4a8a;border-radius:20px;padding:2px 10px;font-size:10px;color:#94a3b8}
+.faq-stat span{color:#60a5fa;font-weight:700}
+.domain-tabs{display:flex;gap:4px;padding:8px 12px;overflow-x:auto;flex-shrink:0;background:#0d1b2e;border-bottom:1px solid #1a2f4f;scrollbar-width:none}
+.domain-tabs::-webkit-scrollbar{display:none}
+.tab-btn{white-space:nowrap;background:rgba(255,255,255,.05);border:1px solid #1e4a8a;border-radius:16px;padding:4px 12px;font-size:10px;color:#94a3b8;cursor:pointer;transition:all .2s;flex-shrink:0}
+.tab-btn:hover,.tab-btn.active{background:#0078d4;border-color:#0078d4;color:#fff;font-weight:600}
+.search-bar{padding:8px 12px;background:#0d1b2e;border-bottom:1px solid #1a2f4f;flex-shrink:0}
+.search-bar input{width:100%;background:#1e3a5f;border:1px solid #1e4a8a;border-radius:20px;padding:6px 14px;color:#e2e8f0;font-size:12px;outline:none;box-sizing:border-box}
+.search-bar input::placeholder{color:#4a6a8a}
+.search-bar input:focus{border-color:#0078d4;box-shadow:0 0 0 2px rgba(0,120,212,.2)}
+.faq-list{flex:1;overflow-y:auto;padding:8px 12px;display:flex;flex-direction:column;gap:6px}
+.faq-list::-webkit-scrollbar{width:4px}
+.faq-list::-webkit-scrollbar-track{background:#0d1b2e}
+.faq-list::-webkit-scrollbar-thumb{background:#1e4a8a;border-radius:2px}
+.domain-group{margin-bottom:6px}
+.domain-label{font-size:10px;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:1px;padding:4px 0 4px 4px;border-left:2px solid #0078d4;margin-bottom:4px}
+.faq-item{background:#16213e;border:1px solid #1e3a5f;border-radius:8px;overflow:hidden;transition:border-color .2s}
+.faq-item:hover{border-color:#0078d4}
+.faq-q{display:flex;align-items:center;gap:8px;padding:8px 10px;cursor:pointer;user-select:none}
+.faq-q:hover .q-text{color:#60a5fa}
+.priority-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.p-high{background:#ef4444}
+.p-med{background:#f59e0b}
+.p-low{background:#22c55e}
+.q-text{flex:1;font-size:12px;color:#cbd5e1;line-height:1.4;font-weight:500}
+.slide-badge{background:#0f3460;border:1px solid #0078d4;border-radius:12px;padding:2px 8px;font-size:9px;color:#60a5fa;cursor:pointer;flex-shrink:0;transition:all .2s;white-space:nowrap}
+.slide-badge:hover{background:#0078d4;color:#fff}
+.chevron{color:#4a6a8a;font-size:11px;transition:transform .25s;flex-shrink:0}
+.faq-item.open .chevron{transform:rotate(180deg)}
+.faq-item.open .q-text{color:#60a5fa}
+.faq-a{display:none;padding:0 10px 10px 25px;font-size:11px;color:#94a3b8;line-height:1.6;border-top:1px solid #1e3a5f}
+.faq-item.open .faq-a{display:block}
+.no-results{text-align:center;padding:40px;color:#4a6a8a;font-size:12px}
+.footer-hint{padding:6px 12px;text-align:center;font-size:9px;color:#2d4a6a;flex-shrink:0;border-top:1px solid #1a2f4f}
+</style>
+<div class='faq-wrap'>
+  <div class='faq-header'>
+    <h2>📋 Interview FAQ Master Reference</h2>
+    <div class='faq-stats'>
+      <div class='faq-stat'><span id='visCount'>85</span> questions</div>
+      <div class='faq-stat'><span>12</span> domains</div>
+      <div class='faq-stat'><span>28</span> reference slides</div>
+      <div class='faq-stat'><span>100%</span> covered</div>
+    </div>
+  </div>
+  <div class='domain-tabs' id='domainTabs'></div>
+  <div class='search-bar'><input id='searchInput' placeholder='🔍 Search questions...' oninput='filterFAQs()'></div>
+  <div class='faq-list' id='faqList'></div>
+  <div class='footer-hint'>💡 Tap slide badge to navigate • Click question to expand answer</div>
+</div>
+<script>
+const FAQ_DATA = [
+  // ── Landing Zones & Governance ──
+  {d:'Landing Zones & Governance',p:'high',q:'What is an Azure Landing Zone and why is it important?',a:'An Azure Landing Zone is a multi-subscription environment aligned with Microsoft CAF. It provides structured networking, identity, security, and governance foundations to enable enterprises to scale securely and consistently.',s:21},
+  {d:'Landing Zones & Governance',p:'high',q:'How do you design an Azure subscription strategy for Prod and Non-Prod environments?',a:'Enforce subscription-level segregation. Place production workloads in a dedicated Prod subscription and testing/development in Non-Prod under separate Management Groups to isolate costs, enforce distinct security policies, and prevent dev testing from hitting API rate limits.',s:21},
+  {d:'Landing Zones & Governance',p:'high',q:'Explain Management Groups, Subscriptions, Resource Groups, and Resources hierarchy.',a:'Azure resources are organized hierarchically: Tenant Root Group → Management Groups (logical grouping for policies/access) → Subscriptions (billing and scaling boundary) → Resource Groups (lifecycle boundary) → Resources. Inherited permissions flow downwards.',s:19},
+  {d:'Landing Zones & Governance',p:'high',q:'What is Azure Policy and how is it different from RBAC?',a:'Azure Policy evaluates resource configuration properties to ensure compliance (guardrails). RBAC regulates authorization based on user actions and scopes (gates). Policy = configuration enforcement; RBAC = identity authorization.',s:20},
+  {d:'Landing Zones & Governance',p:'med',q:'How do you prevent users from creating resources in unauthorized regions?',a:'Assign the built-in Azure Policy Allowed locations definition at the Management Group scope, parameterizing it with allowed regions to block deployments elsewhere via Deny effect.',s:20},
+  {d:'Landing Zones & Governance',p:'med',q:'How would you enforce tagging across subscriptions?',a:'Use Azure Policy. Deploy Require a tag and its value policies to block deployments missing tags, or use Inherit a tag from the resource group policy with Modify effect to auto-populate.',s:20},
+  {d:'Landing Zones & Governance',p:'high',q:'Design an Azure environment for Production, UAT, and Dev environments.',a:'Establish Management Group hierarchy with separate branches for Prod and Non-Prod. Deploy distinct subscriptions for Dev, UAT, and Prod. Link spoke VNets back to a central Hub subscription for shared security inspection.',s:21},
+  {d:'Landing Zones & Governance',p:'high',q:'How would you design a secure landing zone for a new enterprise customer?',a:'Follow CAF landing zone guidelines. Provision Platform MGs (Connectivity, Identity, Management) and Landing Zone MGs. Apply security benchmarks via Azure Policy Initiatives, and deploy Hub-Spoke topology with Azure Firewall.',s:21},
+  {d:'Landing Zones & Governance',p:'med',q:'How do you standardize governance across multiple subscriptions?',a:'Group individual policies into Initiatives (e.g. ASB). Assign these Initiatives at the Management Group scope so they propagate automatically to all existing and future child subscriptions.',s:20},
+  // ── Advanced Networking ──
+  {d:'Advanced Networking',p:'high',q:'What are the benefits of Hub-and-Spoke architecture?',a:'Hub-and-Spoke centralizes common services (VPN/ExpressRoute gateways, Azure Firewall, Log Analytics) in a Hub VNet while separating workloads into isolated Spoke VNets. Reduces redundant costs, simplifies governance, and provides centralized security inspection.',s:7},
+  {d:'Advanced Networking',p:'high',q:'What components typically reside in the Hub VNet?',a:'The Hub VNet typically hosts: Azure Firewall, Virtual Network Gateways (VPN/ExpressRoute), Azure Bastion, private DNS resolvers, and shared domain controllers (Active Directory).',s:7},
+  {d:'Advanced Networking',p:'high',q:'How do Spoke VNets communicate securely with each other?',a:'Spoke VNets peer to the Hub VNet (not directly to each other). Inter-spoke traffic is routed through UDRs with next-hop pointing to the centralized Azure Firewall in the Hub VNet.',s:8},
+  {d:'Advanced Networking',p:'med',q:'What are the advantages and disadvantages of VNet Peering?',a:'Advantages: Low-latency, high-bandwidth over Microsoft backbone, easy config, low transit cost. Disadvantages: No overlapping IP spaces, peering counts against limits, non-transitive by default.',s:21},
+  {d:'Advanced Networking',p:'high',q:'Explain the difference between NSG, Azure Firewall, and UDR.',a:'NSGs are basic Layer 4 packet filters at subnet/NIC level. Azure Firewall is a centralized stateful L4/L7 firewall-as-a-service with FQDN filtering. UDRs are custom routing tables applied to subnets to override default routing paths.',s:7},
+  {d:'Advanced Networking',p:'med',q:'How does Azure Firewall process traffic?',a:'Azure Firewall evaluates in order: 1) DNAT rules (highest priority), 2) Network rules (IP/port filtering), 3) Application rules (FQDN/HTTP headers). First match wins.',s:7},
+  {d:'Advanced Networking',p:'high',q:'What is the difference between Site-to-Site VPN and Point-to-Site VPN?',a:'S2S connects an entire branch/on-premises network to Azure via IPsec/IKE tunnel (requires on-prem VPN device). P2S connects individual remote clients directly to Azure using SSTP/IKEv2/OpenVPN (no on-prem hardware needed).',s:2},
+  {d:'Advanced Networking',p:'high',q:'When would you choose ExpressRoute instead of VPN?',a:'Choose ExpressRoute for high dedicated bandwidth (up to 100 Gbps), ultra-low predictable latency, higher security compliance (bypasses public internet), and 99.95% SLA guarantees.',s:9},
+  {d:'Advanced Networking',p:'high',q:'How does Azure Load Balancer work?',a:'Azure Load Balancer operates at Layer 4 (TCP/UDP), distributing inbound traffic based on a 5-tuple hash (source IP, source port, dest IP, dest port, protocol) to backend pool instances verified by health probes.',s:3},
+  {d:'Advanced Networking',p:'high',q:'Difference between Azure Load Balancer and Application Gateway.',a:'Azure Load Balancer is a Layer 4 TCP/UDP load balancer (cannot read HTTP headers). Application Gateway is a Layer 7 HTTP/HTTPS load balancer supporting URL path-based routing, SSL/TLS termination, and WAF integration.',s:4},
+  {d:'Advanced Networking',p:'med',q:'How do you troubleshoot connectivity between Azure and On-Premises?',a:'Use Network Watcher Connection Monitor. Check VNet Gateway status and active BGP routes. Run effective route table commands. Review NSG Flow Logs and check for overlapping CIDR blocks.',s:11},
+  {d:'Advanced Networking',p:'med',q:'Explain Azure Route Tables and route precedence.',a:'Azure routes by longest prefix match. Precedence: 1) User Defined Routes (highest), 2) BGP routes (VPN/ExpressRoute gateway), 3) System routes (lowest).',s:8},
+  {d:'Advanced Networking',p:'med',q:'How does BGP work with ExpressRoute?',a:'BGP dynamically exchanges routing information between on-premises and Azure VNets via eBGP peerings over private or Microsoft VIFs across the ExpressRoute circuit, enabling automatic failover and path preference tuning.',s:9},
+  {d:'Advanced Networking',p:'med',q:'What are forced tunneling and custom routing?',a:'Forced tunneling redirects all internet-bound traffic (0.0.0.0/0) from spoke subnets to a central NVA/Firewall or on-premises gateway using UDRs.',s:8},
+  {d:'Advanced Networking',p:'med',q:'Explain Azure Firewall Premium features.',a:'Premium features: 1) TLS Inspection (decrypts outbound traffic), 2) IDPS (Intrusion Detection and Prevention signature matching), 3) URL Filtering, 4) Web Categories.',s:7},
+  {d:'Advanced Networking',p:'low',q:'Difference between Global VNet Peering and Regional Peering.',a:'Regional Peering connects VNets in the same region over local switches with negligible latency. Global Peering connects VNets across different regions over the Microsoft backbone. Both use private IPs.',s:21},
+  {d:'Advanced Networking',p:'med',q:'Users cannot access an application hosted in Azure. How would you troubleshoot?',a:'Check App Gateway/Load Balancer backend pool health probes. Verify NSGs and Azure Firewall rules. Run Network Watcher IP Flow Verify to trace packet blocks.',s:11},
+  {d:'Advanced Networking',p:'med',q:'VPN tunnel is up but traffic is not flowing. What checks would you perform?',a:'Check BGP route advertisements on both sides. Verify UDRs on Spoke subnets force routing through the Gateway. Ensure no overlapping subnet IP ranges. Check local network gateway prefixes.',s:11},
+  {d:'Advanced Networking',p:'med',q:'Two VNets cannot communicate. How would you troubleshoot?',a:'Verify VNet Peering status is Connected. Ensure Allow forwarded traffic and Use remote gateways settings are enabled. Check NSGs allow peer VNet range traffic.',s:11},
+  // ── Compute HA & Scaling ──
+  {d:'Compute HA & Scaling',p:'high',q:'Difference between Availability Set and Availability Zone.',a:'Availability Sets distribute VMs across racks inside a single datacenter (SLA 99.95%). Availability Zones distribute VMs across physically separate datacenters within a region with independent power/cooling/network (SLA 99.99%).',s:22},
+  {d:'Compute HA & Scaling',p:'high',q:'What is a VM Scale Set and when should it be used?',a:'VMSS deploys and manages a group of identical, auto-scaling VMs. Use for stateless, highly scalable workloads (web servers, microservices, AKS worker pools) with fluctuating traffic.',s:22},
+  {d:'Compute HA & Scaling',p:'high',q:'How would you migrate 200 on-premises servers to Azure?',a:'Use Azure Migrate. Deploy the collector appliance on-premises to discover workloads, assess VM compatibility and sizing, estimate costs, and execute replication batches into target subscriptions/VNets.',s:21},
+  {d:'Compute HA & Scaling',p:'med',q:'A VM CPU usage is consistently above 90%. What actions would you take?',a:'Check VMSS autoscale rules to ensure instances scale out. Optimize application memory leaks, check for run-away processes via SSH/RDP, or vertically scale (upsize) the VM instance type.',s:22},
+  {d:'Compute HA & Scaling',p:'high',q:'Design a highly available web application architecture in Azure.',a:'Fronted by Azure Front Door routing to regional Application Gateways. Compute runs on VMSS across Availability Zones. Storage uses ZRS storage accounts, and database uses Azure SQL with Active Geo-Replication.',s:22},
+  // ── Secure Remote Access ──
+  {d:'Secure Remote Access',p:'high',q:'What is Private Endpoint and how does it differ from Service Endpoint?',a:'Private Endpoint allocates a private IP from your VNet directly to the PaaS resource, routing traffic privately via DNS and disabling public internet access. Service Endpoint keeps the public IP active but extends your VNet identity to the PaaS over the Microsoft backbone.',s:24},
+  {d:'Secure Remote Access',p:'high',q:'What is Azure Bastion and what problem does it solve?',a:'Azure Bastion is a managed PaaS providing secure, browser-based RDP/SSH access to VMs over TLS (port 443). Eliminates the need to expose VMs to the internet or manage vulnerable jump boxes.',s:24},
+  {d:'Secure Remote Access',p:'med',q:'Explain Azure Private DNS Zones.',a:'Azure Private DNS Zones resolve hostnames within a VNet (or linked VNets) without exposing DNS queries to the public internet. Essential for Private Endpoint name resolution to map public PaaS URLs to private IPs.',s:10},
+  // ── Identity & Governance ──
+  {d:'Identity & Governance',p:'high',q:'Explain Azure RBAC.',a:'Azure RBAC manages who has access to Azure resources, what they can do, and what scopes they have. Assign a security principal (User, Group, SP, Managed Identity) to a Role Definition at a target Scope.',s:25},
+  {d:'Identity & Governance',p:'high',q:'Difference between Owner, Contributor, and Reader roles.',a:'Owner: full access including permission delegation. Contributor: full resource management, cannot delegate access. Reader: view only, cannot create/modify/delete.',s:25},
+  {d:'Identity & Governance',p:'high',q:'What are Managed Identities?',a:'Managed Identities provide an automatically managed identity in Microsoft Entra ID for Azure resources (VMs, App Services) to authenticate to other services (databases, Key Vaults) without storing credentials in code.',s:25},
+  {d:'Identity & Governance',p:'high',q:'Difference between Managed Identity and Service Principal.',a:'Managed Identities are tied to Azure resource lifecycles with no credential management required. Service Principals are application registrations in Entra ID relying on user-managed client secrets or certificates.',s:25},
+  {d:'Identity & Governance',p:'high',q:'How do you implement least-privilege access?',a:'Assign roles at the narrowest scope (Resource Group over Subscription). Use custom roles with specific action lists over broad built-in roles. Implement Entra PIM for JIT access.',s:25},
+  {d:'Identity & Governance',p:'med',q:'Explain Conditional Access Policies and MFA.',a:'Conditional Access is Entra IDs policy engine evaluating signals (user location, device compliance, risk level) to enforce access decisions (Block, Allow, or require MFA).',s:25},
+  {d:'Identity & Governance',p:'high',q:'Developers require temporary elevated permissions. What is the best approach?',a:'Configure Entra ID PIM (Privileged Identity Management). Assign developers eligible roles requiring MFA, justification, and approval gates to activate JIT access for a fixed duration.',s:25},
+  // ── Security & Threat Protection ──
+  {d:'Security & Threat Protection',p:'high',q:'What is Microsoft Defender for Cloud?',a:'Microsoft Defender for Cloud is a unified security management system providing Cloud Security Posture Management (CSPM) to evaluate compliance scores, and Cloud Workload Protection (CWPP) to detect threats across workloads.',s:26},
+  {d:'Security & Threat Protection',p:'high',q:'How do you secure Azure Key Vault?',a:'1) Enable Soft Delete and Purge Protection, 2) Use Azure RBAC authorization model instead of legacy access policies, 3) Restrict network access via private endpoints/firewalls, 4) Rotate vault keys regularly.',s:26},
+  {d:'Security & Threat Protection',p:'med',q:'Explain encryption at rest and encryption in transit.',a:'Encryption at rest encrypts stored data on disks/databases via Azure Storage Service Encryption or SQL TDE using Platform-Managed or Customer-Managed Keys. Encryption in transit secures data moving over networks using TLS/SSL.',s:26},
+  {d:'Security & Threat Protection',p:'high',q:'How would you handle a client security audit?',a:'Generate compliance reports from Defender for Cloud demonstrating alignment with standards (ISO 27001). Provide audit trails from Activity Logs, present Key Vault RBAC configurations, and demonstrate policy compliance statistics.',s:26},
+  {d:'Security & Threat Protection',p:'high',q:'A storage account is publicly accessible. How would you secure it?',a:'Set Storage Firewall to Enabled from selected networks. Create a Private Endpoint mapping the storage account to a backend subnet, and disable Allow storage account public access globally.',s:23},
+  {d:'Security & Threat Protection',p:'high',q:'How would you implement Zero Trust in Azure?',a:'Enforce Zero Trust: 1) Verify explicitly (Conditional Access, MFA), 2) Use least privilege (RBAC, PIM), 3) Assume breach (micro-segmentation with NSGs, private links, threat logging).',s:26},
+  {d:'Security & Threat Protection',p:'med',q:'How would you manage secrets for applications?',a:'Store secrets in Azure Key Vault. Enable Managed Identities on compute resources and grant them permission to retrieve secrets dynamically at runtime without hardcoding keys.',s:26},
+  {d:'Security & Threat Protection',p:'high',q:'How would you secure an enterprise Azure environment from day one?',a:'Enforce MFA and PIM. Configure Management Group hierarchies with Azure Policy Initiatives. Deploy Hub-and-Spoke with Azure Firewall. Disable VM public IPs, route administration via Bastion, resolve PaaS via Private Endpoints.',s:26},
+  // ── Operations & Monitoring ──
+  {d:'Operations & Monitoring',p:'high',q:'What is Azure Monitor?',a:'Azure Monitor is a comprehensive solution for collecting, analyzing, and acting on telemetry from cloud and on-premises environments. It handles metrics (numeric performance data) and logs (structured resource records).',s:12},
+  {d:'Operations & Monitoring',p:'high',q:'Difference between Azure Monitor and Log Analytics.',a:'Azure Monitor is the overarching service for monitoring and alerts. Log Analytics is the primary workspace within Azure Monitor used to query, store, and analyze log data using KQL (Kusto Query Language).',s:12},
+  {d:'Operations & Monitoring',p:'med',q:'How do you create alert rules?',a:'Define the alert condition (metric threshold or log query), set evaluation frequency, and link the alert to an Action Group containing notification receivers or automation runbooks.',s:12},
+  {d:'Operations & Monitoring',p:'med',q:'How do you investigate performance issues in Azure?',a:'View Azure Monitor metrics (CPU, Memory, Disk, Network). Review Log Analytics workspaces using KQL to identify error events, query database executions, and run Application Insights tracing.',s:11},
+  {d:'Operations & Monitoring',p:'med',q:'Application logs are missing. How would you troubleshoot?',a:'Check the resources Diagnostic Settings to ensure log sending is enabled and points to the correct Log Analytics Workspace. Verify VM log agents (AMA) are running successfully.',s:12},
+  {d:'Operations & Monitoring',p:'med',q:'How would you integrate Azure logs with a SIEM?',a:'Configure Diagnostic Settings on resources to export logs to an Azure Event Hub, which is connected to your external SIEM (Splunk, QRadar) to pull and parse logs.',s:12},
+  {d:'Operations & Monitoring',p:'high',q:'An application is experiencing high latency. How would you investigate?',a:'Run Network Watcher Connection Monitor to measure network latency. Investigate VM CPU/RAM bottlenecks. Query Log Analytics/App Insights to isolate database query bottlenecks or API dependencies.',s:11},
+  // ── Backup & Recovery ──
+  {d:'Backup & Recovery',p:'high',q:'What is Azure Backup?',a:'Azure Backup is a fully managed service that protects files, folders, VM system states, and SQL/SAP databases by backing them up to a Recovery Services Vault with customizable retention schedules.',s:13},
+  {d:'Backup & Recovery',p:'high',q:'What is Azure Site Recovery?',a:'Azure Site Recovery (ASR) is a disaster recovery orchestration service providing continuous replication of VMs from source to target regions, supporting automated failover and failback testing.',s:14},
+  {d:'Backup & Recovery',p:'high',q:'Explain RPO and RTO.',a:'Recovery Point Objective (RPO) is the maximum tolerable data loss window (time). Recovery Time Objective (RTO) is the maximum tolerable application downtime window before business impact.',s:18},
+  {d:'Backup & Recovery',p:'high',q:'How would you design a multi-region DR solution?',a:'Architect active-passive or active-active sites in paired regions. Replicate VMs using ASR, enable SQL Geo-Replication/Failover Groups, utilize GRS storage accounts, and route regional traffic via Azure Front Door.',s:15},
+  {d:'Backup & Recovery',p:'high',q:'How do failover and failback work?',a:'Failover routes traffic to a secondary DR site when the primary site experiences an outage. Failback returns production traffic from the secondary site back to the primary site after it is restored.',s:16},
+  {d:'Backup & Recovery',p:'high',q:'A region-wide outage occurs. What steps would you take?',a:'Verify Azure Status health dashboard. Trigger failover via Azure Front Door/Traffic Manager to route traffic to the secondary region. Initiate ASR failover recovery plans to spin up replicas.',s:15},
+  {d:'Backup & Recovery',p:'med',q:'How do you validate DR readiness?',a:'Perform regular Test Failovers in Azure Site Recovery. This provisions VM replicas in an isolated sandbox VNet without interrupting production replication, enabling validation tests.',s:17},
+  {d:'Backup & Recovery',p:'med',q:'How frequently should failover testing be performed?',a:'Perform DR testing at least semi-annually or annually as mandated by enterprise compliance policies, alongside automated dry-run testing validations.',s:17},
+  {d:'Backup & Recovery',p:'high',q:'Design a DR strategy with less than 30-minute RPO.',a:'Configure ASR replicating VMs to a paired region (RPO ~5 min). Enable Azure SQL Auto-Failover Groups (RPO <5 sec) and utilize Geo-Redundant Storage (GRS).',s:18},
+  // ── Cost Optimization ──
+  {d:'Cost Optimization (FinOps)',p:'high',q:'How do you identify cost optimization opportunities?',a:'Utilize Azure Advisor recommendations, configure anomaly alerts in Azure Cost Management, and run KQL queries in Azure Resource Graph to scan for orphaned disks, idle resources, and unused public IPs.',s:28},
+  {d:'Cost Optimization (FinOps)',p:'high',q:'What are Reserved Instances?',a:'Reserved Instances offer up to 72% cost savings by committing to a 1-year or 3-year term for specific VM SKUs in specific regions. Best for highly predictable, always-on workloads.',s:28},
+  {d:'Cost Optimization (FinOps)',p:'med',q:'What are Azure Savings Plans?',a:'Azure Savings Plans for Compute offer savings of up to 65% by committing to an hourly spend ($/hr) for 1 or 3 years. Applies automatically to compute services globally (VMs, Container Instances, App Services).',s:28},
+  {d:'Cost Optimization (FinOps)',p:'med',q:'How do you reduce Azure storage costs?',a:'Apply storage lifecycle policies to transition objects to Cool/Archive tiers. Clean up orphaned managed disks. Use ZRS/LRS instead of GRS where appropriate. Optimize VM disk types.',s:23},
+  {d:'Cost Optimization (FinOps)',p:'med',q:'What tagging strategy do you recommend?',a:'Implement tags for: Environment (Prod, Dev, UAT), CostCenter, Owner, ProjectName, and Compliance/Data Classification. Enforce tag existence using Azure Policy (Audit first, then Deny or Modify).',s:28},
+  {d:'Cost Optimization (FinOps)',p:'low',q:'How would you create a monthly FinOps report?',a:'Configure Azure Cost Management scheduled exports to output usage CSVs to a secure storage account daily. Connect Power BI to parse, structure, and visualize spending patterns, reservations coverage, and tag compliance.',s:28},
+  // ── Automation & IaC ──
+  {d:'Automation & IaC',p:'high',q:'How do you automate Azure deployments?',a:'Deploy using declarative Infrastructure as Code (Terraform/Bicep) running inside CI/CD pipelines (GitHub Actions/Azure Pipelines). Pipelines authenticate via OIDC with Azure Service Principals.',s:21},
+  {d:'Automation & IaC',p:'high',q:'Difference between ARM Templates, Bicep, and Terraform.',a:'ARM Templates are JSON-based native declarations. Bicep is a cleaner DSL that transpiles to ARM. Terraform is cloud-agnostic declarative tool using HCL, managing state files to track deployed resources.',s:21},
+  {d:'Automation & IaC',p:'med',q:'Which IaC tool do you prefer and why?',a:'Terraform: state management, planning stage (terraform plan), modular structures, vast provider ecosystem, and cloud-agnostic applicability enabling multi-cloud automation.',s:21},
+  {d:'Automation & IaC',p:'med',q:'Explain CI/CD integration with Azure infrastructure.',a:'Integrates IaC linting, security scans (Checkov/tfsec), planning dry-runs, and execution in GitHub Actions/Azure DevOps. Code merges trigger automated deploys via OIDC using scoped Service Principals.',s:21},
+  {d:'Automation & IaC',p:'med',q:'How do you manage IaC in enterprise environments?',a:'Use remote backend state storage (Azure Storage) with lease blob state locking. Maintain modular code structures. Apply branch protections, pull request reviews, and validation gates in CI/CD.',s:21},
+  // ── Governance & Enterprise Scale ──
+  {d:'Governance & Enterprise Scale',p:'med',q:'Explain Azure CAF (Cloud Adoption Framework).',a:'CAF is Microsofts documentation, guidance, and tools blueprint containing strategies, ready-states, and governance guidelines to plan, implement, and manage cloud migrations.',s:21},
+  {d:'Governance & Enterprise Scale',p:'high',q:'What is Enterprise Scale Landing Zone Architecture?',a:'A policy-driven landing zone environment aligned with CAF. Uses subscription democratization to divide workloads into Management Groups (Platform: Connectivity, Identity, Management vs. Workloads: Corp, Online) with inherited guardrails.',s:21},
+  {d:'Governance & Enterprise Scale',p:'high',q:'How do Management Groups help large enterprises?',a:'Management Groups are logical containers managing policy, compliance, and access controls across multiple subscriptions. Guardrails and RBAC scopes applied at parent MGs inherit down the subscription tree.',s:19},
+  {d:'Governance & Enterprise Scale',p:'high',q:'How do you design governance for 100+ subscriptions?',a:'Implement robust Management Group structure. Apply Azure Policy Initiatives (Azure Security Benchmark) at MG level. Automate subscription provisioning using vending machine IaC templates configuring default VNets, tags, and logging.',s:20},
+  {d:'Governance & Enterprise Scale',p:'high',q:'Explain Azure Blueprints (legacy) and current alternatives.',a:'Azure Blueprints packaged templates, policies, and role assignments. Modern alternatives use Landing Zone Vending Machine frameworks deploying via Bicep/Terraform integrated with Azure Policy.',s:20},
+  // ── Expert Design Questions ──
+  {d:'Expert Design Questions',p:'high',q:'Design a secure hybrid-cloud environment.',a:'Connect on-prem via ExpressRoute (with VPN backup). Follow Hub-and-Spoke topology. Hub contains Azure Firewall; Spoke subnets have UDRs forcing 0.0.0.0/0 to the Firewall. PaaS resources expose only Private Endpoints.',s:24},
+  {d:'Expert Design Questions',p:'high',q:'How would you architect a multi-region Azure deployment?',a:'Deploy active-active compute in two Azure regions connected via global VNet peering. Front the architecture with Azure Front Door. Use geo-replicated databases and regional firewalls routed via global configurations.',s:15}
+];
+
+const DOMAINS = ['All', ...new Set(FAQ_DATA.map(f => f.d))];
+let currentDomain = 'All';
+let searchTerm = '';
+
+function buildTabs() {
+  const tabs = document.getElementById('domainTabs');
+  tabs.innerHTML = DOMAINS.map(function(d) {
+    var cls = d === 'All' ? 'active' : '';
+    var label = d === 'All' ? '\uD83C\uDF10 All (85)' : d;
+    return '<button class="tab-btn ' + cls + '" onclick="selectDomain(\'' + d + '\')">' + label + '</button>';
+  }).join('');
+}
+
+function selectDomain(d) {
+  currentDomain = d;
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.startsWith(d === 'All' ? '🌐' : d));
+  });
+  renderList();
+}
+
+function filterFAQs() {
+  searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  renderList();
+}
+
+function navigateToSlide(slideNum) {
+  if (window.parent && window.parent.currentIndex !== undefined) {
+    window.parent.currentIndex = slideNum - 1;
+    if (typeof window.parent.renderScenario === 'function') window.parent.renderScenario();
+  } else {
+    window.parent.postMessage({ action: 'navigate', slide: slideNum }, '*');
+  }
+}
+
+function toggleItem(el) {
+  el.closest('.faq-item').classList.toggle('open');
+}
+
+function renderList() {
+  var list = document.getElementById('faqList');
+  var filtered = FAQ_DATA.filter(function(f) {
+    var domainMatch = currentDomain === 'All' || f.d === currentDomain;
+    var searchMatch = !searchTerm || f.q.toLowerCase().indexOf(searchTerm) >= 0 || f.a.toLowerCase().indexOf(searchTerm) >= 0;
+    return domainMatch && searchMatch;
+  });
+
+  document.getElementById('visCount').textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    list.innerHTML = "<div class='no-results'>\uD83D\uDD0D No questions match your search</div>";
+    return;
+  }
+
+  var grouped = {};
+  filtered.forEach(function(f) {
+    if (!grouped[f.d]) grouped[f.d] = [];
+    grouped[f.d].push(f);
+  });
+
+  var html = '';
+  Object.keys(grouped).forEach(function(domain) {
+    var items = grouped[domain];
+    html += "<div class='domain-group'><div class='domain-label'>" + domain + " (" + items.length + ")</div>";
+    items.forEach(function(f) {
+      var dotClass = f.p === 'high' ? 'p-high' : f.p === 'med' ? 'p-med' : 'p-low';
+      html += "<div class='faq-item'>" +
+        "<div class='faq-q' onclick='toggleItem(this)'>" +
+        "<div class='priority-dot " + dotClass + "'></div>" +
+        "<div class='q-text'>" + f.q + "</div>" +
+        "<button class='slide-badge' onclick='event.stopPropagation();navigateToSlide(" + f.s + ")' title='Go to Slide " + f.s + "'>\uD83D\uDCD8 Slide " + f.s + "</button>" +
+        "<div class='chevron'>\u25BC</div>" +
+        "</div>" +
+        "<div class='faq-a'>" + f.a + "</div>" +
+        "</div>";
+    });
+    html += '</div>';
+  });
+
+  list.innerHTML = html;
+}
+
+buildTabs();
+renderList();
+</script>`, `
+.faq-wrap{height:calc(100vh - 32px) !important}
+`)  // slide29 end
+};
+
+// Combine: slides 21-28 + slide 29
+const updatedSlides = [...baseSlides, ...slides21to29, slide29];
 
 fs.writeFileSync(azureJsonPath, JSON.stringify(updatedSlides, null, 2), 'utf8');
 
-console.log(`✅ Successfully appended slides 21-28. Total slides: ${updatedSlides.length}`);
+console.log(`✅ Successfully appended slides 21-29. Total slides: ${updatedSlides.length}`);
+console.log(`   Slide 29: "Interview FAQ Master Reference" — 85 questions across 10 domains`);
 console.log(`   Updated file size: ${(fs.statSync(azureJsonPath).size / 1024).toFixed(1)} KB`);

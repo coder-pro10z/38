@@ -1844,7 +1844,8 @@
       "SC-14: Multi-Region DR Strategy",
       "SC-15: Failover — DNS & Traffic Manager Routing",
       "SC-16: Failback Testing — Operational Checklists",
-      "SC-17: RPO & RTO Compliance — Design Trade-offs"
+      "SC-17: RPO & RTO Compliance — Design Trade-offs",
+      "SC-20: Azure Landing Zones & Subscriptions"
     ]
   },
   {
@@ -2916,6 +2917,7 @@
       "SL-26: Python Collections",
       "SL-52: Generators and Iterators",
       "SC-106: Python Collections",
+      "SC-7: User Defined Routes (UDR)",
       "Q-List vs tuple?...",
       "Q-Generator vs list?...",
       "MD-Line 28",
@@ -3952,6 +3954,7 @@
       "SC-2: Front Door vs Application Gateway",
       "SC-3: Azure Application Gateway",
       "SC-4: Azure Front Door",
+      "SC-7: User Defined Routes (UDR)",
       "SC-8: ExpressRoute Connectivity",
       "SC-9: Private DNS Zones",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
@@ -5084,6 +5087,7 @@
       "SC-14: Multi-Region DR Strategy",
       "SC-15: Failover — DNS & Traffic Manager Routing",
       "SC-17: RPO & RTO Compliance — Design Trade-offs",
+      "SC-20: Azure Landing Zones & Subscriptions",
       "SC-23: Secure Remote Access & Private Link",
       "SC-26: Monitoring & SIEM Integration",
       "Q-Ingress vs LoadBalancer?...",
@@ -6029,6 +6033,7 @@
       "SC-46: Observability & Live Production Triage",
       "SC-89: CPU Monitoring",
       "SC-8: Linux Basics & System Diagnostics",
+      "SC-7: User Defined Routes (UDR)",
       "SC-20: Azure Landing Zones & Subscriptions",
       "Q-Explain Linux architecture...",
       "Q-How find process?...",
@@ -6264,7 +6269,9 @@
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
-      "SC-3: VNet Peering & Subnetting"
+      "SC-3: VNet Peering & Subnetting",
+      "SC-7: User Defined Routes (UDR)",
+      "SC-20: Azure Landing Zones & Subscriptions"
     ]
   },
   {

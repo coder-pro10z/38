@@ -1094,7 +1094,13 @@ VirtualNetwork: Route within the VNet using Azure's default VNet routing.
 None: Drop traffic silently — used as a black-hole for specific prefixes.
 
 3. BGP Route Propagation
-When enabled on a Route Table: gateway-learned routes (from VPN/ER) are merged with the Route Table entries. When disabled: only the explicit UDR entries apply — gateway routes are suppressed. Disable BGP propagation when you want UDR entries to take precedence over gateway-learned routes.`,
+When enabled on a Route Table: gateway-learned routes (from VPN/ER) are merged with the Route Table entries. When disabled: only the explicit UDR entries apply — gateway routes are suppressed. Disable BGP propagation when you want UDR entries to take precedence over gateway-learned routes.
+
+4. Route Precedence & Longest Prefix Match (LPM)
+When multiple routes exist for a destination, Azure routes traffic using the Longest Prefix Match (LPM) algorithm (e.g. a subnet route like 10.0.1.0/24 takes precedence over 10.0.0.0/16). If the destination prefix matches identically across multiple routes, Azure selects the route based on the following precedence hierarchy:
+- First Priority: User Defined Routes (UDR)
+- Second Priority: BGP-learned routes (VPN or ExpressRoute gateways)
+- Third Priority: Default System routes (local VNet routing, VNet peering, default gateway routes) Route tables evaluate this list in strict top-down order to determine the active routing path.`,
   content_implementation: `The most dangerous UDR mistake is associating a Route Table with 0.0.0.0/0 → Virtual Appliance on the GatewaySubnet — this redirects VPN/ExpressRoute routing through the Firewall in a loop, breaking all hybrid connectivity.
 
 Key Deployment Considerations:

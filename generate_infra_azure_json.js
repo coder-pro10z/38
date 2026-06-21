@@ -1,0 +1,1528 @@
+// generate_infra_azure_json.js
+// Run: node generate_infra_azure_json.js
+// Output: infra_azure.json (20 slides)
+
+const fs = require('fs');
+const path = require('path');
+
+// ─── CANVAS HTML HELPERS ────────────────────────────────────────────────────
+
+const darkBase = `body{margin:0;font-family:'Segoe UI',sans-serif;background:#1a1a2e;color:#e2e8f0;padding:16px;box-sizing:border-box}`;
+const azureBtn = `button{background:#0078d4;color:#fff;border:none;border-radius:6px;padding:8px 16px;cursor:pointer;font-size:13px;font-weight:600}button:hover{background:#005a9e}`;
+const card = `.card{background:#16213e;border:1px solid #0f3460;border-radius:8px;padding:14px;margin-bottom:12px}`;
+const label = `label{font-size:12px;color:#94a3b8;display:block;margin-bottom:4px}`;
+const input = `input,select{width:100%;padding:7px 10px;background:#0f3460;border:1px solid #1e4a8a;border-radius:5px;color:#e2e8f0;font-size:13px;box-sizing:border-box;margin-bottom:10px}`;
+const pre = `.pre{background:#0f3460;border-radius:6px;padding:12px;font-family:monospace;font-size:12px;white-space:pre;overflow-x:auto;color:#7dd3fc}`;
+const badge = (color, text) => `<span style="background:${color};color:#fff;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700">${text}</span>`;
+
+const wrap = (title, body, style = '') =>
+  `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title}</title><style>${darkBase}${azureBtn}${card}${label}${input}${pre}h2{margin:0 0 12px;font-size:16px;color:#0078d4}h3{margin:6px 0;font-size:13px;color:#7dd3fc}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ok{color:#34d399}.err{color:#f87171}.warn{color:#fbbf24}${style}</style></head><body><h2>${title}</h2>${body}</body></html>`;
+
+// ─── SLIDE DEFINITIONS ───────────────────────────────────────────────────────
+
+const slides = [
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 1 — VPN Gateway Architecture & SKUs
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "VPN Gateway — Architecture & SKUs",
+  type: "Networking — Gateway Design",
+  difficulty: "Advanced",
+  chips: ["VPN Gateway", "SKU", "BGP", "Active-Active", "GatewaySubnet"],
+  schema: "architecture",
+  definition: "An Azure VPN Gateway is a managed network gateway that sends encrypted traffic between an Azure Virtual Network and an on-premises location over the public internet or across the Microsoft backbone.",
+  why_it_matters: "Selecting the wrong SKU or sizing the GatewaySubnet incorrectly causes deployment failures, throughput limits, and inability to co-exist with ExpressRoute — all of which block enterprise hybrid connectivity.",
+  real_world_scenario: "An enterprise is connecting three branch offices (S2S) and 500 remote engineers (P2S) to a hub VNet. The architecture team must select the right SKU and plan the GatewaySubnet before provisioning.",
+  content_theory: `Here is a breakdown of how Azure VPN Gateway works and how to select the correct configuration.
+
+1. VPN Type
+Two VPN types are supported by Azure Virtual Network Gateways:
+
+Policy-based: Uses static routing defined by IPsec policies. Supports only one S2S tunnel and IKEv1. Legacy use only.
+Requirements: Limited to a single on-premises VPN device with static routing.
+Core Azure Resources: Virtual Network Gateway (type = Vpn, vpn_type = PolicyBased).
+
+Route-based: Uses dynamic routing and supports multiple S2S tunnels, P2S connections, BGP, active-active, and ExpressRoute coexistence. This is the correct choice for all production environments.
+Requirements: An on-premises VPN device that supports IKEv2 and dynamic routing.
+Core Azure Resources: Virtual Network Gateway (type = Vpn, vpn_type = RouteBased).
+
+2. Gateway SKU Tiers
+Best For Basic SKU: Development and testing only. Does not support IKEv2, P2S, BGP, active-active, or ExpressRoute coexistence.
+Best For VpnGw1–VpnGw5: Production workloads. Each tier increases throughput, tunnel count, and P2S client capacity.
+Best For VpnGw1AZ–VpnGw5AZ: Zone-redundant production workloads requiring 99.99% availability SLA.
+
+3. Active-Active vs Active-Passive
+Active-Passive: Single public IP. One gateway instance handles traffic. Failover to standby instance takes 10–15 seconds.
+Active-Active: Two public IPs, two BGP peers. Both instances handle traffic simultaneously. No single point of failure.`,
+  content_implementation: `Misconfiguring the GatewaySubnet name or size is the most common cause of VPN Gateway deployment failures — Azure will reject the deployment if the subnet is not named exactly 'GatewaySubnet'.
+
+Key Deployment Considerations:
+
+GatewaySubnet Naming: The subnet must be named exactly 'GatewaySubnet' — no variations. This cannot be changed after creation without destroying and recreating the subnet.
+
+GatewaySubnet Sizing: Use /27 as the minimum for production. Use /26 if you plan to coexist with an ExpressRoute Gateway. A /29 is the absolute minimum but leaves no room for scaling or maintenance IPs.
+
+SKU Selection Decision: Use VpnGw2 or higher for more than 30 S2S tunnels. Use an AZ SKU when the SLA requires zone redundancy. Never use the Basic SKU in production — it does not support BGP, IKEv2, or P2S with Azure AD authentication.
+
+BGP: Enable BGP for all production S2S deployments. BGP eliminates the need to manually update route tables when on-premises networks change. Each gateway requires a unique BGP ASN (Microsoft uses 65515 by default).
+
+Active-Active: Requires two public IPs and a BGP-capable on-premises device. Configure two S2S connections — one to each gateway IP — for full redundancy.`,
+  key_commands: [
+    {
+      command: `resource "azurerm_virtual_network_gateway" "hub_vpn" {
+  name                = "hub-vpn-gateway"
+  resource_group_name = azurerm_resource_group.hub.name
+  location            = azurerm_resource_group.hub.location
+  type                = "Vpn"
+  vpn_type            = "RouteBased"
+  sku                 = "VpnGw2"
+  active_active       = true
+  enable_bgp          = true
+
+  ip_configuration {
+    name                          = "gwIpConfig1"
+    public_ip_address_id          = azurerm_public_ip.vpn_pip1.id
+    private_ip_address_allocation = "Dynamic"
+    subnet_id                     = azurerm_subnet.gateway.id
+  }
+  ip_configuration {
+    name                          = "gwIpConfig2"
+    public_ip_address_id          = azurerm_public_ip.vpn_pip2.id
+    private_ip_address_allocation = "Dynamic"
+    subnet_id                     = azurerm_subnet.gateway.id
+  }
+
+  bgp_settings {
+    asn = 65515
+  }
+}`,
+      description: "Terraform: Active-Active, Route-based VPN Gateway with BGP enabled on VpnGw2 SKU. Two IP configs required for active-active."
+    },
+    {
+      command: `resource "azurerm_subnet" "gateway" {
+  name                 = "GatewaySubnet"
+  resource_group_name  = azurerm_resource_group.hub.name
+  virtual_network_name = azurerm_virtual_network.hub.name
+  address_prefixes     = ["10.0.255.0/27"]
+}`,
+      description: "Terraform: GatewaySubnet — must be named exactly 'GatewaySubnet'. /27 minimum for production."
+    }
+  ],
+  trade_offs: [
+    {
+      choice: "VpnGw1 vs VpnGw2 vs VpnGw3",
+      advantages: [
+        "VpnGw1: 650 Mbps, 30 S2S tunnels, 250 P2S clients — sufficient for small org",
+        "VpnGw2: 1 Gbps, 30 tunnels, 500 P2S clients — recommended production baseline",
+        "VpnGw3: 1.25 Gbps, 30 tunnels, 1000 P2S clients — large enterprise"
+      ],
+      disadvantages: [
+        "Basic SKU: no BGP, no IKEv2, no P2S with Azure AD, no ExpressRoute coexistence — never use in prod",
+        "All non-AZ SKUs: single-zone — use VpnGwXAZ when zone redundancy is required"
+      ]
+    }
+  ],
+  interview_answer: {
+    response: [
+      "An Azure VPN Gateway requires a dedicated subnet named exactly 'GatewaySubnet' with a /27 minimum. The gateway type must be Route-based for all production scenarios — Policy-based is legacy and supports only one tunnel.",
+      "SKU selection is driven by throughput, tunnel count, and P2S client capacity. BGP should always be enabled on production gateways — it eliminates manual route table management as on-premises networks scale.",
+      "For zone-redundant deployments, I use the AZ SKU variants (e.g. VpnGw2AZ) and configure active-active with two public IPs to eliminate the single instance as a failure point."
+    ],
+    why: "GatewaySubnet naming errors and wrong SKU selection are the two most common deployment blockers in VPN Gateway provisioning."
+  },
+  interview_kill_shot: "Route-based VPN Gateway on VpnGw2+, GatewaySubnet named exactly 'GatewaySubnet' at /27 minimum, BGP enabled, active-active for zero single-point-of-failure — AZ SKU when 99.99% SLA is required.",
+  interactive_html: wrap("VPN Gateway SKU Selector", `
+<div class="card">
+  <h3>Requirements</h3>
+  <label>Min S2S Tunnels needed</label>
+  <input type="number" id="tunnels" value="10" min="1" max="100">
+  <label>Min P2S Clients needed</label>
+  <input type="number" id="clients" value="100" min="0" max="10000">
+  <label>Min Throughput (Mbps)</label>
+  <input type="number" id="mbps" value="500" min="100" max="10000">
+  <label><input type="checkbox" id="zoneRedundant" style="width:auto;margin-right:6px">Zone Redundancy Required (99.99% SLA)</label>
+  <label><input type="checkbox" id="erCoexist" style="width:auto;margin-right:6px">ExpressRoute Coexistence Required</label>
+  <button onclick="recommend()">Find Matching SKU</button>
+</div>
+<div id="result"></div>
+<script>
+const skus=[
+  {name:"Basic",throughput:100,tunnels:10,p2s:128,az:false,bgp:false,er:false},
+  {name:"VpnGw1",throughput:650,tunnels:30,p2s:250,az:false,bgp:true,er:true},
+  {name:"VpnGw2",throughput:1000,tunnels:30,p2s:500,az:false,bgp:true,er:true},
+  {name:"VpnGw3",throughput:1250,tunnels:30,p2s:1000,az:false,bgp:true,er:true},
+  {name:"VpnGw1AZ",throughput:650,tunnels:30,p2s:250,az:true,bgp:true,er:true},
+  {name:"VpnGw2AZ",throughput:1000,tunnels:30,p2s:500,az:true,bgp:true,er:true},
+  {name:"VpnGw3AZ",throughput:1250,tunnels:30,p2s:1000,az:true,bgp:true,er:true}
+];
+function recommend(){
+  const t=+document.getElementById('tunnels').value;
+  const c=+document.getElementById('clients').value;
+  const m=+document.getElementById('mbps').value;
+  const az=document.getElementById('zoneRedundant').checked;
+  const er=document.getElementById('erCoexist').checked;
+  const matches=skus.filter(s=>s.tunnels>=t&&s.p2s>=c&&s.throughput>=m&&(!az||s.az)&&(!er||s.er)&&s.name!=='Basic');
+  const best=matches[0];
+  const rows=skus.map(s=>{
+    const ok=s.tunnels>=t&&s.p2s>=c&&s.throughput>=m&&(!az||s.az)&&(!er||s.er)&&s.name!=='Basic';
+    return \`<tr style="background:\${s===best?'#0f3460':'transparent'}">
+      <td>\${s.name}\${s===best?' ✅':''}</td>
+      <td>\${s.throughput} Mbps</td><td>\${s.tunnels}</td><td>\${s.p2s}</td>
+      <td>\${s.bgp?'✓':'✗'}</td><td>\${s.az?'✓':'✗'}</td><td>\${s.er?'✓':'✗'}</td>
+      <td><span style="color:\${ok?'#34d399':'#f87171'}">\${ok?'Match':'✗'}</span></td>
+    </tr>\`;
+  }).join('');
+  document.getElementById('result').innerHTML=\`
+    \${best?'<div class="card ok">Recommended: <strong>'+best.name+'</strong></div>':'<div class="card err">No SKU meets all requirements — adjust inputs.</div>'}
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <tr style="color:#94a3b8"><th>SKU</th><th>Throughput</th><th>S2S</th><th>P2S</th><th>BGP</th><th>AZ</th><th>ER</th><th>Match</th></tr>
+      \${rows}
+    </table>\`;
+}recommend();
+</script>`, `table td,table th{padding:5px 8px;border-bottom:1px solid #0f3460;text-align:center}`)
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 2 — S2S & P2S VPN
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "Site-to-Site (S2S) & Point-to-Site (P2S) VPN",
+  type: "Networking — Hybrid Connectivity",
+  difficulty: "Advanced",
+  chips: ["S2S", "P2S", "IPsec/IKE", "Terraform", "VPN Gateway"],
+  schema: "architecture",
+  definition: "S2S VPN connects an entire on-premises network to an Azure VNet over an IPsec/IKE tunnel; P2S VPN connects an individual client machine to the same VNet, initiated from the client side.",
+  why_it_matters: "Overlapping IP address spaces between the Azure VNet, on-premises network, and the P2S client pool are the most common cause of routing failures in hybrid connectivity deployments.",
+  real_world_scenario: "A branch office datacenter (192.168.0.0/16) needs network-level access to an Azure hub VNet (10.0.0.0/16) via S2S, while 200 remote engineers require individual laptop-level access via P2S — both terminating at the same VPN Gateway.",
+  content_theory: `Establishing secure, private connectivity into your cloud infrastructure is a foundational step in cloud architecture. Both Site-to-Site (S2S) and Point-to-Site (P2S) VPNs serve different connectivity needs, but both terminate at an Azure Virtual Network Gateway.
+
+Here is a breakdown of how they work and how to implement them effectively using Infrastructure as Code (Terraform).
+
+1. Site-to-Site (S2S) VPN
+A Site-to-Site VPN connects an entire on-premises network (like a corporate office or a physical datacenter) to an Azure Virtual Network (VNet) over an IPsec/IKE (IKEv1 or IKEv2) VPN tunnel.
+
+Best For: Connecting branches, offices, or data centers directly to Azure.
+Requirements: An on-premises VPN device (router/firewall) with a public-facing IPv4 address.
+Core Azure Resources: Virtual Network Gateway, Local Network Gateway (Azure's representation of your on-prem router), and a Connection.
+
+2. Point-to-Site (P2S) VPN
+A Point-to-Site VPN lets you create a secure connection to your virtual network from an individual client computer. The connection is established by starting it from the client machine.
+
+Best For: Remote engineers, telecommuters, or external contractors who need secure access to Azure resources from their local laptops without routing through a central corporate network.
+Requirements: A VPN client on the local machine and an authentication mechanism (Azure AD, RADIUS, or native Azure Certificate authentication).
+Core Azure Resources: Virtual Network Gateway configured with a vpn_client_configuration block.`,
+  content_implementation: `To successfully implement Azure Site-to-Site (S2S) and Point-to-Site (P2S) VPNs, careful planning of your network topology, CIDR blocks, and gateway SKUs is essential. Misconfigured IP ranges or overlapping address spaces are the most common causes of routing failures and deployment errors.
+
+Key Deployment Considerations:
+
+No Overlapping Address Spaces: Your Azure VNet, on-premises network, and Point-to-Site client pool must all use completely distinct IP address ranges. If any ranges overlap, traffic will fail to route correctly.
+
+GatewaySubnet Sizing: Azure explicitly requires a subnet named exactly GatewaySubnet. While a /29 is the absolute minimum, a /27 or /26 is highly recommended to ensure enough IP addresses are available for gateway VMs during maintenance upgrades or when deploying co-existing ExpressRoute gateways.
+
+SKU Selection: The Gateway SKU determines your maximum bandwidth, the number of supported S2S tunnels, and the number of concurrent P2S client connections.
+
+The interactive planning tool below will help you model your network configuration, validate your CIDR blocks against overlaps, and determine the correct Azure VPN Gateway SKU for your architecture.`,
+  comparisons: [
+    {
+      topic_a: "Site-to-Site (S2S) VPN",
+      topic_b: "Point-to-Site (P2S) VPN",
+      summary: "S2S connects an entire on-premises network to Azure via IPsec/IKE — requires a public-IP-capable on-premises VPN device and a Local Network Gateway in Azure. P2S connects individual client machines via SSTP, IKEv2, or OpenVPN — initiated from the client, no on-prem hardware required. Both terminate at the same Azure Virtual Network Gateway."
+    }
+  ],
+  key_commands: [
+    {
+      command: `resource "azurerm_virtual_network_gateway" "vpn_gw" {
+  name     = "hub-vpn-gateway"
+  type     = "Vpn"
+  vpn_type = "RouteBased"
+  sku      = "VpnGw2"
+  enable_bgp = true
+
+  vpn_client_configuration {
+    address_space        = ["172.16.0.0/24"]
+    vpn_client_protocols = ["IkeV2", "OpenVPN"]
+    aad_tenant   = "https://login.microsoftonline.com/\${var.tenant_id}/"
+    aad_audience = "41b23e61-6c1e-4545-b367-cd054e0ed4b4"
+    aad_issuer   = "https://sts.windows.net/\${var.tenant_id}/"
+  }
+}`,
+      description: "Terraform: VPN Gateway with S2S (BGP-enabled) and P2S (Azure AD + IKEv2/OpenVPN) on one gateway."
+    },
+    {
+      command: `resource "azurerm_local_network_gateway" "onprem" {
+  name            = "onprem-lng"
+  gateway_address = "203.0.113.10"
+  address_space   = ["192.168.0.0/16"]
+}
+
+resource "azurerm_virtual_network_gateway_connection" "s2s" {
+  name       = "onprem-s2s-connection"
+  type       = "IPsec"
+  virtual_network_gateway_id = azurerm_virtual_network_gateway.vpn_gw.id
+  local_network_gateway_id   = azurerm_local_network_gateway.onprem.id
+  shared_key = var.vpn_shared_key
+  enable_bgp = true
+}`,
+      description: "Terraform: Local Network Gateway (on-prem router representation) + IPsec Connection with BGP."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "S2S connects an entire on-premises network to Azure over IPsec/IKE. It requires a public-IP-capable VPN device on-premises, a Local Network Gateway in Azure representing that device, and a Connection resource binding the two. BGP is preferred over static routing for dynamic route propagation.",
+      "P2S connects individual client machines. The client initiates the tunnel — no on-prem hardware is required. I configure a vpn_client_configuration block on the same gateway with a separate P2S address pool that is completely non-overlapping with the VNet and on-prem ranges.",
+      "Critical design rules: GatewaySubnet must be named exactly 'GatewaySubnet' at /27 minimum. All three address spaces — VNet, on-prem, and the P2S client pool — must use completely distinct IP ranges."
+    ],
+    why: "Overlapping CIDRs are the number-one cause of hybrid routing failures, and GatewaySubnet naming errors are the most common deployment blocker."
+  },
+  interview_kill_shot: "S2S for network-to-network over IPsec — needs an on-prem VPN device. P2S for client-to-network over IKEv2/OpenVPN — initiated from the client. Both terminate at the same gateway. GatewaySubnet must be /27 minimum, all three address spaces non-overlapping, BGP enabled.",
+  interactive_html: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Azure VPN Architecture Planner</title><style>:root{--ab:#0078d4;--ok:#107c10;--err:#d13438;--bg:#f3f2f1;--sf:#fff;--tx:#323130;--mt:#605e5c;--bd:#edebe9}body{font-family:'Segoe UI',sans-serif;margin:0;padding:16px;background:var(--bg);color:var(--tx);display:flex;flex-direction:column;align-items:center}h1{font-size:20px;color:var(--ab);margin:0 0 4px}p{margin:0 0 16px;color:var(--mt);font-size:13px}.wrap{display:flex;flex-wrap:wrap;gap:16px;max-width:1100px;width:100%;justify-content:center}.side{background:var(--sf);padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);width:280px;display:flex;flex-direction:column;gap:12px}.fg{display:flex;flex-direction:column;gap:4px}label{font-size:12px;font-weight:600}input[type=text],select{padding:8px 10px;border:1px solid var(--bd);border-radius:5px;font-size:13px;font-family:monospace}.cb{display:flex;align-items:center;gap:8px;cursor:pointer}.cb input{width:16px;height:16px;accent-color:var(--ab)}.sp{padding:14px;background:#faf9f8;border-radius:7px;border:1px solid var(--bd)}.sp h4{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--mt)}.si{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:6px 0;border-bottom:1px solid var(--bd)}.si:last-child{border-bottom:none}.bw{padding:3px 8px;border-radius:10px;font-size:10px;font-weight:700;color:#fff}.bw.ok{background:var(--ok)}.bw.er{background:var(--err)}.cc{background:var(--sf);padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center}canvas{max-width:100%;height:auto}</style></head><body><h1>Azure VPN Architecture Planner</h1><p>Interactive topology validator and CIDR conflict detector</p><div class="wrap"><div class="side"><div class="fg"><label>Azure VNet CIDR</label><input type="text" id="vn" value="10.0.0.0/16"></div><div class="fg"><label>GatewaySubnet</label><input type="text" id="gw" value="10.0.255.0/27"></div><div class="fg"><label>On-Premises CIDR</label><input type="text" id="op" value="192.168.0.0/16"></div><div class="fg"><label>P2S Client Pool</label><input type="text" id="p2" value="172.16.0.0/24"></div><div class="fg"><label>Gateway SKU</label><select id="sk"><option>VpnGw1 (650 Mbps)</option><option selected>VpnGw2 (1 Gbps)</option><option>VpnGw3 (1.25 Gbps)</option><option>VpnGw1AZ (Zone-redundant)</option></select></div><div><div class="cb"><input type="checkbox" id="es" checked><label>Enable S2S</label></div><div class="cb"><input type="checkbox" id="ep" checked><label>Enable P2S</label></div></div><div class="sp"><h4>Validation Status</h4><div class="si"><span>VNet contains Gateway</span><span id="ss" class="bw ok">OK</span></div><div class="si"><span>S2S Overlap</span><span id="s2" class="bw ok">OK</span></div><div class="si"><span>P2S Overlap</span><span id="s3" class="bw ok">OK</span></div><div class="si" style="font-weight:700;font-size:13px"><span>Overall</span><span id="so" style="color:var(--ok)">Valid</span></div></div></div><div class="cc"><canvas id="c" width="680" height="500"></canvas></div></div><script>const cv=document.getElementById('c'),cx=cv.getContext('2d');function n2i(ip){const p=ip.split('.');return p.length!==4?0:p.reduce((a,o)=>(a<<8)+parseInt(o||0,10),0)>>>0}function ctr(cidr){try{const[ip,m]=cidr.split('/');const n=n2i(ip),b=parseInt(m,10);if(isNaN(b)||b<0||b>32)return{s:0,e:0};const sh=32-b,st=(n>>>sh)<<sh;return{s:st>>>0,e:(st+Math.pow(2,sh)-1)>>>0}}catch{return{s:0,e:0}}}function inc(p,c){const a=ctr(p),b=ctr(c);if(!a.s&&!a.e)return false;return b.s>=a.s&&b.e<=a.e}function ovl(a,b){const r=ctr(a),q=ctr(b);if((!r.s&&!r.e)||(!q.s&&!q.e))return false;return Math.max(r.s,q.s)<=Math.min(r.e,q.e)}function rr(x,y,w,h,r){cx.beginPath();cx.moveTo(x+r,y);cx.lineTo(x+w-r,y);cx.arcTo(x+w,y,x+w,y+r,r);cx.lineTo(x+w,y+h-r);cx.arcTo(x+w,y+h,x+w-r,y+h,r);cx.lineTo(x+r,y+h);cx.arcTo(x,y+h,x,y+h-r,r);cx.lineTo(x,y+r);cx.arcTo(x,y,x+r,y,r);cx.closePath()}function draw(){const vn=document.getElementById('vn').value.trim(),gw=document.getElementById('gw').value.trim(),op=document.getElementById('op').value.trim(),p2=document.getElementById('p2').value.trim(),sk=document.getElementById('sk').value,es=document.getElementById('es').checked,ep=document.getElementById('ep').checked;const sok=inc(vn,gw),s2ok=!ovl(vn,op)&&!ovl(gw,op),p2ok=!ovl(vn,p2)&&!ovl(op,p2),all=sok&&s2ok&&p2ok;function bs(id,ok,t1,t2){const el=document.getElementById(id);el.className='bw '+(ok?'ok':'er');el.textContent=ok?t1:t2}bs('ss',sok,'OK','Error');bs('s2',s2ok,'OK','Overlap');bs('s3',p2ok,'OK','Overlap');const so=document.getElementById('so');so.textContent=all?'Valid':'Conflict';so.style.color=all?'#107c10':'#d13438';cx.clearRect(0,0,680,500);cx.fillStyle='#e1dfdd';cx.strokeStyle='#0078d4';cx.lineWidth=2;rr(30,30,240,420,8);cx.fill();cx.stroke();cx.fillStyle='#0078d4';cx.font="bold 14px 'Segoe UI'";cx.fillText('Azure Virtual Network',45,60);cx.font='12px monospace';cx.fillStyle='#323130';cx.fillText(vn,45,78);cx.fillStyle=sok?'#c7e0f4':'#fde7e9';cx.strokeStyle=sok?'#005a9e':'#d13438';cx.lineWidth=1.5;cx.setLineDash([4,4]);rr(50,110,200,130,6);cx.fill();cx.stroke();cx.setLineDash([]);cx.fillStyle=sok?'#005a9e':'#d13438';cx.font="bold 12px 'Segoe UI'";cx.fillText('GatewaySubnet',65,140);cx.font='11px monospace';cx.fillStyle='#323130';cx.fillText(gw,65,158);cx.font="11px 'Segoe UI'";cx.fillStyle='#605e5c';cx.fillText('SKU: '+sk.split(' ')[0],65,175);cx.beginPath();cx.arc(270,175,22,0,2*Math.PI);cx.fillStyle='#fff';cx.fill();cx.strokeStyle='#0078d4';cx.lineWidth=2.5;cx.stroke();cx.fillStyle='#0078d4';cx.font="bold 10px 'Segoe UI'";cx.textAlign='center';cx.fillText('VPN',270,170);cx.fillText('GW',270,183);cx.textAlign='left';if(es){cx.fillStyle='#dff6dd';cx.strokeStyle='#107c10';cx.lineWidth=2;rr(430,60,220,120,8);cx.fill();cx.stroke();cx.fillStyle='#107c10';cx.font="bold 13px 'Segoe UI'";cx.fillText('On-Premises DC',445,90);cx.font='11px monospace';cx.fillStyle='#323130';cx.fillText(op,445,108);cx.beginPath();cx.moveTo(292,175);cx.lineTo(380,175);cx.lineTo(380,120);cx.lineTo(430,120);cx.setLineDash([7,3]);cx.strokeStyle=s2ok?'#107c10':'#d13438';cx.lineWidth=3;cx.stroke();cx.setLineDash([]);cx.fillStyle=s2ok?'#107c10':'#d13438';cx.font="bold 10px 'Segoe UI'";cx.fillText(s2ok?'IPsec/IKE S2S':'⚠ Conflict',295,112)}if(ep){cx.fillStyle='#fde7e9';cx.strokeStyle='#d83b01';cx.lineWidth=2;rr(430,300,220,110,8);cx.fill();cx.stroke();cx.fillStyle='#d83b01';cx.font="bold 13px 'Segoe UI'";cx.fillText('Remote Clients',445,328);cx.font='11px monospace';cx.fillStyle='#323130';cx.fillText(p2,445,346);cx.beginPath();cx.moveTo(292,175);cx.lineTo(380,175);cx.lineTo(380,355);cx.lineTo(430,355);cx.setLineDash([4,4]);cx.strokeStyle=p2ok?'#d83b01':'#d13438';cx.lineWidth=2.5;cx.stroke();cx.setLineDash([]);cx.fillStyle=p2ok?'#d83b01':'#d13438';cx.font="bold 10px 'Segoe UI'";cx.fillText(p2ok?'IKEv2/OpenVPN':'⚠ Conflict',295,370)}}['vn','gw','op','p2','sk','es','ep'].forEach(id=>document.getElementById(id).addEventListener(id==='es'||id==='ep'?'change':'input',draw));draw();</script></body></html>`
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 3 — Azure Load Balancer
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "Azure Load Balancer",
+  type: "Networking — Layer 4 Load Distribution",
+  difficulty: "Intermediate",
+  chips: ["Load Balancer", "Standard SKU", "Health Probe", "Backend Pool", "Floating IP"],
+  schema: "architecture",
+  definition: "Azure Load Balancer is a Layer 4 (TCP/UDP) managed load balancer that distributes inbound traffic across healthy backend instances based on rules and health probes.",
+  why_it_matters: "Deploying a Basic SKU Load Balancer in production or misconfiguring health probes causes silent traffic drops and failed high-availability configurations such as SQL Always On.",
+  real_world_scenario: "A team deploys a Standard Internal Load Balancer to front three backend VMs running a SQL Always On availability group, requiring Floating IP (Direct Server Return) and a TCP health probe on port 59999.",
+  content_theory: `Here is a breakdown of how Azure Load Balancer works and the key components you must configure.
+
+1. OSI Layer and Protocol Support
+Azure Load Balancer operates at OSI Layer 4 — it distributes TCP and UDP traffic based on IP address and port. It has no awareness of HTTP paths, headers, or cookies. For HTTP/HTTPS-aware routing, use Application Gateway instead.
+
+2. Types
+Best For Public Load Balancer: Distributing internet-facing inbound traffic across backend VMs or VM Scale Sets.
+Best For Internal (Private) Load Balancer: Distributing traffic within a VNet — used for internal tiers, SQL clusters, and service-to-service communication.
+
+3. Components
+Core Azure Resources:
+Frontend IP Configuration: The IP address that receives inbound traffic (public IP or private IP from VNet).
+Backend Pool: The set of VMs, VM Scale Set instances, or IP addresses that receive traffic.
+Health Probe: Periodically checks backend instance health (HTTP, HTTPS, or TCP). Unhealthy instances are removed from rotation.
+Load Balancing Rule: Maps a frontend IP/port to a backend port with a selected health probe.
+Outbound Rule: Defines how backend instances reach the internet (SNAT) — required for Public Load Balancer.
+
+4. SKUs
+Standard SKU: Required for production. Supports availability zones, HTTPS health probes, outbound rules, and up to 1000 backend instances.
+Basic SKU: Retired for new deployments. Not supported in availability zones.`,
+  content_implementation: `The most common Load Balancer misconfiguration is deploying a Basic SKU for production or enabling Floating IP without understanding that it requires matching listener configuration on the backend.
+
+Key Deployment Considerations:
+
+Standard SKU is Mandatory: The Basic SKU is retired for new deployments as of September 2025. All production deployments must use Standard SKU. Standard LB requires an NSG on the backend subnet or NIC to allow traffic — it has no default allow rules.
+
+Health Probe Configuration: TCP health probes succeed if the backend instance accepts the TCP connection. HTTP/HTTPS probes check the HTTP response code (200 OK required). Set the interval to 5 seconds and unhealthy threshold to 2 for responsive failover.
+
+Floating IP (Direct Server Return): Required for SQL Always On Availability Groups. When enabled, the backend VM receives packets with the frontend IP as the destination — the VM's loopback adapter must be configured with the frontend IP address.
+
+Session Persistence: None (default) — each new connection may go to any healthy backend. Client IP — all connections from the same client IP go to the same backend. Client IP + Protocol — affinity based on both IP and protocol.
+
+NSG Requirement: Standard LB does not implicitly allow any traffic. You must have an NSG rule allowing the health probe source (AzureLoadBalancer service tag) and the application traffic.`,
+  comparisons: [
+    {
+      topic_a: "Public Load Balancer",
+      topic_b: "Internal (Private) Load Balancer",
+      summary: "Public LB has a public frontend IP and distributes internet-facing traffic to backend VMs — used for web tiers. Internal LB has a private VNet IP as frontend — used for internal application tiers, SQL clusters, and microservice-to-microservice traffic. Both use the same rule and health probe model."
+    }
+  ],
+  key_commands: [
+    {
+      command: `resource "azurerm_lb" "internal" {
+  name                = "app-internal-lb"
+  sku                 = "Standard"
+  resource_group_name = azurerm_resource_group.app.name
+  location            = azurerm_resource_group.app.location
+  frontend_ip_configuration {
+    name                          = "frontend"
+    subnet_id                     = azurerm_subnet.app.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.1.1.10"
+  }
+}
+
+resource "azurerm_lb_backend_address_pool" "pool" {
+  name            = "backend-pool"
+  loadbalancer_id = azurerm_lb.internal.id
+}
+
+resource "azurerm_lb_probe" "tcp" {
+  name            = "tcp-probe"
+  loadbalancer_id = azurerm_lb.internal.id
+  protocol        = "Tcp"
+  port            = 80
+  interval_in_seconds = 5
+  number_of_probes    = 2
+}
+
+resource "azurerm_lb_rule" "app" {
+  name                           = "app-rule"
+  loadbalancer_id                = azurerm_lb.internal.id
+  protocol                       = "Tcp"
+  frontend_port                  = 80
+  backend_port                   = 80
+  frontend_ip_configuration_name = "frontend"
+  backend_address_pool_ids       = [azurerm_lb_backend_address_pool.pool.id]
+  probe_id                       = azurerm_lb_probe.tcp.id
+}`,
+      description: "Terraform: Standard Internal Load Balancer with static private IP, TCP health probe (5s interval, 2-probe threshold), and load balancing rule."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "Azure Load Balancer operates at Layer 4 — it distributes TCP and UDP traffic based on IP and port with no HTTP header awareness. Standard SKU is mandatory for production; Basic is retired.",
+      "The key components are: Frontend IP (where traffic arrives), Backend Pool (where traffic goes), Health Probe (determines backend health), and Load Balancing Rule (maps frontend port to backend port). Standard LB requires an NSG to explicitly allow health probe traffic from the AzureLoadBalancer service tag.",
+      "Floating IP is required for SQL Always On — it tells the load balancer to pass the frontend IP as the packet destination, so the VM's loopback adapter configured with that IP handles the traffic directly."
+    ],
+    why: "Standard SKU and correct health probe configuration are the two most critical decisions — both directly impact high availability and traffic routing behavior."
+  },
+  interview_kill_shot: "Layer 4 TCP/UDP only — no HTTP awareness. Standard SKU mandatory (Basic retired). Health probe must allow AzureLoadBalancer service tag in NSG. Floating IP required for SQL Always On.",
+  interactive_html: wrap("LB Rule Builder", `
+<div class="grid">
+  <div>
+    <div class="card"><h3>Rule Configuration</h3>
+      <label>Frontend Port</label><input id="fp" type="number" value="80">
+      <label>Backend Port</label><input id="bp" type="number" value="80">
+      <label>Protocol</label><select id="pr"><option>Tcp</option><option>Udp</option></select>
+      <label>Session Persistence</label><select id="sp"><option value="None">None (default)</option><option value="SourceIP">Client IP</option><option value="SourceIPProtocol">Client IP + Protocol</option></select>
+      <label>Idle Timeout (min)</label><input id="it" type="number" value="4" min="4" max="30">
+      <label><input type="checkbox" id="fi" style="width:auto;margin-right:6px">Enable Floating IP</label>
+      <button onclick="gen()" style="margin-top:8px">Generate Rule</button>
+    </div>
+  </div>
+  <div>
+    <div class="card" id="preview" style="display:none">
+      <h3>Rule Summary</h3>
+      <div id="flow" style="text-align:center;font-size:14px;margin:12px 0;color:#7dd3fc"></div>
+    </div>
+    <div class="card" id="tfcard" style="display:none">
+      <h3>Terraform Block</h3>
+      <div class="pre" id="tf"></div>
+    </div>
+  </div>
+</div>
+<script>
+function gen(){
+  const fp=document.getElementById('fp').value,bp=document.getElementById('bp').value;
+  const pr=document.getElementById('pr').value,sp=document.getElementById('sp').value;
+  const it=document.getElementById('it').value,fi=document.getElementById('fi').checked;
+  document.getElementById('preview').style.display='block';
+  document.getElementById('tfcard').style.display='block';
+  document.getElementById('flow').innerHTML=
+    \`Frontend :\${fp} → <span style="color:#0078d4">[ LB ]</span> → Backend :\${bp} (\${pr})\${fi?' <span class="warn">[Floating IP]</span>':''}\`;
+  document.getElementById('tf').textContent=
+\`resource "azurerm_lb_rule" "app" {
+  name                           = "app-rule"
+  loadbalancer_id                = azurerm_lb.main.id
+  protocol                       = "\${pr}"
+  frontend_port                  = \${fp}
+  backend_port                   = \${bp}
+  frontend_ip_configuration_name = "frontend"
+  backend_address_pool_ids       = [azurerm_lb_backend_address_pool.pool.id]
+  probe_id                       = azurerm_lb_probe.probe.id
+  load_distribution              = "\${sp}"
+  idle_timeout_in_minutes        = \${it}
+  enable_floating_ip             = \${fi}
+}\`;
+}gen();
+</script>`)
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 4 — Azure Application Gateway
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "Azure Application Gateway",
+  type: "Networking — Layer 7 Load Distribution",
+  difficulty: "Advanced",
+  chips: ["Application Gateway", "WAF", "SSL Termination", "URL Routing", "SKU v2"],
+  schema: "architecture",
+  definition: "Azure Application Gateway is a Layer 7 (HTTP/HTTPS) managed load balancer and web application firewall that routes traffic based on URL path, host headers, and HTTP attributes.",
+  why_it_matters: "Deploying WAF in Prevention mode before a Detection-phase baseline is complete causes legitimate traffic to be blocked in production, requiring an emergency mode rollback.",
+  real_world_scenario: "A multi-tier web application needs path-based routing (/api/* to an API backend pool, /static/* to a storage account origin) with WAF protection and SSL termination — all on a single public IP.",
+  content_theory: `Here is a breakdown of how Azure Application Gateway works and its core components.
+
+1. Layer of Operation
+Application Gateway operates at OSI Layer 7 — it inspects HTTP/HTTPS requests including URL paths, host headers, query strings, and cookies. This enables path-based and host-based routing decisions that a Layer 4 Load Balancer cannot make.
+
+Best For: Web applications requiring URL path routing, multi-site hosting on a single IP, SSL termination, cookie-based session affinity, or WAF protection.
+Requirements: A dedicated subnet (cannot share with other resources). SKU v2 for all production deployments.
+Core Azure Resources: Application Gateway resource containing — Listener, Routing Rule, Backend Pool, HTTP Settings, and (optionally) WAF Policy.
+
+2. Key Components
+Listener: Defines what the gateway listens on (IP, port, protocol, optional host header for multi-site).
+Routing Rule: Binds a listener to a backend pool via HTTP settings. Basic (single backend) or Path-based (URL path → different backend).
+Backend Pool: Target VMs, VMSS, FQDNs, or IP addresses.
+HTTP Settings: Protocol (HTTP/HTTPS), port, cookie affinity, connection drain, probe association, and backend path override.
+WAF Policy: Web Application Firewall rules (OWASP ruleset). Modes: Detection (log only) or Prevention (block + log).
+
+3. SSL Termination
+SSL is terminated at the Application Gateway. The backend pool receives plain HTTP by default. For end-to-end SSL, configure HTTPS in the HTTP Settings and provide the backend's certificate.`,
+  content_implementation: `The most critical WAF deployment mistake is switching to Prevention mode without first reviewing Detection mode logs for at least one week — this results in false positive blocks on legitimate production traffic.
+
+Key Deployment Considerations:
+
+SKU v2 Required: SKU v1 is legacy. SKU v2 provides autoscaling, zone redundancy, static VIP, and Key Vault certificate integration. Always deploy v2 in production.
+
+Dedicated Subnet: Application Gateway requires its own subnet. The subnet must not contain any other resources. The subnet size must be /24 or larger for production (to accommodate autoscaling instances).
+
+WAF Deployment Process: (1) Deploy with WAF in Detection mode. (2) Monitor WAF logs in Log Analytics for 7–14 days. (3) Identify false positives and add exclusions. (4) Switch to Prevention mode only after the false positive rate is acceptable.
+
+Path-based Routing: Requires creating a URL Path Map with path rules. Each path rule maps a URL prefix to a backend pool and HTTP settings combination. A default rule handles all traffic not matching any path.
+
+Certificate Format: HTTPS listeners require a PFX certificate (certificate + private key). Key Vault integration (SKU v2) allows referencing a Key Vault secret directly — this is the recommended approach as it supports automatic certificate renewal.`,
+  comparisons: [
+    {
+      topic_a: "Application Gateway (Layer 7)",
+      topic_b: "Load Balancer (Layer 4)",
+      summary: "Application Gateway inspects HTTP/HTTPS content and routes based on URL paths, host headers, and HTTP attributes. It includes WAF, SSL termination, and cookie affinity. Load Balancer distributes TCP/UDP traffic purely based on IP and port — it has no HTTP awareness, no WAF, and no SSL termination. Use Application Gateway for web workloads; use Load Balancer for TCP/UDP services and internal tiers."
+    }
+  ],
+  key_commands: [
+    {
+      command: `resource "azurerm_application_gateway" "web" {
+  name                = "web-appgw"
+  sku { name = "WAF_v2"; tier = "WAF_v2"; }
+  autoscale_configuration { min_capacity = 2; max_capacity = 10 }
+
+  gateway_ip_configuration { name = "gwip"; subnet_id = azurerm_subnet.appgw.id }
+  frontend_ip_configuration { name = "feip"; public_ip_address_id = azurerm_public_ip.appgw.id }
+  frontend_port { name = "https"; port = 443 }
+
+  ssl_certificate { name = "cert"; key_vault_secret_id = azurerm_key_vault_certificate.web.secret_id }
+
+  backend_address_pool { name = "api-pool" }
+  backend_address_pool { name = "static-pool" }
+
+  backend_http_settings { name = "http80"; cookie_based_affinity = "Disabled"; port = 80; protocol = "Http" }
+
+  http_listener { name = "https-listener"; frontend_ip_configuration_name = "feip"; frontend_port_name = "https"; protocol = "Https"; ssl_certificate_name = "cert" }
+
+  url_path_map {
+    name = "path-map"
+    default_backend_address_pool_name  = "api-pool"
+    default_backend_http_settings_name = "http80"
+    path_rule { name = "api"; paths = ["/api/*"]; backend_address_pool_name = "api-pool"; backend_http_settings_name = "http80" }
+    path_rule { name = "static"; paths = ["/static/*"]; backend_address_pool_name = "static-pool"; backend_http_settings_name = "http80" }
+  }
+
+  request_routing_rule { name = "rule1"; priority = 10; rule_type = "PathBasedRouting"; http_listener_name = "https-listener"; url_path_map_name = "path-map" }
+  waf_configuration { enabled = true; firewall_mode = "Detection"; rule_set_version = "3.2" }
+}`,
+      description: "Terraform: WAF_v2 Application Gateway with path-based routing (/api/* and /static/*), SSL termination via Key Vault, autoscaling 2–10 instances, WAF in Detection mode."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "Application Gateway operates at Layer 7 and routes HTTP/HTTPS traffic based on URL paths and host headers. The core components are: Listener (what port/host to listen on), Routing Rule (binds listener to backend), Backend Pool (target VMs or FQDNs), HTTP Settings (backend protocol and affinity), and optionally a WAF Policy.",
+      "SSL is terminated at the gateway — backends receive plain HTTP by default. For end-to-end encryption, configure HTTPS in HTTP Settings. Certificates should be managed via Key Vault integration for automatic renewal.",
+      "WAF must be deployed in Detection mode first. Review logs for 7–14 days, add exclusions for false positives, then switch to Prevention mode. Deploying directly in Prevention mode risks blocking legitimate traffic."
+    ],
+    why: "WAF mode management and SKU selection are the two most operationally sensitive decisions — both cause production impact if misconfigured."
+  },
+  interview_kill_shot: "Layer 7 HTTPS routing via URL paths and host headers. WAF: Detection mode first, Prevention after false-positive review. SKU v2 mandatory — provides autoscaling and zone redundancy. Dedicated /24 subnet. SSL via Key Vault for automatic renewal.",
+  interactive_html: wrap("Application Gateway Routing Visualizer", `
+<div class="card">
+  <h3>Add Path Rules</h3>
+  <div class="routing-form">
+    <div><label>URL Path (e.g. /api/*)</label><input id="pth" placeholder="/api/*"></div>
+    <div><label>Backend Pool Name</label><input id="pool" placeholder="api-backend-pool"></div>
+    <button onclick="addRule()" style="height:36px">Add Rule</button>
+  </div>
+</div>
+<div class="card" id="tree">
+  <h3>Routing Decision Tree</h3>
+  <div id="diagram" style="font-size:13px"></div>
+</div>
+<script>
+const rules=[];
+function addRule(){
+  const p=document.getElementById('pth').value.trim(),b=document.getElementById('pool').value.trim();
+  if(!p||!b)return;
+  rules.push({path:p,backend:b});
+  document.getElementById('pth').value='';document.getElementById('pool').value='';
+  render();
+}
+function render(){
+  let h='<div style="text-align:center;padding:8px 0"><span style="background:#0078d4;padding:4px 16px;border-radius:6px;color:#fff;font-weight:700">HTTPS Listener :443</span></div>';
+  h+='<div style="text-align:center;color:#94a3b8;margin:4px 0">↓</div>';
+  h+='<div style="text-align:center;padding:4px 16px;border:1px solid #fbbf24;border-radius:6px;color:#fbbf24;display:inline-block;margin:0 auto 4px;width:fit-content">WAF Inspection (OWASP 3.2)</div>';
+  h+='<div style="text-align:center;color:#94a3b8;margin:4px 0">↓</div>';
+  h+='<div style="text-align:center;padding:4px 16px;border:1px solid #0078d4;border-radius:6px;display:inline-block;width:fit-content;margin:0 auto 4px">URL Path Map</div>';
+  h+='<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:8px">';
+  rules.forEach(r=>{
+    h+=\`<div style="border:1px solid #34d399;border-radius:6px;padding:6px 12px;text-align:center"><div style="color:#94a3b8;font-size:11px">Path: \${r.path}</div><div style="color:#94a3b8;font-size:11px">↓</div><div style="color:#34d399;font-weight:600">\${r.backend}</div></div>\`;
+  });
+  if(rules.length>0){h+=\`<div style="border:1px solid #64748b;border-radius:6px;padding:6px 12px;text-align:center"><div style="color:#94a3b8;font-size:11px">Default (no match)</div><div style="color:#94a3b8;font-size:11px">↓</div><div style="color:#64748b">default-pool</div></div>\`;}
+  h+='</div>';
+  document.getElementById('diagram').innerHTML=h;
+  document.getElementById('diagram').style.textAlign='center';
+}
+render();
+</script>`, `.routing-form{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:flex-end}.routing-form input{margin-bottom:0}.routing-form button{margin-bottom:0;width:100%}@media(max-width:600px){.routing-form{grid-template-columns:1fr}.routing-form input{margin-bottom:8px}}`)
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 5 — Azure Front Door
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "Azure Front Door",
+  type: "Networking — Global Traffic Management",
+  difficulty: "Advanced",
+  chips: ["Front Door", "Anycast", "WAF", "CDN", "Origin Group", "Global Load Balancing"],
+  schema: "architecture",
+  definition: "Azure Front Door is a global Layer 7 load balancer and CDN running on Microsoft's Anycast network that routes HTTP/HTTPS traffic to the nearest healthy origin across Azure regions worldwide.",
+  why_it_matters: "Failing to configure health probes on the Origin Group means Front Door has no mechanism to detect origin failure and will continue routing traffic to an unhealthy origin — silently degrading availability.",
+  real_world_scenario: "A global SaaS application with origins in East US and West Europe needs sub-50ms latency globally, WAF protection, CDN caching for static assets, and automatic failover if either origin becomes unhealthy.",
+  content_theory: `Here is a breakdown of how Azure Front Door works and how it differs from regional load balancers.
+
+1. How Front Door routes traffic
+Front Door runs on Microsoft's global Anycast network. When a user's DNS resolves a Front Door endpoint, the request is answered by the nearest Microsoft Point of Presence (POP) globally — not by the origin server directly. The POP then proxies the request to the optimal origin, using Microsoft's private backbone rather than the public internet.
+
+Best For: Global web applications where users are geographically distributed and latency-sensitive, or where a single WAF policy must protect multiple regional backends.
+Requirements: HTTP/HTTPS workloads only. Origins must have a public FQDN or IP reachable from Microsoft's network.
+Core Azure Resources: Front Door Profile, Endpoint, Origin Group (with health probe), Origin (the actual backend), Route (maps endpoint path to origin group), Rule Set (custom header/redirect logic), WAF Policy.
+
+2. Key Difference from Application Gateway
+Application Gateway is regional — it runs within a single Azure region. Front Door is global — it runs at the edge of Microsoft's network across 180+ POPs worldwide. For global distribution with sub-regional latency, Front Door is the correct choice.
+
+3. Routing Methods
+Latency-based (default): Traffic goes to the origin with the lowest measured latency.
+Weighted: Distribute traffic across origins by percentage (e.g. canary deployment — 5% to new origin).
+Session Affinity: Route all requests from the same client to the same origin for a configurable duration.`,
+  content_implementation: `The most critical Front Door misconfiguration is omitting health probe configuration on the Origin Group — without probes, Front Door cannot detect a failed origin and will continue forwarding traffic to it indefinitely.
+
+Key Deployment Considerations:
+
+Health Probe Configuration: Configure health probes on every Origin Group. Set the probe path to a lightweight health endpoint (e.g. /health or /status) that returns HTTP 200 only when the application is truly healthy. Probe interval: 30 seconds. Minimum healthy origins: must be set to 1 or higher.
+
+Caching: Caching is configured per Route — not globally. Enable caching only on routes serving static content. Dynamic routes (APIs) must have caching disabled to prevent stale responses.
+
+WAF Policy Scope: Attach the WAF Policy at the Endpoint or Route level. A single WAF Policy can be shared across multiple endpoints. Always start WAF in Detection mode before switching to Prevention.
+
+Front Door vs Traffic Manager Decision: Use Front Door when you need SSL termination, WAF protection, caching, or HTTP/HTTPS routing. Use Traffic Manager when you need DNS-level failover for non-HTTP workloads (e.g. TCP services) or for endpoints outside Azure. Traffic Manager does not terminate traffic — it only returns DNS responses.`,
+  trade_offs: [
+    {
+      choice: "Front Door vs Traffic Manager vs Application Gateway",
+      advantages: [
+        "Front Door: Global Anycast routing, WAF, CDN caching, SSL termination — best for global HTTP/HTTPS apps",
+        "Traffic Manager: DNS-level failover, supports non-HTTP endpoints, minimal cost — best for TCP services or multi-cloud",
+        "Application Gateway: Regional WAF, URL routing, private VNet integration — best for intra-region workloads"
+      ],
+      disadvantages: [
+        "Front Door: HTTP/HTTPS only, higher cost than Traffic Manager, origins must be publicly reachable",
+        "Traffic Manager: DNS-only (no traffic inspection/WAF/caching), DNS TTL delay on failover",
+        "Application Gateway: Regional only — no global distribution, no CDN caching"
+      ]
+    }
+  ],
+  architecture_flow: {
+    steps: [
+      "User DNS query resolves Front Door endpoint FQDN → returns Anycast IP",
+      "Client connects to nearest Microsoft POP (180+ locations globally)",
+      "POP checks Origin Group health probe status for each origin",
+      "POP routes request over Microsoft backbone to the lowest-latency healthy origin",
+      "If primary origin health probe fails → POP automatically routes to secondary origin",
+      "Response travels back through POP → cached (if caching enabled) → returned to client"
+    ],
+    diagram: "Client → Anycast POP (nearest) → Health probe check → Healthy Origin (East US or West Europe) → Response back via POP"
+  },
+  key_commands: [
+    {
+      command: `resource "azurerm_cdn_frontdoor_profile" "main" {
+  name                = "global-frontdoor"
+  sku_name            = "Premium_AzureFrontDoor"
+  resource_group_name = azurerm_resource_group.global.name
+}
+
+resource "azurerm_cdn_frontdoor_origin_group" "web" {
+  name                     = "web-origin-group"
+  cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.main.id
+  load_balancing { sample_size = 4; successful_samples_required = 3 }
+  health_probe { protocol = "Https"; path = "/health"; interval_in_seconds = 30 }
+}
+
+resource "azurerm_cdn_frontdoor_origin" "eastus" {
+  name                          = "origin-eastus"
+  cdn_frontdoor_origin_group_id = azurerm_cdn_frontdoor_origin_group.web.id
+  host_name                     = "app-eastus.azurewebsites.net"
+  priority = 1; weight = 1000
+}
+
+resource "azurerm_cdn_frontdoor_origin" "westeu" {
+  name                          = "origin-westeurope"
+  cdn_frontdoor_origin_group_id = azurerm_cdn_frontdoor_origin_group.web.id
+  host_name                     = "app-westeu.azurewebsites.net"
+  priority = 2; weight = 1000
+}`,
+      description: "Terraform: Front Door Premium with origin group health probe (HTTPS /health, 30s interval), primary (East US, priority 1) and secondary (West Europe, priority 2) origins."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "Front Door runs on Microsoft's Anycast network — client requests hit the nearest POP globally, then travel over Microsoft's backbone to the origin. This reduces latency compared to routing over the public internet.",
+      "The key components are: Endpoint (the Front Door FQDN), Origin Group (with health probe), Origin (actual backend), and Route (maps URL paths to origin groups). Health probes on the Origin Group are mandatory — without them Front Door cannot detect origin failure.",
+      "Front Door is HTTP/HTTPS only. For non-HTTP TCP failover, use Traffic Manager. For regional WAF with private VNet integration, use Application Gateway. The three services serve different scopes — global vs regional, HTTP vs any protocol."
+    ],
+    why: "Health probe configuration and WAF mode selection are the two decisions with the highest production impact — missing either causes silent availability or security failures."
+  },
+  interview_kill_shot: "Global Anycast HTTP/HTTPS routing — client hits nearest POP, request travels Microsoft backbone to lowest-latency healthy origin. Health probes mandatory. WAF in Detection before Prevention. Use over Traffic Manager when you need SSL termination, WAF, or caching.",
+  interactive_html: wrap("Front Door Global Traffic Simulator", `
+<div style="text-align:center;margin-bottom:12px">
+  <button onclick="failPrimary()" id="failBtn">⚡ Fail Primary Origin (East US)</button>
+  <button onclick="reset()" style="background:#374151;margin-left:8px">↺ Reset</button>
+</div>
+<div id="diagram" style="position:relative;margin:0 auto;max-width:600px"></div>
+<div id="log" class="card" style="font-size:12px;max-height:120px;overflow-y:auto;margin-top:12px"></div>
+<script>
+let primaryHealthy=true;
+function logMsg(m,c='#e2e8f0'){const d=document.getElementById('log');d.innerHTML='<div style="color:'+c+'">'+new Date().toLocaleTimeString()+' — '+m+'</div>'+d.innerHTML}
+function draw(){
+  const box=(label,status,x,y)=>
+    \`<div style="position:absolute;left:\${x}px;top:\${y}px;width:140px;border:2px solid \${status?'#34d399':'#f87171'};border-radius:8px;padding:8px;text-align:center;background:#16213e">
+      <div style="font-size:11px;color:#94a3b8">\${label}</div>
+      <div style="color:\${status?'#34d399':'#f87171'};font-weight:700;\${status?'':'text-decoration:line-through'}">\${status?'● HEALTHY':'● FAILED'}</div>
+    </div>\`;
+  document.getElementById('diagram').style.height='280px';
+  document.getElementById('diagram').innerHTML=
+    \`<div style="position:absolute;left:200px;top:10px;width:140px;border:2px solid #0078d4;border-radius:8px;padding:8px;text-align:center;background:#0f3460"><div style="font-size:11px;color:#94a3b8">Front Door Endpoint</div><div style="color:#7dd3fc;font-weight:700">Anycast POP</div></div>
+    <svg style="position:absolute;top:0;left:0;width:100%;height:100%" xmlns="http://www.w3.org/2000/svg">
+      <line x1="270" y1="70" x2="120" y2="160" stroke="\${primaryHealthy?'#34d399':'#f87171'}" stroke-width="2" stroke-dasharray="6,3"/>
+      <line x1="270" y1="70" x2="420" y2="160" stroke="#34d399" stroke-width="2" stroke-dasharray="6,3"/>
+      <text x="270" y="130" fill="\${primaryHealthy?'#34d399':'#f87171'}" font-size="10" text-anchor="middle">probe</text>
+    </svg>
+    \${box('Primary Origin\\nEast US',primaryHealthy,40,160)}
+    \${box('Secondary Origin\\nWest Europe',true,420,160)}
+    <div style="position:absolute;top:230px;left:\${primaryHealthy?80:400}px;font-size:20px;transition:all 1s">👤</div>
+    <div style="position:absolute;top:245px;left:\${primaryHealthy?140:460}px;font-size:10px;color:#7dd3fc">Traffic →</div>\`;
+}
+function failPrimary(){primaryHealthy=false;draw();logMsg('Health probe FAILED on East US — 3 consecutive failures detected','#f87171');setTimeout(()=>logMsg('Front Door routing traffic to West Europe (priority 2)','#34d399'),800);document.getElementById('failBtn').disabled=true}
+function reset(){primaryHealthy=true;draw();logMsg('Primary origin restored — health probes passing','#34d399');document.getElementById('failBtn').disabled=false}
+draw();setInterval(()=>{if(primaryHealthy)logMsg('Health probe OK — East US (200 /health)','#34d399')},5000);
+</script>`)
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 6 — NSGs
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "Network Security Groups (NSGs)",
+  type: "Security — Network Access Control",
+  difficulty: "Intermediate",
+  chips: ["NSG", "Security Rules", "Flow Logs", "Stateful Filter", "Priority"],
+  schema: "architecture",
+  definition: "An Azure Network Security Group is a stateful packet filter that contains security rules controlling inbound and outbound network traffic to Azure resources at the subnet or NIC level.",
+  why_it_matters: "NSG rules with duplicate priorities or incorrect evaluation order cause traffic to be allowed or blocked unexpectedly — and without Flow Logs enabled, these failures are invisible until production impact occurs.",
+  real_world_scenario: "A production VM is attached to a subnet with an NSG and also has a NIC-level NSG. Inbound traffic from the internet hits the subnet NSG first; outbound traffic from the VM hits the NIC NSG first — the evaluation order determines effective access.",
+  content_theory: `Here is a breakdown of how Network Security Groups work and how rules are evaluated.
+
+1. What an NSG is
+An NSG is a stateful packet filter — meaning if an inbound connection is allowed, the return traffic is automatically permitted without an explicit outbound rule. NSGs can be associated at two levels: Subnet level (applies to all resources in the subnet) and NIC level (applies only to that specific VM's network interface).
+
+Best For: Controlling network access to and from Azure resources at the network layer. Enforcing zero-trust perimeter controls at subnet and VM boundaries.
+Requirements: Association with a subnet or NIC. At least one security rule (inbound or outbound).
+Core Azure Resources: Network Security Group, Security Rules (inbound and outbound), Subnet/NIC association.
+
+2. Rule Anatomy
+Each security rule has: Priority (100–4096, lower number = higher priority, evaluated first), Source (IP, range, service tag, or application security group), Source Port Range, Destination, Destination Port Range, Protocol (TCP, UDP, ICMP, or Any), and Action (Allow or Deny).
+
+3. Default Rules (cannot be deleted)
+Priority 65000: AllowVnetInBound — allows inbound from VirtualNetwork service tag.
+Priority 65001: AllowAzureLoadBalancerInBound — allows health probe traffic from the load balancer.
+Priority 65500: DenyAllInBound — denies all other inbound traffic.
+
+4. Evaluation Order
+Inbound traffic: Subnet NSG evaluated first → then NIC NSG.
+Outbound traffic: NIC NSG evaluated first → then Subnet NSG.`,
+  content_implementation: `The most common NSG mistake is creating rules with priorities in consecutive increments (100, 101, 102) — this leaves no room to insert new rules between existing ones without renumbering.
+
+Key Deployment Considerations:
+
+Priority Planning: Use increments of 100 (100, 200, 300...) for initial rules. This allows inserting rules between existing ones without restructuring. Never use priorities above 4000 for custom rules — leave headroom below the 65000 defaults.
+
+Subnet vs NIC Association: Prefer subnet-level NSGs for broad policy (e.g. deny all internet inbound, allow only within VNet). Use NIC-level NSGs for VM-specific exceptions. Avoid conflicting rules across both levels.
+
+NSG Flow Logs: Enable NSG Flow Logs to a Log Analytics Workspace for all production NSGs. Flow Logs record allowed and denied traffic with source/destination IP, port, and direction. Required for compliance audits and incident investigation. Flow Log version 2 is recommended (includes traffic volume data).
+
+Standard LB Requirement: Standard Load Balancer blocks all traffic by default. You must add an NSG rule allowing the AzureLoadBalancer service tag on the health probe port.
+
+Service Tags: Use Azure service tags (AzureLoadBalancer, VirtualNetwork, Internet, AzureMonitor) instead of IP ranges — service tags are managed by Microsoft and automatically updated as Azure infrastructure changes.`,
+  architecture_flow: {
+    steps: [
+      "INBOUND: Traffic arrives from Internet/VNet",
+      "Subnet NSG rules evaluated in priority order (lowest number first)",
+      "If subnet NSG allows → NIC NSG rules evaluated",
+      "If both allow → traffic reaches VM",
+      "OUTBOUND: Traffic exits VM → NIC NSG evaluated first → Subnet NSG evaluated",
+      "NSG Flow Logs record all allow/deny decisions to Log Analytics"
+    ],
+    diagram: "Inbound: Internet → [Subnet NSG] → [NIC NSG] → VM | Outbound: VM → [NIC NSG] → [Subnet NSG] → Internet"
+  },
+  key_commands: [
+    {
+      command: `resource "azurerm_network_security_group" "subnet" {
+  name                = "subnet-nsg"
+  resource_group_name = azurerm_resource_group.app.name
+  location            = azurerm_resource_group.app.location
+
+  security_rule {
+    name                       = "Allow-HTTPS-Inbound"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "443"
+    source_address_prefix      = "Internet"
+    destination_address_prefix = "*"
+  }
+
+  security_rule {
+    name                       = "Allow-LB-Probe"
+    priority                   = 200
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "80"
+    source_address_prefix      = "AzureLoadBalancer"
+    destination_address_prefix = "*"
+  }
+
+  security_rule {
+    name                       = "Deny-All-Inbound"
+    priority                   = 4000
+    direction                  = "Inbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}
+
+resource "azurerm_subnet_network_security_group_association" "app" {
+  subnet_id                 = azurerm_subnet.app.id
+  network_security_group_id = azurerm_network_security_group.subnet.id
+}`,
+      description: "Terraform: NSG with priority-100 HTTPS allow, priority-200 LB probe allow, priority-4000 deny-all baseline. Subnet association."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "An NSG is a stateful packet filter with rules evaluated in priority order — lower number wins. Rules have priority, source, destination, port, protocol, and action. The stateful nature means return traffic for allowed connections is automatically permitted.",
+      "Evaluation order matters: inbound traffic hits the subnet NSG first, then the NIC NSG. Outbound traffic hits the NIC NSG first. Default rules at priorities 65000–65500 cannot be deleted — they allow VNet and LB traffic, then deny everything else.",
+      "NSG Flow Logs must be enabled in production — they are the primary tool for diagnosing unexpected traffic blocks and required for compliance audits. Rules should use Azure service tags instead of hardcoded IP ranges."
+    ],
+    why: "Without Flow Logs, NSG misconfigurations are silent and can block production traffic for extended periods before being identified."
+  },
+  interview_kill_shot: "Stateful packet filter at subnet or NIC level. Priority order: lower = first evaluated. Inbound: Subnet NSG → NIC NSG. Outbound: NIC NSG → Subnet NSG. Use increments of 100 for priorities. Flow Logs mandatory for production compliance.",
+  interactive_html: wrap("NSG Rule Simulator", `
+<div class="grid">
+  <div>
+    <div class="card"><h3>Rules (evaluated lowest priority first)</h3>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <input id="rp" type="number" placeholder="Priority" style="width:70px">
+        <input id="rs" placeholder="Source IP/*" style="width:100px">
+        <input id="rd" placeholder="Dest Port" style="width:80px">
+        <select id="ra"><option>Allow</option><option>Deny</option></select>
+        <button onclick="addRule()" style="padding:7px 10px">+</button>
+      </div>
+      <div id="rulelist" style="margin-top:10px;font-size:12px"></div>
+    </div>
+    <div class="card"><h3>Test Packet</h3>
+      <label>Source IP</label><input id="ts" value="1.2.3.4">
+      <label>Dest Port</label><input id="tp" value="443">
+      <button onclick="simulate()">Evaluate</button>
+    </div>
+  </div>
+  <div>
+    <div class="card" id="result" style="min-height:100px">
+      <h3>Result</h3>
+      <div id="res" style="color:#94a3b8;font-size:13px">Add rules and test a packet.</div>
+    </div>
+  </div>
+</div>
+<script>
+const rules=[];
+function addRule(){
+  const p=+document.getElementById('rp').value;
+  const s=document.getElementById('rs').value.trim();
+  const d=document.getElementById('rd').value.trim();
+  const a=document.getElementById('ra').value;
+  if(!p||!s||!d)return;
+  rules.push({p,s,d,a});rules.sort((a,b)=>a.p-b.p);
+  document.getElementById('rulelist').innerHTML=rules.map((r,i)=>
+    \`<div style="display:flex;gap:6px;align-items:center;padding:3px 0;border-bottom:1px solid #0f3460">
+      <span style="color:#94a3b8;width:35px">\${r.p}</span>
+      <span style="width:90px">\${r.s}</span>
+      <span style="width:60px">:\${r.d}</span>
+      <span style="color:\${r.a==='Allow'?'#34d399':'#f87171'}">\${r.a}</span>
+      <button onclick="rules.splice(\${i},1);document.getElementById('rp').value='';document.getElementById('rulelist').innerHTML='';rules.forEach((_,j)=>rules[j]);render();" style="background:#374151;padding:2px 6px;font-size:11px">✕</button>
+    </div>\`).join('');
+}
+function simulate(){
+  const srcIP=document.getElementById('ts').value.trim();
+  const dstPort=document.getElementById('tp').value.trim();
+  let matched=null,html='<div style="font-size:12px">';
+  for(const r of rules){
+    const srcMatch=r.s==='*'||r.s===srcIP||r.s==='Internet';
+    const portMatch=r.d==='*'||r.d===dstPort;
+    const hit=srcMatch&&portMatch;
+    html+=\`<div style="padding:3px 0;color:\${hit?'#fff':'#475569'};background:\${hit?'#0f3460':'transparent'};border-radius:3px;padding-left:4px">
+      \${hit?'▶':'·'} Priority \${r.p}: \${r.s} → :\${r.d} — <span style="color:\${r.a==='Allow'?'#34d399':'#f87171'}">\${r.a}</span>\${hit?' ← MATCH':''}
+    </div>\`;
+    if(hit&&!matched){matched=r;break}
+  }
+  html+='</div>';
+  if(!matched){html+=\`<div style="margin-top:8px;color:#fbbf24">No custom rule matched → Default DenyAllInBound applies → DENIED</div>\`}
+  document.getElementById('res').innerHTML=(matched?
+    \`<div style="font-size:18px;color:\${matched.a==='Allow'?'#34d399':'#f87171'};font-weight:700;margin-bottom:8px">\${matched.a==='Allow'?'✅ ALLOWED':'🚫 DENIED'}</div>\`:'')
+    +html;
+}
+</script>`)
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 7 — Azure Firewall
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "Azure Firewall",
+  type: "Security — Managed Stateful Firewall",
+  difficulty: "Advanced",
+  chips: ["Azure Firewall", "IDPS", "Threat Intelligence", "Hub-Spoke", "UDR", "AzureFirewallSubnet"],
+  schema: "architecture",
+  definition: "Azure Firewall is a managed, cloud-native stateful firewall-as-a-service that inspects and filters network traffic across Azure Virtual Networks using network rules, application rules, and DNAT rules.",
+  why_it_matters: "Without a UDR on spoke subnets routing 0.0.0.0/0 to the Firewall's private IP, spoke VMs bypass the Firewall entirely and reach the internet directly — making the Firewall operationally inert.",
+  real_world_scenario: "A hub-and-spoke network has a Firewall in the hub VNet. Two spoke VNets containing production workloads must route all internet-bound and cross-spoke traffic through the Firewall for inspection and logging.",
+  content_theory: `Here is a breakdown of how Azure Firewall works and how it fits into the hub-and-spoke network topology.
+
+1. What Azure Firewall is
+Azure Firewall is a managed stateful firewall deployed as a service within an Azure Virtual Network. Unlike NSGs (which are simple packet filters), Azure Firewall understands application-level protocols, FQDNs, URLs, and can perform TLS inspection (Premium tier).
+
+Best For: Centralized network traffic inspection in a hub-and-spoke topology, replacing complex NVA configurations with a managed service.
+Requirements: A dedicated subnet in the hub VNet named exactly AzureFirewallSubnet, minimum /26 size. A public IP address for internet-bound SNAT.
+Core Azure Resources: Azure Firewall resource, Azure Firewall Policy (recommended over classic rules), Public IP Address, AzureFirewallSubnet.
+
+2. Three Rule Collection Types
+Network Rules (Layer 4): Source IP/range, destination IP/range, destination port, protocol (TCP, UDP, ICMP). Allows or denies based on IP and port only.
+Application Rules (Layer 7): Source IP/range, target FQDN or URL category, protocol (HTTP/HTTPS). Allows or denies based on fully qualified domain name — bypasses IP-based allow-lists that break when CDN IPs rotate.
+DNAT Rules (Inbound NAT): Translates inbound traffic from Firewall public IP + port to an internal VM private IP + port. Used for exposing internal services through the Firewall.
+
+3. Standard vs Premium Tier
+Standard: Network rules, application rules, DNAT, threat intelligence feed (block/alert on known malicious IPs/FQDNs).
+Premium: Everything in Standard plus IDPS (Intrusion Detection and Prevention System), TLS inspection, URL filtering (beyond FQDN), and web categories.`,
+  content_implementation: `The most critical Firewall deployment mistake is forgetting to add a UDR to spoke subnets — without a UDR routing 0.0.0.0/0 to the Firewall's private IP, spoke traffic bypasses the Firewall and reaches the internet directly through the VNet's default route.
+
+Key Deployment Considerations:
+
+AzureFirewallSubnet: The subnet must be named exactly AzureFirewallSubnet. Minimum /26 — Microsoft recommends /26 to accommodate multiple Firewall instances and zone redundancy. No other resources can be placed in this subnet.
+
+UDR on Spoke Subnets: Create a Route Table with a route: address prefix 0.0.0.0/0, next hop type Virtual Appliance, next hop IP = Firewall private IP. Associate this Route Table with every spoke subnet that must route through the Firewall.
+
+Do NOT add a 0.0.0.0/0 UDR to the GatewaySubnet: This breaks VPN and ExpressRoute routing. The GatewaySubnet must use Azure's default system routes.
+
+Firewall Policy vs Classic Rules: Use Firewall Policy for all new deployments. It supports rule inheritance, multiple policy associations, and is required for IDPS (Premium). Classic rules on the Firewall resource itself are legacy.
+
+IDPS (Premium): Start in Alert mode to baseline traffic before switching to Alert and Deny. IDPS in Deny mode blocks traffic matching known exploit signatures — test in a staging environment first.`,
+  comparisons: [
+    {
+      topic_a: "Azure Firewall",
+      topic_b: "Network Security Group (NSG)",
+      summary: "Azure Firewall is a centralized, managed Layer 4/7 firewall for hub-and-spoke topologies — it inspects FQDNs, performs DNAT, and supports IDPS. It requires a dedicated subnet and UDRs to redirect spoke traffic. NSGs are decentralized packet filters applied at subnet or NIC level — they work on IP/port rules only, have no FQDN awareness, and are free. Use Firewall for centralized inspection and FQDN-based rules; use NSGs for network perimeter control at each resource."
+    }
+  ],
+  key_commands: [
+    {
+      command: `resource "azurerm_firewall" "hub" {
+  name                = "hub-firewall"
+  resource_group_name = azurerm_resource_group.hub.name
+  location            = azurerm_resource_group.hub.location
+  sku_name            = "AZFW_VNet"
+  sku_tier            = "Premium"
+  firewall_policy_id  = azurerm_firewall_policy.main.id
+  ip_configuration {
+    name                 = "fw-ipconfig"
+    subnet_id            = azurerm_subnet.firewall.id
+    public_ip_address_id = azurerm_public_ip.fw_pip.id
+  }
+}
+
+resource "azurerm_firewall_policy" "main" {
+  name                = "hub-fw-policy"
+  resource_group_name = azurerm_resource_group.hub.name
+  location            = azurerm_resource_group.hub.location
+  sku                 = "Premium"
+  intrusion_detection { mode = "Alert" }
+}
+
+resource "azurerm_firewall_policy_rule_collection_group" "app_rules" {
+  name               = "app-rules"
+  firewall_policy_id = azurerm_firewall_policy.main.id
+  priority           = 300
+
+  application_rule_collection {
+    name     = "allow-web"
+    priority = 300
+    action   = "Allow"
+    rule {
+      name             = "allow-microsoft-update"
+      source_addresses = ["10.1.0.0/16"]
+      protocols { type = "Https"; port = 443 }
+      destination_fqdns = ["*.microsoft.com", "*.windowsupdate.com"]
+    }
+  }
+}`,
+      description: "Terraform: Azure Firewall Premium with Firewall Policy (IDPS in Alert mode) and application rule allowing HTTPS to *.microsoft.com from spoke range."
+    },
+    {
+      command: `resource "azurerm_subnet" "firewall" {
+  name                 = "AzureFirewallSubnet"
+  virtual_network_name = azurerm_virtual_network.hub.name
+  resource_group_name  = azurerm_resource_group.hub.name
+  address_prefixes     = ["10.0.0.0/26"]
+}
+
+resource "azurerm_route_table" "spoke_udr" {
+  name                = "spoke-to-firewall-udr"
+  resource_group_name = azurerm_resource_group.hub.name
+  location            = azurerm_resource_group.hub.location
+  bgp_route_propagation_enabled = false
+  route {
+    name                   = "force-tunnel-to-fw"
+    address_prefix         = "0.0.0.0/0"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = azurerm_firewall.hub.ip_configuration[0].private_ip_address
+  }
+}`,
+      description: "Terraform: AzureFirewallSubnet (/26) and spoke Route Table with 0.0.0.0/0 → Firewall private IP (BGP propagation disabled)."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "Azure Firewall is deployed in a dedicated AzureFirewallSubnet (/26 minimum) in the hub VNet. It inspects traffic using three rule types: Network rules (L4 IP/port), Application rules (L7 FQDN/URL), and DNAT rules (inbound NAT). Firewall Policy is required for IDPS and rule inheritance.",
+      "The UDR is what makes the Firewall effective — without a route table on spoke subnets routing 0.0.0.0/0 to the Firewall's private IP, all internet-bound spoke traffic bypasses the Firewall via Azure's default routing.",
+      "Standard vs Premium: Standard has threat intelligence feed. Premium adds IDPS, TLS inspection, and URL categories. IDPS should start in Alert mode before switching to Alert and Deny after baselining legitimate traffic patterns."
+    ],
+    why: "The UDR is the single most commonly missed step — without it, the Firewall exists but does nothing for spoke-to-internet traffic."
+  },
+  interview_kill_shot: "AzureFirewallSubnet exactly named, /26 minimum. UDR on every spoke subnet: 0.0.0.0/0 → Firewall private IP with BGP propagation disabled. Never put a 0.0.0.0/0 UDR on GatewaySubnet. Application rules for FQDN-based control; Network rules for IP/port. Premium for IDPS.",
+  interactive_html: wrap("Hub-Spoke Firewall Topology", `
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+  <div style="flex:1;min-width:220px">
+    <div class="card"><h3>Click a Traffic Path</h3>
+      <button onclick="show('s2i')" style="width:100%;margin-bottom:6px">Spoke → Internet</button>
+      <button onclick="show('s2s')" style="width:100%;margin-bottom:6px">Spoke1 → Spoke2</button>
+      <button onclick="show('op2s')" style="width:100%;margin-bottom:6px">On-Prem → Spoke</button>
+      <button onclick="show('dnat')" style="width:100%">Internet → Internal (DNAT)</button>
+    </div>
+    <div class="card" id="info" style="min-height:100px;font-size:12px;color:#94a3b8">Select a traffic path above.</div>
+  </div>
+  <div style="flex:2;min-width:280px">
+    <div class="card" style="text-align:center;padding:20px">
+      <div style="margin-bottom:10px">
+        <div style="display:inline-block;border:2px solid #0078d4;border-radius:8px;padding:6px 20px">Hub VNet</div>
+        <div style="margin:4px 0;color:#fbbf24">🔥 Azure Firewall (10.0.0.4)</div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:24px;margin-bottom:10px">
+        <div style="border:1px solid #34d399;border-radius:6px;padding:6px 12px;font-size:12px">
+          <div style="color:#34d399">Spoke1 VNet</div>
+          <div style="color:#94a3b8;font-size:11px">+ UDR → FW</div>
+        </div>
+        <div style="border:1px solid #34d399;border-radius:6px;padding:6px 12px;font-size:12px">
+          <div style="color:#34d399">Spoke2 VNet</div>
+          <div style="color:#94a3b8;font-size:11px">+ UDR → FW</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:24px">
+        <div style="border:1px solid #64748b;border-radius:6px;padding:6px 12px;font-size:12px;color:#94a3b8">🌐 Internet</div>
+        <div style="border:1px solid #64748b;border-radius:6px;padding:6px 12px;font-size:12px;color:#94a3b8">🏢 On-Premises</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const flows={
+  s2i:{title:'Spoke → Internet',rule:'Application Rule (FQDN-based)',result:'Allow/Deny based on FQDN policy',path:'Spoke1 VM → UDR → Firewall → Application Rule evaluated → SNAT → Internet',color:'#7dd3fc'},
+  s2s:{title:'Spoke1 → Spoke2',rule:'Network Rule (IP/Port-based)',result:'Allow/Deny based on source/destination IP and port',path:'Spoke1 VM → UDR → Firewall → Network Rule evaluated → Route to Spoke2 VM',color:'#34d399'},
+  op2s:{title:'On-Premises → Spoke',rule:'Network Rule (IP/Port-based)',result:'Allow/Deny based on on-prem CIDR to spoke CIDR',path:'On-Prem → VPN/ER Gateway → Hub VNet → Firewall (if UDR set on GW subnet — avoid!) → Spoke',color:'#fbbf24'},
+  dnat:{title:'Internet → Internal (DNAT)',rule:'DNAT Rule (Inbound NAT)',result:'Translates Firewall public IP:port → internal VM private IP:port',path:'Internet → Firewall Public IP:port → DNAT Rule → Internal VM Private IP:port',color:'#f87171'}
+};
+function show(k){
+  const f=flows[k];
+  document.getElementById('info').innerHTML=\`
+    <div style="color:\${f.color};font-weight:700;margin-bottom:6px">\${f.title}</div>
+    <div style="margin-bottom:4px"><span style="color:#94a3b8">Rule Type:</span> \${f.rule}</div>
+    <div style="margin-bottom:4px"><span style="color:#94a3b8">Result:</span> \${f.result}</div>
+    <div style="margin-top:8px;padding:8px;background:#0f3460;border-radius:6px;font-size:11px">\${f.path}</div>\`;
+}
+</script>`),
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 8 — UDR
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "User Defined Routes (UDR)",
+  type: "Networking — Custom Routing",
+  difficulty: "Advanced",
+  chips: ["UDR", "Route Table", "Next Hop", "Force Tunnel", "BGP Propagation"],
+  schema: "architecture",
+  definition: "A User Defined Route overrides Azure's default system routes by associating a custom Route Table to a subnet, enabling traffic to be redirected through a next hop of your choosing — most commonly an Azure Firewall or NVA.",
+  why_it_matters: "Adding a 0.0.0.0/0 UDR pointing to a Virtual Appliance on the GatewaySubnet breaks all VPN and ExpressRoute routing — a mistake that takes down hybrid connectivity for all connected sites.",
+  real_world_scenario: "All internet-bound traffic from spoke VMs must pass through the Azure Firewall in the hub VNet. A Route Table with 0.0.0.0/0 → Firewall private IP is associated with every spoke subnet, forcing all traffic through the firewall for inspection.",
+  content_theory: `Here is a breakdown of how User Defined Routes work and the scenarios in which they are used.
+
+1. What a UDR is
+Azure automatically creates system routes for VNet peerings, VPN/ExpressRoute gateways, internet, and VNet-local traffic. A User Defined Route in a custom Route Table overrides these system routes for the specific address prefix defined. The Route Table is then associated with one or more subnets — the UDR applies to all traffic leaving VMs in those subnets.
+
+Best For: Force-tunneling all internet-bound traffic through an Azure Firewall or NVA for inspection. Overriding BGP-learned routes from a VPN or ExpressRoute gateway. Directing inter-spoke traffic through a central hub firewall.
+Requirements: A Route Table resource with one or more route entries. An association between the Route Table and the target subnet(s).
+Core Azure Resources: Route Table, Route entries (each with address prefix, next hop type, and optional next hop IP address), Subnet association.
+
+2. Next Hop Types
+Virtual Appliance: Route traffic to a specific IP address (e.g. Azure Firewall private IP, NVA). This is the most common UDR next hop.
+Virtual Network Gateway: Force traffic to the VPN or ExpressRoute gateway — used when you need to redirect specific prefixes through the gateway.
+Internet: Force traffic to the internet directly, bypassing any other routing.
+VirtualNetwork: Route within the VNet using Azure's default VNet routing.
+None: Drop traffic silently — used as a black-hole for specific prefixes.
+
+3. BGP Route Propagation
+When enabled on a Route Table: gateway-learned routes (from VPN/ER) are merged with the Route Table entries. When disabled: only the explicit UDR entries apply — gateway routes are suppressed. Disable BGP propagation when you want UDR entries to take precedence over gateway-learned routes.`,
+  content_implementation: `The most dangerous UDR mistake is associating a Route Table with 0.0.0.0/0 → Virtual Appliance on the GatewaySubnet — this redirects VPN/ExpressRoute routing through the Firewall in a loop, breaking all hybrid connectivity.
+
+Key Deployment Considerations:
+
+GatewaySubnet Rule: Never apply a Route Table with a 0.0.0.0/0 → Virtual Appliance route to the GatewaySubnet. The GatewaySubnet must use Azure's default system routes for VPN and ExpressRoute to function.
+
+One-to-Many Association: A single Route Table can be associated with multiple subnets. Multiple subnets requiring the same routing policy should share one Route Table — not have separate Route Tables with identical entries.
+
+BGP Propagation Toggle: Disable BGP route propagation on spoke subnet Route Tables when you want the UDR to override gateway-learned routes. If enabled, VPN-learned routes may conflict with or override your UDR entries.
+
+Effective Routes: Always verify the effective routes on a VM NIC after applying a UDR — use 'az network nic show-effective-route-table' to confirm the UDR is taking effect and not being overridden by system routes or BGP.`,
+  architecture_flow: {
+    steps: [
+      "Spoke VM generates internet-bound traffic (e.g. 8.8.8.8:443)",
+      "Azure evaluates Route Table associated with Spoke subnet",
+      "UDR entry: 0.0.0.0/0 → Virtual Appliance (Firewall private IP 10.0.0.4)",
+      "Traffic forwarded to Azure Firewall in Hub VNet",
+      "Firewall applies Application/Network rule — allow or deny",
+      "If allowed → Firewall SNATs traffic to its public IP → Internet"
+    ],
+    diagram: "Spoke VM → UDR (0.0.0.0/0 → Firewall) → Azure Firewall → SNAT → Internet"
+  },
+  key_commands: [
+    {
+      command: `resource "azurerm_route_table" "spoke_rt" {
+  name                          = "spoke-route-table"
+  resource_group_name           = azurerm_resource_group.hub.name
+  location                      = azurerm_resource_group.hub.location
+  bgp_route_propagation_enabled = false
+
+  route {
+    name                   = "force-tunnel-internet"
+    address_prefix         = "0.0.0.0/0"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "10.0.0.4"  # Firewall private IP
+  }
+  route {
+    name                   = "route-to-hub"
+    address_prefix         = "10.0.0.0/16"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "10.0.0.4"
+  }
+}
+
+resource "azurerm_subnet_route_table_association" "spoke1" {
+  subnet_id      = azurerm_subnet.spoke1_app.id
+  route_table_id = azurerm_route_table.spoke_rt.id
+}`,
+      description: "Terraform: Route Table with force-tunnel (0.0.0.0/0 → Firewall) and hub-bound route. BGP propagation disabled. Associated with spoke subnet."
+    },
+    {
+      command: `# Verify effective routes on VM NIC
+az network nic show-effective-route-table \\
+  --resource-group myRG \\
+  --name myVM-nic \\
+  --output table
+
+# Expected: 0.0.0.0/0 should show nextHopType = VirtualAppliance
+# with nextHopIpAddress = Firewall private IP`,
+      description: "Azure CLI: Verify that the UDR is active on a VM NIC — confirm 0.0.0.0/0 routes to the Firewall, not to Internet."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "A UDR overrides Azure's system routes by associating a custom Route Table with a subnet. The most common use is force-tunneling: adding a 0.0.0.0/0 route with next hop type Virtual Appliance pointing to the Firewall's private IP, redirecting all internet traffic through the Firewall.",
+      "The critical rule is: never put a 0.0.0.0/0 → Virtual Appliance UDR on the GatewaySubnet — it breaks VPN and ExpressRoute routing. BGP route propagation on the Route Table should be disabled when you need the UDR to override gateway-learned routes.",
+      "After applying a UDR, always validate using 'az network nic show-effective-route-table' to confirm the route is active on the VM NIC and not being overridden."
+    ],
+    why: "Misconfiguring UDR on GatewaySubnet is the single most impactful routing error — it can silently break all hybrid connectivity for the entire connected on-premises network."
+  },
+  interview_kill_shot: "0.0.0.0/0 → Virtual Appliance (Firewall IP) on spoke subnets = force tunnel. Never on GatewaySubnet. Disable BGP propagation when UDR must override gateway routes. Validate with effective-route-table after every change.",
+  interactive_html: wrap("Route Table Builder", `
+<div class="grid">
+  <div>
+    <div class="card"><h3>Add Route Entry</h3>
+      <label>Address Prefix (CIDR)</label><input id="ap" value="0.0.0.0/0">
+      <label>Next Hop Type</label>
+      <select id="nt" onchange="toggleIP()">
+        <option>VirtualAppliance</option>
+        <option>Internet</option>
+        <option>VirtualNetworkGateway</option>
+        <option>None</option>
+      </select>
+      <div id="ipRow"><label>Next Hop IP</label><input id="ni" value="10.0.0.4"></div>
+      <label><input type="checkbox" id="bgp" style="width:auto;margin-right:6px" checked>BGP Route Propagation</label>
+      <button onclick="addRoute()" style="margin-top:8px">Add Route</button>
+    </div>
+  </div>
+  <div>
+    <div class="card" id="rtable"><h3>Route Table</h3><div id="rows" style="font-size:12px;color:#94a3b8">No routes yet.</div></div>
+    <div class="card" id="tfout" style="display:none"><h3>Terraform</h3><div class="pre" id="tf"></div></div>
+    <div id="warn" style="display:none;background:#7c2d12;border-radius:6px;padding:8px;font-size:12px;margin-top:8px"></div>
+  </div>
+</div>
+<script>
+const routes=[];
+function toggleIP(){document.getElementById('ipRow').style.display=document.getElementById('nt').value==='VirtualAppliance'?'block':'none'}
+function addRoute(){
+  const ap=document.getElementById('ap').value.trim(),nt=document.getElementById('nt').value,ni=nt==='VirtualAppliance'?document.getElementById('ni').value.trim():'';
+  if(!ap)return;routes.push({ap,nt,ni});render();
+}
+function render(){
+  const bgp=document.getElementById('bgp').checked;
+  document.getElementById('rows').innerHTML=routes.length?routes.map((r,i)=>
+    \`<div style="display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #0f3460">
+      <span style="flex:1">\${r.ap}</span><span style="flex:1;color:#7dd3fc">\${r.nt}</span>
+      <span style="flex:1;color:#94a3b8">\${r.ni||'-'}</span>
+      <button onclick="routes.splice(\${i},1);render()" style="background:#374151;padding:2px 6px;font-size:11px">✕</button>
+    </div>\`).join(''):'<span>No routes yet.</span>';
+  // warnings
+  const gwBad=routes.some(r=>r.ap==='0.0.0.0/0'&&r.nt==='VirtualAppliance');
+  const warnDiv=document.getElementById('warn');
+  if(gwBad){warnDiv.style.display='block';warnDiv.textContent='⚠ WARNING: 0.0.0.0/0 → VirtualAppliance detected. Do NOT associate this Route Table with GatewaySubnet — it will break VPN/ExpressRoute routing.';}
+  else{warnDiv.style.display='none';}
+  // terraform
+  if(routes.length){
+    document.getElementById('tfout').style.display='block';
+    document.getElementById('tf').textContent=
+'resource "azurerm_route_table" "rt" {\\n'+
+'  name = "custom-route-table"\\n'+
+\`  bgp_route_propagation_enabled = \${bgp}\\n\`+
+routes.map(r=>\`  route {\\n    name           = "route-\${r.ap.replace(/[^a-z0-9]/gi,'-')}"\\n    address_prefix = "\${r.ap}"\\n    next_hop_type  = "\${r.nt}"\${r.ni?'\\n    next_hop_in_ip_address = "'+r.ni+'"':''}\\n  }\`).join('\\n')+
+'\\n}';
+  }
+}toggleIP();
+</script>`)
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 9 — ExpressRoute
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "ExpressRoute Connectivity",
+  type: "Networking — Private Dedicated Circuit",
+  difficulty: "Advanced",
+  chips: ["ExpressRoute", "Private Peering", "BGP", "Global Reach", "FastPath"],
+  schema: "architecture",
+  definition: "Azure ExpressRoute provides a private, dedicated Layer 3 circuit from on-premises infrastructure to Azure through a Microsoft connectivity partner — traffic does not traverse the public internet.",
+  why_it_matters: "Skipping the two-step circuit provisioning process (Azure circuit object + provider key exchange) is the most common cause of ExpressRoute circuits staying in 'Not Provisioned' state indefinitely.",
+  real_world_scenario: "An enterprise with an existing colocation presence at Equinix needs to connect two on-premises datacenters to Azure with predictable latency, 10 Gbps bandwidth, and no public internet exposure for regulatory compliance.",
+  content_theory: `Here is a breakdown of how ExpressRoute works and the different models and peering types available.
+
+1. What ExpressRoute is
+ExpressRoute is a private, dedicated Layer 3 WAN connection between on-premises and Azure. Traffic travels over a provider's MPLS network or a direct fiber connection to Microsoft's edge — it never touches the public internet. BGP is the mandatory routing protocol for all ExpressRoute connections.
+
+Best For: Enterprise workloads requiring predictable latency, high bandwidth (1–100 Gbps), strong SLA (99.95% circuit SLA), or regulatory requirements prohibiting public internet traversal for sensitive data.
+Requirements: A colocation or MPLS-connected Microsoft partner, or a direct fiber connection to a Microsoft edge site for ExpressRoute Direct.
+Core Azure Resources: ExpressRoute Circuit object (contains the service key), ExpressRoute Gateway (in a VNet GatewaySubnet), Connection (links gateway to circuit), Peering configuration.
+
+2. Two Circuit Models
+Provider Model: You order a circuit through a connectivity partner (e.g. Equinix, AT&T, BT). The partner provisions the physical connection to Microsoft's edge using your service key.
+ExpressRoute Direct: You lease a 10 Gbps or 100 Gbps physical port directly at a Microsoft edge location — no partner required. Maximum control and bandwidth.
+
+3. Two Peering Types
+Private Peering: Connects your on-premises network to Azure Virtual Networks. Routes reach VNet address spaces via the Virtual Network Gateway.
+Microsoft Peering: Connects your on-premises network to Microsoft 365 and Azure PaaS public endpoints (e.g. Azure Storage public IPs). Requires BGP community filtering.
+
+4. Global Reach
+Connects two on-premises sites through Microsoft's backbone — both sites must have ExpressRoute circuits with Private Peering configured. Eliminates the need for a dedicated MPLS path between the two sites.`,
+  content_implementation: `The most common ExpressRoute provisioning failure is creating the circuit in Azure without sharing the service key with the connectivity provider — the circuit stays in 'Not Provisioned' state until the provider completes their end of the physical connection.
+
+Key Deployment Considerations:
+
+Two-Step Provisioning: (1) Create the ExpressRoute circuit in Azure — this generates a service key. (2) Share the service key with your connectivity provider. The provider uses it to provision the physical cross-connect at their co-location facility. The circuit status changes to 'Provisioned' only after the provider completes this step.
+
+Gateway SKU for ER: Use ErGw1Az, ErGw2Az, or ErGw3Az for zone-redundant ExpressRoute gateways. UltraPerformance or ErGw3AZ is required if you want S2S VPN coexistence on the same GatewaySubnet.
+
+GatewaySubnet Size for Coexistence: When coexisting with a VPN Gateway on the same GatewaySubnet, the subnet must be /27 minimum (Microsoft recommends /26).
+
+FastPath: Bypasses the ExpressRoute Gateway for data-plane traffic — packets from on-premises go directly to VNet VMs without passing through the gateway. Requires UltraPerformance or ErGw3AZ gateway SKU. FastPath is a data-plane optimization only — the control plane (BGP routes) still flows through the gateway.
+
+Bandwidth Tiers: 50 Mbps → 1 Gbps → 2 Gbps → 5 Gbps → 10 Gbps (provider model). Bandwidth can be increased without reprovisioning the physical connection (within the partner's port capacity).`,
+  comparisons: [
+    {
+      topic_a: "ExpressRoute",
+      topic_b: "Site-to-Site VPN",
+      summary: "ExpressRoute provides private, dedicated connectivity over partner MPLS/fiber — no public internet, predictable latency, up to 100 Gbps, 99.95% SLA, but requires partner procurement (weeks to months). S2S VPN uses IPsec over the public internet — setup in hours, lower bandwidth (up to 10 Gbps on VpnGw5AZ), internet-dependent latency, but traffic is encrypted. Use ExpressRoute for regulatory compliance and high-bandwidth production; use S2S VPN for smaller offices or as a backup path."
+    }
+  ],
+  key_commands: [
+    {
+      command: `resource "azurerm_express_route_circuit" "main" {
+  name                  = "corp-er-circuit"
+  resource_group_name   = azurerm_resource_group.connectivity.name
+  location              = azurerm_resource_group.connectivity.location
+  service_provider_name = "Equinix"
+  peering_location      = "London"
+  bandwidth_in_mbps     = 1000
+  sku { tier = "Standard"; family = "MeteredData" }
+}
+
+resource "azurerm_express_route_circuit_peering" "private" {
+  peering_type                  = "AzurePrivatePeering"
+  express_route_circuit_name    = azurerm_express_route_circuit.main.name
+  resource_group_name           = azurerm_resource_group.connectivity.name
+  peer_asn                      = 65001
+  primary_peer_address_prefix   = "169.254.0.0/30"
+  secondary_peer_address_prefix = "169.254.0.4/30"
+  vlan_id                       = 100
+}
+
+resource "azurerm_virtual_network_gateway_connection" "er" {
+  name                       = "hub-er-connection"
+  resource_group_name        = azurerm_resource_group.connectivity.name
+  location                   = azurerm_resource_group.connectivity.location
+  type                       = "ExpressRoute"
+  virtual_network_gateway_id = azurerm_virtual_network_gateway.er_gw.id
+  express_route_circuit_id   = azurerm_express_route_circuit.main.id
+}`,
+      description: "Terraform: ExpressRoute circuit (Equinix London, 1 Gbps Standard), Private Peering configuration, and VNet Gateway connection of type ExpressRoute."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "ExpressRoute is a private Layer 3 circuit to Azure via a connectivity partner — traffic does not traverse the internet. BGP is mandatory. Provisioning requires two steps: create the circuit in Azure (get service key) then hand the key to the provider to complete the physical cross-connect.",
+      "Private Peering reaches Azure VNets; Microsoft Peering reaches Azure PaaS public IPs and Microsoft 365. For connecting two on-premises sites through Microsoft's backbone, enable Global Reach — both circuits must have Private Peering active.",
+      "Gateway coexistence with VPN requires UltraPerformance or ErGw3AZ SKU and a /27 GatewaySubnet. FastPath bypasses the gateway for data-plane traffic, improving throughput for high-volume workloads."
+    ],
+    why: "The two-step provisioning process and service key exchange with the provider are where most ExpressRoute deployments stall — the circuit stays 'Not Provisioned' until the provider completes their side."
+  },
+  interview_kill_shot: "Private Layer 3 circuit via connectivity partner — no public internet. Two-step: Azure circuit → service key → provider provisions physical connection. Private Peering for VNets, Microsoft Peering for M365/PaaS. Global Reach for DC-to-DC. FastPath requires ErGw3AZ.",
+  interactive_html: wrap("ExpressRoute vs VPN Decision Tool", `
+<div class="card"><h3>Your Requirements</h3>
+<div class="grid">
+  <div>
+    <label>Required latency SLA (ms)</label>
+    <input type="number" id="lat" value="10">
+    <label>Required bandwidth (Mbps)</label>
+    <input type="number" id="bw" value="1000">
+    <label>Colocation/MPLS provider available?</label>
+    <select id="co"><option value="1">Yes</option><option value="0">No</option></select>
+  </div>
+  <div>
+    <label>Traffic must avoid public internet?</label>
+    <select id="priv"><option value="1">Yes (compliance required)</option><option value="0">No</option></select>
+    <label>Acceptable setup time</label>
+    <select id="time"><option value="fast">Days (VPN ready)</option><option value="slow">Weeks/Months acceptable</option></select>
+    <label>Budget sensitivity</label>
+    <select id="bgt"><option value="high">Cost-sensitive</option><option value="low">Performance priority</option></select>
+  </div>
+</div>
+<button onclick="decide()" style="margin-top:8px">Get Recommendation</button>
+</div>
+<div id="result"></div>
+<script>
+function decide(){
+  const lat=+document.getElementById('lat').value,bw=+document.getElementById('bw').value;
+  const co=+document.getElementById('co').value,priv=+document.getElementById('priv').value;
+  const time=document.getElementById('time').value,bgt=document.getElementById('bgt').value;
+  let erScore=0,vpnScore=0,reasons=[];
+  if(priv){erScore+=3;reasons.push('✅ ER: Compliance requires no public internet — ExpressRoute only.')}
+  else{vpnScore+=1;reasons.push('· VPN: Public internet acceptable.')}
+  if(bw>500){erScore+=2;reasons.push('✅ ER: Bandwidth >500 Mbps — ExpressRoute recommended (up to 10 Gbps).')}
+  else{vpnScore+=1;reasons.push('· VPN: Bandwidth ≤500 Mbps — VPN Gateway sufficient.')}
+  if(lat<20){erScore+=2;reasons.push('✅ ER: Latency SLA <20ms — requires dedicated private circuit.')}
+  else{vpnScore+=1;reasons.push('· VPN: Latency >20ms acceptable — VPN adequate.')}
+  if(co){erScore+=1;reasons.push('✅ ER: Provider available — provisioning possible.')}
+  else{erScore-=2;vpnScore+=2;reasons.push('⚠ No provider: ExpressRoute not feasible without colocation/MPLS partner.')}
+  if(time==='slow'){erScore+=1;reasons.push('· ER: Extended setup time acceptable.')}
+  else{vpnScore+=2;reasons.push('✅ VPN: Fast setup needed — VPN deploys in hours.')}
+  if(bgt==='high'){vpnScore+=1;reasons.push('· Cost-sensitive: VPN is significantly cheaper than ExpressRoute.')}
+  const winner=erScore>=vpnScore?'ExpressRoute':'Site-to-Site VPN';
+  const color=erScore>=vpnScore?'#34d399':'#7dd3fc';
+  document.getElementById('result').innerHTML=
+    \`<div class="card"><div style="font-size:18px;font-weight:700;color:\${color};margin-bottom:10px">Recommendation: \${winner}</div>
+    <div style="display:flex;gap:16px;margin-bottom:12px">
+      <div>ER Score: <strong style="color:#34d399">\${erScore}</strong></div>
+      <div>VPN Score: <strong style="color:#7dd3fc">\${vpnScore}</strong></div>
+    </div>
+    \${reasons.map(r=>\`<div style="font-size:12px;padding:3px 0;border-bottom:1px solid #0f3460">\${r}</div>\`).join('')}
+    </div>\`;
+}
+</script>`)
+},
+
+// ═══════════════════════════════════════════════════════════════════
+// SLIDE 10 — Private DNS Zones
+// ═══════════════════════════════════════════════════════════════════
+{
+  title: "Private DNS Zones",
+  type: "Networking — Internal Name Resolution",
+  difficulty: "Intermediate",
+  chips: ["Private DNS", "Private Endpoint", "Split-Brain DNS", "VNet Link", "privatelink"],
+  schema: "architecture",
+  definition: "Azure Private DNS Zones provide managed DNS name resolution within Azure Virtual Networks, resolving FQDNs to private IP addresses without exposing records to the public internet.",
+  why_it_matters: "Deploying a Private Endpoint without a corresponding privatelink DNS zone causes the service to still resolve to its public IP from within the VNet — bypassing private connectivity entirely and breaking the security boundary.",
+  real_world_scenario: "A storage account has a Private Endpoint with private IP 10.1.2.5. Without linking a privatelink.blob.core.windows.net Private DNS Zone to the VNet, VMs resolve the storage FQDN to the public IP (52.x.x.x) and traffic exits the VNet to the internet instead of using the private endpoint.",
+  content_theory: `Here is a breakdown of how Azure Private DNS Zones work and how they integrate with Private Endpoints.
+
+1. What Private DNS Zones are
+Azure Private DNS Zones are managed DNS zones whose records are only resolvable from Azure Virtual Networks that are linked to the zone. Unlike public Azure DNS zones (accessible globally), records in a Private Zone return responses only to queries from within linked VNets.
+
+Best For: Internal name resolution for VMs and Private Endpoints within Azure VNets. Hiding resource endpoints from the public internet. Implementing split-brain DNS for hybrid environments.
+Requirements: A Private DNS Zone resource named with the appropriate zone name (e.g. privatelink.blob.core.windows.net for blob storage private endpoints). A Virtual Network Link associating the zone with the target VNet.
+Core Azure Resources: Private DNS Zone, Virtual Network Link (registration link or resolution link), DNS A records, Private Endpoint with dns_zone_group (for automatic A record registration).
+
+2. Two Link Types
+Registration Link: Enables auto-registration — VMs in the linked VNet automatically get A records created in the zone for their private IP addresses. Only one registration link per VNet per zone.
+Resolution Link: VMs in the linked VNet can resolve records in the zone but no auto-registration occurs. Used for linking additional VNets that need to resolve the zone's records.
+
+3. Private Endpoint DNS Integration
+Each Azure PaaS service type has a corresponding privatelink DNS zone name (e.g. privatelink.blob.core.windows.net, privatelink.vaultcore.azure.net for Key Vault). When a Private Endpoint is created and a dns_zone_group is configured, Azure automatically creates an A record in the zone pointing the service FQDN to the Private Endpoint's private IP.
+
+4. Split-Brain DNS for Hybrid
+On-premises DNS servers must be configured with a conditional forwarder pointing to Azure DNS (168.63.129.16) for all privatelink.* zones. Without this, on-premises clients continue resolving the service to its public IP.`,
+  content_implementation: `The most commonly missed Private Endpoint configuration is creating the Private Endpoint itself without linking the corresponding privatelink DNS zone — the endpoint exists but DNS still resolves to the public IP, so traffic never uses the private path.
+
+Key Deployment Considerations:
+
+Zone Naming Precision: Each PaaS service type has a specific privatelink zone name. Examples: Storage Blob = privatelink.blob.core.windows.net, Key Vault = privatelink.vaultcore.azure.net, SQL = privatelink.database.windows.net. Using an incorrect zone name means the Private Endpoint DNS registration silently fails.
+
+dns_zone_group in Terraform: Configure the private_dns_zone_group block inside the azurerm_private_endpoint resource to auto-register the A record. Do not manually create A records — the automatic registration keeps the record synchronized with the Private Endpoint's private IP.
+
+Hybrid DNS (On-Premises Conditional Forwarder): On-premises DNS servers must forward all privatelink.* zone queries to Azure DNS at 168.63.129.16. Without this, on-premises clients cannot resolve Private Endpoints to their private IPs. This is the step most commonly missed in hybrid deployments.
+
+Multiple VNets: Link the privatelink zone to every VNet that needs to resolve the Private Endpoint — both the VNet hosting the Private Endpoint and any peered VNets containing clients. Without the link, resolution from peered VNets still returns the public IP.`,
+  architecture_flow: {
+    steps: [
+      "VM sends DNS query for mystorageacct.blob.core.windows.net",
+      "Azure DNS resolver (168.63.129.16) receives the query",
+      "Resolver checks if a privatelink.blob.core.windows.net zone is linked to this VNet",
+      "If linked: returns CNAME → mystorageacct.privatelink.blob.core.windows.net → A record = 10.1.2.5 (Private Endpoint IP)",
+      "VM connects to 10.1.2.5 over private network — traffic stays within VNet",
+      "If zone NOT linked: returns public IP 52.x.x.x — traffic exits VNet to internet"
+    ],
+    diagram: "VM → Azure DNS (168.63.129.16) → Private DNS Zone (linked) → A record → Private Endpoint IP → PaaS over private network"
+  },
+  key_commands: [
+    {
+      command: `resource "azurerm_private_dns_zone" "blob" {
+  name                = "privatelink.blob.core.windows.net"
+  resource_group_name = azurerm_resource_group.dns.name
+}
+
+resource "azurerm_private_dns_zone_virtual_network_link" "blob_link" {
+  name                  = "blob-vnet-link"
+  resource_group_name   = azurerm_resource_group.dns.name
+  private_dns_zone_name = azurerm_private_dns_zone.blob.name
+  virtual_network_id    = azurerm_virtual_network.hub.id
+  registration_enabled  = false
+}
+
+resource "azurerm_private_endpoint" "storage" {
+  name                = "storage-pe"
+  resource_group_name = azurerm_resource_group.app.name
+  location            = azurerm_resource_group.app.location
+  subnet_id           = azurerm_subnet.pe_subnet.id
+
+  private_service_connection {
+    name                           = "storage-psc"
+    private_connection_resource_id = azurerm_storage_account.main.id
+    subresource_names              = ["blob"]
+    is_manual_connection           = false
+  }
+
+  private_dns_zone_group {
+    name                 = "dns-zone-group"
+    private_dns_zone_ids = [azurerm_private_dns_zone.blob.id]
+  }
+}`,
+      description: "Terraform: Private DNS Zone for blob privatelink, VNet resolution link, and Private Endpoint with dns_zone_group for automatic A record registration."
+    }
+  ],
+  interview_answer: {
+    response: [
+      "Private DNS Zones resolve FQDNs to private IPs only within linked VNets. When a Private Endpoint is created, Azure auto-registers an A record in the corresponding privatelink zone pointing the service FQDN to the endpoint's private IP — but only if a dns_zone_group is configured on the Private Endpoint and the zone is linked to the VNet.",
+      "The critical failure mode: if the privatelink zone is not linked to the VNet, DNS still returns the service's public IP from within the VNet. Traffic goes to the internet instead of the Private Endpoint. This is invisible unless you explicitly test name resolution.",
+      "For hybrid environments, on-premises DNS servers need a conditional forwarder to 168.63.129.16 for all privatelink.* zones. Without it, on-premises clients cannot resolve Private Endpoints to private IPs."
+    ],
+    why: "The Private Endpoint + DNS zone linking is a two-part configuration — the endpoint creates the private path, but the DNS zone creates the name resolution that directs traffic to it. Missing either breaks the entire private connectivity model."
+  },
+  interview_kill_shot: "Private Endpoint creates the private path; privatelink DNS zone creates the name resolution. Both are required. Zone must be linked to every VNet that needs to resolve the endpoint. On-prem needs a conditional forwarder to 168.63.129.16 for privatelink.* zones.",
+  interactive_html: wrap("Private DNS Resolution Simulator", `
+<div class="card"><h3>Simulate DNS Resolution</h3>
+  <label>Resource FQDN</label>
+  <input id="fqdn" value="mystorageacct.blob.core.windows.net">
+  <label>Client Location & DNS Config</label>
+  <select id="ctx">
+    <option value="vnet_zone">In VNet — privatelink zone linked ✅</option>
+    <option value="vnet_nozone">In VNet — NO privatelink zone ❌</option>
+    <option value="onprem_forwarder">On-Premises — conditional forwarder configured ✅</option>
+    <option value="onprem_noforwarder">On-Premises — NO forwarder ❌</option>
+  </select>
+  <button onclick="simulate()">Simulate Resolution</button>
+</div>
+<div id="result"></div>
+<script>
+const scenarios={
+  vnet_zone:{
+    steps:['VM queries Azure DNS (168.63.129.16)','Resolver checks: privatelink.blob.core.windows.net zone linked to this VNet? → YES','Returns CNAME: mystorageacct.blob.core.windows.net → mystorageacct.privatelink.blob.core.windows.net','A record in privatelink zone: → 10.1.2.5 (Private Endpoint IP)','VM connects to 10.1.2.5 — traffic stays within VNet ✅'],
+    ip:'10.1.2.5',ok:true,label:'Private Endpoint IP (Private)'
+  },
+  vnet_nozone:{
+    steps:['VM queries Azure DNS (168.63.129.16)','Resolver checks: privatelink.blob.core.windows.net zone linked to this VNet? → NO','Falls back to public DNS resolution','Returns public IP for blob.core.windows.net','VM connects to 52.x.x.x — traffic exits VNet to internet ❌'],
+    ip:'52.241.80.12',ok:false,label:'Public IP (Traffic exits VNet!)'
+  },
+  onprem_forwarder:{
+    steps:['On-prem client queries local DNS server','Local DNS: conditional forwarder for *.blob.core.windows.net → 168.63.129.16','Query forwarded to Azure DNS via forwarder','Azure DNS resolves via linked privatelink zone → 10.1.2.5','On-prem client connects to Private Endpoint ✅'],
+    ip:'10.1.2.5',ok:true,label:'Private Endpoint IP (Hybrid private access)'
+  },
+  onprem_noforwarder:{
+    steps:['On-prem client queries local DNS server','No conditional forwarder configured for privatelink zones','Local DNS queries public internet DNS','Public DNS returns 52.241.80.12 (public IP)','On-prem traffic goes to internet — Private Endpoint bypassed ❌'],
+    ip:'52.241.80.12',ok:false,label:'Public IP (Private Endpoint bypassed!)'
+  }
+};
+function simulate(){
+  const ctx=document.getElementById('ctx').value,fqdn=document.getElementById('fqdn').value;
+  const s=scenarios[ctx];
+  const steps=s.steps.map((t,i)=>\`<div style="display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #0f3460">
+    <span style="color:#0078d4;min-width:20px">\${i+1}.</span><span style="font-size:12px">\${t}</span></div>\`).join('');
+  document.getElementById('result').innerHTML=\`
+    <div class="card">
+      <h3>DNS Query: \${fqdn}</h3>
+      \${steps}
+      <div style="margin-top:12px;padding:10px;border-radius:6px;background:\${s.ok?'#14532d':'#7c2d12'}">
+        <div style="font-size:16px;font-weight:700;color:\${s.ok?'#34d399':'#f87171'}">\${s.ok?'✅':'❌'} Resolved to: \${s.ip}</div>
+        <div style="font-size:12px;color:\${s.ok?'#86efac':'#fca5a5'};margin-top:4px">\${s.label}</div>
+      </div>
+    </div>\`;
+}
+</script>`)
+}
+
+]; // END slides 1-10
+
+// ─── SLIDES 11-20 will be appended by generate_infra_azure_json_part2.js ───
+// For now, write part 1 as a validation file
+const outPath = path.join(__dirname, 'infra_azure_part1.json');
+fs.writeFileSync(outPath, JSON.stringify(slides, null, 2), 'utf8');
+console.log(`✅ Written ${slides.length} slides to infra_azure_part1.json`);
+console.log(`   File size: ${(fs.statSync(outPath).size / 1024).toFixed(1)} KB`);

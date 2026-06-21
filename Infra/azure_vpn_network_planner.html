@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure VPN Architecture Planner</title>
+    <style>
+        :root {
+            --azure-blue: #0078d4;
+            --success: #107c10;
+            --error: #d13438;
+            --bg-light: #f3f2f1;
+            --surface: #ffffff;
+            --text-main: #323130;
+            --text-muted: #605e5c;
+            --border: #edebe9;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            margin: 0 0 8px 0;
+            font-size: 24px;
+            color: var(--azure-blue);
+        }
+
+        .header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .app-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .sidebar {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        input[type="text"], select {
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: monospace;
+        }
+
+        input[type="text"]:focus, select:focus {
+            outline: none;
+            border-color: var(--azure-blue);
+            box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            cursor: pointer;
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--azure-blue);
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .status-panel {
+            margin-top: auto;
+            padding: 16px;
+            background: #faf9f8;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .status-panel h4 {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .status-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .status-item.overall {
+            margin-top: 8px;
+            padding-top: 12px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.ok { background-color: var(--success); }
+        .badge.error { background-color: var(--error); }
+
+        .canvas-container {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .sidebar {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Azure VPN Architecture Planner</h1>
+        <p>Interactive topology validator and CIDR conflict detector</p>
+    </div>
+
+    <div class="app-container">
+        <!-- Controls Sidebar -->
+        <div class="sidebar">
+            <div class="form-group">
+                <label for="vnetCidr">Azure VNet CIDR</label>
+                <input type="text" id="vnetCidr" value="10.0.0.0/16">
+            </div>
+            <div class="form-group">
+                <label for="gwCidr">Gateway Subnet</label>
+                <input type="text" id="gwCidr" value="10.0.255.0/27">
+            </div>
+            <div class="form-group">
+                <label for="onPremCidr">On-Premises CIDR</label>
+                <input type="text" id="onPremCidr" value="192.168.0.0/16">
+            </div>
+            <div class="form-group">
+                <label for="p2sCidr">P2S Client Pool</label>
+                <input type="text" id="p2sCidr" value="172.16.0.0/24">
+            </div>
+            <div class="form-group">
+                <label for="skuSelect">Gateway SKU</label>
+                <select id="skuSelect">
+                    <option value="VpnGw1">VpnGw1 (650 Mbps)</option>
+                    <option value="VpnGw2">VpnGw2 (1 Gbps)</option>
+                    <option value="VpnGw3">VpnGw3 (1.25 Gbps)</option>
+                    <option value="VpnGw1AZ">VpnGw1AZ (650 Mbps)</option>
+                </select>
+            </div>
+
+            <div style="margin-top: 8px;">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="enableS2S" checked>
+                    <label for="enableS2S">Enable Site-to-Site (S2S)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="enableP2S" checked>
+                    <label for="enableP2S">Enable Point-to-Site (P2S)</label>
+                </div>
+            </div>
+
+            <div class="status-panel">
+                <h4>Validation Status</h4>
+                <div class="status-item">
+                    <span>VNet contains Gateway</span>
+                    <span id="statusSubnet" class="badge ok">OK</span>
+                </div>
+                <div class="status-item">
+                    <span>S2S Overlap Check</span>
+                    <span id="statusS2S" class="badge ok">OK</span>
+                </div>
+                <div class="status-item">
+                    <span>P2S Overlap Check</span>
+                    <span id="statusP2S" class="badge ok">OK</span>
+                </div>
+                <div class="status-item overall">
+                    <span>Overall Status</span>
+                    <span id="statusOverall" style="color: var(--success);">Valid</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas Area -->
+        <div class="canvas-container">
+            <canvas id="networkCanvas" width="750" height="550"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Inputs mapping
+        const inputs = {
+            vnet: document.getElementById('vnetCidr'),
+            gw: document.getElementById('gwCidr'),
+            onPrem: document.getElementById('onPremCidr'),
+            p2s: document.getElementById('p2sCidr'),
+            s2sToggle: document.getElementById('enableS2S'),
+            p2sToggle: document.getElementById('enableP2S'),
+            sku: document.getElementById('skuSelect')
+        };
+
+        // Status Badges mapping
+        const badges = {
+            subnet: document.getElementById('statusSubnet'),
+            s2s: document.getElementById('statusS2S'),
+            p2s: document.getElementById('statusP2S'),
+            overall: document.getElementById('statusOverall')
+        };
+
+        // Network Math & CIDR parsing
+        function ipToNum(ip) {
+            const parts = ip.split('.');
+            if (parts.length !== 4) return 0;
+            return parts.reduce((acc, octet) => (acc << 8) + parseInt(octet || 0, 10), 0) >>> 0;
+        }
+
+        function cidrToRange(cidr) {
+            try {
+                const parts = cidr.split('/');
+                const ip = parts[0];
+                const mask = parts[1] || "32";
+                const ipNum = ipToNum(ip);
+                const bitmask = parseInt(mask, 10);
+                if (isNaN(bitmask) || bitmask < 0 || bitmask > 32) return { start: 0, end: 0 };
+                
+                const shift = 32 - bitmask;
+                const start = (ipNum >>> shift) << shift;
+                // Avoid bitwise operations exceeding 32-bit signed integers bounds
+                const end = start + Math.pow(2, shift) - 1; 
+                return { start: start >>> 0, end: end >>> 0 };
+            } catch (e) {
+                return { start: 0, end: 0 };
+            }
+        }
+
+        function isContained(parentCidr, childCidr) {
+            const p = cidrToRange(parentCidr);
+            const c = cidrToRange(childCidr);
+            if (p.start === 0 && p.end === 0) return false;
+            return c.start >= p.start && c.end <= p.end;
+        }
+
+        function isOverlap(cidr1, cidr2) {
+            const r1 = cidrToRange(cidr1);
+            const r2 = cidrToRange(cidr2);
+            if ((r1.start === 0 && r1.end === 0) || (r2.start === 0 && r2.end === 0)) return false;
+            return Math.max(r1.start, r2.start) <= Math.min(r1.end, r2.end);
+        }
+
+        // Draw Helper: Rounded Rectangles
+        function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+            if (fill) ctx.fill();
+            if (stroke) ctx.stroke();
+        }
+
+        // Main rendering function
+        function update() {
+            const vnet = inputs.vnet.value.trim();
+            const gw = inputs.gw.value.trim();
+            const onPrem = inputs.onPrem.value.trim();
+            const p2s = inputs.p2s.value.trim();
+            const sku = inputs.sku.options[inputs.sku.selectedIndex].text;
+
+            // Validation Logic
+            const subnetOk = isContained(vnet, gw);
+            const s2sOk = !isOverlap(vnet, onPrem) && !isOverlap(gw, onPrem);
+            const p2sOk = !isOverlap(vnet, p2s) && !isOverlap(onPrem, p2s);
+            const isValid = subnetOk && s2sOk && p2sOk;
+
+            // Update UI Sidebar
+            badges.subnet.className = `badge ${subnetOk ? 'ok' : 'error'}`;
+            badges.subnet.textContent = subnetOk ? 'OK' : 'Error';
+            
+            badges.s2s.className = `badge ${s2sOk ? 'ok' : 'error'}`;
+            badges.s2s.textContent = s2sOk ? 'OK' : 'Overlap';
+            
+            badges.p2s.className = `badge ${p2sOk ? 'ok' : 'error'}`;
+            badges.p2s.textContent = p2sOk ? 'OK' : 'Overlap';
+
+            badges.overall.textContent = isValid ? 'Valid Configuration' : 'Network Conflicts Detected';
+            badges.overall.style.color = isValid ? '#107c10' : '#d13438';
+
+            // Clear Canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw Styles
+            const azureBlue = "#0078d4";
+            const azureLight = "#e1dfdd"; // Neutral light for VNet background to look cleaner
+            const gwBlue = "#005a9e";
+            const gwLight = "#c7e0f4";
+            const onPremGreen = "#107c10";
+            const onPremLight = "#dff6dd";
+            const p2sOrange = "#d83b01";
+            const p2sLight = "#fde7e9";
+            const errorRed = "#d13438";
+            const errorLight = "#fde7e9";
+
+            // 1. Draw Azure VNet (Left Side)
+            ctx.fillStyle = azureLight;
+            ctx.strokeStyle = azureBlue;
+            ctx.lineWidth = 2;
+            roundRect(ctx, 40, 40, 260, 440, 10, true, true);
+            
+            // VNet Label
+            ctx.fillStyle = azureBlue;
+            ctx.font = "bold 18px 'Segoe UI', sans-serif";
+            ctx.fillText("Azure Virtual Network", 60, 75);
+            ctx.font = "14px monospace";
+            ctx.fillStyle = "#323130";
+            ctx.fillText(vnet, 60, 95);
+
+            // 2. Draw Gateway Subnet inside VNet
+            ctx.fillStyle = subnetOk ? gwLight : errorLight;
+            ctx.strokeStyle = subnetOk ? gwBlue : errorRed;
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]); // Dashed border for subnet
+            roundRect(ctx, 60, 140, 220, 150, 8, true, true);
+            ctx.setLineDash([]); // Reset dash
+            
+            ctx.fillStyle = subnetOk ? gwBlue : errorRed;
+            ctx.font = "bold 15px 'Segoe UI', sans-serif";
+            ctx.fillText("GatewaySubnet", 80, 175);
+            ctx.font = "13px monospace";
+            ctx.fillStyle = "#323130";
+            ctx.fillText(gw, 80, 195);
+            
+            // Gateway SKU info
+            ctx.font = "12px 'Segoe UI', sans-serif";
+            ctx.fillStyle = "#605e5c";
+            ctx.fillText(`SKU: ${sku.split(' ')[0]}`, 80, 225);
+
+            // 3. Draw VPN Gateway Node (Icon/Circle on the edge)
+            ctx.beginPath();
+            ctx.arc(300, 215, 25, 0, 2 * Math.PI);
+            ctx.fillStyle = "#fff";
+            ctx.fill();
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = azureBlue;
+            ctx.stroke();
+            
+            // Inner icon details
+            ctx.fillStyle = azureBlue;
+            ctx.font = "bold 12px 'Segoe UI', sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText("VPN", 300, 210);
+            ctx.fillText("GW", 300, 225);
+            ctx.textAlign = "left"; // Reset
+
+            // 4. Draw On-Premises (Top Right)
+            if (inputs.s2sToggle.checked) {
+                ctx.fillStyle = onPremLight;
+                ctx.strokeStyle = onPremGreen;
+                ctx.lineWidth = 2;
+                roundRect(ctx, 480, 80, 220, 140, 10, true, true);
+                
+                ctx.fillStyle = onPremGreen;
+                ctx.font = "bold 16px 'Segoe UI', sans-serif";
+                ctx.fillText("On-Premises Datacenter", 500, 115);
+                ctx.font = "14px monospace";
+                ctx.fillStyle = "#323130";
+                ctx.fillText(onPrem, 500, 140);
+
+                // Draw S2S Tunnel
+                ctx.beginPath();
+                ctx.moveTo(325, 215);
+                ctx.lineTo(400, 215);
+                ctx.lineTo(400, 150);
+                ctx.lineTo(480, 150);
+                
+                ctx.setLineDash([8, 4]);
+                ctx.strokeStyle = s2sOk ? onPremGreen : errorRed;
+                ctx.lineWidth = 4;
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                // Tunnel Label
+                ctx.fillStyle = s2sOk ? onPremGreen : errorRed;
+                ctx.font = "bold 12px 'Segoe UI', sans-serif";
+                ctx.fillText(s2sOk ? "IPsec / IKE S2S Tunnel" : "Routing Conflict Detected", 310, 135);
+            }
+
+            // 5. Draw P2S Clients (Bottom Right)
+            if (inputs.p2sToggle.checked) {
+                ctx.fillStyle = p2sLight;
+                ctx.strokeStyle = p2sOrange;
+                ctx.lineWidth = 2;
+                roundRect(ctx, 480, 310, 220, 130, 10, true, true);
+                
+                ctx.fillStyle = p2sOrange;
+                ctx.font = "bold 16px 'Segoe UI', sans-serif";
+                ctx.fillText("Remote Worker Clients", 500, 345);
+                ctx.font = "14px monospace";
+                ctx.fillStyle = "#323130";
+                ctx.fillText(p2s, 500, 370);
+
+                // Draw P2S Tunnel
+                ctx.beginPath();
+                ctx.moveTo(325, 215);
+                ctx.lineTo(400, 215);
+                ctx.lineTo(400, 375);
+                ctx.lineTo(480, 375);
+
+                ctx.setLineDash([4, 4]);
+                ctx.strokeStyle = p2sOk ? p2sOrange : errorRed;
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                // Tunnel Label
+                ctx.fillStyle = p2sOk ? p2sOrange : errorRed;
+                ctx.font = "bold 12px 'Segoe UI', sans-serif";
+                ctx.fillText(p2sOk ? "SSTP / IKEv2 / OpenVPN" : "Routing Conflict Detected", 310, 395);
+            }
+        }
+
+        // Event Listeners for interactivity
+        Object.values(inputs).forEach(input => {
+            input.addEventListener('input', update);
+            input.addEventListener('change', update);
+        });
+
+        // Trigger initial draw
+        window.onload = update;
+    </script>
+</body>
+</html>

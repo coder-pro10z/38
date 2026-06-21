@@ -122,6 +122,10 @@ async function main() {
     { name: '9Slides.json', type: 'deck' },
     { name: 'scenarios.json', type: 'scenarios' },
     { name: 'new_scenarios.json', type: 'scenarios' },
+    { name: 'hexaview_r1.json', type: 'scenarios' },
+    { name: 'hexaview_r2.json', type: 'scenarios' },
+    { name: 'noventiq_r1.json', type: 'scenarios' },
+    { name: 'infra_azure.json', type: 'scenarios' },
     { name: 'Common_interview_Question_Answers.json', type: 'qa_json' },
     { name: 'common_inteview_questions.md', type: 'md' }
   ];
@@ -265,6 +269,9 @@ async function main() {
           sc.definition,
           sc.why_it_matters,
           sc.real_world_scenario,
+          sc.content_theory || '',
+          sc.content_implementation || '',
+          sc.interview_kill_shot || '',
           (sc.core_concepts || []).map(cc => `${cc.name} ${cc.definition} ${cc.usage}`).join(' '),
           (sc.follow_up_questions || []).join(' ')
         ].join(' ');

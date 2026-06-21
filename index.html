@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        // Filter out third-party/extension errors to prevent console clutter early on
+        window.onerror = function(msg, url, line, col, error) {
+            const msgStr = String(msg || '');
+            const urlStr = String(url || '');
+            const stackStr = error && error.stack ? String(error.stack) : '';
+            if (
+                urlStr.includes('chrome-extension://') ||
+                msgStr.includes('chrome-extension://') ||
+                stackStr.includes('chrome-extension://') ||
+                urlStr.includes('index-CUHM8_N7.js') ||
+                msgStr.includes('index-CUHM8_N7.js') ||
+                stackStr.includes('index-CUHM8_N7.js') ||
+                msgStr === 'Script error.'
+            ) {
+                return true; // Suppress extension error logging in console
+            }
+            return false;
+        };
+        window.onunhandledrejection = function(event) {
+            const reasonStr = event.reason ? String(event.reason.stack || event.reason) : '';
+            if (reasonStr.includes('index-CUHM8_N7.js') || reasonStr.includes('chrome-extension://')) {
+                event.preventDefault(); // Suppress promise rejection noise
+            }
+        };
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interview Study Dashboard</title>
@@ -1043,6 +1069,8 @@
                     <div class="dropdown-item" id="opt-hexaview-r2" onclick="selectDataset('hexaview_r2')">Round 2 (18 Q&A) <span></span></div>
                     <div class="dropdown-submenu-header" style="margin-top: 6px;">Noventiq</div>
                     <div class="dropdown-item" id="opt-noventiq-r1" onclick="selectDataset('noventiq_r1')">Round 1 (8 Q&A) <span></span></div>
+                    <div class="dropdown-submenu-header" style="margin-top: 6px;">Azure Infra (JD)</div>
+                    <div class="dropdown-item" id="opt-infra-azure" onclick="selectDataset('infra_azure')">20 Topics — JD Aligned <span></span></div>
                     <hr style="border: 0; border-top: 1px solid var(--border); margin: 4px 0;">
                     <div class="dropdown-item active-item" id="opt-default-dataset" onclick="selectDataset('default')">Default Scenarios <span>✓</span></div>
                 </div>
@@ -1316,6 +1344,26 @@ async function jumpToSource(ref) {
         altIndex = noventiqR1Scenarios.findIndex(s => s.title.toLowerCase().trim() === cleanTitle);
         if (altIndex !== -1) {
             await selectDataset('noventiq_r1');
+            currentIndex = altIndex;
+            solutionRevealed = false;
+            const drawer = document.getElementById('glossary-drawer');
+            if (drawer) drawer.classList.remove('active');
+            const modal = document.getElementById('index-modal');
+            if (modal) modal.classList.remove('active');
+            setMode('learn');
+            return true;
+        }
+        
+        // Check infraAzureScenarios
+        if (infraAzureScenarios.length === 0) {
+            try {
+                const res = await fetch('infra_azure.json');
+                if (res.ok) infraAzureScenarios = await res.json();
+            } catch(e) { console.error('Failed to pre-fetch infra azure:', e); }
+        }
+        altIndex = infraAzureScenarios.findIndex(s => s.title.toLowerCase().trim() === cleanTitle);
+        if (altIndex !== -1) {
+            await selectDataset('infra_azure');
             currentIndex = altIndex;
             solutionRevealed = false;
             const drawer = document.getElementById('glossary-drawer');
@@ -1816,7 +1864,8 @@ let defaultScenarios = [];
 let hexaviewR1Scenarios = [];
 let hexaviewR2Scenarios = [];
 let noventiqR1Scenarios = [];
-let currentDataset = 'default'; // 'default', 'hexaview_r1', 'hexaview_r2', or 'noventiq_r1'
+let infraAzureScenarios = [];
+let currentDataset = 'default'; // 'default', 'hexaview_r1', 'hexaview_r2', 'noventiq_r1', or 'infra_azure'
 
 async function selectDataset(type) {
     if (type === currentDataset) return;
@@ -1828,6 +1877,7 @@ async function selectDataset(type) {
     const optHexR1 = document.getElementById('opt-hexaview-r1');
     const optHexR2 = document.getElementById('opt-hexaview-r2');
     const optNovR1 = document.getElementById('opt-noventiq-r1');
+    const optInfraAz = document.getElementById('opt-infra-azure');
     const optDef = document.getElementById('opt-default-dataset');
     
     if (optHexR1 && optHexR2 && optNovR1 && optDef) {
@@ -1837,6 +1887,7 @@ async function selectDataset(type) {
         optHexR2.querySelector('span').innerText = '';
         optNovR1.classList.remove('active-item');
         optNovR1.querySelector('span').innerText = '';
+        if (optInfraAz) { optInfraAz.classList.remove('active-item'); optInfraAz.querySelector('span').innerText = ''; }
         optDef.classList.remove('active-item');
         optDef.querySelector('span').innerText = '';
         
@@ -1849,6 +1900,8 @@ async function selectDataset(type) {
         } else if (type === 'noventiq_r1') {
             optNovR1.classList.add('active-item');
             optNovR1.querySelector('span').innerText = '✓';
+        } else if (type === 'infra_azure') {
+            if (optInfraAz) { optInfraAz.classList.add('active-item'); optInfraAz.querySelector('span').innerText = '✓'; }
         } else {
             optDef.classList.add('active-item');
             optDef.querySelector('span').innerText = '✓';
@@ -1897,6 +1950,19 @@ async function selectDataset(type) {
                 const saved = localStorage.getItem('noventiq_r1_ratings');
                 if (saved) ratings = JSON.parse(saved);
             } catch(e) { console.error('Failed to load noventiq R1 ratings:', e); }
+        } else if (type === 'infra_azure') {
+            if (infraAzureScenarios.length === 0) {
+                const res = await fetch('infra_azure.json');
+                if (!res.ok) throw new Error("Could not load Azure Infra dataset");
+                infraAzureScenarios = await res.json();
+            }
+            scenarios = infraAzureScenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('infra_azure_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load infra azure ratings:', e); }
         } else {
             scenarios = defaultScenarios;
             
@@ -2200,6 +2266,48 @@ function renderScenario() {
             <hr>
             <p class="body-text"><strong style="color:var(--text-primary)">Real World:</strong> ${format(d.real_world_scenario)}</p>
         </div>`;
+
+        // 1b. Concept Explanation (content_theory)
+        if (d.content_theory) {
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">🧠 Concept Explanation</h2>
+                <div class="body-text" style="white-space: pre-line; line-height: 1.75;">${format(d.content_theory)}</div>
+            </div>`;
+        }
+
+        // 1c. Implementation Guide (content_implementation)
+        if (d.content_implementation) {
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">🔧 Implementation Guide</h2>
+                <div class="body-text" style="white-space: pre-line; line-height: 1.75;">${format(d.content_implementation)}</div>
+            </div>`;
+        }
+
+        // 1d. Key Commands / Terraform (key_commands)
+        if (d.key_commands && d.key_commands.length > 0) {
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1;">
+                <h2 class="card-title">💻 Key Commands & Terraform</h2>
+                ${d.key_commands.map((kc, i) => `
+                    <div class="code-block-card" style="margin-bottom: 12px;">
+                        <div class="code-block-header" style="margin-bottom: 6px; font-size: 12px; color: var(--text-muted);">${format(kc.description)}</div>
+                        <div class="code-block-body" style="white-space: pre; overflow-x: auto; font-size: 12px;">${format(kc.command)}</div>
+                    </div>
+                `).join('')}
+            </div>`;
+        }
+
+        // 1e. Interactive HTML Canvas
+        if (d.interactive_html) {
+            const canvasId = 'infra-canvas-' + currentIndex;
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1; padding: 0; overflow: hidden; border-radius: 10px;">
+                <h2 class="card-title" style="padding: 16px 20px 0 20px;">🖥️ Interactive Canvas</h2>
+                <iframe id="${canvasId}" srcdoc="" style="width:100%; height:580px; border:none; border-radius: 0 0 10px 10px;" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>`;
+        }
 
         // 8. Interview Answer (Moved for Readability UX)
         if (d.interview_answer) {
@@ -2873,6 +2981,19 @@ function renderScenario() {
         </div>`;
 
     dashboard.innerHTML = html;
+
+    // Programmatically populate the interactive canvas iframe
+    const interactiveHtml = s.interactive_html || (s.data && s.data.interactive_html);
+    if (interactiveHtml) {
+        const canvasId = 'infra-canvas-' + currentIndex;
+        const iframe = document.getElementById(canvasId);
+        if (iframe) {
+            console.log(`[Canvas Debug] Setting srcdoc on ${canvasId}`);
+            iframe.srcdoc = interactiveHtml;
+        } else {
+            console.error(`[Canvas Debug] ERROR: Could not find iframe with ID ${canvasId}`);
+        }
+    }
 }
 
 // Global click event delegation

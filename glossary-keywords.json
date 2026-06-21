@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-06-17T09:27:51.337Z",
+  "generatedAt": "2026-06-21T16:03:14.005Z",
   "totalKeywords": 513,
   "keywords": [
     {
@@ -119,6 +119,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 38,
           "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "VNet Peering & Subnetting"
         }
       ]
     },
@@ -225,6 +230,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Current Project Architecture"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "AKS vs Azure Container Apps"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
         }
       ]
     },
@@ -312,6 +342,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Ansible Fundamentals & Configuration Management"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
         }
       ]
     },
@@ -444,6 +484,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 18,
           "scenarioTitle": "Azure App Service"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Current Project Architecture"
         }
       ]
     },
@@ -490,6 +535,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 40,
           "scenarioTitle": "High Availability & Traffic Management"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
         }
       ]
     },
@@ -695,6 +765,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "CI/CD Pipeline Architecture Overview"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "CD Stage 1: UAT Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Artifact Promotion Strategy"
         }
       ]
     },
@@ -837,6 +932,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 68,
+          "scenarioTitle": "RBAC & Security"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 97,
           "scenarioTitle": "SSH Administration"
         },
@@ -849,6 +949,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Production Incident Troubleshooting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Azure Storage Redundancy & Security"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -885,6 +1010,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "CI/CD Pipeline Architecture Overview"
         }
       ]
     },
@@ -969,6 +1099,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 40,
           "scenarioTitle": "High Availability & Traffic Management"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Availability Set vs Availability Zone"
         }
       ]
     },
@@ -997,6 +1132,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 40,
           "scenarioTitle": "High Availability & Traffic Management"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Availability Set vs Availability Zone"
         }
       ]
     },
@@ -1066,8 +1206,18 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "12-Factor App Principle"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 127,
           "scenarioTitle": "Cloud Automation using Python"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Introduction & Background"
         }
       ]
     },
@@ -1114,6 +1264,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Introduction & Background"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Azure DevOps Pipelines & Live Monitoring"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Jenkins vs Azure DevOps"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Version Control & Release Tracking"
         }
       ]
     },
@@ -1142,6 +1317,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 40,
           "scenarioTitle": "High Availability & Traffic Management"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
         }
       ]
     },
@@ -1239,6 +1429,41 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Azure DevOps Pipelines & Live Monitoring"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Monitoring & 99.9% Uptime SLA"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
         }
       ]
     },
@@ -1336,6 +1561,36 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 41,
           "scenarioTitle": "Enterprise IaC Module Architectures"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Terraform State Management"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Availability Set vs Availability Zone"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
         }
       ]
     },
@@ -1425,6 +1680,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 35,
           "scenarioTitle": "Disaster Recovery & Backup"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
         }
       ]
     },
@@ -1693,6 +1958,16 @@
           "file": "scenarios.json",
           "scenarioIndex": 90,
           "scenarioTitle": "Memory Management"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
         }
       ]
     },
@@ -1716,6 +1991,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 53,
           "scenarioTitle": "Deployments"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
         }
       ]
     },
@@ -1773,6 +2053,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 40,
           "scenarioTitle": "High Availability & Traffic Management"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
         }
       ]
     },
@@ -1938,6 +2233,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 38,
           "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "VNet Peering & Subnetting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
         }
       ]
     },
@@ -2259,6 +2564,21 @@
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
         },
         {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Availability Set vs Availability Zone"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How does self healing work?"
         },
@@ -2387,6 +2707,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
         }
       ]
     },
@@ -2438,6 +2763,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Terraform Directory Structure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
         }
       ]
     },
@@ -2578,6 +2913,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -2883,6 +3233,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 65,
+          "scenarioTitle": "Health Checks (Liveness, Readiness, Startup Probes)"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 69,
           "scenarioTitle": "Security Features"
         },
@@ -2905,6 +3260,51 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Artifact Promotion Strategy"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Version Control & Release Tracking"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "AKS vs Azure Container Apps"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -3015,8 +3415,18 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 76,
+          "scenarioTitle": "Common kubectl Commands"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 79,
           "scenarioTitle": "Cloud Kubernetes (EKS/GKE/AKS)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -4177,6 +4587,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Docker Fundamentals & Containerization"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "CI Stage 1: Source & Build"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
         }
       ]
     },
@@ -4441,6 +4866,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 52,
+          "scenarioTitle": "ReplicaSet"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 53,
           "scenarioTitle": "Deployments"
         },
@@ -4603,6 +5033,196 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "CI/CD Pipeline Architecture Overview"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "End-to-End Deployment Pipeline Flow"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "CD Stage 1: UAT Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "QA Validation Process"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "CD Stage 2: PreProd Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "CD Stage 3: Production Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Notifications & Release Visibility"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Failback Testing — Operational Checklists"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Azure Storage Redundancy & Security"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Cost Optimization (FinOps)"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -5162,6 +5782,56 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "CI/CD Pipeline Architecture Overview"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Rollback Strategy (N-1 & N-2)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -5805,6 +6475,11 @@
           "scenarioTitle": "Production Python Design"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Terraform Directory Structure"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Pod stuck Pending?"
         },
@@ -5888,6 +6563,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 91,
           "scenarioTitle": "Disk Management"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -5994,6 +6674,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 35,
           "scenarioTitle": "Disaster Recovery & Backup"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
         }
       ]
     },
@@ -6141,6 +6826,41 @@
           "scenarioTitle": "Works Locally But Fails In Docker"
         },
         {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is Headless Service?"
         },
@@ -6272,6 +6992,36 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Docker Fundamentals & Containerization"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "CD Stage 1: UAT Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Version Control & Release Tracking"
         }
       ]
     },
@@ -6348,6 +7098,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Docker Fundamentals & Containerization"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
         }
       ]
     },
@@ -6371,6 +7131,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 75,
           "scenarioTitle": "Upgrades & Maintenance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -6571,6 +7336,61 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 39,
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Azure Storage Redundancy & Security"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
         }
       ]
     },
@@ -6599,6 +7419,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
         }
       ]
     },
@@ -6789,6 +7614,11 @@
           "scenarioTitle": "Exception Handling"
         },
         {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How handle API errors?"
         },
@@ -6926,6 +7756,46 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 35,
           "scenarioTitle": "Disaster Recovery & Backup"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Failback Testing — Operational Checklists"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
         }
       ]
     },
@@ -7107,6 +7977,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 83,
           "scenarioTitle": "Linux Basic Commands"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -7292,6 +8167,11 @@
           "scenarioTitle": "Decorators"
         },
         {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "CI Stage 3: Automated Testing"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Explain LEGB rule"
         },
@@ -7352,6 +8232,16 @@
           "file": "python_linux_53.json",
           "slideNumber": 49,
           "slideTopic": "Monitoring Scripts using Python"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -7550,6 +8440,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 20,
           "scenarioTitle": "Terraform"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "12-Factor App Principle"
         }
       ]
     },
@@ -7588,6 +8483,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 13,
           "scenarioTitle": "Grafana Alert Triggered At Midnight"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Azure DevOps Pipelines & Live Monitoring"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Monitoring & 99.9% Uptime SLA"
         }
       ]
     },
@@ -7654,6 +8559,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Linux Basics & System Diagnostics"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -7775,6 +8685,41 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Cost Optimization (FinOps)"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -8127,6 +9072,36 @@
           "scenarioTitle": "Kubernetes Python Client"
         },
         {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Ingress vs LoadBalancer?"
         },
@@ -8182,6 +9157,36 @@
           "scenarioTitle": "Ingress"
         },
         {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Ingress vs LoadBalancer?"
         },
@@ -8224,6 +9229,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 38,
           "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
         }
       ]
     },
@@ -8869,6 +9889,41 @@
           "scenarioTitle": "Containerization & Microservices Infrastructure"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Docker Fundamentals & Containerization"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "End-to-End Deployment Pipeline Flow"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "CD Stage 1: UAT Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Rollback Strategy (N-1 & N-2)"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "XML Parsing & Agent OS Mismatch"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "ImagePullBackOff?"
         }
@@ -9000,6 +10055,26 @@
           "file": "scenarios.json",
           "scenarioIndex": 126,
           "scenarioTitle": "CI/CD Automation with Python"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Docker Fundamentals & Containerization"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "CI/CD Pipeline Architecture Overview"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "End-to-End Deployment Pipeline Flow"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -9149,6 +10224,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 13,
           "scenarioTitle": "Grafana Alert Triggered At Midnight"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Production Incident Troubleshooting"
         }
       ]
     },
@@ -9382,6 +10462,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
         }
       ]
     },
@@ -9461,6 +10546,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
         }
       ]
     },
@@ -9531,6 +10626,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 21,
           "scenarioTitle": "Jenkins"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Jenkins vs Azure DevOps"
         }
       ]
     },
@@ -9738,6 +10838,11 @@
           "scenarioTitle": "Kernel Troubleshooting"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Docker Fundamentals & Containerization"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is OOMKilled?"
         },
@@ -9844,6 +10949,41 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 32,
           "scenarioTitle": "Azure Key Vault"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Azure DevOps Pipelines & Live Monitoring"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Production Incident Troubleshooting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Azure Storage Redundancy & Security"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
         }
       ]
     },
@@ -9917,6 +11057,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 49,
           "scenarioTitle": "Cluster Architecture"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 66,
+          "scenarioTitle": "Scheduling"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -10309,6 +11454,21 @@
           "scenarioTitle": "Kubernetes Deep Dive"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "AKS vs Azure Container Apps"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Difference between Pod and ReplicaSet?"
         },
@@ -10406,6 +11566,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 76,
           "scenarioTitle": "Common kubectl Commands"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "AKS vs Azure Container Apps"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -10635,6 +11800,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "CI/CD Pipeline Architecture Overview"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
         }
       ]
     },
@@ -10908,6 +12088,21 @@
           "scenarioTitle": "Observability & Live Production Triage"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Linux Basics & System Diagnostics"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "XML Parsing & Agent OS Mismatch"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is OOMKilled?"
         },
@@ -11164,6 +12359,41 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 40,
           "scenarioTitle": "High Availability & Traffic Management"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -11935,6 +13165,51 @@
           "scenarioTitle": "Observability & Live Production Triage"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Linux Basics & System Diagnostics"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Monitoring & 99.9% Uptime SLA"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Production Incident Troubleshooting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "CrashLoopBackOff fix?"
         },
@@ -12116,6 +13391,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 127,
           "scenarioTitle": "Cloud Automation using Python"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
         }
       ]
     },
@@ -12240,6 +13520,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 51,
           "scenarioTitle": "Labels, Selectors & Annotations"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Cost Optimization (FinOps)"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -12804,6 +14089,51 @@
           "scenarioTitle": "Observability & Live Production Triage"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Measuring 35% Reduction in Manual Effort"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Linux Basics & System Diagnostics"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "CI Stage 2: Code Quality & Security"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "CI Stage 3: Automated Testing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Deployment vs DaemonSet?"
         }
@@ -13346,6 +14676,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "AKS vs Azure Container Apps"
         }
       ]
     },
@@ -13587,6 +14927,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Terraform Fundamentals & Custom Modules"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Terraform Directory Structure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -13855,6 +15210,11 @@
           "scenarioTitle": "Namespaces"
         },
         {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Explain Service discovery."
         },
@@ -13913,6 +15273,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 94,
           "scenarioTitle": "Advanced Networking"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
         }
       ]
     },
@@ -14109,6 +15474,26 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 39,
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
         }
       ]
     },
@@ -14631,6 +16016,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
         }
       ]
     },
@@ -14997,6 +16387,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 39,
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Production Incident Troubleshooting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
         }
       ]
     },
@@ -15048,6 +16463,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 44,
+          "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 47,
           "scenarioTitle": "12-Factor App Principle"
         },
@@ -15075,6 +16495,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "new_scenarios.json",
+          "scenarioIndex": 44,
+          "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Ansible Fundamentals & Configuration Management"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "End-to-End Deployment Pipeline Flow"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -15171,6 +16606,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -15306,6 +16751,36 @@
           "scenarioTitle": "Configuration Management & Orchestration"
         },
         {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "os vs shutil?"
         }
@@ -15326,6 +16801,16 @@
           "file": "kubernetes_Slides_34.json",
           "slideNumber": 8,
           "slideTopic": "Ingress"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
         }
       ]
     },
@@ -15994,6 +17479,26 @@
           "scenarioTitle": "Observability & Live Production Triage"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Logic Assessment: Number Sequence"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Cost Optimization (FinOps)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is decorator?"
         }
@@ -16053,6 +17558,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 80,
           "scenarioTitle": "Scenario-Based Kubernetes Interview Questions"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Notifications & Release Visibility"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -16306,6 +17816,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
         },
@@ -16351,8 +17866,108 @@
         },
         {
           "file": "new_scenarios.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Current Project Architecture"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Azure DevOps Pipelines & Live Monitoring"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "CI/CD Pipeline Architecture Overview"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Jenkins vs Azure DevOps"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "End-to-End Deployment Pipeline Flow"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "CI Stage 1: Source & Build"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "CI Stage 2: Code Quality & Security"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "CI Stage 3: Automated Testing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "CD Stage 1: UAT Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "QA Validation Process"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "CD Stage 2: PreProd Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Notifications & Release Visibility"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Rollback Strategy (N-1 & N-2)"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "XML Parsing & Agent OS Mismatch"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -16403,6 +18018,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
         }
       ]
     },
@@ -16917,6 +18537,11 @@
           "scenarioTitle": "Kubernetes Deep Dive"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "ReplicaSet vs Deployment?"
         },
@@ -17046,6 +18671,36 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 39,
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Azure Storage Redundancy & Security"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
         }
       ]
     },
@@ -17285,6 +18940,36 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Linux Basics & System Diagnostics"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "QA Validation Process"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Failback Testing — Operational Checklists"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -17590,6 +19275,11 @@
           "scenarioTitle": "Scenario-Based Kubernetes Interview Questions"
         },
         {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Monitoring & 99.9% Uptime SLA"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Use cases of DaemonSet?"
         }
@@ -17612,6 +19302,16 @@
           "file": "kubernetes_Slides_34.json",
           "slideNumber": 33,
           "slideTopic": "Cloud Kubernetes (EKS/GKE/AKS)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
         }
       ]
     },
@@ -17996,6 +19696,21 @@
           "scenarioTitle": "Azure Key Vault"
         },
         {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Why use namespaces?"
         },
@@ -18056,6 +19771,11 @@
           "file": "kubernetes_Slides_34.json",
           "slideNumber": 18,
           "slideTopic": "Health Checks (Liveness, Readiness, Startup Probes)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 65,
+          "scenarioTitle": "Health Checks (Liveness, Readiness, Startup Probes)"
         }
       ]
     },
@@ -18276,6 +19996,36 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "CI Stage 1: Source & Build"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "CD Stage 2: PreProd Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Artifact Promotion Strategy"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Version Control & Release Tracking"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Notifications & Release Visibility"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Rollback Strategy (N-1 & N-2)"
         }
       ]
     },
@@ -18450,6 +20200,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 38,
           "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Failback Testing — Operational Checklists"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Azure Storage Redundancy & Security"
         }
       ]
     },
@@ -18548,6 +20323,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
         }
       ]
     },
@@ -18740,6 +20525,91 @@
           "scenarioTitle": "Observability & Live Production Triage"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Terraform Fundamentals & Custom Modules"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Terraform State Drift"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Linux Basics & System Diagnostics"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "AKS vs Azure Container Apps"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Cost Optimization (FinOps)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How TLS works?"
         },
@@ -18783,8 +20653,14 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "Resource Group"
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
         }
       ]
     },
@@ -18933,6 +20809,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 74,
           "scenarioTitle": "Backup & Disaster Recovery"
         },
@@ -18945,6 +20826,21 @@
           "file": "scenarios.json",
           "scenarioIndex": 104,
           "scenarioTitle": "Production Troubleshooting"
+        },
+        {
+          "file": "new_scenarios.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
         }
       ]
     },
@@ -19114,6 +21010,16 @@
           "file": "scenarios.json",
           "scenarioIndex": 127,
           "scenarioTitle": "Cloud Automation using Python"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
         }
       ]
     },
@@ -19192,6 +21098,31 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
         }
       ]
     },
@@ -19315,6 +21246,26 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 24,
           "scenarioTitle": "Release Management"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Artifact Storage & Publishing"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "CD Stage 3: Production Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Rollback Strategy (N-1 & N-2)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -19644,6 +21595,111 @@
           "scenarioTitle": "High Availability & Traffic Management"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Hub & Spoke Architecture"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Ingress vs LoadBalancer?"
         },
@@ -19685,8 +21741,9 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "SaaS"
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
         }
       ]
     },
@@ -19821,6 +21878,51 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Kubernetes Overview & Orchestration"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "AKS vs Azure Container Apps"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
         }
       ]
     },
@@ -19844,6 +21946,16 @@
           "file": "python_linux_53.json",
           "slideNumber": 22,
           "slideTopic": "Cron & Scheduling"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -19992,6 +22104,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Production Incident Troubleshooting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -20375,6 +22502,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 51,
+          "scenarioTitle": "Labels, Selectors & Annotations"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 54,
           "scenarioTitle": "Services"
         },
@@ -20479,6 +22611,61 @@
           "scenarioTitle": "Continuous Delivery Design & Federation"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Current Project Architecture"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Terraform State Drift"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Monitoring & 99.9% Uptime SLA"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "ClusterIP vs NodePort?"
         },
@@ -20580,6 +22767,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 39,
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
         }
       ]
     },
@@ -20906,6 +23103,61 @@
           "scenarioTitle": "Observability & Live Production Triage"
         },
         {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Failback Testing — Operational Checklists"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Cost Optimization (FinOps)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How does Service find Pods?"
         },
@@ -21113,8 +23365,34 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "SLA"
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Monitoring & 99.9% Uptime SLA"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Availability Set vs Availability Zone"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
         }
       ]
     },
@@ -21264,6 +23542,46 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 39,
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Production Incident Troubleshooting"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Azure Identity & Access Governance"
         }
       ]
     },
@@ -21420,8 +23738,19 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "SSL"
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
         }
       ]
     },
@@ -21819,6 +24148,11 @@
         },
         {
           "file": "scenarios.json",
+          "scenarioIndex": 77,
+          "scenarioTitle": "YAML & Kubernetes Manifests"
+        },
+        {
+          "file": "scenarios.json",
           "scenarioIndex": 79,
           "scenarioTitle": "Cloud Kubernetes (EKS/GKE/AKS)"
         },
@@ -22098,6 +24432,36 @@
           "scenarioTitle": "Enterprise IaC Module Architectures"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Terraform Directory Structure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Terraform State Management"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Terraform State Drift"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Failback Testing — Operational Checklists"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How does self healing work?"
         },
@@ -22154,6 +24518,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 41,
           "scenarioTitle": "Enterprise IaC Module Architectures"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Terraform State Drift"
         }
       ]
     },
@@ -22302,6 +24671,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 38,
           "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "VNet Peering & Subnetting"
         }
       ]
     },
@@ -22496,6 +24870,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 39,
           "scenarioTitle": "Routing & Secure Endpoint Solutions"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
         }
       ]
     },
@@ -22735,6 +25124,21 @@
           "scenarioTitle": "Continuous Delivery Design & Federation"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Failback Testing — Operational Checklists"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "When use multiprocessing?"
         }
@@ -22763,6 +25167,31 @@
           "file": "scenarios.json",
           "scenarioIndex": 93,
           "scenarioTitle": "Linux Networking Basics"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -22857,6 +25286,61 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 41,
           "scenarioTitle": "Enterprise IaC Module Architectures"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Introduction & Background"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Current Project Architecture"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Terraform Fundamentals & Custom Modules"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Terraform Directory Structure"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Terraform State Management"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Terraform State Drift"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
         }
       ]
     },
@@ -23053,6 +25537,16 @@
           "scenarioTitle": "Secrets"
         },
         {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is Ingress Controller?"
         },
@@ -23179,6 +25673,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Linux Basics & System Diagnostics"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -23389,6 +25893,21 @@
           "scenarioTitle": "Linux Networking Basics"
         },
         {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "TCP vs UDP?"
         },
@@ -23435,6 +25954,11 @@
           "file": "python_linux_53.json",
           "slideNumber": 50,
           "slideTopic": "Testing Automation using pytest"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "CI Stage 3: Automated Testing"
         }
       ]
     },
@@ -23586,6 +26110,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
         }
       ]
     },
@@ -23825,6 +26354,31 @@
           "scenarioTitle": "Kubernetes Python Client"
         },
         {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "End-to-End Deployment Pipeline Flow"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "CD Stage 1: UAT Deployment"
+        },
+        {
+          "file": "hexaview_r2.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Artifact Promotion Strategy"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How to update configuration?"
         },
@@ -23968,6 +26522,96 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 38,
           "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Hub & Spoke Architecture"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Front Door vs Application Gateway"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "VNet Peering & Subnetting"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Service Endpoint vs Private Endpoint"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "VPN Gateway — Architecture & SKUs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Azure Load Balancer"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Private DNS Zones"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Management Groups & Enterprise Hierarchy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Secure Remote Access & Private Link"
         }
       ]
     },
@@ -23996,6 +26640,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 38,
           "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "VNet Peering & Subnetting"
         }
       ]
     },
@@ -24057,6 +26706,16 @@
           "file": "scenarios.json",
           "scenarioIndex": 92,
           "scenarioTitle": "Storage & Filesystem"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -24238,6 +26897,36 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 9,
           "scenarioTitle": "Jenkins Pipeline Suddenly Failing"
+        },
+        {
+          "file": "hexaview_r1.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Network Security Groups (NSGs)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Monitoring & SIEM Integration"
         }
       ]
     },

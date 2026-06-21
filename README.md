@@ -1,323 +1,200 @@
 # 🎯 Enterprise Full-Stack & DevOps Interview Study Dashboard
 
-> An interactive, single-page study dashboard designed to help you master **47 real-world DevOps & Cloud interview scenarios** — including **26 rapid-fire questions** pulled from actual recent interviews.
+An interactive, single-page study dashboard designed to help candidates master **real-world DevOps, Cloud, and SRE interview scenarios** — including curated rapid-fire questions, architectural tradeoffs, and live troubleshooting flows.
+
+This repository features both the client-side interactive dashboard and a **Node.js data compilation pipeline** that automatically parses raw interview content, extracts terminology, and builds structured datasets.
 
 ---
 
-## 📖 What This Application Does
+## 🛠 Developer Scripts & Data Pipeline
 
-This is a **client-side web application** that presents DevOps and Cloud Engineering interview preparation material in a structured, card-based dashboard format. It is designed to simulate the types of questions, troubleshooting scenarios, architecture decisions, and rapid-fire rounds encountered in **real enterprise interviews**.
+The project features a suite of Node.js utility scripts designed to manage, seed, compile, and enrich the study databases. Below is a guide on how these scripts are used to generate the system's static assets.
 
-### Key Features
+```
+Data Source (.md)  ──[Compilers]──>  Dataset (.json)  ──[Injectors]──>  Enriched scenarios.json
+```
 
-| Feature | Description |
-|---|---|
-| **📚 Learn Mode** | Browse all 47 scenarios with full details — definitions, architecture flows, RCA breakdowns, and kill-shot answers. |
-| **🧪 Practice Mode** | Hide solutions behind a reveal button to simulate being asked the question live. |
-| **📝 Review Mode** | Focus only on scenarios you haven't marked as "Done" — tracks your mastery progress. |
-| **⚡ Rapid Fire Mode** | Isolates the rapid-fire Q&A accordion for a specific topic — click to reveal kill-shot answers. Perfect for last-minute interview prep. |
-| **🗂 Scenario Index** | Slide-up modal showing all scenarios with status indicators (🟢 Done / 🟠 Review / 🟡 Revisit). |
-| **🎨 Confidence Rating** | Mark each scenario as Done, Review, or Revisit to track your study progress. |
-| **⌨️ Keyboard Navigation** | Use `←` and `→` arrow keys to quickly flip through scenarios. |
+### 1. Data Pipeline Execution Order
+If you are rebuilding the entire application dataset from scratch, execute the scripts in the following order:
+
+```bash
+# 1. Compile the glossary definitions
+node generate_seed.js
+
+# 2. Extract keywords and establish cross-mentions
+node extract_glossary.js
+
+# 3. Inject interview Q&As into scenarios.json
+node inject_qa.js
+
+# 4. Generate core concepts for scenarios.json
+node inject_core_concepts.js
+
+# 5. Populate follow-up questions for scenarios.json
+node generate_followups.js
+
+# 6. Compile custom company interview datasets
+node generate_hexaview_json.js
+node generate_hexaview_r1_json.js
+node generate_noventiq_r1_json.js
+```
+
+---
+
+### 2. Script Reference & Code Deep Dive
+
+#### 📝 `generate_seed.js`
+- **Purpose**: Generates the raw glossary seed data (`glossary-seed.json`) from hardcoded structures containing detailed DevOps, SRE, and Cloud definitions, aliases, importance weightings, and common interview pitfalls.
+- **Key Code Structure**:
+  ```javascript
+  const seedData = {
+    version: "1.0",
+    keywords: [
+      {
+        keyword: "Linux",
+        aliases: ["Linux OS", "GNU/Linux"],
+        category: "Linux & Operating Systems",
+        interviewDomain: "Automation",
+        difficulty: "Beginner",
+        definition: {
+          shortDefinition: "An open-source, Unix-like operating system kernel...",
+          detailedExplanation: "Linux manages system hardware resources...",
+          commonMistakes: ["Confusing the Linux kernel with a full distribution", "Running container processes as root"],
+          followUpQuestions: ["Explain soft vs hard links.", "What is the role of PID 1?"]
+        }
+      }
+    ]
+  };
+  fs.writeFileSync('glossary-seed.json', JSON.stringify(seedData, null, 2));
+  ```
+
+#### 🔍 `extract_glossary.js`
+- **Purpose**: Parses `glossary-seed.json`, formats classifications, and scans all scenario definitions in `scenarios.json` to generate `keyword-links.json` (cross-referencing which slides mention which keywords).
+- **Core Lookup Logic**:
+  ```javascript
+  // Scans all scenario text fields to determine where keywords are mentioned
+  scenarios.forEach((s, idx) => {
+    const textContent = JSON.stringify(s).toLowerCase();
+    keywords.forEach(k => {
+      const regex = new RegExp(`\\b${escapeRegExp(k.keyword.toLowerCase())}\\b`, 'g');
+      if (regex.test(textContent)) {
+        addMention(k.keywordId, s.title, idx);
+      }
+    });
+  });
+  ```
+- **Outputs**: `glossary.json`, `keyword-links.json`
+
+#### 💉 `inject_qa.js`
+- **Purpose**: Enriches `scenarios.json` by mapping and injecting custom arrays of real-world interview Q&As and their high-impact "kill-shot" answers directly into scenarios based on their titles.
+- **Key Code Structure**:
+  ```javascript
+  const qaMapping = {
+    "AKS Deployment Failing After Release": [
+      { 
+        question: "What state do you check first when pods fail to roll out?", 
+        kill_shot_answer: "Check if pods are in CrashLoopBackOff, ImagePullBackOff, or Pending via 'kubectl get pods'." 
+      }
+    ]
+  };
+  // Injecting into scenarios.json
+  scenarios.forEach(s => {
+    if (qaMapping[s.title]) {
+      s.common_interview_questions = qaMapping[s.title];
+    }
+  });
+  ```
+
+#### 📚 `inject_core_concepts.js`
+- **Purpose**: Ensures that every scenario has 5 to 6 associated core concepts (name, definition, usage) dynamically injected to facilitate the "Quick Recall" UI module.
+- **Category Domain Inference**:
+  ```javascript
+  function determineDomain(title, tags) {
+      const t = (title + ' ' + tags.join(' ')).toLowerCase();
+      if (t.includes('kubernetes') || t.includes('aks') || t.includes('pod')) return 'kubernetes';
+      if (t.includes('terraform') || t.includes('iac')) return 'terraform';
+      return 'general';
+  }
+  ```
+
+#### 🔄 `generate_followups.js`
+- **Purpose**: Injects 6 randomized but highly context-relevant follow-up questions to help candidates prepare for deep-dive grilling during live interviews.
+- **Follow-up Mixing Logic**:
+  ```javascript
+  // Selects 4 domain-specific questions and fills the rest with generic stress questions
+  let finalQuestions = [];
+  let domainSpecific = questions.sort(() => 0.5 - Math.random());
+  finalQuestions.push(...domainSpecific.slice(0, 4));
+
+  let genericShuffle = generic.sort(() => 0.5 - Math.random());
+  while(finalQuestions.length < 6 && genericShuffle.length > 0) {
+      let q = genericShuffle.pop();
+      if(!finalQuestions.includes(q)) finalQuestions.push(q);
+  }
+  ```
+
+#### 🏭 `generate_hexaview_json.js`, `generate_hexaview_r1_json.js`, `generate_noventiq_r1_json.js`
+- **Purpose**: Compilers that parse raw text/markdown interview dossiers (`Hexaview-R1.md`, `Hexaview-R2.md`, `Noventiq-R1.md`) and output structured JSON databases matching the dashboard's rendering engine.
+- **Run command**:
+  ```bash
+  node generate_hexaview_r1_json.js
+  ```
+- **Outputs**: `hexaview_r1.json`, `hexaview_r2.json`, `noventiq_r1.json`
 
 ---
 
 ## 🏗 Application Architecture
 
+The application is structured to serve as an ultra-fast, fully client-side single-page application (SPA).
+
 ```
 38/
-├── index.html                                # Main dashboard (HTML + CSS + JS, single file)
-├── devops_interview_study_dashboard_38.html   # Identical copy of index.html
-├── scenarios.json                            # All 47 scenario data objects (loaded via fetch)
-├── 9Slides.json                              # Source file for the 9 newest "v3" slides
-└── README.md                                 # This file
+├── index.html                                  # Main dashboard (HTML + CSS + JS)
+├── devops_interview_study_dashboard_38.html     # Identical backup copy of index.html
+├── scenarios.json                              # Main Kubernetes/Troubleshooting scenarios database
+├── hexaview_r1.json                            # Hexaview Round 1 interview slides
+├── hexaview_r2.json                            # Hexaview Round 2 interview slides
+├── noventiq_r1.json                            # Noventiq Round 1 interview slides
+├── glossary.json                               # Processed keywords & definitions database
+├── keyword-links.json                          # Keywords cross-reference links
+├── *.js                                        # Node.js data pipeline scripts
+└── README.md                                   # This documentation file
 ```
 
 ### Tech Stack
+- **Frontend Core**: Standard HTML5 & Vanilla ES6+ Javascript (no compilation, build-tools, or Node.js frontend runtime needed).
+- **Styling**: Curated custom Vanilla CSS featuring dark glassmorphic styling, responsive flex/grid layouts, and micro-interactions.
+- **State Management**: Dynamic local storage segregation for ratings progress (e.g. `k8s_dashboard_ratings`, `hexaview_r1_ratings`, `hexaview_r2_ratings`, `noventiq_r1_ratings`).
 
-- **Pure HTML/CSS/JS** — No frameworks, no build tools, no dependencies
-- **External JSON** — Scenarios are loaded from `scenarios.json` via `fetch()`
-- **Responsive** — Mobile-first design with breakpoints at 400px, 600px, and 1024px
-- **Dark Theme** — Enterprise-grade dark UI with Inter + JetBrains Mono typography
+---
 
-### How to Run
+## 🚀 How to Run Locally
 
+Because the dashboard retrieves its databases via HTTP requests (`fetch`), browsers block direct file execution (`file://` protocol) due to Cross-Origin Resource Sharing (CORS) rules. You must run a basic local web server.
+
+### Option A: Python (Built-in)
 ```bash
-# Navigate to this directory
-cd 38/
-
-# Start a local server (required for fetch to load scenarios.json)
+# Start server on port 8000
 python3 -m http.server 8000
-
-# Open in your browser
-open http://localhost:8000
 ```
 
-> ⚠️ **Note:** Opening `index.html` directly via `file://` will fail due to CORS restrictions on `fetch()`. You must use a local HTTP server.
-
----
-
-## 📊 Content Coverage Overview
-
-The dashboard covers **47 scenarios** across **3 schema generations**, organized into the following domains:
-
-### Scenario Breakdown by Type
-
-| Category | Count | Schema | Topics |
-|---|---|---|---|
-| **Troubleshooting** | 12 | v1, v3 | AKS, Terraform, App Service, Docker, Jenkins, GitHub Actions, Azure SQL, Production Debugging |
-| **Incident Response** | 4 | v1 | Deployment outages, production incidents, monitoring alerts, Terraform destruction recovery |
-| **Architecture & Decision** | 4 | v1, v2 | Cost optimization, release rollback strategies, RBAC access control, system design |
-| **Platform Deep Dives** | 20 | v2 | Azure PaaS, AKS, Terraform, Jenkins, GitHub Actions, Docker, Monitoring, Security, DR, FinOps |
-| **Interview Playbook (Recent)** | 9 | v3 | VNet/Peering, Routing/Endpoints, HA/Traffic, IaC Modules, Ansible, Environments, Containers, CI/CD, Observability |
-
-### Difficulty Distribution
-
-| Difficulty | Count |
-|---|---|
-| 🟢 Intermediate | 19 |
-| 🔴 Advanced | 28 |
-
----
-
-## 🗂 Full Scenario Index
-
-### 🔵 Section 1 — Real-World Troubleshooting & Incidents (Scenarios 1–18)
-
-| # | Scenario | Type | Difficulty | Key Tags |
-|---|---|---|---|---|
-| 1 | AKS Deployment Failing After Release | Troubleshooting | Intermediate | AKS, kubectl, ACR, Helm, CI/CD |
-| 2 | Terraform Apply Fails in Production | Troubleshooting | Advanced | Terraform, State, CI/CD, IaC |
-| 3 | Application Unavailable After Deployment | Incident | Intermediate | Deployment, Traffic, LoadBalancer, Outage |
-| 4 | Cloud Bill Increased by 50% | Decision | Advanced | FinOps, Cost, Architecture, Governance |
-| 5 | App Service Cannot Access SQL | Troubleshooting | Intermediate | AppService, SQL, Networking, DNS, NSG |
-| 6 | AKS Pods Not Scaling | Troubleshooting | Advanced | AKS, HPA, Metrics, Autoscaler |
-| 7 | Pipeline Takes 40 Minutes | Architecture | Intermediate | CI/CD, Optimization, DevEx, Builds |
-| 8 | Production Outage at 2 AM | Incident | Advanced | Incident, OnCall, RCA, Communication |
-| 9 | Deployment Failed During Release Window | Troubleshooting | Advanced | Release Mgmt, Rollback, Ownership, CI/CD |
-| 10 | Jenkins Pipeline Suddenly Failing | Troubleshooting | Intermediate | Jenkins, Agent, Plugins, SCM, Workspace |
-| 11 | Terraform Destroyed Resources | Incident | Advanced | Terraform, State, Drift, Recovery |
-| 12 | Works Locally But Fails In Docker | Troubleshooting | Intermediate | Docker, EnvVars, Ports, Volumes, DNS |
-| 13 | Passed QA But Failed Production | Troubleshooting | Advanced | Environment Parity, Secrets, Scale, Networking |
-| 14 | Grafana Alert Triggered At Midnight | Incident | Intermediate | Monitoring, Incident Response, Scaling, RCA |
-| 15 | GitHub Actions Not Triggering | Troubleshooting | Intermediate | GitHub Actions, Webhooks, Runners, YAML |
-| 16 | App Cannot Access Azure SQL (Auth) | Troubleshooting | Intermediate | Azure SQL, Managed Identity, Firewall, Connection String |
-| 17 | Release Rollback Strategy | Decision | Advanced | Blue-Green, Canary, Rollback, DB Migrations |
-| 18 | Developer Needs Production Access | Decision | Intermediate | RBAC, PIM, Security, Least Privilege |
-
-### 🟣 Section 2 — Platform & Concept Deep Dives (Scenarios 19–38)
-
-| # | Scenario | Type | Difficulty | Key Tags |
-|---|---|---|---|---|
-| 19 | Azure App Service | Azure PaaS | Intermediate | Azure, App Service, PaaS, Deployment Slots, VNet Integration |
-| 20 | Azure Kubernetes Service (AKS) | Containers | Advanced | AKS, Kubernetes, Azure CNI, Node Pools, Ingress |
-| 21 | Terraform | Infrastructure as Code | Advanced | Terraform, IaC, State, Modules, Providers |
-| 22 | Jenkins | CI/CD | Intermediate | Jenkins, Pipeline, Agent, Controller, CI/CD |
-| 23 | GitHub Actions | CI/CD | Intermediate | GitHub Actions, Workflow, Runner, Secrets, OIDC |
-| 24 | Docker | Containers | Intermediate | Docker, Containers, Images, Dockerfile, Volumes |
-| 25 | Release Management | Deployment | Advanced | Release, Artifact, Versioning, Rollback, Approval |
-| 26 | Monitoring | Operations | Intermediate | Monitoring, Metrics, Alerts, Dashboards, SLO |
-| 27 | RBAC / IAM | Security | Advanced | RBAC, IAM, Managed Identity, Roles, Least Privilege |
-| 28 | Troubleshooting | Operations | Advanced | Troubleshooting, Logs, Tracing, RCA, Networking |
-| 29 | Git & Branching Strategy | Source Control | Intermediate | Git, Trunk-Based, Feature Branch, Release Branch, Hotfix |
-| 30 | CI/CD Design Patterns | Deployment Strategy | Advanced | Blue-Green, Canary, Rolling, Feature Flags, Progressive Delivery |
-| 31 | Kubernetes Deep Dive | Containers | Advanced | Pods, Deployments, Services, Ingress, StatefulSets |
-| 32 | Security & DevSecOps | Security | Advanced | SAST, DAST, Dependency Scan, Container Scan, Secrets |
-| 33 | Azure Key Vault | Security | Intermediate | Key Vault, Secrets, Keys, Certificates, RBAC |
-| 34 | Observability | Operations | Advanced | Metrics, Logs, Traces, OpenTelemetry, Application Insights |
-| 35 | Incident Management | Operations | Advanced | Severity, Escalation, War Room, RCA, Postmortem |
-| 36 | Disaster Recovery & Backup | Business Continuity | Advanced | RTO, RPO, Failover, Geo-Replication, Backup |
-| 37 | Cost Optimization (FinOps) | Cloud Governance | Intermediate | Rightsizing, Reserved Instances, Spot, Autoscaling, Lifecycle |
-| 38 | System Design for DevOps Engineers | Architecture | Advanced | Availability, Scalability, Security, Operations, Cost |
-
-### 🔥 Section 3 — Recent Interview Playbook with Rapid Fire Q&A (Scenarios 39–47)
-
-These 9 slides were built from **questions asked in actual recent interviews**. Each includes a dedicated **Rapid Fire Q&A** section with kill-shot answers.
-
-| # | Scenario | Category | Difficulty | Key Tags | Rapid Fire Qs |
-|---|---|---|---|---|---|
-| 39 | Azure Virtual Networks: Core & Peering | Network Architecture | Intermediate | VNet, Subnetting, Peering, Hub-and-Spoke, IPAM | 3 |
-| 40 | Routing & Secure Endpoint Solutions | Routing & Endpoints | Advanced | UDR, Private Endpoint, Service Endpoint, NSG, Private Link | 3 |
-| 41 | High Availability & Traffic Management | Load Balancing & App Delivery | Advanced | Front Door, Application Gateway, Availability Sets/Zones, Layer 7 | 2 |
-| 42 | Enterprise IaC Module Architectures | Terraform | Advanced | Terraform, State Drift, Remote Backend, Wrapper Modules, HCL | 3 |
-| 43 | Configuration Management & Orchestration | Ansible | Intermediate | Ansible, Idempotency, Playbooks, Roles, Agentless | 3 |
-| 44 | Environment Architecture & Artifact Lifecycle | Environments | Intermediate | Immutability, Artifact Promotion, Variable Groups, DRY, UAT | 3 |
-| 45 | Containerization & Microservices Infrastructure | Docker & Containers | Advanced | Docker, Dockerfile, Multi-Stage Build, AKS, Container Apps | 3 |
-| 46 | Continuous Delivery Design & Federation | Azure DevOps | Advanced | Azure DevOps, OIDC, YAML Pipelines, Hosted Agents, Workload Identity | 3 |
-| 47 | Observability & Live Production Triage | Troubleshooting | Advanced | Linux Diagnostics, KQL, App Insights, RCA, Incident Management | 3 |
-
----
-
-## 🧠 Concepts Covered
-
-The following enterprise-grade concepts are explored across the 47 scenarios:
-
-### Networking & Security
-- CIDR Allocations & Subnetting
-- Hub-and-Spoke Topology
-- VNet Peering & Link Symmetry
-- DNS Record Overrides
-- Next-Hop Redirection (UDR)
-- Private Link Fabric & Private Endpoints
-- Service Endpoints vs Private Endpoints
-- NSG Rules & Firewall Configuration
-- Subnet Isolation Strategies
-- RBAC, IAM & Least Privilege
-- Managed Identity & OIDC Federation
-- Key Vault Secrets Management
-- DevSecOps (SAST, DAST, Container Scan)
-
-### Load Balancing & High Availability
-- Layer 7 Request Inspection
-- Anycast Global Networks (Azure Front Door)
-- Regional Gateway Ingress (Application Gateway)
-- Availability Sets vs Availability Zones
-- Multi-Facility Failure Safeguards
-- Disaster Recovery (RTO/RPO, Geo-Replication)
-- Blue-Green, Canary & Rolling Deployments
-- Progressive Delivery with Feature Flags
-
-### Infrastructure as Code
-- Terraform State Sync & Drift Detection
-- Remote Backend Locking
-- Wrapper Modules & Encapsulated Blueprints
-- Module Partitioning & Strict Input Controls
-- ClickOps Mitigation
-- Immutable Delivery Manifests
-
-### Configuration Management
-- Agentless Automation Architectures (Ansible)
-- Idempotent State Definitions
-- Dynamic Node Discoveries
-- Structured Playbook & Role Frameworks
-- SSH Orchestration Patterns
-- Configuration Drift Detection
-
-### CI/CD & Delivery
-- YAML Pipeline Design (Azure DevOps, GitHub Actions)
-- OIDC Token Exchange (Workload Identity Federation)
-- Downstream Parameter Injections
-- Granular Access Boundary Scoping
-- Artifact Promotion & Immutability
-- Build Once, Deploy Many
-- Code Promotion Workflows
-- Compilation Decoupling
-- Blast Radius Mitigation (Ring Deployments)
-
-### Containers & Orchestration
-- Multi-Stage Docker Builds
-- Distroless Runtime Images
-- Layer Cache Optimizations
-- Pod Lifecycle Debugging (CrashLoopBackOff)
-- AKS vs Azure Container Apps
-- HPA Auto-Scaling & Metrics Server
-- Kubernetes Services, Ingress & StatefulSets
-
-### Observability & Incident Response
-- Resource Usage Identification (`top`, `ps`)
-- Pattern Filtering Methods (`grep`, `journalctl`)
-- KQL Query Diagnostics (Log Analytics)
-- Application Insights Instrumentation
-- OpenTelemetry Traces & Metrics
-- Post-Deployment Incident Triaging
-- OOM Isolation & Memory Debugging
-- System Outage Remediation
-- RCA (Root Cause Analysis) & 5 Whys Framework
-- War Room & Escalation Procedures
-
-### Cloud Governance & FinOps
-- Cost Optimization & Rightsizing
-- Reserved Instances & Spot VMs
-- Autoscaling Lifecycle Policies
-- Environment Parity Enforcement
-
----
-
-## 🏷 Keywords Index
-
-A quick-reference index of all keywords tracked by the dashboard's Quick Recall system:
-
-| Domain | Keywords |
-|---|---|
-| **Networking** | Backbone Routing, Overlapping IPs, IPAM Strategy, Private IP Mapping, Firewall Bypass Protection, Subnet Isolation |
-| **Load Balancing** | Regional Gateway Ingress, Physical Rack Isolation, Global Edge Optimization |
-| **IaC** | ClickOps Mitigation, Centralized Backend Locking, Immutable Delivery Manifests |
-| **Config Management** | SSH Orchestration, Configuration Drifts, Structured Playbook Frameworks |
-| **Environments** | Code Promotion Workflows, Compilation Decoupling, Blast Radius Mitigation |
-| **Containers** | Distroless Configurations, Runtime Property Overrides, Pod Lifecycle Debugging |
-| **CI/CD** | Federated Cloud Identities, Zero Secret Configurations, As-Code Pipeline Blueprints |
-| **Observability** | OOM Isolation, KQL Query Diagnostics, Post-Deployment Incident Triaging |
-
----
-
-## 🔧 Key CLI Commands Covered
-
+### Option B: Node.js (serve package)
 ```bash
-# Azure Networking
-az network vnet list
-az network vnet peering show
-az network nic show-effective-route-table
-dig backend.database.windows.net
-
-# Azure Load Balancing
-az network application-gateway show
-az network front-door show
-
-# Terraform
-terraform import
-terraform plan -out=tfplan
-
-# Ansible
-ansible-playbook -i static_hosts site.yml
-ansible-vault decrypt secrets.yml
-
-# Azure DevOps
-az pipelines variable-group list
-echo "##vso[task.setvariable variable=x;isOutput=true]val"
-az account show
-
-# Docker & Kubernetes
-docker build --target builder -t app:test .
-kubectl describe pod app-pod
-
-# Linux Diagnostics
-journalctl -u api-service.service --since "1 hour ago"
-ps aux | grep node
-top -b -n 1 | head -n 20
-grep -i -C 5 "Exception" /var/log/apps/api-service.log | tail -n 50
+# Start server globally or via npx
+npx serve
 ```
 
----
-
-## ⚡ Rapid Fire Questions (26 Total)
-
-These are questions **actually asked in recent interviews**, with memorizable "kill shot" answers:
-
-| Topic | Sample Question |
-|---|---|
-| **VNet Peering** | "Can we peer two VNets that have the same address space range?" |
-| **Routing** | "Can you differentiate between a service endpoint and a private endpoint?" |
-| **HA** | "What is the difference between Front Door and Application Gateway?" |
-| **Terraform** | "Can you explain what 'Terraform state drift' is?" |
-| **Ansible** | "What is the difference between Roles and Tasks in Ansible?" |
-| **Environments** | "How are you promoting code from pre-prod to prod?" |
-| **Docker** | "What is the difference between CMD and ENTRYPOINT?" |
-| **CI/CD** | "How are you passing variables between CI/CD stages?" |
-| **Observability** | "What is the `top` command used for?" |
+Once running, navigate to `http://localhost:8000` or `http://localhost:3000` in your web browser.
 
 ---
 
-## 📱 UI Modes Reference
+## 🎨 UI Modes Reference
 
-| Mode | Shortcut | Behavior |
+| Mode | Trigger | Behavior |
 |---|---|---|
-| **Learn** | Default | Shows all content for each scenario |
-| **Practice** | Click "Practice" | Hides solution behind a "Reveal" button |
-| **Review** | Click "Review" | Filters to only non-mastered scenarios, shows progress bar |
-| **Rapid Fire** | Click "Rapid Fire" | Shows only the Q&A accordion for the current topic |
-
----
-
-## 📄 License
-
-This project is for personal interview preparation use.
+| **Learn Mode** | Active tab: `Learn` | Fully displays all scenario diagnostics, definitions, code blocks, and solutions. |
+| **Practice Mode** | Active tab: `Practice` | Hides answers and solutions behind a glassmorphic "Reveal Solution" button to simulate a live interview. |
+| **Review Mode** | Active tab: `Review` | Filters scenarios dynamically, showing only the ones not marked as "Done". Tracks overall progress. |
+| **Glossary View** | Active tab: `Glossary` | Displays the interactive DevOps glossary drawer, categories, and keyword relationships. |
+| **Flashcards** | Active tab: `Flashcards` | Flips through key concepts dynamically with active recall rating. |
+| **Interviews Dropdown** | Nav Dropdown | Switches datasets on-the-fly (e.g., loading Noventiq or Hexaview Round 1 datasets) while retaining study progress metrics independently. |

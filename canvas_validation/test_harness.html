@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Azure Canvas Rendering Test Suite</title>
+  <style>
+    :root {
+      --bg-dark: #121224;
+      --bg-card: #1c1c38;
+      --primary: #0078d4;
+      --success: #107c10;
+      --error: #d13438;
+      --warning: #ffaa00;
+      --text: #f3f2f1;
+      --text-muted: #a19f9d;
+      --border: #2d2d5a;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 24px;
+      color: var(--primary);
+      margin: 0 0 8px 0;
+      font-weight: 600;
+    }
+    p {
+      color: var(--text-muted);
+      margin: 0 0 24px 0;
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 24px;
+      height: calc(100vh - 100px);
+    }
+    .sidebar {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .test-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .test-item {
+      background: #15152b;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .test-item:hover, .test-item.active {
+      border-color: var(--primary);
+      background: #202040;
+    }
+    .test-title {
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    .badge.pending { background: var(--border); color: var(--text-muted); }
+    .badge.running { background: var(--warning); color: #000; }
+    .badge.success { background: var(--success); color: #fff; }
+    .badge.error { background: var(--error); color: #fff; }
+    
+    .main-view {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .preview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .iframe-wrapper {
+      flex: 1;
+      background: #141427;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      position: relative;
+      min-height: 450px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+    .logs-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .log-entry {
+      font-family: monospace;
+      font-size: 12px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #202040;
+      padding-bottom: 4px;
+    }
+    .log-entry.error { color: var(--error); }
+    .log-entry.info { color: var(--primary); }
+    .log-entry.success { color: var(--success); }
+    
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    button:hover {
+      background: #005a9e;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Azure Interactive Canvas Rendering Validator</h1>
+  <p>Automated integration check that validates script execution, runtime integrity, and UI node structures for all 20 canvases.</p>
+
+  <div class="grid">
+    <div class="sidebar">
+      <div class="actions">
+        <button onclick="runAllTests()">Run Validation</button>
+        <button onclick="postReport()" style="background:#475569">Submit Report</button>
+      </div>
+      <div class="test-list" id="testList">
+        <!-- populated by js -->
+      </div>
+    </div>
+    
+    <div class="main-view">
+      <div class="preview-card">
+        <div class="preview-header">
+          <h2 id="activeTitle" style="margin:0;font-size:16px;color:var(--primary)">Select a slide to preview</h2>
+          <span id="activeStatus" class="badge pending">Pending</span>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe id="previewIframe"></iframe>
+        </div>
+      </div>
+      
+      <div class="logs-card">
+        <h3 style="margin:0 0 10px 0;font-size:14px;color:var(--text-muted)">Diagnostic Output Logs</h3>
+        <div id="logs"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slides = [];
+    let testResults = {};
+    let activeSlideIndex = 0;
+
+    function addLog(msg, type = 'info') {
+      const logs = document.getElementById('logs');
+      const entry = document.createElement('div');
+      entry.className = `log-entry ${type}`;
+      entry.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      logs.insertBefore(entry, logs.firstChild);
+    }
+
+    async function loadSlides() {
+      try {
+        addLog("Loading infra_azure.json dataset...", "info");
+        const res = await fetch('../infra_azure.json');
+        slides = await res.json();
+        addLog(`Successfully loaded ${slides.length} slides.`, "success");
+        
+        const list = document.getElementById('testList');
+        list.innerHTML = '';
+        
+        slides.forEach((s, idx) => {
+          testResults[idx] = { status: 'pending', errors: [], elementsChecked: 0 };
+          const item = document.createElement('div');
+          item.className = 'test-item';
+          item.id = `item-${idx}`;
+          item.onclick = () => selectSlide(idx);
+          item.innerHTML = `
+            <span class="test-title">${idx + 1}. ${s.title}</span>
+            <span id="badge-${idx}" class="badge pending">Pending</span>
+          `;
+          list.appendChild(item);
+        });
+        
+        selectSlide(0);
+      } catch (e) {
+        addLog("Failed to load slides: " + e.message, "error");
+      }
+    }
+
+    function selectSlide(idx) {
+      if (!slides[idx]) return;
+      activeSlideIndex = idx;
+      
+      document.querySelectorAll('.test-item').forEach(el => el.classList.remove('active'));
+      document.getElementById(`item-${idx}`).classList.add('active');
+      
+      document.getElementById('activeTitle').textContent = `Slide ${idx + 1}: ${slides[idx].title}`;
+      
+      const statusBadge = document.getElementById('activeStatus');
+      statusBadge.className = `badge ${testResults[idx].status}`;
+      statusBadge.textContent = testResults[idx].status;
+      
+      // Load iframe
+      const iframe = document.getElementById('previewIframe');
+      
+      // Inject error interception script into interactive HTML
+      const rawHtml = slides[idx].interactive_html;
+      const injectionScript = `
+        <script>
+          window.__runtimeErrors = [];
+          window.onerror = function(msg, url, line, col, error) {
+            const msgStr = String(msg || '');
+            const urlStr = String(url || '');
+            const stackStr = error && error.stack ? String(error.stack) : '';
+            if (
+              urlStr.indexOf('chrome-extension://') !== -1 ||
+              msgStr.indexOf('chrome-extension://') !== -1 ||
+              stackStr.indexOf('chrome-extension://') !== -1 ||
+              urlStr.indexOf('index-CUHM8_N7.js') !== -1 ||
+              msgStr.indexOf('index-CUHM8_N7.js') !== -1 ||
+              stackStr.indexOf('index-CUHM8_N7.js') !== -1 ||
+              msgStr === 'Script error.'
+            ) {
+              return false; // Ignore browser extension errors
+            }
+            window.__runtimeErrors.push({ msg, line, col });
+            window.parent.postMessage({
+              type: 'CANVAS_RUNTIME_ERROR',
+              slideIdx: ${idx},
+              msg: msg,
+              line: line,
+              col: col
+            }, '*');
+            return false;
+          };
+          // Intercept console errors
+          const oldErr = console.error;
+          console.error = function() {
+            const argsStr = Array.from(arguments).join(' ');
+            if (
+              argsStr.indexOf('chrome-extension://') !== -1 ||
+              argsStr.indexOf('index-CUHM8_N7.js') !== -1
+            ) {
+              return; // Ignore browser extension logs
+            }
+            window.parent.postMessage({
+              type: 'CANVAS_CONSOLE_ERROR',
+              slideIdx: ${idx},
+              args: argsStr
+            }, '*');
+            oldErr.apply(console, arguments);
+          };
+        <\/script>
+      `;
+      
+      const modifiedHtml = rawHtml.replace('<head>', '<head>' + injectionScript);
+      iframe.srcdoc = modifiedHtml;
+      
+      addLog(`Displaying slide ${idx + 1} preview.`, "info");
+    }
+
+    window.addEventListener('message', (event) => {
+      const data = event.data;
+      if (data.type === 'CANVAS_RUNTIME_ERROR' || data.type === 'CANVAS_CONSOLE_ERROR') {
+        const slideIdx = data.slideIdx;
+        const errMsg = data.msg || data.args || 'Unknown Error';
+        testResults[slideIdx].status = 'error';
+        testResults[slideIdx].errors.push(errMsg);
+        updateBadge(slideIdx, 'error');
+        addLog(`Slide ${slideIdx + 1} error: ${errMsg}`, "error");
+      }
+    });
+
+    function updateBadge(idx, status) {
+      const badge = document.getElementById(`badge-${idx}`);
+      if (badge) {
+        badge.className = `badge ${status}`;
+        badge.textContent = status;
+      }
+      if (idx === activeSlideIndex) {
+        const statusBadge = document.getElementById('activeStatus');
+        statusBadge.className = `badge ${status}`;
+        statusBadge.textContent = status;
+      }
+    }
+
+    async function validateSlide(idx) {
+      return new Promise((resolve) => {
+        selectSlide(idx);
+        updateBadge(idx, 'running');
+        testResults[idx].status = 'running';
+        testResults[idx].errors = [];
+        
+        const iframe = document.getElementById('previewIframe');
+        
+        setTimeout(() => {
+          try {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            const iframeWin = iframe.contentWindow;
+            
+            // Check DOM Elements
+            const hasCanvas = iframeDoc.querySelector('canvas') !== null;
+            const hasSvg = iframeDoc.querySelector('svg') !== null;
+            const hasInputs = iframeDoc.querySelectorAll('input, select, button').length > 0;
+            const hasCards = iframeDoc.querySelector('.card') !== null;
+            
+            let passed = false;
+            let checks = [];
+            if (hasCanvas) checks.push('canvas');
+            if (hasSvg) checks.push('svg');
+            if (hasInputs) checks.push('interactive controls');
+            if (hasCards) checks.push('styling cards');
+            
+            // Verify if runtime errors were caught
+            const hasRuntimeErrors = testResults[idx].status === 'error';
+            
+            if (!hasRuntimeErrors && (hasCanvas || hasSvg || hasInputs || hasCards)) {
+              testResults[idx].status = 'success';
+              updateBadge(idx, 'success');
+              addLog(`Slide ${idx + 1} validation SUCCESS (${checks.join(', ')} verified).`, "success");
+              resolve(true);
+            } else {
+              if (testResults[idx].status !== 'error') {
+                testResults[idx].status = 'error';
+                testResults[idx].errors.push("Missing core elements (no canvas, svg, cards or controls found)");
+                updateBadge(idx, 'error');
+              }
+              addLog(`Slide ${idx + 1} validation FAILED: ${testResults[idx].errors.join('; ')}`, "error");
+              resolve(false);
+            }
+          } catch (e) {
+            testResults[idx].status = 'error';
+            testResults[idx].errors.push("Access exception: " + e.message);
+            updateBadge(idx, 'error');
+            addLog(`Slide ${idx + 1} access error: ` + e.message, "error");
+            resolve(false);
+          }
+        }, 1200); // Allow script initialization to load completely
+      });
+    }
+
+    async function runAllTests() {
+      addLog("Starting automated validation run...", "info");
+      for (let i = 0; i < slides.length; i++) {
+        await validateSlide(i);
+      }
+      addLog("All slide validations completed.", "success");
+      postReport();
+    }
+
+    async function postReport() {
+      addLog("Submitting results report to automation server...", "info");
+      const summary = {
+        total: slides.length,
+        passed: Object.values(testResults).filter(r => r.status === 'success').length,
+        failed: Object.values(testResults).filter(r => r.status === 'error').length,
+        results: testResults
+      };
+      
+      try {
+        const res = await fetch('/report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(summary)
+        });
+        if (res.ok) {
+          addLog("Report successfully processed by server.", "success");
+        } else {
+          addLog("Server rejected report processing.", "error");
+        }
+      } catch (e) {
+        addLog("Could not connect to validation server: " + e.message, "warning");
+      }
+    }
+
+    window.onload = loadSlides;
+  </script>
+</body>
+</html>

@@ -671,20 +671,48 @@
         .search-result-snippet {
             font-size: 11px;
             color: var(--text-muted);
-            line-height: 1.4;
+            line-height: 1.5;
             overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .search-result-snippet div {
+            display: block;
+            width: 100%;
         }
         .search-result-snippet mark {
-            background: rgba(245, 158, 11, 0.3);
-            color: #f59e0b;
-            padding: 0 2px;
-            border-radius: 2px;
-            font-weight: 600;
+            display: inline-block !important;
+            background: rgba(245, 158, 11, 0.35) !important;
+            color: #fbbf24 !important;
+            padding: 1px 4px !important;
+            border-radius: 3px !important;
+            font-weight: 600 !important;
+            border: 1px solid rgba(245, 158, 11, 0.4) !important;
+            box-shadow: none !important;
+            width: auto !important;
         }
 
         /* DYNAMIC GLOSSARY & LINK STYLES */
+        .concept-heading {
+            font-size: 17px !important;
+            font-weight: 700 !important;
+            color: #60a5fa !important;
+            border-bottom: 2px solid #1e4a8a !important;
+            padding-bottom: 6px !important;
+            margin-top: 18px !important;
+            margin-bottom: 10px !important;
+            line-height: 1.4 !important;
+            letter-spacing: -0.01em !important;
+        }
+        .term-highlight {
+            font-weight: 700 !important;
+            color: #60a5fa !important;
+        }
+        .term-highlight-white {
+            font-weight: 700 !important;
+            color: #f8fafc !important;
+        }
         .glossary-link {
             color: #C4B5FD;
             border-bottom: 1px dashed rgba(196, 181, 253, 0.6);
@@ -1126,14 +1154,25 @@
 // State Management
 let currentMode = 'learn'; // 'learn', 'practice', 'review'
 let solutionRevealed = false;
-let currentIndex = 0;
-let ratings = {}; // Maps index to 'done', 'review', 'revisit'
+
+// Load last selected dataset and slide index from localStorage if available
+let currentDataset = 'default';
 try {
-    const saved = localStorage.getItem('k8s_dashboard_ratings');
-    if (saved) ratings = JSON.parse(saved);
+    const savedDataset = localStorage.getItem('last_selected_dataset');
+    if (savedDataset) currentDataset = savedDataset;
 } catch (e) {
-    console.error('Failed to load ratings:', e);
+    console.error('Failed to load dataset key:', e);
 }
+
+let currentIndex = 0;
+try {
+    const savedIdx = localStorage.getItem('last_slide_index_' + currentDataset);
+    if (savedIdx !== null) currentIndex = parseInt(savedIdx, 10);
+} catch (e) {
+    console.error('Failed to load index key:', e);
+}
+
+let ratings = {}; // Maps index to 'done', 'review', 'revisit'
 try {
     const saved = localStorage.getItem('k8s_dashboard_ratings');
     if (saved) ratings = JSON.parse(saved);
@@ -1865,14 +1904,26 @@ let hexaviewR1Scenarios = [];
 let hexaviewR2Scenarios = [];
 let noventiqR1Scenarios = [];
 let infraAzureScenarios = [];
-let currentDataset = 'default'; // 'default', 'hexaview_r1', 'hexaview_r2', 'noventiq_r1', or 'infra_azure'
 
 async function selectDataset(type) {
     if (type === currentDataset) return;
+    try {
+        localStorage.setItem('last_selected_dataset', type);
+    } catch(e) {
+        console.error('Failed to save dataset selection:', e);
+    }
     
     currentDataset = type;
     solutionRevealed = false;
+    
+    // Load the last slide index saved for this specific dataset
     currentIndex = 0;
+    try {
+        const savedIdx = localStorage.getItem('last_slide_index_' + currentDataset);
+        if (savedIdx !== null) currentIndex = parseInt(savedIdx, 10);
+    } catch(e) {
+        console.error('Failed to load last index for dataset:', e);
+    }
     
     const optHexR1 = document.getElementById('opt-hexaview-r1');
     const optHexR2 = document.getElementById('opt-hexaview-r2');
@@ -1973,6 +2024,15 @@ async function selectDataset(type) {
             } catch(e) { console.error('Failed to load default ratings:', e); }
         }
         
+        // Load the last slide index saved for this specific dataset
+        currentIndex = 0;
+        try {
+            const savedIdx = localStorage.getItem('last_slide_index_' + currentDataset);
+            if (savedIdx !== null) currentIndex = parseInt(savedIdx, 10);
+        } catch(e) {
+            console.error('Failed to load last index for dataset:', e);
+        }
+        
         setMode('learn');
     } catch(err) {
         console.error(err);
@@ -2015,8 +2075,14 @@ async function loadScenarios() {
             if (db) db.classList.add('layout-1col');
         }
 
-        // Initialize first render after data is loaded
-        renderScenario();
+        // Restore previously selected dataset if saved
+        if (currentDataset && currentDataset !== 'default') {
+            const lastDatasetType = currentDataset;
+            currentDataset = 'default'; // Reset to force selectDataset to load
+            await selectDataset(lastDatasetType);
+        } else {
+            renderScenario();
+        }
     } catch (error) {
         console.error('Failed to load dashboard data:', error);
         document.getElementById('dashboard').innerHTML = `
@@ -2193,6 +2259,13 @@ function renderScenario() {
             <p class="body-text">You have mastered all ${total} interview scenarios. Switch to <strong>Practice</strong> mode to simulate an interview or <strong>Learn</strong> mode to reset your status.</p>
         </div>`;
         return;
+    }
+
+    // Save last slide index for the current dataset in localStorage
+    try {
+        localStorage.setItem('last_slide_index_' + currentDataset, currentIndex);
+    } catch(e) {
+        console.error('Failed to save slide index state:', e);
     }
 
     const s = scenarios[currentIndex];
@@ -2994,6 +3067,92 @@ function renderScenario() {
             console.error(`[Canvas Debug] ERROR: Could not find iframe with ID ${canvasId}`);
         }
     }
+
+    // Format paragraphs/spans in Concept Explanation block matching the heading pattern
+    const conceptExplanationCards = Array.from(document.querySelectorAll('.card')).filter(card => {
+        const titleEl = card.querySelector('.card-title');
+        return titleEl && titleEl.textContent.includes('Concept Explanation');
+    });
+
+    conceptExplanationCards.forEach(card => {
+        const bodyTextDivs = card.querySelectorAll('div.body-text');
+        bodyTextDivs.forEach(div => {
+            const htmlContent = div.innerHTML;
+            let lines = htmlContent.split(/<br\s*\/?>|\n/gi);
+            let hasChanges = false;
+            
+            const processedLines = lines.map(line => {
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = line;
+                const textContent = tempDiv.textContent.trim();
+                
+                const headingPattern = /^\d+\.\s+.+$/;
+                if (headingPattern.test(textContent)) {
+                    hasChanges = true;
+                    return `<h3 class="concept-heading">${textContent}</h3>`;
+                }
+                
+                const termPattern = /^([^:]+):/;
+                if (termPattern.test(textContent) && !line.trim().startsWith('<h3')) {
+                    hasChanges = true;
+                    return line.replace(termPattern, (match, term) => {
+                        return `<span class="term-highlight">${term}</span>:`;
+                    });
+                }
+                return line;
+            });
+            
+            if (hasChanges) {
+                div.innerHTML = processedLines.map(line => {
+                    if (line.startsWith('<h3')) return line;
+                    return `<div>${line}</div>`;
+                }).join('');
+            }
+        });
+    });
+
+    // Format paragraphs/spans in Implementation Guide block (Highlights color: White)
+    const implementationGuideCards = Array.from(document.querySelectorAll('.card')).filter(card => {
+        const titleEl = card.querySelector('.card-title');
+        return titleEl && titleEl.textContent.includes('Implementation Guide');
+    });
+
+    implementationGuideCards.forEach(card => {
+        const bodyTextDivs = card.querySelectorAll('div.body-text');
+        bodyTextDivs.forEach(div => {
+            const htmlContent = div.innerHTML;
+            let lines = htmlContent.split(/<br\s*\/?>|\n/gi);
+            let hasChanges = false;
+            
+            const processedLines = lines.map(line => {
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = line;
+                const textContent = tempDiv.textContent.trim();
+                
+                const headingPattern = /^\d+\.\s+.+$/;
+                if (headingPattern.test(textContent)) {
+                    hasChanges = true;
+                    return `<h3 class="concept-heading">${textContent}</h3>`;
+                }
+                
+                const termPattern = /^([^:]+):/;
+                if (termPattern.test(textContent) && !line.trim().startsWith('<h3')) {
+                    hasChanges = true;
+                    return line.replace(termPattern, (match, term) => {
+                        return `<span class="term-highlight-white">${term}</span>:`;
+                    });
+                }
+                return line;
+            });
+            
+            if (hasChanges) {
+                div.innerHTML = processedLines.map(line => {
+                    if (line.startsWith('<h3')) return line;
+                    return `<div>${line}</div>`;
+                }).join('');
+            }
+        });
+    });
 }
 
 // Global click event delegation
@@ -3095,18 +3254,13 @@ function performSearch(query) {
             matchedText = s.title;
         }
         
-        // Chip/Tag match
+        // Chip/Tag matches
         if (s.chips) {
-            const matchedChip = s.chips.find(c => c.toLowerCase() === cleanQuery);
-            if (matchedChip) {
-                score += 100;
-                matchReason = `Tag: ${matchedChip}`;
-                matchedText = `Slide Tags: ${s.chips.join(', ')}`;
-            } else {
-                const partialChip = s.chips.find(c => c.toLowerCase().includes(cleanQuery));
-                if (partialChip) {
-                    score += 40;
-                    matchReason = `Tag: ${partialChip}`;
+            const matches = s.chips.filter(c => c.toLowerCase().includes(cleanQuery));
+            if (matches.length > 0) {
+                score += 40 * matches.length;
+                if (!matchReason) {
+                    matchReason = `Tag: ${matches[0]}`;
                     matchedText = `Slide Tags: ${s.chips.join(', ')}`;
                 }
             }
@@ -3114,31 +3268,35 @@ function performSearch(query) {
         
         // Common interview questions match
         if (s.common_interview_questions) {
-            const matchedQ = s.common_interview_questions.find(q => 
+            const matches = s.common_interview_questions.filter(q => 
                 q.question.toLowerCase().includes(cleanQuery) || 
                 (q.answer && q.answer.toLowerCase().includes(cleanQuery))
             );
-            if (matchedQ) {
-                score += 50;
-                matchReason = 'Interview Q&A';
-                matchedText = `Q: ${matchedQ.question} - A: ${matchedQ.answer}`;
+            if (matches.length > 0) {
+                score += 50 * matches.length;
+                if (!matchReason) {
+                    matchReason = 'Interview Q&A';
+                    matchedText = `Q: ${matches[0].question} - A: ${matches[0].answer}`;
+                }
             }
         }
         
         // Core concepts match
         if (s.core_concepts) {
-            const matchedConcept = s.core_concepts.find(c => 
+            const matches = s.core_concepts.filter(c => 
                 c.name.toLowerCase().includes(cleanQuery) || 
                 (c.definition && c.definition.toLowerCase().includes(cleanQuery))
             );
-            if (matchedConcept) {
-                score += 40;
-                matchReason = 'Core Concept';
-                matchedText = `${matchedConcept.name}: ${matchedConcept.definition}`;
+            if (matches.length > 0) {
+                score += 40 * matches.length;
+                if (!matchReason) {
+                    matchReason = 'Core Concept';
+                    matchedText = `${matches[0].name}: ${matches[0].definition}`;
+                }
             }
         }
         
-        // Text matches
+        // Text matches (definition, why it matters, real world scenario)
         const d = s.data || s;
         if (d.definition && d.definition.toLowerCase().includes(cleanQuery)) {
             score += 30;
@@ -3152,12 +3310,20 @@ function performSearch(query) {
             score += 25;
             if (!matchReason) { matchReason = 'Real World'; matchedText = d.real_world_scenario; }
         }
+        if (d.content_theory && d.content_theory.toLowerCase().includes(cleanQuery)) {
+            score += 25;
+            if (!matchReason) { matchReason = 'Theory'; matchedText = d.content_theory; }
+        }
+        if (d.content_implementation && d.content_implementation.toLowerCase().includes(cleanQuery)) {
+            score += 25;
+            if (!matchReason) { matchReason = 'Implementation'; matchedText = d.content_implementation; }
+        }
         if (d.interview_answer) {
             if (d.interview_answer.response) {
-                const matchedResp = d.interview_answer.response.find(r => r.toLowerCase().includes(cleanQuery));
-                if (matchedResp) {
-                    score += 35;
-                    if (!matchReason) { matchReason = 'Interview Answer'; matchedText = matchedResp; }
+                const matches = d.interview_answer.response.filter(r => r.toLowerCase().includes(cleanQuery));
+                if (matches.length > 0) {
+                    score += 35 * matches.length;
+                    if (!matchReason) { matchReason = 'Interview Answer'; matchedText = matches[0]; }
                 }
             }
             if (d.interview_answer.why && d.interview_answer.why.toLowerCase().includes(cleanQuery)) {
@@ -3170,13 +3336,13 @@ function performSearch(query) {
             if (!matchReason) { matchReason = 'Interview Kill Shot'; matchedText = d.interview_kill_shot; }
         }
         if (d.code_examples) {
-            const matchedCode = d.code_examples.find(c => 
+            const matches = d.code_examples.filter(c => 
                 (c.title && c.title.toLowerCase().includes(cleanQuery)) || 
                 (c.snippet && c.snippet.toLowerCase().includes(cleanQuery))
             );
-            if (matchedCode) {
-                score += 35;
-                if (!matchReason) { matchReason = 'Code Example'; matchedText = `${matchedCode.title}: ${matchedCode.snippet}`; }
+            if (matches.length > 0) {
+                score += 35 * matches.length;
+                if (!matchReason) { matchReason = 'Code Example'; matchedText = `${matches[0].title}: ${matches[0].snippet}`; }
             }
         }
         
@@ -3212,16 +3378,17 @@ function performSearch(query) {
             
             // Aliases match
             if (g.aliases && g.aliases.length > 0) {
-                const matchedAlias = g.aliases.find(a => a.toLowerCase() === cleanQuery);
-                if (matchedAlias) {
-                    score += 140;
-                    matchReason = `Alias: ${matchedAlias}`;
+                const exactAliasMatches = g.aliases.filter(a => a.toLowerCase() === cleanQuery);
+                const partialAliasMatches = g.aliases.filter(a => a.toLowerCase().includes(cleanQuery) && a.toLowerCase() !== cleanQuery);
+                if (exactAliasMatches.length > 0) {
+                    score += 140 * exactAliasMatches.length;
+                    matchReason = `Alias: ${exactAliasMatches[0]}`;
                     matchedText = g.definition.shortDefinition;
-                } else {
-                    const partialAlias = g.aliases.find(a => a.toLowerCase().includes(cleanQuery));
-                    if (partialAlias) {
-                        score += 70;
-                        matchReason = `Alias: ${partialAlias}`;
+                }
+                if (partialAliasMatches.length > 0) {
+                    score += 70 * partialAliasMatches.length;
+                    if (!matchReason) {
+                        matchReason = `Alias: ${partialAliasMatches[0]}`;
                         matchedText = g.definition.shortDefinition;
                     }
                 }
@@ -3271,17 +3438,53 @@ function performSearch(query) {
     const topResults = results.slice(0, 8);
     let html = '';
     topResults.forEach((res, rIdx) => {
-        let snippetText = res.snippet;
-        if (snippetText.length > 80) {
-            snippetText = snippetText.substring(0, 80) + '...';
-        }
+        // Strip HTML tags safely first
+        let cleanText = res.snippet.replace(/<\/?[^>]+(>|$)/g, "");
         
         const escapedQuery = cleanQuery.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
         const regex = new RegExp(`(${escapedQuery})`, 'gi');
-        const highlightedSnippet = snippetText.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 0 2px; border-radius: 2px; font-weight: 600;">$1</mark>');
+        
+        let snippetText = '';
+        let matches = [];
+        let match;
+        
+        // Find all indices of query matches globally
+        while ((match = regex.exec(cleanText)) !== null) {
+            matches.push(match.index);
+            // Prevent infinite loop if regex is empty
+            if (match.index === regex.lastIndex) {
+                regex.lastIndex++;
+            }
+        }
+        
+        if (matches.length > 0) {
+            // Cap matches at max 4 to keep preview sizing reasonable
+            const capMatches = matches.slice(0, 4);
+            const snippets = [];
+            
+            capMatches.forEach((matchIdx) => {
+                let start = Math.max(0, matchIdx - 30);
+                let end = Math.min(cleanText.length, matchIdx + cleanQuery.length + 30);
+                let part = cleanText.substring(start, end).trim();
+                
+                if (start > 0) part = '...' + part;
+                if (end < cleanText.length) part = part + '...';
+                
+                snippets.push(part);
+            });
+            
+            // Wrap each individual snippet in a helper div so they are treated as block rows,
+            // which allows the inner <mark> element to layout inline within each row.
+            snippetText = snippets.map(s => `<div>${s}</div>`).join('');
+        } else {
+            // Fallback: default slice from beginning
+            snippetText = `<div>${cleanText.substring(0, 80)}${cleanText.length > 80 ? '...' : ''}</div>`;
+        }
+        
+        const highlightedSnippet = snippetText.replace(regex, '<mark>$1</mark>');
         
         if (res.type === 'slide') {
-            const highlightedTitle = res.title.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 0 2px; border-radius: 2px; font-weight: 600;">$1</mark>');
+            const highlightedTitle = res.title.replace(regex, '<mark>$1</mark>');
             html += `
             <div class="search-result-item" data-type="slide" data-index="${res.index}">
                 <div class="search-result-header">
@@ -3293,7 +3496,7 @@ function performSearch(query) {
                 </div>
             </div>`;
         } else {
-            const highlightedKeyword = res.keyword.replace(regex, '<mark style="background: rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 0 2px; border-radius: 2px; font-weight: 600;">$1</mark>');
+            const highlightedKeyword = res.keyword.replace(regex, '<mark>$1</mark>');
             html += `
             <div class="search-result-item" data-type="glossary" data-id="${res.id}">
                 <div class="search-result-header">

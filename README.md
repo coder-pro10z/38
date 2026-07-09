@@ -265,7 +265,7 @@ Once running, navigate to `http://localhost:8000` or `http://localhost:3000` in 
 - **Mobile Multi-Row Unlocking**: On phone view (`max-width: 768px`), the navigation bar uses `max-height: 500px` and compact `54px` right padding so wrapped tabs and dropdowns remain 100% visible without clipping.
 
 ### 2. Lock / Unlock Navigation Icon (`#nav-pin-toggle`)
-- Located fixed at the top right corner (`top: 14px; right: 24px`) above the search bar as a sleek 36×36px circular button.
+- Located fixed at the top right corner (`top: 14px; right: 24px`) above the search bar as a sleek 40×40px circular button (scales to 36×36px on mobile).
 - **`🔓` (Unlocked / Auto-Hide Mode)**: Default state where the navigation bar auto-hides on inactivity or scroll down.
 - **`🔒` (Locked / Fixed Mode)**: Clicking locks the navigation bar open permanently with an accent glow, disabling auto-hide until toggled off.
 
@@ -275,7 +275,8 @@ Once running, navigate to `http://localhost:8000` or `http://localhost:3000` in 
 - **Event Isolation (`isIndexModalOpen`)**: While the Index Modal is open, navigation bar auto-hiding and auto-reappearing are completely suppressed.
 
 ### 4. Floating Right Search Bar (`#floating-search-bar`)
-- Positioned floating at `top: 70px; right: 24px` showing a clean magnifying glass icon (`🔍`).
+- Positioned floating at `top: 64px; right: 24px` showing a clean magnifying glass icon (`🔍`) formatted identically to `#nav-pin-toggle` (40×40px on desktop, 36×36px on mobile).
+- **Seamless Pill Input**: When expanded, the inner text input is borderless and transparent so there are no nested inner square borders or boxes.
 - Searches live across all **254 questions** (titles, answers, and tags) and highlights exact matches.
 
 ### 5. 524-Term Interactive Glossary (`glossary.json`)

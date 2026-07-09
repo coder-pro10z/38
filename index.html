@@ -1339,9 +1339,9 @@
             background: var(--surface-2);
             border: 1px solid var(--border);
             border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            font-size: 15px;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -1366,15 +1366,19 @@
                 gap: 8px;
             }
             .nav-pin-toggle {
-                top: 11px;
-                right: 12px;
-                width: 32px;
-                height: 32px;
-                font-size: 13px;
+                top: 12px;
+                right: 14px;
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
             }
             .floating-search-bar {
-                right: 12px;
-                top: 54px;
+                right: 14px;
+                top: 58px;
+            }
+            .fsb-collapsed {
+                width: 36px !important;
+                height: 36px !important;
             }
         }
 
@@ -1382,7 +1386,7 @@
         .floating-search-bar {
             position: fixed;
             right: 24px;
-            top: 70px;
+            top: 64px;
             z-index: 10001;
             display: flex;
             align-items: center;
@@ -1390,9 +1394,9 @@
         .fsb-collapsed {
             background: var(--surface-2);
             border: 1px solid var(--border);
-            border-radius: 50px;
-            width: 44px;
-            height: 44px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1407,7 +1411,7 @@
             transform: scale(1.05);
         }
         .fsb-icon {
-            font-size: 18px;
+            font-size: 16px;
         }
         .fsb-expanded {
             display: none;
@@ -1415,11 +1419,22 @@
             background: var(--surface-1);
             border: 1px solid var(--status-info);
             border-radius: 25px;
-            padding: 6px 14px;
+            padding: 4px 14px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.45);
             position: relative;
             width: 320px;
             gap: 8px;
+        }
+        .fsb-expanded #search-input {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 4px 24px 4px 4px !important;
+        }
+        .fsb-expanded #search-input:focus {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
         }
         .floating-search-bar.active .fsb-collapsed {
             display: none;
@@ -1644,7 +1659,7 @@
         <!-- Mark Done positioned IN FRONT OF Question 1 of N dropdown -->
         <div style="display: flex; align-items: center; gap: 10px;">
             <button id="header-status-toggle" class="header-status-toggle" onclick="toggleCurrentQuestionStatus()" title="Click to toggle status between Grey (Unrated) and Green (Done)">
-                ⚪ Mark Done
+                ⚪ Done
             </button>
             <div class="meta" id="counter" style="cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; background: var(--surface-2); border-radius: 6px; width: fit-content; border: 1px solid var(--border); transition: border-color 0.2s;" title="Open Index" onmouseover="this.style.borderColor='var(--status-info)'" onmouseout="this.style.borderColor='var(--border)'">Question 1 of X <span>▼</span></div>
         </div>
@@ -3362,7 +3377,7 @@ function updateHeaderStatusToggle() {
     if (!btn) return;
     const isDone = ratings[currentIndex] === 'done';
     btn.classList.toggle('is-done', isDone);
-    btn.innerHTML = isDone ? '🟢 Done' : '⚪ Mark Done';
+    btn.innerHTML = isDone ? '🟢 Done' : '⚪ Done';
 }
 
 function renderScenario() {

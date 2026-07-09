@@ -571,17 +571,18 @@
         /* Index Modal Styles */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(10, 13, 20, 0.85); backdrop-filter: blur(4px);
-            z-index: 999; display: flex; justify-content: center; align-items: flex-end;
+            background: rgba(10, 13, 20, 0.88); backdrop-filter: blur(8px);
+            z-index: 100000; display: flex; justify-content: center; align-items: flex-start;
             opacity: 0; pointer-events: none; transition: opacity 0.3s;
         }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-content {
-            background: var(--surface-1); width: 100%; max-width: 800px;
-            height: 85vh; border-radius: 12px 12px 0 0;
-            border-top: 1px solid var(--border);
+            background: var(--surface-1); width: 100%; max-width: 920px;
+            height: 96vh; border-radius: 0 0 16px 16px;
+            border-bottom: 1px solid var(--border);
             display: flex; flex-direction: column;
-            transform: translateY(100%); transition: transform 0.3s;
+            transform: translateY(-100%); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
         }
         .modal-overlay.active .modal-content { transform: translateY(0); }
         .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 16px; border-bottom: 1px solid var(--border); }
@@ -1306,7 +1307,7 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.08);
             padding: 13px 140px 9px 24px;
-            max-height: 90px;
+            max-height: 500px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -1357,6 +1358,24 @@
             border-color: var(--status-info);
             background: rgba(59, 130, 246, 0.2);
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .autohide-top-nav {
+                padding: 13px 54px 9px 12px;
+                gap: 8px;
+            }
+            .nav-pin-toggle {
+                top: 11px;
+                right: 12px;
+                width: 32px;
+                height: 32px;
+                font-size: 13px;
+            }
+            .floating-search-bar {
+                right: 12px;
+                top: 54px;
+            }
         }
 
         /* FLOATING SEARCH BAR TO RIGHT OF SCREEN */
@@ -1411,12 +1430,18 @@
         .recently-viewed-panel {
             background: var(--surface-1);
             border-bottom: 1px solid var(--border);
-            padding: 12px 24px;
+            padding: 7px 16px;
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none;
             gap: 8px;
             flex-shrink: 0;
+            max-height: 42px;
+        }
+        .recently-viewed-panel::-webkit-scrollbar {
+            display: none;
         }
         .rv-label {
             font-size: 11px;
@@ -1426,20 +1451,22 @@
             white-space: nowrap;
             letter-spacing: 0.05em;
             margin-right: 4px;
+            flex-shrink: 0;
         }
         .rv-chip {
             background: var(--surface-2);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 5px 13px;
-            font-size: 12px;
+            padding: 4px 11px;
+            font-size: 11px;
             color: var(--text-primary);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
             transition: all 0.2s;
-            max-width: 100%;
         }
         .rv-chip:hover {
             border-color: var(--status-info);
@@ -3011,6 +3038,11 @@ function renderFlatIndex() {
     list.innerHTML = html;
 }
 
+function isIndexModalOpen() {
+    const modal = document.getElementById('index-modal');
+    return modal && modal.classList.contains('active');
+}
+
 let upbHideTimeout = null;
 let isNavFixed = false;
 let isNavTransitioning = false;
@@ -3020,6 +3052,7 @@ let lastScrollUpTime = 0;
 let lastScrollY = window.scrollY || 0;
 
 function setNavVisibility(show, duration = 2200) {
+    if (isIndexModalOpen()) return;
     const upb = document.getElementById('universal-progress-bar');
     const topNav = document.getElementById('autohide-top-nav');
     if (!upb || !topNav) return;
@@ -3069,6 +3102,7 @@ function revealUniversalProgressBar(duration = 2200) {
 }
 
 window.addEventListener('mousemove', (e) => {
+    if (isIndexModalOpen()) return;
     if (e.clientY <= 25 && !isNavTransitioning) {
         revealTopNavAndProgress(2200);
     }
@@ -3076,7 +3110,7 @@ window.addEventListener('mousemove', (e) => {
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY || 0;
-    if (isNavFixed || isNavTransitioning) {
+    if (isIndexModalOpen() || isNavFixed || isNavTransitioning) {
         lastScrollY = currentScrollY;
         return;
     }
@@ -3085,36 +3119,48 @@ window.addEventListener('scroll', () => {
     } else if (currentScrollY > lastScrollY + 35 && currentScrollY > 80) {
         setNavVisibility(false);
     } else if (currentScrollY < lastScrollY - 25) {
-        const now = Date.now();
-        if (now - lastScrollUpTime < 600) {
-            scrollUpCount++;
-        } else {
-            scrollUpCount = 1;
-        }
-        lastScrollUpTime = now;
-        if (scrollUpCount >= 2) {
-            revealTopNavAndProgress(2200);
-            scrollUpCount = 0;
+        // Only allow scroll-up auto-reappear when near the top quarter of the screen
+        const topQuarterThreshold = Math.max(250, window.innerHeight * 0.28);
+        if (currentScrollY <= topQuarterThreshold) {
+            const now = Date.now();
+            if (now - lastScrollUpTime < 600) {
+                scrollUpCount++;
+            } else {
+                scrollUpCount = 1;
+            }
+            lastScrollUpTime = now;
+            if (scrollUpCount >= 2) {
+                revealTopNavAndProgress(2200);
+                scrollUpCount = 0;
+            }
         }
     }
     lastScrollY = currentScrollY;
 });
 
 window.addEventListener('wheel', (e) => {
-    if (isNavFixed || isNavTransitioning) return;
-    if (e.deltaY > 25 && (window.scrollY || 0) > 80) {
+    if (isIndexModalOpen() || isNavFixed || isNavTransitioning) return;
+    const currentScrollY = window.scrollY || 0;
+    if (e.deltaY > 25 && currentScrollY > 80) {
         setNavVisibility(false);
     } else if (e.deltaY < -25) {
-        const now = Date.now();
-        if (now - lastScrollUpTime < 600) {
-            scrollUpCount++;
-        } else {
-            scrollUpCount = 1;
-        }
-        lastScrollUpTime = now;
-        if (scrollUpCount >= 2 || (window.scrollY || 0) <= 15) {
+        if (currentScrollY <= 15) {
             revealTopNavAndProgress(2200);
-            scrollUpCount = 0;
+            return;
+        }
+        const topQuarterThreshold = Math.max(250, window.innerHeight * 0.28);
+        if (currentScrollY <= topQuarterThreshold) {
+            const now = Date.now();
+            if (now - lastScrollUpTime < 600) {
+                scrollUpCount++;
+            } else {
+                scrollUpCount = 1;
+            }
+            lastScrollUpTime = now;
+            if (scrollUpCount >= 2) {
+                revealTopNavAndProgress(2200);
+                scrollUpCount = 0;
+            }
         }
     }
 }, { passive: true });

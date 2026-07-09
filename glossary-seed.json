@@ -3043,6 +3043,321 @@
         "commonMistakes": [],
         "followUpQuestions": []
       }
+    },
+    {
+      "keyword": "FinOps",
+      "aliases": ["Cloud FinOps", "Cloud Cost Optimization"],
+      "category": "Cost Optimization",
+      "interviewDomain": "Cost Optimization",
+      "difficulty": "Advanced",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": [],
+      "definition": {
+        "shortDefinition": "An evolving cloud operating model and cultural practice that brings financial accountability to variable cloud spend.",
+        "detailedExplanation": "FinOps bridges engineering, finance, and product teams to make data-driven spending decisions. It emphasizes unit economics, tagging accountability, rightsizing, Spot/Reserved instances, and architectural cost efficiency.",
+        "whyItExists": "To prevent cloud cost sprawl and empower engineering teams to balance speed, performance, and cost.",
+        "howItWorks": "Through continuous monitoring, showback/chargeback dashboards, automated anomaly alerts, resource rightsizing, and savings plan commitments.",
+        "realWorldUsage": "Enforcing mandatory Azure/AWS cost allocation tags, setting budget alerts, and automating non-prod cluster shutdown after business hours.",
+        "interviewExpectation": "Explain the FinOps lifecycle (Inform, Optimize, Operate) and concrete ways to reduce Azure/Kubernetes spend.",
+        "commonMistakes": ["Treating FinOps as a one-time cost-cutting exercise rather than a continuous operational discipline"],
+        "followUpQuestions": ["How do you attribute multi-tenant Kubernetes cluster costs to individual microservices?"]
+      }
+    },
+    {
+      "keyword": "KEDA",
+      "aliases": ["Kubernetes Event-driven Autoscaling"],
+      "category": "Kubernetes",
+      "interviewDomain": "Architecture",
+      "difficulty": "Intermediate",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Kubernetes"],
+      "definition": {
+        "shortDefinition": "A lightweight Kubernetes component that enables event-driven autoscaling based on external metrics like queue length.",
+        "detailedExplanation": "Unlike standard HPA which scales on CPU/Memory, KEDA integrates with external event sources (Azure Service Bus, Kafka, Prometheus, AWS SQS) to scale workloads from 0 to N and back to 0.",
+        "whyItExists": "To scale event processing workers based on actual incoming queue backlog rather than lagging resource utilization.",
+        "howItWorks": "KEDA deploys an operator and metrics server that monitors event sources and drives the Kubernetes HPA.",
+        "realWorldUsage": "Autoscaling background worker pods in Azure AKS based on pending messages in Azure Service Bus queues.",
+        "interviewExpectation": "Contrast standard HPA vs KEDA and explain how scale-to-zero works.",
+        "commonMistakes": ["Using CPU HPA for queue consumer pods where CPU spikes happen too late after backlog accumulates"],
+        "followUpQuestions": ["How does KEDA handle scale-to-zero when standard HPA minimum replicas is 1?"]
+      }
+    },
+    {
+      "keyword": "eBPF",
+      "aliases": ["Extended Berkeley Packet Filter"],
+      "category": "Observability",
+      "interviewDomain": "Observability",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Linux & Operating Systems"],
+      "definition": {
+        "shortDefinition": "A revolutionary Linux kernel technology that safely executes sandboxed programs inside the kernel without changing kernel source code.",
+        "detailedExplanation": "eBPF enables high-performance networking, deep security tracing, and zero-instrumentation observability directly at the kernel syscall/network socket layer.",
+        "whyItExists": "To avoid sidecar proxy overhead and user-space context switches for high-throughput container networking.",
+        "howItWorks": "eBPF programs attach to kernel probe points (kprobes, tracepoints, socket filters) verified for safety by the kernel eBPF verifier.",
+        "realWorldUsage": "Powering Cilium CNI for high-performance Kubernetes networking and low-overhead observability.",
+        "interviewExpectation": "Explain why eBPF is replacing iptables and sidecars in modern Kubernetes clusters.",
+        "commonMistakes": ["Assuming eBPF requires modifying kernel source code"],
+        "followUpQuestions": ["What are the performance advantages of eBPF over iptables for kube-proxy?"]
+      }
+    },
+    {
+      "keyword": "Argo CD",
+      "aliases": ["ArgoCD", "Kubernetes GitOps"],
+      "category": "CI/CD",
+      "interviewDomain": "Deployment",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Kubernetes", "Git & Version Control"],
+      "definition": {
+        "shortDefinition": "A declarative, GitOps continuous delivery tool for Kubernetes.",
+        "detailedExplanation": "Argo CD continuously monitors running Kubernetes cluster state and compares it against desired declarative state defined in Git repositories (Helm charts, Kustomize, YAML manifests).",
+        "whyItExists": "To eliminate configuration drift and manual kubectl deployments by making Git the single source of truth.",
+        "howItWorks": "An in-cluster controller polls Git repositories and reconciles any out-of-sync cluster resources automatically or via manual sync.",
+        "realWorldUsage": "Managing multi-environment AKS deployments across Dev, Staging, and Production clusters from a single Git repository.",
+        "interviewExpectation": "Explain push-based vs pull-based GitOps and how Argo CD handles configuration drift.",
+        "commonMistakes": ["Storing plaintext secrets inside Argo CD Git repositories without SealedSecrets or ExternalSecrets"],
+        "followUpQuestions": ["How do you structure Git repositories for multi-environment promotion in Argo CD?"]
+      }
+    },
+    {
+      "keyword": "GitOps",
+      "aliases": ["Pull-based CD"],
+      "category": "CI/CD",
+      "interviewDomain": "Deployment",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": [],
+      "definition": {
+        "shortDefinition": "An operational framework that takes DevOps best practices used for application development and applies them to infrastructure automation using Git.",
+        "detailedExplanation": "GitOps relies on declarative infrastructure configurations stored in Git. Changes to production happen exclusively via pull requests, with automated reconciliation loops applying changes.",
+        "whyItExists": "To provide full auditability, rollback capability, and automated reconciliation for cluster state.",
+        "howItWorks": "Pull requests are reviewed and merged; an agent inside the target environment pulls and applies the desired state.",
+        "realWorldUsage": "Enterprise cluster governance and continuous deployment using Argo CD or Flux.",
+        "interviewExpectation": "Define the 4 principles of GitOps (Declarative, Versioned, Pulled automatically, Continuously reconciled).",
+        "commonMistakes": ["Giving external CI servers cluster admin credentials instead of using in-cluster pull controllers"],
+        "followUpQuestions": ["What happens when someone manually runs kubectl edit on a GitOps-managed deployment?"]
+      }
+    },
+    {
+      "keyword": "Karpenter",
+      "aliases": ["Kubernetes Node Autoscaler"],
+      "category": "Kubernetes",
+      "interviewDomain": "Architecture",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 8,
+      "seniority": "Senior",
+      "dependsOn": ["Kubernetes"],
+      "definition": {
+        "shortDefinition": "An open-source, high-performance Kubernetes node provisioning and lifecycle management project.",
+        "detailedExplanation": "Karpenter observes unschedulable pods and directly provisions optimal compute instances in seconds based on pod resource requirements and node selectors, bypassing slow node groups.",
+        "whyItExists": "To replace Cluster Autoscaler with faster (<30s) provisioning and right-sized compute selection.",
+        "howItWorks": "Listens for Pending pods, calculates aggregate resource demands, and calls cloud provider APIs directly to launch perfectly sized nodes.",
+        "realWorldUsage": "Dynamically provisioning GPU nodes or Spot instances on demand for batch workloads.",
+        "interviewExpectation": "Compare Karpenter vs traditional Cluster Autoscaler regarding provisioning speed and node groups.",
+        "commonMistakes": ["Not configuring disruption budgets leading to unexpected node consolidation evictions"],
+        "followUpQuestions": ["How does Karpenter consolidation optimize cloud costs?"]
+      }
+    },
+    {
+      "keyword": "Crossplane",
+      "aliases": ["Kubernetes IaC"],
+      "category": "Infrastructure as Code",
+      "interviewDomain": "Automation",
+      "difficulty": "Advanced",
+      "frequency": 7,
+      "importance": 8,
+      "seniority": "Senior",
+      "dependsOn": ["Kubernetes"],
+      "definition": {
+        "shortDefinition": "An open-source Kubernetes add-on that transforms your cluster into a universal control plane.",
+        "detailedExplanation": "Crossplane allows platform engineers to assemble infrastructure from multiple cloud providers (Azure, AWS, GCP) and expose them as higher-level self-service APIs using Kubernetes Custom Resource Definitions (CRDs).",
+        "whyItExists": "To manage cloud infrastructure (databases, buckets, VNets) using the exact same declarative reconciliation loop as Kubernetes pods.",
+        "howItWorks": "Uses Providers and Compositions to provision and continuously reconcile external cloud resources via Kubernetes YAML.",
+        "realWorldUsage": "Allowing developers to request an Azure PostgreSQL database simply by creating a `DatabaseClaim` YAML in their namespace.",
+        "interviewExpectation": "Contrast Terraform (CLI execution) with Crossplane (continuous Kubernetes reconciliation loop).",
+        "commonMistakes": ["Using Crossplane without state drift protection or RBAC isolation across namespaces"],
+        "followUpQuestions": ["What are the pros and cons of using Kubernetes CRDs for cloud infrastructure provisioning?"]
+      }
+    },
+    {
+      "keyword": "OPA Gatekeeper",
+      "aliases": ["Open Policy Agent Gatekeeper"],
+      "category": "Security",
+      "interviewDomain": "Security",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Kubernetes"],
+      "definition": {
+        "shortDefinition": "A Kubernetes admission controller that enforces policy-as-code using Open Policy Agent (OPA).",
+        "detailedExplanation": "Gatekeeper intercepts requests to the Kubernetes API server and evaluates them against Rego policies before objects are persisted, rejecting non-compliant deployments.",
+        "whyItExists": "To enforce organizational compliance (e.g., blocking root containers, requiring resource limits, restricting image registries).",
+        "howItWorks": "Operates as a Validating and Mutating Admission Webhook evaluating ConstraintTemplates written in Rego.",
+        "realWorldUsage": "Blocking any pod deployment in Azure AKS that attempts to run with `privileged: true` or pull images from untrusted registries.",
+        "interviewExpectation": "Explain Validating vs Mutating admission webhooks and how Rego policies enforce governance.",
+        "commonMistakes": ["Deploying blocking policies without testing in audit/dry-run mode first"],
+        "followUpQuestions": ["How do you write an OPA policy to enforce mandatory labels on namespaces?"]
+      }
+    },
+    {
+      "keyword": "Cilium",
+      "aliases": ["Cilium CNI"],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Kubernetes", "eBPF"],
+      "definition": {
+        "shortDefinition": "An open-source eBPF-based Container Network Interface (CNI) for Kubernetes.",
+        "detailedExplanation": "Cilium provides high-performance L3-L7 networking, security network policies, encryption, and Hubble observability by embedding eBPF programs directly into Linux kernel sockets.",
+        "whyItExists": "To overcome iptables scaling bottlenecks and provide identity-based L7 network policies.",
+        "howItWorks": "Attaches eBPF programs to container virtual interfaces, handling packet routing and policy enforcement inside the kernel.",
+        "realWorldUsage": "Default CNI in Azure AKS (Azure CNI Powered by Cilium) for enterprise cloud native networking.",
+        "interviewExpectation": "Explain how Cilium identity-based policies differ from traditional IP/CIDR-based network policies.",
+        "commonMistakes": ["Overlapping pod CIDR ranges when connecting multi-cluster Cilium service meshes"],
+        "followUpQuestions": ["What is Hubble and how does it leverage Cilium eBPF flows?"]
+      }
+    },
+    {
+      "keyword": "Zero Trust Architecture",
+      "aliases": ["Zero Trust Security", "ZTA"],
+      "category": "Security",
+      "interviewDomain": "Security",
+      "difficulty": "Advanced",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": [],
+      "definition": {
+        "shortDefinition": "A security model centered on the belief that organizations should never trust any request by default, whether originating inside or outside the network boundary.",
+        "detailedExplanation": "Zero Trust mandates strict identity verification, mutual TLS (mTLS), least-privilege RBAC, continuous posture evaluation, and microsegmentation for every network hop and user transaction.",
+        "whyItExists": "Traditional VPN perimeter defenses fail against insider threats, lateral movement, and compromised credentials.",
+        "howItWorks": "Every request is explicitly authenticated, authorized, and encrypted continuously before access is granted.",
+        "realWorldUsage": "Implementing mTLS service mesh communication and Azure Private Endpoints with Workload Identity.",
+        "interviewExpectation": "Articulate 'Never trust, always verify' across network, identity, compute, and data layers.",
+        "commonMistakes": ["Assuming network firewalls alone constitute a Zero Trust model"],
+        "followUpQuestions": ["How do you implement Zero Trust networking between Kubernetes microservices?"]
+      }
+    },
+    {
+      "keyword": "User Defined Routes (UDR)",
+      "aliases": ["Azure UDR", "Custom Route Table"],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Networking"],
+      "definition": {
+        "shortDefinition": "Custom static routes defined in Azure Route Tables to override default Azure system routing.",
+        "detailedExplanation": "UDRs allow network engineers to force traffic originating from a subnet through a specific next-hop appliance, such as Azure Firewall or a Network Virtual Appliance (NVA).",
+        "whyItExists": "To inspect, log, or filter inter-subnet and egress Internet traffic for enterprise compliance.",
+        "howItWorks": "Associated with Azure Virtual Network subnets; evaluated by longest prefix match overriding Azure system routes.",
+        "realWorldUsage": "Routing all 0.0.0.0/0 egress traffic from an AKS subnet through an Azure Firewall NVA.",
+        "interviewExpectation": "Explain next-hop types (Virtual Appliance, Virtual Network Gateway, None, Internet) and route precedence.",
+        "commonMistakes": ["Creating asymmetric routing issues where return traffic bypasses the firewall inspection appliance"],
+        "followUpQuestions": ["What happens when a UDR next hop is set to 'None'?"]
+      }
+    },
+    {
+      "keyword": "Azure Private Endpoint",
+      "aliases": ["Private Link Endpoint"],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Azure"],
+      "definition": {
+        "shortDefinition": "A network interface that connects privately and securely to an Azure PaaS service using a private IP address from your Virtual Network.",
+        "detailedExplanation": "Private Endpoints bring Azure services (Key Vault, Storage Accounts, Cosmos DB, Azure SQL) directly into your VNet over the Microsoft backbone network, eliminating public internet exposure.",
+        "whyItExists": "To prevent data exfiltration and satisfy enterprise compliance policies against public PaaS endpoints.",
+        "howItWorks": "Assigns a private IP from the VNet subnet to the PaaS resource and updates Private DNS Zones to resolve hostname to that private IP.",
+        "realWorldUsage": "Connecting AKS application pods securely to Azure Key Vault and ACR without public IPs.",
+        "interviewExpectation": "Explain the interaction between Private Endpoints and Azure Private DNS Zone integration.",
+        "commonMistakes": ["Forgetting to link the Private DNS Zone to the VNet causing apps to still resolve the public IP"],
+        "followUpQuestions": ["How does Private Link differ from Service Endpoints in Azure?"]
+      }
+    },
+    {
+      "keyword": "OpenTelemetry",
+      "aliases": ["OTel"],
+      "category": "Observability",
+      "interviewDomain": "Observability",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Observability"],
+      "definition": {
+        "shortDefinition": "An open-source, vendor-neutral observability framework for collecting traces, metrics, and logs.",
+        "detailedExplanation": "OpenTelemetry provides SDKs, APIs, and the OTel Collector to standardize how telemetry data is collected and exported to backends like Prometheus, Jaeger, Datadog, or Azure Monitor.",
+        "whyItExists": "To eliminate vendor lock-in with proprietary monitoring agents and standardize instrumentation.",
+        "howItWorks": "Applications generate telemetry via OTel SDKs which send data to an OTel Collector for batching, filtering, and exporting.",
+        "realWorldUsage": "Instrumenting distributed microservices to trace transactions end-to-end across Kubernetes pods.",
+        "interviewExpectation": "Explain W3C Trace Context propagation and the role of the OpenTelemetry Collector.",
+        "commonMistakes": ["Sampling 100% of traces in high-throughput production clusters causing storage and CPU overhead"],
+        "followUpQuestions": ["What is the difference between head-based and tail-based sampling in OpenTelemetry?"]
+      }
+    },
+    {
+      "keyword": "DevSecOps Shift Left",
+      "aliases": ["Shift Left Security"],
+      "category": "Security",
+      "interviewDomain": "Security",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["CI/CD"],
+      "definition": {
+        "shortDefinition": "The practice of integrating security checks early in the software development lifecycle rather than right before production deployment.",
+        "detailedExplanation": "Shift Left incorporates SAST (Static Application Security Testing), SCA (Software Composition Analysis), container image scanning (Trivy), and IaC scanning (Checkov/TFSec) directly into developer IDEs and PR pull request pipelines.",
+        "whyItExists": "Fixing vulnerabilities during code commit is 10-100x cheaper and faster than fixing production breaches.",
+        "howItWorks": "Automated security scanners run on every git commit and block PR merges if critical CVEs or hardcoded secrets are detected.",
+        "realWorldUsage": "Running Trivy container image scanning and TFSec Terraform checks inside GitHub Actions PR pipelines.",
+        "interviewExpectation": "Give concrete examples of SAST, DAST, SCA, and IaC security tools integrated into CI/CD pipelines.",
+        "commonMistakes": ["Blocking pipelines on informational or low-severity findings causing developer alert fatigue"],
+        "followUpQuestions": ["How do you handle zero-day vulnerabilities discovered in base container images?"]
+      }
+    },
+    {
+      "keyword": "Service Mesh",
+      "aliases": ["Istio", "Envoy Mesh"],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "dependsOn": ["Kubernetes"],
+      "definition": {
+        "shortDefinition": "A dedicated infrastructure layer for handling service-to-service communication transparently across microservices.",
+        "detailedExplanation": "A service mesh manages traffic routing (canary/blue-green), zero-trust mTLS encryption, retry/circuit-breaking, and distributed tracing without modifying application source code.",
+        "whyItExists": "Offloads cross-cutting networking, security, and observability responsibilities from application teams.",
+        "howItWorks": "Deploys L7 Envoy sidecar proxies alongside each pod (data plane) managed by a central controller (control plane like Istio/Linkerd).",
+        "realWorldUsage": "Enforcing strict mTLS and canary traffic splitting (90/10%) between microservice versions in AKS.",
+        "interviewExpectation": "Explain control plane vs data plane and the latency trade-offs of sidecar proxy architectures.",
+        "commonMistakes": ["Adopting a complex service mesh for simple clusters that only require basic Kubernetes services"],
+        "followUpQuestions": ["How does ambient mesh or eBPF sidecarless service mesh change the architecture?"]
+      }
     }
   ]
 }

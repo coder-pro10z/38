@@ -172,12 +172,16 @@
   },
   {
     "keywordId": "KW-000024",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000025",
     "mentionedIn": [
       "SC-110: Arguments and kwargs"
     ]
   },
   {
-    "keywordId": "KW-000025",
+    "keywordId": "KW-000026",
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-2: Application Unavailable After Deployment",
@@ -199,14 +203,14 @@
     ]
   },
   {
-    "keywordId": "KW-000026",
+    "keywordId": "KW-000027",
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-43: Environment Architecture & Artifact Lifecycle"
     ]
   },
   {
-    "keywordId": "KW-000027",
+    "keywordId": "KW-000028",
     "mentionedIn": [
       "SC-2: Application Unavailable After Deployment",
       "SC-6: Pipeline Takes 40 Minutes",
@@ -220,7 +224,7 @@
     ]
   },
   {
-    "keywordId": "KW-000028",
+    "keywordId": "KW-000029",
     "mentionedIn": [
       "SL-10: Secrets",
       "SL-21: RBAC & Security",
@@ -243,7 +247,7 @@
     ]
   },
   {
-    "keywordId": "KW-000029",
+    "keywordId": "KW-000030",
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-43: Environment Architecture & Artifact Lifecycle",
@@ -251,7 +255,7 @@
     ]
   },
   {
-    "keywordId": "KW-000030",
+    "keywordId": "KW-000031",
     "mentionedIn": [
       "SL-28: Python Scope (LEGB Rule)",
       "SL-46: CI/CD Automation with Python",
@@ -261,17 +265,9 @@
     ]
   },
   {
-    "keywordId": "KW-000031",
-    "mentionedIn": [
-      "SC-70: Autoscaling"
-    ]
-  },
-  {
     "keywordId": "KW-000032",
     "mentionedIn": [
-      "SL-3: High Availability & Traffic Management",
-      "SC-40: High Availability & Traffic Management",
-      "SC-1: Availability Set vs Availability Zone"
+      "SC-70: Autoscaling"
     ]
   },
   {
@@ -285,6 +281,14 @@
   {
     "keywordId": "KW-000034",
     "mentionedIn": [
+      "SL-3: High Availability & Traffic Management",
+      "SC-40: High Availability & Traffic Management",
+      "SC-1: Availability Set vs Availability Zone"
+    ]
+  },
+  {
+    "keywordId": "KW-000035",
+    "mentionedIn": [
       "SL-4: Text Processing Commands",
       "SC-84: Text Processing Commands",
       "Q-Difference between grep and aw...",
@@ -292,7 +296,7 @@
     ]
   },
   {
-    "keywordId": "KW-000035",
+    "keywordId": "KW-000036",
     "mentionedIn": [
       "SL-47: Cloud Automation using Python",
       "SC-1: Terraform Apply Fails in Production",
@@ -304,13 +308,13 @@
     ]
   },
   {
-    "keywordId": "KW-000036",
+    "keywordId": "KW-000037",
     "mentionedIn": [
       "SC-18: Azure App Service"
     ]
   },
   {
-    "keywordId": "KW-000037",
+    "keywordId": "KW-000038",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
       "SC-45: Continuous Delivery Design & Federation",
@@ -322,7 +326,7 @@
     ]
   },
   {
-    "keywordId": "KW-000038",
+    "keywordId": "KW-000039",
     "mentionedIn": [
       "SL-3: High Availability & Traffic Management",
       "SC-40: High Availability & Traffic Management",
@@ -332,19 +336,19 @@
     ]
   },
   {
-    "keywordId": "KW-000039",
+    "keywordId": "KW-000040",
     "mentionedIn": [
       "SC-32: Azure Key Vault"
     ]
   },
   {
-    "keywordId": "KW-000040",
+    "keywordId": "KW-000041",
     "mentionedIn": [
       "SC-19: Azure Kubernetes Service (AKS)"
     ]
   },
   {
-    "keywordId": "KW-000041",
+    "keywordId": "KW-000042",
     "mentionedIn": [
       "SL-9: Observability & Live Production Triage",
       "SC-15: App Cannot Access Azure SQL (Auth)",
@@ -363,7 +367,11 @@
     ]
   },
   {
-    "keywordId": "KW-000042",
+    "keywordId": "KW-000043",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000044",
     "mentionedIn": [
       "SL-7: Services",
       "SL-8: Ingress",
@@ -388,19 +396,19 @@
     ]
   },
   {
-    "keywordId": "KW-000043",
+    "keywordId": "KW-000045",
     "mentionedIn": [
       "SC-47: 12-Factor App Principle"
     ]
   },
   {
-    "keywordId": "KW-000044",
+    "keywordId": "KW-000046",
     "mentionedIn": [
       "SL-14: Jobs"
     ]
   },
   {
-    "keywordId": "KW-000045",
+    "keywordId": "KW-000047",
     "mentionedIn": [
       "SL-15: CronJobs",
       "SL-28: Backup & Disaster Recovery",
@@ -410,17 +418,18 @@
       "SC-74: Backup & Disaster Recovery",
       "SC-102: Cron & Scheduling",
       "SC-12: Azure Backup — Vault Design & Policies",
-      "SC-17: RPO & RTO Compliance — Design Trade-offs"
+      "SC-17: RPO & RTO Compliance — Design Trade-offs",
+      "SC-28: Interview FAQ Master Reference"
     ]
   },
   {
-    "keywordId": "KW-000046",
+    "keywordId": "KW-000048",
     "mentionedIn": [
       "SC-74: Backup & Disaster Recovery"
     ]
   },
   {
-    "keywordId": "KW-000047",
+    "keywordId": "KW-000049",
     "mentionedIn": [
       "SC-7: Production Outage at 2 AM",
       "SC-9: Jenkins Pipeline Suddenly Failing",
@@ -435,7 +444,7 @@
     ]
   },
   {
-    "keywordId": "KW-000048",
+    "keywordId": "KW-000050",
     "mentionedIn": [
       "SC-2: Application Unavailable After Deployment",
       "SC-6: Pipeline Takes 40 Minutes",
@@ -449,31 +458,31 @@
     ]
   },
   {
-    "keywordId": "KW-000049",
+    "keywordId": "KW-000051",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000050",
+    "keywordId": "KW-000052",
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-43: Environment Architecture & Artifact Lifecycle"
     ]
   },
   {
-    "keywordId": "KW-000051",
+    "keywordId": "KW-000053",
     "mentionedIn": [
       "SC-47: 12-Factor App Principle"
     ]
   },
   {
-    "keywordId": "KW-000052",
+    "keywordId": "KW-000054",
     "mentionedIn": [
       "SL-28: Python Scope (LEGB Rule)",
       "SC-108: Python Scope (LEGB Rule)"
     ]
   },
   {
-    "keywordId": "KW-000053",
+    "keywordId": "KW-000055",
     "mentionedIn": [
       "SL-10: Memory Management",
       "SC-8: Deployment Failed During Release Window",
@@ -486,7 +495,7 @@
     ]
   },
   {
-    "keywordId": "KW-000054",
+    "keywordId": "KW-000056",
     "mentionedIn": [
       "SL-6: Deployments",
       "SC-53: Deployments",
@@ -494,7 +503,7 @@
     ]
   },
   {
-    "keywordId": "KW-000055",
+    "keywordId": "KW-000057",
     "mentionedIn": [
       "SL-22: Security Features",
       "SC-69: Security Features",
@@ -502,7 +511,7 @@
     ]
   },
   {
-    "keywordId": "KW-000056",
+    "keywordId": "KW-000058",
     "mentionedIn": [
       "SL-3: High Availability & Traffic Management",
       "SC-40: High Availability & Traffic Management",
@@ -512,49 +521,49 @@
     ]
   },
   {
-    "keywordId": "KW-000057",
+    "keywordId": "KW-000059",
     "mentionedIn": [
       "SL-24: Helm"
     ]
   },
   {
-    "keywordId": "KW-000058",
-    "mentionedIn": [
-      "SL-5: File Permissions & Security",
-      "SC-85: File Permissions & Security",
-      "Q-chmod vs chown?...",
-      "MD-Line 22"
-    ]
-  },
-  {
-    "keywordId": "KW-000059",
-    "mentionedIn": [
-      "SL-5: File Permissions & Security",
-      "SC-85: File Permissions & Security",
-      "Q-chmod vs chown?...",
-      "MD-Line 22"
-    ]
-  },
-  {
     "keywordId": "KW-000060",
     "mentionedIn": [
-      "SC-126: CI/CD Automation with Python"
+      "SL-5: File Permissions & Security",
+      "SC-85: File Permissions & Security",
+      "Q-chmod vs chown?...",
+      "MD-Line 22"
     ]
   },
   {
     "keywordId": "KW-000061",
     "mentionedIn": [
-      "SC-29: CI/CD Design Patterns"
+      "SL-5: File Permissions & Security",
+      "SC-85: File Permissions & Security",
+      "Q-chmod vs chown?...",
+      "MD-Line 22"
     ]
   },
   {
     "keywordId": "KW-000062",
     "mentionedIn": [
-      "SC-78: CI/CD Integration"
+      "SC-126: CI/CD Automation with Python"
     ]
   },
   {
     "keywordId": "KW-000063",
+    "mentionedIn": [
+      "SC-29: CI/CD Design Patterns"
+    ]
+  },
+  {
+    "keywordId": "KW-000064",
+    "mentionedIn": [
+      "SC-78: CI/CD Integration"
+    ]
+  },
+  {
+    "keywordId": "KW-000065",
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
@@ -563,45 +572,49 @@
     ]
   },
   {
-    "keywordId": "KW-000064",
+    "keywordId": "KW-000066",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000067",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
       "SC-41: Enterprise IaC Module Architectures"
     ]
   },
   {
-    "keywordId": "KW-000065",
+    "keywordId": "KW-000068",
     "mentionedIn": [
       "SC-127: Cloud Automation using Python"
     ]
   },
   {
-    "keywordId": "KW-000066",
+    "keywordId": "KW-000069",
     "mentionedIn": [
       "SC-3: Cloud Bill Increased by 50%"
     ]
   },
   {
-    "keywordId": "KW-000067",
+    "keywordId": "KW-000070",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-39: Routing & Secure Endpoint Solutions"
     ]
   },
   {
-    "keywordId": "KW-000068",
+    "keywordId": "KW-000071",
     "mentionedIn": [
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)"
     ]
   },
   {
-    "keywordId": "KW-000069",
+    "keywordId": "KW-000072",
     "mentionedIn": [
       "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
     ]
   },
   {
-    "keywordId": "KW-000070",
+    "keywordId": "KW-000073",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-2: Cluster Architecture",
@@ -652,7 +665,7 @@
     ]
   },
   {
-    "keywordId": "KW-000071",
+    "keywordId": "KW-000074",
     "mentionedIn": [
       "SL-23: Autoscaling",
       "SC-19: Azure Kubernetes Service (AKS)",
@@ -664,13 +677,13 @@
     ]
   },
   {
-    "keywordId": "KW-000072",
+    "keywordId": "KW-000075",
     "mentionedIn": [
       "SL-21: RBAC & Security"
     ]
   },
   {
-    "keywordId": "KW-000073",
+    "keywordId": "KW-000076",
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
       "SC-44: Containerization & Microservices Infrastructure",
@@ -678,13 +691,13 @@
     ]
   },
   {
-    "keywordId": "KW-000074",
+    "keywordId": "KW-000077",
     "mentionedIn": [
       "SL-20: Networking"
     ]
   },
   {
-    "keywordId": "KW-000075",
+    "keywordId": "KW-000078",
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-43: Environment Architecture & Artifact Lifecycle",
@@ -694,20 +707,20 @@
     ]
   },
   {
-    "keywordId": "KW-000076",
+    "keywordId": "KW-000079",
     "mentionedIn": [
       "SC-76: Common kubectl Commands"
     ]
   },
   {
-    "keywordId": "KW-000077",
+    "keywordId": "KW-000080",
     "mentionedIn": [
       "SL-14: Jobs",
       "Q-Explain parallel Jobs...."
     ]
   },
   {
-    "keywordId": "KW-000078",
+    "keywordId": "KW-000081",
     "mentionedIn": [
       "SL-15: CronJobs",
       "SL-51: Threading and Multiprocessing",
@@ -718,7 +731,7 @@
     ]
   },
   {
-    "keywordId": "KW-000079",
+    "keywordId": "KW-000082",
     "mentionedIn": [
       "SL-15: CronJobs",
       "Q-Explain concurrency policy....",
@@ -726,7 +739,7 @@
     ]
   },
   {
-    "keywordId": "KW-000080",
+    "keywordId": "KW-000083",
     "mentionedIn": [
       "SL-5: Configuration Management & Orchestration",
       "SC-42: Configuration Management & Orchestration",
@@ -738,7 +751,7 @@
     ]
   },
   {
-    "keywordId": "KW-000081",
+    "keywordId": "KW-000084",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-10: Secrets",
@@ -750,13 +763,13 @@
     ]
   },
   {
-    "keywordId": "KW-000082",
+    "keywordId": "KW-000085",
     "mentionedIn": [
       "SC-56: ConfigMap"
     ]
   },
   {
-    "keywordId": "KW-000083",
+    "keywordId": "KW-000086",
     "mentionedIn": [
       "SC-0: AKS Deployment Failing After Release",
       "SC-5: AKS Pods Not Scaling",
@@ -771,21 +784,21 @@
     ]
   },
   {
-    "keywordId": "KW-000084",
+    "keywordId": "KW-000087",
     "mentionedIn": [
       "SL-9: Observability & Live Production Triage",
       "SC-46: Observability & Live Production Triage"
     ]
   },
   {
-    "keywordId": "KW-000085",
+    "keywordId": "KW-000088",
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-43: Environment Architecture & Artifact Lifecycle"
     ]
   },
   {
-    "keywordId": "KW-000086",
+    "keywordId": "KW-000089",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-3: Pods",
@@ -827,15 +840,15 @@
     ]
   },
   {
-    "keywordId": "KW-000087",
+    "keywordId": "KW-000090",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000088",
+    "keywordId": "KW-000091",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000089",
+    "keywordId": "KW-000092",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-2: Cluster Architecture",
@@ -852,14 +865,14 @@
     ]
   },
   {
-    "keywordId": "KW-000090",
+    "keywordId": "KW-000093",
     "mentionedIn": [
       "SL-2: Cluster Architecture",
       "SC-49: Cluster Architecture"
     ]
   },
   {
-    "keywordId": "KW-000091",
+    "keywordId": "KW-000094",
     "mentionedIn": [
       "SL-29: Upgrades & Maintenance",
       "SC-75: Upgrades & Maintenance",
@@ -868,42 +881,42 @@
     ]
   },
   {
-    "keywordId": "KW-000092",
+    "keywordId": "KW-000095",
     "mentionedIn": [
       "SL-20: Networking",
       "Q-Explain Service discovery...."
     ]
   },
   {
-    "keywordId": "KW-000093",
+    "keywordId": "KW-000096",
     "mentionedIn": [
       "SC-36: Cost Optimization (FinOps)"
     ]
   },
   {
-    "keywordId": "KW-000094",
+    "keywordId": "KW-000097",
     "mentionedIn": [
       "SL-17: Resource Management"
     ]
   },
   {
-    "keywordId": "KW-000095",
+    "keywordId": "KW-000098",
     "mentionedIn": [
       "SC-89: CPU Monitoring"
     ]
   },
   {
-    "keywordId": "KW-000096",
+    "keywordId": "KW-000099",
     "mentionedIn": [
       "SL-17: Resource Management"
     ]
   },
   {
-    "keywordId": "KW-000097",
+    "keywordId": "KW-000100",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000098",
+    "keywordId": "KW-000101",
     "mentionedIn": [
       "SL-27: Troubleshooting Kubernetes",
       "SL-34: Scenario-Based Kubernetes Interview Questions",
@@ -914,14 +927,14 @@
     ]
   },
   {
-    "keywordId": "KW-000099",
+    "keywordId": "KW-000102",
     "mentionedIn": [
       "SL-25: Operators & CRDs",
       "SC-72: Operators & CRDs"
     ]
   },
   {
-    "keywordId": "KW-000100",
+    "keywordId": "KW-000103",
     "mentionedIn": [
       "SL-15: CronJobs",
       "SL-22: Cron & Scheduling",
@@ -931,19 +944,23 @@
     ]
   },
   {
-    "keywordId": "KW-000101",
+    "keywordId": "KW-000104",
     "mentionedIn": [
       "SC-102: Cron & Scheduling"
     ]
   },
   {
-    "keywordId": "KW-000102",
+    "keywordId": "KW-000105",
     "mentionedIn": [
       "SC-62: CronJobs"
     ]
   },
   {
-    "keywordId": "KW-000103",
+    "keywordId": "KW-000106",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000107",
     "mentionedIn": [
       "SL-15: Networking Commands",
       "SC-95: Networking Commands",
@@ -952,7 +969,7 @@
     ]
   },
   {
-    "keywordId": "KW-000104",
+    "keywordId": "KW-000108",
     "mentionedIn": [
       "SL-8: Service Management",
       "SL-17: SSH Administration",
@@ -961,7 +978,7 @@
     ]
   },
   {
-    "keywordId": "KW-000105",
+    "keywordId": "KW-000109",
     "mentionedIn": [
       "SL-13: DaemonSet",
       "SC-60: DaemonSet",
@@ -972,38 +989,38 @@
     ]
   },
   {
-    "keywordId": "KW-000106",
+    "keywordId": "KW-000110",
     "mentionedIn": [
       "SC-60: DaemonSet"
     ]
   },
   {
-    "keywordId": "KW-000107",
+    "keywordId": "KW-000111",
     "mentionedIn": [
       "SL-25: Python Fundamentals",
       "SC-105: Python Fundamentals"
     ]
   },
   {
-    "keywordId": "KW-000108",
+    "keywordId": "KW-000112",
     "mentionedIn": [
       "SL-39: Python Debugging"
     ]
   },
   {
-    "keywordId": "KW-000109",
+    "keywordId": "KW-000113",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals"
     ]
   },
   {
-    "keywordId": "KW-000110",
+    "keywordId": "KW-000114",
     "mentionedIn": [
       "SC-133: Decorators"
     ]
   },
   {
-    "keywordId": "KW-000111",
+    "keywordId": "KW-000115",
     "mentionedIn": [
       "SL-8: Service Management",
       "SL-18: Package Management",
@@ -1137,7 +1154,7 @@
     ]
   },
   {
-    "keywordId": "KW-000112",
+    "keywordId": "KW-000116",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-3: Pods",
@@ -1231,7 +1248,7 @@
       "SC-4: Azure Front Door",
       "SC-5: Network Security Groups (NSGs)",
       "SC-6: Azure Firewall",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-8: ExpressRoute Connectivity",
       "SC-9: Private DNS Zones",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
@@ -1251,7 +1268,7 @@
       "SC-24: Azure Identity & Access Governance",
       "SC-25: Security Posture & Key Vault Governance",
       "SC-26: Monitoring & SIEM Integration",
-      "SC-27: Cost Optimization (FinOps)",
+      "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
       "Q-ReplicaSet vs Deployment?...",
       "Q-Deployment vs ReplicaSet?...",
       "Q-How achieve zero downtime?...",
@@ -1265,19 +1282,19 @@
     ]
   },
   {
-    "keywordId": "KW-000113",
+    "keywordId": "KW-000117",
     "mentionedIn": [
       "SC-8: Deployment Failed During Release Window"
     ]
   },
   {
-    "keywordId": "KW-000114",
+    "keywordId": "KW-000118",
     "mentionedIn": [
       "SC-29: CI/CD Design Patterns"
     ]
   },
   {
-    "keywordId": "KW-000115",
+    "keywordId": "KW-000119",
     "mentionedIn": [
       "SL-4: Labels, Selectors & Annotations",
       "SL-6: Deployments",
@@ -1390,7 +1407,7 @@
     ]
   },
   {
-    "keywordId": "KW-000116",
+    "keywordId": "KW-000120",
     "mentionedIn": [
       "SL-30: Common kubectl Commands",
       "SL-31: YAML & Kubernetes Manifests",
@@ -1518,25 +1535,29 @@
     ]
   },
   {
-    "keywordId": "KW-000117",
+    "keywordId": "KW-000121",
     "mentionedIn": [
       "SL-5: ReplicaSet"
     ]
   },
   {
-    "keywordId": "KW-000118",
+    "keywordId": "KW-000122",
     "mentionedIn": [
       "SC-47: 12-Factor App Principle"
     ]
   },
   {
-    "keywordId": "KW-000119",
+    "keywordId": "KW-000123",
     "mentionedIn": [
       "SC-17: Developer Needs Production Access"
     ]
   },
   {
-    "keywordId": "KW-000120",
+    "keywordId": "KW-000124",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000125",
     "mentionedIn": [
       "SL-11: Disk Management",
       "SC-91: Disk Management",
@@ -1547,7 +1568,7 @@
     ]
   },
   {
-    "keywordId": "KW-000121",
+    "keywordId": "KW-000126",
     "mentionedIn": [
       "SL-25: Python Fundamentals",
       "SL-26: Python Collections",
@@ -1560,7 +1581,7 @@
     ]
   },
   {
-    "keywordId": "KW-000122",
+    "keywordId": "KW-000127",
     "mentionedIn": [
       "SL-15: Networking Commands",
       "SC-95: Networking Commands",
@@ -1568,33 +1589,33 @@
     ]
   },
   {
-    "keywordId": "KW-000123",
+    "keywordId": "KW-000128",
     "mentionedIn": [
       "SC-35: Disaster Recovery & Backup",
       "SC-14: Multi-Region DR Strategy"
     ]
   },
   {
-    "keywordId": "KW-000124",
+    "keywordId": "KW-000129",
     "mentionedIn": [
       "SC-91: Disk Management"
     ]
   },
   {
-    "keywordId": "KW-000125",
+    "keywordId": "KW-000130",
     "mentionedIn": [
       "SC-47: 12-Factor App Principle"
     ]
   },
   {
-    "keywordId": "KW-000126",
+    "keywordId": "KW-000131",
     "mentionedIn": [
       "SL-20: Kernel Troubleshooting",
       "SC-100: Kernel Troubleshooting"
     ]
   },
   {
-    "keywordId": "KW-000127",
+    "keywordId": "KW-000132",
     "mentionedIn": [
       "SL-7: Services",
       "SL-20: Networking",
@@ -1623,7 +1644,7 @@
     ]
   },
   {
-    "keywordId": "KW-000128",
+    "keywordId": "KW-000133",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-10: Secrets",
@@ -1651,19 +1672,19 @@
     ]
   },
   {
-    "keywordId": "KW-000129",
+    "keywordId": "KW-000134",
     "mentionedIn": [
       "SC-23: Docker"
     ]
   },
   {
-    "keywordId": "KW-000130",
+    "keywordId": "KW-000135",
     "mentionedIn": [
       "SL-10: Secrets"
     ]
   },
   {
-    "keywordId": "KW-000131",
+    "keywordId": "KW-000136",
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
       "SC-23: Docker",
@@ -1673,7 +1694,7 @@
     ]
   },
   {
-    "keywordId": "KW-000132",
+    "keywordId": "KW-000137",
     "mentionedIn": [
       "SL-29: Upgrades & Maintenance",
       "SC-75: Upgrades & Maintenance",
@@ -1684,7 +1705,7 @@
     ]
   },
   {
-    "keywordId": "KW-000133",
+    "keywordId": "KW-000138",
     "mentionedIn": [
       "SL-11: Disk Management",
       "SC-91: Disk Management",
@@ -1694,28 +1715,32 @@
     ]
   },
   {
-    "keywordId": "KW-000134",
+    "keywordId": "KW-000139",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000135",
+    "keywordId": "KW-000140",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000136",
+    "keywordId": "KW-000141",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000142",
     "mentionedIn": [
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
       "SC-79: Cloud Kubernetes (EKS/GKE/AKS)"
     ]
   },
   {
-    "keywordId": "KW-000137",
+    "keywordId": "KW-000143",
     "mentionedIn": [
       "SC-47: 12-Factor App Principle"
     ]
   },
   {
-    "keywordId": "KW-000138",
+    "keywordId": "KW-000144",
     "mentionedIn": [
       "SL-7: Services",
       "SL-34: Scenario-Based Kubernetes Interview Questions",
@@ -1741,7 +1766,7 @@
     ]
   },
   {
-    "keywordId": "KW-000139",
+    "keywordId": "KW-000145",
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
       "SC-44: Containerization & Microservices Infrastructure",
@@ -1749,32 +1774,32 @@
     ]
   },
   {
-    "keywordId": "KW-000140",
+    "keywordId": "KW-000146",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-43: Environment Variables in Python"
     ]
   },
   {
-    "keywordId": "KW-000141",
+    "keywordId": "KW-000147",
     "mentionedIn": [
       "SC-103: Environment Variables",
       "SC-123: Environment Variables in Python"
     ]
   },
   {
-    "keywordId": "KW-000142",
+    "keywordId": "KW-000148",
     "mentionedIn": [
       "SL-3: Pods",
       "SC-50: Pods"
     ]
   },
   {
-    "keywordId": "KW-000143",
+    "keywordId": "KW-000149",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000144",
+    "keywordId": "KW-000150",
     "mentionedIn": [
       "SL-2: Cluster Architecture",
       "SL-28: Backup & Disaster Recovery",
@@ -1784,18 +1809,18 @@
     ]
   },
   {
-    "keywordId": "KW-000145",
+    "keywordId": "KW-000151",
     "mentionedIn": [
       "SL-28: Backup & Disaster Recovery",
       "SC-74: Backup & Disaster Recovery"
     ]
   },
   {
-    "keywordId": "KW-000146",
+    "keywordId": "KW-000152",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000147",
+    "keywordId": "KW-000153",
     "mentionedIn": [
       "SL-37: Exception Handling",
       "SC-117: Exception Handling",
@@ -1806,19 +1831,19 @@
     ]
   },
   {
-    "keywordId": "KW-000148",
+    "keywordId": "KW-000154",
     "mentionedIn": [
       "SC-117: Exception Handling"
     ]
   },
   {
-    "keywordId": "KW-000149",
+    "keywordId": "KW-000155",
     "mentionedIn": [
       "SL-30: Common kubectl Commands"
     ]
   },
   {
-    "keywordId": "KW-000150",
+    "keywordId": "KW-000156",
     "mentionedIn": [
       "SC-1: Terraform Apply Fails in Production",
       "SC-10: Terraform Destroyed Resources",
@@ -1826,7 +1851,7 @@
     ]
   },
   {
-    "keywordId": "KW-000151",
+    "keywordId": "KW-000157",
     "mentionedIn": [
       "SC-7: Production Outage at 2 AM",
       "SC-11: Works Locally But Fails In Docker",
@@ -1849,26 +1874,26 @@
     ]
   },
   {
-    "keywordId": "KW-000152",
+    "keywordId": "KW-000158",
     "mentionedIn": [
       "SL-3: High Availability & Traffic Management",
       "SC-40: High Availability & Traffic Management"
     ]
   },
   {
-    "keywordId": "KW-000153",
+    "keywordId": "KW-000159",
     "mentionedIn": [
       "SC-114: File Handling"
     ]
   },
   {
-    "keywordId": "KW-000154",
+    "keywordId": "KW-000160",
     "mentionedIn": [
       "SC-85: File Permissions & Security"
     ]
   },
   {
-    "keywordId": "KW-000155",
+    "keywordId": "KW-000161",
     "mentionedIn": [
       "SL-2: Linux File System",
       "SL-12: Storage & Filesystem",
@@ -1877,7 +1902,7 @@
     ]
   },
   {
-    "keywordId": "KW-000156",
+    "keywordId": "KW-000162",
     "mentionedIn": [
       "SL-37: Exception Handling",
       "SC-117: Exception Handling",
@@ -1885,7 +1910,7 @@
     ]
   },
   {
-    "keywordId": "KW-000157",
+    "keywordId": "KW-000163",
     "mentionedIn": [
       "SL-4: Labels, Selectors & Annotations",
       "SL-7: Services",
@@ -1909,13 +1934,27 @@
     ]
   },
   {
-    "keywordId": "KW-000158",
+    "keywordId": "KW-000164",
+    "mentionedIn": [
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-15: App Cannot Access Azure SQL (Auth)",
+      "SC-18: Azure App Service",
+      "SC-32: Azure Key Vault",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-38: Azure Virtual Networks: Core & Peering",
+      "SC-20: Azure Landing Zones & Subscriptions",
+      "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
+      "SC-28: Interview FAQ Master Reference"
+    ]
+  },
+  {
+    "keywordId": "KW-000165",
     "mentionedIn": [
       "SC-96: Firewall & Security"
     ]
   },
   {
-    "keywordId": "KW-000159",
+    "keywordId": "KW-000166",
     "mentionedIn": [
       "SL-16: Firewall & Security",
       "SC-96: Firewall & Security",
@@ -1924,13 +1963,13 @@
     ]
   },
   {
-    "keywordId": "KW-000160",
+    "keywordId": "KW-000167",
     "mentionedIn": [
       "SL-50: Testing Automation using pytest"
     ]
   },
   {
-    "keywordId": "KW-000161",
+    "keywordId": "KW-000168",
     "mentionedIn": [
       "SL-21: Shell Scripting",
       "SL-28: Python Scope (LEGB Rule)",
@@ -1952,13 +1991,13 @@
     ]
   },
   {
-    "keywordId": "KW-000162",
+    "keywordId": "KW-000169",
     "mentionedIn": [
       "SC-132: Generators and Iterators"
     ]
   },
   {
-    "keywordId": "KW-000163",
+    "keywordId": "KW-000170",
     "mentionedIn": [
       "SL-30: Common kubectl Commands",
       "SL-44: API Automation using Python",
@@ -1970,51 +2009,51 @@
     ]
   },
   {
-    "keywordId": "KW-000164",
+    "keywordId": "KW-000171",
     "mentionedIn": [
       "SC-28: Git & Branching Strategy"
     ]
   },
   {
-    "keywordId": "KW-000165",
+    "keywordId": "KW-000172",
     "mentionedIn": [
       "SC-14: GitHub Actions Not Triggering",
       "SC-22: GitHub Actions"
     ]
   },
   {
-    "keywordId": "KW-000166",
+    "keywordId": "KW-000173",
     "mentionedIn": [
       "SC-14: GitHub Actions Not Triggering",
       "SC-22: GitHub Actions"
     ]
   },
   {
-    "keywordId": "KW-000167",
+    "keywordId": "KW-000174",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000168",
+    "keywordId": "KW-000175",
     "mentionedIn": [
       "SL-32: CI/CD Integration",
       "SC-78: CI/CD Integration"
     ]
   },
   {
-    "keywordId": "KW-000169",
+    "keywordId": "KW-000176",
     "mentionedIn": [
       "SL-28: Python Scope (LEGB Rule)"
     ]
   },
   {
-    "keywordId": "KW-000170",
+    "keywordId": "KW-000177",
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering"
     ]
   },
   {
-    "keywordId": "KW-000171",
+    "keywordId": "KW-000178",
     "mentionedIn": [
       "SC-1: Terraform Apply Fails in Production",
       "SC-10: Terraform Destroyed Resources",
@@ -2023,7 +2062,7 @@
     ]
   },
   {
-    "keywordId": "KW-000172",
+    "keywordId": "KW-000179",
     "mentionedIn": [
       "SC-7: Production Outage at 2 AM",
       "SC-13: Grafana Alert Triggered At Midnight",
@@ -2034,13 +2073,13 @@
     ]
   },
   {
-    "keywordId": "KW-000173",
+    "keywordId": "KW-000180",
     "mentionedIn": [
       "SC-13: Grafana Alert Triggered At Midnight"
     ]
   },
   {
-    "keywordId": "KW-000174",
+    "keywordId": "KW-000181",
     "mentionedIn": [
       "SL-3: Linux Basic Commands",
       "SL-4: Text Processing Commands",
@@ -2059,7 +2098,7 @@
     ]
   },
   {
-    "keywordId": "KW-000175",
+    "keywordId": "KW-000182",
     "mentionedIn": [
       "SL-16: Namespaces",
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
@@ -2081,18 +2120,18 @@
       "SC-18: Management Groups & Enterprise Hierarchy",
       "SC-20: Azure Landing Zones & Subscriptions",
       "SC-26: Monitoring & SIEM Integration",
-      "SC-27: Cost Optimization (FinOps)",
+      "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
       "Q-Explain LVM...."
     ]
   },
   {
-    "keywordId": "KW-000176",
+    "keywordId": "KW-000183",
     "mentionedIn": [
       "SL-38: Python Logging"
     ]
   },
   {
-    "keywordId": "KW-000177",
+    "keywordId": "KW-000184",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
       "SC-1: Terraform Apply Fails in Production",
@@ -2102,7 +2141,7 @@
     ]
   },
   {
-    "keywordId": "KW-000178",
+    "keywordId": "KW-000185",
     "mentionedIn": [
       "SL-7: Services",
       "SC-54: Services",
@@ -2111,35 +2150,35 @@
     ]
   },
   {
-    "keywordId": "KW-000179",
+    "keywordId": "KW-000186",
     "mentionedIn": [
       "SL-49: Monitoring Scripts using Python"
     ]
   },
   {
-    "keywordId": "KW-000180",
+    "keywordId": "KW-000187",
     "mentionedIn": [
       "SC-65: Health Checks (Liveness, Readiness, Startup Probes)"
     ]
   },
   {
-    "keywordId": "KW-000181",
+    "keywordId": "KW-000188",
     "mentionedIn": [
       "SC-71: Helm"
     ]
   },
   {
-    "keywordId": "KW-000182",
+    "keywordId": "KW-000189",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000183",
+    "keywordId": "KW-000190",
     "mentionedIn": [
       "SL-15: CronJobs"
     ]
   },
   {
-    "keywordId": "KW-000184",
+    "keywordId": "KW-000191",
     "mentionedIn": [
       "SC-0: AKS Deployment Failing After Release",
       "SC-7: Production Outage at 2 AM",
@@ -2148,7 +2187,7 @@
     ]
   },
   {
-    "keywordId": "KW-000185",
+    "keywordId": "KW-000192",
     "mentionedIn": [
       "SL-23: Autoscaling",
       "SC-5: AKS Pods Not Scaling",
@@ -2157,7 +2196,7 @@
     ]
   },
   {
-    "keywordId": "KW-000186",
+    "keywordId": "KW-000193",
     "mentionedIn": [
       "SL-8: Ingress",
       "SL-15: Networking Commands",
@@ -2188,7 +2227,7 @@
     ]
   },
   {
-    "keywordId": "KW-000187",
+    "keywordId": "KW-000194",
     "mentionedIn": [
       "SL-8: Ingress",
       "SL-10: Secrets",
@@ -2206,7 +2245,7 @@
     ]
   },
   {
-    "keywordId": "KW-000188",
+    "keywordId": "KW-000195",
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
@@ -2216,17 +2255,17 @@
     ]
   },
   {
-    "keywordId": "KW-000189",
+    "keywordId": "KW-000196",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000190",
+    "keywordId": "KW-000197",
     "mentionedIn": [
       "SC-26: RBAC / IAM"
     ]
   },
   {
-    "keywordId": "KW-000191",
+    "keywordId": "KW-000198",
     "mentionedIn": [
       "SL-5: Configuration Management & Orchestration",
       "SC-3: Cloud Bill Increased by 50%",
@@ -2324,7 +2363,7 @@
     ]
   },
   {
-    "keywordId": "KW-000192",
+    "keywordId": "KW-000199",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-27: Troubleshooting Kubernetes",
@@ -2356,7 +2395,7 @@
     ]
   },
   {
-    "keywordId": "KW-000193",
+    "keywordId": "KW-000200",
     "mentionedIn": [
       "SL-27: Troubleshooting Kubernetes",
       "SL-34: Scenario-Based Kubernetes Interview Questions",
@@ -2367,7 +2406,7 @@
     ]
   },
   {
-    "keywordId": "KW-000194",
+    "keywordId": "KW-000201",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-22: Security Features",
@@ -2394,13 +2433,13 @@
     ]
   },
   {
-    "keywordId": "KW-000195",
+    "keywordId": "KW-000202",
     "mentionedIn": [
       "SL-9: ConfigMap"
     ]
   },
   {
-    "keywordId": "KW-000196",
+    "keywordId": "KW-000203",
     "mentionedIn": [
       "SL-9: Observability & Live Production Triage",
       "SC-34: Incident Management",
@@ -2408,13 +2447,13 @@
     ]
   },
   {
-    "keywordId": "KW-000197",
+    "keywordId": "KW-000204",
     "mentionedIn": [
       "SC-34: Incident Management"
     ]
   },
   {
-    "keywordId": "KW-000198",
+    "keywordId": "KW-000205",
     "mentionedIn": [
       "SC-7: Production Outage at 2 AM",
       "SC-11: Works Locally But Fails In Docker",
@@ -2429,15 +2468,15 @@
     ]
   },
   {
-    "keywordId": "KW-000199",
+    "keywordId": "KW-000206",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000200",
+    "keywordId": "KW-000207",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000201",
+    "keywordId": "KW-000208",
     "mentionedIn": [
       "SL-8: Ingress",
       "SC-0: AKS Deployment Failing After Release",
@@ -2459,27 +2498,27 @@
     ]
   },
   {
-    "keywordId": "KW-000202",
+    "keywordId": "KW-000209",
     "mentionedIn": [
       "SC-55: Ingress"
     ]
   },
   {
-    "keywordId": "KW-000203",
+    "keywordId": "KW-000210",
     "mentionedIn": [
       "SL-8: Ingress",
       "Q-How TLS works?..."
     ]
   },
   {
-    "keywordId": "KW-000204",
+    "keywordId": "KW-000211",
     "mentionedIn": [
       "SL-3: Pods",
       "SC-50: Pods"
     ]
   },
   {
-    "keywordId": "KW-000205",
+    "keywordId": "KW-000212",
     "mentionedIn": [
       "SL-5: Configuration Management & Orchestration",
       "SC-42: Configuration Management & Orchestration",
@@ -2487,7 +2526,7 @@
     ]
   },
   {
-    "keywordId": "KW-000206",
+    "keywordId": "KW-000213",
     "mentionedIn": [
       "SL-16: Firewall & Security",
       "SC-96: Firewall & Security",
@@ -2496,7 +2535,7 @@
     ]
   },
   {
-    "keywordId": "KW-000207",
+    "keywordId": "KW-000214",
     "mentionedIn": [
       "SL-16: Namespaces",
       "SL-32: Virtual Environment",
@@ -2509,11 +2548,11 @@
     ]
   },
   {
-    "keywordId": "KW-000208",
+    "keywordId": "KW-000215",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000209",
+    "keywordId": "KW-000216",
     "mentionedIn": [
       "SL-33: Package Management (pip)",
       "SL-46: CI/CD Automation with Python",
@@ -2525,25 +2564,25 @@
     ]
   },
   {
-    "keywordId": "KW-000210",
+    "keywordId": "KW-000217",
     "mentionedIn": [
       "SC-21: Jenkins"
     ]
   },
   {
-    "keywordId": "KW-000211",
+    "keywordId": "KW-000218",
     "mentionedIn": [
       "SC-9: Jenkins Pipeline Suddenly Failing"
     ]
   },
   {
-    "keywordId": "KW-000212",
+    "keywordId": "KW-000219",
     "mentionedIn": [
       "SC-61: Jobs"
     ]
   },
   {
-    "keywordId": "KW-000213",
+    "keywordId": "KW-000220",
     "mentionedIn": [
       "SL-19: Logs & Monitoring",
       "SC-99: Logs & Monitoring",
@@ -2551,29 +2590,37 @@
     ]
   },
   {
-    "keywordId": "KW-000214",
+    "keywordId": "KW-000221",
     "mentionedIn": [
       "SC-121: JSON Handling"
     ]
   },
   {
-    "keywordId": "KW-000215",
+    "keywordId": "KW-000222",
     "mentionedIn": [
       "SL-41: JSON Handling"
     ]
   },
   {
-    "keywordId": "KW-000216",
+    "keywordId": "KW-000223",
     "mentionedIn": [
       "SL-41: JSON Handling"
     ]
   },
   {
-    "keywordId": "KW-000217",
+    "keywordId": "KW-000224",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000218",
+    "keywordId": "KW-000225",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000226",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000227",
     "mentionedIn": [
       "SL-1: Linux Architecture & Boot Process",
       "SL-7: Process Management",
@@ -2593,25 +2640,25 @@
     ]
   },
   {
-    "keywordId": "KW-000219",
+    "keywordId": "KW-000228",
     "mentionedIn": [
       "SL-20: Kernel Troubleshooting"
     ]
   },
   {
-    "keywordId": "KW-000220",
+    "keywordId": "KW-000229",
     "mentionedIn": [
       "SL-20: Kernel Troubleshooting"
     ]
   },
   {
-    "keywordId": "KW-000221",
+    "keywordId": "KW-000230",
     "mentionedIn": [
       "SC-100: Kernel Troubleshooting"
     ]
   },
   {
-    "keywordId": "KW-000222",
+    "keywordId": "KW-000231",
     "mentionedIn": [
       "SC-32: Azure Key Vault",
       "SC-14: Azure DevOps Pipelines & Live Monitoring",
@@ -2624,13 +2671,13 @@
     ]
   },
   {
-    "keywordId": "KW-000223",
+    "keywordId": "KW-000232",
     "mentionedIn": [
       "SL-31: YAML & Kubernetes Manifests"
     ]
   },
   {
-    "keywordId": "KW-000224",
+    "keywordId": "KW-000233",
     "mentionedIn": [
       "SL-7: Services",
       "SL-20: Networking",
@@ -2639,7 +2686,7 @@
     ]
   },
   {
-    "keywordId": "KW-000225",
+    "keywordId": "KW-000234",
     "mentionedIn": [
       "SL-2: Cluster Architecture",
       "SC-49: Cluster Architecture",
@@ -2648,7 +2695,7 @@
     ]
   },
   {
-    "keywordId": "KW-000226",
+    "keywordId": "KW-000235",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-2: Cluster Architecture",
@@ -2742,7 +2789,7 @@
     ]
   },
   {
-    "keywordId": "KW-000227",
+    "keywordId": "KW-000236",
     "mentionedIn": [
       "SL-8: Ingress",
       "SL-25: Operators & CRDs",
@@ -2755,25 +2802,25 @@
     ]
   },
   {
-    "keywordId": "KW-000228",
+    "keywordId": "KW-000237",
     "mentionedIn": [
       "SC-30: Kubernetes Deep Dive"
     ]
   },
   {
-    "keywordId": "KW-000229",
+    "keywordId": "KW-000238",
     "mentionedIn": [
       "SC-48: Kubernetes Fundamentals"
     ]
   },
   {
-    "keywordId": "KW-000230",
+    "keywordId": "KW-000239",
     "mentionedIn": [
       "SC-128: Kubernetes Python Client"
     ]
   },
   {
-    "keywordId": "KW-000231",
+    "keywordId": "KW-000240",
     "mentionedIn": [
       "SL-4: Labels, Selectors & Annotations",
       "SL-31: YAML & Kubernetes Manifests",
@@ -2782,13 +2829,13 @@
     ]
   },
   {
-    "keywordId": "KW-000232",
+    "keywordId": "KW-000241",
     "mentionedIn": [
       "SC-51: Labels, Selectors & Annotations"
     ]
   },
   {
-    "keywordId": "KW-000233",
+    "keywordId": "KW-000242",
     "mentionedIn": [
       "SL-29: Python Functions",
       "Q-Explain lambda....",
@@ -2796,7 +2843,7 @@
     ]
   },
   {
-    "keywordId": "KW-000234",
+    "keywordId": "KW-000243",
     "mentionedIn": [
       "SL-3: Pods",
       "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
@@ -2817,7 +2864,7 @@
     ]
   },
   {
-    "keywordId": "KW-000235",
+    "keywordId": "KW-000244",
     "mentionedIn": [
       "SL-22: Security Features",
       "SL-1: Linux Architecture & Boot Process",
@@ -2881,43 +2928,43 @@
     ]
   },
   {
-    "keywordId": "KW-000236",
+    "keywordId": "KW-000245",
     "mentionedIn": [
       "SC-81: Linux Architecture & Boot Process"
     ]
   },
   {
-    "keywordId": "KW-000237",
+    "keywordId": "KW-000246",
     "mentionedIn": [
       "SC-83: Linux Basic Commands"
     ]
   },
   {
-    "keywordId": "KW-000238",
+    "keywordId": "KW-000247",
     "mentionedIn": [
       "SC-116: Linux Command Execution using Python"
     ]
   },
   {
-    "keywordId": "KW-000239",
+    "keywordId": "KW-000248",
     "mentionedIn": [
       "SC-82: Linux File System"
     ]
   },
   {
-    "keywordId": "KW-000240",
+    "keywordId": "KW-000249",
     "mentionedIn": [
       "SC-93: Linux Networking Basics"
     ]
   },
   {
-    "keywordId": "KW-000241",
+    "keywordId": "KW-000250",
     "mentionedIn": [
       "SL-25: Python Fundamentals",
       "SL-26: Python Collections",
       "SL-52: Generators and Iterators",
       "SC-106: Python Collections",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "Q-List vs tuple?...",
       "Q-Generator vs list?...",
       "MD-Line 28",
@@ -2925,14 +2972,14 @@
     ]
   },
   {
-    "keywordId": "KW-000242",
+    "keywordId": "KW-000251",
     "mentionedIn": [
       "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
       "Q-Why use startup probe?..."
     ]
   },
   {
-    "keywordId": "KW-000243",
+    "keywordId": "KW-000252",
     "mentionedIn": [
       "SL-9: CPU Monitoring",
       "SC-89: CPU Monitoring",
@@ -2941,7 +2988,7 @@
     ]
   },
   {
-    "keywordId": "KW-000244",
+    "keywordId": "KW-000253",
     "mentionedIn": [
       "SL-7: Services",
       "SL-3: High Availability & Traffic Management",
@@ -2958,7 +3005,7 @@
     ]
   },
   {
-    "keywordId": "KW-000245",
+    "keywordId": "KW-000254",
     "mentionedIn": [
       "SL-7: Services",
       "SL-8: Ingress",
@@ -2969,33 +3016,33 @@
     ]
   },
   {
-    "keywordId": "KW-000246",
+    "keywordId": "KW-000255",
     "mentionedIn": [
       "SL-28: Python Scope (LEGB Rule)",
       "Q-What is variable shadowing?..."
     ]
   },
   {
-    "keywordId": "KW-000247",
+    "keywordId": "KW-000256",
     "mentionedIn": [
       "SL-38: Python Logging"
     ]
   },
   {
-    "keywordId": "KW-000248",
+    "keywordId": "KW-000257",
     "mentionedIn": [
       "SL-9: Observability & Live Production Triage",
       "SC-46: Observability & Live Production Triage"
     ]
   },
   {
-    "keywordId": "KW-000249",
+    "keywordId": "KW-000258",
     "mentionedIn": [
       "SL-16: Namespaces"
     ]
   },
   {
-    "keywordId": "KW-000250",
+    "keywordId": "KW-000259",
     "mentionedIn": [
       "SL-3: Pods",
       "SL-13: DaemonSet",
@@ -3135,30 +3182,30 @@
     ]
   },
   {
-    "keywordId": "KW-000251",
+    "keywordId": "KW-000260",
     "mentionedIn": [
       "SC-99: Logs & Monitoring"
     ]
   },
   {
-    "keywordId": "KW-000252",
+    "keywordId": "KW-000261",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000253",
+    "keywordId": "KW-000262",
     "mentionedIn": [
       "SL-21: Shell Scripting",
       "SC-101: Shell Scripting"
     ]
   },
   {
-    "keywordId": "KW-000254",
+    "keywordId": "KW-000263",
     "mentionedIn": [
       "SL-3: Linux Basic Commands"
     ]
   },
   {
-    "keywordId": "KW-000255",
+    "keywordId": "KW-000264",
     "mentionedIn": [
       "SL-11: Disk Management",
       "SC-91: Disk Management",
@@ -3167,13 +3214,13 @@
     ]
   },
   {
-    "keywordId": "KW-000256",
+    "keywordId": "KW-000265",
     "mentionedIn": [
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)"
     ]
   },
   {
-    "keywordId": "KW-000257",
+    "keywordId": "KW-000266",
     "mentionedIn": [
       "SC-15: App Cannot Access Azure SQL (Auth)",
       "SC-18: Azure App Service",
@@ -3184,32 +3231,32 @@
     ]
   },
   {
-    "keywordId": "KW-000258",
+    "keywordId": "KW-000267",
     "mentionedIn": [
       "SL-4: Labels, Selectors & Annotations"
     ]
   },
   {
-    "keywordId": "KW-000259",
+    "keywordId": "KW-000268",
     "mentionedIn": [
       "SL-4: Labels, Selectors & Annotations"
     ]
   },
   {
-    "keywordId": "KW-000260",
+    "keywordId": "KW-000269",
     "mentionedIn": [
       "SL-17: Resource Management",
       "Q-What is OOMKilled?..."
     ]
   },
   {
-    "keywordId": "KW-000261",
+    "keywordId": "KW-000270",
     "mentionedIn": [
       "SC-90: Memory Management"
     ]
   },
   {
-    "keywordId": "KW-000262",
+    "keywordId": "KW-000271",
     "mentionedIn": [
       "SL-4: Labels, Selectors & Annotations",
       "SL-24: Helm",
@@ -3218,12 +3265,12 @@
       "SC-10: Terraform Destroyed Resources",
       "SC-20: Terraform",
       "SC-51: Labels, Selectors & Annotations",
-      "SC-27: Cost Optimization (FinOps)",
+      "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
       "Q-Difference between grep and fi..."
     ]
   },
   {
-    "keywordId": "KW-000263",
+    "keywordId": "KW-000272",
     "mentionedIn": [
       "SL-26: Observability",
       "SL-49: Monitoring Scripts using Python",
@@ -3342,7 +3389,7 @@
     ]
   },
   {
-    "keywordId": "KW-000264",
+    "keywordId": "KW-000273",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-7: Services",
@@ -3453,14 +3500,14 @@
     ]
   },
   {
-    "keywordId": "KW-000265",
+    "keywordId": "KW-000274",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
       "SC-45: Continuous Delivery Design & Federation"
     ]
   },
   {
-    "keywordId": "KW-000266",
+    "keywordId": "KW-000275",
     "mentionedIn": [
       "SL-20: Kernel Troubleshooting",
       "SL-31: Modules & Packages",
@@ -3480,14 +3527,14 @@
     ]
   },
   {
-    "keywordId": "KW-000267",
+    "keywordId": "KW-000276",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
       "SC-41: Enterprise IaC Module Architectures"
     ]
   },
   {
-    "keywordId": "KW-000268",
+    "keywordId": "KW-000277",
     "mentionedIn": [
       "SL-20: Kernel Troubleshooting",
       "SL-31: Modules & Packages",
@@ -3508,26 +3555,26 @@
     ]
   },
   {
-    "keywordId": "KW-000269",
+    "keywordId": "KW-000278",
     "mentionedIn": [
       "SC-111: Modules & Packages"
     ]
   },
   {
-    "keywordId": "KW-000270",
+    "keywordId": "KW-000279",
     "mentionedIn": [
       "SC-25: Monitoring",
       "SC-89: CPU Monitoring"
     ]
   },
   {
-    "keywordId": "KW-000271",
+    "keywordId": "KW-000280",
     "mentionedIn": [
       "SC-129: Monitoring Scripts using Python"
     ]
   },
   {
-    "keywordId": "KW-000272",
+    "keywordId": "KW-000281",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-12: Storage & Filesystem",
@@ -3535,29 +3582,29 @@
     ]
   },
   {
-    "keywordId": "KW-000273",
+    "keywordId": "KW-000282",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000274",
+    "keywordId": "KW-000283",
     "mentionedIn": [
       "SL-3: Pods",
       "SC-50: Pods"
     ]
   },
   {
-    "keywordId": "KW-000275",
+    "keywordId": "KW-000284",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000276",
+    "keywordId": "KW-000285",
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
       "SC-44: Containerization & Microservices Infrastructure"
     ]
   },
   {
-    "keywordId": "KW-000277",
+    "keywordId": "KW-000286",
     "mentionedIn": [
       "SL-26: Python Collections",
       "SL-27: Mutable vs Immutable Objects",
@@ -3568,13 +3615,13 @@
     ]
   },
   {
-    "keywordId": "KW-000278",
+    "keywordId": "KW-000287",
     "mentionedIn": [
       "SC-107: Mutable vs Immutable Objects"
     ]
   },
   {
-    "keywordId": "KW-000279",
+    "keywordId": "KW-000288",
     "mentionedIn": [
       "SL-16: Namespaces",
       "SL-21: RBAC & Security",
@@ -3587,13 +3634,13 @@
     ]
   },
   {
-    "keywordId": "KW-000280",
+    "keywordId": "KW-000289",
     "mentionedIn": [
       "SC-63: Namespaces"
     ]
   },
   {
-    "keywordId": "KW-000281",
+    "keywordId": "KW-000290",
     "mentionedIn": [
       "SL-14: Advanced Networking",
       "SC-94: Advanced Networking",
@@ -3601,7 +3648,7 @@
     ]
   },
   {
-    "keywordId": "KW-000282",
+    "keywordId": "KW-000291",
     "mentionedIn": [
       "SC-67: Networking",
       "SC-93: Linux Networking Basics",
@@ -3609,20 +3656,20 @@
     ]
   },
   {
-    "keywordId": "KW-000283",
+    "keywordId": "KW-000292",
     "mentionedIn": [
       "SC-95: Networking Commands"
     ]
   },
   {
-    "keywordId": "KW-000284",
+    "keywordId": "KW-000293",
     "mentionedIn": [
       "SL-20: Networking",
       "SC-67: Networking"
     ]
   },
   {
-    "keywordId": "KW-000285",
+    "keywordId": "KW-000294",
     "mentionedIn": [
       "SL-19: Scheduling",
       "SC-66: Scheduling",
@@ -3630,26 +3677,26 @@
     ]
   },
   {
-    "keywordId": "KW-000286",
+    "keywordId": "KW-000295",
     "mentionedIn": [
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)"
     ]
   },
   {
-    "keywordId": "KW-000287",
+    "keywordId": "KW-000296",
     "mentionedIn": [
       "SL-13: DaemonSet"
     ]
   },
   {
-    "keywordId": "KW-000288",
+    "keywordId": "KW-000297",
     "mentionedIn": [
       "SL-19: Scheduling",
       "SC-66: Scheduling"
     ]
   },
   {
-    "keywordId": "KW-000289",
+    "keywordId": "KW-000298",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-4: App Service Cannot Access SQL",
@@ -3661,11 +3708,11 @@
     ]
   },
   {
-    "keywordId": "KW-000290",
+    "keywordId": "KW-000299",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000291",
+    "keywordId": "KW-000300",
     "mentionedIn": [
       "SL-26: Observability",
       "SL-9: Observability & Live Production Triage",
@@ -3763,17 +3810,18 @@
       "SC-132: Generators and Iterators",
       "SC-133: Decorators",
       "SC-134: Production Python Design",
-      "SC-11: Azure Monitor & SIEM Integration"
+      "SC-11: Azure Monitor & SIEM Integration",
+      "SC-28: Interview FAQ Master Reference"
     ]
   },
   {
-    "keywordId": "KW-000292",
+    "keywordId": "KW-000301",
     "mentionedIn": [
       "SC-33: Observability"
     ]
   },
   {
-    "keywordId": "KW-000293",
+    "keywordId": "KW-000302",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
       "SC-22: GitHub Actions",
@@ -3781,13 +3829,13 @@
     ]
   },
   {
-    "keywordId": "KW-000294",
+    "keywordId": "KW-000303",
     "mentionedIn": [
       "SL-13: DaemonSet"
     ]
   },
   {
-    "keywordId": "KW-000295",
+    "keywordId": "KW-000304",
     "mentionedIn": [
       "SL-10: Memory Management",
       "SC-90: Memory Management",
@@ -3796,73 +3844,77 @@
     ]
   },
   {
-    "keywordId": "KW-000296",
+    "keywordId": "KW-000305",
+    "mentionedIn": []
+  },
+  {
+    "keywordId": "KW-000306",
     "mentionedIn": [
       "SL-10: Secrets"
     ]
   },
   {
-    "keywordId": "KW-000297",
+    "keywordId": "KW-000307",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000298",
+    "keywordId": "KW-000308",
     "mentionedIn": [
       "SC-33: Observability"
     ]
   },
   {
-    "keywordId": "KW-000299",
+    "keywordId": "KW-000309",
     "mentionedIn": [
       "SL-25: Operators & CRDs",
       "SC-72: Operators & CRDs"
     ]
   },
   {
-    "keywordId": "KW-000300",
+    "keywordId": "KW-000310",
     "mentionedIn": [
       "SC-72: Operators & CRDs"
     ]
   },
   {
-    "keywordId": "KW-000301",
+    "keywordId": "KW-000311",
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
       "SC-44: Containerization & Microservices Infrastructure"
     ]
   },
   {
-    "keywordId": "KW-000302",
+    "keywordId": "KW-000312",
     "mentionedIn": [
       "SL-12: StatefulSet"
     ]
   },
   {
-    "keywordId": "KW-000303",
+    "keywordId": "KW-000313",
     "mentionedIn": [
       "SC-115: OS Automation"
     ]
   },
   {
-    "keywordId": "KW-000304",
+    "keywordId": "KW-000314",
     "mentionedIn": [
       "SL-35: OS Automation"
     ]
   },
   {
-    "keywordId": "KW-000305",
+    "keywordId": "KW-000315",
     "mentionedIn": [
       "SL-43: Environment Variables in Python"
     ]
   },
   {
-    "keywordId": "KW-000306",
+    "keywordId": "KW-000316",
     "mentionedIn": [
       "SL-43: Environment Variables in Python"
     ]
   },
   {
-    "keywordId": "KW-000307",
+    "keywordId": "KW-000317",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-18: Azure App Service",
@@ -3875,7 +3927,7 @@
     ]
   },
   {
-    "keywordId": "KW-000308",
+    "keywordId": "KW-000318",
     "mentionedIn": [
       "SL-24: Helm",
       "SL-18: Package Management",
@@ -3896,14 +3948,14 @@
     ]
   },
   {
-    "keywordId": "KW-000309",
+    "keywordId": "KW-000319",
     "mentionedIn": [
       "SC-98: Package Management",
       "SC-113: Package Management (pip)"
     ]
   },
   {
-    "keywordId": "KW-000310",
+    "keywordId": "KW-000320",
     "mentionedIn": [
       "SL-14: Jobs",
       "Q-Explain parallel Jobs....",
@@ -3911,7 +3963,7 @@
     ]
   },
   {
-    "keywordId": "KW-000311",
+    "keywordId": "KW-000321",
     "mentionedIn": [
       "SL-29: Python Functions",
       "SL-30: Arguments and kwargs",
@@ -3924,7 +3976,7 @@
     ]
   },
   {
-    "keywordId": "KW-000312",
+    "keywordId": "KW-000322",
     "mentionedIn": [
       "SL-11: Disk Management",
       "SL-4: Enterprise IaC Module Architectures",
@@ -3933,13 +3985,13 @@
     ]
   },
   {
-    "keywordId": "KW-000313",
+    "keywordId": "KW-000323",
     "mentionedIn": [
       "SC-12: Passed QA But Failed Production"
     ]
   },
   {
-    "keywordId": "KW-000314",
+    "keywordId": "KW-000324",
     "mentionedIn": [
       "SL-8: Ingress",
       "SL-14: Advanced Networking",
@@ -3954,7 +4006,7 @@
       "SC-2: Front Door vs Application Gateway",
       "SC-3: Azure Application Gateway",
       "SC-4: Azure Front Door",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-8: ExpressRoute Connectivity",
       "SC-9: Private DNS Zones",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
@@ -3962,7 +4014,7 @@
     ]
   },
   {
-    "keywordId": "KW-000315",
+    "keywordId": "KW-000325",
     "mentionedIn": [
       "SL-8: Ingress",
       "SC-2: Front Door vs Application Gateway",
@@ -3970,14 +4022,14 @@
     ]
   },
   {
-    "keywordId": "KW-000316",
+    "keywordId": "KW-000326",
     "mentionedIn": [
       "SL-35: OS Automation",
       "SC-115: OS Automation"
     ]
   },
   {
-    "keywordId": "KW-000317",
+    "keywordId": "KW-000327",
     "mentionedIn": [
       "SL-3: Pods",
       "SL-4: Text Processing Commands",
@@ -4106,16 +4158,16 @@
       "SC-15: Logic Assessment: Number Sequence",
       "SC-14: Multi-Region DR Strategy",
       "SC-20: Azure Landing Zones & Subscriptions",
-      "SC-27: Cost Optimization (FinOps)",
+      "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
       "Q-What is decorator?..."
     ]
   },
   {
-    "keywordId": "KW-000318",
+    "keywordId": "KW-000328",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000319",
+    "keywordId": "KW-000329",
     "mentionedIn": [
       "SL-19: Scheduling",
       "SL-27: Troubleshooting Kubernetes",
@@ -4130,7 +4182,7 @@
     ]
   },
   {
-    "keywordId": "KW-000320",
+    "keywordId": "KW-000330",
     "mentionedIn": [
       "SL-27: Troubleshooting Kubernetes",
       "SL-34: Scenario-Based Kubernetes Interview Questions",
@@ -4138,14 +4190,14 @@
     ]
   },
   {
-    "keywordId": "KW-000321",
+    "keywordId": "KW-000331",
     "mentionedIn": [
       "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
       "Q-PV vs PVC?..."
     ]
   },
   {
-    "keywordId": "KW-000322",
+    "keywordId": "KW-000332",
     "mentionedIn": [
       "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
       "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
@@ -4153,20 +4205,20 @@
     ]
   },
   {
-    "keywordId": "KW-000323",
+    "keywordId": "KW-000333",
     "mentionedIn": [
       "SL-7: Process Management",
       "SC-87: Process Management"
     ]
   },
   {
-    "keywordId": "KW-000324",
+    "keywordId": "KW-000334",
     "mentionedIn": [
       "SL-33: Package Management (pip)"
     ]
   },
   {
-    "keywordId": "KW-000325",
+    "keywordId": "KW-000335",
     "mentionedIn": [
       "SL-32: CI/CD Integration",
       "SL-33: Package Management (pip)",
@@ -4218,13 +4270,13 @@
     ]
   },
   {
-    "keywordId": "KW-000326",
+    "keywordId": "KW-000336",
     "mentionedIn": [
       "SC-6: Pipeline Takes 40 Minutes"
     ]
   },
   {
-    "keywordId": "KW-000327",
+    "keywordId": "KW-000337",
     "mentionedIn": [
       "SL-5: Configuration Management & Orchestration",
       "SC-42: Configuration Management & Orchestration",
@@ -4232,7 +4284,7 @@
     ]
   },
   {
-    "keywordId": "KW-000328",
+    "keywordId": "KW-000338",
     "mentionedIn": [
       "SL-3: Pods",
       "SL-4: Labels, Selectors & Annotations",
@@ -4287,14 +4339,14 @@
     ]
   },
   {
-    "keywordId": "KW-000329",
+    "keywordId": "KW-000339",
     "mentionedIn": [
       "SL-19: Scheduling",
       "SC-66: Scheduling"
     ]
   },
   {
-    "keywordId": "KW-000330",
+    "keywordId": "KW-000340",
     "mentionedIn": [
       "SL-2: Cluster Architecture",
       "SL-3: Pods",
@@ -4358,19 +4410,19 @@
     ]
   },
   {
-    "keywordId": "KW-000331",
+    "keywordId": "KW-000341",
     "mentionedIn": [
       "SC-47: 12-Factor App Principle"
     ]
   },
   {
-    "keywordId": "KW-000332",
+    "keywordId": "KW-000342",
     "mentionedIn": [
       "SC-34: Incident Management"
     ]
   },
   {
-    "keywordId": "KW-000333",
+    "keywordId": "KW-000343",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-39: Routing & Secure Endpoint Solutions",
@@ -4383,14 +4435,14 @@
     ]
   },
   {
-    "keywordId": "KW-000334",
+    "keywordId": "KW-000344",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-39: Routing & Secure Endpoint Solutions"
     ]
   },
   {
-    "keywordId": "KW-000335",
+    "keywordId": "KW-000345",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-25: Operators & CRDs",
@@ -4451,13 +4503,13 @@
     ]
   },
   {
-    "keywordId": "KW-000336",
+    "keywordId": "KW-000346",
     "mentionedIn": [
       "SC-87: Process Management"
     ]
   },
   {
-    "keywordId": "KW-000337",
+    "keywordId": "KW-000347",
     "mentionedIn": [
       "SL-3: Pods",
       "SL-28: Backup & Disaster Recovery",
@@ -4486,25 +4538,25 @@
     ]
   },
   {
-    "keywordId": "KW-000338",
+    "keywordId": "KW-000348",
     "mentionedIn": [
       "SC-7: Production Outage at 2 AM"
     ]
   },
   {
-    "keywordId": "KW-000339",
+    "keywordId": "KW-000349",
     "mentionedIn": [
       "SC-134: Production Python Design"
     ]
   },
   {
-    "keywordId": "KW-000340",
+    "keywordId": "KW-000350",
     "mentionedIn": [
       "SC-104: Production Troubleshooting"
     ]
   },
   {
-    "keywordId": "KW-000341",
+    "keywordId": "KW-000351",
     "mentionedIn": [
       "SC-0: AKS Deployment Failing After Release",
       "SC-5: AKS Pods Not Scaling",
@@ -4518,7 +4570,7 @@
     ]
   },
   {
-    "keywordId": "KW-000342",
+    "keywordId": "KW-000352",
     "mentionedIn": [
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
       "SC-8: ExpressRoute Connectivity",
@@ -4526,7 +4578,7 @@
     ]
   },
   {
-    "keywordId": "KW-000343",
+    "keywordId": "KW-000353",
     "mentionedIn": [
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
       "SL-8: Continuous Delivery Design & Federation",
@@ -4538,80 +4590,80 @@
     ]
   },
   {
-    "keywordId": "KW-000344",
+    "keywordId": "KW-000354",
     "mentionedIn": [
       "SL-49: Monitoring Scripts using Python",
       "SC-129: Monitoring Scripts using Python"
     ]
   },
   {
-    "keywordId": "KW-000345",
+    "keywordId": "KW-000355",
     "mentionedIn": [
       "SL-28: Backup & Disaster Recovery"
     ]
   },
   {
-    "keywordId": "KW-000346",
+    "keywordId": "KW-000356",
     "mentionedIn": [
       "SL-34: Scenario-Based Kubernetes Interview Questions",
       "SC-80: Scenario-Based Kubernetes Interview Questions"
     ]
   },
   {
-    "keywordId": "KW-000347",
+    "keywordId": "KW-000357",
     "mentionedIn": [
       "SC-106: Python Collections"
     ]
   },
   {
-    "keywordId": "KW-000348",
+    "keywordId": "KW-000358",
     "mentionedIn": [
       "SC-119: Python Debugging"
     ]
   },
   {
-    "keywordId": "KW-000349",
+    "keywordId": "KW-000359",
     "mentionedIn": [
       "SC-109: Python Functions"
     ]
   },
   {
-    "keywordId": "KW-000350",
+    "keywordId": "KW-000360",
     "mentionedIn": [
       "SC-105: Python Fundamentals"
     ]
   },
   {
-    "keywordId": "KW-000351",
+    "keywordId": "KW-000361",
     "mentionedIn": [
       "SC-118: Python Logging"
     ]
   },
   {
-    "keywordId": "KW-000352",
+    "keywordId": "KW-000362",
     "mentionedIn": [
       "SC-108: Python Scope (LEGB Rule)"
     ]
   },
   {
-    "keywordId": "KW-000353",
+    "keywordId": "KW-000363",
     "mentionedIn": [
       "SL-42: YAML Handling",
       "SC-122: YAML Handling"
     ]
   },
   {
-    "keywordId": "KW-000354",
+    "keywordId": "KW-000364",
     "mentionedIn": [
       "SL-17: Resource Management"
     ]
   },
   {
-    "keywordId": "KW-000355",
+    "keywordId": "KW-000365",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000356",
+    "keywordId": "KW-000366",
     "mentionedIn": [
       "SL-21: RBAC & Security",
       "SC-0: AKS Deployment Failing After Release",
@@ -4633,51 +4685,51 @@
     ]
   },
   {
-    "keywordId": "KW-000357",
+    "keywordId": "KW-000367",
     "mentionedIn": [
       "SC-26: RBAC / IAM"
     ]
   },
   {
-    "keywordId": "KW-000358",
+    "keywordId": "KW-000368",
     "mentionedIn": [
       "SC-68: RBAC & Security"
     ]
   },
   {
-    "keywordId": "KW-000359",
+    "keywordId": "KW-000369",
     "mentionedIn": [
       "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
       "SC-65: Health Checks (Liveness, Readiness, Startup Probes)"
     ]
   },
   {
-    "keywordId": "KW-000360",
+    "keywordId": "KW-000370",
     "mentionedIn": [
       "SL-22: Security Features"
     ]
   },
   {
-    "keywordId": "KW-000361",
+    "keywordId": "KW-000371",
     "mentionedIn": [
       "SL-25: Operators & CRDs"
     ]
   },
   {
-    "keywordId": "KW-000362",
+    "keywordId": "KW-000372",
     "mentionedIn": [
       "SL-6: Deployments",
       "SC-53: Deployments"
     ]
   },
   {
-    "keywordId": "KW-000363",
+    "keywordId": "KW-000373",
     "mentionedIn": [
       "SC-120: Regex & Log Parsing"
     ]
   },
   {
-    "keywordId": "KW-000364",
+    "keywordId": "KW-000374",
     "mentionedIn": [
       "SL-6: Deployments",
       "SL-24: Helm",
@@ -4708,26 +4760,26 @@
     ]
   },
   {
-    "keywordId": "KW-000365",
+    "keywordId": "KW-000375",
     "mentionedIn": [
       "SC-24: Release Management"
     ]
   },
   {
-    "keywordId": "KW-000366",
+    "keywordId": "KW-000376",
     "mentionedIn": [
       "SC-16: Release Rollback Strategy"
     ]
   },
   {
-    "keywordId": "KW-000367",
+    "keywordId": "KW-000377",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
       "SC-41: Enterprise IaC Module Architectures"
     ]
   },
   {
-    "keywordId": "KW-000368",
+    "keywordId": "KW-000378",
     "mentionedIn": [
       "SL-5: ReplicaSet",
       "SL-6: Deployments",
@@ -4741,13 +4793,13 @@
     ]
   },
   {
-    "keywordId": "KW-000369",
+    "keywordId": "KW-000379",
     "mentionedIn": [
       "SC-52: ReplicaSet"
     ]
   },
   {
-    "keywordId": "KW-000370",
+    "keywordId": "KW-000380",
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-35: Disaster Recovery & Backup",
@@ -4760,7 +4812,7 @@
     ]
   },
   {
-    "keywordId": "KW-000371",
+    "keywordId": "KW-000381",
     "mentionedIn": [
       "SL-24: Helm",
       "SL-4: Enterprise IaC Module Architectures",
@@ -4782,13 +4834,13 @@
     ]
   },
   {
-    "keywordId": "KW-000372",
+    "keywordId": "KW-000382",
     "mentionedIn": [
       "SL-44: API Automation using Python"
     ]
   },
   {
-    "keywordId": "KW-000373",
+    "keywordId": "KW-000383",
     "mentionedIn": [
       "SL-33: Package Management (pip)",
       "SC-47: 12-Factor App Principle",
@@ -4796,7 +4848,7 @@
     ]
   },
   {
-    "keywordId": "KW-000374",
+    "keywordId": "KW-000384",
     "mentionedIn": [
       "SL-6: Deployments",
       "SL-8: Ingress",
@@ -4828,7 +4880,7 @@
       "SC-6: AKS vs Azure Container Apps",
       "SC-3: Azure Application Gateway",
       "SC-6: Azure Firewall",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-9: Private DNS Zones",
       "SC-11: Azure Monitor & SIEM Integration",
       "SC-18: Management Groups & Enterprise Hierarchy",
@@ -4838,7 +4890,7 @@
       "SC-24: Azure Identity & Access Governance",
       "SC-25: Security Posture & Key Vault Governance",
       "SC-26: Monitoring & SIEM Integration",
-      "SC-27: Cost Optimization (FinOps)",
+      "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
       "Q-How TLS works?...",
       "Q-PV vs PVC?...",
       "Q-Why use namespaces?...",
@@ -4849,14 +4901,14 @@
     ]
   },
   {
-    "keywordId": "KW-000375",
+    "keywordId": "KW-000385",
     "mentionedIn": [
       "SC-19: Subscription Governance & Azure Policy",
       "SC-24: Azure Identity & Access Governance"
     ]
   },
   {
-    "keywordId": "KW-000376",
+    "keywordId": "KW-000386",
     "mentionedIn": [
       "SC-15: App Cannot Access Azure SQL (Auth)",
       "SC-18: Azure App Service",
@@ -4865,26 +4917,26 @@
     ]
   },
   {
-    "keywordId": "KW-000377",
+    "keywordId": "KW-000387",
     "mentionedIn": [
       "SC-64: Resource Management"
     ]
   },
   {
-    "keywordId": "KW-000378",
+    "keywordId": "KW-000388",
     "mentionedIn": [
       "SL-16: Namespaces",
       "SC-63: Namespaces"
     ]
   },
   {
-    "keywordId": "KW-000379",
+    "keywordId": "KW-000389",
     "mentionedIn": [
       "SL-16: Namespaces"
     ]
   },
   {
-    "keywordId": "KW-000380",
+    "keywordId": "KW-000390",
     "mentionedIn": [
       "SL-28: Backup & Disaster Recovery",
       "SC-7: Production Outage at 2 AM",
@@ -4903,37 +4955,37 @@
     ]
   },
   {
-    "keywordId": "KW-000381",
+    "keywordId": "KW-000391",
     "mentionedIn": [
       "SL-54: Production Python Design"
     ]
   },
   {
-    "keywordId": "KW-000382",
+    "keywordId": "KW-000392",
     "mentionedIn": [
       "SL-29: Python Functions"
     ]
   },
   {
-    "keywordId": "KW-000383",
+    "keywordId": "KW-000393",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000384",
+    "keywordId": "KW-000394",
     "mentionedIn": [
       "SL-6: Deployments",
       "SC-53: Deployments"
     ]
   },
   {
-    "keywordId": "KW-000385",
+    "keywordId": "KW-000395",
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-43: Environment Architecture & Artifact Lifecycle"
     ]
   },
   {
-    "keywordId": "KW-000386",
+    "keywordId": "KW-000396",
     "mentionedIn": [
       "SL-2: Cluster Architecture",
       "SL-20: Networking",
@@ -4950,17 +5002,17 @@
     ]
   },
   {
-    "keywordId": "KW-000387",
+    "keywordId": "KW-000397",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000388",
+    "keywordId": "KW-000398",
     "mentionedIn": [
       "SL-21: RBAC & Security"
     ]
   },
   {
-    "keywordId": "KW-000389",
+    "keywordId": "KW-000399",
     "mentionedIn": [
       "SL-21: RBAC & Security",
       "SL-5: Configuration Management & Orchestration",
@@ -4970,11 +5022,12 @@
       "SC-18: Management Groups & Enterprise Hierarchy",
       "SC-20: Azure Landing Zones & Subscriptions",
       "SC-24: Azure Identity & Access Governance",
-      "SC-25: Security Posture & Key Vault Governance"
+      "SC-25: Security Posture & Key Vault Governance",
+      "SC-28: Interview FAQ Master Reference"
     ]
   },
   {
-    "keywordId": "KW-000390",
+    "keywordId": "KW-000400",
     "mentionedIn": [
       "SL-5: ReplicaSet",
       "SL-6: Deployments",
@@ -5004,13 +5057,13 @@
     ]
   },
   {
-    "keywordId": "KW-000391",
+    "keywordId": "KW-000401",
     "mentionedIn": [
       "SL-32: CI/CD Integration"
     ]
   },
   {
-    "keywordId": "KW-000392",
+    "keywordId": "KW-000402",
     "mentionedIn": [
       "SL-6: Deployments",
       "SC-53: Deployments",
@@ -5019,7 +5072,7 @@
     ]
   },
   {
-    "keywordId": "KW-000393",
+    "keywordId": "KW-000403",
     "mentionedIn": [
       "SL-24: Production Troubleshooting",
       "SL-9: Observability & Live Production Triage",
@@ -5037,11 +5090,11 @@
     ]
   },
   {
-    "keywordId": "KW-000394",
+    "keywordId": "KW-000404",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000395",
+    "keywordId": "KW-000405",
     "mentionedIn": [
       "SL-7: Services",
       "SL-8: Ingress",
@@ -5079,7 +5132,7 @@
       "SC-3: Azure Application Gateway",
       "SC-4: Azure Front Door",
       "SC-6: Azure Firewall",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-8: ExpressRoute Connectivity",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
       "SC-11: Azure Monitor & SIEM Integration",
@@ -5095,27 +5148,27 @@
     ]
   },
   {
-    "keywordId": "KW-000396",
+    "keywordId": "KW-000406",
     "mentionedIn": [
       "SL-22: Security Features"
     ]
   },
   {
-    "keywordId": "KW-000397",
+    "keywordId": "KW-000407",
     "mentionedIn": [
       "SC-4: Azure Front Door"
     ]
   },
   {
-    "keywordId": "KW-000398",
+    "keywordId": "KW-000408",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000399",
+    "keywordId": "KW-000409",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000400",
+    "keywordId": "KW-000410",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-5: ReplicaSet",
@@ -5139,11 +5192,12 @@
       "SC-14: Multi-Region DR Strategy",
       "SC-18: Management Groups & Enterprise Hierarchy",
       "SC-21: Compute Resiliency & Scaling (VM/VMSS)",
-      "SC-23: Secure Remote Access & Private Link"
+      "SC-23: Secure Remote Access & Private Link",
+      "SC-28: Interview FAQ Master Reference"
     ]
   },
   {
-    "keywordId": "KW-000401",
+    "keywordId": "KW-000411",
     "mentionedIn": [
       "SL-15: CronJobs",
       "SL-22: Cron & Scheduling",
@@ -5153,7 +5207,7 @@
     ]
   },
   {
-    "keywordId": "KW-000402",
+    "keywordId": "KW-000412",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-2: Cluster Architecture",
@@ -5168,7 +5222,7 @@
     ]
   },
   {
-    "keywordId": "KW-000403",
+    "keywordId": "KW-000413",
     "mentionedIn": [
       "SL-47: Cloud Automation using Python",
       "SL-7: Containerization & Microservices Infrastructure",
@@ -5177,7 +5231,7 @@
     ]
   },
   {
-    "keywordId": "KW-000404",
+    "keywordId": "KW-000414",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-10: Secrets",
@@ -5196,25 +5250,25 @@
     ]
   },
   {
-    "keywordId": "KW-000405",
+    "keywordId": "KW-000415",
     "mentionedIn": [
       "SC-57: Secrets"
     ]
   },
   {
-    "keywordId": "KW-000406",
+    "keywordId": "KW-000416",
     "mentionedIn": [
       "SC-31: Security & DevSecOps"
     ]
   },
   {
-    "keywordId": "KW-000407",
+    "keywordId": "KW-000417",
     "mentionedIn": [
       "SC-69: Security Features"
     ]
   },
   {
-    "keywordId": "KW-000408",
+    "keywordId": "KW-000418",
     "mentionedIn": [
       "SL-4: Text Processing Commands",
       "SC-84: Text Processing Commands",
@@ -5223,7 +5277,7 @@
     ]
   },
   {
-    "keywordId": "KW-000409",
+    "keywordId": "KW-000419",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-5: ReplicaSet",
@@ -5233,14 +5287,14 @@
     ]
   },
   {
-    "keywordId": "KW-000410",
+    "keywordId": "KW-000420",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
       "SC-45: Continuous Delivery Design & Federation"
     ]
   },
   {
-    "keywordId": "KW-000411",
+    "keywordId": "KW-000421",
     "mentionedIn": [
       "SL-4: Labels, Selectors & Annotations",
       "SL-7: Services",
@@ -5316,14 +5370,14 @@
     ]
   },
   {
-    "keywordId": "KW-000412",
+    "keywordId": "KW-000422",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
       "SC-45: Continuous Delivery Design & Federation"
     ]
   },
   {
-    "keywordId": "KW-000413",
+    "keywordId": "KW-000423",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-18: Azure App Service",
@@ -5335,31 +5389,31 @@
     ]
   },
   {
-    "keywordId": "KW-000414",
+    "keywordId": "KW-000424",
     "mentionedIn": [
       "SL-34: Scenario-Based Kubernetes Interview Questions",
       "SC-80: Scenario-Based Kubernetes Interview Questions"
     ]
   },
   {
-    "keywordId": "KW-000415",
+    "keywordId": "KW-000425",
     "mentionedIn": [
       "SC-88: Service Management"
     ]
   },
   {
-    "keywordId": "KW-000416",
+    "keywordId": "KW-000426",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000417",
+    "keywordId": "KW-000427",
     "mentionedIn": [
       "SL-21: RBAC & Security",
       "SC-68: RBAC & Security"
     ]
   },
   {
-    "keywordId": "KW-000418",
+    "keywordId": "KW-000428",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-4: Labels, Selectors & Annotations",
@@ -5414,7 +5468,7 @@
       "SC-18: Management Groups & Enterprise Hierarchy",
       "SC-20: Azure Landing Zones & Subscriptions",
       "SC-25: Security Posture & Key Vault Governance",
-      "SC-27: Cost Optimization (FinOps)",
+      "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
       "Q-How does Service find Pods?...",
       "Q-Explain Service discovery....",
       "Q-Ingress vs LoadBalancer?...",
@@ -5427,17 +5481,17 @@
     ]
   },
   {
-    "keywordId": "KW-000419",
+    "keywordId": "KW-000429",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000420",
+    "keywordId": "KW-000430",
     "mentionedIn": [
       "SC-101: Shell Scripting"
     ]
   },
   {
-    "keywordId": "KW-000421",
+    "keywordId": "KW-000431",
     "mentionedIn": [
       "SL-35: OS Automation",
       "SC-115: OS Automation",
@@ -5446,34 +5500,34 @@
     ]
   },
   {
-    "keywordId": "KW-000422",
+    "keywordId": "KW-000432",
     "mentionedIn": [
       "SL-3: Pods",
       "SC-50: Pods"
     ]
   },
   {
-    "keywordId": "KW-000423",
+    "keywordId": "KW-000433",
     "mentionedIn": [
       "SL-7: Process Management"
     ]
   },
   {
-    "keywordId": "KW-000424",
+    "keywordId": "KW-000434",
     "mentionedIn": [
       "SL-7: Process Management",
       "SC-87: Process Management"
     ]
   },
   {
-    "keywordId": "KW-000425",
+    "keywordId": "KW-000435",
     "mentionedIn": [
       "SL-3: Pods",
       "SC-50: Pods"
     ]
   },
   {
-    "keywordId": "KW-000426",
+    "keywordId": "KW-000436",
     "mentionedIn": [
       "SC-16: Monitoring & 99.9% Uptime SLA",
       "SC-1: Availability Set vs Availability Zone",
@@ -5484,28 +5538,28 @@
     ]
   },
   {
-    "keywordId": "KW-000427",
+    "keywordId": "KW-000437",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000428",
+    "keywordId": "KW-000438",
     "mentionedIn": [
       "SC-25: Monitoring"
     ]
   },
   {
-    "keywordId": "KW-000429",
+    "keywordId": "KW-000439",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000430",
+    "keywordId": "KW-000440",
     "mentionedIn": [
       "SL-31: YAML & Kubernetes Manifests",
       "SC-77: YAML & Kubernetes Manifests"
     ]
   },
   {
-    "keywordId": "KW-000431",
+    "keywordId": "KW-000441",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-4: App Service Cannot Access SQL",
@@ -5525,7 +5579,7 @@
     ]
   },
   {
-    "keywordId": "KW-000432",
+    "keywordId": "KW-000442",
     "mentionedIn": [
       "SL-15: Networking Commands",
       "SC-95: Networking Commands",
@@ -5533,44 +5587,44 @@
     ]
   },
   {
-    "keywordId": "KW-000433",
+    "keywordId": "KW-000443",
     "mentionedIn": [
       "SC-97: SSH Administration"
     ]
   },
   {
-    "keywordId": "KW-000434",
+    "keywordId": "KW-000444",
     "mentionedIn": [
       "SC-125: SSH Automation using Paramiko"
     ]
   },
   {
-    "keywordId": "KW-000435",
+    "keywordId": "KW-000445",
     "mentionedIn": [
       "SL-45: SSH Automation using Paramiko"
     ]
   },
   {
-    "keywordId": "KW-000436",
+    "keywordId": "KW-000446",
     "mentionedIn": [
       "SL-17: SSH Administration"
     ]
   },
   {
-    "keywordId": "KW-000437",
+    "keywordId": "KW-000447",
     "mentionedIn": [
       "SL-17: SSH Administration"
     ]
   },
   {
-    "keywordId": "KW-000438",
+    "keywordId": "KW-000448",
     "mentionedIn": [
       "SL-17: SSH Administration",
       "Q-SSH troubleshooting steps?..."
     ]
   },
   {
-    "keywordId": "KW-000439",
+    "keywordId": "KW-000449",
     "mentionedIn": [
       "SC-2: Front Door vs Application Gateway",
       "SC-3: Azure Application Gateway",
@@ -5578,20 +5632,20 @@
     ]
   },
   {
-    "keywordId": "KW-000440",
+    "keywordId": "KW-000450",
     "mentionedIn": [
       "SL-12: StatefulSet",
       "SC-59: StatefulSet"
     ]
   },
   {
-    "keywordId": "KW-000441",
+    "keywordId": "KW-000451",
     "mentionedIn": [
       "SL-12: StatefulSet"
     ]
   },
   {
-    "keywordId": "KW-000442",
+    "keywordId": "KW-000452",
     "mentionedIn": [
       "SL-18: Health Checks (Liveness, Readiness, Startup Probes)",
       "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
@@ -5600,7 +5654,7 @@
     ]
   },
   {
-    "keywordId": "KW-000443",
+    "keywordId": "KW-000453",
     "mentionedIn": [
       "SL-1: Kubernetes Fundamentals",
       "SL-2: Cluster Architecture",
@@ -5730,7 +5784,7 @@
     ]
   },
   {
-    "keywordId": "KW-000444",
+    "keywordId": "KW-000454",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
       "SC-10: Terraform Destroyed Resources",
@@ -5739,32 +5793,32 @@
     ]
   },
   {
-    "keywordId": "KW-000445",
+    "keywordId": "KW-000455",
     "mentionedIn": [
       "SL-12: StatefulSet",
       "SC-59: StatefulSet"
     ]
   },
   {
-    "keywordId": "KW-000446",
+    "keywordId": "KW-000456",
     "mentionedIn": [
       "SC-59: StatefulSet"
     ]
   },
   {
-    "keywordId": "KW-000447",
+    "keywordId": "KW-000457",
     "mentionedIn": [
       "SC-58: Storage (Volumes, PV, PVC, StorageClass)"
     ]
   },
   {
-    "keywordId": "KW-000448",
+    "keywordId": "KW-000458",
     "mentionedIn": [
       "SC-92: Storage & Filesystem"
     ]
   },
   {
-    "keywordId": "KW-000449",
+    "keywordId": "KW-000459",
     "mentionedIn": [
       "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
       "SL-34: Scenario-Based Kubernetes Interview Questions",
@@ -5775,7 +5829,7 @@
     ]
   },
   {
-    "keywordId": "KW-000450",
+    "keywordId": "KW-000460",
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
@@ -5783,7 +5837,7 @@
     ]
   },
   {
-    "keywordId": "KW-000451",
+    "keywordId": "KW-000461",
     "mentionedIn": [
       "SL-36: Linux Command Execution using Python",
       "SC-116: Linux Command Execution using Python",
@@ -5793,14 +5847,14 @@
     ]
   },
   {
-    "keywordId": "KW-000452",
+    "keywordId": "KW-000462",
     "mentionedIn": [
       "SL-6: User & Group Management",
       "SC-86: User & Group Management"
     ]
   },
   {
-    "keywordId": "KW-000453",
+    "keywordId": "KW-000463",
     "mentionedIn": [
       "SL-10: Memory Management",
       "SC-90: Memory Management",
@@ -5810,7 +5864,7 @@
     ]
   },
   {
-    "keywordId": "KW-000454",
+    "keywordId": "KW-000464",
     "mentionedIn": [
       "SL-19: Logs & Monitoring",
       "SC-99: Logs & Monitoring",
@@ -5818,30 +5872,30 @@
     ]
   },
   {
-    "keywordId": "KW-000455",
+    "keywordId": "KW-000465",
     "mentionedIn": [
       "SC-37: System Design for DevOps Engineers"
     ]
   },
   {
-    "keywordId": "KW-000456",
+    "keywordId": "KW-000466",
     "mentionedIn": [
       "SL-9: Observability & Live Production Triage",
       "SC-46: Observability & Live Production Triage"
     ]
   },
   {
-    "keywordId": "KW-000457",
+    "keywordId": "KW-000467",
     "mentionedIn": [
       "SL-2: Routing & Secure Endpoint Solutions",
       "SC-39: Routing & Secure Endpoint Solutions",
       "SC-4: User Defined Routes (UDR)",
       "SC-6: Azure Firewall",
-      "SC-7: User Defined Routes (UDR)"
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
     ]
   },
   {
-    "keywordId": "KW-000458",
+    "keywordId": "KW-000468",
     "mentionedIn": [
       "SL-1: Linux Architecture & Boot Process",
       "SL-8: Service Management",
@@ -5853,7 +5907,7 @@
     ]
   },
   {
-    "keywordId": "KW-000459",
+    "keywordId": "KW-000469",
     "mentionedIn": [
       "SL-2: Cluster Architecture",
       "SL-19: Scheduling",
@@ -5867,7 +5921,7 @@
     ]
   },
   {
-    "keywordId": "KW-000460",
+    "keywordId": "KW-000470",
     "mentionedIn": [
       "SL-3: Pods",
       "SL-14: Jobs",
@@ -5898,7 +5952,7 @@
     ]
   },
   {
-    "keywordId": "KW-000461",
+    "keywordId": "KW-000471",
     "mentionedIn": [
       "SL-13: Linux Networking Basics",
       "SC-93: Linux Networking Basics",
@@ -5912,14 +5966,14 @@
     ]
   },
   {
-    "keywordId": "KW-000462",
+    "keywordId": "KW-000472",
     "mentionedIn": [
       "SL-9: Observability & Live Production Triage",
       "SC-46: Observability & Live Production Triage"
     ]
   },
   {
-    "keywordId": "KW-000463",
+    "keywordId": "KW-000473",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
       "SC-1: Terraform Apply Fails in Production",
@@ -5940,37 +5994,37 @@
     ]
   },
   {
-    "keywordId": "KW-000464",
+    "keywordId": "KW-000474",
     "mentionedIn": [
       "SC-1: Terraform Apply Fails in Production"
     ]
   },
   {
-    "keywordId": "KW-000465",
+    "keywordId": "KW-000475",
     "mentionedIn": [
       "SC-20: Terraform"
     ]
   },
   {
-    "keywordId": "KW-000466",
+    "keywordId": "KW-000476",
     "mentionedIn": [
       "SC-10: Terraform Destroyed Resources"
     ]
   },
   {
-    "keywordId": "KW-000467",
+    "keywordId": "KW-000477",
     "mentionedIn": [
       "SC-130: Testing Automation using pytest"
     ]
   },
   {
-    "keywordId": "KW-000468",
+    "keywordId": "KW-000478",
     "mentionedIn": [
       "SC-84: Text Processing Commands"
     ]
   },
   {
-    "keywordId": "KW-000469",
+    "keywordId": "KW-000479",
     "mentionedIn": [
       "SL-7: Process Management",
       "SL-51: Threading and Multiprocessing",
@@ -5983,13 +6037,13 @@
     ]
   },
   {
-    "keywordId": "KW-000470",
+    "keywordId": "KW-000480",
     "mentionedIn": [
       "SC-131: Threading and Multiprocessing"
     ]
   },
   {
-    "keywordId": "KW-000471",
+    "keywordId": "KW-000481",
     "mentionedIn": [
       "SL-8: Ingress",
       "SL-10: Secrets",
@@ -6003,13 +6057,13 @@
     ]
   },
   {
-    "keywordId": "KW-000472",
+    "keywordId": "KW-000482",
     "mentionedIn": [
       "SL-10: Secrets"
     ]
   },
   {
-    "keywordId": "KW-000473",
+    "keywordId": "KW-000483",
     "mentionedIn": [
       "SL-8: Ingress",
       "SC-55: Ingress",
@@ -6017,7 +6071,7 @@
     ]
   },
   {
-    "keywordId": "KW-000474",
+    "keywordId": "KW-000484",
     "mentionedIn": [
       "SL-13: DaemonSet",
       "SL-19: Scheduling",
@@ -6025,7 +6079,7 @@
     ]
   },
   {
-    "keywordId": "KW-000475",
+    "keywordId": "KW-000485",
     "mentionedIn": [
       "SL-4: Text Processing Commands",
       "SL-9: CPU Monitoring",
@@ -6033,7 +6087,7 @@
       "SC-46: Observability & Live Production Triage",
       "SC-89: CPU Monitoring",
       "SC-8: Linux Basics & System Diagnostics",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-20: Azure Landing Zones & Subscriptions",
       "Q-Explain Linux architecture...",
       "Q-How find process?...",
@@ -6042,21 +6096,21 @@
     ]
   },
   {
-    "keywordId": "KW-000476",
+    "keywordId": "KW-000486",
     "mentionedIn": [
       "SL-39: Python Debugging",
       "SC-119: Python Debugging"
     ]
   },
   {
-    "keywordId": "KW-000477",
+    "keywordId": "KW-000487",
     "mentionedIn": [
       "SL-26: Observability",
       "SC-27: Troubleshooting"
     ]
   },
   {
-    "keywordId": "KW-000478",
+    "keywordId": "KW-000488",
     "mentionedIn": [
       "SC-27: Troubleshooting",
       "SC-100: Kernel Troubleshooting",
@@ -6064,13 +6118,13 @@
     ]
   },
   {
-    "keywordId": "KW-000479",
+    "keywordId": "KW-000489",
     "mentionedIn": [
       "SC-73: Troubleshooting Kubernetes"
     ]
   },
   {
-    "keywordId": "KW-000480",
+    "keywordId": "KW-000490",
     "mentionedIn": [
       "SL-37: Exception Handling",
       "SC-117: Exception Handling",
@@ -6080,7 +6134,7 @@
     ]
   },
   {
-    "keywordId": "KW-000481",
+    "keywordId": "KW-000491",
     "mentionedIn": [
       "SL-26: Python Collections",
       "SC-106: Python Collections",
@@ -6090,7 +6144,7 @@
     ]
   },
   {
-    "keywordId": "KW-000482",
+    "keywordId": "KW-000492",
     "mentionedIn": [
       "SL-13: Linux Networking Basics",
       "SC-93: Linux Networking Basics",
@@ -6102,37 +6156,40 @@
     ]
   },
   {
-    "keywordId": "KW-000483",
+    "keywordId": "KW-000493",
     "mentionedIn": [
       "SL-29: Upgrades & Maintenance",
       "Q-How upgrade Kubernetes safely?..."
     ]
   },
   {
-    "keywordId": "KW-000484",
+    "keywordId": "KW-000494",
     "mentionedIn": [
       "SL-50: Testing Automation using pytest",
       "SC-5: CI Stage 3: Automated Testing"
     ]
   },
   {
-    "keywordId": "KW-000485",
+    "keywordId": "KW-000495",
     "mentionedIn": [
       "SC-75: Upgrades & Maintenance"
     ]
   },
   {
-    "keywordId": "KW-000486",
+    "keywordId": "KW-000496",
     "mentionedIn": [
       "SC-86: User & Group Management"
     ]
   },
   {
-    "keywordId": "KW-000487",
-    "mentionedIn": []
+    "keywordId": "KW-000497",
+    "mentionedIn": [
+      "SC-4: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
+    ]
   },
   {
-    "keywordId": "KW-000488",
+    "keywordId": "KW-000498",
     "mentionedIn": [
       "SL-24: Helm",
       "SL-21: Shell Scripting",
@@ -6154,7 +6211,7 @@
     ]
   },
   {
-    "keywordId": "KW-000489",
+    "keywordId": "KW-000499",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-2: Linux File System",
@@ -6177,7 +6234,7 @@
     ]
   },
   {
-    "keywordId": "KW-000490",
+    "keywordId": "KW-000500",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-21: Shell Scripting",
@@ -6212,31 +6269,31 @@
     ]
   },
   {
-    "keywordId": "KW-000491",
+    "keywordId": "KW-000501",
     "mentionedIn": [
       "SL-32: Virtual Environment",
       "SC-112: Virtual Environment"
     ]
   },
   {
-    "keywordId": "KW-000492",
+    "keywordId": "KW-000502",
     "mentionedIn": [
       "SL-29: Upgrades & Maintenance",
       "SC-75: Upgrades & Maintenance"
     ]
   },
   {
-    "keywordId": "KW-000493",
+    "keywordId": "KW-000503",
     "mentionedIn": [
       "SC-112: Virtual Environment"
     ]
   },
   {
-    "keywordId": "KW-000494",
+    "keywordId": "KW-000504",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000495",
+    "keywordId": "KW-000505",
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-15: App Cannot Access Azure SQL (Auth)",
@@ -6253,7 +6310,7 @@
       "SC-2: Azure Load Balancer",
       "SC-5: Network Security Groups (NSGs)",
       "SC-6: Azure Firewall",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-8: ExpressRoute Connectivity",
       "SC-9: Private DNS Zones",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
@@ -6265,17 +6322,17 @@
     ]
   },
   {
-    "keywordId": "KW-000496",
+    "keywordId": "KW-000506",
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
       "SC-3: VNet Peering & Subnetting",
-      "SC-7: User Defined Routes (UDR)",
+      "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-20: Azure Landing Zones & Subscriptions"
     ]
   },
   {
-    "keywordId": "KW-000497",
+    "keywordId": "KW-000507",
     "mentionedIn": [
       "SL-9: ConfigMap",
       "SL-11: Storage (Volumes, PV, PVC, StorageClass)",
@@ -6293,49 +6350,49 @@
     ]
   },
   {
-    "keywordId": "KW-000498",
+    "keywordId": "KW-000508",
     "mentionedIn": [
       "SL-9: ConfigMap"
     ]
   },
   {
-    "keywordId": "KW-000499",
+    "keywordId": "KW-000509",
     "mentionedIn": [
       "SL-23: Autoscaling",
       "SC-70: Autoscaling"
     ]
   },
   {
-    "keywordId": "KW-000500",
+    "keywordId": "KW-000510",
     "mentionedIn": []
   },
   {
-    "keywordId": "KW-000501",
+    "keywordId": "KW-000511",
     "mentionedIn": [
       "SC-34: Incident Management"
     ]
   },
   {
-    "keywordId": "KW-000502",
+    "keywordId": "KW-000512",
     "mentionedIn": [
       "SL-34: File Handling"
     ]
   },
   {
-    "keywordId": "KW-000503",
+    "keywordId": "KW-000513",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
       "SC-45: Continuous Delivery Design & Federation"
     ]
   },
   {
-    "keywordId": "KW-000504",
+    "keywordId": "KW-000514",
     "mentionedIn": [
       "SC-11: Works Locally But Fails In Docker"
     ]
   },
   {
-    "keywordId": "KW-000505",
+    "keywordId": "KW-000515",
     "mentionedIn": [
       "SC-9: Jenkins Pipeline Suddenly Failing",
       "SC-5: Terraform Variables & Multi-Environment Strategy",
@@ -6347,40 +6404,40 @@
     ]
   },
   {
-    "keywordId": "KW-000506",
+    "keywordId": "KW-000516",
     "mentionedIn": [
       "SL-53: Decorators",
       "SC-133: Decorators"
     ]
   },
   {
-    "keywordId": "KW-000507",
+    "keywordId": "KW-000517",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
       "SC-41: Enterprise IaC Module Architectures"
     ]
   },
   {
-    "keywordId": "KW-000508",
+    "keywordId": "KW-000518",
     "mentionedIn": [
       "SC-77: YAML & Kubernetes Manifests"
     ]
   },
   {
-    "keywordId": "KW-000509",
+    "keywordId": "KW-000519",
     "mentionedIn": [
       "SC-122: YAML Handling"
     ]
   },
   {
-    "keywordId": "KW-000510",
+    "keywordId": "KW-000520",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
       "SC-45: Continuous Delivery Design & Federation"
     ]
   },
   {
-    "keywordId": "KW-000511",
+    "keywordId": "KW-000521",
     "mentionedIn": [
       "SL-52: Generators and Iterators",
       "SC-132: Generators and Iterators",
@@ -6389,13 +6446,113 @@
     ]
   },
   {
-    "keywordId": "KW-000512",
+    "keywordId": "KW-000522",
     "mentionedIn": [
       "SL-18: Package Management"
     ]
   },
   {
-    "keywordId": "KW-000513",
+    "keywordId": "KW-000523",
+    "mentionedIn": [
+      "SC-0: AKS Deployment Failing After Release",
+      "SC-3: Cloud Bill Increased by 50%",
+      "SC-4: App Service Cannot Access SQL",
+      "SC-8: Deployment Failed During Release Window",
+      "SC-16: Release Rollback Strategy",
+      "SC-17: Developer Needs Production Access",
+      "SC-20: Terraform",
+      "SC-23: Docker",
+      "SC-24: Release Management",
+      "SC-25: Monitoring",
+      "SC-26: RBAC / IAM",
+      "SC-28: Git & Branching Strategy",
+      "SC-29: CI/CD Design Patterns",
+      "SC-30: Kubernetes Deep Dive",
+      "SC-31: Security & DevSecOps",
+      "SC-32: Azure Key Vault",
+      "SC-33: Observability",
+      "SC-35: Disaster Recovery & Backup",
+      "SC-36: Cost Optimization (FinOps)",
+      "SC-37: System Design for DevOps Engineers",
+      "SC-48: Kubernetes Fundamentals",
+      "SC-51: Labels, Selectors & Annotations",
+      "SC-52: ReplicaSet",
+      "SC-55: Ingress",
+      "SC-56: ConfigMap",
+      "SC-57: Secrets",
+      "SC-58: Storage (Volumes, PV, PVC, StorageClass)",
+      "SC-59: StatefulSet",
+      "SC-60: DaemonSet",
+      "SC-61: Jobs",
+      "SC-62: CronJobs",
+      "SC-63: Namespaces",
+      "SC-64: Resource Management",
+      "SC-65: Health Checks (Liveness, Readiness, Startup Probes)",
+      "SC-67: Networking",
+      "SC-68: RBAC & Security",
+      "SC-70: Autoscaling",
+      "SC-71: Helm",
+      "SC-72: Operators & CRDs",
+      "SC-74: Backup & Disaster Recovery",
+      "SC-75: Upgrades & Maintenance",
+      "SC-76: Common kubectl Commands",
+      "SC-77: YAML & Kubernetes Manifests",
+      "SC-78: CI/CD Integration",
+      "SC-81: Linux Architecture & Boot Process",
+      "SC-82: Linux File System",
+      "SC-83: Linux Basic Commands",
+      "SC-84: Text Processing Commands",
+      "SC-85: File Permissions & Security",
+      "SC-86: User & Group Management",
+      "SC-87: Process Management",
+      "SC-88: Service Management",
+      "SC-89: CPU Monitoring",
+      "SC-90: Memory Management",
+      "SC-91: Disk Management",
+      "SC-92: Storage & Filesystem",
+      "SC-93: Linux Networking Basics",
+      "SC-94: Advanced Networking",
+      "SC-95: Networking Commands",
+      "SC-96: Firewall & Security",
+      "SC-97: SSH Administration",
+      "SC-98: Package Management",
+      "SC-99: Logs & Monitoring",
+      "SC-100: Kernel Troubleshooting",
+      "SC-101: Shell Scripting",
+      "SC-102: Cron & Scheduling",
+      "SC-103: Environment Variables",
+      "SC-105: Python Fundamentals",
+      "SC-106: Python Collections",
+      "SC-107: Mutable vs Immutable Objects",
+      "SC-108: Python Scope (LEGB Rule)",
+      "SC-109: Python Functions",
+      "SC-110: Arguments and kwargs",
+      "SC-111: Modules & Packages",
+      "SC-112: Virtual Environment",
+      "SC-113: Package Management (pip)",
+      "SC-114: File Handling",
+      "SC-115: OS Automation",
+      "SC-116: Linux Command Execution using Python",
+      "SC-117: Exception Handling",
+      "SC-118: Python Logging",
+      "SC-119: Python Debugging",
+      "SC-120: Regex & Log Parsing",
+      "SC-121: JSON Handling",
+      "SC-122: YAML Handling",
+      "SC-123: Environment Variables in Python",
+      "SC-124: API Automation using Python",
+      "SC-125: SSH Automation using Paramiko",
+      "SC-126: CI/CD Automation with Python",
+      "SC-129: Monitoring Scripts using Python",
+      "SC-130: Testing Automation using pytest",
+      "SC-131: Threading and Multiprocessing",
+      "SC-132: Generators and Iterators",
+      "SC-133: Decorators",
+      "SC-134: Production Python Design"
+    ]
+  },
+  {
+    "keywordId": "KW-000524",
     "mentionedIn": [
       "SC-0: AKS Deployment Failing After Release",
       "SC-3: Cloud Bill Increased by 50%",

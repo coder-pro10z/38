@@ -1179,14 +1179,243 @@
             transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 0 8px currentColor;
         }
+        /* LIVE INDEX SEARCH STYLES */
+        .index-search-container {
+            display: flex;
+            align-items: center;
+            background: var(--surface-1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px 12px;
+            flex: 1;
+            min-width: 240px;
+            max-width: 420px;
+            position: relative;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .index-search-container input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 13px;
+            width: 100%;
+            padding: 6px 4px;
+            outline: none;
+        }
+        .index-search-container input::placeholder {
+            color: var(--text-muted);
+        }
+        .search-clear-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: var(--text-muted);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 11px;
+        }
+        .search-clear-btn:hover {
+            background: rgba(255,255,255,0.2);
+            color: var(--text-main);
+        }
+        .index-match-snippet {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            margin-left: 20px;
+            background: rgba(255,255,255,0.03);
+            border-left: 2px solid var(--status-info);
+            padding: 4px 8px;
+            border-radius: 0 4px 4px 0;
+            line-height: 1.4;
+        }
+        .index-match-snippet mark {
+            background: rgba(250, 204, 21, 0.25);
+            color: #FDE047;
+            font-weight: 600;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        /* COMPACT UNIVERSAL PROGRESS BAR (AUTO-HIDING) */
+        .universal-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 6px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        .universal-progress-bar.hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .upb-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+            max-width: 1100px;
+        }
+        .upb-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 0.3px;
+        }
+        .upb-count {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+        .upb-track {
+            flex: 1;
+            height: 6px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .upb-fill {
+            height: 100%;
+            width: 0%;
+            background-color: #FACC15;
+            transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 8px currentColor;
+        }
+        /* AUTO-HIDING TOP NAVIGATION BAR */
+        .autohide-top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 13px 140px 9px 24px;
+            max-height: 90px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.35s ease,
+                        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        .autohide-top-nav.hidden {
+            max-height: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-bottom: 1px solid transparent;
+            opacity: 0;
+            transform: translateY(-15px);
+            pointer-events: none;
+        }
+
+        /* FIXED TOP RIGHT NAV PIN & LOCK/UNLOCK TOGGLE */
+        .nav-pin-toggle {
+            position: fixed;
+            top: 14px;
+            right: 24px;
+            z-index: 10002;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 15px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            transition: all 0.2s ease;
+        }
+        .nav-pin-toggle:hover {
+            border-color: var(--status-info);
+            background: var(--surface-3);
+            transform: scale(1.08);
+        }
+        .nav-pin-toggle.is-fixed {
+            border-color: var(--status-info);
+            background: rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        /* FLOATING SEARCH BAR TO RIGHT OF SCREEN */
+        .floating-search-bar {
+            position: fixed;
+            right: 24px;
+            top: 70px;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+        }
+        .fsb-collapsed {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+            transition: all 0.2s;
+            color: var(--text-main);
+        }
+        .fsb-collapsed:hover {
+            border-color: var(--status-info);
+            background: var(--surface-3);
+            transform: scale(1.05);
+        }
+        .fsb-icon {
+            font-size: 18px;
+        }
+        .fsb-expanded {
+            display: none;
+            align-items: center;
+            background: var(--surface-1);
+            border: 1px solid var(--status-info);
+            border-radius: 25px;
+            padding: 6px 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+            position: relative;
+            width: 320px;
+            gap: 8px;
+        }
+        .floating-search-bar.active .fsb-collapsed {
+            display: none;
+        }
+        .floating-search-bar.active .fsb-expanded {
+            display: flex;
+        }
         .recently-viewed-panel {
             background: var(--surface-1);
             border-bottom: 1px solid var(--border);
-            padding: 10px 24px;
+            padding: 12px 24px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            overflow-x: auto;
+            flex-wrap: wrap;
+            gap: 8px;
             flex-shrink: 0;
         }
         .rv-label {
@@ -1196,36 +1425,39 @@
             color: var(--text-muted);
             white-space: nowrap;
             letter-spacing: 0.05em;
+            margin-right: 4px;
         }
         .rv-chip {
             background: var(--surface-2);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 4px 12px;
+            padding: 5px 13px;
             font-size: 12px;
             color: var(--text-primary);
             cursor: pointer;
-            white-space: nowrap;
             display: inline-flex;
             align-items: center;
             gap: 6px;
             transition: all 0.2s;
+            max-width: 100%;
         }
         .rv-chip:hover {
             border-color: var(--status-info);
             background: var(--surface-3);
+            transform: translateY(-1px);
         }
         .rv-chip .ds-badge {
             font-size: 9px;
             background: rgba(59, 130, 246, 0.2);
             color: var(--status-info);
-            padding: 1px 5px;
+            padding: 1px 6px;
             border-radius: 4px;
             font-weight: 700;
         }
         .cat-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            align-items: start;
             gap: 16px;
             padding: 24px;
         }
@@ -1237,6 +1469,8 @@
             transition: border-color 0.2s, transform 0.2s;
             display: flex;
             flex-direction: column;
+            height: fit-content;
+            align-self: start;
         }
         .cat-card:hover {
             border-color: rgba(59, 130, 246, 0.4);
@@ -1334,59 +1568,82 @@
     </style>
 </head>
 <body>
-
-    <div class="nav-bar">
-        <div style="display:flex; gap: 4px; align-items: center;">
-            <button class="nav-btn" id="btn-prev">❮</button>
-            <button class="nav-btn" id="btn-layout" onclick="toggleLayout()" style="background:var(--surface-1); border:1px solid var(--border); padding:6px 10px; font-size:12px; font-weight:700;">📖 1 Col</button>
-        </div>
-        <div class="mode-selector">
-            <button class="mode-btn active" data-mode="learn">Learn</button>
-            <button class="mode-btn" data-mode="practice">Practice</button>
-            <button class="mode-btn" data-mode="review">Review</button>
-            <button class="mode-btn" data-mode="glossary">Glossary</button>
-            <button class="mode-btn" data-mode="flashcards">Flashcards</button>
-            
-            <div class="interviews-dropdown-container">
-                <button class="mode-btn" id="btn-interviews-tab" style="display: flex; align-items: center; gap: 4px;">🎤 Interviews <span>▼</span></button>
-                <div class="interviews-dropdown-menu" id="interviews-menu">
-                    <div class="dropdown-submenu-header">Hexaview</div>
-                    <div class="dropdown-item" id="opt-hexaview-r1" onclick="selectDataset('hexaview_r1')">Round 1 (16 Q&A) <span></span></div>
-                    <div class="dropdown-item" id="opt-hexaview-r2" onclick="selectDataset('hexaview_r2')">Round 2 (18 Q&A) <span></span></div>
-                    <div class="dropdown-submenu-header" style="margin-top: 6px;">Noventiq</div>
-                    <div class="dropdown-item" id="opt-noventiq-r1" onclick="selectDataset('noventiq_r1')">Round 1 (8 Q&A) <span></span></div>
-                    <div class="dropdown-submenu-header" style="margin-top: 6px;">Azure Infra (JD)</div>
-                    <div class="dropdown-item" id="opt-infra-azure" onclick="selectDataset('infra_azure')">20 Topics — JD Aligned <span></span></div>
-                    <div class="dropdown-submenu-header" style="margin-top: 6px;">Coforge / Infinite Locus</div>
-                    <div class="dropdown-item" id="opt-infinite-locus" onclick="selectDataset('infinite_locus')">JD Prep (48 Q&A) <span></span></div>
-                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 4px 0;">
-                    <div class="dropdown-item" id="opt-merged-dataset" onclick="selectDataset('merged')">📦 All Questions (254) <span></span></div>
-                    <div class="dropdown-item active-item" id="opt-default-dataset" onclick="selectDataset('default')">Default Scenarios <span>✓</span></div>
-                </div>
+    <!-- Auto-Hiding Compact Universal Progress Bar -->
+    <div id="universal-progress-bar" class="universal-progress-bar hidden">
+        <div class="upb-content">
+            <span class="upb-label">⚡ Mastery Progress</span>
+            <span id="upb-count" class="upb-count">0 / 254 (0%)</span>
+            <div class="upb-track">
+                <div id="upb-fill" class="upb-fill"></div>
             </div>
         </div>
-        <button class="nav-btn" id="btn-next">❯</button>
     </div>
 
-    <div class="header">
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 4px;">
-            <div class="meta" id="counter" style="cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; background: var(--surface-2); border-radius: 4px; width: fit-content; border: 1px solid var(--border); transition: border-color 0.2s;" title="Open Index" onmouseover="this.style.borderColor='var(--status-info)'" onmouseout="this.style.borderColor='var(--border)'">Question 1 of X <span>▼</span></div>
-            <div class="search-container">
-                <div class="search-input-wrapper">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Search questions, keywords, concepts..." autocomplete="off">
-                    <button id="search-clear-btn" title="Clear search">✕</button>
-                </div>
-                <div id="search-results-dropdown"></div>
+    <!-- Auto-Hiding Top Navigation & Question Control Bar -->
+    <div id="autohide-top-nav" class="autohide-top-nav">
+        <div class="nav-bar" style="border:none; background:transparent; padding:0; margin:0; flex: 1; justify-content: flex-start; gap: 12px;">
+            <div style="display:flex; gap: 4px; align-items: center;">
+                <button class="nav-btn" id="btn-prev">❮</button>
+                <button class="nav-btn" id="btn-layout" onclick="toggleLayout()" style="background:var(--surface-1); border:1px solid var(--border); padding:6px 10px; font-size:12px; font-weight:700;">📖 1 Col</button>
             </div>
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="learn">Learn</button>
+                <button class="mode-btn" data-mode="practice">Practice</button>
+                <button class="mode-btn" data-mode="review">Review</button>
+                <button class="mode-btn" data-mode="glossary">Glossary</button>
+                <button class="mode-btn" data-mode="flashcards">Flashcards</button>
+                
+                <div class="interviews-dropdown-container">
+                    <button class="mode-btn" id="btn-interviews-tab" style="display: flex; align-items: center; gap: 4px;">🎤 Interviews <span>▼</span></button>
+                    <div class="interviews-dropdown-menu" id="interviews-menu">
+                        <div class="dropdown-submenu-header">Hexaview</div>
+                        <div class="dropdown-item" id="opt-hexaview-r1" onclick="selectDataset('hexaview_r1')">Round 1 (16 Q&A) <span></span></div>
+                        <div class="dropdown-item" id="opt-hexaview-r2" onclick="selectDataset('hexaview_r2')">Round 2 (18 Q&A) <span></span></div>
+                        <div class="dropdown-submenu-header" style="margin-top: 6px;">Noventiq</div>
+                        <div class="dropdown-item" id="opt-noventiq-r1" onclick="selectDataset('noventiq_r1')">Round 1 (8 Q&A) <span></span></div>
+                        <div class="dropdown-submenu-header" style="margin-top: 6px;">Azure Infra (JD)</div>
+                        <div class="dropdown-item" id="opt-infra-azure" onclick="selectDataset('infra_azure')">20 Topics — JD Aligned <span></span></div>
+                        <div class="dropdown-submenu-header" style="margin-top: 6px;">Coforge / Infinite Locus</div>
+                        <div class="dropdown-item" id="opt-infinite-locus" onclick="selectDataset('infinite_locus')">JD Prep (48 Q&A) <span></span></div>
+                        <hr style="border: 0; border-top: 1px solid var(--border); margin: 4px 0;">
+                        <div class="dropdown-item" id="opt-merged-dataset" onclick="selectDataset('merged')">📦 All Questions (254) <span></span></div>
+                        <div class="dropdown-item active-item" id="opt-default-dataset" onclick="selectDataset('default')">Default Scenarios <span>✓</span></div>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn" id="btn-next">❯</button>
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <h1 id="q-title" style="margin: 0; flex: 1;">Loading...</h1>
+
+        <!-- Mark Done positioned IN FRONT OF Question 1 of N dropdown -->
+        <div style="display: flex; align-items: center; gap: 10px;">
             <button id="header-status-toggle" class="header-status-toggle" onclick="toggleCurrentQuestionStatus()" title="Click to toggle status between Grey (Unrated) and Green (Done)">
                 ⚪ Mark Done
             </button>
+            <div class="meta" id="counter" style="cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; background: var(--surface-2); border-radius: 6px; width: fit-content; border: 1px solid var(--border); transition: border-color 0.2s;" title="Open Index" onmouseover="this.style.borderColor='var(--status-info)'" onmouseout="this.style.borderColor='var(--border)'">Question 1 of X <span>▼</span></div>
         </div>
-        <div class="chips" id="q-chips"></div>
+    </div>
+
+    <!-- Lock/Unlock Toggle to Pin/Fixed Navigation Bar -->
+    <button id="nav-pin-toggle" class="nav-pin-toggle" onclick="toggleNavFixed(event)" title="Click to Lock Navigation Bar Open (Fixed)">
+        🔓
+    </button>
+
+    <!-- Floating Search Bar to Right of Screen -->
+    <div id="floating-search-bar" class="floating-search-bar">
+        <div class="fsb-collapsed" onclick="toggleFloatingSearch(event)" title="Search Questions & Content">
+            <span class="fsb-icon">🔍</span>
+        </div>
+        <div class="fsb-expanded" id="fsb-expanded">
+            <span class="fsb-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="Search 254 questions..." autocomplete="off">
+            <button id="search-clear-btn" title="Clear search">✕</button>
+            <div id="search-results-dropdown"></div>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1 id="q-title" style="margin: 0;">Loading...</h1>
+        <div class="chips" id="q-chips" style="margin-top: 8px;"></div>
     </div>
 
     <div id="review-summary-container"></div>
@@ -1402,6 +1659,12 @@
                         <button class="index-mode-btn active" id="btn-mode-cat" onclick="setIndexMode('category')">📋 Category</button>
                         <button class="index-mode-btn" id="btn-mode-flat" onclick="setIndexMode('flat')">≡ List</button>
                     </div>
+                    <button class="index-mode-btn" id="btn-toggle-all-cats" onclick="toggleAllCategories()" title="Expand or collapse all category cards">⇕ Expand All</button>
+                </div>
+                <div class="index-search-container">
+                    <span style="font-size:14px; opacity:0.7;">🔍</span>
+                    <input type="text" id="index-search-input" placeholder="Search questions, answers, half words (e.g. terra, udr, k8s)..." oninput="onIndexSearchInput(this.value)">
+                    <button class="search-clear-btn" id="btn-clear-index-search" onclick="clearIndexSearch()" style="display: none;">✕</button>
                 </div>
                 <div id="overall-index-progress" class="overall-index-progress">
                     <div class="overall-progress-text">
@@ -2477,6 +2740,21 @@ function toggleCategoryCard(catId) {
     if (card) card.classList.toggle('expanded', expandedCategories.includes(catId));
 }
 
+function toggleAllCategories() {
+    const allCatIds = CATEGORY_CONFIG.map(c => c.id);
+    if (expandedCategories.length >= allCatIds.length / 2) {
+        expandedCategories = [];
+        const btn = document.getElementById('btn-toggle-all-cats');
+        if (btn) btn.innerText = '⇕ Expand All';
+    } else {
+        expandedCategories = [...allCatIds];
+        const btn = document.getElementById('btn-toggle-all-cats');
+        if (btn) btn.innerText = '⇕ Collapse All';
+    }
+    localStorage.setItem('devops_expanded_categories', JSON.stringify(expandedCategories));
+    renderIndex();
+}
+
 function renderRecentlyViewedPanel() {
     const panel = document.getElementById('index-recently-viewed');
     if (!panel) return;
@@ -2489,10 +2767,12 @@ function renderRecentlyViewedPanel() {
         return;
     }
     panel.style.display = 'flex';
-    const chipsHtml = list.map(item => {
+    const displayList = list.slice(0, 6);
+    const chipsHtml = displayList.map(item => {
         const badge = item.dataset ? `<span class="ds-badge">${item.dataset}</span>` : '';
+        const shortTitle = item.title.length > 25 ? item.title.substring(0, 23) + '...' : item.title;
         return `<div class="rv-chip" onclick="navigateToRecent('${item.dataset}', ${item.index})">
-            <span>⏱️ ${item.title.length > 28 ? item.title.substring(0, 26) + '...' : item.title}</span>
+            <span>⏱️ ${shortTitle}</span>
             ${badge}
         </div>`;
     }).join('');
@@ -2507,6 +2787,67 @@ async function navigateToRecent(dataset, index) {
     currentIndex = index;
     solutionRevealed = false;
     renderScenario();
+}
+
+let indexSearchQuery = '';
+
+function onIndexSearchInput(val) {
+    indexSearchQuery = (val || '').trim().toLowerCase();
+    const clearBtn = document.getElementById('btn-clear-index-search');
+    if (clearBtn) clearBtn.style.display = indexSearchQuery ? 'inline-flex' : 'none';
+    renderIndex();
+}
+
+function clearIndexSearch() {
+    indexSearchQuery = '';
+    const input = document.getElementById('index-search-input');
+    if (input) input.value = '';
+    const clearBtn = document.getElementById('btn-clear-index-search');
+    if (clearBtn) clearBtn.style.display = 'none';
+    renderIndex();
+}
+
+function findScenarioMatch(s, q) {
+    if (!q) return { matched: true, snippetHtml: null };
+    const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const qEsc = escapeRegExp(q);
+    const highlight = text => text.replace(new RegExp(`(${qEsc})`, 'gi'), '<mark>$1</mark>');
+
+    if ((s.id && s.id.toLowerCase().includes(q)) || (s.title && s.title.toLowerCase().includes(q))) {
+        return { matched: true, snippetHtml: null };
+    }
+    if (s.chips && s.chips.some(c => c.toLowerCase().includes(q))) {
+        const matchedChip = s.chips.find(c => c.toLowerCase().includes(q));
+        return { matched: true, snippetHtml: `Tag: ${highlight(matchedChip)}` };
+    }
+    if (s.definition && s.definition.toLowerCase().includes(q)) {
+        return { matched: true, snippetHtml: highlight(s.definition.length > 125 ? s.definition.substring(0, 123) + '...' : s.definition) };
+    }
+    if (s.why_it_matters && s.why_it_matters.toLowerCase().includes(q)) {
+        return { matched: true, snippetHtml: highlight(s.why_it_matters.length > 125 ? s.why_it_matters.substring(0, 123) + '...' : s.why_it_matters) };
+    }
+    if (s.real_world_scenario && s.real_world_scenario.toLowerCase().includes(q)) {
+        return { matched: true, snippetHtml: highlight(s.real_world_scenario.length > 125 ? s.real_world_scenario.substring(0, 123) + '...' : s.real_world_scenario) };
+    }
+    if (s.architecture_flow && Array.isArray(s.architecture_flow.steps)) {
+        for (const step of s.architecture_flow.steps) {
+            if (step && step.toLowerCase().includes(q)) {
+                return { matched: true, snippetHtml: highlight(step.length > 125 ? step.substring(0, 123) + '...' : step) };
+            }
+        }
+    }
+    if (s.interview_answer && Array.isArray(s.interview_answer.response)) {
+        for (const resp of s.interview_answer.response) {
+            if (resp && resp.toLowerCase().includes(q)) {
+                return { matched: true, snippetHtml: highlight(resp.length > 125 ? resp.substring(0, 123) + '...' : resp) };
+            }
+        }
+    }
+    if (s.interview_kill_shot && s.interview_kill_shot.toLowerCase().includes(q)) {
+        return { matched: true, snippetHtml: highlight(s.interview_kill_shot.length > 125 ? s.interview_kill_shot.substring(0, 123) + '...' : s.interview_kill_shot) };
+    }
+
+    return { matched: false, snippetHtml: null };
 }
 
 function renderCategoryIndex() {
@@ -2532,7 +2873,6 @@ function renderCategoryIndex() {
     CATEGORY_CONFIG.forEach(cat => {
         const items = catMap[cat.id] || [];
         const count = items.length;
-        const isEmpty = count === 0;
 
         let doneCount = 0;
         let reviewCount = 0;
@@ -2545,13 +2885,23 @@ function renderCategoryIndex() {
             else if (r === 'revisit') revisitCount++;
         });
 
+        // Filter items when searching
+        const matchedItems = items.map((it, dispIdx) => {
+            const m = findScenarioMatch(it.scenario, indexSearchQuery);
+            return { ...it, dispIdx, matched: m.matched, snippetHtml: m.snippetHtml };
+        }).filter(it => it.matched);
+
+        const matchedCount = matchedItems.length;
+        if (matchedCount === 0 && indexSearchQuery) return; // Hide category when searching if 0 matches
+
+        const isEmpty = count === 0;
         const pctDone = count > 0 ? (doneCount / count) * 100 : 0;
         const pctReview = count > 0 ? (reviewCount / count) * 100 : 0;
         const pctRevisit = count > 0 ? (revisitCount / count) * 100 : 0;
 
-        const isExpanded = expandedCategories.includes(cat.id) ? 'expanded' : '';
+        const isExpanded = (indexSearchQuery || expandedCategories.includes(cat.id)) ? 'expanded' : '';
 
-        const questionsHtml = items.map((it, dispIdx) => {
+        const questionsHtml = matchedItems.map(it => {
             const s = it.scenario;
             const rating = ratings[it.index];
             let indicator = '⚪';
@@ -2559,11 +2909,15 @@ function renderCategoryIndex() {
             if (rating === 'review') indicator = '🟠';
             if (rating === 'revisit') indicator = '🟡';
             const isActive = it.index === currentIndex ? 'active-q' : '';
+            const snippetBox = it.snippetHtml ? `<div class="index-match-snippet">💬 Match: ${it.snippetHtml}</div>` : '';
             return `
             <div class="cat-q-item ${isActive}" onclick="navigateToIndex(${it.index})">
-                <div style="display: flex; align-items: center; flex: 1;">
-                    <span class="cat-q-num">${dispIdx + 1}.</span>
-                    <span class="cat-q-title">${s.title}</span>
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <div style="display: flex; align-items: center;">
+                        <span class="cat-q-num">${it.dispIdx + 1}.</span>
+                        <span class="cat-q-title">${s.title}</span>
+                    </div>
+                    ${snippetBox}
                 </div>
                 <span class="status-toggle-btn" onclick="toggleQuestionStatus(${it.index}, event)" title="Click to toggle Done (Green) / Unrated (Grey)" style="font-size: 15px;">${indicator}</span>
             </div>`;
@@ -2615,30 +2969,37 @@ function renderFlatIndex() {
     const activeIndices = getActiveIndices();
     
     let html = '';
-    if (activeIndices[0] === -1) {
-        html = `<div class="body-text" style="text-align:center; padding: 20px;">No scenarios to review!</div>`;
+    const matchedIndices = activeIndices.map((scenarioIdx, displayIdx) => {
+        const s = scenarios[scenarioIdx];
+        const m = findScenarioMatch(s, indexSearchQuery);
+        return { scenarioIdx, displayIdx, s, matched: m.matched, snippetHtml: m.snippetHtml };
+    }).filter(it => it.matched);
+
+    if (matchedIndices.length === 0) {
+        html = `<div class="body-text" style="text-align:center; padding: 20px;">No scenarios matched your search!</div>`;
     } else {
-        activeIndices.forEach((scenarioIdx, displayIdx) => {
-            const s = scenarios[scenarioIdx];
+        matchedIndices.forEach(it => {
+            const { scenarioIdx, displayIdx, s, snippetHtml } = it;
             const rating = ratings[scenarioIdx];
-            let indicator = '⚪'; // Default unrated
+            let indicator = '⚪';
             if (rating === 'done') indicator = '🟢';
             if (rating === 'review') indicator = '🟠';
             if (rating === 'revisit') indicator = '🟡';
             
             const isActive = scenarioIdx === currentIndex ? 'active' : '';
             
-            // Build compact chips for the index preview
             const visibleChips = (s.chips || []).slice(0, 4);
             const extraChipsCount = (s.chips || []).length - visibleChips.length;
             const chipsHtml = visibleChips.map(c => `<span style="background: var(--surface-1); padding: 2px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--border); color: var(--text-muted);">${c}</span>`).join('');
             const extraHtml = extraChipsCount > 0 ? `<span style="padding: 2px 4px; font-size: 10px; color: var(--text-muted);">+${extraChipsCount}</span>` : '';
-            
+            const snippetBox = snippetHtml ? `<div class="index-match-snippet" style="margin-left:0; margin-top:6px;">💬 Match: ${snippetHtml}</div>` : '';
+
             html += `
             <div class="index-item ${isActive}" data-target="${scenarioIdx}">
                 <div style="flex: 1;">
                     <div class="meta" style="color: var(--status-info); font-weight: 600;">${displayIdx + 1}. ${s.type || 'Scenario'}</div>
                     <div class="body-text" style="font-weight: 600; color: var(--text-primary); margin-top:2px; font-size: 14px;">${s.title}</div>
+                    ${snippetBox}
                     <div style="margin-top: 6px; display: flex; gap: 4px; flex-wrap: wrap;">
                         ${chipsHtml}${extraHtml}
                     </div>
@@ -2650,6 +3011,133 @@ function renderFlatIndex() {
     list.innerHTML = html;
 }
 
+let upbHideTimeout = null;
+let isNavFixed = false;
+let isNavTransitioning = false;
+
+let scrollUpCount = 0;
+let lastScrollUpTime = 0;
+let lastScrollY = window.scrollY || 0;
+
+function setNavVisibility(show, duration = 2200) {
+    const upb = document.getElementById('universal-progress-bar');
+    const topNav = document.getElementById('autohide-top-nav');
+    if (!upb || !topNav) return;
+    const isCurrentlyHidden = topNav.classList.contains('hidden');
+    if (show && isCurrentlyHidden) {
+        isNavTransitioning = true;
+        setTimeout(() => { isNavTransitioning = false; }, 450);
+        upb.classList.remove('hidden');
+        topNav.classList.remove('hidden');
+    } else if (!show && !isCurrentlyHidden) {
+        isNavTransitioning = true;
+        setTimeout(() => { isNavTransitioning = false; }, 450);
+        upb.classList.add('hidden');
+        topNav.classList.add('hidden');
+    }
+    if (upbHideTimeout) clearTimeout(upbHideTimeout);
+    if (show && !isNavFixed && duration > 0) {
+        upbHideTimeout = setTimeout(() => {
+            setNavVisibility(false);
+        }, duration);
+    }
+}
+
+function toggleNavFixed(e) {
+    if (e) e.stopPropagation();
+    isNavFixed = !isNavFixed;
+    const btn = document.getElementById('nav-pin-toggle');
+    if (btn) {
+        btn.classList.toggle('is-fixed', isNavFixed);
+        btn.innerHTML = isNavFixed ? '🔒' : '🔓';
+        btn.title = isNavFixed ? 'Navigation Bar Locked (Click to unlock & auto-hide)' : 'Click to Lock Navigation Bar Open (Fixed)';
+    }
+    if (isNavFixed) {
+        if (upbHideTimeout) clearTimeout(upbHideTimeout);
+        setNavVisibility(true, 0);
+    } else {
+        setNavVisibility(true, 2200);
+    }
+}
+
+function revealTopNavAndProgress(duration = 2200) {
+    setNavVisibility(true, duration);
+}
+
+function revealUniversalProgressBar(duration = 2200) {
+    revealTopNavAndProgress(duration);
+}
+
+window.addEventListener('mousemove', (e) => {
+    if (e.clientY <= 25 && !isNavTransitioning) {
+        revealTopNavAndProgress(2200);
+    }
+});
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY || 0;
+    if (isNavFixed || isNavTransitioning) {
+        lastScrollY = currentScrollY;
+        return;
+    }
+    if (currentScrollY <= 15) {
+        revealTopNavAndProgress(2200);
+    } else if (currentScrollY > lastScrollY + 35 && currentScrollY > 80) {
+        setNavVisibility(false);
+    } else if (currentScrollY < lastScrollY - 25) {
+        const now = Date.now();
+        if (now - lastScrollUpTime < 600) {
+            scrollUpCount++;
+        } else {
+            scrollUpCount = 1;
+        }
+        lastScrollUpTime = now;
+        if (scrollUpCount >= 2) {
+            revealTopNavAndProgress(2200);
+            scrollUpCount = 0;
+        }
+    }
+    lastScrollY = currentScrollY;
+});
+
+window.addEventListener('wheel', (e) => {
+    if (isNavFixed || isNavTransitioning) return;
+    if (e.deltaY > 25 && (window.scrollY || 0) > 80) {
+        setNavVisibility(false);
+    } else if (e.deltaY < -25) {
+        const now = Date.now();
+        if (now - lastScrollUpTime < 600) {
+            scrollUpCount++;
+        } else {
+            scrollUpCount = 1;
+        }
+        lastScrollUpTime = now;
+        if (scrollUpCount >= 2 || (window.scrollY || 0) <= 15) {
+            revealTopNavAndProgress(2200);
+            scrollUpCount = 0;
+        }
+    }
+}, { passive: true });
+
+function toggleFloatingSearch(e) {
+    if (e) e.stopPropagation();
+    const fsb = document.getElementById('floating-search-bar');
+    if (fsb) {
+        fsb.classList.add('active');
+        const input = document.getElementById('search-input');
+        if (input) input.focus();
+    }
+}
+
+document.addEventListener('click', (e) => {
+    const fsb = document.getElementById('floating-search-bar');
+    if (fsb && fsb.classList.contains('active')) {
+        if (!fsb.contains(e.target)) {
+            fsb.classList.remove('active');
+        }
+    }
+});
+
 function updateOverallIndexProgress() {
     const total = scenarios.length || 1;
     let doneCount = 0;
@@ -2658,26 +3146,33 @@ function updateOverallIndexProgress() {
     });
     const pct = Math.round((doneCount / total) * 100);
 
+    let color = '#FACC15'; // Yellow (0-25%)
+    if (pct >= 100) {
+        color = '#10B981'; // Green
+    } else if (pct >= 75) {
+        color = '#84CC16'; // Orangish-Green / Lime
+    } else if (pct >= 50) {
+        color = '#FB923C'; // Warm Orange
+    } else if (pct >= 25) {
+        color = '#F59E0B'; // Orange-Yellow
+    }
+
     const countEl = document.getElementById('overall-progress-count');
     const fillEl = document.getElementById('overall-progress-fill');
-
-    if (countEl) {
-        countEl.innerText = `${doneCount} / ${total} (${pct}%)`;
-    }
+    if (countEl) countEl.innerText = `${doneCount} / ${total} (${pct}%)`;
     if (fillEl) {
         fillEl.style.width = `${pct}%`;
-        let color = '#FACC15'; // Yellow (0-25%)
-        if (pct >= 100) {
-            color = '#10B981'; // Green
-        } else if (pct >= 75) {
-            color = '#84CC16'; // Orangish-Green / Lime
-        } else if (pct >= 50) {
-            color = '#FB923C'; // Warm Orange
-        } else if (pct >= 25) {
-            color = '#F59E0B'; // Orange-Yellow
-        }
         fillEl.style.backgroundColor = color;
     }
+
+    const upbCount = document.getElementById('upb-count');
+    const upbFill = document.getElementById('upb-fill');
+    if (upbCount) upbCount.innerText = `${doneCount} / ${total} (${pct}%)`;
+    if (upbFill) {
+        upbFill.style.width = `${pct}%`;
+        upbFill.style.backgroundColor = color;
+    }
+    revealUniversalProgressBar(4500);
 }
 
 function renderIndex() {
@@ -2821,7 +3316,7 @@ function updateHeaderStatusToggle() {
     if (!btn) return;
     const isDone = ratings[currentIndex] === 'done';
     btn.classList.toggle('is-done', isDone);
-    btn.innerHTML = isDone ? '🟢 Done (Click to Reset)' : '⚪ Mark Done';
+    btn.innerHTML = isDone ? '🟢 Done' : '⚪ Mark Done';
 }
 
 function renderScenario() {

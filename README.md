@@ -251,5 +251,27 @@ Once running, navigate to `http://localhost:8000` or `http://localhost:3000` in 
 | **Review Mode** | Active tab: `Review` | Filters scenarios dynamically, showing only the ones not marked as "Done". Tracks overall progress. |
 | **Glossary View** | Active tab: `Glossary` | Displays the interactive DevOps glossary drawer, categories, and keyword relationships. |
 | **Flashcards** | Active tab: `Flashcards` | Flips through key concepts dynamically with active recall rating. |
-| **Interviews Dropdown** | Nav Dropdown | Switches datasets on-the-fly (`Default`, `Hexaview R1/R2`, `Noventiq`, `Azure Infra`, or `📦 All Questions (206)`) while retaining study progress independently. |
+| **Interviews Dropdown** | Nav Dropdown | Switches datasets on-the-fly (`Default`, `Hexaview R1/R2`, `Noventiq`, `Azure Infra`, or `📦 All Questions (254)`) while retaining study progress independently. |
 | **Scenario Index Modal** | Header Counter Button | Opens the dual-mode index modal (`📋 Category` vs `≡ List`) with 3-segment progress bars, priority badges, and cross-dataset recently viewed history. |
+
+---
+
+## 🧭 Navigation & UI Ergonomics
+
+### 1. Auto-Hiding Navigation Bar & Anti-Flicker Engine
+- **Debounced Layout Reclamation**: To maximize vertical reading space during study sessions, the top navigation bar and master progress bar automatically collapse (`max-height: 0px`) after **2.2 seconds** of inactivity or immediately when scrolling down (`> 35px` past `scrollY > 80px`).
+- **Anti-Flicker Transition Lock**: Uses a `450ms` debounced transition lock (`isNavTransitioning`) so document resizing during collapse/expand never triggers synthetic scroll events or visual flicker loops.
+- **Intentional Reveal**: Pulling up twice (`< 600ms`) or moving the cursor to the top edge (`clientY <= 25px`) smoothly unhides the navigation bar.
+
+### 2. Lock / Unlock Navigation Pill (`#nav-pin-toggle`)
+- Located fixed at the top right corner (`top: 14px; right: 24px`) above the search bar.
+- **`🔓` (Unlocked / Auto-Hide Mode)**: Default state where the navigation bar auto-hides on inactivity or scroll down.
+- **`🔒` (Locked / Fixed Mode)**: Clicking locks the navigation bar open permanently with an accent glow, disabling auto-hide until toggled off.
+
+### 3. Floating Right Search Bar (`#floating-search-bar`)
+- Positioned floating at `top: 70px; right: 24px` showing a clean magnifying glass icon (`🔍`).
+- Searches live across all **254 questions** (titles, answers, and tags) and highlights exact matches.
+
+### 4. 524-Term Interactive Glossary (`glossary.json`)
+- Includes 15 new rich high-impact Cloud Native/SRE keywords (**FinOps**, **KEDA**, **eBPF**, **Argo CD**, **GitOps**, **Karpenter**, **Crossplane**, **OPA Gatekeeper**, **Cilium**, **Zero Trust**, **UDR**, **Azure Private Endpoint**, **OpenTelemetry**, **DevSecOps Shift Left**, **Service Mesh**).
+- Dynamic keyword links (`keyword-links.json`) connect terms to relevant study scenarios across all datasets.

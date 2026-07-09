@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-06-21T16:54:13.513Z",
-  "totalKeywords": 513,
+  "generatedAt": "2026-07-09T17:56:22.043Z",
+  "totalKeywords": 524,
   "keywords": [
     {
       "keywordId": "KW-000001",
@@ -669,6 +669,26 @@
     },
     {
       "keywordId": "KW-000024",
+      "keyword": "Argo CD",
+      "aliases": [
+        "ArgoCD",
+        "Kubernetes GitOps"
+      ],
+      "category": "CI/CD",
+      "interviewDomain": "Deployment",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "Argo CD"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000025",
       "keyword": "Arguments and Architecture",
       "aliases": [],
       "category": "System Design",
@@ -686,7 +706,7 @@
       ]
     },
     {
-      "keywordId": "KW-000025",
+      "keywordId": "KW-000026",
       "keyword": "Artifact",
       "aliases": [],
       "category": "CI/CD",
@@ -794,7 +814,7 @@
       ]
     },
     {
-      "keywordId": "KW-000026",
+      "keywordId": "KW-000027",
       "keyword": "Artifact Immutability",
       "aliases": [],
       "category": "CI/CD",
@@ -822,7 +842,7 @@
       ]
     },
     {
-      "keywordId": "KW-000027",
+      "keywordId": "KW-000028",
       "keyword": "Artifact Repository",
       "aliases": [],
       "category": "Kubernetes",
@@ -880,7 +900,7 @@
       ]
     },
     {
-      "keywordId": "KW-000028",
+      "keywordId": "KW-000029",
       "keyword": "Authentication",
       "aliases": [],
       "category": "System Design",
@@ -986,7 +1006,7 @@
       ]
     },
     {
-      "keywordId": "KW-000029",
+      "keywordId": "KW-000030",
       "keyword": "Automated Quality Gates",
       "aliases": [],
       "category": "CI/CD",
@@ -1019,7 +1039,7 @@
       ]
     },
     {
-      "keywordId": "KW-000030",
+      "keywordId": "KW-000031",
       "keyword": "Automation Script",
       "aliases": [],
       "category": "CI/CD",
@@ -1057,7 +1077,7 @@
       ]
     },
     {
-      "keywordId": "KW-000031",
+      "keywordId": "KW-000032",
       "keyword": "Autoscaling Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -1075,7 +1095,7 @@
       ]
     },
     {
-      "keywordId": "KW-000032",
+      "keywordId": "KW-000033",
       "keyword": "Availability Set",
       "aliases": [],
       "category": "System Design",
@@ -1108,7 +1128,7 @@
       ]
     },
     {
-      "keywordId": "KW-000033",
+      "keywordId": "KW-000034",
       "keyword": "Availability Zone",
       "aliases": [],
       "category": "System Design",
@@ -1141,7 +1161,7 @@
       ]
     },
     {
-      "keywordId": "KW-000034",
+      "keywordId": "KW-000035",
       "keyword": "awk",
       "aliases": [],
       "category": "Observability",
@@ -1172,7 +1192,7 @@
       ]
     },
     {
-      "keywordId": "KW-000035",
+      "keywordId": "KW-000036",
       "keyword": "AWS",
       "aliases": [
         "Amazon Web Services"
@@ -1222,7 +1242,7 @@
       ]
     },
     {
-      "keywordId": "KW-000036",
+      "keywordId": "KW-000037",
       "keyword": "Azure App Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -1240,7 +1260,7 @@
       ]
     },
     {
-      "keywordId": "KW-000037",
+      "keywordId": "KW-000038",
       "keyword": "Azure DevOps",
       "aliases": [],
       "category": "CI/CD",
@@ -1293,7 +1313,7 @@
       ]
     },
     {
-      "keywordId": "KW-000038",
+      "keywordId": "KW-000039",
       "keyword": "Azure Front Door",
       "aliases": [],
       "category": "Azure",
@@ -1336,7 +1356,7 @@
       ]
     },
     {
-      "keywordId": "KW-000039",
+      "keywordId": "KW-000040",
       "keyword": "Azure Key Architecture",
       "aliases": [],
       "category": "Azure",
@@ -1354,7 +1374,7 @@
       ]
     },
     {
-      "keywordId": "KW-000040",
+      "keywordId": "KW-000041",
       "keyword": "Azure Kubernetes Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -1372,7 +1392,7 @@
       ]
     },
     {
-      "keywordId": "KW-000041",
+      "keywordId": "KW-000042",
       "keyword": "Azure Monitor",
       "aliases": [
         "Log Analytics",
@@ -1468,7 +1488,26 @@
       ]
     },
     {
-      "keywordId": "KW-000042",
+      "keywordId": "KW-000043",
+      "keyword": "Azure Private Endpoint",
+      "aliases": [
+        "Private Link Endpoint"
+      ],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "Azure Private Endpoint"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000044",
       "keyword": "Backend",
       "aliases": [
         "Terraform Backend",
@@ -1595,7 +1634,7 @@
       ]
     },
     {
-      "keywordId": "KW-000043",
+      "keywordId": "KW-000045",
       "keyword": "Backing Services",
       "aliases": [],
       "category": "System Design",
@@ -1613,7 +1652,7 @@
       ]
     },
     {
-      "keywordId": "KW-000044",
+      "keywordId": "KW-000046",
       "keyword": "Backoff Limit",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -1631,7 +1670,7 @@
       ]
     },
     {
-      "keywordId": "KW-000045",
+      "keywordId": "KW-000047",
       "keyword": "Backup",
       "aliases": [],
       "category": "Database & Storage",
@@ -1690,11 +1729,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 17,
           "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "Interview FAQ Master Reference"
         }
       ]
     },
     {
-      "keywordId": "KW-000046",
+      "keywordId": "KW-000048",
       "keyword": "Backup & Architecture",
       "aliases": [],
       "category": "System Design",
@@ -1712,7 +1756,7 @@
       ]
     },
     {
-      "keywordId": "KW-000047",
+      "keywordId": "KW-000049",
       "keyword": "Blameless Post-mortem",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -1775,7 +1819,7 @@
       ]
     },
     {
-      "keywordId": "KW-000048",
+      "keywordId": "KW-000050",
       "keyword": "Blue/Green Deployment",
       "aliases": [],
       "category": "Kubernetes",
@@ -1833,7 +1877,7 @@
       ]
     },
     {
-      "keywordId": "KW-000049",
+      "keywordId": "KW-000051",
       "keyword": "Bottleneck",
       "aliases": [],
       "category": "Performance Engineering",
@@ -1850,7 +1894,7 @@
       ]
     },
     {
-      "keywordId": "KW-000050",
+      "keywordId": "KW-000052",
       "keyword": "Build Once, Deploy Many",
       "aliases": [],
       "category": "CI/CD",
@@ -1878,7 +1922,7 @@
       ]
     },
     {
-      "keywordId": "KW-000051",
+      "keywordId": "KW-000053",
       "keyword": "Build, Release, Run",
       "aliases": [],
       "category": "System Design",
@@ -1896,7 +1940,7 @@
       ]
     },
     {
-      "keywordId": "KW-000052",
+      "keywordId": "KW-000054",
       "keyword": "Built-in Scope",
       "aliases": [],
       "category": "System Design",
@@ -1919,7 +1963,7 @@
       ]
     },
     {
-      "keywordId": "KW-000053",
+      "keywordId": "KW-000055",
       "keyword": "Caching",
       "aliases": [],
       "category": "Performance Engineering",
@@ -1972,7 +2016,7 @@
       ]
     },
     {
-      "keywordId": "KW-000054",
+      "keywordId": "KW-000056",
       "keyword": "Canary Deployment",
       "aliases": [],
       "category": "Kubernetes",
@@ -2000,7 +2044,7 @@
       ]
     },
     {
-      "keywordId": "KW-000055",
+      "keywordId": "KW-000057",
       "keyword": "Capabilities",
       "aliases": [],
       "category": "Kubernetes",
@@ -2027,7 +2071,7 @@
       ]
     },
     {
-      "keywordId": "KW-000056",
+      "keywordId": "KW-000058",
       "keyword": "CDN",
       "aliases": [
         "Content Delivery Network"
@@ -2072,7 +2116,7 @@
       ]
     },
     {
-      "keywordId": "KW-000057",
+      "keywordId": "KW-000059",
       "keyword": "Chart",
       "aliases": [],
       "category": "System Design",
@@ -2090,7 +2134,7 @@
       ]
     },
     {
-      "keywordId": "KW-000058",
+      "keywordId": "KW-000060",
       "keyword": "chmod",
       "aliases": [],
       "category": "Security",
@@ -2121,7 +2165,7 @@
       ]
     },
     {
-      "keywordId": "KW-000059",
+      "keywordId": "KW-000061",
       "keyword": "chown",
       "aliases": [],
       "category": "Security",
@@ -2152,7 +2196,7 @@
       ]
     },
     {
-      "keywordId": "KW-000060",
+      "keywordId": "KW-000062",
       "keyword": "CI/CD Automation Architecture",
       "aliases": [],
       "category": "CI/CD",
@@ -2170,7 +2214,7 @@
       ]
     },
     {
-      "keywordId": "KW-000061",
+      "keywordId": "KW-000063",
       "keyword": "CI/CD Design Architecture",
       "aliases": [],
       "category": "CI/CD",
@@ -2188,7 +2232,7 @@
       ]
     },
     {
-      "keywordId": "KW-000062",
+      "keywordId": "KW-000064",
       "keyword": "CI/CD Integration Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -2206,7 +2250,7 @@
       ]
     },
     {
-      "keywordId": "KW-000063",
+      "keywordId": "KW-000065",
       "keyword": "CIDR",
       "aliases": [
         "Classless Inter-Domain Routing",
@@ -2247,7 +2291,26 @@
       ]
     },
     {
-      "keywordId": "KW-000064",
+      "keywordId": "KW-000066",
+      "keyword": "Cilium",
+      "aliases": [
+        "Cilium CNI"
+      ],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "Cilium"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000067",
       "keyword": "Cloud Agnosticism Workflow",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -2275,7 +2338,7 @@
       ]
     },
     {
-      "keywordId": "KW-000065",
+      "keywordId": "KW-000068",
       "keyword": "Cloud Automation Architecture",
       "aliases": [],
       "category": "Azure",
@@ -2293,7 +2356,7 @@
       ]
     },
     {
-      "keywordId": "KW-000066",
+      "keywordId": "KW-000069",
       "keyword": "Cloud Bill Architecture",
       "aliases": [],
       "category": "System Design",
@@ -2311,7 +2374,7 @@
       ]
     },
     {
-      "keywordId": "KW-000067",
+      "keywordId": "KW-000070",
       "keyword": "Cloud Computing",
       "aliases": [
         "Public Cloud",
@@ -2342,7 +2405,7 @@
       ]
     },
     {
-      "keywordId": "KW-000068",
+      "keywordId": "KW-000071",
       "keyword": "Cloud Integration",
       "aliases": [],
       "category": "Kubernetes",
@@ -2360,7 +2423,7 @@
       ]
     },
     {
-      "keywordId": "KW-000069",
+      "keywordId": "KW-000072",
       "keyword": "Cloud Kubernetes Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -2378,7 +2441,7 @@
       ]
     },
     {
-      "keywordId": "KW-000070",
+      "keywordId": "KW-000073",
       "keyword": "Cluster",
       "aliases": [],
       "category": "Kubernetes",
@@ -2617,7 +2680,7 @@
       ]
     },
     {
-      "keywordId": "KW-000071",
+      "keywordId": "KW-000074",
       "keyword": "Cluster Autoscaler",
       "aliases": [],
       "category": "Kubernetes",
@@ -2665,7 +2728,7 @@
       ]
     },
     {
-      "keywordId": "KW-000072",
+      "keywordId": "KW-000075",
       "keyword": "ClusterRole",
       "aliases": [],
       "category": "Security",
@@ -2683,7 +2746,7 @@
       ]
     },
     {
-      "keywordId": "KW-000073",
+      "keywordId": "KW-000076",
       "keyword": "CMD",
       "aliases": [],
       "category": "Kubernetes",
@@ -2716,7 +2779,7 @@
       ]
     },
     {
-      "keywordId": "KW-000074",
+      "keywordId": "KW-000077",
       "keyword": "CNI Plugin",
       "aliases": [],
       "category": "Networking",
@@ -2734,7 +2797,7 @@
       ]
     },
     {
-      "keywordId": "KW-000075",
+      "keywordId": "KW-000078",
       "keyword": "Codebase",
       "aliases": [],
       "category": "System Design",
@@ -2777,7 +2840,7 @@
       ]
     },
     {
-      "keywordId": "KW-000076",
+      "keywordId": "KW-000079",
       "keyword": "Common kubectl Architecture",
       "aliases": [],
       "category": "System Design",
@@ -2795,7 +2858,7 @@
       ]
     },
     {
-      "keywordId": "KW-000077",
+      "keywordId": "KW-000080",
       "keyword": "Completions",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -2817,7 +2880,7 @@
       ]
     },
     {
-      "keywordId": "KW-000078",
+      "keywordId": "KW-000081",
       "keyword": "Concurrency",
       "aliases": [],
       "category": "System Design",
@@ -2858,7 +2921,7 @@
       ]
     },
     {
-      "keywordId": "KW-000079",
+      "keywordId": "KW-000082",
       "keyword": "Concurrency Policy",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -2884,7 +2947,7 @@
       ]
     },
     {
-      "keywordId": "KW-000080",
+      "keywordId": "KW-000083",
       "keyword": "Config",
       "aliases": [],
       "category": "System Design",
@@ -2936,7 +2999,7 @@
       ]
     },
     {
-      "keywordId": "KW-000081",
+      "keywordId": "KW-000084",
       "keyword": "ConfigMap",
       "aliases": [
         "K8s ConfigMap"
@@ -2982,7 +3045,7 @@
       ]
     },
     {
-      "keywordId": "KW-000082",
+      "keywordId": "KW-000085",
       "keyword": "ConfigMap Architecture",
       "aliases": [],
       "category": "System Design",
@@ -3000,7 +3063,7 @@
       ]
     },
     {
-      "keywordId": "KW-000083",
+      "keywordId": "KW-000086",
       "keyword": "ConfigMaps & Secrets",
       "aliases": [],
       "category": "Kubernetes",
@@ -3063,7 +3126,7 @@
       ]
     },
     {
-      "keywordId": "KW-000084",
+      "keywordId": "KW-000087",
       "keyword": "Configuration Alignment Validation",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -3091,7 +3154,7 @@
       ]
     },
     {
-      "keywordId": "KW-000085",
+      "keywordId": "KW-000088",
       "keyword": "Configuration Externalization",
       "aliases": [],
       "category": "CI/CD",
@@ -3119,7 +3182,7 @@
       ]
     },
     {
-      "keywordId": "KW-000086",
+      "keywordId": "KW-000089",
       "keyword": "Container",
       "aliases": [
         "Docker Container"
@@ -3329,7 +3392,7 @@
       ]
     },
     {
-      "keywordId": "KW-000087",
+      "keywordId": "KW-000090",
       "keyword": "Continuous Deployment (CD)",
       "aliases": [],
       "category": "Kubernetes",
@@ -3346,7 +3409,7 @@
       ]
     },
     {
-      "keywordId": "KW-000088",
+      "keywordId": "KW-000091",
       "keyword": "Continuous Integration (CI)",
       "aliases": [],
       "category": "Kubernetes",
@@ -3363,7 +3426,7 @@
       ]
     },
     {
-      "keywordId": "KW-000089",
+      "keywordId": "KW-000092",
       "keyword": "Control Plane",
       "aliases": [],
       "category": "Kubernetes",
@@ -3435,7 +3498,7 @@
       ]
     },
     {
-      "keywordId": "KW-000090",
+      "keywordId": "KW-000093",
       "keyword": "Controller Manager",
       "aliases": [],
       "category": "System Design",
@@ -3458,7 +3521,7 @@
       ]
     },
     {
-      "keywordId": "KW-000091",
+      "keywordId": "KW-000094",
       "keyword": "Cordon",
       "aliases": [],
       "category": "System Design",
@@ -3489,7 +3552,7 @@
       ]
     },
     {
-      "keywordId": "KW-000092",
+      "keywordId": "KW-000095",
       "keyword": "CoreDNS",
       "aliases": [],
       "category": "Networking",
@@ -3511,7 +3574,7 @@
       ]
     },
     {
-      "keywordId": "KW-000093",
+      "keywordId": "KW-000096",
       "keyword": "Cost Optimization Architecture",
       "aliases": [],
       "category": "Performance Engineering",
@@ -3529,7 +3592,7 @@
       ]
     },
     {
-      "keywordId": "KW-000094",
+      "keywordId": "KW-000097",
       "keyword": "CPU Limit",
       "aliases": [],
       "category": "System Design",
@@ -3547,7 +3610,7 @@
       ]
     },
     {
-      "keywordId": "KW-000095",
+      "keywordId": "KW-000098",
       "keyword": "CPU Monitoring Architecture",
       "aliases": [],
       "category": "Observability",
@@ -3565,7 +3628,7 @@
       ]
     },
     {
-      "keywordId": "KW-000096",
+      "keywordId": "KW-000099",
       "keyword": "CPU Request",
       "aliases": [],
       "category": "System Design",
@@ -3583,7 +3646,7 @@
       ]
     },
     {
-      "keywordId": "KW-000097",
+      "keywordId": "KW-000100",
       "keyword": "CQRS",
       "aliases": [],
       "category": "Architecture Patterns",
@@ -3600,7 +3663,7 @@
       ]
     },
     {
-      "keywordId": "KW-000098",
+      "keywordId": "KW-000101",
       "keyword": "CrashLoopBackOff",
       "aliases": [],
       "category": "Docker",
@@ -3641,7 +3704,7 @@
       ]
     },
     {
-      "keywordId": "KW-000099",
+      "keywordId": "KW-000102",
       "keyword": "CRD",
       "aliases": [],
       "category": "System Design",
@@ -3664,7 +3727,7 @@
       ]
     },
     {
-      "keywordId": "KW-000100",
+      "keywordId": "KW-000103",
       "keyword": "Cron",
       "aliases": [
         "Crontab",
@@ -3705,7 +3768,7 @@
       ]
     },
     {
-      "keywordId": "KW-000101",
+      "keywordId": "KW-000104",
       "keyword": "Cron & Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -3723,7 +3786,7 @@
       ]
     },
     {
-      "keywordId": "KW-000102",
+      "keywordId": "KW-000105",
       "keyword": "CronJobs Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -3741,7 +3804,26 @@
       ]
     },
     {
-      "keywordId": "KW-000103",
+      "keywordId": "KW-000106",
+      "keyword": "Crossplane",
+      "aliases": [
+        "Kubernetes IaC"
+      ],
+      "category": "Infrastructure as Code",
+      "interviewDomain": "Automation",
+      "difficulty": "Advanced",
+      "frequency": 7,
+      "importance": 8,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "Crossplane"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000107",
       "keyword": "curl",
       "aliases": [],
       "category": "System Design",
@@ -3772,7 +3854,7 @@
       ]
     },
     {
-      "keywordId": "KW-000104",
+      "keywordId": "KW-000108",
       "keyword": "Daemon",
       "aliases": [
         "Daemon Process",
@@ -3807,7 +3889,7 @@
       ]
     },
     {
-      "keywordId": "KW-000105",
+      "keywordId": "KW-000109",
       "keyword": "DaemonSet",
       "aliases": [
         "K8s DaemonSet"
@@ -3848,7 +3930,7 @@
       ]
     },
     {
-      "keywordId": "KW-000106",
+      "keywordId": "KW-000110",
       "keyword": "DaemonSet Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -3866,7 +3948,7 @@
       ]
     },
     {
-      "keywordId": "KW-000107",
+      "keywordId": "KW-000111",
       "keyword": "Data Types",
       "aliases": [],
       "category": "System Design",
@@ -3889,7 +3971,7 @@
       ]
     },
     {
-      "keywordId": "KW-000108",
+      "keywordId": "KW-000112",
       "keyword": "Debugger",
       "aliases": [],
       "category": "Observability",
@@ -3907,7 +3989,7 @@
       ]
     },
     {
-      "keywordId": "KW-000109",
+      "keywordId": "KW-000113",
       "keyword": "Declarative Management",
       "aliases": [],
       "category": "Kubernetes",
@@ -3925,7 +4007,7 @@
       ]
     },
     {
-      "keywordId": "KW-000110",
+      "keywordId": "KW-000114",
       "keyword": "Decorators Architecture",
       "aliases": [],
       "category": "System Design",
@@ -3943,7 +4025,7 @@
       ]
     },
     {
-      "keywordId": "KW-000111",
+      "keywordId": "KW-000115",
       "keyword": "Dependencies",
       "aliases": [],
       "category": "System Design",
@@ -4606,7 +4688,7 @@
       ]
     },
     {
-      "keywordId": "KW-000112",
+      "keywordId": "KW-000116",
       "keyword": "Deployment",
       "aliases": [
         "K8s Deployment",
@@ -5122,7 +5204,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "infra_azure.json",
@@ -5222,7 +5304,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 27,
-          "scenarioTitle": "Cost Optimization (FinOps)"
+          "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -5267,7 +5349,7 @@
       ]
     },
     {
-      "keywordId": "KW-000113",
+      "keywordId": "KW-000117",
       "keyword": "Deployment Failed Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -5285,7 +5367,7 @@
       ]
     },
     {
-      "keywordId": "KW-000114",
+      "keywordId": "KW-000118",
       "keyword": "Deployment Strategy",
       "aliases": [],
       "category": "CI/CD",
@@ -5308,7 +5390,7 @@
       ]
     },
     {
-      "keywordId": "KW-000115",
+      "keywordId": "KW-000119",
       "keyword": "Deployments",
       "aliases": [],
       "category": "Kubernetes",
@@ -5864,7 +5946,7 @@
       ]
     },
     {
-      "keywordId": "KW-000116",
+      "keywordId": "KW-000120",
       "keyword": "describe",
       "aliases": [],
       "category": "System Design",
@@ -6490,7 +6572,7 @@
       ]
     },
     {
-      "keywordId": "KW-000117",
+      "keywordId": "KW-000121",
       "keyword": "Desired Replicas",
       "aliases": [],
       "category": "Kubernetes",
@@ -6508,7 +6590,7 @@
       ]
     },
     {
-      "keywordId": "KW-000118",
+      "keywordId": "KW-000122",
       "keyword": "Dev/Prod Parity",
       "aliases": [],
       "category": "System Design",
@@ -6526,7 +6608,7 @@
       ]
     },
     {
-      "keywordId": "KW-000119",
+      "keywordId": "KW-000123",
       "keyword": "Developer Needs Architecture",
       "aliases": [],
       "category": "Security",
@@ -6544,7 +6626,26 @@
       ]
     },
     {
-      "keywordId": "KW-000120",
+      "keywordId": "KW-000124",
+      "keyword": "DevSecOps Shift Left",
+      "aliases": [
+        "Shift Left Security"
+      ],
+      "category": "Security",
+      "interviewDomain": "Security",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "DevSecOps Shift Left"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000125",
       "keyword": "df",
       "aliases": [],
       "category": "Database & Storage",
@@ -6584,7 +6685,7 @@
       ]
     },
     {
-      "keywordId": "KW-000121",
+      "keywordId": "KW-000126",
       "keyword": "Dictionary",
       "aliases": [],
       "category": "System Design",
@@ -6633,7 +6734,7 @@
       ]
     },
     {
-      "keywordId": "KW-000122",
+      "keywordId": "KW-000127",
       "keyword": "dig",
       "aliases": [],
       "category": "System Design",
@@ -6660,7 +6761,7 @@
       ]
     },
     {
-      "keywordId": "KW-000123",
+      "keywordId": "KW-000128",
       "keyword": "Disaster Recovery Architecture",
       "aliases": [],
       "category": "System Design",
@@ -6683,7 +6784,7 @@
       ]
     },
     {
-      "keywordId": "KW-000124",
+      "keywordId": "KW-000129",
       "keyword": "Disk Management Architecture",
       "aliases": [],
       "category": "Database & Storage",
@@ -6701,7 +6802,7 @@
       ]
     },
     {
-      "keywordId": "KW-000125",
+      "keywordId": "KW-000130",
       "keyword": "Disposability",
       "aliases": [],
       "category": "System Design",
@@ -6719,7 +6820,7 @@
       ]
     },
     {
-      "keywordId": "KW-000126",
+      "keywordId": "KW-000131",
       "keyword": "dmesg",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -6742,7 +6843,7 @@
       ]
     },
     {
-      "keywordId": "KW-000127",
+      "keywordId": "KW-000132",
       "keyword": "DNS",
       "aliases": [
         "Domain Name System",
@@ -6883,7 +6984,7 @@
       ]
     },
     {
-      "keywordId": "KW-000128",
+      "keywordId": "KW-000133",
       "keyword": "Docker",
       "aliases": [],
       "category": "Docker",
@@ -7026,7 +7127,7 @@
       ]
     },
     {
-      "keywordId": "KW-000129",
+      "keywordId": "KW-000134",
       "keyword": "Docker Architecture",
       "aliases": [],
       "category": "Docker",
@@ -7044,7 +7145,7 @@
       ]
     },
     {
-      "keywordId": "KW-000130",
+      "keywordId": "KW-000135",
       "keyword": "Docker Registry Secret",
       "aliases": [],
       "category": "Docker",
@@ -7062,7 +7163,7 @@
       ]
     },
     {
-      "keywordId": "KW-000131",
+      "keywordId": "KW-000136",
       "keyword": "Dockerfile",
       "aliases": [
         "Docker build script"
@@ -7112,7 +7213,7 @@
       ]
     },
     {
-      "keywordId": "KW-000132",
+      "keywordId": "KW-000137",
       "keyword": "Drain",
       "aliases": [],
       "category": "System Design",
@@ -7152,7 +7253,7 @@
       ]
     },
     {
-      "keywordId": "KW-000133",
+      "keywordId": "KW-000138",
       "keyword": "du",
       "aliases": [],
       "category": "Database & Storage",
@@ -7187,7 +7288,26 @@
       ]
     },
     {
-      "keywordId": "KW-000134",
+      "keywordId": "KW-000139",
+      "keyword": "eBPF",
+      "aliases": [
+        "Extended Berkeley Packet Filter"
+      ],
+      "category": "Observability",
+      "interviewDomain": "Observability",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "eBPF"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000140",
       "keyword": "EC2",
       "aliases": [
         "Elastic Compute Cloud",
@@ -7207,7 +7327,7 @@
       ]
     },
     {
-      "keywordId": "KW-000135",
+      "keywordId": "KW-000141",
       "keyword": "ECS",
       "aliases": [
         "Elastic Container Service",
@@ -7227,7 +7347,7 @@
       ]
     },
     {
-      "keywordId": "KW-000136",
+      "keywordId": "KW-000142",
       "keyword": "EKS",
       "aliases": [
         "Elastic Kubernetes Service"
@@ -7252,7 +7372,7 @@
       ]
     },
     {
-      "keywordId": "KW-000137",
+      "keywordId": "KW-000143",
       "keyword": "ELK",
       "aliases": [
         "Elasticsearch Logstash Kibana"
@@ -7272,7 +7392,7 @@
       ]
     },
     {
-      "keywordId": "KW-000138",
+      "keywordId": "KW-000144",
       "keyword": "Endpoints",
       "aliases": [],
       "category": "Networking",
@@ -7395,7 +7515,7 @@
       ]
     },
     {
-      "keywordId": "KW-000139",
+      "keywordId": "KW-000145",
       "keyword": "ENTRYPOINT",
       "aliases": [],
       "category": "Kubernetes",
@@ -7428,7 +7548,7 @@
       ]
     },
     {
-      "keywordId": "KW-000140",
+      "keywordId": "KW-000146",
       "keyword": "Environment Variable",
       "aliases": [],
       "category": "System Design",
@@ -7451,7 +7571,7 @@
       ]
     },
     {
-      "keywordId": "KW-000141",
+      "keywordId": "KW-000147",
       "keyword": "Environment Variables Architecture",
       "aliases": [],
       "category": "System Design",
@@ -7474,7 +7594,7 @@
       ]
     },
     {
-      "keywordId": "KW-000142",
+      "keywordId": "KW-000148",
       "keyword": "Ephemeral Container",
       "aliases": [],
       "category": "Kubernetes",
@@ -7497,7 +7617,7 @@
       ]
     },
     {
-      "keywordId": "KW-000143",
+      "keywordId": "KW-000149",
       "keyword": "Error Budget",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -7514,7 +7634,7 @@
       ]
     },
     {
-      "keywordId": "KW-000144",
+      "keywordId": "KW-000150",
       "keyword": "etcd",
       "aliases": [],
       "category": "System Design",
@@ -7551,7 +7671,7 @@
       ]
     },
     {
-      "keywordId": "KW-000145",
+      "keywordId": "KW-000151",
       "keyword": "etcd Backup",
       "aliases": [],
       "category": "System Design",
@@ -7574,7 +7694,7 @@
       ]
     },
     {
-      "keywordId": "KW-000146",
+      "keywordId": "KW-000152",
       "keyword": "Event Driven Architecture",
       "aliases": [
         "EDA"
@@ -7593,7 +7713,7 @@
       ]
     },
     {
-      "keywordId": "KW-000147",
+      "keywordId": "KW-000153",
       "keyword": "except",
       "aliases": [],
       "category": "System Design",
@@ -7633,7 +7753,7 @@
       ]
     },
     {
-      "keywordId": "KW-000148",
+      "keywordId": "KW-000154",
       "keyword": "Exception Handling Architecture",
       "aliases": [],
       "category": "System Design",
@@ -7651,7 +7771,7 @@
       ]
     },
     {
-      "keywordId": "KW-000149",
+      "keywordId": "KW-000155",
       "keyword": "exec",
       "aliases": [],
       "category": "System Design",
@@ -7669,7 +7789,7 @@
       ]
     },
     {
-      "keywordId": "KW-000150",
+      "keywordId": "KW-000156",
       "keyword": "Execution Plan",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -7697,7 +7817,7 @@
       ]
     },
     {
-      "keywordId": "KW-000151",
+      "keywordId": "KW-000157",
       "keyword": "Failover",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -7805,7 +7925,7 @@
       ]
     },
     {
-      "keywordId": "KW-000152",
+      "keywordId": "KW-000158",
       "keyword": "Fault Domain",
       "aliases": [],
       "category": "System Design",
@@ -7833,7 +7953,7 @@
       ]
     },
     {
-      "keywordId": "KW-000153",
+      "keywordId": "KW-000159",
       "keyword": "File Handling Architecture",
       "aliases": [],
       "category": "System Design",
@@ -7851,7 +7971,7 @@
       ]
     },
     {
-      "keywordId": "KW-000154",
+      "keywordId": "KW-000160",
       "keyword": "File Permissions Architecture",
       "aliases": [],
       "category": "Security",
@@ -7869,7 +7989,7 @@
       ]
     },
     {
-      "keywordId": "KW-000155",
+      "keywordId": "KW-000161",
       "keyword": "File System",
       "aliases": [
         "Linux File System",
@@ -7906,7 +8026,7 @@
       ]
     },
     {
-      "keywordId": "KW-000156",
+      "keywordId": "KW-000162",
       "keyword": "finally",
       "aliases": [],
       "category": "System Design",
@@ -7933,7 +8053,7 @@
       ]
     },
     {
-      "keywordId": "KW-000157",
+      "keywordId": "KW-000163",
       "keyword": "find",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -8031,7 +8151,78 @@
       ]
     },
     {
-      "keywordId": "KW-000158",
+      "keywordId": "KW-000164",
+      "keyword": "FinOps",
+      "aliases": [
+        "Cloud FinOps",
+        "Cloud Cost Optimization"
+      ],
+      "category": "Cost Optimization",
+      "interviewDomain": "Cost Optimization",
+      "difficulty": "Advanced",
+      "frequency": 9,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Cloud Bill Increased by 50%"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "App Cannot Access Azure SQL (Auth)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Azure App Service"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Azure Key Vault"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 36,
+          "scenarioTitle": "Cost Optimization (FinOps)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 38,
+          "scenarioTitle": "Azure Virtual Networks: Core & Peering"
+        },
+        {
+          "file": "new_scenarios.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Cloud Bill Increased by 50%"
+        },
+        {
+          "file": "new_scenarios.json",
+          "scenarioIndex": 36,
+          "scenarioTitle": "Cost Optimization (FinOps)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "Interview FAQ Master Reference"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000165",
       "keyword": "Firewall & Architecture",
       "aliases": [],
       "category": "Security",
@@ -8049,7 +8240,7 @@
       ]
     },
     {
-      "keywordId": "KW-000159",
+      "keywordId": "KW-000166",
       "keyword": "firewalld",
       "aliases": [],
       "category": "Security",
@@ -8080,7 +8271,7 @@
       ]
     },
     {
-      "keywordId": "KW-000160",
+      "keywordId": "KW-000167",
       "keyword": "Fixture",
       "aliases": [],
       "category": "System Design",
@@ -8098,7 +8289,7 @@
       ]
     },
     {
-      "keywordId": "KW-000161",
+      "keywordId": "KW-000168",
       "keyword": "Functions",
       "aliases": [
         "Azure Functions",
@@ -8195,7 +8386,7 @@
       ]
     },
     {
-      "keywordId": "KW-000162",
+      "keywordId": "KW-000169",
       "keyword": "Generators and Architecture",
       "aliases": [],
       "category": "System Design",
@@ -8213,7 +8404,7 @@
       ]
     },
     {
-      "keywordId": "KW-000163",
+      "keywordId": "KW-000170",
       "keyword": "get",
       "aliases": [],
       "category": "System Design",
@@ -8259,7 +8450,7 @@
       ]
     },
     {
-      "keywordId": "KW-000164",
+      "keywordId": "KW-000171",
       "keyword": "Git & Architecture",
       "aliases": [],
       "category": "Troubleshooting",
@@ -8277,7 +8468,7 @@
       ]
     },
     {
-      "keywordId": "KW-000165",
+      "keywordId": "KW-000172",
       "keyword": "GitHub Actions",
       "aliases": [],
       "category": "CI/CD",
@@ -8310,7 +8501,7 @@
       ]
     },
     {
-      "keywordId": "KW-000166",
+      "keywordId": "KW-000173",
       "keyword": "GitHub Actions Architecture",
       "aliases": [],
       "category": "CI/CD",
@@ -8333,7 +8524,7 @@
       ]
     },
     {
-      "keywordId": "KW-000167",
+      "keywordId": "KW-000174",
       "keyword": "GitLab CI",
       "aliases": [],
       "category": "CI/CD",
@@ -8350,14 +8541,16 @@
       ]
     },
     {
-      "keywordId": "KW-000168",
+      "keywordId": "KW-000175",
       "keyword": "GitOps",
-      "aliases": [],
-      "category": "Kubernetes",
-      "interviewDomain": "Architecture",
-      "difficulty": "Advanced",
-      "frequency": 6,
-      "importance": 6,
+      "aliases": [
+        "Pull-based CD"
+      ],
+      "category": "CI/CD",
+      "interviewDomain": "Deployment",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
       "seniority": "Senior",
       "sourceReferences": [
         {
@@ -8373,7 +8566,7 @@
       ]
     },
     {
-      "keywordId": "KW-000169",
+      "keywordId": "KW-000176",
       "keyword": "Global Scope",
       "aliases": [],
       "category": "System Design",
@@ -8391,7 +8584,7 @@
       ]
     },
     {
-      "keywordId": "KW-000170",
+      "keywordId": "KW-000177",
       "keyword": "Global VNet Peering",
       "aliases": [],
       "category": "Networking",
@@ -8419,7 +8612,7 @@
       ]
     },
     {
-      "keywordId": "KW-000171",
+      "keywordId": "KW-000178",
       "keyword": "Google Cloud Platform",
       "aliases": [
         "GCP"
@@ -8454,7 +8647,7 @@
       ]
     },
     {
-      "keywordId": "KW-000172",
+      "keywordId": "KW-000179",
       "keyword": "Grafana",
       "aliases": [],
       "category": "Observability",
@@ -8502,7 +8695,7 @@
       ]
     },
     {
-      "keywordId": "KW-000173",
+      "keywordId": "KW-000180",
       "keyword": "Grafana Alert Architecture",
       "aliases": [],
       "category": "Observability",
@@ -8520,7 +8713,7 @@
       ]
     },
     {
-      "keywordId": "KW-000174",
+      "keywordId": "KW-000181",
       "keyword": "grep",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -8601,7 +8794,7 @@
       ]
     },
     {
-      "keywordId": "KW-000175",
+      "keywordId": "KW-000182",
       "keyword": "Groups",
       "aliases": [],
       "category": "System Design",
@@ -8724,7 +8917,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 27,
-          "scenarioTitle": "Cost Optimization (FinOps)"
+          "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -8733,7 +8926,7 @@
       ]
     },
     {
-      "keywordId": "KW-000176",
+      "keywordId": "KW-000183",
       "keyword": "Handler",
       "aliases": [],
       "category": "Observability",
@@ -8751,7 +8944,7 @@
       ]
     },
     {
-      "keywordId": "KW-000177",
+      "keywordId": "KW-000184",
       "keyword": "HCL",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -8794,7 +8987,7 @@
       ]
     },
     {
-      "keywordId": "KW-000178",
+      "keywordId": "KW-000185",
       "keyword": "Headless Service",
       "aliases": [],
       "category": "Networking",
@@ -8825,7 +9018,7 @@
       ]
     },
     {
-      "keywordId": "KW-000179",
+      "keywordId": "KW-000186",
       "keyword": "Health Check",
       "aliases": [],
       "category": "Observability",
@@ -8843,7 +9036,7 @@
       ]
     },
     {
-      "keywordId": "KW-000180",
+      "keywordId": "KW-000187",
       "keyword": "Health Checks Architecture",
       "aliases": [],
       "category": "System Design",
@@ -8861,7 +9054,7 @@
       ]
     },
     {
-      "keywordId": "KW-000181",
+      "keywordId": "KW-000188",
       "keyword": "Helm Architecture",
       "aliases": [],
       "category": "System Design",
@@ -8879,7 +9072,7 @@
       ]
     },
     {
-      "keywordId": "KW-000182",
+      "keywordId": "KW-000189",
       "keyword": "High Availability (HA)",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -8896,7 +9089,7 @@
       ]
     },
     {
-      "keywordId": "KW-000183",
+      "keywordId": "KW-000190",
       "keyword": "History Limits",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -8914,7 +9107,7 @@
       ]
     },
     {
-      "keywordId": "KW-000184",
+      "keywordId": "KW-000191",
       "keyword": "Hotfix",
       "aliases": [],
       "category": "Production Support",
@@ -8952,7 +9145,7 @@
       ]
     },
     {
-      "keywordId": "KW-000185",
+      "keywordId": "KW-000192",
       "keyword": "HPA",
       "aliases": [
         "Horizontal Pod Autoscaler"
@@ -8992,7 +9185,7 @@
       ]
     },
     {
-      "keywordId": "KW-000186",
+      "keywordId": "KW-000193",
       "keyword": "HTTP",
       "aliases": [
         "Hypertext Transfer Protocol",
@@ -9133,7 +9326,7 @@
       ]
     },
     {
-      "keywordId": "KW-000187",
+      "keywordId": "KW-000194",
       "keyword": "HTTPS",
       "aliases": [
         "HTTP Secure",
@@ -9210,7 +9403,7 @@
       ]
     },
     {
-      "keywordId": "KW-000188",
+      "keywordId": "KW-000195",
       "keyword": "Hub-and-Spoke",
       "aliases": [],
       "category": "Networking",
@@ -9253,7 +9446,7 @@
       ]
     },
     {
-      "keywordId": "KW-000189",
+      "keywordId": "KW-000196",
       "keyword": "IaaS",
       "aliases": [
         "Infrastructure as a Service"
@@ -9272,7 +9465,7 @@
       ]
     },
     {
-      "keywordId": "KW-000190",
+      "keywordId": "KW-000197",
       "keyword": "IAM",
       "aliases": [
         "Identity and Access Management"
@@ -9297,7 +9490,7 @@
       ]
     },
     {
-      "keywordId": "KW-000191",
+      "keywordId": "KW-000198",
       "keyword": "Idempotency",
       "aliases": [],
       "category": "Configuration Management",
@@ -9780,7 +9973,7 @@
       ]
     },
     {
-      "keywordId": "KW-000192",
+      "keywordId": "KW-000199",
       "keyword": "Image",
       "aliases": [
         "Docker Image",
@@ -9935,7 +10128,7 @@
       ]
     },
     {
-      "keywordId": "KW-000193",
+      "keywordId": "KW-000200",
       "keyword": "ImagePullBackOff",
       "aliases": [],
       "category": "Docker",
@@ -9976,7 +10169,7 @@
       ]
     },
     {
-      "keywordId": "KW-000194",
+      "keywordId": "KW-000201",
       "keyword": "Immutable",
       "aliases": [],
       "category": "System Design",
@@ -10096,7 +10289,7 @@
       ]
     },
     {
-      "keywordId": "KW-000195",
+      "keywordId": "KW-000202",
       "keyword": "Immutable ConfigMap",
       "aliases": [],
       "category": "System Design",
@@ -10114,7 +10307,7 @@
       ]
     },
     {
-      "keywordId": "KW-000196",
+      "keywordId": "KW-000203",
       "keyword": "Incident Management",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -10152,7 +10345,7 @@
       ]
     },
     {
-      "keywordId": "KW-000197",
+      "keywordId": "KW-000204",
       "keyword": "Incident Management Architecture",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -10170,7 +10363,7 @@
       ]
     },
     {
-      "keywordId": "KW-000198",
+      "keywordId": "KW-000205",
       "keyword": "Incident Response",
       "aliases": [],
       "category": "Incident Management",
@@ -10238,7 +10431,7 @@
       ]
     },
     {
-      "keywordId": "KW-000199",
+      "keywordId": "KW-000206",
       "keyword": "Index",
       "aliases": [
         "Database Index"
@@ -10257,7 +10450,7 @@
       ]
     },
     {
-      "keywordId": "KW-000200",
+      "keywordId": "KW-000207",
       "keyword": "Infrastructure as Code (IaC)",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -10274,7 +10467,7 @@
       ]
     },
     {
-      "keywordId": "KW-000201",
+      "keywordId": "KW-000208",
       "keyword": "Ingress",
       "aliases": [
         "K8s Ingress",
@@ -10380,7 +10573,7 @@
       ]
     },
     {
-      "keywordId": "KW-000202",
+      "keywordId": "KW-000209",
       "keyword": "Ingress Architecture",
       "aliases": [],
       "category": "Networking",
@@ -10398,7 +10591,7 @@
       ]
     },
     {
-      "keywordId": "KW-000203",
+      "keywordId": "KW-000210",
       "keyword": "Ingress Resource",
       "aliases": [],
       "category": "Networking",
@@ -10420,7 +10613,7 @@
       ]
     },
     {
-      "keywordId": "KW-000204",
+      "keywordId": "KW-000211",
       "keyword": "Init Container",
       "aliases": [],
       "category": "Kubernetes",
@@ -10443,7 +10636,7 @@
       ]
     },
     {
-      "keywordId": "KW-000205",
+      "keywordId": "KW-000212",
       "keyword": "Inventory",
       "aliases": [],
       "category": "Configuration Management",
@@ -10476,7 +10669,7 @@
       ]
     },
     {
-      "keywordId": "KW-000206",
+      "keywordId": "KW-000213",
       "keyword": "iptables",
       "aliases": [],
       "category": "Security",
@@ -10507,7 +10700,7 @@
       ]
     },
     {
-      "keywordId": "KW-000207",
+      "keywordId": "KW-000214",
       "keyword": "Isolation",
       "aliases": [],
       "category": "System Design",
@@ -10565,7 +10758,7 @@
       ]
     },
     {
-      "keywordId": "KW-000208",
+      "keywordId": "KW-000215",
       "keyword": "Jaeger",
       "aliases": [],
       "category": "Observability",
@@ -10582,7 +10775,7 @@
       ]
     },
     {
-      "keywordId": "KW-000209",
+      "keywordId": "KW-000216",
       "keyword": "Jenkins",
       "aliases": [],
       "category": "CI/CD",
@@ -10640,7 +10833,7 @@
       ]
     },
     {
-      "keywordId": "KW-000210",
+      "keywordId": "KW-000217",
       "keyword": "Jenkins Architecture",
       "aliases": [],
       "category": "CI/CD",
@@ -10658,7 +10851,7 @@
       ]
     },
     {
-      "keywordId": "KW-000211",
+      "keywordId": "KW-000218",
       "keyword": "Jenkins Pipeline Architecture",
       "aliases": [],
       "category": "CI/CD",
@@ -10676,7 +10869,7 @@
       ]
     },
     {
-      "keywordId": "KW-000212",
+      "keywordId": "KW-000219",
       "keyword": "Jobs Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -10694,7 +10887,7 @@
       ]
     },
     {
-      "keywordId": "KW-000213",
+      "keywordId": "KW-000220",
       "keyword": "journalctl",
       "aliases": [],
       "category": "Observability",
@@ -10721,7 +10914,7 @@
       ]
     },
     {
-      "keywordId": "KW-000214",
+      "keywordId": "KW-000221",
       "keyword": "JSON Handling Architecture",
       "aliases": [],
       "category": "System Design",
@@ -10739,7 +10932,7 @@
       ]
     },
     {
-      "keywordId": "KW-000215",
+      "keywordId": "KW-000222",
       "keyword": "json.dumps",
       "aliases": [],
       "category": "System Design",
@@ -10757,7 +10950,7 @@
       ]
     },
     {
-      "keywordId": "KW-000216",
+      "keywordId": "KW-000223",
       "keyword": "json.loads",
       "aliases": [],
       "category": "System Design",
@@ -10775,7 +10968,7 @@
       ]
     },
     {
-      "keywordId": "KW-000217",
+      "keywordId": "KW-000224",
       "keyword": "JWT",
       "aliases": [
         "JSON Web Token"
@@ -10794,7 +10987,45 @@
       ]
     },
     {
-      "keywordId": "KW-000218",
+      "keywordId": "KW-000225",
+      "keyword": "Karpenter",
+      "aliases": [
+        "Kubernetes Node Autoscaler"
+      ],
+      "category": "Kubernetes",
+      "interviewDomain": "Architecture",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 8,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "Karpenter"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000226",
+      "keyword": "KEDA",
+      "aliases": [
+        "Kubernetes Event-driven Autoscaling"
+      ],
+      "category": "Kubernetes",
+      "interviewDomain": "Architecture",
+      "difficulty": "Intermediate",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "KEDA"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000227",
       "keyword": "Kernel",
       "aliases": [
         "OS Kernel",
@@ -10878,7 +11109,7 @@
       ]
     },
     {
-      "keywordId": "KW-000219",
+      "keywordId": "KW-000228",
       "keyword": "Kernel Module",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -10896,7 +11127,7 @@
       ]
     },
     {
-      "keywordId": "KW-000220",
+      "keywordId": "KW-000229",
       "keyword": "Kernel Panic",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -10914,7 +11145,7 @@
       ]
     },
     {
-      "keywordId": "KW-000221",
+      "keywordId": "KW-000230",
       "keyword": "Kernel Troubleshooting Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -10932,7 +11163,7 @@
       ]
     },
     {
-      "keywordId": "KW-000222",
+      "keywordId": "KW-000231",
       "keyword": "Key Vault",
       "aliases": [
         "Azure Key Vault",
@@ -10993,7 +11224,7 @@
       ]
     },
     {
-      "keywordId": "KW-000223",
+      "keywordId": "KW-000232",
       "keyword": "kind",
       "aliases": [],
       "category": "System Design",
@@ -11011,7 +11242,7 @@
       ]
     },
     {
-      "keywordId": "KW-000224",
+      "keywordId": "KW-000233",
       "keyword": "kube-proxy",
       "aliases": [],
       "category": "Networking",
@@ -11043,7 +11274,7 @@
       ]
     },
     {
-      "keywordId": "KW-000225",
+      "keywordId": "KW-000234",
       "keyword": "kubelet",
       "aliases": [],
       "category": "System Design",
@@ -11075,7 +11306,7 @@
       ]
     },
     {
-      "keywordId": "KW-000226",
+      "keywordId": "KW-000235",
       "keyword": "Kubernetes",
       "aliases": [
         "K8s",
@@ -11532,7 +11763,7 @@
       ]
     },
     {
-      "keywordId": "KW-000227",
+      "keywordId": "KW-000236",
       "keyword": "Kubernetes API",
       "aliases": [],
       "category": "Kubernetes",
@@ -11584,7 +11815,7 @@
       ]
     },
     {
-      "keywordId": "KW-000228",
+      "keywordId": "KW-000237",
       "keyword": "Kubernetes Deep Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -11602,7 +11833,7 @@
       ]
     },
     {
-      "keywordId": "KW-000229",
+      "keywordId": "KW-000238",
       "keyword": "Kubernetes Fundamentals Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -11620,7 +11851,7 @@
       ]
     },
     {
-      "keywordId": "KW-000230",
+      "keywordId": "KW-000239",
       "keyword": "Kubernetes Python Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -11638,7 +11869,7 @@
       ]
     },
     {
-      "keywordId": "KW-000231",
+      "keywordId": "KW-000240",
       "keyword": "Labels",
       "aliases": [],
       "category": "System Design",
@@ -11670,7 +11901,7 @@
       ]
     },
     {
-      "keywordId": "KW-000232",
+      "keywordId": "KW-000241",
       "keyword": "Labels, Selectors Architecture",
       "aliases": [],
       "category": "System Design",
@@ -11688,7 +11919,7 @@
       ]
     },
     {
-      "keywordId": "KW-000233",
+      "keywordId": "KW-000242",
       "keyword": "Lambda",
       "aliases": [],
       "category": "System Design",
@@ -11714,7 +11945,7 @@
       ]
     },
     {
-      "keywordId": "KW-000234",
+      "keywordId": "KW-000243",
       "keyword": "Lifecycle",
       "aliases": [
         "Terraform Lifecycle"
@@ -11824,7 +12055,7 @@
       ]
     },
     {
-      "keywordId": "KW-000235",
+      "keywordId": "KW-000244",
       "keyword": "Linux",
       "aliases": [
         "Linux OS",
@@ -12134,7 +12365,7 @@
       ]
     },
     {
-      "keywordId": "KW-000236",
+      "keywordId": "KW-000245",
       "keyword": "Linux Architecture Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -12152,7 +12383,7 @@
       ]
     },
     {
-      "keywordId": "KW-000237",
+      "keywordId": "KW-000246",
       "keyword": "Linux Basic Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -12170,7 +12401,7 @@
       ]
     },
     {
-      "keywordId": "KW-000238",
+      "keywordId": "KW-000247",
       "keyword": "Linux Command Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -12188,7 +12419,7 @@
       ]
     },
     {
-      "keywordId": "KW-000239",
+      "keywordId": "KW-000248",
       "keyword": "Linux File Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -12206,7 +12437,7 @@
       ]
     },
     {
-      "keywordId": "KW-000240",
+      "keywordId": "KW-000249",
       "keyword": "Linux Networking Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -12224,7 +12455,7 @@
       ]
     },
     {
-      "keywordId": "KW-000241",
+      "keywordId": "KW-000250",
       "keyword": "List",
       "aliases": [],
       "category": "System Design",
@@ -12257,7 +12488,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -12278,7 +12509,7 @@
       ]
     },
     {
-      "keywordId": "KW-000242",
+      "keywordId": "KW-000251",
       "keyword": "Liveness Probe",
       "aliases": [],
       "category": "System Design",
@@ -12300,7 +12531,7 @@
       ]
     },
     {
-      "keywordId": "KW-000243",
+      "keywordId": "KW-000252",
       "keyword": "Load Average",
       "aliases": [],
       "category": "Performance Engineering",
@@ -12331,7 +12562,7 @@
       ]
     },
     {
-      "keywordId": "KW-000244",
+      "keywordId": "KW-000253",
       "keyword": "Load Balancer",
       "aliases": [
         "L4 Load Balancer",
@@ -12412,7 +12643,7 @@
       ]
     },
     {
-      "keywordId": "KW-000245",
+      "keywordId": "KW-000254",
       "keyword": "LoadBalancer",
       "aliases": [],
       "category": "Networking",
@@ -12458,7 +12689,7 @@
       ]
     },
     {
-      "keywordId": "KW-000246",
+      "keywordId": "KW-000255",
       "keyword": "Local Scope",
       "aliases": [],
       "category": "System Design",
@@ -12480,7 +12711,7 @@
       ]
     },
     {
-      "keywordId": "KW-000247",
+      "keywordId": "KW-000256",
       "keyword": "Log Levels",
       "aliases": [],
       "category": "Observability",
@@ -12498,7 +12729,7 @@
       ]
     },
     {
-      "keywordId": "KW-000248",
+      "keywordId": "KW-000257",
       "keyword": "Log Pattern Isolation",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -12526,7 +12757,7 @@
       ]
     },
     {
-      "keywordId": "KW-000249",
+      "keywordId": "KW-000258",
       "keyword": "Logical Isolation",
       "aliases": [],
       "category": "Observability",
@@ -12544,7 +12775,7 @@
       ]
     },
     {
-      "keywordId": "KW-000250",
+      "keywordId": "KW-000259",
       "keyword": "Logs",
       "aliases": [],
       "category": "Observability",
@@ -13242,7 +13473,7 @@
       ]
     },
     {
-      "keywordId": "KW-000251",
+      "keywordId": "KW-000260",
       "keyword": "Logs & Architecture",
       "aliases": [],
       "category": "Observability",
@@ -13260,7 +13491,7 @@
       ]
     },
     {
-      "keywordId": "KW-000252",
+      "keywordId": "KW-000261",
       "keyword": "Loki",
       "aliases": [],
       "category": "Observability",
@@ -13277,7 +13508,7 @@
       ]
     },
     {
-      "keywordId": "KW-000253",
+      "keywordId": "KW-000262",
       "keyword": "Loops",
       "aliases": [],
       "category": "System Design",
@@ -13300,7 +13531,7 @@
       ]
     },
     {
-      "keywordId": "KW-000254",
+      "keywordId": "KW-000263",
       "keyword": "ls",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -13318,7 +13549,7 @@
       ]
     },
     {
-      "keywordId": "KW-000255",
+      "keywordId": "KW-000264",
       "keyword": "LVM",
       "aliases": [],
       "category": "Database & Storage",
@@ -13349,7 +13580,7 @@
       ]
     },
     {
-      "keywordId": "KW-000256",
+      "keywordId": "KW-000265",
       "keyword": "Managed Control Plane",
       "aliases": [],
       "category": "Kubernetes",
@@ -13367,7 +13598,7 @@
       ]
     },
     {
-      "keywordId": "KW-000257",
+      "keywordId": "KW-000266",
       "keyword": "Managed Identities",
       "aliases": [],
       "category": "Azure",
@@ -13410,7 +13641,7 @@
       ]
     },
     {
-      "keywordId": "KW-000258",
+      "keywordId": "KW-000267",
       "keyword": "MatchExpressions",
       "aliases": [],
       "category": "System Design",
@@ -13428,7 +13659,7 @@
       ]
     },
     {
-      "keywordId": "KW-000259",
+      "keywordId": "KW-000268",
       "keyword": "MatchLabels",
       "aliases": [],
       "category": "System Design",
@@ -13446,7 +13677,7 @@
       ]
     },
     {
-      "keywordId": "KW-000260",
+      "keywordId": "KW-000269",
       "keyword": "Memory Limit",
       "aliases": [],
       "category": "System Design",
@@ -13468,7 +13699,7 @@
       ]
     },
     {
-      "keywordId": "KW-000261",
+      "keywordId": "KW-000270",
       "keyword": "Memory Management Architecture",
       "aliases": [],
       "category": "System Design",
@@ -13486,7 +13717,7 @@
       ]
     },
     {
-      "keywordId": "KW-000262",
+      "keywordId": "KW-000271",
       "keyword": "metadata",
       "aliases": [],
       "category": "System Design",
@@ -13534,7 +13765,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 27,
-          "scenarioTitle": "Cost Optimization (FinOps)"
+          "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -13543,7 +13774,7 @@
       ]
     },
     {
-      "keywordId": "KW-000263",
+      "keywordId": "KW-000272",
       "keyword": "Metrics",
       "aliases": [],
       "category": "Observability",
@@ -14150,7 +14381,7 @@
       ]
     },
     {
-      "keywordId": "KW-000264",
+      "keywordId": "KW-000273",
       "keyword": "Microservices",
       "aliases": [
         "Microservice"
@@ -14700,7 +14931,7 @@
       ]
     },
     {
-      "keywordId": "KW-000265",
+      "keywordId": "KW-000274",
       "keyword": "Microsoft-Hosted Agents",
       "aliases": [],
       "category": "Azure",
@@ -14728,7 +14959,7 @@
       ]
     },
     {
-      "keywordId": "KW-000266",
+      "keywordId": "KW-000275",
       "keyword": "Module",
       "aliases": [
         "Terraform Module"
@@ -14825,7 +15056,7 @@
       ]
     },
     {
-      "keywordId": "KW-000267",
+      "keywordId": "KW-000276",
       "keyword": "Module Partitioning",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -14853,7 +15084,7 @@
       ]
     },
     {
-      "keywordId": "KW-000268",
+      "keywordId": "KW-000277",
       "keyword": "Modules",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -14960,7 +15191,7 @@
       ]
     },
     {
-      "keywordId": "KW-000269",
+      "keywordId": "KW-000278",
       "keyword": "Modules & Architecture",
       "aliases": [],
       "category": "System Design",
@@ -14978,7 +15209,7 @@
       ]
     },
     {
-      "keywordId": "KW-000270",
+      "keywordId": "KW-000279",
       "keyword": "Monitoring Architecture",
       "aliases": [],
       "category": "Observability",
@@ -15001,7 +15232,7 @@
       ]
     },
     {
-      "keywordId": "KW-000271",
+      "keywordId": "KW-000280",
       "keyword": "Monitoring Scripts Architecture",
       "aliases": [],
       "category": "Observability",
@@ -15019,7 +15250,7 @@
       ]
     },
     {
-      "keywordId": "KW-000272",
+      "keywordId": "KW-000281",
       "keyword": "Mount",
       "aliases": [],
       "category": "System Design",
@@ -15047,7 +15278,7 @@
       ]
     },
     {
-      "keywordId": "KW-000273",
+      "keywordId": "KW-000282",
       "keyword": "MTTR (Mean Time To Recovery)",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -15064,7 +15295,7 @@
       ]
     },
     {
-      "keywordId": "KW-000274",
+      "keywordId": "KW-000283",
       "keyword": "Multi Container Pod",
       "aliases": [],
       "category": "Kubernetes",
@@ -15087,7 +15318,7 @@
       ]
     },
     {
-      "keywordId": "KW-000275",
+      "keywordId": "KW-000284",
       "keyword": "Multi Stage Build",
       "aliases": [
         "Docker Multi-stage"
@@ -15106,7 +15337,7 @@
       ]
     },
     {
-      "keywordId": "KW-000276",
+      "keywordId": "KW-000285",
       "keyword": "Multi-Stage Builds",
       "aliases": [],
       "category": "Kubernetes",
@@ -15134,7 +15365,7 @@
       ]
     },
     {
-      "keywordId": "KW-000277",
+      "keywordId": "KW-000286",
       "keyword": "Mutable",
       "aliases": [],
       "category": "System Design",
@@ -15174,7 +15405,7 @@
       ]
     },
     {
-      "keywordId": "KW-000278",
+      "keywordId": "KW-000287",
       "keyword": "Mutable vs Architecture",
       "aliases": [],
       "category": "System Design",
@@ -15192,7 +15423,7 @@
       ]
     },
     {
-      "keywordId": "KW-000279",
+      "keywordId": "KW-000288",
       "keyword": "Namespace",
       "aliases": [
         "K8s Namespace"
@@ -15243,7 +15474,7 @@
       ]
     },
     {
-      "keywordId": "KW-000280",
+      "keywordId": "KW-000289",
       "keyword": "Namespaces Architecture",
       "aliases": [],
       "category": "System Design",
@@ -15261,7 +15492,7 @@
       ]
     },
     {
-      "keywordId": "KW-000281",
+      "keywordId": "KW-000290",
       "keyword": "NAT",
       "aliases": [
         "Network Address Translation",
@@ -15292,7 +15523,7 @@
       ]
     },
     {
-      "keywordId": "KW-000282",
+      "keywordId": "KW-000291",
       "keyword": "Networking Architecture",
       "aliases": [],
       "category": "Networking",
@@ -15320,7 +15551,7 @@
       ]
     },
     {
-      "keywordId": "KW-000283",
+      "keywordId": "KW-000292",
       "keyword": "Networking Commands Architecture",
       "aliases": [],
       "category": "System Design",
@@ -15338,7 +15569,7 @@
       ]
     },
     {
-      "keywordId": "KW-000284",
+      "keywordId": "KW-000293",
       "keyword": "NetworkPolicy",
       "aliases": [],
       "category": "Networking",
@@ -15361,7 +15592,7 @@
       ]
     },
     {
-      "keywordId": "KW-000285",
+      "keywordId": "KW-000294",
       "keyword": "Node Affinity",
       "aliases": [],
       "category": "System Design",
@@ -15388,7 +15619,7 @@
       ]
     },
     {
-      "keywordId": "KW-000286",
+      "keywordId": "KW-000295",
       "keyword": "Node Groups",
       "aliases": [],
       "category": "Kubernetes",
@@ -15406,7 +15637,7 @@
       ]
     },
     {
-      "keywordId": "KW-000287",
+      "keywordId": "KW-000296",
       "keyword": "Node Selector",
       "aliases": [],
       "category": "Kubernetes",
@@ -15424,7 +15655,7 @@
       ]
     },
     {
-      "keywordId": "KW-000288",
+      "keywordId": "KW-000297",
       "keyword": "nodeSelector",
       "aliases": [],
       "category": "System Design",
@@ -15447,7 +15678,7 @@
       ]
     },
     {
-      "keywordId": "KW-000289",
+      "keywordId": "KW-000298",
       "keyword": "NSG",
       "aliases": [
         "Network Security Group",
@@ -15508,7 +15739,7 @@
       ]
     },
     {
-      "keywordId": "KW-000290",
+      "keywordId": "KW-000299",
       "keyword": "OAuth",
       "aliases": [
         "OAuth2"
@@ -15527,7 +15758,7 @@
       ]
     },
     {
-      "keywordId": "KW-000291",
+      "keywordId": "KW-000300",
       "keyword": "Observability",
       "aliases": [],
       "category": "Kubernetes",
@@ -16031,11 +16262,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 11,
           "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "Interview FAQ Master Reference"
         }
       ]
     },
     {
-      "keywordId": "KW-000292",
+      "keywordId": "KW-000301",
       "keyword": "Observability Architecture",
       "aliases": [],
       "category": "Observability",
@@ -16053,7 +16289,7 @@
       ]
     },
     {
-      "keywordId": "KW-000293",
+      "keywordId": "KW-000302",
       "keyword": "OIDC",
       "aliases": [
         "OpenID Connect"
@@ -16093,7 +16329,7 @@
       ]
     },
     {
-      "keywordId": "KW-000294",
+      "keywordId": "KW-000303",
       "keyword": "One Pod Per Node",
       "aliases": [],
       "category": "Kubernetes",
@@ -16111,7 +16347,7 @@
       ]
     },
     {
-      "keywordId": "KW-000295",
+      "keywordId": "KW-000304",
       "keyword": "OOM Killer",
       "aliases": [],
       "category": "System Design",
@@ -16142,7 +16378,26 @@
       ]
     },
     {
-      "keywordId": "KW-000296",
+      "keywordId": "KW-000305",
+      "keyword": "OPA Gatekeeper",
+      "aliases": [
+        "Open Policy Agent Gatekeeper"
+      ],
+      "category": "Security",
+      "interviewDomain": "Security",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "glossary-seed.json",
+          "keyword": "OPA Gatekeeper"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000306",
       "keyword": "Opaque Secret",
       "aliases": [],
       "category": "Security",
@@ -16160,7 +16415,7 @@
       ]
     },
     {
-      "keywordId": "KW-000297",
+      "keywordId": "KW-000307",
       "keyword": "open()",
       "aliases": [],
       "category": "System Design",
@@ -16177,7 +16432,7 @@
       ]
     },
     {
-      "keywordId": "KW-000298",
+      "keywordId": "KW-000308",
       "keyword": "OpenTelemetry",
       "aliases": [
         "OTel"
@@ -16185,8 +16440,8 @@
       "category": "Observability",
       "interviewDomain": "Observability",
       "difficulty": "Intermediate",
-      "frequency": 7,
-      "importance": 7,
+      "frequency": 9,
+      "importance": 9,
       "seniority": "Senior",
       "sourceReferences": [
         {
@@ -16202,7 +16457,7 @@
       ]
     },
     {
-      "keywordId": "KW-000299",
+      "keywordId": "KW-000309",
       "keyword": "Operator",
       "aliases": [],
       "category": "System Design",
@@ -16225,7 +16480,7 @@
       ]
     },
     {
-      "keywordId": "KW-000300",
+      "keywordId": "KW-000310",
       "keyword": "Operators & Architecture",
       "aliases": [],
       "category": "System Design",
@@ -16243,7 +16498,7 @@
       ]
     },
     {
-      "keywordId": "KW-000301",
+      "keywordId": "KW-000311",
       "keyword": "Orchestration Layer",
       "aliases": [],
       "category": "Kubernetes",
@@ -16271,7 +16526,7 @@
       ]
     },
     {
-      "keywordId": "KW-000302",
+      "keywordId": "KW-000312",
       "keyword": "Ordered Scaling",
       "aliases": [],
       "category": "Kubernetes",
@@ -16289,7 +16544,7 @@
       ]
     },
     {
-      "keywordId": "KW-000303",
+      "keywordId": "KW-000313",
       "keyword": "OS Automation Architecture",
       "aliases": [],
       "category": "System Design",
@@ -16307,7 +16562,7 @@
       ]
     },
     {
-      "keywordId": "KW-000304",
+      "keywordId": "KW-000314",
       "keyword": "os module",
       "aliases": [],
       "category": "System Design",
@@ -16325,7 +16580,7 @@
       ]
     },
     {
-      "keywordId": "KW-000305",
+      "keywordId": "KW-000315",
       "keyword": "os.environ",
       "aliases": [],
       "category": "Security",
@@ -16343,7 +16598,7 @@
       ]
     },
     {
-      "keywordId": "KW-000306",
+      "keywordId": "KW-000316",
       "keyword": "os.getenv",
       "aliases": [],
       "category": "Security",
@@ -16361,7 +16616,7 @@
       ]
     },
     {
-      "keywordId": "KW-000307",
+      "keywordId": "KW-000317",
       "keyword": "PaaS",
       "aliases": [
         "Platform as a Service"
@@ -16426,7 +16681,7 @@
       ]
     },
     {
-      "keywordId": "KW-000308",
+      "keywordId": "KW-000318",
       "keyword": "Package",
       "aliases": [],
       "category": "System Design",
@@ -16528,7 +16783,7 @@
       ]
     },
     {
-      "keywordId": "KW-000309",
+      "keywordId": "KW-000319",
       "keyword": "Package Management Architecture",
       "aliases": [],
       "category": "System Design",
@@ -16551,7 +16806,7 @@
       ]
     },
     {
-      "keywordId": "KW-000310",
+      "keywordId": "KW-000320",
       "keyword": "Parallelism",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -16577,7 +16832,7 @@
       ]
     },
     {
-      "keywordId": "KW-000311",
+      "keywordId": "KW-000321",
       "keyword": "Parameters",
       "aliases": [],
       "category": "System Design",
@@ -16634,7 +16889,7 @@
       ]
     },
     {
-      "keywordId": "KW-000312",
+      "keywordId": "KW-000322",
       "keyword": "Partitioning",
       "aliases": [],
       "category": "Database & Storage",
@@ -16672,7 +16927,7 @@
       ]
     },
     {
-      "keywordId": "KW-000313",
+      "keywordId": "KW-000323",
       "keyword": "Passed QA Architecture",
       "aliases": [],
       "category": "Security",
@@ -16690,7 +16945,7 @@
       ]
     },
     {
-      "keywordId": "KW-000314",
+      "keywordId": "KW-000324",
       "keyword": "PATH",
       "aliases": [],
       "category": "System Design",
@@ -16778,7 +17033,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "infra_azure.json",
@@ -16802,7 +17057,7 @@
       ]
     },
     {
-      "keywordId": "KW-000315",
+      "keywordId": "KW-000325",
       "keyword": "Path Routing",
       "aliases": [],
       "category": "Networking",
@@ -16830,7 +17085,7 @@
       ]
     },
     {
-      "keywordId": "KW-000316",
+      "keywordId": "KW-000326",
       "keyword": "pathlib",
       "aliases": [],
       "category": "System Design",
@@ -16853,7 +17108,7 @@
       ]
     },
     {
-      "keywordId": "KW-000317",
+      "keywordId": "KW-000327",
       "keyword": "Pattern",
       "aliases": [],
       "category": "System Design",
@@ -17511,7 +17766,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 27,
-          "scenarioTitle": "Cost Optimization (FinOps)"
+          "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -17520,7 +17775,7 @@
       ]
     },
     {
-      "keywordId": "KW-000318",
+      "keywordId": "KW-000328",
       "keyword": "PDB",
       "aliases": [
         "Pod Disruption Budget"
@@ -17539,7 +17794,7 @@
       ]
     },
     {
-      "keywordId": "KW-000319",
+      "keywordId": "KW-000329",
       "keyword": "Pending",
       "aliases": [],
       "category": "Docker",
@@ -17598,7 +17853,7 @@
       ]
     },
     {
-      "keywordId": "KW-000320",
+      "keywordId": "KW-000330",
       "keyword": "Pending Pod",
       "aliases": [],
       "category": "Kubernetes",
@@ -17626,7 +17881,7 @@
       ]
     },
     {
-      "keywordId": "KW-000321",
+      "keywordId": "KW-000331",
       "keyword": "PersistentVolume",
       "aliases": [],
       "category": "Database & Storage",
@@ -17648,7 +17903,7 @@
       ]
     },
     {
-      "keywordId": "KW-000322",
+      "keywordId": "KW-000332",
       "keyword": "PersistentVolumeClaim",
       "aliases": [],
       "category": "Database & Storage",
@@ -17675,7 +17930,7 @@
       ]
     },
     {
-      "keywordId": "KW-000323",
+      "keywordId": "KW-000333",
       "keyword": "PID",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -17698,7 +17953,7 @@
       ]
     },
     {
-      "keywordId": "KW-000324",
+      "keywordId": "KW-000334",
       "keyword": "pip install",
       "aliases": [],
       "category": "System Design",
@@ -17716,7 +17971,7 @@
       ]
     },
     {
-      "keywordId": "KW-000325",
+      "keywordId": "KW-000335",
       "keyword": "Pipeline",
       "aliases": [
         "CI/CD Pipeline",
@@ -17991,7 +18246,7 @@
       ]
     },
     {
-      "keywordId": "KW-000326",
+      "keywordId": "KW-000336",
       "keyword": "Pipeline Takes Architecture",
       "aliases": [],
       "category": "CI/CD",
@@ -18009,7 +18264,7 @@
       ]
     },
     {
-      "keywordId": "KW-000327",
+      "keywordId": "KW-000337",
       "keyword": "Playbook",
       "aliases": [],
       "category": "Configuration Management",
@@ -18042,7 +18297,7 @@
       ]
     },
     {
-      "keywordId": "KW-000328",
+      "keywordId": "KW-000338",
       "keyword": "Pod",
       "aliases": [
         "K8s Pod",
@@ -18293,7 +18548,7 @@
       ]
     },
     {
-      "keywordId": "KW-000329",
+      "keywordId": "KW-000339",
       "keyword": "Pod Anti-Affinity",
       "aliases": [],
       "category": "Kubernetes",
@@ -18316,7 +18571,7 @@
       ]
     },
     {
-      "keywordId": "KW-000330",
+      "keywordId": "KW-000340",
       "keyword": "Pods",
       "aliases": [],
       "category": "Kubernetes",
@@ -18619,7 +18874,7 @@
       ]
     },
     {
-      "keywordId": "KW-000331",
+      "keywordId": "KW-000341",
       "keyword": "Port Binding",
       "aliases": [],
       "category": "System Design",
@@ -18637,7 +18892,7 @@
       ]
     },
     {
-      "keywordId": "KW-000332",
+      "keywordId": "KW-000342",
       "keyword": "Postmortem",
       "aliases": [
         "Blameless Postmortem"
@@ -18662,7 +18917,7 @@
       ]
     },
     {
-      "keywordId": "KW-000333",
+      "keywordId": "KW-000343",
       "keyword": "Private Endpoints",
       "aliases": [],
       "category": "System Design",
@@ -18720,7 +18975,7 @@
       ]
     },
     {
-      "keywordId": "KW-000334",
+      "keywordId": "KW-000344",
       "keyword": "Private Link Service",
       "aliases": [],
       "category": "System Design",
@@ -18748,7 +19003,7 @@
       ]
     },
     {
-      "keywordId": "KW-000335",
+      "keywordId": "KW-000345",
       "keyword": "Process",
       "aliases": [
         "OS Process",
@@ -19037,7 +19292,7 @@
       ]
     },
     {
-      "keywordId": "KW-000336",
+      "keywordId": "KW-000346",
       "keyword": "Process Management Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -19055,7 +19310,7 @@
       ]
     },
     {
-      "keywordId": "KW-000337",
+      "keywordId": "KW-000347",
       "keyword": "Processes",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -19187,7 +19442,7 @@
       ]
     },
     {
-      "keywordId": "KW-000338",
+      "keywordId": "KW-000348",
       "keyword": "Production Outage Architecture",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -19205,7 +19460,7 @@
       ]
     },
     {
-      "keywordId": "KW-000339",
+      "keywordId": "KW-000349",
       "keyword": "Production Python Architecture",
       "aliases": [],
       "category": "Troubleshooting",
@@ -19223,7 +19478,7 @@
       ]
     },
     {
-      "keywordId": "KW-000340",
+      "keywordId": "KW-000350",
       "keyword": "Production Troubleshooting Architecture",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -19241,7 +19496,7 @@
       ]
     },
     {
-      "keywordId": "KW-000341",
+      "keywordId": "KW-000351",
       "keyword": "Prometheus",
       "aliases": [
         "PromQL",
@@ -19301,7 +19556,7 @@
       ]
     },
     {
-      "keywordId": "KW-000342",
+      "keywordId": "KW-000352",
       "keyword": "Provider",
       "aliases": [
         "Terraform Provider"
@@ -19331,7 +19586,7 @@
       ]
     },
     {
-      "keywordId": "KW-000343",
+      "keywordId": "KW-000353",
       "keyword": "Providers",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -19389,7 +19644,7 @@
       ]
     },
     {
-      "keywordId": "KW-000344",
+      "keywordId": "KW-000354",
       "keyword": "psutil",
       "aliases": [],
       "category": "Observability",
@@ -19412,7 +19667,7 @@
       ]
     },
     {
-      "keywordId": "KW-000345",
+      "keywordId": "KW-000355",
       "keyword": "PV Backup",
       "aliases": [],
       "category": "Database & Storage",
@@ -19430,7 +19685,7 @@
       ]
     },
     {
-      "keywordId": "KW-000346",
+      "keywordId": "KW-000356",
       "keyword": "PVC Issue",
       "aliases": [],
       "category": "Database & Storage",
@@ -19453,7 +19708,7 @@
       ]
     },
     {
-      "keywordId": "KW-000347",
+      "keywordId": "KW-000357",
       "keyword": "Python Collections Architecture",
       "aliases": [],
       "category": "System Design",
@@ -19471,7 +19726,7 @@
       ]
     },
     {
-      "keywordId": "KW-000348",
+      "keywordId": "KW-000358",
       "keyword": "Python Debugging Architecture",
       "aliases": [],
       "category": "Observability",
@@ -19489,7 +19744,7 @@
       ]
     },
     {
-      "keywordId": "KW-000349",
+      "keywordId": "KW-000359",
       "keyword": "Python Functions Architecture",
       "aliases": [],
       "category": "System Design",
@@ -19507,7 +19762,7 @@
       ]
     },
     {
-      "keywordId": "KW-000350",
+      "keywordId": "KW-000360",
       "keyword": "Python Fundamentals Architecture",
       "aliases": [],
       "category": "System Design",
@@ -19525,7 +19780,7 @@
       ]
     },
     {
-      "keywordId": "KW-000351",
+      "keywordId": "KW-000361",
       "keyword": "Python Logging Architecture",
       "aliases": [],
       "category": "Observability",
@@ -19543,7 +19798,7 @@
       ]
     },
     {
-      "keywordId": "KW-000352",
+      "keywordId": "KW-000362",
       "keyword": "Python Scope Architecture",
       "aliases": [],
       "category": "System Design",
@@ -19561,7 +19816,7 @@
       ]
     },
     {
-      "keywordId": "KW-000353",
+      "keywordId": "KW-000363",
       "keyword": "PyYAML",
       "aliases": [],
       "category": "System Design",
@@ -19584,7 +19839,7 @@
       ]
     },
     {
-      "keywordId": "KW-000354",
+      "keywordId": "KW-000364",
       "keyword": "QoS Class",
       "aliases": [],
       "category": "System Design",
@@ -19602,7 +19857,7 @@
       ]
     },
     {
-      "keywordId": "KW-000355",
+      "keywordId": "KW-000365",
       "keyword": "Rate Limiting",
       "aliases": [
         "Rate Limiter"
@@ -19621,7 +19876,7 @@
       ]
     },
     {
-      "keywordId": "KW-000356",
+      "keywordId": "KW-000366",
       "keyword": "RBAC",
       "aliases": [
         "Role-Based Access Control",
@@ -19736,7 +19991,7 @@
       ]
     },
     {
-      "keywordId": "KW-000357",
+      "keywordId": "KW-000367",
       "keyword": "RBAC / Architecture",
       "aliases": [],
       "category": "Security",
@@ -19754,7 +20009,7 @@
       ]
     },
     {
-      "keywordId": "KW-000358",
+      "keywordId": "KW-000368",
       "keyword": "RBAC & Architecture",
       "aliases": [],
       "category": "Security",
@@ -19772,7 +20027,7 @@
       ]
     },
     {
-      "keywordId": "KW-000359",
+      "keywordId": "KW-000369",
       "keyword": "Readiness Probe",
       "aliases": [],
       "category": "System Design",
@@ -19795,7 +20050,7 @@
       ]
     },
     {
-      "keywordId": "KW-000360",
+      "keywordId": "KW-000370",
       "keyword": "readOnlyRootFilesystem",
       "aliases": [],
       "category": "Kubernetes",
@@ -19813,7 +20068,7 @@
       ]
     },
     {
-      "keywordId": "KW-000361",
+      "keywordId": "KW-000371",
       "keyword": "Reconciliation Loop",
       "aliases": [],
       "category": "System Design",
@@ -19831,7 +20086,7 @@
       ]
     },
     {
-      "keywordId": "KW-000362",
+      "keywordId": "KW-000372",
       "keyword": "Recreate Strategy",
       "aliases": [],
       "category": "Kubernetes",
@@ -19854,7 +20109,7 @@
       ]
     },
     {
-      "keywordId": "KW-000363",
+      "keywordId": "KW-000373",
       "keyword": "Regex & Architecture",
       "aliases": [],
       "category": "System Design",
@@ -19872,7 +20127,7 @@
       ]
     },
     {
-      "keywordId": "KW-000364",
+      "keywordId": "KW-000374",
       "keyword": "Release",
       "aliases": [],
       "category": "System Design",
@@ -20045,7 +20300,7 @@
       ]
     },
     {
-      "keywordId": "KW-000365",
+      "keywordId": "KW-000375",
       "keyword": "Release Management Architecture",
       "aliases": [],
       "category": "CI/CD",
@@ -20063,7 +20318,7 @@
       ]
     },
     {
-      "keywordId": "KW-000366",
+      "keywordId": "KW-000376",
       "keyword": "Release Rollback Architecture",
       "aliases": [],
       "category": "Troubleshooting",
@@ -20081,7 +20336,7 @@
       ]
     },
     {
-      "keywordId": "KW-000367",
+      "keywordId": "KW-000377",
       "keyword": "Remote State Backend",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -20109,7 +20364,7 @@
       ]
     },
     {
-      "keywordId": "KW-000368",
+      "keywordId": "KW-000378",
       "keyword": "ReplicaSet",
       "aliases": [
         "K8s ReplicaSet"
@@ -20163,7 +20418,7 @@
       ]
     },
     {
-      "keywordId": "KW-000369",
+      "keywordId": "KW-000379",
       "keyword": "ReplicaSet Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -20181,7 +20436,7 @@
       ]
     },
     {
-      "keywordId": "KW-000370",
+      "keywordId": "KW-000380",
       "keyword": "Replication",
       "aliases": [],
       "category": "Database & Storage",
@@ -20244,7 +20499,7 @@
       ]
     },
     {
-      "keywordId": "KW-000371",
+      "keywordId": "KW-000381",
       "keyword": "Repository",
       "aliases": [],
       "category": "System Design",
@@ -20352,7 +20607,7 @@
       ]
     },
     {
-      "keywordId": "KW-000372",
+      "keywordId": "KW-000382",
       "keyword": "requests library",
       "aliases": [],
       "category": "System Design",
@@ -20370,7 +20625,7 @@
       ]
     },
     {
-      "keywordId": "KW-000373",
+      "keywordId": "KW-000383",
       "keyword": "requirements.txt",
       "aliases": [],
       "category": "System Design",
@@ -20397,7 +20652,7 @@
       ]
     },
     {
-      "keywordId": "KW-000374",
+      "keywordId": "KW-000384",
       "keyword": "Resource",
       "aliases": [
         "Terraform Resource"
@@ -20572,7 +20827,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "infra_azure.json",
@@ -20622,7 +20877,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 27,
-          "scenarioTitle": "Cost Optimization (FinOps)"
+          "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -20655,7 +20910,7 @@
       ]
     },
     {
-      "keywordId": "KW-000375",
+      "keywordId": "KW-000385",
       "keyword": "Resource Group",
       "aliases": [
         "Azure RG"
@@ -20680,7 +20935,7 @@
       ]
     },
     {
-      "keywordId": "KW-000376",
+      "keywordId": "KW-000386",
       "keyword": "Resource Groups",
       "aliases": [],
       "category": "Azure",
@@ -20713,7 +20968,7 @@
       ]
     },
     {
-      "keywordId": "KW-000377",
+      "keywordId": "KW-000387",
       "keyword": "Resource Management Architecture",
       "aliases": [],
       "category": "System Design",
@@ -20731,7 +20986,7 @@
       ]
     },
     {
-      "keywordId": "KW-000378",
+      "keywordId": "KW-000388",
       "keyword": "Resource Organization",
       "aliases": [],
       "category": "System Design",
@@ -20754,7 +21009,7 @@
       ]
     },
     {
-      "keywordId": "KW-000379",
+      "keywordId": "KW-000389",
       "keyword": "ResourceQuota",
       "aliases": [],
       "category": "System Design",
@@ -20772,7 +21027,7 @@
       ]
     },
     {
-      "keywordId": "KW-000380",
+      "keywordId": "KW-000390",
       "keyword": "Restore",
       "aliases": [],
       "category": "Database & Storage",
@@ -20860,7 +21115,7 @@
       ]
     },
     {
-      "keywordId": "KW-000381",
+      "keywordId": "KW-000391",
       "keyword": "Retry Mechanism",
       "aliases": [],
       "category": "Troubleshooting",
@@ -20878,7 +21133,7 @@
       ]
     },
     {
-      "keywordId": "KW-000382",
+      "keywordId": "KW-000392",
       "keyword": "Return Value",
       "aliases": [],
       "category": "System Design",
@@ -20896,7 +21151,7 @@
       ]
     },
     {
-      "keywordId": "KW-000383",
+      "keywordId": "KW-000393",
       "keyword": "Reverse Proxy",
       "aliases": [
         "Proxy Server"
@@ -20915,7 +21170,7 @@
       ]
     },
     {
-      "keywordId": "KW-000384",
+      "keywordId": "KW-000394",
       "keyword": "Revision History",
       "aliases": [],
       "category": "Kubernetes",
@@ -20938,7 +21193,7 @@
       ]
     },
     {
-      "keywordId": "KW-000385",
+      "keywordId": "KW-000395",
       "keyword": "Ring Deployment Tiers",
       "aliases": [],
       "category": "Kubernetes",
@@ -20966,7 +21221,7 @@
       ]
     },
     {
-      "keywordId": "KW-000386",
+      "keywordId": "KW-000396",
       "keyword": "Role",
       "aliases": [],
       "category": "Security",
@@ -21039,7 +21294,7 @@
       ]
     },
     {
-      "keywordId": "KW-000387",
+      "keywordId": "KW-000397",
       "keyword": "Role-Based Access Control (RBAC)",
       "aliases": [],
       "category": "Azure",
@@ -21056,7 +21311,7 @@
       ]
     },
     {
-      "keywordId": "KW-000388",
+      "keywordId": "KW-000398",
       "keyword": "RoleBinding",
       "aliases": [],
       "category": "Security",
@@ -21074,7 +21329,7 @@
       ]
     },
     {
-      "keywordId": "KW-000389",
+      "keywordId": "KW-000399",
       "keyword": "Roles",
       "aliases": [],
       "category": "Configuration Management",
@@ -21138,11 +21393,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 25,
           "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "Interview FAQ Master Reference"
         }
       ]
     },
     {
-      "keywordId": "KW-000390",
+      "keywordId": "KW-000400",
       "keyword": "Rollback",
       "aliases": [],
       "category": "Production Support",
@@ -21293,7 +21553,7 @@
       ]
     },
     {
-      "keywordId": "KW-000391",
+      "keywordId": "KW-000401",
       "keyword": "Rolling Deployment",
       "aliases": [],
       "category": "Kubernetes",
@@ -21311,7 +21571,7 @@
       ]
     },
     {
-      "keywordId": "KW-000392",
+      "keywordId": "KW-000402",
       "keyword": "Rolling Update",
       "aliases": [],
       "category": "Kubernetes",
@@ -21342,7 +21602,7 @@
       ]
     },
     {
-      "keywordId": "KW-000393",
+      "keywordId": "KW-000403",
       "keyword": "Root Cause Analysis",
       "aliases": [
         "RCA"
@@ -21447,7 +21707,7 @@
       ]
     },
     {
-      "keywordId": "KW-000394",
+      "keywordId": "KW-000404",
       "keyword": "Root Cause Analysis (RCA)",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -21464,7 +21724,7 @@
       ]
     },
     {
-      "keywordId": "KW-000395",
+      "keywordId": "KW-000405",
       "keyword": "Routing",
       "aliases": [],
       "category": "Networking",
@@ -21667,7 +21927,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "infra_azure.json",
@@ -21730,7 +21990,7 @@
       ]
     },
     {
-      "keywordId": "KW-000396",
+      "keywordId": "KW-000406",
       "keyword": "runAsNonRoot",
       "aliases": [],
       "category": "Kubernetes",
@@ -21748,7 +22008,7 @@
       ]
     },
     {
-      "keywordId": "KW-000397",
+      "keywordId": "KW-000407",
       "keyword": "SaaS",
       "aliases": [
         "Software as a Service"
@@ -21768,7 +22028,7 @@
       ]
     },
     {
-      "keywordId": "KW-000398",
+      "keywordId": "KW-000408",
       "keyword": "Saga",
       "aliases": [
         "Saga Pattern"
@@ -21787,7 +22047,7 @@
       ]
     },
     {
-      "keywordId": "KW-000399",
+      "keywordId": "KW-000409",
       "keyword": "SAML",
       "aliases": [],
       "category": "Identity & Access Management",
@@ -21804,7 +22064,7 @@
       ]
     },
     {
-      "keywordId": "KW-000400",
+      "keywordId": "KW-000410",
       "keyword": "Scaling",
       "aliases": [],
       "category": "Performance Engineering",
@@ -21943,11 +22203,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 23,
           "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "Interview FAQ Master Reference"
         }
       ]
     },
     {
-      "keywordId": "KW-000401",
+      "keywordId": "KW-000411",
       "keyword": "Schedule",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -21984,7 +22249,7 @@
       ]
     },
     {
-      "keywordId": "KW-000402",
+      "keywordId": "KW-000412",
       "keyword": "Scheduler",
       "aliases": [],
       "category": "System Design",
@@ -22044,7 +22309,7 @@
       ]
     },
     {
-      "keywordId": "KW-000403",
+      "keywordId": "KW-000413",
       "keyword": "SDK",
       "aliases": [],
       "category": "Azure",
@@ -22082,7 +22347,7 @@
       ]
     },
     {
-      "keywordId": "KW-000404",
+      "keywordId": "KW-000414",
       "keyword": "Secret",
       "aliases": [
         "K8s Secret",
@@ -22167,7 +22432,7 @@
       ]
     },
     {
-      "keywordId": "KW-000405",
+      "keywordId": "KW-000415",
       "keyword": "Secrets Architecture",
       "aliases": [],
       "category": "Security",
@@ -22185,7 +22450,7 @@
       ]
     },
     {
-      "keywordId": "KW-000406",
+      "keywordId": "KW-000416",
       "keyword": "Security & Architecture",
       "aliases": [],
       "category": "Docker",
@@ -22203,7 +22468,7 @@
       ]
     },
     {
-      "keywordId": "KW-000407",
+      "keywordId": "KW-000417",
       "keyword": "Security Features Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -22221,7 +22486,7 @@
       ]
     },
     {
-      "keywordId": "KW-000408",
+      "keywordId": "KW-000418",
       "keyword": "sed",
       "aliases": [],
       "category": "Observability",
@@ -22252,7 +22517,7 @@
       ]
     },
     {
-      "keywordId": "KW-000409",
+      "keywordId": "KW-000419",
       "keyword": "Self Healing",
       "aliases": [],
       "category": "Kubernetes",
@@ -22288,7 +22553,7 @@
       ]
     },
     {
-      "keywordId": "KW-000410",
+      "keywordId": "KW-000420",
       "keyword": "Self-Hosted Agents",
       "aliases": [],
       "category": "Azure",
@@ -22316,7 +22581,7 @@
       ]
     },
     {
-      "keywordId": "KW-000411",
+      "keywordId": "KW-000421",
       "keyword": "Service",
       "aliases": [
         "K8s Service",
@@ -22720,7 +22985,7 @@
       ]
     },
     {
-      "keywordId": "KW-000412",
+      "keywordId": "KW-000422",
       "keyword": "Service Connections",
       "aliases": [],
       "category": "Azure",
@@ -22748,7 +23013,7 @@
       ]
     },
     {
-      "keywordId": "KW-000413",
+      "keywordId": "KW-000423",
       "keyword": "Service Endpoints",
       "aliases": [],
       "category": "System Design",
@@ -22801,7 +23066,7 @@
       ]
     },
     {
-      "keywordId": "KW-000414",
+      "keywordId": "KW-000424",
       "keyword": "Service Failure",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -22824,7 +23089,7 @@
       ]
     },
     {
-      "keywordId": "KW-000415",
+      "keywordId": "KW-000425",
       "keyword": "Service Management Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -22842,14 +23107,17 @@
       ]
     },
     {
-      "keywordId": "KW-000416",
+      "keywordId": "KW-000426",
       "keyword": "Service Mesh",
-      "aliases": [],
-      "category": "Microservices",
-      "interviewDomain": "Architecture",
-      "difficulty": "Intermediate",
-      "frequency": 7,
-      "importance": 7,
+      "aliases": [
+        "Istio",
+        "Envoy Mesh"
+      ],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Advanced",
+      "frequency": 8,
+      "importance": 9,
       "seniority": "Senior",
       "sourceReferences": [
         {
@@ -22859,7 +23127,7 @@
       ]
     },
     {
-      "keywordId": "KW-000417",
+      "keywordId": "KW-000427",
       "keyword": "ServiceAccount",
       "aliases": [],
       "category": "Security",
@@ -22882,7 +23150,7 @@
       ]
     },
     {
-      "keywordId": "KW-000418",
+      "keywordId": "KW-000428",
       "keyword": "Services",
       "aliases": [],
       "category": "Kubernetes",
@@ -23175,7 +23443,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 27,
-          "scenarioTitle": "Cost Optimization (FinOps)"
+          "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -23216,7 +23484,7 @@
       ]
     },
     {
-      "keywordId": "KW-000419",
+      "keywordId": "KW-000429",
       "keyword": "Sharding",
       "aliases": [],
       "category": "Database & Storage",
@@ -23233,7 +23501,7 @@
       ]
     },
     {
-      "keywordId": "KW-000420",
+      "keywordId": "KW-000430",
       "keyword": "Shell Scripting Architecture",
       "aliases": [],
       "category": "System Design",
@@ -23251,7 +23519,7 @@
       ]
     },
     {
-      "keywordId": "KW-000421",
+      "keywordId": "KW-000431",
       "keyword": "shutil",
       "aliases": [],
       "category": "System Design",
@@ -23282,7 +23550,7 @@
       ]
     },
     {
-      "keywordId": "KW-000422",
+      "keywordId": "KW-000432",
       "keyword": "Sidecar Container",
       "aliases": [],
       "category": "Kubernetes",
@@ -23305,7 +23573,7 @@
       ]
     },
     {
-      "keywordId": "KW-000423",
+      "keywordId": "KW-000433",
       "keyword": "Signal",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -23323,7 +23591,7 @@
       ]
     },
     {
-      "keywordId": "KW-000424",
+      "keywordId": "KW-000434",
       "keyword": "Signals",
       "aliases": [
         "Linux Signals",
@@ -23349,7 +23617,7 @@
       ]
     },
     {
-      "keywordId": "KW-000425",
+      "keywordId": "KW-000435",
       "keyword": "Single Container Pod",
       "aliases": [],
       "category": "Kubernetes",
@@ -23372,7 +23640,7 @@
       ]
     },
     {
-      "keywordId": "KW-000426",
+      "keywordId": "KW-000436",
       "keyword": "SLA",
       "aliases": [
         "Service Level Agreement"
@@ -23417,7 +23685,7 @@
       ]
     },
     {
-      "keywordId": "KW-000427",
+      "keywordId": "KW-000437",
       "keyword": "SLI",
       "aliases": [
         "Service Level Indicator"
@@ -23436,7 +23704,7 @@
       ]
     },
     {
-      "keywordId": "KW-000428",
+      "keywordId": "KW-000438",
       "keyword": "SLO",
       "aliases": [
         "Service Level Objective",
@@ -23463,7 +23731,7 @@
       ]
     },
     {
-      "keywordId": "KW-000429",
+      "keywordId": "KW-000439",
       "keyword": "SLOs (Service Level Objectives)",
       "aliases": [],
       "category": "Site Reliability Engineering",
@@ -23480,7 +23748,7 @@
       ]
     },
     {
-      "keywordId": "KW-000430",
+      "keywordId": "KW-000440",
       "keyword": "spec",
       "aliases": [],
       "category": "System Design",
@@ -23503,7 +23771,7 @@
       ]
     },
     {
-      "keywordId": "KW-000431",
+      "keywordId": "KW-000441",
       "keyword": "SQL",
       "aliases": [],
       "category": "Database & Storage",
@@ -23606,7 +23874,7 @@
       ]
     },
     {
-      "keywordId": "KW-000432",
+      "keywordId": "KW-000442",
       "keyword": "ss",
       "aliases": [],
       "category": "System Design",
@@ -23633,7 +23901,7 @@
       ]
     },
     {
-      "keywordId": "KW-000433",
+      "keywordId": "KW-000443",
       "keyword": "SSH Administration Architecture",
       "aliases": [],
       "category": "Security",
@@ -23651,7 +23919,7 @@
       ]
     },
     {
-      "keywordId": "KW-000434",
+      "keywordId": "KW-000444",
       "keyword": "SSH Automation Architecture",
       "aliases": [],
       "category": "System Design",
@@ -23669,7 +23937,7 @@
       ]
     },
     {
-      "keywordId": "KW-000435",
+      "keywordId": "KW-000445",
       "keyword": "SSH Client",
       "aliases": [],
       "category": "System Design",
@@ -23687,7 +23955,7 @@
       ]
     },
     {
-      "keywordId": "KW-000436",
+      "keywordId": "KW-000446",
       "keyword": "SSH Key Authentication",
       "aliases": [],
       "category": "Security",
@@ -23705,7 +23973,7 @@
       ]
     },
     {
-      "keywordId": "KW-000437",
+      "keywordId": "KW-000447",
       "keyword": "ssh-agent",
       "aliases": [],
       "category": "Security",
@@ -23723,7 +23991,7 @@
       ]
     },
     {
-      "keywordId": "KW-000438",
+      "keywordId": "KW-000448",
       "keyword": "sshd",
       "aliases": [],
       "category": "Security",
@@ -23745,7 +24013,7 @@
       ]
     },
     {
-      "keywordId": "KW-000439",
+      "keywordId": "KW-000449",
       "keyword": "SSL",
       "aliases": [
         "Secure Sockets Layer"
@@ -23775,7 +24043,7 @@
       ]
     },
     {
-      "keywordId": "KW-000440",
+      "keywordId": "KW-000450",
       "keyword": "Stable Identity",
       "aliases": [],
       "category": "Kubernetes",
@@ -23798,7 +24066,7 @@
       ]
     },
     {
-      "keywordId": "KW-000441",
+      "keywordId": "KW-000451",
       "keyword": "Stable Storage",
       "aliases": [],
       "category": "Kubernetes",
@@ -23816,7 +24084,7 @@
       ]
     },
     {
-      "keywordId": "KW-000442",
+      "keywordId": "KW-000452",
       "keyword": "Startup Probe",
       "aliases": [],
       "category": "System Design",
@@ -23847,7 +24115,7 @@
       ]
     },
     {
-      "keywordId": "KW-000443",
+      "keywordId": "KW-000453",
       "keyword": "State",
       "aliases": [
         "Terraform State",
@@ -24504,7 +24772,7 @@
       ]
     },
     {
-      "keywordId": "KW-000444",
+      "keywordId": "KW-000454",
       "keyword": "State Drift",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -24547,7 +24815,7 @@
       ]
     },
     {
-      "keywordId": "KW-000445",
+      "keywordId": "KW-000455",
       "keyword": "StatefulSet",
       "aliases": [
         "K8s StatefulSet"
@@ -24572,7 +24840,7 @@
       ]
     },
     {
-      "keywordId": "KW-000446",
+      "keywordId": "KW-000456",
       "keyword": "StatefulSet Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -24590,7 +24858,7 @@
       ]
     },
     {
-      "keywordId": "KW-000447",
+      "keywordId": "KW-000457",
       "keyword": "Storage (Volumes, Architecture",
       "aliases": [],
       "category": "Database & Storage",
@@ -24608,7 +24876,7 @@
       ]
     },
     {
-      "keywordId": "KW-000448",
+      "keywordId": "KW-000458",
       "keyword": "Storage & Architecture",
       "aliases": [],
       "category": "Database & Storage",
@@ -24626,7 +24894,7 @@
       ]
     },
     {
-      "keywordId": "KW-000449",
+      "keywordId": "KW-000459",
       "keyword": "StorageClass",
       "aliases": [],
       "category": "Database & Storage",
@@ -24667,7 +24935,7 @@
       ]
     },
     {
-      "keywordId": "KW-000450",
+      "keywordId": "KW-000460",
       "keyword": "Subnetting",
       "aliases": [],
       "category": "Networking",
@@ -24700,7 +24968,7 @@
       ]
     },
     {
-      "keywordId": "KW-000451",
+      "keywordId": "KW-000461",
       "keyword": "subprocess",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -24735,7 +25003,7 @@
       ]
     },
     {
-      "keywordId": "KW-000452",
+      "keywordId": "KW-000462",
       "keyword": "sudo",
       "aliases": [],
       "category": "System Design",
@@ -24758,7 +25026,7 @@
       ]
     },
     {
-      "keywordId": "KW-000453",
+      "keywordId": "KW-000463",
       "keyword": "Swap",
       "aliases": [],
       "category": "System Design",
@@ -24793,7 +25061,7 @@
       ]
     },
     {
-      "keywordId": "KW-000454",
+      "keywordId": "KW-000464",
       "keyword": "syslog",
       "aliases": [],
       "category": "Observability",
@@ -24820,7 +25088,7 @@
       ]
     },
     {
-      "keywordId": "KW-000455",
+      "keywordId": "KW-000465",
       "keyword": "System Design Architecture",
       "aliases": [],
       "category": "Security",
@@ -24838,7 +25106,7 @@
       ]
     },
     {
-      "keywordId": "KW-000456",
+      "keywordId": "KW-000466",
       "keyword": "System Resource Analysis",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -24866,7 +25134,7 @@
       ]
     },
     {
-      "keywordId": "KW-000457",
+      "keywordId": "KW-000467",
       "keyword": "System Routes",
       "aliases": [],
       "category": "System Design",
@@ -24904,12 +25172,12 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         }
       ]
     },
     {
-      "keywordId": "KW-000458",
+      "keywordId": "KW-000468",
       "keyword": "Systemd",
       "aliases": [
         "systemctl",
@@ -24958,7 +25226,7 @@
       ]
     },
     {
-      "keywordId": "KW-000459",
+      "keywordId": "KW-000469",
       "keyword": "Taints",
       "aliases": [],
       "category": "System Design",
@@ -25013,7 +25281,7 @@
       ]
     },
     {
-      "keywordId": "KW-000460",
+      "keywordId": "KW-000470",
       "keyword": "Tasks",
       "aliases": [],
       "category": "Configuration Management",
@@ -25165,7 +25433,7 @@
       ]
     },
     {
-      "keywordId": "KW-000461",
+      "keywordId": "KW-000471",
       "keyword": "TCP",
       "aliases": [
         "Transmission Control Protocol",
@@ -25224,7 +25492,7 @@
       ]
     },
     {
-      "keywordId": "KW-000462",
+      "keywordId": "KW-000472",
       "keyword": "Telemetry Instrumentation",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -25252,7 +25520,7 @@
       ]
     },
     {
-      "keywordId": "KW-000463",
+      "keywordId": "KW-000473",
       "keyword": "Terraform",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -25365,7 +25633,7 @@
       ]
     },
     {
-      "keywordId": "KW-000464",
+      "keywordId": "KW-000474",
       "keyword": "Terraform Apply Architecture",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -25383,7 +25651,7 @@
       ]
     },
     {
-      "keywordId": "KW-000465",
+      "keywordId": "KW-000475",
       "keyword": "Terraform Architecture",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -25401,7 +25669,7 @@
       ]
     },
     {
-      "keywordId": "KW-000466",
+      "keywordId": "KW-000476",
       "keyword": "Terraform Destroyed Architecture",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -25419,7 +25687,7 @@
       ]
     },
     {
-      "keywordId": "KW-000467",
+      "keywordId": "KW-000477",
       "keyword": "Testing Automation Architecture",
       "aliases": [],
       "category": "System Design",
@@ -25437,7 +25705,7 @@
       ]
     },
     {
-      "keywordId": "KW-000468",
+      "keywordId": "KW-000478",
       "keyword": "Text Processing Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -25455,7 +25723,7 @@
       ]
     },
     {
-      "keywordId": "KW-000469",
+      "keywordId": "KW-000479",
       "keyword": "Thread",
       "aliases": [
         "Execution Thread"
@@ -25505,7 +25773,7 @@
       ]
     },
     {
-      "keywordId": "KW-000470",
+      "keywordId": "KW-000480",
       "keyword": "Threading and Architecture",
       "aliases": [],
       "category": "Linux & Operating Systems",
@@ -25523,7 +25791,7 @@
       ]
     },
     {
-      "keywordId": "KW-000471",
+      "keywordId": "KW-000481",
       "keyword": "TLS",
       "aliases": [
         "Transport Layer Security",
@@ -25581,7 +25849,7 @@
       ]
     },
     {
-      "keywordId": "KW-000472",
+      "keywordId": "KW-000482",
       "keyword": "TLS Secret",
       "aliases": [],
       "category": "Security",
@@ -25599,7 +25867,7 @@
       ]
     },
     {
-      "keywordId": "KW-000473",
+      "keywordId": "KW-000483",
       "keyword": "TLS Termination",
       "aliases": [],
       "category": "Networking",
@@ -25626,7 +25894,7 @@
       ]
     },
     {
-      "keywordId": "KW-000474",
+      "keywordId": "KW-000484",
       "keyword": "Tolerations",
       "aliases": [],
       "category": "Kubernetes",
@@ -25654,7 +25922,7 @@
       ]
     },
     {
-      "keywordId": "KW-000475",
+      "keywordId": "KW-000485",
       "keyword": "top",
       "aliases": [],
       "category": "Performance Engineering",
@@ -25702,7 +25970,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "infra_azure.json",
@@ -25728,7 +25996,7 @@
       ]
     },
     {
-      "keywordId": "KW-000476",
+      "keywordId": "KW-000486",
       "keyword": "Traceback",
       "aliases": [],
       "category": "Observability",
@@ -25751,7 +26019,7 @@
       ]
     },
     {
-      "keywordId": "KW-000477",
+      "keywordId": "KW-000487",
       "keyword": "Tracing",
       "aliases": [],
       "category": "Observability",
@@ -25779,7 +26047,7 @@
       ]
     },
     {
-      "keywordId": "KW-000478",
+      "keywordId": "KW-000488",
       "keyword": "Troubleshooting Architecture",
       "aliases": [],
       "category": "Observability",
@@ -25807,7 +26075,7 @@
       ]
     },
     {
-      "keywordId": "KW-000479",
+      "keywordId": "KW-000489",
       "keyword": "Troubleshooting Kubernetes Architecture",
       "aliases": [],
       "category": "Kubernetes",
@@ -25825,7 +26093,7 @@
       ]
     },
     {
-      "keywordId": "KW-000480",
+      "keywordId": "KW-000490",
       "keyword": "try",
       "aliases": [],
       "category": "System Design",
@@ -25860,7 +26128,7 @@
       ]
     },
     {
-      "keywordId": "KW-000481",
+      "keywordId": "KW-000491",
       "keyword": "Tuple",
       "aliases": [],
       "category": "System Design",
@@ -25895,7 +26163,7 @@
       ]
     },
     {
-      "keywordId": "KW-000482",
+      "keywordId": "KW-000492",
       "keyword": "UDP",
       "aliases": [
         "User Datagram Protocol"
@@ -25943,7 +26211,7 @@
       ]
     },
     {
-      "keywordId": "KW-000483",
+      "keywordId": "KW-000493",
       "keyword": "Uncordon",
       "aliases": [],
       "category": "System Design",
@@ -25965,7 +26233,7 @@
       ]
     },
     {
-      "keywordId": "KW-000484",
+      "keywordId": "KW-000494",
       "keyword": "Unit Test",
       "aliases": [],
       "category": "System Design",
@@ -25988,7 +26256,7 @@
       ]
     },
     {
-      "keywordId": "KW-000485",
+      "keywordId": "KW-000495",
       "keyword": "Upgrades & Architecture",
       "aliases": [],
       "category": "System Design",
@@ -26006,7 +26274,7 @@
       ]
     },
     {
-      "keywordId": "KW-000486",
+      "keywordId": "KW-000496",
       "keyword": "User & Architecture",
       "aliases": [],
       "category": "System Design",
@@ -26024,24 +26292,33 @@
       ]
     },
     {
-      "keywordId": "KW-000487",
+      "keywordId": "KW-000497",
       "keyword": "User Defined Routes (UDR)",
-      "aliases": [],
-      "category": "System Design",
-      "interviewDomain": "Architecture",
-      "difficulty": "Advanced",
-      "frequency": 6,
-      "importance": 6,
+      "aliases": [
+        "Azure UDR",
+        "Custom Route Table"
+      ],
+      "category": "Networking",
+      "interviewDomain": "Networking",
+      "difficulty": "Intermediate",
+      "frequency": 9,
+      "importance": 9,
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "User Defined Routes (UDR)"
+          "file": "noventiq_r1.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "User Defined Routes (UDR)"
+        },
+        {
+          "file": "infra_azure.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         }
       ]
     },
     {
-      "keywordId": "KW-000488",
+      "keywordId": "KW-000498",
       "keyword": "Values",
       "aliases": [],
       "category": "System Design",
@@ -26144,7 +26421,7 @@
       ]
     },
     {
-      "keywordId": "KW-000489",
+      "keywordId": "KW-000499",
       "keyword": "Variable",
       "aliases": [],
       "category": "System Design",
@@ -26253,7 +26530,7 @@
       ]
     },
     {
-      "keywordId": "KW-000490",
+      "keywordId": "KW-000500",
       "keyword": "Variables",
       "aliases": [],
       "category": "System Design",
@@ -26414,7 +26691,7 @@
       ]
     },
     {
-      "keywordId": "KW-000491",
+      "keywordId": "KW-000501",
       "keyword": "venv",
       "aliases": [],
       "category": "System Design",
@@ -26437,7 +26714,7 @@
       ]
     },
     {
-      "keywordId": "KW-000492",
+      "keywordId": "KW-000502",
       "keyword": "Version Skew",
       "aliases": [],
       "category": "System Design",
@@ -26460,7 +26737,7 @@
       ]
     },
     {
-      "keywordId": "KW-000493",
+      "keywordId": "KW-000503",
       "keyword": "Virtual Environment Architecture",
       "aliases": [],
       "category": "System Design",
@@ -26478,7 +26755,7 @@
       ]
     },
     {
-      "keywordId": "KW-000494",
+      "keywordId": "KW-000504",
       "keyword": "Virtual Networks (VNet)",
       "aliases": [],
       "category": "Azure",
@@ -26495,7 +26772,7 @@
       ]
     },
     {
-      "keywordId": "KW-000495",
+      "keywordId": "KW-000505",
       "keyword": "VNet",
       "aliases": [
         "Azure Virtual Network",
@@ -26596,7 +26873,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "infra_azure.json",
@@ -26641,7 +26918,7 @@
       ]
     },
     {
-      "keywordId": "KW-000496",
+      "keywordId": "KW-000506",
       "keyword": "VNet Peering",
       "aliases": [],
       "category": "Networking",
@@ -26674,7 +26951,7 @@
         {
           "file": "infra_azure.json",
           "scenarioIndex": 7,
-          "scenarioTitle": "User Defined Routes (UDR)"
+          "scenarioTitle": "User Defined Routes (UDR) — Custom Subnet Routing & BGP Override"
         },
         {
           "file": "infra_azure.json",
@@ -26684,7 +26961,7 @@
       ]
     },
     {
-      "keywordId": "KW-000497",
+      "keywordId": "KW-000507",
       "keyword": "Volume",
       "aliases": [
         "Docker Volume",
@@ -26763,7 +27040,7 @@
       ]
     },
     {
-      "keywordId": "KW-000498",
+      "keywordId": "KW-000508",
       "keyword": "Volume Mount",
       "aliases": [],
       "category": "System Design",
@@ -26781,7 +27058,7 @@
       ]
     },
     {
-      "keywordId": "KW-000499",
+      "keywordId": "KW-000509",
       "keyword": "VPA",
       "aliases": [],
       "category": "Kubernetes",
@@ -26804,7 +27081,7 @@
       ]
     },
     {
-      "keywordId": "KW-000500",
+      "keywordId": "KW-000510",
       "keyword": "VPC",
       "aliases": [
         "Virtual Private Cloud",
@@ -26824,7 +27101,7 @@
       ]
     },
     {
-      "keywordId": "KW-000501",
+      "keywordId": "KW-000511",
       "keyword": "War Room",
       "aliases": [],
       "category": "Incident Management",
@@ -26847,7 +27124,7 @@
       ]
     },
     {
-      "keywordId": "KW-000502",
+      "keywordId": "KW-000512",
       "keyword": "with statement",
       "aliases": [],
       "category": "System Design",
@@ -26865,7 +27142,7 @@
       ]
     },
     {
-      "keywordId": "KW-000503",
+      "keywordId": "KW-000513",
       "keyword": "Workload Identity Federation",
       "aliases": [],
       "category": "Azure",
@@ -26893,7 +27170,7 @@
       ]
     },
     {
-      "keywordId": "KW-000504",
+      "keywordId": "KW-000514",
       "keyword": "Works Locally Architecture",
       "aliases": [],
       "category": "Docker",
@@ -26911,7 +27188,7 @@
       ]
     },
     {
-      "keywordId": "KW-000505",
+      "keywordId": "KW-000515",
       "keyword": "Workspace",
       "aliases": [
         "Terraform Workspace"
@@ -26966,7 +27243,7 @@
       ]
     },
     {
-      "keywordId": "KW-000506",
+      "keywordId": "KW-000516",
       "keyword": "Wrapper Function",
       "aliases": [],
       "category": "System Design",
@@ -26989,7 +27266,7 @@
       ]
     },
     {
-      "keywordId": "KW-000507",
+      "keywordId": "KW-000517",
       "keyword": "Wrapper Modules",
       "aliases": [],
       "category": "Infrastructure as Code",
@@ -27017,7 +27294,7 @@
       ]
     },
     {
-      "keywordId": "KW-000508",
+      "keywordId": "KW-000518",
       "keyword": "YAML & Architecture",
       "aliases": [],
       "category": "System Design",
@@ -27035,7 +27312,7 @@
       ]
     },
     {
-      "keywordId": "KW-000509",
+      "keywordId": "KW-000519",
       "keyword": "YAML Handling Architecture",
       "aliases": [],
       "category": "System Design",
@@ -27053,7 +27330,7 @@
       ]
     },
     {
-      "keywordId": "KW-000510",
+      "keywordId": "KW-000520",
       "keyword": "YAML Pipelines",
       "aliases": [],
       "category": "Azure",
@@ -27081,7 +27358,7 @@
       ]
     },
     {
-      "keywordId": "KW-000511",
+      "keywordId": "KW-000521",
       "keyword": "yield",
       "aliases": [],
       "category": "System Design",
@@ -27112,7 +27389,7 @@
       ]
     },
     {
-      "keywordId": "KW-000512",
+      "keywordId": "KW-000522",
       "keyword": "yum/dnf",
       "aliases": [],
       "category": "System Design",
@@ -27130,7 +27407,7 @@
       ]
     },
     {
-      "keywordId": "KW-000513",
+      "keywordId": "KW-000523",
       "keyword": "Zero Trust",
       "aliases": [
         "Zero Trust Security"
@@ -27140,6 +27417,497 @@
       "difficulty": "Intermediate",
       "frequency": 7,
       "importance": 7,
+      "seniority": "Senior",
+      "sourceReferences": [
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "AKS Deployment Failing After Release"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Cloud Bill Increased by 50%"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "App Service Cannot Access SQL"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Deployment Failed During Release Window"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Release Rollback Strategy"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Developer Needs Production Access"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Terraform"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Docker"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Release Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Monitoring"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "RBAC / IAM"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "Git & Branching Strategy"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "CI/CD Design Patterns"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Kubernetes Deep Dive"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Security & DevSecOps"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Azure Key Vault"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 33,
+          "scenarioTitle": "Observability"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 35,
+          "scenarioTitle": "Disaster Recovery & Backup"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 36,
+          "scenarioTitle": "Cost Optimization (FinOps)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 37,
+          "scenarioTitle": "System Design for DevOps Engineers"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 48,
+          "scenarioTitle": "Kubernetes Fundamentals"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 51,
+          "scenarioTitle": "Labels, Selectors & Annotations"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 52,
+          "scenarioTitle": "ReplicaSet"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 55,
+          "scenarioTitle": "Ingress"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 56,
+          "scenarioTitle": "ConfigMap"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 57,
+          "scenarioTitle": "Secrets"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 58,
+          "scenarioTitle": "Storage (Volumes, PV, PVC, StorageClass)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 59,
+          "scenarioTitle": "StatefulSet"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 60,
+          "scenarioTitle": "DaemonSet"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 61,
+          "scenarioTitle": "Jobs"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 62,
+          "scenarioTitle": "CronJobs"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 63,
+          "scenarioTitle": "Namespaces"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 64,
+          "scenarioTitle": "Resource Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 65,
+          "scenarioTitle": "Health Checks (Liveness, Readiness, Startup Probes)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 67,
+          "scenarioTitle": "Networking"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 68,
+          "scenarioTitle": "RBAC & Security"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 70,
+          "scenarioTitle": "Autoscaling"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 71,
+          "scenarioTitle": "Helm"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 72,
+          "scenarioTitle": "Operators & CRDs"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 74,
+          "scenarioTitle": "Backup & Disaster Recovery"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 75,
+          "scenarioTitle": "Upgrades & Maintenance"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 76,
+          "scenarioTitle": "Common kubectl Commands"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 77,
+          "scenarioTitle": "YAML & Kubernetes Manifests"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 78,
+          "scenarioTitle": "CI/CD Integration"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 81,
+          "scenarioTitle": "Linux Architecture & Boot Process"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 82,
+          "scenarioTitle": "Linux File System"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 83,
+          "scenarioTitle": "Linux Basic Commands"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 84,
+          "scenarioTitle": "Text Processing Commands"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 85,
+          "scenarioTitle": "File Permissions & Security"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 86,
+          "scenarioTitle": "User & Group Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 87,
+          "scenarioTitle": "Process Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 88,
+          "scenarioTitle": "Service Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 89,
+          "scenarioTitle": "CPU Monitoring"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 90,
+          "scenarioTitle": "Memory Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 91,
+          "scenarioTitle": "Disk Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 92,
+          "scenarioTitle": "Storage & Filesystem"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 93,
+          "scenarioTitle": "Linux Networking Basics"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 94,
+          "scenarioTitle": "Advanced Networking"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 95,
+          "scenarioTitle": "Networking Commands"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 96,
+          "scenarioTitle": "Firewall & Security"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 97,
+          "scenarioTitle": "SSH Administration"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 98,
+          "scenarioTitle": "Package Management"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 99,
+          "scenarioTitle": "Logs & Monitoring"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 100,
+          "scenarioTitle": "Kernel Troubleshooting"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 101,
+          "scenarioTitle": "Shell Scripting"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 102,
+          "scenarioTitle": "Cron & Scheduling"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 103,
+          "scenarioTitle": "Environment Variables"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 105,
+          "scenarioTitle": "Python Fundamentals"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 106,
+          "scenarioTitle": "Python Collections"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 107,
+          "scenarioTitle": "Mutable vs Immutable Objects"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 108,
+          "scenarioTitle": "Python Scope (LEGB Rule)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 109,
+          "scenarioTitle": "Python Functions"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 110,
+          "scenarioTitle": "Arguments and kwargs"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 111,
+          "scenarioTitle": "Modules & Packages"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 112,
+          "scenarioTitle": "Virtual Environment"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 113,
+          "scenarioTitle": "Package Management (pip)"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 114,
+          "scenarioTitle": "File Handling"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 115,
+          "scenarioTitle": "OS Automation"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 116,
+          "scenarioTitle": "Linux Command Execution using Python"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 117,
+          "scenarioTitle": "Exception Handling"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 118,
+          "scenarioTitle": "Python Logging"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 119,
+          "scenarioTitle": "Python Debugging"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 120,
+          "scenarioTitle": "Regex & Log Parsing"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 121,
+          "scenarioTitle": "JSON Handling"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 122,
+          "scenarioTitle": "YAML Handling"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 123,
+          "scenarioTitle": "Environment Variables in Python"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 124,
+          "scenarioTitle": "API Automation using Python"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 125,
+          "scenarioTitle": "SSH Automation using Paramiko"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 126,
+          "scenarioTitle": "CI/CD Automation with Python"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 129,
+          "scenarioTitle": "Monitoring Scripts using Python"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 130,
+          "scenarioTitle": "Testing Automation using pytest"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 131,
+          "scenarioTitle": "Threading and Multiprocessing"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 132,
+          "scenarioTitle": "Generators and Iterators"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 133,
+          "scenarioTitle": "Decorators"
+        },
+        {
+          "file": "scenarios.json",
+          "scenarioIndex": 134,
+          "scenarioTitle": "Production Python Design"
+        }
+      ]
+    },
+    {
+      "keywordId": "KW-000524",
+      "keyword": "Zero Trust Architecture",
+      "aliases": [
+        "Zero Trust Security",
+        "ZTA"
+      ],
+      "category": "Security",
+      "interviewDomain": "Security",
+      "difficulty": "Advanced",
+      "frequency": 9,
+      "importance": 9,
       "seniority": "Senior",
       "sourceReferences": [
         {

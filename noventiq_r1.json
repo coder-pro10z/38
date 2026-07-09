@@ -31,7 +31,9 @@
       ],
       "why": "It shows you understand scale, governance, and resource optimization by sharing central gateways rather than duplicating them."
     },
-    "interview_kill_shot": "Hub acts as the central security and gateway transit layer; Spokes hold the isolated workloads. Peer them, but force spoke-to-spoke traffic through the Hub firewall."
+    "interview_kill_shot": "Hub acts as the central security and gateway transit layer; Spokes hold the isolated workloads. Peer them, but force spoke-to-spoke traffic through the Hub firewall.",
+    "id": "Q0170",
+    "categoryId": "C001"
   },
   {
     "title": "Availability Set vs Availability Zone",
@@ -83,7 +85,9 @@
       ],
       "why": "It shows you understand how to design against both minor hardware failures and major regional disasters."
     },
-    "interview_kill_shot": "Availability Sets protect against rack/maintenance failures in one datacenter; Availability Zones protect against entire datacenter outages."
+    "interview_kill_shot": "Availability Sets protect against rack/maintenance failures in one datacenter; Availability Zones protect against entire datacenter outages.",
+    "id": "Q0171",
+    "categoryId": "C014"
   },
   {
     "title": "Front Door vs Application Gateway",
@@ -136,7 +140,9 @@
       ],
       "why": "Shows you know how to build high-availability architectures across multiple regions."
     },
-    "interview_kill_shot": "Front Door is global and operates at the edge; Application Gateway is regional and operates inside a private VNet."
+    "interview_kill_shot": "Front Door is global and operates at the edge; Application Gateway is regional and operates inside a private VNet.",
+    "id": "Q0172",
+    "categoryId": "C012"
   },
   {
     "title": "VNet Peering & Subnetting",
@@ -167,7 +173,9 @@
       ],
       "why": "Demonstrates core subnetting math and standard cloud routing restrictions."
     },
-    "interview_kill_shot": "Peering cannot connect overlapping IP spaces. A /23 subnet split into /25 spaces yields exactly 4 subnets."
+    "interview_kill_shot": "Peering cannot connect overlapping IP spaces. A /23 subnet split into /25 spaces yields exactly 4 subnets.",
+    "id": "Q0173",
+    "categoryId": "C012"
   },
   {
     "title": "User Defined Routes (UDR)",
@@ -197,7 +205,9 @@
       ],
       "why": "Confirms understanding of network security boundary controls."
     },
-    "interview_kill_shot": "We associate a custom route table with subnets and map 0.0.0.0/0 to a Next Hop of VirtualAppliance, pointing to our Firewall."
+    "interview_kill_shot": "We associate a custom route table with subnets and map 0.0.0.0/0 to a Next Hop of VirtualAppliance, pointing to our Firewall.",
+    "id": "Q0174",
+    "categoryId": "C014"
   },
   {
     "title": "Service Endpoint vs Private Endpoint",
@@ -228,7 +238,9 @@
       ],
       "why": "Shows mastery of cloud-native endpoint security and DNS resolution."
     },
-    "interview_kill_shot": "Service Endpoints secure the public endpoint; Private Endpoints replace the public endpoint with a private VNet IP and require Private DNS setup."
+    "interview_kill_shot": "Service Endpoints secure the public endpoint; Private Endpoints replace the public endpoint with a private VNet IP and require Private DNS setup.",
+    "id": "Q0175",
+    "categoryId": "C014"
   },
   {
     "title": "AKS vs Azure Container Apps",
@@ -274,7 +286,9 @@
       ],
       "why": "It shows you balance developer velocity against custom control requirements."
     },
-    "interview_kill_shot": "Choose AKS for full Kubernetes API control; choose ACA for zero-maintenance serverless container execution."
+    "interview_kill_shot": "Choose AKS for full Kubernetes API control; choose ACA for zero-maintenance serverless container execution.",
+    "id": "Q0176",
+    "categoryId": "C006"
   },
   {
     "title": "Production Incident Troubleshooting",
@@ -310,6 +324,8 @@
       ],
       "why": "Shows structured diagnostic methodology (Layer 4 network checks first, then Layer 7 app and auth checks)."
     },
-    "interview_kill_shot": "If the network port is reachable but the application still fails, immediately check Layer 7 application logs, authentication credentials, and Key Vault secrets."
+    "interview_kill_shot": "If the network port is reachable but the application still fails, immediately check Layer 7 application logs, authentication credentials, and Key Vault secrets.",
+    "id": "Q0177",
+    "categoryId": "C014"
   }
 ]

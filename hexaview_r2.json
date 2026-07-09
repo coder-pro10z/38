@@ -35,7 +35,9 @@
       ],
       "why": "It decouples deployments from human errors and enforces automated safety checks at every stage."
     },
-    "interview_kill_shot": "Build once, version dynamically, and promote the exact same immutable artifact through all environments."
+    "interview_kill_shot": "Build once, version dynamically, and promote the exact same immutable artifact through all environments.",
+    "id": "Q0152",
+    "categoryId": "C002"
   },
   {
     "title": "Jenkins vs Azure DevOps",
@@ -91,7 +93,9 @@
       ],
       "why": "Reducing server maintenance allows DevOps teams to focus on release velocity and system reliability."
     },
-    "interview_kill_shot": "Jenkins is for ultimate custom flexibility; Azure DevOps is for zero-maintenance integrated enterprise governance."
+    "interview_kill_shot": "Jenkins is for ultimate custom flexibility; Azure DevOps is for zero-maintenance integrated enterprise governance.",
+    "id": "Q0153",
+    "categoryId": "C003"
   },
   {
     "title": "End-to-End Deployment Pipeline Flow",
@@ -127,7 +131,9 @@
       ],
       "why": "Rebuilding artifacts in each environment risks generating different binaries and invalidating previous test results."
     },
-    "interview_kill_shot": "Rebuilds are forbidden. Promote the same immutable image to maintain binary integrity."
+    "interview_kill_shot": "Rebuilds are forbidden. Promote the same immutable image to maintain binary integrity.",
+    "id": "Q0154",
+    "categoryId": "C002"
   },
   {
     "title": "CI Stage 1: Source & Build",
@@ -156,7 +162,9 @@
       ],
       "why": "Validating compilation on clean runners prevents 'works on my machine' code bugs from entering the repository."
     },
-    "interview_kill_shot": "Always compile binaries on a clean, ephemeral runner to guarantee build repeatability."
+    "interview_kill_shot": "Always compile binaries on a clean, ephemeral runner to guarantee build repeatability.",
+    "id": "Q0155",
+    "categoryId": "C002"
   },
   {
     "title": "CI Stage 2: Code Quality & Security",
@@ -185,7 +193,9 @@
       ],
       "why": "Catching security risks and code smells early in CI is significantly cheaper than resolving them in production."
     },
-    "interview_kill_shot": "If the SonarQube Quality Gate fails, the build breaks. No exceptions."
+    "interview_kill_shot": "If the SonarQube Quality Gate fails, the build breaks. No exceptions.",
+    "id": "Q0156",
+    "categoryId": "C013"
   },
   {
     "title": "CI Stage 3: Automated Testing",
@@ -213,7 +223,9 @@
       ],
       "why": "Testing before container packaging prevents pushing broken code to container registries."
     },
-    "interview_kill_shot": "Unit testing is in-memory and fast. It must complete successfully before any registry push."
+    "interview_kill_shot": "Unit testing is in-memory and fast. It must complete successfully before any registry push.",
+    "id": "Q0157",
+    "categoryId": "C005"
   },
   {
     "title": "Artifact Packaging & Immutability",
@@ -241,7 +253,9 @@
       ],
       "why": "Containers eliminate runtime differences, preventing environment-specific execution discrepancies."
     },
-    "interview_kill_shot": "Docker packaging wraps binaries and runtimes together, ensuring absolute deployment consistency."
+    "interview_kill_shot": "Docker packaging wraps binaries and runtimes together, ensuring absolute deployment consistency.",
+    "id": "Q0158",
+    "categoryId": "C002"
   },
   {
     "title": "Artifact Storage & Publishing",
@@ -270,7 +284,9 @@
       ],
       "why": "Centralized artifact storage ensures that deployments pull validated, authenticated binary releases."
     },
-    "interview_kill_shot": "If the artifact is not stored in a versioned repository, it does not exist for deployment."
+    "interview_kill_shot": "If the artifact is not stored in a versioned repository, it does not exist for deployment.",
+    "id": "Q0159",
+    "categoryId": "C002"
   },
   {
     "title": "CD Stage 1: UAT Deployment",
@@ -299,7 +315,9 @@
       ],
       "why": "Testing in UAT ensures integration points and business requirements are validated before staging."
     },
-    "interview_kill_shot": "Promote identical Docker tags to UAT, injecting UAT-specific configurations dynamically."
+    "interview_kill_shot": "Promote identical Docker tags to UAT, injecting UAT-specific configurations dynamically.",
+    "id": "Q0160",
+    "categoryId": "C002"
   },
   {
     "title": "QA Validation Process",
@@ -328,7 +346,9 @@
       ],
       "why": "Enforces manual audit trails and business review before shipping to staging and production."
     },
-    "interview_kill_shot": "Manual validation gates ensure QA sign-off is recorded in the pipeline audit history."
+    "interview_kill_shot": "Manual validation gates ensure QA sign-off is recorded in the pipeline audit history.",
+    "id": "Q0161",
+    "categoryId": "C008"
   },
   {
     "title": "CD Stage 2: PreProd Deployment",
@@ -357,7 +377,9 @@
       ],
       "why": "Testing scale in PreProd minimizes release failure rates on production deployments."
     },
-    "interview_kill_shot": "PreProd validation is our final gateway. If load or smoke tests fail, release aborts."
+    "interview_kill_shot": "PreProd validation is our final gateway. If load or smoke tests fail, release aborts.",
+    "id": "Q0162",
+    "categoryId": "C002"
   },
   {
     "title": "CD Stage 3: Production Deployment",
@@ -386,7 +408,9 @@
       ],
       "why": "Zero-downtime deployments ensure customer satisfaction and allow testing live traffic safely."
     },
-    "interview_kill_shot": "Production releases require explicit CAB approvals and use blue-green rollouts to avoid downtime."
+    "interview_kill_shot": "Production releases require explicit CAB approvals and use blue-green rollouts to avoid downtime.",
+    "id": "Q0163",
+    "categoryId": "C002"
   },
   {
     "title": "Artifact Promotion Strategy",
@@ -408,7 +432,9 @@
       ],
       "why": "Compiling once and deploying many times guarantees binary integrity across deployment hosts."
     },
-    "interview_kill_shot": "Never rebuild. An artifact compiled in Dev is the exact binary deployed in Prod."
+    "interview_kill_shot": "Never rebuild. An artifact compiled in Dev is the exact binary deployed in Prod.",
+    "id": "Q0164",
+    "categoryId": "C002"
   },
   {
     "title": "Version Control & Release Tracking",
@@ -429,7 +455,9 @@
       ],
       "why": "Knowing the exact code version deployed avoids confusion and speeds up remediation during incidents."
     },
-    "interview_kill_shot": "Semantic versions combined with Git SHAs ensure that every running container is fully auditable."
+    "interview_kill_shot": "Semantic versions combined with Git SHAs ensure that every running container is fully auditable.",
+    "id": "Q0165",
+    "categoryId": "C002"
   },
   {
     "title": "Notifications & Release Visibility",
@@ -451,7 +479,9 @@
       ],
       "why": "Immediate notifications improve team collaboration and reduce MTTR (Mean Time to Resolution) when pipelines break."
     },
-    "interview_kill_shot": "Automated pipeline webhooks ensure stakeholders are notified of release statuses in real time."
+    "interview_kill_shot": "Automated pipeline webhooks ensure stakeholders are notified of release statuses in real time.",
+    "id": "Q0166",
+    "categoryId": "C002"
   },
   {
     "title": "Rollback Strategy (N-1 & N-2)",
@@ -479,7 +509,9 @@
       ],
       "why": "Redeploying cached stable artifacts is the fastest way to restore services during release incidents."
     },
-    "interview_kill_shot": "Rollback is a redeployment of a verified stable image. Never build hotfixes under pressure."
+    "interview_kill_shot": "Rollback is a redeployment of a verified stable image. Never build hotfixes under pressure.",
+    "id": "Q0167",
+    "categoryId": "C002"
   },
   {
     "title": "Monitoring & 99.9% Uptime SLA",
@@ -519,7 +551,9 @@
       ],
       "why": "Automated health checks from multiple geo-locations provide an accurate assessment of system uptime."
     },
-    "interview_kill_shot": "Calculate uptime using automated geo-distributed health checks, not server ping logs."
+    "interview_kill_shot": "Calculate uptime using automated geo-distributed health checks, not server ping logs.",
+    "id": "Q0168",
+    "categoryId": "C011"
   },
   {
     "title": "XML Parsing & Agent OS Mismatch",
@@ -576,6 +610,8 @@
       ],
       "why": "Different operating systems handle file paths, compilers, and scripts differently. Validating host platform environment prevents unexpected runtime errors."
     },
-    "interview_kill_shot": "XML parsing is simple in PowerShell, but enforce your pipeline VM pools to avoid cross-platform script breaks."
+    "interview_kill_shot": "XML parsing is simple in PowerShell, but enforce your pipeline VM pools to avoid cross-platform script breaks.",
+    "id": "Q0169",
+    "categoryId": "C006"
   }
 ]

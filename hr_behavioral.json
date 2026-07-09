@@ -1,0 +1,146 @@
+[
+  {
+    "title": "Tell me about yourself",
+    "type": "Behavioral",
+    "difficulty": "Easy",
+    "data": {
+      "answer": [
+        "I'm Anam Ansari, an Azure DevOps Engineer with 2+ years of experience in Azure Cloud and Infrastructure.",
+        "My expertise includes Azure services, CI/CD pipelines, Terraform, ARM/Bicep, PowerShell, and Infrastructure as Code.",
+        "I enjoy automating deployments, improving infrastructure reliability, and optimizing cloud resources.",
+        "I work closely with developers, QA, and operations teams to deliver stable production environments.",
+        "I'm now looking for a role where I can contribute to larger enterprise cloud projects while continuing to grow technically."
+      ]
+    }
+  },
+  {
+    "title": "Why Coforge?",
+    "type": "Behavioral",
+    "difficulty": "Easy",
+    "data": {
+      "answer": [
+        "Coforge has a strong reputation in cloud transformation and infrastructure services.",
+        "The role aligns well with my Azure Cloud and DevOps experience.",
+        "I want exposure to enterprise-scale infrastructure and global client environments.",
+        "I also value Coforge's culture of continuous learning and innovation."
+      ]
+    }
+  },
+  {
+    "title": "Why are you looking for a change?",
+    "type": "Behavioral",
+    "difficulty": "Easy",
+    "data": {
+      "answer": [
+        "I've gained valuable hands-on experience in my current role and appreciate the opportunities I've received.",
+        "Now I'm looking for larger technical challenges and broader cloud exposure.",
+        "I want to work on enterprise-scale infrastructure and automation initiatives.",
+        "This move is focused on professional growth rather than leaving because of dissatisfaction."
+      ]
+    }
+  },
+  {
+    "title": "Biggest Achievement",
+    "type": "Behavioral",
+    "difficulty": "Medium",
+    "data": {
+      "answer": [
+        "I automated infrastructure provisioning using Terraform, ARM templates, and Azure DevOps pipelines.",
+        "This standardized deployments across development, staging, and production.",
+        "Manual effort and deployment errors were significantly reduced.",
+        "The automation became reusable across multiple projects, improving consistency and deployment speed."
+      ]
+    }
+  },
+  {
+    "title": "Biggest Failure",
+    "type": "Behavioral",
+    "difficulty": "Medium",
+    "data": {
+      "answer": [
+        "Early in my career, I underestimated the importance of validating infrastructure dependencies before deployment.",
+        "The deployment was delayed because a dependency wasn't identified during testing.",
+        "I took ownership of the issue and helped resolve it quickly.",
+        "Since then, I always perform impact analysis, peer reviews, and rollback planning before production changes."
+      ]
+    }
+  },
+  {
+    "title": "Conflict with Developers",
+    "type": "Behavioral",
+    "difficulty": "Medium",
+    "data": {
+      "answer": [
+        "Developers wanted an urgent production release while infrastructure validation was still in progress.",
+        "I explained the technical risks and business impact of skipping validation.",
+        "We agreed on completing the critical checks first before deployment.",
+        "The release was successful without production incidents, strengthening collaboration between teams."
+      ]
+    }
+  },
+  {
+    "title": "Handling Deadlines",
+    "type": "Behavioral",
+    "difficulty": "Medium",
+    "data": {
+      "answer": [
+        "I prioritize work based on business impact and production criticality.",
+        "I break large tasks into smaller milestones and automate repetitive work whenever possible.",
+        "I communicate progress proactively with stakeholders.",
+        "Even under pressure, I never compromise critical validation or security checks."
+      ]
+    }
+  },
+  {
+    "title": "Learning New Technologies",
+    "type": "Behavioral",
+    "difficulty": "Easy",
+    "data": {
+      "answer": [
+        "I begin by understanding the fundamentals through official documentation and Microsoft Learn.",
+        "I build hands-on lab environments before applying new technologies in projects.",
+        "I regularly follow cloud communities and technical blogs.",
+        "Recently, I've been expanding my knowledge in Kubernetes and advanced Azure networking."
+      ]
+    }
+  },
+  {
+    "title": "Team Collaboration",
+    "type": "Behavioral",
+    "difficulty": "Easy",
+    "data": {
+      "answer": [
+        "I collaborate closely with developers, QA, security, and operations teams.",
+        "Clear communication and proper documentation are essential for successful deployments.",
+        "During incidents, I focus on restoring services first before performing root cause analysis.",
+        "I believe strong teamwork leads to reliable cloud operations."
+      ]
+    }
+  },
+  {
+    "title": "Leadership Example",
+    "type": "Behavioral",
+    "difficulty": "Medium",
+    "data": {
+      "answer": [
+        "Although I haven't managed a formal team, I regularly take ownership of technical initiatives.",
+        "I created reusable Infrastructure as Code templates and deployment documentation.",
+        "I helped teammates adopt automation practices and coordinated deployment activities.",
+        "For me, leadership means taking responsibility, supporting the team, and driving successful outcomes."
+      ]
+    }
+  },
+  {
+    "title": "Strengths and Weaknesses",
+    "type": "Behavioral",
+    "difficulty": "Easy",
+    "data": {
+      "answer": [
+        "My strengths are problem-solving, ownership, automation, and continuous learning.",
+        "I enjoy improving cloud infrastructure through automation and process optimization.",
+        "One weakness I identified early was spending too much time perfecting solutions.",
+        "I've learned to balance quality with delivery timelines by prioritizing business requirements and seeking feedback early."
+      ]
+    }
+  }
+]

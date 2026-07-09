@@ -1,0 +1,434 @@
+[
+  {
+    "id": "LOCUS-001",
+    "question": "Tell me about yourself",
+    "categoryId": "C001",
+    "categoryName": "Introduction & Project",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-003",
+    "question": "What are your day-to-day responsibilities?",
+    "categoryId": "C001",
+    "categoryName": "Introduction & Project",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-004",
+    "question": "What is your role in the deployment process?",
+    "categoryId": "C001",
+    "categoryName": "Introduction & Project",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-005",
+    "question": "Describe a challenging production issue you resolved",
+    "categoryId": "C001",
+    "categoryName": "Introduction & Project",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-007",
+    "question": "CI vs CD",
+    "categoryId": "C002",
+    "categoryName": "CI/CD Pipelines",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-019",
+    "question": "Library",
+    "categoryId": "C002",
+    "categoryName": "CI/CD Pipelines",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-020",
+    "question": "Self-hosted Agent vs Microsoft-hosted Agent",
+    "categoryId": "C002",
+    "categoryName": "CI/CD Pipelines",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-035",
+    "question": "Library",
+    "categoryId": "C003",
+    "categoryName": "Azure DevOps",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-038",
+    "question": "init",
+    "categoryId": "C004",
+    "categoryName": "Terraform",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-045",
+    "question": "locking",
+    "categoryId": "C004",
+    "categoryName": "Terraform",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-048",
+    "question": "outputs",
+    "categoryId": "C004",
+    "categoryName": "Terraform",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-049",
+    "question": "workspaces",
+    "categoryId": "C004",
+    "categoryName": "Terraform",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-051",
+    "question": "depends_on",
+    "categoryId": "C004",
+    "categoryName": "Terraform",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-052",
+    "question": "provisioners",
+    "categoryId": "C004",
+    "categoryName": "Terraform",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-059",
+    "question": "Layers",
+    "categoryId": "C005",
+    "categoryName": "Docker",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-076",
+    "question": "NodePool",
+    "categoryId": "C006",
+    "categoryName": "Kubernetes / AKS",
+    "priority": 1,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-082",
+    "question": "VNets",
+    "categoryId": "C007",
+    "categoryName": "Azure Services",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-105",
+    "question": "free",
+    "categoryId": "C008",
+    "categoryName": "Linux",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-114",
+    "question": "Merge",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-115",
+    "question": "Rebase",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-116",
+    "question": "Cherry-pick",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-117",
+    "question": "Stash",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-118",
+    "question": "Reset",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-119",
+    "question": "Revert",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-121",
+    "question": "Pull Request",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-122",
+    "question": "Merge Conflict",
+    "categoryId": "C009",
+    "categoryName": "Git",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-126",
+    "question": "Declarative vs Scripted",
+    "categoryId": "C010",
+    "categoryName": "Jenkins",
+    "priority": 2,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-133",
+    "question": "CloudWatch",
+    "categoryId": "C011",
+    "categoryName": "Monitoring & Logging",
+    "priority": 3,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-136",
+    "question": "ELK",
+    "categoryId": "C011",
+    "categoryName": "Monitoring & Logging",
+    "priority": 3,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-149",
+    "question": "Public IP",
+    "categoryId": "C012",
+    "categoryName": "Networking",
+    "priority": 3,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-166",
+    "question": "Production deployment failed. What would you do?",
+    "categoryId": "C014",
+    "categoryName": "Scenario-Based",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-171",
+    "question": "High CPU usage on a VM",
+    "categoryId": "C014",
+    "categoryName": "Scenario-Based",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-175",
+    "question": "Database connection issue after deployment",
+    "categoryId": "C014",
+    "categoryName": "Scenario-Based",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-178",
+    "question": "Tell me about yourself",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-179",
+    "question": "Why Coforge?",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-180",
+    "question": "Why are you looking for a change?",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-181",
+    "question": "Biggest achievement",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-182",
+    "question": "Biggest failure",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-183",
+    "question": "Conflict with developers",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-185",
+    "question": "Learning new technologies",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-187",
+    "question": "Leadership examples",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-188",
+    "question": "Strengths and weaknesses",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 4,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-190",
+    "question": "SDLC",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 5,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-191",
+    "question": "Agile",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 5,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-192",
+    "question": "Scrum",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 5,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-193",
+    "question": "CI/CD",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 5,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-195",
+    "question": "Virtual Machine vs Container",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 5,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  },
+  {
+    "id": "LOCUS-199",
+    "question": "PaaS vs IaaS vs SaaS",
+    "categoryId": "C015",
+    "categoryName": "HR / Behavioral",
+    "priority": 5,
+    "company": "Coforge - Infinite Locus",
+    "status": "new_pending_answer"
+  }
+]

@@ -344,6 +344,47 @@
         .conf-btn[data-rating="done"].active { background: rgba(52, 211, 153, 0.1); border-color: var(--status-success); color: var(--status-success); }
         .conf-btn[data-rating="review"].active { background: rgba(251, 146, 60, 0.1); border-color: #fb923c; color: #fb923c; }
         .conf-btn[data-rating="revisit"].active { background: rgba(251, 191, 36, 0.1); border-color: var(--status-warning); color: var(--status-warning); }
+        .conf-btn[data-rating="clear"]:hover { border-color: var(--text-muted); color: var(--text-primary); }
+        .conf-btn[data-rating="clear"].active { background: rgba(148, 163, 184, 0.15); border-color: var(--text-muted); color: var(--text-primary); }
+
+        .header-status-toggle {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--surface-2);
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .header-status-toggle:hover {
+            border-color: var(--status-success);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+        .header-status-toggle.is-done {
+            background: rgba(52, 211, 153, 0.15);
+            border-color: var(--status-success);
+            color: var(--status-success);
+        }
+
+        .status-toggle-btn {
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: transform 0.15s, background 0.15s;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .status-toggle-btn:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
 
         /* Vertical Spacing - Rows & Steps */
         .data-row { display: flex; flex-direction: column; margin-bottom: 4px; gap: 2px; }
@@ -1073,6 +1114,223 @@
             color: var(--status-success);
             font-weight: 600;
         }
+
+        /* CATEGORY INDEX STYLES */
+        .index-mode-toggle {
+            display: inline-flex;
+            background: var(--surface-1);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-right: 12px;
+        }
+        .index-mode-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .index-mode-btn.active {
+            background: var(--status-info);
+            color: #fff;
+        }
+        .overall-index-progress {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 380px;
+            background: var(--surface-1);
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+        }
+        .overall-progress-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .overall-progress-text strong {
+            color: var(--text-main);
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+        .overall-progress-track {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .overall-progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            background-color: #FACC15;
+            transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 8px currentColor;
+        }
+        .recently-viewed-panel {
+            background: var(--surface-1);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow-x: auto;
+            flex-shrink: 0;
+        }
+        .rv-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            white-space: nowrap;
+            letter-spacing: 0.05em;
+        }
+        .rv-chip {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            color: var(--text-primary);
+            cursor: pointer;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .rv-chip:hover {
+            border-color: var(--status-info);
+            background: var(--surface-3);
+        }
+        .rv-chip .ds-badge {
+            font-size: 9px;
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--status-info);
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+            padding: 24px;
+        }
+        .cat-card {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .cat-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        .cat-card.empty-cat {
+            opacity: 0.45;
+        }
+        .cat-header {
+            padding: 14px 16px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: var(--surface-1);
+            user-select: none;
+        }
+        .cat-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cat-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cat-priority-badge {
+            font-size: 10px;
+            background: var(--surface-3);
+            color: var(--text-muted);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .cat-stats {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .cat-progress-bar {
+            height: 5px;
+            background: var(--surface-3);
+            border-radius: 3px;
+            overflow: hidden;
+            display: flex;
+            width: 100%;
+        }
+        .cat-progress-done { background: #10b981; }
+        .cat-progress-review { background: #f97316; }
+        .cat-progress-revisit { background: #eab308; }
+        .cat-questions-list {
+            display: none;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
+            max-height: 280px;
+            overflow-y: auto;
+        }
+        .cat-card.expanded .cat-questions-list {
+            display: flex;
+        }
+        .cat-q-item {
+            padding: 10px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .cat-q-item:last-child {
+            border-bottom: none;
+        }
+        .cat-q-item:hover {
+            background: var(--surface-3);
+        }
+        .cat-q-item.active-q {
+            background: rgba(59, 130, 246, 0.15);
+            border-left: 3px solid var(--status-info);
+        }
+        .cat-q-num {
+            font-size: 11px;
+            color: var(--status-info);
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        .cat-q-title {
+            font-size: 13px;
+            color: var(--text-primary);
+            font-weight: 500;
+            flex: 1;
+        }
     </style>
 </head>
 <body>
@@ -1099,7 +1357,10 @@
                     <div class="dropdown-item" id="opt-noventiq-r1" onclick="selectDataset('noventiq_r1')">Round 1 (8 Q&A) <span></span></div>
                     <div class="dropdown-submenu-header" style="margin-top: 6px;">Azure Infra (JD)</div>
                     <div class="dropdown-item" id="opt-infra-azure" onclick="selectDataset('infra_azure')">20 Topics — JD Aligned <span></span></div>
+                    <div class="dropdown-submenu-header" style="margin-top: 6px;">Coforge / Infinite Locus</div>
+                    <div class="dropdown-item" id="opt-infinite-locus" onclick="selectDataset('infinite_locus')">JD Prep (48 Q&A) <span></span></div>
                     <hr style="border: 0; border-top: 1px solid var(--border); margin: 4px 0;">
+                    <div class="dropdown-item" id="opt-merged-dataset" onclick="selectDataset('merged')">📦 All Questions (254) <span></span></div>
                     <div class="dropdown-item active-item" id="opt-default-dataset" onclick="selectDataset('default')">Default Scenarios <span>✓</span></div>
                 </div>
             </div>
@@ -1119,7 +1380,12 @@
                 <div id="search-results-dropdown"></div>
             </div>
         </div>
-        <h1 id="q-title">Loading...</h1>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <h1 id="q-title" style="margin: 0; flex: 1;">Loading...</h1>
+            <button id="header-status-toggle" class="header-status-toggle" onclick="toggleCurrentQuestionStatus()" title="Click to toggle status between Grey (Unrated) and Green (Done)">
+                ⚪ Mark Done
+            </button>
+        </div>
         <div class="chips" id="q-chips"></div>
     </div>
 
@@ -1128,14 +1394,29 @@
 
     <!-- Index Modal -->
     <div id="index-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Scenario Index</h2>
+        <div class="modal-content" style="max-width: 1100px; display: flex; flex-direction: column;">
+            <div class="modal-header" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <h2 style="margin: 0;">Scenario Index</h2>
+                    <div class="index-mode-toggle">
+                        <button class="index-mode-btn active" id="btn-mode-cat" onclick="setIndexMode('category')">📋 Category</button>
+                        <button class="index-mode-btn" id="btn-mode-flat" onclick="setIndexMode('flat')">≡ List</button>
+                    </div>
+                </div>
+                <div id="overall-index-progress" class="overall-index-progress">
+                    <div class="overall-progress-text">
+                        <span>Mastery Progress</span>
+                        <strong id="overall-progress-count">0 / 254 (0%)</strong>
+                    </div>
+                    <div class="overall-progress-track">
+                        <div id="overall-progress-fill" class="overall-progress-fill" style="width: 0%; background-color: #FACC15;"></div>
+                    </div>
+                </div>
                 <button class="btn-close" id="btn-close-index">✕</button>
             </div>
-            <div class="index-list" id="index-list">
-                <!-- Populated via JS -->
-            </div>
+            <div id="index-recently-viewed" class="recently-viewed-panel" style="display: none;"></div>
+            <div class="index-list" id="index-list" style="display: none;"></div>
+            <div id="index-category-view" style="overflow-y: auto; flex: 1;"></div>
         </div>
     </div>
 
@@ -1904,6 +2185,8 @@ let hexaviewR1Scenarios = [];
 let hexaviewR2Scenarios = [];
 let noventiqR1Scenarios = [];
 let infraAzureScenarios = [];
+let infiniteLocusScenarios = [];
+let mergedScenarios = [];
 
 async function selectDataset(type) {
     if (type === currentDataset) return;
@@ -1929,6 +2212,8 @@ async function selectDataset(type) {
     const optHexR2 = document.getElementById('opt-hexaview-r2');
     const optNovR1 = document.getElementById('opt-noventiq-r1');
     const optInfraAz = document.getElementById('opt-infra-azure');
+    const optInfLocus = document.getElementById('opt-infinite-locus');
+    const optMerged = document.getElementById('opt-merged-dataset');
     const optDef = document.getElementById('opt-default-dataset');
     
     if (optHexR1 && optHexR2 && optNovR1 && optDef) {
@@ -1939,6 +2224,8 @@ async function selectDataset(type) {
         optNovR1.classList.remove('active-item');
         optNovR1.querySelector('span').innerText = '';
         if (optInfraAz) { optInfraAz.classList.remove('active-item'); optInfraAz.querySelector('span').innerText = ''; }
+        if (optInfLocus) { optInfLocus.classList.remove('active-item'); optInfLocus.querySelector('span').innerText = ''; }
+        if (optMerged) { optMerged.classList.remove('active-item'); optMerged.querySelector('span').innerText = ''; }
         optDef.classList.remove('active-item');
         optDef.querySelector('span').innerText = '';
         
@@ -1953,6 +2240,10 @@ async function selectDataset(type) {
             optNovR1.querySelector('span').innerText = '✓';
         } else if (type === 'infra_azure') {
             if (optInfraAz) { optInfraAz.classList.add('active-item'); optInfraAz.querySelector('span').innerText = '✓'; }
+        } else if (type === 'infinite_locus') {
+            if (optInfLocus) { optInfLocus.classList.add('active-item'); optInfLocus.querySelector('span').innerText = '✓'; }
+        } else if (type === 'merged') {
+            if (optMerged) { optMerged.classList.add('active-item'); optMerged.querySelector('span').innerText = '✓'; }
         } else {
             optDef.classList.add('active-item');
             optDef.querySelector('span').innerText = '✓';
@@ -1964,7 +2255,7 @@ async function selectDataset(type) {
     try {
         if (type === 'hexaview_r1') {
             if (hexaviewR1Scenarios.length === 0) {
-                const res = await fetch('hexaview_r1.json');
+                const res = await fetch('hexaview_r1.json?v=254');
                 if (!res.ok) throw new Error("Could not load Hexaview R1 dataset");
                 hexaviewR1Scenarios = await res.json();
             }
@@ -1977,7 +2268,7 @@ async function selectDataset(type) {
             } catch(e) { console.error('Failed to load hexaview R1 ratings:', e); }
         } else if (type === 'hexaview_r2') {
             if (hexaviewR2Scenarios.length === 0) {
-                const res = await fetch('hexaview_r2.json');
+                const res = await fetch('hexaview_r2.json?v=254');
                 if (!res.ok) throw new Error("Could not load Hexaview R2 dataset");
                 hexaviewR2Scenarios = await res.json();
             }
@@ -1990,7 +2281,7 @@ async function selectDataset(type) {
             } catch(e) { console.error('Failed to load hexaview R2 ratings:', e); }
         } else if (type === 'noventiq_r1') {
             if (noventiqR1Scenarios.length === 0) {
-                const res = await fetch('noventiq_r1.json');
+                const res = await fetch('noventiq_r1.json?v=254');
                 if (!res.ok) throw new Error("Could not load Noventiq R1 dataset");
                 noventiqR1Scenarios = await res.json();
             }
@@ -2003,7 +2294,7 @@ async function selectDataset(type) {
             } catch(e) { console.error('Failed to load noventiq R1 ratings:', e); }
         } else if (type === 'infra_azure') {
             if (infraAzureScenarios.length === 0) {
-                const res = await fetch('infra_azure.json');
+                const res = await fetch('infra_azure.json?v=254');
                 if (!res.ok) throw new Error("Could not load Azure Infra dataset");
                 infraAzureScenarios = await res.json();
             }
@@ -2014,6 +2305,32 @@ async function selectDataset(type) {
                 const saved = localStorage.getItem('infra_azure_ratings');
                 if (saved) ratings = JSON.parse(saved);
             } catch(e) { console.error('Failed to load infra azure ratings:', e); }
+        } else if (type === 'infinite_locus') {
+            if (infiniteLocusScenarios.length === 0) {
+                const res = await fetch('infinite_locus.json?v=254');
+                if (!res.ok) throw new Error("Could not load Infinite Locus dataset");
+                infiniteLocusScenarios = await res.json();
+            }
+            scenarios = infiniteLocusScenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('infinite_locus_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load infinite locus ratings:', e); }
+        } else if (type === 'merged') {
+            if (mergedScenarios.length === 0) {
+                const res = await fetch('merged.json?v=254');
+                if (!res.ok) throw new Error("Could not load Merged dataset");
+                mergedScenarios = await res.json();
+            }
+            scenarios = mergedScenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('merged_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load merged ratings:', e); }
         } else {
             scenarios = defaultScenarios;
             
@@ -2043,9 +2360,9 @@ async function selectDataset(type) {
 async function loadScenarios() {
     try {
         const [scenariosRes, glossaryRes, linksRes] = await Promise.all([
-            fetch('scenarios.json'),
-            fetch('glossary.json'),
-            fetch('keyword-links.json')
+            fetch('scenarios.json?v=254'),
+            fetch('glossary.json?v=254'),
+            fetch('keyword-links.json?v=254')
         ]);
         
         if (!scenariosRes.ok) throw new Error(`Scenarios error: ${scenariosRes.status}`);
@@ -2119,8 +2436,182 @@ function getActiveIndices() {
     return scenarios.map((_, i) => i);
 }
 
-function renderIndex() {
+const CATEGORY_CONFIG = [
+  { id: "C001", priority: 1, name: "Introduction & Project", approx: 15 },
+  { id: "C002", priority: 2, name: "CI/CD Pipelines", approx: 25 },
+  { id: "C003", priority: 3, name: "Azure DevOps", approx: 20 },
+  { id: "C004", priority: 4, name: "Terraform", approx: 20 },
+  { id: "C005", priority: 5, name: "Docker", approx: 20 },
+  { id: "C006", priority: 6, name: "Kubernetes / AKS", approx: 20 },
+  { id: "C007", priority: 7, name: "Azure Services", approx: 30 },
+  { id: "C008", priority: 8, name: "Linux", approx: 25 },
+  { id: "C009", priority: 9, name: "Git", approx: 15 },
+  { id: "C010", priority: 10, name: "Jenkins", approx: 15 },
+  { id: "C011", priority: 11, name: "Monitoring & Logging", approx: 20 },
+  { id: "C012", priority: 12, name: "Networking", approx: 20 },
+  { id: "C013", priority: 13, name: "Security / DevSecOps", approx: 15 },
+  { id: "C014", priority: 14, name: "Scenario-Based", approx: 25 },
+  { id: "C015", priority: 15, name: "HR / Behavioral", approx: 15 },
+  { id: "C016", priority: 16, name: "Python / Scripting", approx: 30 },
+  { id: "C017", priority: 17, name: "Reference", approx: 1 }
+];
+
+let currentIndexMode = localStorage.getItem('devops_index_mode') || 'category';
+let expandedCategories = JSON.parse(localStorage.getItem('devops_expanded_categories') || '[]');
+
+function setIndexMode(mode) {
+    currentIndexMode = mode;
+    localStorage.setItem('devops_index_mode', mode);
+    renderIndex();
+}
+
+function toggleCategoryCard(catId) {
+    const idx = expandedCategories.indexOf(catId);
+    if (idx > -1) {
+        expandedCategories.splice(idx, 1);
+    } else {
+        expandedCategories.push(catId);
+    }
+    localStorage.setItem('devops_expanded_categories', JSON.stringify(expandedCategories));
+    const card = document.getElementById('cat-card-' + catId);
+    if (card) card.classList.toggle('expanded', expandedCategories.includes(catId));
+}
+
+function renderRecentlyViewedPanel() {
+    const panel = document.getElementById('index-recently-viewed');
+    if (!panel) return;
+    let list = [];
+    try {
+        list = JSON.parse(localStorage.getItem('devops_recently_viewed') || '[]');
+    } catch(e) {}
+    if (list.length === 0) {
+        panel.style.display = 'none';
+        return;
+    }
+    panel.style.display = 'flex';
+    const chipsHtml = list.map(item => {
+        const badge = item.dataset ? `<span class="ds-badge">${item.dataset}</span>` : '';
+        return `<div class="rv-chip" onclick="navigateToRecent('${item.dataset}', ${item.index})">
+            <span>⏱️ ${item.title.length > 28 ? item.title.substring(0, 26) + '...' : item.title}</span>
+            ${badge}
+        </div>`;
+    }).join('');
+    panel.innerHTML = `<span class="rv-label">Recently Viewed:</span>` + chipsHtml;
+}
+
+async function navigateToRecent(dataset, index) {
+    document.getElementById('index-modal').classList.remove('active');
+    if (dataset && dataset !== currentDataset) {
+        await selectDataset(dataset);
+    }
+    currentIndex = index;
+    solutionRevealed = false;
+    renderScenario();
+}
+
+function renderCategoryIndex() {
+    const listEl = document.getElementById('index-list');
+    const catViewEl = document.getElementById('index-category-view');
+    const btnCat = document.getElementById('btn-mode-cat');
+    const btnFlat = document.getElementById('btn-mode-flat');
+
+    if (listEl) listEl.style.display = 'none';
+    if (catViewEl) catViewEl.style.display = 'block';
+    if (btnCat) btnCat.classList.add('active');
+    if (btnFlat) btnFlat.classList.remove('active');
+
+    // Group current dataset scenarios by categoryId
+    const catMap = {};
+    scenarios.forEach((s, idx) => {
+        const cid = s.categoryId || 'C014';
+        if (!catMap[cid]) catMap[cid] = [];
+        catMap[cid].push({ scenario: s, index: idx });
+    });
+
+    let html = `<div class="cat-grid">`;
+    CATEGORY_CONFIG.forEach(cat => {
+        const items = catMap[cat.id] || [];
+        const count = items.length;
+        const isEmpty = count === 0;
+
+        let doneCount = 0;
+        let reviewCount = 0;
+        let revisitCount = 0;
+
+        items.forEach(it => {
+            const r = ratings[it.index];
+            if (r === 'done') doneCount++;
+            else if (r === 'review') reviewCount++;
+            else if (r === 'revisit') revisitCount++;
+        });
+
+        const pctDone = count > 0 ? (doneCount / count) * 100 : 0;
+        const pctReview = count > 0 ? (reviewCount / count) * 100 : 0;
+        const pctRevisit = count > 0 ? (revisitCount / count) * 100 : 0;
+
+        const isExpanded = expandedCategories.includes(cat.id) ? 'expanded' : '';
+
+        const questionsHtml = items.map((it, dispIdx) => {
+            const s = it.scenario;
+            const rating = ratings[it.index];
+            let indicator = '⚪';
+            if (rating === 'done') indicator = '🟢';
+            if (rating === 'review') indicator = '🟠';
+            if (rating === 'revisit') indicator = '🟡';
+            const isActive = it.index === currentIndex ? 'active-q' : '';
+            return `
+            <div class="cat-q-item ${isActive}" onclick="navigateToIndex(${it.index})">
+                <div style="display: flex; align-items: center; flex: 1;">
+                    <span class="cat-q-num">${dispIdx + 1}.</span>
+                    <span class="cat-q-title">${s.title}</span>
+                </div>
+                <span class="status-toggle-btn" onclick="toggleQuestionStatus(${it.index}, event)" title="Click to toggle Done (Green) / Unrated (Grey)" style="font-size: 15px;">${indicator}</span>
+            </div>`;
+        }).join('');
+
+        html += `
+        <div class="cat-card ${isEmpty ? 'empty-cat' : ''} ${isExpanded}" id="cat-card-${cat.id}">
+            <div class="cat-header" onclick="${isEmpty ? '' : `toggleCategoryCard('${cat.id}')`}">
+                <div class="cat-header-top">
+                    <div class="cat-title">
+                        <span>${cat.name}</span>
+                        <span class="cat-priority-badge">#${cat.priority}</span>
+                    </div>
+                    <span class="cat-stats">${doneCount}/${count} Done</span>
+                </div>
+                <div class="cat-progress-bar">
+                    <div class="cat-progress-done" style="width: ${pctDone}%;"></div>
+                    <div class="cat-progress-review" style="width: ${pctReview}%;"></div>
+                    <div class="cat-progress-revisit" style="width: ${pctRevisit}%;"></div>
+                </div>
+            </div>
+            <div class="cat-questions-list">
+                ${questionsHtml}
+            </div>
+        </div>`;
+    });
+    html += `</div>`;
+    catViewEl.innerHTML = html;
+}
+
+function navigateToIndex(idx) {
+    currentIndex = idx;
+    solutionRevealed = false;
+    document.getElementById('index-modal').classList.remove('active');
+    renderScenario();
+}
+
+function renderFlatIndex() {
     const list = document.getElementById('index-list');
+    const catViewEl = document.getElementById('index-category-view');
+    const btnCat = document.getElementById('btn-mode-cat');
+    const btnFlat = document.getElementById('btn-mode-flat');
+
+    if (list) list.style.display = 'flex';
+    if (catViewEl) catViewEl.style.display = 'none';
+    if (btnCat) btnCat.classList.remove('active');
+    if (btnFlat) btnFlat.classList.add('active');
+
     const activeIndices = getActiveIndices();
     
     let html = '';
@@ -2138,25 +2629,65 @@ function renderIndex() {
             const isActive = scenarioIdx === currentIndex ? 'active' : '';
             
             // Build compact chips for the index preview
-            const visibleChips = s.chips.slice(0, 4);
-            const extraChipsCount = s.chips.length - visibleChips.length;
+            const visibleChips = (s.chips || []).slice(0, 4);
+            const extraChipsCount = (s.chips || []).length - visibleChips.length;
             const chipsHtml = visibleChips.map(c => `<span style="background: var(--surface-1); padding: 2px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--border); color: var(--text-muted);">${c}</span>`).join('');
             const extraHtml = extraChipsCount > 0 ? `<span style="padding: 2px 4px; font-size: 10px; color: var(--text-muted);">+${extraChipsCount}</span>` : '';
             
             html += `
             <div class="index-item ${isActive}" data-target="${scenarioIdx}">
                 <div style="flex: 1;">
-                    <div class="meta" style="color: var(--status-info); font-weight: 600;">${displayIdx + 1}. ${s.type}</div>
+                    <div class="meta" style="color: var(--status-info); font-weight: 600;">${displayIdx + 1}. ${s.type || 'Scenario'}</div>
                     <div class="body-text" style="font-weight: 600; color: var(--text-primary); margin-top:2px; font-size: 14px;">${s.title}</div>
                     <div style="margin-top: 6px; display: flex; gap: 4px; flex-wrap: wrap;">
                         ${chipsHtml}${extraHtml}
                     </div>
                 </div>
-                <div style="font-size: 16px; margin-left: 12px; flex-shrink: 0;" title="Status: ${rating || 'Unrated'}">${indicator}</div>
+                <div class="status-toggle-btn" onclick="toggleQuestionStatus(${scenarioIdx}, event)" style="font-size: 16px; margin-left: 12px; flex-shrink: 0;" title="Click to toggle Done (Green) / Unrated (Grey)">${indicator}</div>
             </div>`;
         });
     }
     list.innerHTML = html;
+}
+
+function updateOverallIndexProgress() {
+    const total = scenarios.length || 1;
+    let doneCount = 0;
+    scenarios.forEach((_, i) => {
+        if (ratings[i] === 'done') doneCount++;
+    });
+    const pct = Math.round((doneCount / total) * 100);
+
+    const countEl = document.getElementById('overall-progress-count');
+    const fillEl = document.getElementById('overall-progress-fill');
+
+    if (countEl) {
+        countEl.innerText = `${doneCount} / ${total} (${pct}%)`;
+    }
+    if (fillEl) {
+        fillEl.style.width = `${pct}%`;
+        let color = '#FACC15'; // Yellow (0-25%)
+        if (pct >= 100) {
+            color = '#10B981'; // Green
+        } else if (pct >= 75) {
+            color = '#84CC16'; // Orangish-Green / Lime
+        } else if (pct >= 50) {
+            color = '#FB923C'; // Warm Orange
+        } else if (pct >= 25) {
+            color = '#F59E0B'; // Orange-Yellow
+        }
+        fillEl.style.backgroundColor = color;
+    }
+}
+
+function renderIndex() {
+    updateOverallIndexProgress();
+    renderRecentlyViewedPanel();
+    if (currentIndexMode === 'flat') {
+        renderFlatIndex();
+    } else {
+        renderCategoryIndex();
+    }
 }
 
 function setMode(mode) {
@@ -2184,24 +2715,87 @@ function setMode(mode) {
     renderScenario();
 }
 
+function addToRecentlyViewed(idx) {
+    if (!scenarios || !scenarios[idx]) return;
+    const s = scenarios[idx];
+    const item = {
+        id: s.id || ('Q' + idx),
+        title: s.title || 'Untitled',
+        dataset: currentDataset,
+        index: idx
+    };
+    try {
+        let list = JSON.parse(localStorage.getItem('devops_recently_viewed') || '[]');
+        list = list.filter(x => !(x.id === item.id && x.dataset === item.dataset));
+        list.unshift(item);
+        if (list.length > 6) list = list.slice(0, 6);
+        localStorage.setItem('devops_recently_viewed', JSON.stringify(list));
+    } catch(e) {}
+}
+
 function toggleReveal() {
     solutionRevealed = !solutionRevealed;
     renderScenario();
 }
 
-function setConfidence(rating) {
-    ratings[currentIndex] = rating;
+function getStorageKeyForDataset(ds) {
+    if (ds === 'hexaview_r1') return 'hexaview_r1_ratings';
+    if (ds === 'hexaview_r2') return 'hexaview_r2_ratings';
+    if (ds === 'noventiq_r1') return 'noventiq_r1_ratings';
+    if (ds === 'infra_azure') return 'infra_azure_ratings';
+    if (ds === 'infinite_locus') return 'infinite_locus_ratings';
+    if (ds === 'merged') return 'merged_ratings';
+    return 'k8s_dashboard_ratings';
+}
+
+function toggleQuestionStatus(idx, event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    if (ratings[idx] === 'done') {
+        delete ratings[idx];
+    } else {
+        ratings[idx] = 'done';
+    }
     try {
-        let storageKey = 'k8s_dashboard_ratings';
-        if (currentDataset === 'hexaview_r1') {
-            storageKey = 'hexaview_r1_ratings';
-        } else if (currentDataset === 'hexaview_r2') {
-            storageKey = 'hexaview_r2_ratings';
-        }
-        localStorage.setItem(storageKey, JSON.stringify(ratings));
+        localStorage.setItem(getStorageKeyForDataset(currentDataset), JSON.stringify(ratings));
     } catch (e) {
         console.error('Failed to save ratings:', e);
     }
+    renderIndex();
+    if (idx === currentIndex) {
+        renderScenario();
+    }
+}
+
+function toggleCurrentQuestionStatus() {
+    if (ratings[currentIndex] === 'done') {
+        delete ratings[currentIndex];
+    } else {
+        ratings[currentIndex] = 'done';
+    }
+    try {
+        localStorage.setItem(getStorageKeyForDataset(currentDataset), JSON.stringify(ratings));
+    } catch (e) {
+        console.error('Failed to save ratings:', e);
+    }
+    updateOverallIndexProgress();
+    renderScenario();
+}
+
+function setConfidence(rating) {
+    if (rating === 'clear' || ratings[currentIndex] === rating) {
+        delete ratings[currentIndex];
+    } else {
+        ratings[currentIndex] = rating;
+    }
+    try {
+        localStorage.setItem(getStorageKeyForDataset(currentDataset), JSON.stringify(ratings));
+    } catch (e) {
+        console.error('Failed to save ratings:', e);
+    }
+    updateOverallIndexProgress();
     renderScenario();
 }
 
@@ -2220,6 +2814,14 @@ function nav(direction) {
     currentIndex = active[currentActiveIndex];
     solutionRevealed = false;
     renderScenario();
+}
+
+function updateHeaderStatusToggle() {
+    const btn = document.getElementById('header-status-toggle');
+    if (!btn) return;
+    const isDone = ratings[currentIndex] === 'done';
+    btn.classList.toggle('is-done', isDone);
+    btn.innerHTML = isDone ? '🟢 Done (Click to Reset)' : '⚪ Mark Done';
 }
 
 function renderScenario() {
@@ -2264,6 +2866,7 @@ function renderScenario() {
     // Save last slide index for the current dataset in localStorage
     try {
         localStorage.setItem('last_slide_index_' + currentDataset, currentIndex);
+        addToRecentlyViewed(currentIndex);
     } catch(e) {
         console.error('Failed to save slide index state:', e);
     }
@@ -2273,6 +2876,7 @@ function renderScenario() {
     
     document.getElementById('counter').innerHTML = `Question ${activeIndices.indexOf(currentIndex) + 1} of ${activeIndices.length} <span>▼</span>`;
     document.getElementById('q-title').innerText = s.title;
+    updateHeaderStatusToggle();
     const highlightMainTags = (tag) => {
         const t = tag.toLowerCase();
         let bg = 'var(--surface-3)', col = 'var(--text-muted)', border = 'transparent';
@@ -3046,7 +3650,8 @@ function renderScenario() {
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                 <h2 class="card-title" style="margin:0; font-size: 15px;">Confidence Rating</h2>
                 <div class="confidence-buttons">
-                    <button class="conf-btn ${currentRating==='done'?'active':''}" data-rating="done">🟢 Done</button>
+                    <button class="conf-btn ${!currentRating?'active':''}" data-rating="clear" title="Set to Unrated (Grey)">⚪ Unrated</button>
+                    <button class="conf-btn ${currentRating==='done'?'active':''}" data-rating="done" title="Toggle Done (Green)">🟢 Done</button>
                     <button class="conf-btn ${currentRating==='review'?'active':''}" data-rating="review">🟠 Review</button>
                     <button class="conf-btn ${currentRating==='revisit'?'active':''}" data-rating="revisit">🟡 Revisit</button>
                 </div>

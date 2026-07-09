@@ -1,0 +1,19 @@
+[
+  { "id": "C001", "priority": 1, "name": "Introduction & Project", "approx": 15 },
+  { "id": "C002", "priority": 2, "name": "CI/CD Pipelines", "approx": 25 },
+  { "id": "C003", "priority": 3, "name": "Azure DevOps", "approx": 20 },
+  { "id": "C004", "priority": 4, "name": "Terraform", "approx": 20 },
+  { "id": "C005", "priority": 5, "name": "Docker", "approx": 20 },
+  { "id": "C006", "priority": 6, "name": "Kubernetes / AKS", "approx": 20 },
+  { "id": "C007", "priority": 7, "name": "Azure Services", "approx": 30 },
+  { "id": "C008", "priority": 8, "name": "Linux", "approx": 25 },
+  { "id": "C009", "priority": 9, "name": "Git", "approx": 15 },
+  { "id": "C010", "priority": 10, "name": "Jenkins", "approx": 15 },
+  { "id": "C011", "priority": 11, "name": "Monitoring & Logging", "approx": 20 },
+  { "id": "C012", "priority": 12, "name": "Networking", "approx": 20 },
+  { "id": "C013", "priority": 13, "name": "Security / DevSecOps", "approx": 15 },
+  { "id": "C014", "priority": 14, "name": "Scenario-Based", "approx": 25 },
+  { "id": "C015", "priority": 15, "name": "HR / Behavioral", "approx": 15 },
+  { "id": "C016", "priority": 16, "name": "Python / Scripting", "approx": 30 },
+  { "id": "C017", "priority": 17, "name": "Reference", "approx": 1 }
+]

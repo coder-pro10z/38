@@ -37,6 +37,12 @@ node generate_followups.js
 node generate_hexaview_json.js
 node generate_hexaview_r1_json.js
 node generate_noventiq_r1_json.js
+
+# 7. Tag all questions with global IDs (Q0001-Q0206) & categories (C001-C017)
+node tag_questions.js
+
+# 8. Merge all datasets into combined database (merged.json)
+node merge_datasets.js
 ```
 
 ---
@@ -141,6 +147,49 @@ node generate_noventiq_r1_json.js
   ```
 - **Outputs**: `hexaview_r1.json`, `hexaview_r2.json`, `noventiq_r1.json`
 
+#### 🏷️ `tag_questions.js` & `category_config.json`
+- **Purpose**: Enriches all 5 JSON datasets (`scenarios.json`, `hexaview_r1.json`, `hexaview_r2.json`, `noventiq_r1.json`, `infra_azure.json`) by tagging every question with:
+  - **Globally Unique Question ID**: `Q0001` through `Q0206`
+  - **Category ID**: Hierarchical classification (`C001` through `C017`) mapped to major DevOps & Cloud knowledge domains.
+- **Category Schema**: Includes 17 prioritized categories:
+  - `C001`–`C015`: Core DevOps, Cloud, CI/CD, Kubernetes, Terraform, Security, Networking, Linux, and HR scenarios.
+  - `C016`: **Python / Scripting** (30 Python programming & production design questions).
+  - `C017`: **Reference** (dedicated category for master FAQ panels and slide references).
+
+#### 📦 `merge_datasets.js` (`merged.json`)
+- **Purpose**: Concatenates all 206 questions across all 5 datasets into a single unified JSON database (`merged.json`). Each entry is tagged with its original `sourceDataset` name and index.
+- **Run command**:
+  ```bash
+  node merge_datasets.js
+  ```
+- **UI Integration**: Accessible directly from the **Interviews** dropdown as **`"📦 All Questions (206)"`**.
+
+---
+
+## 🧭 Categorized Index Navigation System
+
+The interactive study dashboard (`index.html`) features a dual-mode index modal designed for rapid navigation across all 206 questions:
+
+1. **📋 Category View**:
+   - Organizes questions into interactive category cards (`C001`–`C017`).
+   - Displays priority ranking badges (`#1`, `#2`, etc.) and completion statistics.
+   - Includes **3-Segment Progress Bars** visualizing the exact proportion of questions rated as 🟢 Done, 🟠 Review, or 🟡 Revisit.
+   - Collapsible cards allow focused study by domain.
+
+2. **≡ List View**:
+   - Backward-compatible flat index view with slide numbering and status indicators.
+
+3. **⏱️ Recently Viewed History Panel**:
+   - Maintains a persistent history bar across the top of the index modal showing up to 6 recently viewed questions across datasets. Clicking any item instantly switches datasets and jumps to that question.
+
+4. **Persisted State Management**:
+   - Saves your index mode preference (`devops_index_mode`), expanded category cards (`devops_expanded_categories`), recently viewed questions (`devops_recently_viewed`), and per-dataset confidence ratings independently (`getStorageKeyForDataset`).
+
+5. **⚡ Instant Status Toggle (Grey ⚪ ↔ Green 🟢)**:
+   - **Slide Header Pill**: A top pill button (`⚪ Mark Done` / `🟢 Done (Click to Reset)`) next to the question title allows instant one-click toggling between Grey (Unrated) and Green (Done).
+   - **Index Modal Indicators**: Every question status icon (`⚪` / `🟢`) inside both Category View and List View is directly clickable to toggle a question's completion status without having to open the slide.
+   - **Confidence Bar**: Clicking any already-active confidence button toggles the status back to Unrated (`⚪`).
+
 ---
 
 ## 🏗 Application Architecture
@@ -151,10 +200,15 @@ The application is structured to serve as an ultra-fast, fully client-side singl
 38/
 ├── index.html                                  # Main dashboard (HTML + CSS + JS)
 ├── devops_interview_study_dashboard_38.html     # Identical backup copy of index.html
-├── scenarios.json                              # Main Kubernetes/Troubleshooting scenarios database
-├── hexaview_r1.json                            # Hexaview Round 1 interview slides
-├── hexaview_r2.json                            # Hexaview Round 2 interview slides
-├── noventiq_r1.json                            # Noventiq Round 1 interview slides
+├── scenarios.json                              # Main Kubernetes/Troubleshooting scenarios database (135 Qs)
+├── hexaview_r1.json                            # Hexaview Round 1 interview slides (16 Qs)
+├── hexaview_r2.json                            # Hexaview Round 2 interview slides (18 Qs)
+├── noventiq_r1.json                            # Noventiq Round 1 interview slides (8 Qs)
+├── infra_azure.json                            # Azure Infra JD-aligned slides (29 Qs)
+├── infinite_locus.json                         # Coforge / Infinite Locus interview questions (48 Qs, HR synced)
+├── hr_behavioral.json                          # Authentic behavioral interview answers base (Anam Ansari / Coforge)
+├── merged.json                                 # Combined database containing all 254 questions
+├── category_config.json                        # Category definitions & priorities (C001-C017)
 ├── glossary.json                               # Processed keywords & definitions database
 ├── keyword-links.json                          # Keywords cross-reference links
 ├── *.js                                        # Node.js data pipeline scripts
@@ -197,4 +251,5 @@ Once running, navigate to `http://localhost:8000` or `http://localhost:3000` in 
 | **Review Mode** | Active tab: `Review` | Filters scenarios dynamically, showing only the ones not marked as "Done". Tracks overall progress. |
 | **Glossary View** | Active tab: `Glossary` | Displays the interactive DevOps glossary drawer, categories, and keyword relationships. |
 | **Flashcards** | Active tab: `Flashcards` | Flips through key concepts dynamically with active recall rating. |
-| **Interviews Dropdown** | Nav Dropdown | Switches datasets on-the-fly (e.g., loading Noventiq or Hexaview Round 1 datasets) while retaining study progress metrics independently. |
+| **Interviews Dropdown** | Nav Dropdown | Switches datasets on-the-fly (`Default`, `Hexaview R1/R2`, `Noventiq`, `Azure Infra`, or `📦 All Questions (206)`) while retaining study progress independently. |
+| **Scenario Index Modal** | Header Counter Button | Opens the dual-mode index modal (`📋 Category` vs `≡ List`) with 3-segment progress bars, priority badges, and cross-dataset recently viewed history. |

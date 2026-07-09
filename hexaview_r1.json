@@ -19,7 +19,9 @@
       ],
       "why": "It shows a strong alignment with core DevOps principles (automation, measurement, sharing)."
     },
-    "interview_kill_shot": "My focus is automating end-to-end software delivery pipelines and cloud resources to eliminate manual toil and ensure high system reliability."
+    "interview_kill_shot": "My focus is automating end-to-end software delivery pipelines and cloud resources to eliminate manual toil and ensure high system reliability.",
+    "id": "Q0136",
+    "categoryId": "C001"
   },
   {
     "title": "Current Project Architecture",
@@ -53,7 +55,9 @@
       ],
       "why": "This shows you own the infrastructure lifecycle and the application delivery stream."
     },
-    "interview_kill_shot": "I own the entire pipeline from the developer's git commit down to the live production telemetry on AKS."
+    "interview_kill_shot": "I own the entire pipeline from the developer's git commit down to the live production telemetry on AKS.",
+    "id": "Q0137",
+    "categoryId": "C001"
   },
   {
     "title": "Measuring 35% Reduction in Manual Effort",
@@ -96,7 +100,9 @@
       ],
       "why": "Quantifying achievements shows you understand business outcomes, not just technical tasks."
     },
-    "interview_kill_shot": "We tracked time spent on manual toil before automation (~20h/wk) and after (~13h/wk) to calculate a verified 35% efficiency gain."
+    "interview_kill_shot": "We tracked time spent on manual toil before automation (~20h/wk) and after (~13h/wk) to calculate a verified 35% efficiency gain.",
+    "id": "Q0138",
+    "categoryId": "C004"
   },
   {
     "title": "Terraform Fundamentals & Custom Modules",
@@ -141,7 +147,9 @@
       ],
       "why": "Demonstrates balance between engineering speed and corporate compliance."
     },
-    "interview_kill_shot": "Use public registry modules for speed, but build custom modules to enforce corporate compliance and security baselines."
+    "interview_kill_shot": "Use public registry modules for speed, but build custom modules to enforce corporate compliance and security baselines.",
+    "id": "Q0139",
+    "categoryId": "C004"
   },
   {
     "title": "Terraform Directory Structure",
@@ -170,7 +178,9 @@
       ],
       "why": "Demonstrates layout safety and clarity for multi-tenant deployments."
     },
-    "interview_kill_shot": "We separate our code into reusable modules/ and environment folders (dev, stage, prod) to limit blast radius and isolate state files."
+    "interview_kill_shot": "We separate our code into reusable modules/ and environment folders (dev, stage, prod) to limit blast radius and isolate state files.",
+    "id": "Q0140",
+    "categoryId": "C004"
   },
   {
     "title": "Terraform Variables & Multi-Environment Strategy",
@@ -199,7 +209,9 @@
       ],
       "why": "It shows you understand the principle of immutability and environmental parity."
     },
-    "interview_kill_shot": "We write 100% reusable modules, then inject Dev, Stage, and Prod parameters using environment-specific tfvars files."
+    "interview_kill_shot": "We write 100% reusable modules, then inject Dev, Stage, and Prod parameters using environment-specific tfvars files.",
+    "id": "Q0141",
+    "categoryId": "C004"
   },
   {
     "title": "Terraform State Management",
@@ -228,7 +240,9 @@
       ],
       "why": "Confirms understanding of concurrent team collaboration safety."
     },
-    "interview_kill_shot": "We store states in Azure Blob Storage, which automatically applies blob lease locking to prevent state corruption during concurrent runs."
+    "interview_kill_shot": "We store states in Azure Blob Storage, which automatically applies blob lease locking to prevent state corruption during concurrent runs.",
+    "id": "Q0142",
+    "categoryId": "C004"
   },
   {
     "title": "Terraform State Drift",
@@ -257,7 +271,9 @@
       ],
       "why": "Shows strong operational discipline and access governance."
     },
-    "interview_kill_shot": "Drift happens when manual changes are made in the portal. We prevent it by enforcing read-only permissions and running scheduled plan drift checks."
+    "interview_kill_shot": "Drift happens when manual changes are made in the portal. We prevent it by enforcing read-only permissions and running scheduled plan drift checks.",
+    "id": "Q0143",
+    "categoryId": "C004"
   },
   {
     "title": "Linux Basics & System Diagnostics",
@@ -285,7 +301,9 @@
       ],
       "why": "Verifies hands-on command-line troubleshooting skills."
     },
-    "interview_kill_shot": "I use `top` to monitor live process metrics and `grep` to extract specific error traces from heavy system logs."
+    "interview_kill_shot": "I use `top` to monitor live process metrics and `grep` to extract specific error traces from heavy system logs.",
+    "id": "Q0144",
+    "categoryId": "C008"
   },
   {
     "title": "Docker Fundamentals & Containerization",
@@ -322,7 +340,9 @@
       ],
       "why": "Checks knowledge of core container mechanics and filesystem layering."
     },
-    "interview_kill_shot": "Containers share the host kernel but isolate the user space. A Dockerfile compiles this user space layer-by-layer into a read-only image."
+    "interview_kill_shot": "Containers share the host kernel but isolate the user space. A Dockerfile compiles this user space layer-by-layer into a read-only image.",
+    "id": "Q0145",
+    "categoryId": "C005"
   },
   {
     "title": "Dockerfile Instructions: CMD vs ENTRYPOINT",
@@ -357,7 +377,9 @@
       ],
       "why": "Verifies depth of knowledge in container start-up sequence."
     },
-    "interview_kill_shot": "ENTRYPOINT sets the executable, and CMD provides default parameters that can be overridden at container launch."
+    "interview_kill_shot": "ENTRYPOINT sets the executable, and CMD provides default parameters that can be overridden at container launch.",
+    "id": "Q0146",
+    "categoryId": "C005"
   },
   {
     "title": "Kubernetes Overview & Orchestration",
@@ -387,7 +409,9 @@
       ],
       "why": "Confirms foundational container orchestration knowledge."
     },
-    "interview_kill_shot": "Kubernetes handles the lifecycle of our pods, ensuring self-healing, automatic scaling, and zero-downtime rolling updates."
+    "interview_kill_shot": "Kubernetes handles the lifecycle of our pods, ensuring self-healing, automatic scaling, and zero-downtime rolling updates.",
+    "id": "Q0147",
+    "categoryId": "C006"
   },
   {
     "title": "Ansible Fundamentals & Configuration Management",
@@ -416,7 +440,9 @@
       ],
       "why": "Highlights familiarity with pull vs push architecture tradeoffs."
     },
-    "interview_kill_shot": "Ansible provides agentless configuration management, pushing declarative configurations over SSH to prevent server drift."
+    "interview_kill_shot": "Ansible provides agentless configuration management, pushing declarative configurations over SSH to prevent server drift.",
+    "id": "Q0148",
+    "categoryId": "C014"
   },
   {
     "title": "Ansible Structures: Playbooks, Roles & Inventories",
@@ -444,7 +470,9 @@
       ],
       "why": "Validates familiarity with Ansible's folder structure conventions."
     },
-    "interview_kill_shot": "Tasks are individual actions; Roles are reusable components; Inventories define hosts; Playbooks orchestrate the execution."
+    "interview_kill_shot": "Tasks are individual actions; Roles are reusable components; Inventories define hosts; Playbooks orchestrate the execution.",
+    "id": "Q0149",
+    "categoryId": "C001"
   },
   {
     "title": "Azure DevOps Pipelines & Live Monitoring",
@@ -475,7 +503,9 @@
       ],
       "why": "Shows compliance with modern enterprise security and operations models."
     },
-    "interview_kill_shot": "We automate quality gates in CI/CD, secure secrets using Azure Key Vault, and monitor live telemetry using Azure Monitor and Grafana."
+    "interview_kill_shot": "We automate quality gates in CI/CD, secure secrets using Azure Key Vault, and monitor live telemetry using Azure Monitor and Grafana.",
+    "id": "Q0150",
+    "categoryId": "C003"
   },
   {
     "title": "Logic Assessment: Number Sequence",
@@ -504,6 +534,8 @@
       ],
       "why": "Demonstrates clear mathematical logic."
     },
-    "interview_kill_shot": "The difference increases by 2 at each step: +4, +6, +8, +10, yielding 31."
+    "interview_kill_shot": "The difference increases by 2 at each step: +4, +6, +8, +10, yielding 31.",
+    "id": "Q0151",
+    "categoryId": "C014"
   }
 ]

@@ -1069,14 +1069,16 @@
             top: calc(100% + 8px);
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(17, 24, 39, 0.95);
+            background: rgba(17, 24, 39, 0.98);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
-            z-index: 1000;
-            min-width: 220px;
+            border: 1px solid var(--status-info);
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
+            z-index: 100000;
+            min-width: 240px;
+            max-height: 70vh;
+            overflow-y: auto;
             padding: 8px 0;
             flex-direction: column;
             gap: 2px;
@@ -1302,13 +1304,13 @@
         .autohide-top-nav {
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 10000;
             background: rgba(15, 23, 42, 0.94);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.08);
             padding: 13px 140px 9px 24px;
             max-height: 500px;
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1321,6 +1323,7 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.3);
         }
         .autohide-top-nav.hidden {
+            overflow: hidden;
             max-height: 0px;
             padding-top: 0px;
             padding-bottom: 0px;

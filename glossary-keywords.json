@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-07-09T17:56:22.043Z",
+  "generatedAt": "2026-07-11T20:55:38.982Z",
   "totalKeywords": 524,
   "keywords": [
     {
@@ -124,6 +124,11 @@
           "file": "noventiq_r1.json",
           "scenarioIndex": 3,
           "scenarioTitle": "VNet Peering & Subnetting"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
         }
       ]
     },
@@ -255,6 +260,126 @@
           "file": "infra_azure.json",
           "scenarioIndex": 21,
           "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Tell me about yourself — Technical Introduction (Azure DevOps & AKS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Day-to-Day Responsibilities as an Azure DevOps Engineer"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
         }
       ]
     },
@@ -352,6 +477,16 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 13,
           "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Terraform Provisioners — Last Resort Configuration & Why to Avoid Them"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Automating Routine Linux OS Patching & Vulnerability Management"
         }
       ]
     },
@@ -403,6 +538,16 @@
           "file": "scenarios.json",
           "scenarioIndex": 76,
           "scenarioTitle": "Common kubectl Commands"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -489,6 +634,11 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 1,
           "scenarioTitle": "Current Project Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
         }
       ]
     },
@@ -560,6 +710,31 @@
           "file": "infra_azure.json",
           "scenarioIndex": 11,
           "scenarioTitle": "Azure Monitor & SIEM Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "DNS Record Types — A vs CNAME vs ALIAS vs TXT"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
         }
       ]
     },
@@ -636,6 +811,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 126,
           "scenarioTitle": "CI/CD Automation with Python"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
         }
       ]
     },
@@ -682,8 +862,9 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "Argo CD"
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
         }
       ]
     },
@@ -996,6 +1177,11 @@
           "scenarioTitle": "Azure Identity & Access Governance"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Git Cherry-pick — Applying a Specific Commit to Another Branch"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Password vs key authentication?"
         },
@@ -1035,6 +1221,11 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 0,
           "scenarioTitle": "CI/CD Pipeline Architecture Overview"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
         }
       ]
     },
@@ -1238,6 +1429,11 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 0,
           "scenarioTitle": "Introduction & Background"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
         }
       ]
     },
@@ -1309,6 +1505,121 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 13,
           "scenarioTitle": "Version Control & Release Tracking"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Tell me about yourself — Technical Introduction (Azure DevOps & AKS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Day-to-Day Responsibilities as an Azure DevOps Engineer"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Azure DevOps Library — Variable Groups & Secret Management"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Terraform State Locking — Preventing Concurrent Plan/Apply Corruption"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Pull Request Workflow — Code Review, Branch Protection & CI Gates"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Merge Conflict"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 33,
+          "scenarioTitle": "Tell me about yourself — HR Interview & Career Roadmap (Coforge)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 34,
+          "scenarioTitle": "Why Coforge?"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 35,
+          "scenarioTitle": "Why are you looking for a change?"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 36,
+          "scenarioTitle": "Biggest achievement"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 37,
+          "scenarioTitle": "Biggest failure"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 38,
+          "scenarioTitle": "Conflict with developers"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 39,
+          "scenarioTitle": "Learning new technologies"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 40,
+          "scenarioTitle": "Leadership examples"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 41,
+          "scenarioTitle": "Strengths and weaknesses"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
         }
       ]
     },
@@ -1484,6 +1795,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 26,
           "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
         }
       ]
     },
@@ -1630,6 +1946,31 @@
           "file": "infra_azure.json",
           "scenarioIndex": 4,
           "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Terraform State Locking — Preventing Concurrent Plan/Apply Corruption"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
         }
       ]
     },
@@ -1734,6 +2075,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 28,
           "scenarioTitle": "Interview FAQ Master Reference"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
         }
       ]
     },
@@ -2012,6 +2358,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 14,
           "scenarioTitle": "Multi-Region DR Strategy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Docker Image Layers — How Layer Caching Works & Build Optimisation"
         }
       ]
     },
@@ -2112,6 +2463,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 6,
           "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "DNS Record Types — A vs CNAME vs ALIAS vs TXT"
         }
       ]
     },
@@ -2130,6 +2486,16 @@
           "file": "kubernetes_Slides_34.json",
           "slideNumber": 24,
           "slideTopic": "Helm"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
         }
       ]
     },
@@ -2287,6 +2653,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 1,
           "scenarioTitle": "Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
         }
       ]
     },
@@ -2642,6 +3018,26 @@
           "scenarioTitle": "Monitoring & SIEM Integration"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How does self healing work?"
         },
@@ -2775,6 +3171,11 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 10,
           "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
         }
       ]
     },
@@ -2836,6 +3237,11 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 5,
           "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
         }
       ]
     },
@@ -2909,6 +3315,16 @@
           "file": "scenarios.json",
           "scenarioIndex": 131,
           "scenarioTitle": "Threading and Multiprocessing"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Terraform State Locking — Preventing Concurrent Plan/Apply Corruption"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -2991,6 +3407,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 24,
           "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -3370,6 +3791,46 @@
           "scenarioTitle": "Azure Landing Zones & Subscriptions"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Request vs limit?"
         },
@@ -3490,6 +3951,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 8,
           "scenarioTitle": "ExpressRoute Connectivity"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -3694,6 +4160,16 @@
           "scenarioTitle": "Scenario-Based Kubernetes Interview Questions"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "CrashLoopBackOff fix?"
         },
@@ -3881,6 +4357,21 @@
           "file": "scenarios.json",
           "scenarioIndex": 88,
           "scenarioTitle": "Service Management"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Familiarity with Linux Systems & Managing Linux VMs"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -4684,6 +5175,21 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 6,
           "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Terraform depends_on — Explicit Resource Dependency Declaration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 37,
+          "scenarioTitle": "Biggest failure"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
         }
       ]
     },
@@ -5307,6 +5813,81 @@
           "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Day-to-Day Responsibilities as an Azure DevOps Engineer"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Git Merge — Integrating Branches While Preserving History"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Database Connection Failures After Deployment — Systematic Diagnosis"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 36,
+          "scenarioTitle": "Biggest achievement"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 37,
+          "scenarioTitle": "Biggest failure"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 42,
+          "scenarioTitle": "Software Development Lifecycle (SDLC) — Phases, Models & DevOps Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "ReplicaSet vs Deployment?"
         },
@@ -5386,6 +5967,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 29,
           "scenarioTitle": "CI/CD Design Patterns"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
         }
       ]
     },
@@ -5914,6 +6500,46 @@
           "file": "infra_azure.json",
           "scenarioIndex": 19,
           "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Terraform State Locking — Preventing Concurrent Plan/Apply Corruption"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -6671,6 +7297,11 @@
           "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Checking Disk Space Availability & Inodes in Linux"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Disk full troubleshooting?"
         },
@@ -6962,6 +7593,31 @@
           "scenarioTitle": "Secure Remote Access & Private Link"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Database Connection Failures After Deployment — Systematic Diagnosis"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "How DNS Works Under the Hood — Resolution Lifecycle"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "DNS Record Types — A vs CNAME vs ALIAS vs TXT"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "TCP vs UDP Transport Layer Protocols (3-Way Handshake)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is Headless Service?"
         },
@@ -7123,6 +7779,46 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 13,
           "scenarioTitle": "Version Control & Release Tracking"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Docker Image Layers — How Layer Caching Works & Build Optimisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
         }
       ]
     },
@@ -7209,6 +7905,26 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 10,
           "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Docker Image Layers — How Layer Caching Works & Build Optimisation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
         }
       ]
     },
@@ -7274,6 +7990,11 @@
           "scenarioTitle": "Disk Management"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Checking Disk Space Availability & Inodes in Linux"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Disk full troubleshooting?"
         },
@@ -7321,8 +8042,9 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "EC2"
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
         }
       ]
     },
@@ -7388,6 +8110,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 47,
           "scenarioTitle": "12-Factor App Principle"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
         }
       ]
     },
@@ -7511,6 +8238,26 @@
           "file": "infra_azure.json",
           "scenarioIndex": 26,
           "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Network Ports, Multiplexing & Standard Port Numbers"
         }
       ]
     },
@@ -7544,6 +8291,16 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 10,
           "scenarioTitle": "Dockerfile Instructions: CMD vs ENTRYPOINT"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
         }
       ]
     },
@@ -7567,6 +8324,16 @@
           "file": "python_linux_53.json",
           "slideNumber": 43,
           "slideTopic": "Environment Variables in Python"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
         }
       ]
     },
@@ -7739,6 +8506,16 @@
           "scenarioTitle": "Azure Identity & Access Governance"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How handle API errors?"
         },
@@ -7785,6 +8562,21 @@
           "file": "kubernetes_Slides_34.json",
           "slideNumber": 30,
           "slideTopic": "Common kubectl Commands"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Terraform Provisioners — Last Resort Configuration & Why to Avoid Them"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
         }
       ]
     },
@@ -8022,6 +8814,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 92,
           "scenarioTitle": "Storage & Filesystem"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Essential Linux Navigation & File System Commands"
         }
       ]
     },
@@ -8107,6 +8904,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 19,
           "scenarioTitle": "Subscription Governance & Azure Policy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Essential Linux Navigation & File System Commands"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -8562,6 +9369,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 78,
           "scenarioTitle": "CI/CD Integration"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
         }
       ]
     },
@@ -8764,6 +9576,11 @@
           "scenarioTitle": "Linux Basics & System Diagnostics"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Essential Linux Navigation & File System Commands"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Difference between grep and find?"
         },
@@ -8918,6 +9735,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 27,
           "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Azure DevOps Library — Variable Groups & Secret Management"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -9141,6 +9968,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 28,
           "scenarioTitle": "Git & Branching Strategy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Git Cherry-pick — Applying a Specific Commit to Another Branch"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Git Stash — Temporarily Shelving Uncommitted Work"
         }
       ]
     },
@@ -9181,6 +10018,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 5,
           "scenarioTitle": "AKS Pods Not Scaling"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
         }
       ]
     },
@@ -9300,6 +10142,21 @@
           "scenarioTitle": "Failover — DNS & Traffic Manager Routing"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "How DNS Works Under the Hood — Resolution Lifecycle"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "TCP vs UDP Transport Layer Protocols (3-Way Handshake)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Ingress vs LoadBalancer?"
         },
@@ -9385,6 +10242,11 @@
           "scenarioTitle": "Subscription Governance & Azure Policy"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Ingress vs LoadBalancer?"
         },
@@ -9459,8 +10321,9 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "IaaS"
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
         }
       ]
     },
@@ -10122,6 +10985,31 @@
           "scenarioTitle": "XML Parsing & Agent OS Mismatch"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Docker Image Layers — How Layer Caching Works & Build Optimisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "ImagePullBackOff?"
         }
@@ -10273,6 +11161,26 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 6,
           "scenarioTitle": "Artifact Packaging & Immutability"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Day-to-Day Responsibilities as an Azure DevOps Engineer"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Docker Image Layers — How Layer Caching Works & Build Optimisation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -10427,6 +11335,21 @@
           "file": "noventiq_r1.json",
           "scenarioIndex": 7,
           "scenarioTitle": "Production Incident Troubleshooting"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Database Connection Failures After Deployment — Systematic Diagnosis"
         }
       ]
     },
@@ -10444,8 +11367,9 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "Index"
+          "file": "infinite_locus.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Git Reset — Moving HEAD and Uncommitting Changes (--soft, --mixed, --hard)"
         }
       ]
     },
@@ -10551,6 +11475,26 @@
           "scenarioTitle": "Kubernetes Deep Dive"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Public IP vs Private IP Addressing (RFC 1918)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Network Ports, Multiplexing & Standard Port Numbers"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Ingress vs LoadBalancer?"
         },
@@ -10587,6 +11531,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 55,
           "scenarioTitle": "Ingress"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
         }
       ]
     },
@@ -10690,6 +11639,11 @@
           "scenarioTitle": "Firewall & Security"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Subnet Masking vs IP Masquerading (NAT/SNAT)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "iptables vs firewalld?"
         },
@@ -10754,6 +11708,41 @@
           "file": "infra_azure.json",
           "scenarioIndex": 21,
           "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
         }
       ]
     },
@@ -10829,6 +11818,11 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 1,
           "scenarioTitle": "Jenkins vs Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Declarative vs Scripted Jenkins Pipeline Syntax"
         }
       ]
     },
@@ -11079,6 +12073,26 @@
           "scenarioTitle": "Docker Fundamentals & Containerization"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Automating Routine Linux OS Patching & Vulnerability Management"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is OOMKilled?"
         },
@@ -11220,6 +12234,21 @@
           "file": "infra_azure.json",
           "scenarioIndex": 25,
           "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Azure DevOps Library — Variable Groups & Secret Management"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
         }
       ]
     },
@@ -11705,6 +12734,56 @@
           "scenarioTitle": "AKS vs Azure Container Apps"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Interpreting Linux Memory Usage with free -h — Available vs Free RAM"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 39,
+          "scenarioTitle": "Learning new technologies"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Familiarity with Linux Systems & Managing Linux VMs"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Subnet Masking vs IP Masquerading (NAT/SNAT)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Difference between Pod and ReplicaSet?"
         },
@@ -11809,6 +12888,11 @@
           "scenarioTitle": "AKS vs Azure Container Apps"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How automate Kubernetes using Python?"
         }
@@ -11893,6 +12977,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 51,
           "scenarioTitle": "Labels, Selectors & Annotations"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -12051,6 +13140,31 @@
           "file": "infra_azure.json",
           "scenarioIndex": 24,
           "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 42,
+          "scenarioTitle": "Software Development Lifecycle (SDLC) — Phases, Models & DevOps Integration"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Familiarity with Linux Systems & Managing Linux VMs"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "How DNS Works Under the Hood — Resolution Lifecycle"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
         }
       ]
     },
@@ -12337,6 +13451,66 @@
           "file": "infra_azure.json",
           "scenarioIndex": 13,
           "scenarioTitle": "Azure Site Recovery (ASR) — DR Orchestration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Interpreting Linux Memory Usage with free -h — Available vs Free RAM"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Familiarity with Linux Systems & Managing Linux VMs"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Troubleshooting High Latency & Slow Linux Server Performance"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Essential Linux Navigation & File System Commands"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Checking Disk Space Availability & Inodes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Checking Available Memory (RAM & Swap) in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "Automating Routine Linux OS Patching & Vulnerability Management"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -12635,6 +13809,26 @@
           "file": "infra_azure.json",
           "scenarioIndex": 21,
           "scenarioTitle": "Compute Resiliency & Scaling (VM/VMSS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Public IP vs Private IP Addressing (RFC 1918)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -13451,6 +14645,16 @@
           "scenarioTitle": "Monitoring & SIEM Integration"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "CrashLoopBackOff fix?"
         },
@@ -13545,6 +14749,11 @@
           "file": "python_linux_53.json",
           "slideNumber": 3,
           "slideTopic": "Linux Basic Commands"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Essential Linux Navigation & File System Commands"
         }
       ]
     },
@@ -14375,6 +15584,11 @@
           "scenarioTitle": "Monitoring & SIEM Integration"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Deployment vs DaemonSet?"
         }
@@ -14927,6 +16141,51 @@
           "file": "noventiq_r1.json",
           "scenarioIndex": 6,
           "scenarioTitle": "AKS vs Azure Container Apps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Troubleshooting High Latency & Slow Linux Server Performance"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
         }
       ]
     },
@@ -14955,6 +16214,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
         }
       ]
     },
@@ -15040,6 +16304,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 42,
           "scenarioTitle": "Configuration Management & Orchestration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -15183,6 +16457,16 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 5,
           "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -15361,6 +16645,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 44,
           "scenarioTitle": "Containerization & Microservices Infrastructure"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)"
         }
       ]
     },
@@ -15519,6 +16808,26 @@
           "file": "infra_azure.json",
           "scenarioIndex": 6,
           "scenarioTitle": "Azure Firewall"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Public IP vs Private IP Addressing (RFC 1918)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Home Router DHCP Address Assignment & Private Subnets"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Subnet Masking vs IP Masquerading (NAT/SNAT)"
         }
       ]
     },
@@ -15735,6 +17044,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 23,
           "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Network Ports, Multiplexing & Standard Port Numbers"
         }
       ]
     },
@@ -16267,6 +17586,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 28,
           "scenarioTitle": "Interview FAQ Master Reference"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
         }
       ]
     },
@@ -16677,6 +18006,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 23,
           "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
         }
       ]
     },
@@ -16775,6 +18114,21 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 2,
           "scenarioTitle": "End-to-End Deployment Pipeline Flow"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Docker Image Layers — How Layer Caching Works & Build Optimisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Docker Containerization & Engine Client-Server Architecture"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -16923,6 +18277,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 41,
           "scenarioTitle": "Enterprise IaC Module Architectures"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Subnet Masking vs IP Masquerading (NAT/SNAT)"
         }
       ]
     },
@@ -17051,6 +18410,31 @@
           "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "How DNS Works Under the Hood — Resolution Lifecycle"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "os vs shutil?"
         }
@@ -17081,6 +18465,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 3,
           "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
         }
       ]
     },
@@ -17949,6 +19338,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 87,
           "scenarioTitle": "Process Management"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
         }
       ]
     },
@@ -18240,6 +19634,106 @@
           "scenarioTitle": "Monitoring & SIEM Integration"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Day-to-Day Responsibilities as an Azure DevOps Engineer"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Azure DevOps Library — Variable Groups & Secret Management"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Terraform State Locking — Preventing Concurrent Plan/Apply Corruption"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Terraform Provisioners — Last Resort Configuration & Why to Avoid Them"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Git Revert — Safe Undo for Shared Branches Without Rewriting History"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 24,
+          "scenarioTitle": "Pull Request Workflow — Code Review, Branch Protection & CI Gates"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "Declarative vs Scripted Jenkins Pipeline Syntax"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 44,
+          "scenarioTitle": "Scrum Framework — Roles, Ceremonies & Artefacts in Engineering Teams"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 26,
+          "scenarioTitle": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Explain sed usage."
         }
@@ -18293,6 +19787,11 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 13,
           "scenarioTitle": "Ansible Structures: Playbooks, Roles & Inventories"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
         }
       ]
     },
@@ -18484,6 +19983,41 @@
           "file": "scenarios.json",
           "scenarioIndex": 128,
           "scenarioTitle": "Kubernetes Python Client"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Day-to-Day Responsibilities as an Azure DevOps Engineer"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Database Connection Failures After Deployment — Systematic Diagnosis"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -18812,6 +20346,46 @@
           "scenarioTitle": "Kubernetes Overview & Orchestration"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Database Connection Failures After Deployment — Systematic Diagnosis"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Subnet Masking vs IP Masquerading (NAT/SNAT)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "ReplicaSet vs Deployment?"
         },
@@ -18971,6 +20545,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 25,
           "scenarioTitle": "Security Posture & Key Vault Governance"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
         }
       ]
     },
@@ -19242,6 +20821,56 @@
           "scenarioTitle": "Failback Testing — Operational Checklists"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Interpreting Linux Memory Usage with free -h — Available vs Free RAM"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 42,
+          "scenarioTitle": "Software Development Lifecycle (SDLC) — Phases, Models & DevOps Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 44,
+          "scenarioTitle": "Scrum Framework — Roles, Ceremonies & Artefacts in Engineering Teams"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Checking Available Memory (RAM & Swap) in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Explain rolling update strategy."
         },
@@ -19416,6 +21045,21 @@
           "scenarioTitle": "Observability & Live Production Triage"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 22,
+          "scenarioTitle": "Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Load average meaning?"
         },
@@ -19550,6 +21194,11 @@
           "scenarioTitle": "Monitoring & 99.9% Uptime SLA"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Use cases of DaemonSet?"
         }
@@ -19582,6 +21231,21 @@
           "file": "infra_azure.json",
           "scenarioIndex": 10,
           "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
         }
       ]
     },
@@ -20296,6 +21960,36 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 15,
           "scenarioTitle": "Rollback Strategy (N-1 & N-2)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "Git Cherry-pick — Applying a Specific Commit to Another Branch"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Merge Conflict"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 38,
+          "scenarioTitle": "Conflict with developers"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
         }
       ]
     },
@@ -20360,6 +22054,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 41,
           "scenarioTitle": "Enterprise IaC Module Architectures"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
         }
       ]
     },
@@ -20603,6 +22302,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 12,
           "scenarioTitle": "Azure Backup — Vault Design & Policies"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
         }
       ]
     },
@@ -20880,6 +22584,31 @@
           "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Terraform depends_on — Explicit Resource Dependency Declaration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Terraform Provisioners — Last Resort Configuration & Why to Avoid Them"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How TLS works?"
         },
@@ -20931,6 +22660,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 24,
           "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Terraform depends_on — Explicit Resource Dependency Declaration"
         }
       ]
     },
@@ -21111,6 +22845,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 17,
           "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Git Stash — Temporarily Shelving Uncommitted Work"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
         }
       ]
     },
@@ -21164,8 +22908,9 @@
       "seniority": "Senior",
       "sourceReferences": [
         {
-          "file": "glossary-seed.json",
-          "keyword": "Reverse Proxy"
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
         }
       ]
     },
@@ -21290,6 +23035,31 @@
           "file": "infra_azure.json",
           "scenarioIndex": 24,
           "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Tell me about yourself — Technical Introduction (Azure DevOps & AKS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Terraform depends_on — Explicit Resource Dependency Declaration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 33,
+          "scenarioTitle": "Tell me about yourself — HR Interview & Career Roadmap (Coforge)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 35,
+          "scenarioTitle": "Why are you looking for a change?"
         }
       ]
     },
@@ -21398,6 +23168,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 28,
           "scenarioTitle": "Interview FAQ Master Reference"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 44,
+          "scenarioTitle": "Scrum Framework — Roles, Ceremonies & Artefacts in Engineering Teams"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Tell me about yourself — Technical Introduction & Day-to-Day Roles"
         }
       ]
     },
@@ -21541,6 +23321,36 @@
           "file": "infra_azure.json",
           "scenarioIndex": 3,
           "scenarioTitle": "Azure Application Gateway"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 23,
+          "scenarioTitle": "Git Revert — Safe Undo for Shared Branches Without Rewriting History"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 37,
+          "scenarioTitle": "Biggest failure"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 45,
+          "scenarioTitle": "CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -21703,6 +23513,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 46,
           "scenarioTitle": "Observability & Live Production Triage"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Git Merge — Integrating Branches While Preserving History"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
         }
       ]
     },
@@ -21980,6 +23805,41 @@
           "scenarioTitle": "Monitoring & SIEM Integration"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "DNS Record Types — A vs CNAME vs ALIAS vs TXT"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Public IP vs Private IP Addressing (RFC 1918)"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Ingress vs LoadBalancer?"
         },
@@ -22024,6 +23884,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 4,
           "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
         }
       ]
     },
@@ -22208,6 +24073,36 @@
           "file": "infra_azure.json",
           "scenarioIndex": 28,
           "scenarioTitle": "Interview FAQ Master Reference"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
         }
       ]
     },
@@ -22406,6 +24301,16 @@
           "scenarioTitle": "Security Posture & Key Vault Governance"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Azure DevOps Library — Variable Groups & Secret Management"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 32,
+          "scenarioTitle": "Database Connection Failures After Deployment — Systematic Diagnosis"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How TLS works?"
         },
@@ -22577,6 +24482,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
         }
       ]
     },
@@ -22949,6 +24864,51 @@
           "file": "infra_azure.json",
           "scenarioIndex": 23,
           "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Docker Image Layers — How Layer Caching Works & Build Optimisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 28,
+          "scenarioTitle": "ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 47,
+          "scenarioTitle": "Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "How DNS Works Under the Hood — Resolution Lifecycle"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Network Ports, Multiplexing & Standard Port Numbers"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Container Deployment Strategy — ACR to AKS via Helm & GitOps"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -23446,6 +25406,31 @@
           "scenarioTitle": "Azure FinOps — Enterprise Resource Tagging & Cost Management"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 34,
+          "scenarioTitle": "Why Coforge?"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Familiarity with Linux Systems & Managing Linux VMs"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How does Service find Pods?"
         },
@@ -23870,6 +25855,21 @@
           "file": "infra_azure.json",
           "scenarioIndex": 24,
           "scenarioTitle": "Azure Identity & Access Governance"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
         }
       ]
     },
@@ -23893,6 +25893,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 95,
           "scenarioTitle": "Networking Commands"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -24039,6 +26044,21 @@
           "file": "infra_azure.json",
           "scenarioIndex": 4,
           "scenarioTitle": "Azure Front Door"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "DNS Record Types — A vs CNAME vs ALIAS vs TXT"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
         }
       ]
     },
@@ -24750,6 +26770,31 @@
           "scenarioTitle": "Failback Testing — Operational Checklists"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Terraform State Locking — Preventing Concurrent Plan/Apply Corruption"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Terraform Provisioners — Last Resort Configuration & Why to Avoid Them"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "How does self healing work?"
         },
@@ -24964,6 +27009,11 @@
           "file": "noventiq_r1.json",
           "scenarioIndex": 3,
           "scenarioTitle": "VNet Peering & Subnetting"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
         }
       ]
     },
@@ -25047,6 +27097,16 @@
           "scenarioTitle": "Memory Management"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Interpreting Linux Memory Usage with free -h — Available vs Free RAM"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Checking Available Memory (RAM & Swap) in Linux"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "What is OOM killer?"
         },
@@ -25080,6 +27140,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 99,
           "scenarioTitle": "Logs & Monitoring"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "TCP vs UDP Transport Layer Protocols (3-Way Handshake)"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -25216,6 +27281,11 @@
           "scenarioTitle": "Service Management"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Familiarity with Linux Systems & Managing Linux VMs"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Explain Linux boot process"
         },
@@ -25265,6 +27335,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 80,
           "scenarioTitle": "Scenario-Based Kubernetes Interview Questions"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -25427,6 +27502,11 @@
           "scenarioTitle": "Subscription Governance & Azure Policy"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 21,
+          "scenarioTitle": "Git Stash — Temporarily Shelving Uncommitted Work"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "When use multiprocessing?"
         }
@@ -25480,6 +27560,26 @@
           "file": "infra_azure.json",
           "scenarioIndex": 10,
           "scenarioTitle": "Troubleshoot Hybrid Connectivity & Latency"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Network Ports, Multiplexing & Standard Port Numbers"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "TCP vs UDP Transport Layer Protocols (3-Way Handshake)"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -25629,6 +27729,56 @@
           "file": "infra_azure.json",
           "scenarioIndex": 17,
           "scenarioTitle": "RPO & RTO Compliance — Design Trade-offs"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Tell me about yourself — Technical Introduction (Azure DevOps & AKS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 1,
+          "scenarioTitle": "Day-to-Day Responsibilities as an Azure DevOps Engineer"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 8,
+          "scenarioTitle": "terraform init — Provider Downloads & Backend Initialisation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "Terraform State Locking — Preventing Concurrent Plan/Apply Corruption"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Terraform depends_on — Explicit Resource Dependency Declaration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 13,
+          "scenarioTitle": "Terraform Provisioners — Last Resort Configuration & Why to Avoid Them"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 36,
+          "scenarioTitle": "Biggest achievement"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
         }
       ]
     },
@@ -25751,6 +27901,16 @@
           "scenarioTitle": "Threading and Multiprocessing"
         },
         {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Process vs Thread Architecture in Linux"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "Process vs thread?"
         },
@@ -25833,6 +27993,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 23,
           "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 19,
+          "scenarioTitle": "Forward Proxy vs Reverse Proxy Architecture"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -25918,6 +28083,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 66,
           "scenarioTitle": "Scheduling"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 15,
+          "scenarioTitle": "AKS Node Pools — System Pool vs User Pool Architecture"
         }
       ]
     },
@@ -25976,6 +28146,21 @@
           "file": "infra_azure.json",
           "scenarioIndex": 20,
           "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 46,
+          "scenarioTitle": "Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Troubleshooting High Latency & Slow Linux Server Performance"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -26043,6 +28228,16 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 27,
           "scenarioTitle": "Troubleshooting"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 31,
+          "scenarioTitle": "Diagnosing High CPU Usage on a Linux VM — Systematic Investigation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 9,
+          "scenarioTitle": "How DNS Works Under the Hood — Resolution Lifecycle"
         }
       ]
     },
@@ -26201,6 +28396,26 @@
           "scenarioTitle": "Azure Firewall"
         },
         {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Checking Port Availability & Listening Processes in Linux"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 17,
+          "scenarioTitle": "Network Ports, Multiplexing & Standard Port Numbers"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 18,
+          "scenarioTitle": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 20,
+          "scenarioTitle": "TCP vs UDP Transport Layer Protocols (3-Way Handshake)"
+        },
+        {
           "file": "Common_interview_Question_Answers.json",
           "question": "TCP vs UDP?"
         },
@@ -26252,6 +28467,11 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 5,
           "scenarioTitle": "CI Stage 3: Automated Testing"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 4,
+          "scenarioTitle": "Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)"
         }
       ]
     },
@@ -26417,6 +28637,81 @@
           "file": "hexaview_r1.json",
           "scenarioIndex": 5,
           "scenarioTitle": "Terraform Variables & Multi-Environment Strategy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 0,
+          "scenarioTitle": "Tell me about yourself — Technical Introduction (Azure DevOps & AKS)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 2,
+          "scenarioTitle": "Role in the Deployment Process — CI/CD Pipeline Ownership"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 7,
+          "scenarioTitle": "Azure DevOps Library — Secure Files & Key Vault Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 10,
+          "scenarioTitle": "Terraform Outputs — Exposing Values Between Modules and Pipelines"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 25,
+          "scenarioTitle": "Merge Conflict"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 33,
+          "scenarioTitle": "Tell me about yourself — HR Interview & Career Roadmap (Coforge)"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 34,
+          "scenarioTitle": "Why Coforge?"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 35,
+          "scenarioTitle": "Why are you looking for a change?"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 36,
+          "scenarioTitle": "Biggest achievement"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 37,
+          "scenarioTitle": "Biggest failure"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 38,
+          "scenarioTitle": "Conflict with developers"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 39,
+          "scenarioTitle": "Learning new technologies"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 40,
+          "scenarioTitle": "Leadership examples"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 41,
+          "scenarioTitle": "Strengths and weaknesses"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 43,
+          "scenarioTitle": "Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
         }
       ]
     },
@@ -26510,6 +28805,21 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 43,
           "scenarioTitle": "Environment Architecture & Artifact Lifecycle"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 3,
+          "scenarioTitle": "Describing a Challenging Production Issue You Resolved"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Azure DevOps Library — Variable Groups & Secret Management"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 30,
+          "scenarioTitle": "Production Deployment Failure — Triage, Rollback & RCA Playbook"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -26679,6 +28989,11 @@
           "file": "hexaview_r2.json",
           "scenarioIndex": 12,
           "scenarioTitle": "Artifact Promotion Strategy"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 5,
+          "scenarioTitle": "Azure DevOps Library — Variable Groups & Secret Management"
         },
         {
           "file": "Common_interview_Question_Answers.json",
@@ -26914,6 +29229,31 @@
           "file": "infra_azure.json",
           "scenarioIndex": 23,
           "scenarioTitle": "Secure Remote Access & Private Link"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 6,
+          "scenarioTitle": "Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 29,
+          "scenarioTitle": "Public IP vs Private IP — Routing, NAT & Azure Network Architecture"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 12,
+          "scenarioTitle": "Azure Virtual Network (VNet) Architecture & Isolation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
         }
       ]
     },
@@ -26957,6 +29297,16 @@
           "file": "infra_azure.json",
           "scenarioIndex": 20,
           "scenarioTitle": "Azure Landing Zones & Subscriptions"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 16,
+          "scenarioTitle": "Azure VNet Integration in AKS — CNI Networking & Private Cluster"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
         }
       ]
     },
@@ -27239,6 +29589,11 @@
           "file": "infra_azure.json",
           "scenarioIndex": 26,
           "scenarioTitle": "Monitoring & SIEM Integration"
+        },
+        {
+          "file": "infinite_locus.json",
+          "scenarioIndex": 11,
+          "scenarioTitle": "Terraform Workspaces — Isolated State per Environment in One Codebase"
         }
       ]
     },
@@ -27354,6 +29709,11 @@
           "file": "new_scenarios.json",
           "scenarioIndex": 45,
           "scenarioTitle": "Continuous Delivery Design & Federation"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 27,
+          "scenarioTitle": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
         }
       ]
     },
@@ -27893,6 +30253,11 @@
           "file": "scenarios.json",
           "scenarioIndex": 134,
           "scenarioTitle": "Production Python Design"
+        },
+        {
+          "file": "infinite_locus_interview.json",
+          "scenarioIndex": 14,
+          "scenarioTitle": "Why Use Private VNets Instead of Public IPs Everywhere?"
         }
       ]
     },

@@ -126,6 +126,8 @@ async function main() {
     { name: 'hexaview_r2.json', type: 'scenarios' },
     { name: 'noventiq_r1.json', type: 'scenarios' },
     { name: 'infra_azure.json', type: 'scenarios' },
+    { name: 'infinite_locus.json', type: 'scenarios' },
+    { name: 'infinite_locus_interview.json', type: 'scenarios' },
     { name: 'Common_interview_Question_Answers.json', type: 'qa_json' },
     { name: 'common_inteview_questions.md', type: 'md' }
   ];

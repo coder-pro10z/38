@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "sourceFile": "Infinite_Locus.md",
+    "totalQuestions": 28,
+    "generatedAt": "2026-07-11T19:09:56.553Z"
+  },
+  "questions": [
+    {
+      "index": 1,
+      "section": "Background & Experience",
+      "prompt": "Could you please share a little background about yourself, when you graduated, your roles and responsibilities, and what your day-to-day tasks look like?",
+      "assignedId": "Q0207",
+      "assignedCategoryId": "C015",
+      "title": "Tell me about yourself — Technical Introduction & Day-to-Day Roles",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 2,
+      "section": "Linux & Troubleshooting",
+      "prompt": "Are you familiar with Linux systems, and have you managed Linux VMs?",
+      "assignedId": "Q0209",
+      "assignedCategoryId": "C008",
+      "title": "Familiarity with Linux Systems & Managing Linux VMs",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 3,
+      "section": "Linux & Troubleshooting",
+      "prompt": "If a server is running very slow and latency is too high, what are the troubleshooting steps you would execute to find the reason?",
+      "assignedId": "Q0210",
+      "assignedCategoryId": "C008",
+      "title": "Troubleshooting High Latency & Slow Linux Server Performance",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 4,
+      "section": "Linux & Troubleshooting",
+      "prompt": "What basic commands do you use to navigate through Linux systems?",
+      "assignedId": "Q0211",
+      "assignedCategoryId": "C008",
+      "title": "Essential Linux Navigation & File System Commands",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 5,
+      "section": "Linux & Troubleshooting",
+      "prompt": "How would you find out if a particular port is free on a Linux server?",
+      "assignedId": "Q0212",
+      "assignedCategoryId": "C008",
+      "title": "Checking Port Availability & Listening Processes in Linux",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 6,
+      "section": "Linux & Troubleshooting",
+      "prompt": "What command is used to check how much disk space is available?",
+      "assignedId": "Q0213",
+      "assignedCategoryId": "C008",
+      "title": "Checking Disk Space Availability & Inodes in Linux",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 7,
+      "section": "Linux & Troubleshooting",
+      "prompt": "What command is used to check available memory (RAM)?",
+      "assignedId": "Q0214",
+      "assignedCategoryId": "C008",
+      "title": "Checking Available Memory (RAM & Swap) in Linux",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 8,
+      "section": "Linux & Troubleshooting",
+      "prompt": "Do you know the difference between a process and a thread?",
+      "assignedId": "Q0215",
+      "assignedCategoryId": "C008",
+      "title": "Process vs Thread Architecture in Linux",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 9,
+      "section": "Linux & Troubleshooting",
+      "prompt": "You mentioned automating routine OS patching. What is patching and how did you achieve it?",
+      "assignedId": "Q0216",
+      "assignedCategoryId": "C008",
+      "title": "Automating Routine Linux OS Patching & Vulnerability Management",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 10,
+      "section": "Networking & DNS",
+      "prompt": "What is DNS and how does it work under the hood to resolve a domain name to an IP address?",
+      "assignedId": "Q0217",
+      "assignedCategoryId": "C012",
+      "title": "How DNS Works Under the Hood — Resolution Lifecycle",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 11,
+      "section": "Networking & DNS",
+      "prompt": "Where do we map these values, and what are the different types of DNS records (like the difference between A records and CNAME records)?",
+      "assignedId": "Q0218",
+      "assignedCategoryId": "C012",
+      "title": "DNS Record Types — A vs CNAME vs ALIAS vs TXT",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 12,
+      "section": "Networking & DNS",
+      "prompt": "What is the difference between a public and a private IP?",
+      "assignedId": "Q0219",
+      "assignedCategoryId": "C012",
+      "title": "Public IP vs Private IP Addressing (RFC 1918)",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 13,
+      "section": "Networking & DNS",
+      "prompt": "What is a VNet?",
+      "assignedId": "Q0220",
+      "assignedCategoryId": "C012",
+      "title": "Azure Virtual Network (VNet) Architecture & Isolation",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 14,
+      "section": "Networking & DNS",
+      "prompt": "On a home network with a router and 50 devices (laptops, phones), what kind of IP does the router assign to those devices?",
+      "assignedId": "Q0221",
+      "assignedCategoryId": "C012",
+      "title": "Home Router DHCP Address Assignment & Private Subnets",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 15,
+      "section": "Networking & DNS",
+      "prompt": "If public IPs are so easy to provide, why do we need to create VNets and allocate private IPs?",
+      "assignedId": "Q0222",
+      "assignedCategoryId": "C012",
+      "title": "Why Use Private VNets Instead of Public IPs Everywhere?",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 16,
+      "section": "Networking & DNS",
+      "prompt": "What is CIDR and why is it important?",
+      "assignedId": "Q0223",
+      "assignedCategoryId": "C012",
+      "title": "Classless Inter-Domain Routing (CIDR) Notation & Subnetting",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 17,
+      "section": "Networking & DNS",
+      "prompt": "Do you know what subnet masking or IP masquerading is?",
+      "assignedId": "Q0224",
+      "assignedCategoryId": "C012",
+      "title": "Subnet Masking vs IP Masquerading (NAT/SNAT)",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 18,
+      "section": "Networking & DNS",
+      "prompt": "What are ports, why do we use them, and what are some popular port numbers?",
+      "assignedId": "Q0225",
+      "assignedCategoryId": "C012",
+      "title": "Network Ports, Multiplexing & Standard Port Numbers",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 19,
+      "section": "Networking & DNS",
+      "prompt": "What is the difference between an Application Load Balancer and a Network Load Balancer?",
+      "assignedId": "Q0226",
+      "assignedCategoryId": "C012",
+      "title": "Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 20,
+      "section": "Networking & DNS",
+      "prompt": "What is the difference between a forward proxy and a reverse proxy?",
+      "assignedId": "Q0227",
+      "assignedCategoryId": "C012",
+      "title": "Forward Proxy vs Reverse Proxy Architecture",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 21,
+      "section": "Networking & DNS",
+      "prompt": "Have you heard about TCP and UDP protocols?",
+      "assignedId": "Q0228",
+      "assignedCategoryId": "C012",
+      "title": "TCP vs UDP Transport Layer Protocols (3-Way Handshake)",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 22,
+      "section": "Docker & CI/CD",
+      "prompt": "What is Docker and what is its architecture?",
+      "assignedId": "Q0229",
+      "assignedCategoryId": "C005",
+      "title": "Docker Containerization & Engine Client-Server Architecture",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 23,
+      "section": "Docker & CI/CD",
+      "prompt": "Can you walk me through the contents of a standard Dockerfile?",
+      "assignedId": "Q0230",
+      "assignedCategoryId": "C005",
+      "title": "Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 24,
+      "section": "Docker & CI/CD",
+      "prompt": "What is the difference between CMD and ENTRYPOINT in a Dockerfile?",
+      "assignedId": "Q0231",
+      "assignedCategoryId": "C005",
+      "title": "CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 25,
+      "section": "Docker & CI/CD",
+      "prompt": "Can you append arguments to an ENTRYPOINT at runtime?",
+      "assignedId": "Q0232",
+      "assignedCategoryId": "C005",
+      "title": "Appending Runtime Arguments to ENTRYPOINT & Overriding Executables",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 26,
+      "section": "Docker & CI/CD",
+      "prompt": "How do you deploy your containers?",
+      "assignedId": "Q0233",
+      "assignedCategoryId": "C002",
+      "title": "Container Deployment Strategy — ACR to AKS via Helm & GitOps",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 27,
+      "section": "Docker & CI/CD",
+      "prompt": "What are the different stages of your CI/CD pipeline?",
+      "assignedId": "Q0234",
+      "assignedCategoryId": "C002",
+      "title": "End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
+      "status": "matched_existing_or_updated"
+    },
+    {
+      "index": 28,
+      "section": "Docker & CI/CD",
+      "prompt": "Have you worked with Kubernetes, and have you written pipelines completely from scratch by hand?",
+      "assignedId": "Q0235",
+      "assignedCategoryId": "C006",
+      "title": "Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch",
+      "status": "matched_existing_or_updated"
+    }
+  ]
+}

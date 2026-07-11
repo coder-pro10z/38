@@ -27,7 +27,8 @@
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
-      "SC-3: VNet Peering & Subnetting"
+      "SC-3: VNet Peering & Subnetting",
+      "SC-7: Process vs Thread Architecture in Linux"
     ]
   },
   {
@@ -56,7 +57,31 @@
       "SC-11: Kubernetes Overview & Orchestration",
       "SC-6: AKS vs Azure Container Apps",
       "SC-12: Azure Backup — Vault Design & Policies",
-      "SC-21: Compute Resiliency & Scaling (VM/VMSS)"
+      "SC-21: Compute Resiliency & Scaling (VM/VMSS)",
+      "SC-0: Tell me about yourself — Technical Introduction (Azure DevOps & AKS)",
+      "SC-1: Day-to-Day Responsibilities as an Azure DevOps Engineer",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-15: Classless Inter-Domain Routing (CIDR) Notation & Subnetting",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
     ]
   },
   {
@@ -84,7 +109,9 @@
       "SL-5: Configuration Management & Orchestration",
       "SC-42: Configuration Management & Orchestration",
       "SC-12: Ansible Fundamentals & Configuration Management",
-      "SC-13: Ansible Structures: Playbooks, Roles & Inventories"
+      "SC-13: Ansible Structures: Playbooks, Roles & Inventories",
+      "SC-13: Terraform Provisioners — Last Resort Configuration & Why to Avoid Them",
+      "SC-8: Automating Routine Linux OS Patching & Vulnerability Management"
     ]
   },
   {
@@ -100,6 +127,8 @@
       "SL-30: Common kubectl Commands",
       "SC-49: Cluster Architecture",
       "SC-76: Common kubectl Commands",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
       "Q-How automate Kubernetes using ..."
     ]
   },
@@ -121,7 +150,8 @@
     "mentionedIn": [
       "SC-4: App Service Cannot Access SQL",
       "SC-18: Azure App Service",
-      "SC-1: Current Project Architecture"
+      "SC-1: Current Project Architecture",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
     ]
   },
   {
@@ -139,7 +169,12 @@
       "SC-2: Azure Load Balancer",
       "SC-3: Azure Application Gateway",
       "SC-4: Azure Front Door",
-      "SC-11: Azure Monitor & SIEM Integration"
+      "SC-11: Azure Monitor & SIEM Integration",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-10: DNS Record Types — A vs CNAME vs ALIAS vs TXT",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture"
     ]
   },
   {
@@ -159,7 +194,8 @@
       "SC-21: Jenkins",
       "SC-22: GitHub Actions",
       "SC-78: CI/CD Integration",
-      "SC-126: CI/CD Automation with Python"
+      "SC-126: CI/CD Automation with Python",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership"
     ]
   },
   {
@@ -172,7 +208,9 @@
   },
   {
     "keywordId": "KW-000024",
-    "mentionedIn": []
+    "mentionedIn": [
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps"
+    ]
   },
   {
     "keywordId": "KW-000025",
@@ -242,6 +280,7 @@
       "SC-1: Site-to-Site (S2S) & Point-to-Site (P2S) VPN",
       "SC-22: Azure Storage Redundancy & Security",
       "SC-24: Azure Identity & Access Governance",
+      "SC-20: Git Cherry-pick — Applying a Specific Commit to Another Branch",
       "Q-Password vs key authentication...",
       "MD-Line 26"
     ]
@@ -251,7 +290,8 @@
     "mentionedIn": [
       "SL-6: Environment Architecture & Artifact Lifecycle",
       "SC-43: Environment Architecture & Artifact Lifecycle",
-      "SC-0: CI/CD Pipeline Architecture Overview"
+      "SC-0: CI/CD Pipeline Architecture Overview",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)"
     ]
   },
   {
@@ -304,7 +344,8 @@
       "SC-20: Terraform",
       "SC-47: 12-Factor App Principle",
       "SC-127: Cloud Automation using Python",
-      "SC-0: Introduction & Background"
+      "SC-0: Introduction & Background",
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
     ]
   },
   {
@@ -322,7 +363,30 @@
       "SC-14: Azure DevOps Pipelines & Live Monitoring",
       "SC-1: Jenkins vs Azure DevOps",
       "SC-6: Artifact Packaging & Immutability",
-      "SC-13: Version Control & Release Tracking"
+      "SC-13: Version Control & Release Tracking",
+      "SC-0: Tell me about yourself — Technical Introduction (Azure DevOps & AKS)",
+      "SC-1: Day-to-Day Responsibilities as an Azure DevOps Engineer",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-4: Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)",
+      "SC-5: Azure DevOps Library — Variable Groups & Secret Management",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
+      "SC-9: Terraform State Locking — Preventing Concurrent Plan/Apply Corruption",
+      "SC-24: Pull Request Workflow — Code Review, Branch Protection & CI Gates",
+      "SC-25: Merge Conflict",
+      "SC-33: Tell me about yourself — HR Interview & Career Roadmap (Coforge)",
+      "SC-34: Why Coforge?",
+      "SC-35: Why are you looking for a change?",
+      "SC-36: Biggest achievement",
+      "SC-37: Biggest failure",
+      "SC-38: Conflict with developers",
+      "SC-39: Learning new technologies",
+      "SC-40: Leadership examples",
+      "SC-41: Strengths and weaknesses",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
     ]
   },
   {
@@ -363,7 +427,8 @@
       "SC-5: Network Security Groups (NSGs)",
       "SC-11: Azure Monitor & SIEM Integration",
       "SC-20: Azure Landing Zones & Subscriptions",
-      "SC-26: Monitoring & SIEM Integration"
+      "SC-26: Monitoring & SIEM Integration",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
     ]
   },
   {
@@ -392,7 +457,12 @@
       "SC-2: Front Door vs Application Gateway",
       "SC-2: Azure Load Balancer",
       "SC-3: Azure Application Gateway",
-      "SC-4: Azure Front Door"
+      "SC-4: Azure Front Door",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
+      "SC-9: Terraform State Locking — Preventing Concurrent Plan/Apply Corruption",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture"
     ]
   },
   {
@@ -419,7 +489,8 @@
       "SC-102: Cron & Scheduling",
       "SC-12: Azure Backup — Vault Design & Policies",
       "SC-17: RPO & RTO Compliance — Design Trade-offs",
-      "SC-28: Interview FAQ Master Reference"
+      "SC-28: Interview FAQ Master Reference",
+      "SC-24: Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
     ]
   },
   {
@@ -491,7 +562,8 @@
       "SC-22: GitHub Actions",
       "SC-90: Memory Management",
       "SC-4: Azure Front Door",
-      "SC-14: Multi-Region DR Strategy"
+      "SC-14: Multi-Region DR Strategy",
+      "SC-14: Docker Image Layers — How Layer Caching Works & Build Optimisation"
     ]
   },
   {
@@ -517,13 +589,16 @@
       "SC-40: High Availability & Traffic Management",
       "SC-2: Front Door vs Application Gateway",
       "SC-4: Azure Front Door",
-      "SC-6: Azure Firewall"
+      "SC-6: Azure Firewall",
+      "SC-10: DNS Record Types — A vs CNAME vs ALIAS vs TXT"
     ]
   },
   {
     "keywordId": "KW-000059",
     "mentionedIn": [
-      "SL-24: Helm"
+      "SL-24: Helm",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
     ]
   },
   {
@@ -568,7 +643,9 @@
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
       "SC-3: VNet Peering & Subnetting",
-      "SC-1: Site-to-Site (S2S) & Point-to-Site (P2S) VPN"
+      "SC-1: Site-to-Site (S2S) & Point-to-Site (P2S) VPN",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-15: Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
     ]
   },
   {
@@ -653,6 +730,10 @@
       "SC-1: Availability Set vs Availability Zone",
       "SC-15: Failover — DNS & Traffic Manager Routing",
       "SC-26: Monitoring & SIEM Integration",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment",
       "Q-How does self healing work?...",
       "Q-ClusterIP vs NodePort?...",
       "Q-Explain Service discovery....",
@@ -687,7 +768,8 @@
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
       "SC-44: Containerization & Microservices Infrastructure",
-      "SC-10: Dockerfile Instructions: CMD vs ENTRYPOINT"
+      "SC-10: Dockerfile Instructions: CMD vs ENTRYPOINT",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form"
     ]
   },
   {
@@ -703,7 +785,8 @@
       "SC-43: Environment Architecture & Artifact Lifecycle",
       "SC-47: 12-Factor App Principle",
       "SC-4: Terraform Directory Structure",
-      "SC-5: Terraform Variables & Multi-Environment Strategy"
+      "SC-5: Terraform Variables & Multi-Environment Strategy",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase"
     ]
   },
   {
@@ -726,6 +809,8 @@
       "SL-51: Threading and Multiprocessing",
       "SC-47: 12-Factor App Principle",
       "SC-131: Threading and Multiprocessing",
+      "SC-9: Terraform State Locking — Preventing Concurrent Plan/Apply Corruption",
+      "SC-7: Process vs Thread Architecture in Linux",
       "Q-Explain concurrency policy....",
       "MD-Line 8"
     ]
@@ -747,6 +832,7 @@
       "SC-6: Artifact Packaging & Immutability",
       "SC-19: Subscription Governance & Azure Policy",
       "SC-24: Azure Identity & Access Governance",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
       "Q-Python client usage?..."
     ]
   },
@@ -832,6 +918,14 @@
       "SC-6: AKS vs Azure Container Apps",
       "SC-18: Management Groups & Enterprise Hierarchy",
       "SC-20: Azure Landing Zones & Subscriptions",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-7: Process vs Thread Architecture in Linux",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture",
+      "SC-22: Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "SC-24: Appending Runtime Arguments to ENTRYPOINT & Overriding Executables",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
       "Q-Request vs limit?...",
       "Q-What is OOMKilled?...",
       "Q-Difference between probes (Liv...",
@@ -861,6 +955,7 @@
       "SC-76: Common kubectl Commands",
       "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
       "SC-8: ExpressRoute Connectivity",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
       "Q-How upgrade Kubernetes safely?..."
     ]
   },
@@ -922,6 +1017,8 @@
       "SL-34: Scenario-Based Kubernetes Interview Questions",
       "SC-73: Troubleshooting Kubernetes",
       "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
       "Q-CrashLoopBackOff fix?...",
       "MD-Line 17"
     ]
@@ -974,6 +1071,9 @@
       "SL-8: Service Management",
       "SL-17: SSH Administration",
       "SC-88: Service Management",
+      "SC-1: Familiarity with Linux Systems & Managing Linux VMs",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture",
       "Q-What is Ingress Controller?..."
     ]
   },
@@ -1150,7 +1250,10 @@
       "SC-134: Production Python Design",
       "SC-9: Docker Fundamentals & Containerization",
       "SC-3: CI Stage 1: Source & Build",
-      "SC-6: Artifact Packaging & Immutability"
+      "SC-6: Artifact Packaging & Immutability",
+      "SC-12: Terraform depends_on — Explicit Resource Dependency Declaration",
+      "SC-37: Biggest failure",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture"
     ]
   },
   {
@@ -1269,6 +1372,21 @@
       "SC-25: Security Posture & Key Vault Governance",
       "SC-26: Monitoring & SIEM Integration",
       "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
+      "SC-1: Day-to-Day Responsibilities as an Azure DevOps Engineer",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-4: Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)",
+      "SC-18: Git Merge — Integrating Branches While Preserving History",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
+      "SC-32: Database Connection Failures After Deployment — Systematic Diagnosis",
+      "SC-36: Biggest achievement",
+      "SC-37: Biggest failure",
+      "SC-42: Software Development Lifecycle (SDLC) — Phases, Models & DevOps Integration",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
       "Q-ReplicaSet vs Deployment?...",
       "Q-Deployment vs ReplicaSet?...",
       "Q-How achieve zero downtime?...",
@@ -1290,7 +1408,8 @@
   {
     "keywordId": "KW-000118",
     "mentionedIn": [
-      "SC-29: CI/CD Design Patterns"
+      "SC-29: CI/CD Design Patterns",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps"
     ]
   },
   {
@@ -1397,6 +1516,14 @@
       "SC-6: Azure Firewall",
       "SC-9: Private DNS Zones",
       "SC-19: Subscription Governance & Azure Policy",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-9: Terraform State Locking — Preventing Concurrent Plan/Apply Corruption",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch",
       "Q-How does self healing work?...",
       "Q-Deployment vs ReplicaSet?...",
       "Q-How rollback works?...",
@@ -1562,6 +1689,7 @@
       "SL-11: Disk Management",
       "SC-91: Disk Management",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
+      "SC-5: Checking Disk Space Availability & Inodes in Linux",
       "Q-Disk full troubleshooting?...",
       "Q-df vs du?...",
       "MD-Line 24"
@@ -1636,6 +1764,11 @@
       "SC-14: Multi-Region DR Strategy",
       "SC-15: Failover — DNS & Traffic Manager Routing",
       "SC-23: Secure Remote Access & Private Link",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-32: Database Connection Failures After Deployment — Systematic Diagnosis",
+      "SC-9: How DNS Works Under the Hood — Resolution Lifecycle",
+      "SC-10: DNS Record Types — A vs CNAME vs ALIAS vs TXT",
+      "SC-20: TCP vs UDP Transport Layer Protocols (3-Way Handshake)",
       "Q-What is Headless Service?...",
       "Q-Explain Service discovery....",
       "Q-TCP vs UDP?...",
@@ -1668,7 +1801,15 @@
       "SC-6: Artifact Packaging & Immutability",
       "SC-7: Artifact Storage & Publishing",
       "SC-8: CD Stage 1: UAT Deployment",
-      "SC-13: Version Control & Release Tracking"
+      "SC-13: Version Control & Release Tracking",
+      "SC-4: Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)",
+      "SC-14: Docker Image Layers — How Layer Caching Works & Build Optimisation",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture",
+      "SC-22: Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "SC-24: Appending Runtime Arguments to ENTRYPOINT & Overriding Executables",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps"
     ]
   },
   {
@@ -1690,7 +1831,11 @@
       "SC-23: Docker",
       "SC-44: Containerization & Microservices Infrastructure",
       "SC-9: Docker Fundamentals & Containerization",
-      "SC-10: Dockerfile Instructions: CMD vs ENTRYPOINT"
+      "SC-10: Dockerfile Instructions: CMD vs ENTRYPOINT",
+      "SC-14: Docker Image Layers — How Layer Caching Works & Build Optimisation",
+      "SC-22: Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "SC-24: Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
     ]
   },
   {
@@ -1709,6 +1854,7 @@
     "mentionedIn": [
       "SL-11: Disk Management",
       "SC-91: Disk Management",
+      "SC-5: Checking Disk Space Availability & Inodes in Linux",
       "Q-Disk full troubleshooting?...",
       "Q-df vs du?...",
       "MD-Line 24"
@@ -1720,7 +1866,9 @@
   },
   {
     "keywordId": "KW-000140",
-    "mentionedIn": []
+    "mentionedIn": [
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability"
+    ]
   },
   {
     "keywordId": "KW-000141",
@@ -1736,7 +1884,8 @@
   {
     "keywordId": "KW-000143",
     "mentionedIn": [
-      "SC-47: 12-Factor App Principle"
+      "SC-47: 12-Factor App Principle",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
     ]
   },
   {
@@ -1762,7 +1911,11 @@
       "SC-22: Azure Storage Redundancy & Security",
       "SC-23: Secure Remote Access & Private Link",
       "SC-25: Security Posture & Key Vault Governance",
-      "SC-26: Monitoring & SIEM Integration"
+      "SC-26: Monitoring & SIEM Integration",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?",
+      "SC-17: Network Ports, Multiplexing & Standard Port Numbers"
     ]
   },
   {
@@ -1770,14 +1923,18 @@
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
       "SC-44: Containerization & Microservices Infrastructure",
-      "SC-10: Dockerfile Instructions: CMD vs ENTRYPOINT"
+      "SC-10: Dockerfile Instructions: CMD vs ENTRYPOINT",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "SC-24: Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
     ]
   },
   {
     "keywordId": "KW-000146",
     "mentionedIn": [
       "SL-9: ConfigMap",
-      "SL-43: Environment Variables in Python"
+      "SL-43: Environment Variables in Python",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook"
     ]
   },
   {
@@ -1825,6 +1982,8 @@
       "SL-37: Exception Handling",
       "SC-117: Exception Handling",
       "SC-24: Azure Identity & Access Governance",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility",
       "Q-How handle API errors?...",
       "Q-How make Python script product...",
       "Q-How handle failures?..."
@@ -1839,7 +1998,10 @@
   {
     "keywordId": "KW-000155",
     "mentionedIn": [
-      "SL-30: Common kubectl Commands"
+      "SL-30: Common kubectl Commands",
+      "SC-13: Terraform Provisioners — Last Resort Configuration & Why to Avoid Them",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "SC-24: Appending Runtime Arguments to ENTRYPOINT & Overriding Executables"
     ]
   },
   {
@@ -1898,7 +2060,8 @@
       "SL-2: Linux File System",
       "SL-12: Storage & Filesystem",
       "SC-82: Linux File System",
-      "SC-92: Storage & Filesystem"
+      "SC-92: Storage & Filesystem",
+      "SC-3: Essential Linux Navigation & File System Commands"
     ]
   },
   {
@@ -1921,6 +2084,8 @@
       "SC-51: Labels, Selectors & Annotations",
       "SC-83: Linux Basic Commands",
       "SC-19: Subscription Governance & Azure Policy",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-3: Essential Linux Navigation & File System Commands",
       "Q-How does Service find Pods?...",
       "Q-Pod stuck Pending?...",
       "Q-Difference between grep and fi...",
@@ -2036,7 +2201,8 @@
     "keywordId": "KW-000175",
     "mentionedIn": [
       "SL-32: CI/CD Integration",
-      "SC-78: CI/CD Integration"
+      "SC-78: CI/CD Integration",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps"
     ]
   },
   {
@@ -2088,6 +2254,7 @@
       "SC-83: Linux Basic Commands",
       "SC-84: Text Processing Commands",
       "SC-8: Linux Basics & System Diagnostics",
+      "SC-3: Essential Linux Navigation & File System Commands",
       "Q-Difference between grep and fi...",
       "Q-How do you search logs?...",
       "Q-Difference between grep and aw...",
@@ -2121,6 +2288,8 @@
       "SC-20: Azure Landing Zones & Subscriptions",
       "SC-26: Monitoring & SIEM Integration",
       "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
+      "SC-5: Azure DevOps Library — Variable Groups & Secret Management",
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability",
       "Q-Explain LVM...."
     ]
   },
@@ -2183,7 +2352,9 @@
       "SC-0: AKS Deployment Failing After Release",
       "SC-7: Production Outage at 2 AM",
       "SC-27: Troubleshooting",
-      "SC-28: Git & Branching Strategy"
+      "SC-28: Git & Branching Strategy",
+      "SC-20: Git Cherry-pick — Applying a Specific Commit to Another Branch",
+      "SC-21: Git Stash — Temporarily Shelving Uncommitted Work"
     ]
   },
   {
@@ -2192,7 +2363,8 @@
       "SL-23: Autoscaling",
       "SC-5: AKS Pods Not Scaling",
       "SC-47: 12-Factor App Principle",
-      "SC-70: Autoscaling"
+      "SC-70: Autoscaling",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
     ]
   },
   {
@@ -2218,6 +2390,9 @@
       "SC-4: Azure Front Door",
       "SC-6: Azure Firewall",
       "SC-15: Failover — DNS & Traffic Manager Routing",
+      "SC-9: How DNS Works Under the Hood — Resolution Lifecycle",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
+      "SC-20: TCP vs UDP Transport Layer Protocols (3-Way Handshake)",
       "Q-Ingress vs LoadBalancer?...",
       "Q-How TLS works?...",
       "Q-TCP vs UDP?...",
@@ -2238,6 +2413,7 @@
       "SC-4: Azure Front Door",
       "SC-6: Azure Firewall",
       "SC-19: Subscription Governance & Azure Policy",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
       "Q-Ingress vs LoadBalancer?...",
       "Q-How TLS works?...",
       "Q-curl vs ping?...",
@@ -2256,7 +2432,9 @@
   },
   {
     "keywordId": "KW-000196",
-    "mentionedIn": []
+    "mentionedIn": [
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
+    ]
   },
   {
     "keywordId": "KW-000197",
@@ -2391,6 +2569,11 @@
       "SC-8: CD Stage 1: UAT Deployment",
       "SC-15: Rollback Strategy (N-1 & N-2)",
       "SC-17: XML Parsing & Agent OS Mismatch",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-14: Docker Image Layers — How Layer Caching Works & Build Optimisation",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
       "Q-ImagePullBackOff?..."
     ]
   },
@@ -2427,6 +2610,10 @@
       "SC-0: CI/CD Pipeline Architecture Overview",
       "SC-2: End-to-End Deployment Pipeline Flow",
       "SC-6: Artifact Packaging & Immutability",
+      "SC-1: Day-to-Day Responsibilities as an Azure DevOps Engineer",
+      "SC-14: Docker Image Layers — How Layer Caching Works & Build Optimisation",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
       "Q-List vs tuple?...",
       "Q-Why strings immutable?...",
       "MD-Line 28"
@@ -2464,12 +2651,17 @@
       "SC-35: Disaster Recovery & Backup",
       "SC-100: Kernel Troubleshooting",
       "SC-104: Production Troubleshooting",
-      "SC-7: Production Incident Troubleshooting"
+      "SC-7: Production Incident Troubleshooting",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
+      "SC-32: Database Connection Failures After Deployment — Systematic Diagnosis"
     ]
   },
   {
     "keywordId": "KW-000206",
-    "mentionedIn": []
+    "mentionedIn": [
+      "SC-22: Git Reset — Moving HEAD and Uncommitting Changes (--soft, --mixed, --hard)"
+    ]
   },
   {
     "keywordId": "KW-000207",
@@ -2490,6 +2682,10 @@
       "SC-77: YAML & Kubernetes Manifests",
       "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
       "SC-128: Kubernetes Python Client",
+      "SC-11: Public IP vs Private IP Addressing (RFC 1918)",
+      "SC-17: Network Ports, Multiplexing & Standard Port Numbers",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch",
       "Q-Ingress vs LoadBalancer?...",
       "Q-What is Ingress Controller?...",
       "Q-How TLS works?...",
@@ -2500,7 +2696,8 @@
   {
     "keywordId": "KW-000209",
     "mentionedIn": [
-      "SC-55: Ingress"
+      "SC-55: Ingress",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture"
     ]
   },
   {
@@ -2530,6 +2727,7 @@
     "mentionedIn": [
       "SL-16: Firewall & Security",
       "SC-96: Firewall & Security",
+      "SC-16: Subnet Masking vs IP Masquerading (NAT/SNAT)",
       "Q-iptables vs firewalld?...",
       "MD-Line 26"
     ]
@@ -2544,7 +2742,14 @@
       "SC-63: Namespaces",
       "SC-112: Virtual Environment",
       "SC-20: Azure Landing Zones & Subscriptions",
-      "SC-21: Compute Resiliency & Scaling (VM/VMSS)"
+      "SC-21: Compute Resiliency & Scaling (VM/VMSS)",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-7: Process vs Thread Architecture in Linux",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture"
     ]
   },
   {
@@ -2560,7 +2765,8 @@
       "SC-21: Jenkins",
       "SC-113: Package Management (pip)",
       "SC-126: CI/CD Automation with Python",
-      "SC-1: Jenkins vs Azure DevOps"
+      "SC-1: Jenkins vs Azure DevOps",
+      "SC-26: Declarative vs Scripted Jenkins Pipeline Syntax"
     ]
   },
   {
@@ -2630,6 +2836,10 @@
       "SC-87: Process Management",
       "SC-100: Kernel Troubleshooting",
       "SC-9: Docker Fundamentals & Containerization",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-8: Automating Routine Linux OS Patching & Vulnerability Management",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture",
       "Q-What is OOMKilled?...",
       "Q-Explain Linux architecture...",
       "Q-Explain Linux boot process...",
@@ -2667,7 +2877,10 @@
       "SC-9: Private DNS Zones",
       "SC-22: Azure Storage Redundancy & Security",
       "SC-23: Secure Remote Access & Private Link",
-      "SC-25: Security Posture & Key Vault Governance"
+      "SC-25: Security Posture & Key Vault Governance",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-5: Azure DevOps Library — Variable Groups & Secret Management",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration"
     ]
   },
   {
@@ -2772,6 +2985,16 @@
       "SC-11: Kubernetes Overview & Orchestration",
       "SC-7: Artifact Storage & Publishing",
       "SC-6: AKS vs Azure Container Apps",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-17: Interpreting Linux Memory Usage with free -h — Available vs Free RAM",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics",
+      "SC-39: Learning new technologies",
+      "SC-1: Familiarity with Linux Systems & Managing Linux VMs",
+      "SC-16: Subnet Masking vs IP Masquerading (NAT/SNAT)",
+      "SC-23: CMD vs ENTRYPOINT in Dockerfiles — Exec vs Shell Form",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch",
       "Q-Difference between Pod and Rep...",
       "Q-Explain Service discovery....",
       "Q-How TLS works?...",
@@ -2798,6 +3021,7 @@
       "SC-55: Ingress",
       "SC-76: Common kubectl Commands",
       "SC-6: AKS vs Azure Container Apps",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
       "Q-How automate Kubernetes using ..."
     ]
   },
@@ -2825,6 +3049,7 @@
       "SL-4: Labels, Selectors & Annotations",
       "SL-31: YAML & Kubernetes Manifests",
       "SC-51: Labels, Selectors & Annotations",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
       "Q-How does Service find Pods?..."
     ]
   },
@@ -2860,7 +3085,12 @@
       "SC-127: Cloud Automation using Python",
       "SC-11: Kubernetes Overview & Orchestration",
       "SC-0: CI/CD Pipeline Architecture Overview",
-      "SC-24: Azure Identity & Access Governance"
+      "SC-24: Azure Identity & Access Governance",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-42: Software Development Lifecycle (SDLC) — Phases, Models & DevOps Integration",
+      "SC-1: Familiarity with Linux Systems & Managing Linux VMs",
+      "SC-9: How DNS Works Under the Hood — Resolution Lifecycle",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps"
     ]
   },
   {
@@ -2919,6 +3149,18 @@
       "SC-8: Linux Basics & System Diagnostics",
       "SC-17: XML Parsing & Agent OS Mismatch",
       "SC-13: Azure Site Recovery (ASR) — DR Orchestration",
+      "SC-17: Interpreting Linux Memory Usage with free -h — Available vs Free RAM",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-1: Familiarity with Linux Systems & Managing Linux VMs",
+      "SC-2: Troubleshooting High Latency & Slow Linux Server Performance",
+      "SC-3: Essential Linux Navigation & File System Commands",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
+      "SC-5: Checking Disk Space Availability & Inodes in Linux",
+      "SC-6: Checking Available Memory (RAM & Swap) in Linux",
+      "SC-7: Process vs Thread Architecture in Linux",
+      "SC-8: Automating Routine Linux OS Patching & Vulnerability Management",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture",
       "Q-What is OOMKilled?...",
       "Q-Explain Linux architecture...",
       "Q-Explain Linux boot process...",
@@ -3001,6 +3243,10 @@
       "SC-5: Network Security Groups (NSGs)",
       "SC-15: Failover — DNS & Traffic Manager Routing",
       "SC-21: Compute Resiliency & Scaling (VM/VMSS)",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-11: Public IP vs Private IP Addressing (RFC 1918)",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
       "Q-Ingress vs LoadBalancer?..."
     ]
   },
@@ -3174,6 +3420,8 @@
       "SC-11: Azure Monitor & SIEM Integration",
       "SC-19: Subscription Governance & Azure Policy",
       "SC-26: Monitoring & SIEM Integration",
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics",
       "Q-CrashLoopBackOff fix?...",
       "Q-How do you search logs?...",
       "Q-CPU is 100%, what steps?...",
@@ -3201,7 +3449,8 @@
   {
     "keywordId": "KW-000263",
     "mentionedIn": [
-      "SL-3: Linux Basic Commands"
+      "SL-3: Linux Basic Commands",
+      "SC-3: Essential Linux Navigation & File System Commands"
     ]
   },
   {
@@ -3385,6 +3634,7 @@
       "SC-17: RPO & RTO Compliance — Design Trade-offs",
       "SC-19: Subscription Governance & Azure Policy",
       "SC-26: Monitoring & SIEM Integration",
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability",
       "Q-Deployment vs DaemonSet?..."
     ]
   },
@@ -3496,14 +3746,24 @@
       "SC-133: Decorators",
       "SC-134: Production Python Design",
       "SC-11: Kubernetes Overview & Orchestration",
-      "SC-6: AKS vs Azure Container Apps"
+      "SC-6: AKS vs Azure Container Apps",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-2: Troubleshooting High Latency & Slow Linux Server Performance",
+      "SC-7: Process vs Thread Architecture in Linux",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture",
+      "SC-22: Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
     ]
   },
   {
     "keywordId": "KW-000274",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
-      "SC-45: Continuous Delivery Design & Federation"
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps"
     ]
   },
   {
@@ -3521,6 +3781,8 @@
       "SC-42: Configuration Management & Orchestration",
       "SC-111: Modules & Packages",
       "SC-116: Linux Command Execution using Python",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment",
       "Q-Explain LEGB rule...",
       "Q-os vs shutil?...",
       "Q-How execute remote command usi..."
@@ -3551,6 +3813,8 @@
       "SC-3: Terraform Fundamentals & Custom Modules",
       "SC-4: Terraform Directory Structure",
       "SC-5: Terraform Variables & Multi-Environment Strategy",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
       "Q-Why Python in DevOps?..."
     ]
   },
@@ -3600,7 +3864,8 @@
     "keywordId": "KW-000285",
     "mentionedIn": [
       "SL-7: Containerization & Microservices Infrastructure",
-      "SC-44: Containerization & Microservices Infrastructure"
+      "SC-44: Containerization & Microservices Infrastructure",
+      "SC-22: Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)"
     ]
   },
   {
@@ -3644,7 +3909,11 @@
     "mentionedIn": [
       "SL-14: Advanced Networking",
       "SC-94: Advanced Networking",
-      "SC-6: Azure Firewall"
+      "SC-6: Azure Firewall",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-11: Public IP vs Private IP Addressing (RFC 1918)",
+      "SC-13: Home Router DHCP Address Assignment & Private Subnets",
+      "SC-16: Subnet Masking vs IP Masquerading (NAT/SNAT)"
     ]
   },
   {
@@ -3704,7 +3973,9 @@
       "SC-2: Azure Load Balancer",
       "SC-5: Network Security Groups (NSGs)",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
-      "SC-23: Secure Remote Access & Private Link"
+      "SC-23: Secure Remote Access & Private Link",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-17: Network Ports, Multiplexing & Standard Port Numbers"
     ]
   },
   {
@@ -3811,7 +4082,9 @@
       "SC-133: Decorators",
       "SC-134: Production Python Design",
       "SC-11: Azure Monitor & SIEM Integration",
-      "SC-28: Interview FAQ Master Reference"
+      "SC-28: Interview FAQ Master Reference",
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics"
     ]
   },
   {
@@ -3923,7 +4196,9 @@
       "SC-7: Production Incident Troubleshooting",
       "SC-8: ExpressRoute Connectivity",
       "SC-9: Private DNS Zones",
-      "SC-23: Secure Remote Access & Private Link"
+      "SC-23: Secure Remote Access & Private Link",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
     ]
   },
   {
@@ -3944,6 +4219,9 @@
       "SC-113: Package Management (pip)",
       "SC-12: Ansible Fundamentals & Configuration Management",
       "SC-2: End-to-End Deployment Pipeline Flow",
+      "SC-14: Docker Image Layers — How Layer Caching Works & Build Optimisation",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
+      "SC-21: Docker Containerization & Engine Client-Server Architecture",
       "Q-How automate Kubernetes using ..."
     ]
   },
@@ -3981,7 +4259,8 @@
       "SL-11: Disk Management",
       "SL-4: Enterprise IaC Module Architectures",
       "SC-41: Enterprise IaC Module Architectures",
-      "SC-91: Disk Management"
+      "SC-91: Disk Management",
+      "SC-16: Subnet Masking vs IP Masquerading (NAT/SNAT)"
     ]
   },
   {
@@ -4010,6 +4289,11 @@
       "SC-8: ExpressRoute Connectivity",
       "SC-9: Private DNS Zones",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-9: How DNS Works Under the Hood — Resolution Lifecycle",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
       "Q-os vs shutil?..."
     ]
   },
@@ -4018,7 +4302,8 @@
     "mentionedIn": [
       "SL-8: Ingress",
       "SC-2: Front Door vs Application Gateway",
-      "SC-3: Azure Application Gateway"
+      "SC-3: Azure Application Gateway",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
     ]
   },
   {
@@ -4208,7 +4493,8 @@
     "keywordId": "KW-000333",
     "mentionedIn": [
       "SL-7: Process Management",
-      "SC-87: Process Management"
+      "SC-87: Process Management",
+      "SC-7: Process vs Thread Architecture in Linux"
     ]
   },
   {
@@ -4266,6 +4552,26 @@
       "SC-11: Azure Monitor & SIEM Integration",
       "SC-19: Subscription Governance & Azure Policy",
       "SC-26: Monitoring & SIEM Integration",
+      "SC-1: Day-to-Day Responsibilities as an Azure DevOps Engineer",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-4: Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)",
+      "SC-5: Azure DevOps Library — Variable Groups & Secret Management",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
+      "SC-9: Terraform State Locking — Preventing Concurrent Plan/Apply Corruption",
+      "SC-13: Terraform Provisioners — Last Resort Configuration & Why to Avoid Them",
+      "SC-23: Git Revert — Safe Undo for Shared Branches Without Rewriting History",
+      "SC-24: Pull Request Workflow — Code Review, Branch Protection & CI Gates",
+      "SC-26: Declarative vs Scripted Jenkins Pipeline Syntax",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment",
+      "SC-44: Scrum Framework — Roles, Ceremonies & Artefacts in Engineering Teams",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
+      "SC-26: End-to-End Production CI/CD Pipeline Architecture (Multi-Stage YAML)",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch",
       "Q-Explain sed usage...."
     ]
   },
@@ -4280,7 +4586,8 @@
     "mentionedIn": [
       "SL-5: Configuration Management & Orchestration",
       "SC-42: Configuration Management & Orchestration",
-      "SC-13: Ansible Structures: Playbooks, Roles & Inventories"
+      "SC-13: Ansible Structures: Playbooks, Roles & Inventories",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook"
     ]
   },
   {
@@ -4321,6 +4628,13 @@
       "SC-79: Cloud Kubernetes (EKS/GKE/AKS)",
       "SC-80: Scenario-Based Kubernetes Interview Questions",
       "SC-128: Kubernetes Python Client",
+      "SC-1: Day-to-Day Responsibilities as an Azure DevOps Engineer",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-32: Database Connection Failures After Deployment — Systematic Diagnosis",
+      "SC-15: Classless Inter-Domain Routing (CIDR) Notation & Subnetting",
       "Q-Difference between Pod and Rep...",
       "Q-How does self healing work?...",
       "Q-Deployment vs DaemonSet?...",
@@ -4392,6 +4706,14 @@
       "SC-80: Scenario-Based Kubernetes Interview Questions",
       "SC-128: Kubernetes Python Client",
       "SC-11: Kubernetes Overview & Orchestration",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
+      "SC-32: Database Connection Failures After Deployment — Systematic Diagnosis",
+      "SC-16: Subnet Masking vs IP Masquerading (NAT/SNAT)",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture",
       "Q-ReplicaSet vs Deployment?...",
       "Q-Explain rolling update strateg...",
       "Q-How achieve zero downtime?...",
@@ -4431,7 +4753,8 @@
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
       "SC-22: Azure Storage Redundancy & Security",
       "SC-23: Secure Remote Access & Private Link",
-      "SC-25: Security Posture & Key Vault Governance"
+      "SC-25: Security Posture & Key Vault Governance",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster"
     ]
   },
   {
@@ -4488,6 +4811,16 @@
       "SC-8: ExpressRoute Connectivity",
       "SC-15: Failover — DNS & Traffic Manager Routing",
       "SC-16: Failback Testing — Operational Checklists",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-17: Interpreting Linux Memory Usage with free -h — Available vs Free RAM",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-42: Software Development Lifecycle (SDLC) — Phases, Models & DevOps Integration",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment",
+      "SC-44: Scrum Framework — Roles, Ceremonies & Artefacts in Engineering Teams",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
+      "SC-6: Checking Available Memory (RAM & Swap) in Linux",
+      "SC-7: Process vs Thread Architecture in Linux",
       "Q-Explain rolling update strateg...",
       "Q-What is OOMKilled?...",
       "Q-Explain Linux boot process...",
@@ -4529,6 +4862,9 @@
       "SC-90: Memory Management",
       "SC-106: Python Collections",
       "SC-132: Generators and Iterators",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
+      "SC-7: Process vs Thread Architecture in Linux",
+      "SC-22: Anatomy of a Standard Production Dockerfile (Multi-Stage Best Practices)",
       "Q-Load average meaning?...",
       "Q-What is OOM killer?...",
       "Q-Disk full troubleshooting?...",
@@ -4566,6 +4902,7 @@
       "SC-77: YAML & Kubernetes Manifests",
       "SC-80: Scenario-Based Kubernetes Interview Questions",
       "SC-16: Monitoring & 99.9% Uptime SLA",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
       "Q-Use cases of DaemonSet?..."
     ]
   },
@@ -4574,7 +4911,10 @@
     "mentionedIn": [
       "SL-33: Cloud Kubernetes (EKS/GKE/AKS)",
       "SC-8: ExpressRoute Connectivity",
-      "SC-10: Troubleshoot Hybrid Connectivity & Latency"
+      "SC-10: Troubleshoot Hybrid Connectivity & Latency",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
     ]
   },
   {
@@ -4756,7 +5096,13 @@
       "SC-12: Artifact Promotion Strategy",
       "SC-13: Version Control & Release Tracking",
       "SC-14: Notifications & Release Visibility",
-      "SC-15: Rollback Strategy (N-1 & N-2)"
+      "SC-15: Rollback Strategy (N-1 & N-2)",
+      "SC-4: Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)",
+      "SC-20: Git Cherry-pick — Applying a Specific Commit to Another Branch",
+      "SC-25: Merge Conflict",
+      "SC-38: Conflict with developers",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps"
     ]
   },
   {
@@ -4775,7 +5121,8 @@
     "keywordId": "KW-000377",
     "mentionedIn": [
       "SL-4: Enterprise IaC Module Architectures",
-      "SC-41: Enterprise IaC Module Architectures"
+      "SC-41: Enterprise IaC Module Architectures",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation"
     ]
   },
   {
@@ -4830,7 +5177,8 @@
       "SC-78: CI/CD Integration",
       "SC-126: CI/CD Automation with Python",
       "SC-7: Artifact Storage & Publishing",
-      "SC-12: Azure Backup — Vault Design & Policies"
+      "SC-12: Azure Backup — Vault Design & Policies",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration"
     ]
   },
   {
@@ -4891,6 +5239,11 @@
       "SC-25: Security Posture & Key Vault Governance",
       "SC-26: Monitoring & SIEM Integration",
       "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-12: Terraform depends_on — Explicit Resource Dependency Declaration",
+      "SC-13: Terraform Provisioners — Last Resort Configuration & Why to Avoid Them",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-7: Process vs Thread Architecture in Linux",
       "Q-How TLS works?...",
       "Q-PV vs PVC?...",
       "Q-Why use namespaces?...",
@@ -4904,7 +5257,8 @@
     "keywordId": "KW-000385",
     "mentionedIn": [
       "SC-19: Subscription Governance & Azure Policy",
-      "SC-24: Azure Identity & Access Governance"
+      "SC-24: Azure Identity & Access Governance",
+      "SC-12: Terraform depends_on — Explicit Resource Dependency Declaration"
     ]
   },
   {
@@ -4951,7 +5305,9 @@
       "SC-100: Kernel Troubleshooting",
       "SC-104: Production Troubleshooting",
       "SC-12: Azure Backup — Vault Design & Policies",
-      "SC-17: RPO & RTO Compliance — Design Trade-offs"
+      "SC-17: RPO & RTO Compliance — Design Trade-offs",
+      "SC-21: Git Stash — Temporarily Shelving Uncommitted Work",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook"
     ]
   },
   {
@@ -4968,7 +5324,9 @@
   },
   {
     "keywordId": "KW-000393",
-    "mentionedIn": []
+    "mentionedIn": [
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture"
+    ]
   },
   {
     "keywordId": "KW-000394",
@@ -4998,7 +5356,12 @@
       "SC-68: RBAC & Security",
       "SC-127: Cloud Automation using Python",
       "SC-18: Management Groups & Enterprise Hierarchy",
-      "SC-24: Azure Identity & Access Governance"
+      "SC-24: Azure Identity & Access Governance",
+      "SC-0: Tell me about yourself — Technical Introduction (Azure DevOps & AKS)",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-12: Terraform depends_on — Explicit Resource Dependency Declaration",
+      "SC-33: Tell me about yourself — HR Interview & Career Roadmap (Coforge)",
+      "SC-35: Why are you looking for a change?"
     ]
   },
   {
@@ -5023,7 +5386,9 @@
       "SC-20: Azure Landing Zones & Subscriptions",
       "SC-24: Azure Identity & Access Governance",
       "SC-25: Security Posture & Key Vault Governance",
-      "SC-28: Interview FAQ Master Reference"
+      "SC-28: Interview FAQ Master Reference",
+      "SC-44: Scrum Framework — Roles, Ceremonies & Artefacts in Engineering Teams",
+      "SC-0: Tell me about yourself — Technical Introduction & Day-to-Day Roles"
     ]
   },
   {
@@ -5052,6 +5417,12 @@
       "SC-11: CD Stage 3: Production Deployment",
       "SC-15: Rollback Strategy (N-1 & N-2)",
       "SC-3: Azure Application Gateway",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-23: Git Revert — Safe Undo for Shared Branches Without Rewriting History",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
+      "SC-37: Biggest failure",
+      "SC-45: CI/CD Pipeline Architecture — End-to-End Automated Delivery in Azure DevOps",
       "Q-How rollback works?...",
       "MD-Line 3"
     ]
@@ -5086,7 +5457,10 @@
       "SC-35: Disaster Recovery & Backup",
       "SC-46: Observability & Live Production Triage",
       "SC-100: Kernel Troubleshooting",
-      "SC-104: Production Troubleshooting"
+      "SC-104: Production Troubleshooting",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-18: Git Merge — Integrating Branches While Preserving History",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook"
     ]
   },
   {
@@ -5143,6 +5517,13 @@
       "SC-20: Azure Landing Zones & Subscriptions",
       "SC-23: Secure Remote Access & Private Link",
       "SC-26: Monitoring & SIEM Integration",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-10: DNS Record Types — A vs CNAME vs ALIAS vs TXT",
+      "SC-11: Public IP vs Private IP Addressing (RFC 1918)",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-15: Classless Inter-Domain Routing (CIDR) Notation & Subnetting",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
       "Q-Ingress vs LoadBalancer?...",
       "Q-What is Ingress Controller?..."
     ]
@@ -5156,7 +5537,8 @@
   {
     "keywordId": "KW-000407",
     "mentionedIn": [
-      "SC-4: Azure Front Door"
+      "SC-4: Azure Front Door",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility"
     ]
   },
   {
@@ -5193,7 +5575,13 @@
       "SC-18: Management Groups & Enterprise Hierarchy",
       "SC-21: Compute Resiliency & Scaling (VM/VMSS)",
       "SC-23: Secure Remote Access & Private Link",
-      "SC-28: Interview FAQ Master Reference"
+      "SC-28: Interview FAQ Master Reference",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility",
+      "SC-15: Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
     ]
   },
   {
@@ -5241,6 +5629,8 @@
       "SC-7: Production Incident Troubleshooting",
       "SC-3: Azure Application Gateway",
       "SC-25: Security Posture & Key Vault Governance",
+      "SC-5: Azure DevOps Library — Variable Groups & Secret Management",
+      "SC-32: Database Connection Failures After Deployment — Systematic Diagnosis",
       "Q-How TLS works?...",
       "Q-ConfigMap vs Secret?...",
       "Q-How to update configuration?...",
@@ -5290,7 +5680,9 @@
     "keywordId": "KW-000420",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
-      "SC-45: Continuous Delivery Design & Federation"
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison"
     ]
   },
   {
@@ -5359,6 +5751,15 @@
       "SC-9: Private DNS Zones",
       "SC-12: Azure Backup — Vault Design & Policies",
       "SC-23: Secure Remote Access & Private Link",
+      "SC-14: Docker Image Layers — How Layer Caching Works & Build Optimisation",
+      "SC-27: AWS CloudWatch — Metrics, Logs, Alarms & Dashboards for Observability",
+      "SC-28: ELK Stack — Elasticsearch, Logstash & Kibana for Centralised Log Analytics",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
+      "SC-47: Cloud Service Models — IaaS vs PaaS vs SaaS & Shared Responsibility",
+      "SC-9: How DNS Works Under the Hood — Resolution Lifecycle",
+      "SC-17: Network Ports, Multiplexing & Standard Port Numbers",
+      "SC-25: Container Deployment Strategy — ACR to AKS via Helm & GitOps",
       "Q-ClusterIP vs NodePort?...",
       "Q-How does Service find Pods?...",
       "Q-What is Headless Service?...",
@@ -5469,6 +5870,11 @@
       "SC-20: Azure Landing Zones & Subscriptions",
       "SC-25: Security Posture & Key Vault Governance",
       "SC-27: Azure FinOps — Enterprise Resource Tagging & Cost Management",
+      "SC-34: Why Coforge?",
+      "SC-1: Familiarity with Linux Systems & Managing Linux VMs",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch",
       "Q-How does Service find Pods?...",
       "Q-Explain Service discovery....",
       "Q-Ingress vs LoadBalancer?...",
@@ -5575,7 +5981,10 @@
       "SC-12: Azure Backup — Vault Design & Policies",
       "SC-14: Multi-Region DR Strategy",
       "SC-17: RPO & RTO Compliance — Design Trade-offs",
-      "SC-24: Azure Identity & Access Governance"
+      "SC-24: Azure Identity & Access Governance",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation"
     ]
   },
   {
@@ -5583,6 +5992,7 @@
     "mentionedIn": [
       "SL-15: Networking Commands",
       "SC-95: Networking Commands",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
       "Q-How find process using port?..."
     ]
   },
@@ -5628,7 +6038,10 @@
     "mentionedIn": [
       "SC-2: Front Door vs Application Gateway",
       "SC-3: Azure Application Gateway",
-      "SC-4: Azure Front Door"
+      "SC-4: Azure Front Door",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration",
+      "SC-10: DNS Record Types — A vs CNAME vs ALIAS vs TXT",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer"
     ]
   },
   {
@@ -5776,6 +6189,11 @@
       "SC-8: ExpressRoute Connectivity",
       "SC-15: Failover — DNS & Traffic Manager Routing",
       "SC-16: Failback Testing — Operational Checklists",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
+      "SC-9: Terraform State Locking — Preventing Concurrent Plan/Apply Corruption",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase",
+      "SC-13: Terraform Provisioners — Last Resort Configuration & Why to Avoid Them",
       "Q-How does self healing work?...",
       "Q-SIGTERM vs SIGKILL?...",
       "Q-Load average meaning?...",
@@ -5833,7 +6251,8 @@
     "mentionedIn": [
       "SL-1: Azure Virtual Networks: Core & Peering",
       "SC-38: Azure Virtual Networks: Core & Peering",
-      "SC-3: VNet Peering & Subnetting"
+      "SC-3: VNet Peering & Subnetting",
+      "SC-15: Classless Inter-Domain Routing (CIDR) Notation & Subnetting"
     ]
   },
   {
@@ -5858,6 +6277,8 @@
     "mentionedIn": [
       "SL-10: Memory Management",
       "SC-90: Memory Management",
+      "SC-17: Interpreting Linux Memory Usage with free -h — Available vs Free RAM",
+      "SC-6: Checking Available Memory (RAM & Swap) in Linux",
       "Q-What is OOM killer?...",
       "Q-RAM vs swap?...",
       "MD-Line 24"
@@ -5868,6 +6289,7 @@
     "mentionedIn": [
       "SL-19: Logs & Monitoring",
       "SC-99: Logs & Monitoring",
+      "SC-20: TCP vs UDP Transport Layer Protocols (3-Way Handshake)",
       "Q-How do you search logs?..."
     ]
   },
@@ -5902,6 +6324,7 @@
       "SL-19: Logs & Monitoring",
       "SC-81: Linux Architecture & Boot Process",
       "SC-88: Service Management",
+      "SC-1: Familiarity with Linux Systems & Managing Linux VMs",
       "Q-Explain Linux boot process...",
       "Q-How do you search logs?..."
     ]
@@ -5915,6 +6338,7 @@
       "SC-49: Cluster Architecture",
       "SC-66: Scheduling",
       "SC-80: Scenario-Based Kubernetes Interview Questions",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture",
       "Q-Affinity vs taints?...",
       "Q-Why Pod is Pending?...",
       "MD-Line 15"
@@ -5948,6 +6372,7 @@
       "SC-13: Ansible Structures: Playbooks, Roles & Inventories",
       "SC-16: Failback Testing — Operational Checklists",
       "SC-19: Subscription Governance & Azure Policy",
+      "SC-21: Git Stash — Temporarily Shelving Uncommitted Work",
       "Q-When use multiprocessing?..."
     ]
   },
@@ -5961,6 +6386,10 @@
       "SC-5: Network Security Groups (NSGs)",
       "SC-6: Azure Firewall",
       "SC-10: Troubleshoot Hybrid Connectivity & Latency",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
+      "SC-17: Network Ports, Multiplexing & Standard Port Numbers",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
+      "SC-20: TCP vs UDP Transport Layer Protocols (3-Way Handshake)",
       "Q-TCP vs UDP?...",
       "MD-Line 25"
     ]
@@ -5990,7 +6419,17 @@
       "SC-1: Site-to-Site (S2S) & Point-to-Site (P2S) VPN",
       "SC-9: Private DNS Zones",
       "SC-11: Azure Monitor & SIEM Integration",
-      "SC-17: RPO & RTO Compliance — Design Trade-offs"
+      "SC-17: RPO & RTO Compliance — Design Trade-offs",
+      "SC-0: Tell me about yourself — Technical Introduction (Azure DevOps & AKS)",
+      "SC-1: Day-to-Day Responsibilities as an Azure DevOps Engineer",
+      "SC-8: terraform init — Provider Downloads & Backend Initialisation",
+      "SC-9: Terraform State Locking — Preventing Concurrent Plan/Apply Corruption",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase",
+      "SC-12: Terraform depends_on — Explicit Resource Dependency Declaration",
+      "SC-13: Terraform Provisioners — Last Resort Configuration & Why to Avoid Them",
+      "SC-36: Biggest achievement",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
     ]
   },
   {
@@ -6029,6 +6468,8 @@
       "SL-7: Process Management",
       "SL-51: Threading and Multiprocessing",
       "SC-131: Threading and Multiprocessing",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-7: Process vs Thread Architecture in Linux",
       "Q-Process vs thread?...",
       "Q-Why strings immutable?...",
       "Q-Thread vs process?...",
@@ -6051,6 +6492,7 @@
       "SC-57: Secrets",
       "SC-6: Azure Firewall",
       "SC-23: Secure Remote Access & Private Link",
+      "SC-19: Forward Proxy vs Reverse Proxy Architecture",
       "Q-What is Ingress Controller?...",
       "Q-How TLS works?...",
       "MD-Line 5"
@@ -6075,7 +6517,8 @@
     "mentionedIn": [
       "SL-13: DaemonSet",
       "SL-19: Scheduling",
-      "SC-66: Scheduling"
+      "SC-66: Scheduling",
+      "SC-15: AKS Node Pools — System Pool vs User Pool Architecture"
     ]
   },
   {
@@ -6089,6 +6532,9 @@
       "SC-8: Linux Basics & System Diagnostics",
       "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
       "SC-20: Azure Landing Zones & Subscriptions",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-46: Virtual Machine vs Container — Architecture, Isolation & Use Case Comparison",
+      "SC-2: Troubleshooting High Latency & Slow Linux Server Performance",
       "Q-Explain Linux architecture...",
       "Q-How find process?...",
       "Q-CPU is 100%, what steps?...",
@@ -6106,7 +6552,9 @@
     "keywordId": "KW-000487",
     "mentionedIn": [
       "SL-26: Observability",
-      "SC-27: Troubleshooting"
+      "SC-27: Troubleshooting",
+      "SC-31: Diagnosing High CPU Usage on a Linux VM — Systematic Investigation",
+      "SC-9: How DNS Works Under the Hood — Resolution Lifecycle"
     ]
   },
   {
@@ -6151,6 +6599,10 @@
       "SC-2: Azure Load Balancer",
       "SC-5: Network Security Groups (NSGs)",
       "SC-6: Azure Firewall",
+      "SC-4: Checking Port Availability & Listening Processes in Linux",
+      "SC-17: Network Ports, Multiplexing & Standard Port Numbers",
+      "SC-18: Layer 7 Application Load Balancer vs Layer 4 Network Load Balancer",
+      "SC-20: TCP vs UDP Transport Layer Protocols (3-Way Handshake)",
       "Q-TCP vs UDP?...",
       "MD-Line 25"
     ]
@@ -6166,7 +6618,8 @@
     "keywordId": "KW-000494",
     "mentionedIn": [
       "SL-50: Testing Automation using pytest",
-      "SC-5: CI Stage 3: Automated Testing"
+      "SC-5: CI Stage 3: Automated Testing",
+      "SC-4: Continuous Integration (CI) vs Continuous Delivery / Deployment (CD)"
     ]
   },
   {
@@ -6207,7 +6660,22 @@
       "SC-106: Python Collections",
       "SC-123: Environment Variables in Python",
       "SC-132: Generators and Iterators",
-      "SC-5: Terraform Variables & Multi-Environment Strategy"
+      "SC-5: Terraform Variables & Multi-Environment Strategy",
+      "SC-0: Tell me about yourself — Technical Introduction (Azure DevOps & AKS)",
+      "SC-2: Role in the Deployment Process — CI/CD Pipeline Ownership",
+      "SC-7: Azure DevOps Library — Secure Files & Key Vault Integration",
+      "SC-10: Terraform Outputs — Exposing Values Between Modules and Pipelines",
+      "SC-25: Merge Conflict",
+      "SC-33: Tell me about yourself — HR Interview & Career Roadmap (Coforge)",
+      "SC-34: Why Coforge?",
+      "SC-35: Why are you looking for a change?",
+      "SC-36: Biggest achievement",
+      "SC-37: Biggest failure",
+      "SC-38: Conflict with developers",
+      "SC-39: Learning new technologies",
+      "SC-40: Leadership examples",
+      "SC-41: Strengths and weaknesses",
+      "SC-43: Agile Methodology — Iterative Delivery, Core Values & DevOps Alignment"
     ]
   },
   {
@@ -6227,6 +6695,9 @@
       "SC-103: Environment Variables",
       "SC-108: Python Scope (LEGB Rule)",
       "SC-110: Arguments and kwargs",
+      "SC-3: Describing a Challenging Production Issue You Resolved",
+      "SC-5: Azure DevOps Library — Variable Groups & Secret Management",
+      "SC-30: Production Deployment Failure — Triage, Rollback & RCA Playbook",
       "Q-Local vs global variable?...",
       "Q-What is variable shadowing?...",
       "Q-Difference between args and kw...",
@@ -6264,6 +6735,7 @@
       "SC-2: End-to-End Deployment Pipeline Flow",
       "SC-8: CD Stage 1: UAT Deployment",
       "SC-12: Artifact Promotion Strategy",
+      "SC-5: Azure DevOps Library — Variable Groups & Secret Management",
       "Q-How to update configuration?...",
       "Q-How make Python script product..."
     ]
@@ -6318,7 +6790,12 @@
       "SC-18: Management Groups & Enterprise Hierarchy",
       "SC-19: Subscription Governance & Azure Policy",
       "SC-20: Azure Landing Zones & Subscriptions",
-      "SC-23: Secure Remote Access & Private Link"
+      "SC-23: Secure Remote Access & Private Link",
+      "SC-6: Self-Hosted Agent vs Microsoft-Hosted Agent in Azure DevOps",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-29: Public IP vs Private IP — Routing, NAT & Azure Network Architecture",
+      "SC-12: Azure Virtual Network (VNet) Architecture & Isolation",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?"
     ]
   },
   {
@@ -6328,7 +6805,9 @@
       "SC-38: Azure Virtual Networks: Core & Peering",
       "SC-3: VNet Peering & Subnetting",
       "SC-7: User Defined Routes (UDR) — Custom Subnet Routing & BGP Override",
-      "SC-20: Azure Landing Zones & Subscriptions"
+      "SC-20: Azure Landing Zones & Subscriptions",
+      "SC-16: Azure VNet Integration in AKS — CNI Networking & Private Cluster",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?"
     ]
   },
   {
@@ -6400,7 +6879,8 @@
       "SC-11: Azure Monitor & SIEM Integration",
       "SC-19: Subscription Governance & Azure Policy",
       "SC-20: Azure Landing Zones & Subscriptions",
-      "SC-26: Monitoring & SIEM Integration"
+      "SC-26: Monitoring & SIEM Integration",
+      "SC-11: Terraform Workspaces — Isolated State per Environment in One Codebase"
     ]
   },
   {
@@ -6433,7 +6913,8 @@
     "keywordId": "KW-000520",
     "mentionedIn": [
       "SL-8: Continuous Delivery Design & Federation",
-      "SC-45: Continuous Delivery Design & Federation"
+      "SC-45: Continuous Delivery Design & Federation",
+      "SC-27: Writing Kubernetes Manifests & Azure DevOps Pipelines from Scratch"
     ]
   },
   {
@@ -6548,7 +7029,8 @@
       "SC-131: Threading and Multiprocessing",
       "SC-132: Generators and Iterators",
       "SC-133: Decorators",
-      "SC-134: Production Python Design"
+      "SC-134: Production Python Design",
+      "SC-14: Why Use Private VNets Instead of Public IPs Everywhere?"
     ]
   },
   {

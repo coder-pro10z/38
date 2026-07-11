@@ -205,12 +205,14 @@ The application is structured to serve as an ultra-fast, fully client-side singl
 ├── hexaview_r2.json                            # Hexaview Round 2 interview slides (18 Qs)
 ├── noventiq_r1.json                            # Noventiq Round 1 interview slides (8 Qs)
 ├── infra_azure.json                            # Azure Infra JD-aligned slides (29 Qs)
-├── infinite_locus.json                         # Coforge / Infinite Locus interview questions (48 Qs, HR synced)
+├── infinite_locus.json                         # Coforge / Infinite Locus JD Prep questions (48 Qs, 100% authentic zero-template answers)
+├── infinite_locus_interview.json               # Infinite Locus Interview round questions (28 Qs)
 ├── hr_behavioral.json                          # Authentic behavioral interview answers base (Anam Ansari / Coforge)
 ├── merged.json                                 # Combined database containing all 254 questions
 ├── category_config.json                        # Category definitions & priorities (C001-C017)
 ├── glossary.json                               # Processed keywords & definitions database
 ├── keyword-links.json                          # Keywords cross-reference links
+├── BUG_BACKLOG_AND_RCA.md                      # Canonical Bug Backlog & Root Cause Analysis (RCA) log
 ├── *.js                                        # Node.js data pipeline scripts
 └── README.md                                   # This documentation file
 ```
@@ -282,3 +284,20 @@ Once running, navigate to `http://localhost:8000` or `http://localhost:3000` in 
 ### 5. 524-Term Interactive Glossary (`glossary.json`)
 - Includes 15 new rich high-impact Cloud Native/SRE keywords (**FinOps**, **KEDA**, **eBPF**, **Argo CD**, **GitOps**, **Karpenter**, **Crossplane**, **OPA Gatekeeper**, **Cilium**, **Zero Trust**, **UDR**, **Azure Private Endpoint**, **OpenTelemetry**, **DevSecOps Shift Left**, **Service Mesh**).
 - Dynamic keyword links (`keyword-links.json`) connect terms to relevant study scenarios across all datasets.
+
+---
+
+## 📜 Canonical Answer Schema Specification & Zero-Template Standard
+
+For a complete architectural and field-by-field reference of the JSON structure used for interview questions and rich answers, see **[`INTERVIEW_ANSWER_SCHEMA_DOCUMENTATION.md`](INTERVIEW_ANSWER_SCHEMA_DOCUMENTATION.md)** and **[`PHASE1_SCHEMA_EXAMPLES.md`](PHASE1_SCHEMA_EXAMPLES.md)**.
+
+### Key Schema & Quality Standards:
+- **Zero-Template Authentic Engineering Standard**: All datasets enforce 100% authentic, interview-ready engineering answers. Generic boilerplate templates (e.g., `"When addressing..."` openers or generic automation kill shots) are strictly disallowed.
+- **Pedagogical 3-Layer Structure**: Every question integrates first-principles theory (`definition`, `why_it_matters`), visual ASCII diagrams or tradeoff matrices (`architecture_flow` / `tradeoff_matrix` / `timeline_flow`), and verbal interview scripts (`interview_answer`, `interview_kill_shot`).
+- **Supported Layout Modes (`schema`)**:
+  - `architecture`: Numbered execution flow + mono-spaced ASCII flowchart.
+  - `tradeoff`: Comparative multi-dimension evaluation table.
+  - `timeline`: Sequential milestone or deployment stage timeline.
+- **Recent Dataset Integrations**:
+  - **`Infinite Locus Interview (28 Q&A)`** (`infinite_locus_interview.json`) — mapped against `merged.json` via `infinite_locus_interview_mapping.json`.
+  - **`Infinite Locus JD Prep (48 Q&A)`** (`infinite_locus.json`) — 100% upgraded with authentic Coforge / AKS / Azure DevOps production answers synced to `merged.json` (254 canonical questions total).

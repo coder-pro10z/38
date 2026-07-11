@@ -1650,6 +1650,7 @@
                         <div class="dropdown-item" id="opt-infra-azure" onclick="selectDataset('infra_azure')">20 Topics — JD Aligned <span></span></div>
                         <div class="dropdown-submenu-header" style="margin-top: 6px;">Coforge / Infinite Locus</div>
                         <div class="dropdown-item" id="opt-infinite-locus" onclick="selectDataset('infinite_locus')">JD Prep (48 Q&A) <span></span></div>
+                        <div class="dropdown-item" id="opt-infinite-locus-interview" onclick="selectDataset('infinite_locus_interview')">Infinite Locus Interview (28 Q&A) <span></span></div>
                         <hr style="border: 0; border-top: 1px solid var(--border); margin: 4px 0;">
                         <div class="dropdown-item" id="opt-merged-dataset" onclick="selectDataset('merged')">📦 All Questions (254) <span></span></div>
                         <div class="dropdown-item active-item" id="opt-default-dataset" onclick="selectDataset('default')">Default Scenarios <span>✓</span></div>
@@ -2494,6 +2495,7 @@ let hexaviewR2Scenarios = [];
 let noventiqR1Scenarios = [];
 let infraAzureScenarios = [];
 let infiniteLocusScenarios = [];
+let infiniteLocusInterviewScenarios = [];
 let mergedScenarios = [];
 
 async function selectDataset(type) {
@@ -2521,6 +2523,7 @@ async function selectDataset(type) {
     const optNovR1 = document.getElementById('opt-noventiq-r1');
     const optInfraAz = document.getElementById('opt-infra-azure');
     const optInfLocus = document.getElementById('opt-infinite-locus');
+    const optInfLocusInterview = document.getElementById('opt-infinite-locus-interview');
     const optMerged = document.getElementById('opt-merged-dataset');
     const optDef = document.getElementById('opt-default-dataset');
     
@@ -2533,6 +2536,7 @@ async function selectDataset(type) {
         optNovR1.querySelector('span').innerText = '';
         if (optInfraAz) { optInfraAz.classList.remove('active-item'); optInfraAz.querySelector('span').innerText = ''; }
         if (optInfLocus) { optInfLocus.classList.remove('active-item'); optInfLocus.querySelector('span').innerText = ''; }
+        if (optInfLocusInterview) { optInfLocusInterview.classList.remove('active-item'); optInfLocusInterview.querySelector('span').innerText = ''; }
         if (optMerged) { optMerged.classList.remove('active-item'); optMerged.querySelector('span').innerText = ''; }
         optDef.classList.remove('active-item');
         optDef.querySelector('span').innerText = '';
@@ -2550,6 +2554,8 @@ async function selectDataset(type) {
             if (optInfraAz) { optInfraAz.classList.add('active-item'); optInfraAz.querySelector('span').innerText = '✓'; }
         } else if (type === 'infinite_locus') {
             if (optInfLocus) { optInfLocus.classList.add('active-item'); optInfLocus.querySelector('span').innerText = '✓'; }
+        } else if (type === 'infinite_locus_interview') {
+            if (optInfLocusInterview) { optInfLocusInterview.classList.add('active-item'); optInfLocusInterview.querySelector('span').innerText = '✓'; }
         } else if (type === 'merged') {
             if (optMerged) { optMerged.classList.add('active-item'); optMerged.querySelector('span').innerText = '✓'; }
         } else {
@@ -2626,6 +2632,19 @@ async function selectDataset(type) {
                 const saved = localStorage.getItem('infinite_locus_ratings');
                 if (saved) ratings = JSON.parse(saved);
             } catch(e) { console.error('Failed to load infinite locus ratings:', e); }
+        } else if (type === 'infinite_locus_interview') {
+            if (infiniteLocusInterviewScenarios.length === 0) {
+                const res = await fetch('infinite_locus_interview.json?v=1');
+                if (!res.ok) throw new Error("Could not load Infinite Locus Interview dataset");
+                infiniteLocusInterviewScenarios = await res.json();
+            }
+            scenarios = infiniteLocusInterviewScenarios;
+            
+            ratings = {};
+            try {
+                const saved = localStorage.getItem('infinite_locus_interview_ratings');
+                if (saved) ratings = JSON.parse(saved);
+            } catch(e) { console.error('Failed to load infinite locus interview ratings:', e); }
         } else if (type === 'merged') {
             if (mergedScenarios.length === 0) {
                 const res = await fetch('merged.json?v=254');
@@ -3303,6 +3322,7 @@ function getStorageKeyForDataset(ds) {
     if (ds === 'noventiq_r1') return 'noventiq_r1_ratings';
     if (ds === 'infra_azure') return 'infra_azure_ratings';
     if (ds === 'infinite_locus') return 'infinite_locus_ratings';
+    if (ds === 'infinite_locus_interview') return 'infinite_locus_interview_ratings';
     if (ds === 'merged') return 'merged_ratings';
     return 'k8s_dashboard_ratings';
 }
@@ -3490,17 +3510,17 @@ function renderScenario() {
     let alwaysVisibleHtml = '';
     
     // ======== RENDER ENGINE SWITCH ======== //
-    if (s.schema === 'v3' || s.schema === 'k8s' || s.schema === 'architecture') {
+    if (s.schema === 'v3' || s.schema === 'k8s' || s.schema === 'architecture' || s.schema === 'tradeoff' || s.schema === 'timeline' || s.interview_answer || s.definition) {
         const d = s; // since data is flat for v3
         
         // 1. Definition & Scenario
         solutionHtml += `
         <div class="card">
             <h2 class="card-title">📖 Definition & Scenario</h2>
-            <p class="body-text"><strong style="color:var(--text-primary)">Definition:</strong> ${format(d.definition)}</p>
+            <p class="body-text"><strong style="color:var(--text-primary)">Definition:</strong> ${format(d.definition || '')}</p>
             ${d.why_it_matters ? `<hr><p class="body-text"><strong style="color:var(--status-info)">Why It Matters:</strong> ${format(d.why_it_matters)}</p>` : ''}
             <hr>
-            <p class="body-text"><strong style="color:var(--text-primary)">Real World:</strong> ${format(d.real_world_scenario)}</p>
+            <p class="body-text"><strong style="color:var(--text-primary)">Real World:</strong> ${format(d.real_world_scenario || '')}</p>
         </div>`;
 
         // 1b. Concept Explanation (content_theory)
@@ -3546,12 +3566,13 @@ function renderScenario() {
         }
 
         // 8. Interview Answer (Moved for Readability UX)
-        if (d.interview_answer) {
+        if (d.interview_answer && d.interview_answer.response) {
+            const respArr = Array.isArray(d.interview_answer.response) ? d.interview_answer.response : [d.interview_answer.response];
             solutionHtml += `
             <div class="card">
                 <h2 class="card-title">💬 Interview Answer</h2>
-                <ul>${d.interview_answer.response.map(r => `<li class="body-text">"${format(r)}"</li>`).join('')}</ul>
-                <div class="body-text" style="margin-top: 8px; padding-left: 16px;"><strong style="color:var(--status-info)">Why?</strong> ${format(d.interview_answer.why)}</div>
+                <ul>${respArr.map(r => `<li class="body-text">"${format(r)}"</li>`).join('')}</ul>
+                ${d.interview_answer.why ? `<div class="body-text" style="margin-top: 8px; padding-left: 16px;"><strong style="color:var(--status-info)">Why?</strong> ${format(d.interview_answer.why)}</div>` : ''}
             </div>`;
         }
 
@@ -3566,13 +3587,50 @@ function renderScenario() {
 
         // 2. Architecture Flow
         if (d.architecture_flow) {
+            const steps = d.architecture_flow.steps || (Array.isArray(d.architecture_flow) ? d.architecture_flow : []);
             solutionHtml += `
             <div class="card">
                 <h2 class="card-title">🏗 Architecture Flow</h2>
-                <div class="arch-path-vertical">
-                    ${d.architecture_flow.steps.map(step => format(step)).join('<br><span style="color:var(--text-muted)">↓</span><br>')}
-                </div>
+                ${steps.length > 0 ? `<div class="arch-path-vertical">${steps.map(step => format(step)).join('<br><span style="color:var(--text-muted)">↓</span><br>')}</div>` : ''}
                 ${d.architecture_flow.diagram ? `<div class="arch-diagram">${format(d.architecture_flow.diagram)}</div>` : ''}
+            </div>`;
+        }
+
+        // 2b. Tradeoff Comparison Matrix
+        if (d.tradeoff_matrix && d.tradeoff_matrix.options) {
+            const dims = d.tradeoff_matrix.dimensions || [];
+            const opts = d.tradeoff_matrix.options || [];
+            solutionHtml += `
+            <div class="card" style="grid-column: 1/-1; overflow-x: auto;">
+                <h2 class="card-title">⚖️ Tradeoff Comparison Matrix</h2>
+                <table class="comparison-table" style="width:100%; border-collapse: collapse; margin-top: 12px; font-size: 13.5px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); text-align: left; background: var(--surface-2);">
+                            <th style="padding: 12px; color: var(--status-info); font-weight: 700;">Dimension</th>
+                            ${opts.map(o => `<th style="padding: 12px; color: var(--text-primary); font-weight: 700;">${format(o.name)}</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${dims.map((dim, idx) => `
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 12px; font-weight: 600; color: var(--status-warning); vertical-align: top; width: 22%;">${format(dim)}</td>
+                                ${opts.map(o => `<td style="padding: 12px; color: var(--text-muted); vertical-align: top; line-height: 1.5;">${format((o.values && o.values[idx]) || '')}</td>`).join('')}
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>`;
+        }
+
+        // 2c. Timeline Flow
+        if (d.timeline_flow && d.timeline_flow.steps) {
+            solutionHtml += `
+            <div class="card">
+                <h2 class="card-title">🕒 Timeline Flow</h2>
+                <div class="arch-path-vertical">
+                    ${d.timeline_flow.steps.map(step => format(step)).join('<br><span style="color:var(--text-muted)">↓</span><br>')}
+                </div>
+                ${d.timeline_flow.diagram ? `<div class="arch-diagram">${format(d.timeline_flow.diagram)}</div>` : ''}
             </div>`;
         }
 

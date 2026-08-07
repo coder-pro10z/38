@@ -213,6 +213,9 @@ The application is structured to serve as an ultra-fast, fully client-side singl
 ├── glossary.json                               # Processed keywords & definitions database
 ├── keyword-links.json                          # Keywords cross-reference links
 ├── BUG_BACKLOG_AND_RCA.md                      # Canonical Bug Backlog & Root Cause Analysis (RCA) log
+├── NAVIGATION_AND_INDEXING_ARCHITECTURE.md     # Navigation System & Dual-Mode Indexing Architecture guide
+├── INDEX_COMPONENT_DESIGN.md                   # UI Specification for Rebuilding the Index Modal (React/JSX)
+├── LEARNING_FEATURES_AND_PROGRESS_TRACKING.md  # Learning, Progress Tracking & Contextualization Features guide
 ├── *.js                                        # Node.js data pipeline scripts
 └── README.md                                   # This documentation file
 ```
